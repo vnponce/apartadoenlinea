@@ -1,6 +1,6 @@
 // Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
-
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500|Libre+Caslon+Display|Playfair+Display|Slabo+27px&&display=swap');
 // Variables
 // @import 'variables';
 
@@ -11,6 +11,12 @@
 
 @tailwind components;
 
+.first-letter-bigger::first-letter {
+    font-size: 125%;
+}
+.icon-menu-category-text {
+    @apply tracking-widest text-center text-sm uppercase font-medium text-gray-600 mt-2
+}
 // odd:bg-gray-100 sm:odd:bg-white even:flex-row-reverse sm:even:flex-col
 .bread-card {
     @apply flex p-2;
