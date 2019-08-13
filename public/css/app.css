@@ -646,7 +646,7 @@ video {
 
 .bread-card {
   display: flex;
-  padding: 0.5rem;
+  padding: 0.75rem;
 }
 
 .bread-card:nth-child(odd) {

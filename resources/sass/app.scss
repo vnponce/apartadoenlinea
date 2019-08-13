@@ -19,7 +19,7 @@
 }
 // odd:bg-gray-100 sm:odd:bg-white even:flex-row-reverse sm:even:flex-col
 .bread-card {
-    @apply flex p-2;
+    @apply flex p-3;
     &:nth-child(odd) {
         @apply bg-gray-100;
     }
