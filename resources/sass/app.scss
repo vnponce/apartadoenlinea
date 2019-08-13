@@ -14,22 +14,23 @@
 // odd:bg-gray-100 sm:odd:bg-white even:flex-row-reverse sm:even:flex-col
 .bread-card {
     @apply flex p-2;
+    &:nth-child(odd) {
+        @apply bg-gray-100;
+    }
+    &:nth-child(even) {
+        @apply flex-row-reverse;
+    }
 }
-.bread-card:nth-child(odd) {
-    @apply bg-gray-100;
-}
-.bread-card:nth-child(even) {
-    @apply flex-row-reverse;
-}
+
 @screen sm {
     .bread-card {
         @apply w-1/2 float-left flex-col;
-    }
-    .bread-card:nth-child(odd) {
-        @apply bg-white;
-    }
-    .bread-card:nth-child(even) {
-        @apply flex-col;
+        &:nth-child(odd) {
+            @apply bg-white;
+        }
+        &:nth-child(even) {
+            @apply flex-col;
+        }
     }
 }
 @screen md {
