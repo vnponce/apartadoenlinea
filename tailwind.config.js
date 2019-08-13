@@ -4,7 +4,7 @@ module.exports = {
   },
     variants: {
         backgroundColor: ['responsive', 'odd', 'even'],
-        order: ['responsive', 'hover', 'focus', 'odd', 'even'],
+        flexDirection: ['responsive', 'odd', 'even'],
     },
   plugins: []
 }

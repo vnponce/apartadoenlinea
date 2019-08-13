@@ -630,6 +630,47 @@ video {
   }
 }
 
+.bread-card {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.bread-card:nth-child(odd) {
+  background-color: #f7fafc;
+}
+
+.bread-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media (min-width: 640px) {
+  .bread-card {
+    width: 50%;
+    float: left;
+    flex-direction: column;
+  }
+
+  .bread-card:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  .bread-card:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .bread-card {
+    width: 33.333333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bread-card {
+    width: 25%;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -3406,6 +3447,38 @@ video {
   flex-direction: column-reverse;
 }
 
+.odd\:flex-row:nth-child(odd) {
+  flex-direction: row;
+}
+
+.odd\:flex-row-reverse:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.odd\:flex-col:nth-child(odd) {
+  flex-direction: column;
+}
+
+.odd\:flex-col-reverse:nth-child(odd) {
+  flex-direction: column-reverse;
+}
+
+.even\:flex-row:nth-child(even) {
+  flex-direction: row;
+}
+
+.even\:flex-row-reverse:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.even\:flex-col:nth-child(even) {
+  flex-direction: column;
+}
+
+.even\:flex-col-reverse:nth-child(even) {
+  flex-direction: column-reverse;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -3587,246 +3660,6 @@ video {
 }
 
 .order-none {
-  order: 0;
-}
-
-.hover\:order-1:hover {
-  order: 1;
-}
-
-.hover\:order-2:hover {
-  order: 2;
-}
-
-.hover\:order-3:hover {
-  order: 3;
-}
-
-.hover\:order-4:hover {
-  order: 4;
-}
-
-.hover\:order-5:hover {
-  order: 5;
-}
-
-.hover\:order-6:hover {
-  order: 6;
-}
-
-.hover\:order-7:hover {
-  order: 7;
-}
-
-.hover\:order-8:hover {
-  order: 8;
-}
-
-.hover\:order-9:hover {
-  order: 9;
-}
-
-.hover\:order-10:hover {
-  order: 10;
-}
-
-.hover\:order-11:hover {
-  order: 11;
-}
-
-.hover\:order-12:hover {
-  order: 12;
-}
-
-.hover\:order-first:hover {
-  order: -9999;
-}
-
-.hover\:order-last:hover {
-  order: 9999;
-}
-
-.hover\:order-none:hover {
-  order: 0;
-}
-
-.focus\:order-1:focus {
-  order: 1;
-}
-
-.focus\:order-2:focus {
-  order: 2;
-}
-
-.focus\:order-3:focus {
-  order: 3;
-}
-
-.focus\:order-4:focus {
-  order: 4;
-}
-
-.focus\:order-5:focus {
-  order: 5;
-}
-
-.focus\:order-6:focus {
-  order: 6;
-}
-
-.focus\:order-7:focus {
-  order: 7;
-}
-
-.focus\:order-8:focus {
-  order: 8;
-}
-
-.focus\:order-9:focus {
-  order: 9;
-}
-
-.focus\:order-10:focus {
-  order: 10;
-}
-
-.focus\:order-11:focus {
-  order: 11;
-}
-
-.focus\:order-12:focus {
-  order: 12;
-}
-
-.focus\:order-first:focus {
-  order: -9999;
-}
-
-.focus\:order-last:focus {
-  order: 9999;
-}
-
-.focus\:order-none:focus {
-  order: 0;
-}
-
-.odd\:order-1:nth-child(odd) {
-  order: 1;
-}
-
-.odd\:order-2:nth-child(odd) {
-  order: 2;
-}
-
-.odd\:order-3:nth-child(odd) {
-  order: 3;
-}
-
-.odd\:order-4:nth-child(odd) {
-  order: 4;
-}
-
-.odd\:order-5:nth-child(odd) {
-  order: 5;
-}
-
-.odd\:order-6:nth-child(odd) {
-  order: 6;
-}
-
-.odd\:order-7:nth-child(odd) {
-  order: 7;
-}
-
-.odd\:order-8:nth-child(odd) {
-  order: 8;
-}
-
-.odd\:order-9:nth-child(odd) {
-  order: 9;
-}
-
-.odd\:order-10:nth-child(odd) {
-  order: 10;
-}
-
-.odd\:order-11:nth-child(odd) {
-  order: 11;
-}
-
-.odd\:order-12:nth-child(odd) {
-  order: 12;
-}
-
-.odd\:order-first:nth-child(odd) {
-  order: -9999;
-}
-
-.odd\:order-last:nth-child(odd) {
-  order: 9999;
-}
-
-.odd\:order-none:nth-child(odd) {
-  order: 0;
-}
-
-.even\:order-1:nth-child(even) {
-  order: 1;
-}
-
-.even\:order-2:nth-child(even) {
-  order: 2;
-}
-
-.even\:order-3:nth-child(even) {
-  order: 3;
-}
-
-.even\:order-4:nth-child(even) {
-  order: 4;
-}
-
-.even\:order-5:nth-child(even) {
-  order: 5;
-}
-
-.even\:order-6:nth-child(even) {
-  order: 6;
-}
-
-.even\:order-7:nth-child(even) {
-  order: 7;
-}
-
-.even\:order-8:nth-child(even) {
-  order: 8;
-}
-
-.even\:order-9:nth-child(even) {
-  order: 9;
-}
-
-.even\:order-10:nth-child(even) {
-  order: 10;
-}
-
-.even\:order-11:nth-child(even) {
-  order: 11;
-}
-
-.even\:order-12:nth-child(even) {
-  order: 12;
-}
-
-.even\:order-first:nth-child(even) {
-  order: -9999;
-}
-
-.even\:order-last:nth-child(even) {
-  order: 9999;
-}
-
-.even\:order-none:nth-child(even) {
   order: 0;
 }
 
@@ -14381,6 +14214,38 @@ video {
     flex-direction: column-reverse;
   }
 
+  .sm\:odd\:flex-row:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .sm\:odd\:flex-row-reverse:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .sm\:odd\:flex-col:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .sm\:odd\:flex-col-reverse:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  .sm\:even\:flex-row:nth-child(even) {
+    flex-direction: row;
+  }
+
+  .sm\:even\:flex-row-reverse:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .sm\:even\:flex-col:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .sm\:even\:flex-col-reverse:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
   .sm\:flex-wrap {
     flex-wrap: wrap;
   }
@@ -14562,246 +14427,6 @@ video {
   }
 
   .sm\:order-none {
-    order: 0;
-  }
-
-  .sm\:hover\:order-1:hover {
-    order: 1;
-  }
-
-  .sm\:hover\:order-2:hover {
-    order: 2;
-  }
-
-  .sm\:hover\:order-3:hover {
-    order: 3;
-  }
-
-  .sm\:hover\:order-4:hover {
-    order: 4;
-  }
-
-  .sm\:hover\:order-5:hover {
-    order: 5;
-  }
-
-  .sm\:hover\:order-6:hover {
-    order: 6;
-  }
-
-  .sm\:hover\:order-7:hover {
-    order: 7;
-  }
-
-  .sm\:hover\:order-8:hover {
-    order: 8;
-  }
-
-  .sm\:hover\:order-9:hover {
-    order: 9;
-  }
-
-  .sm\:hover\:order-10:hover {
-    order: 10;
-  }
-
-  .sm\:hover\:order-11:hover {
-    order: 11;
-  }
-
-  .sm\:hover\:order-12:hover {
-    order: 12;
-  }
-
-  .sm\:hover\:order-first:hover {
-    order: -9999;
-  }
-
-  .sm\:hover\:order-last:hover {
-    order: 9999;
-  }
-
-  .sm\:hover\:order-none:hover {
-    order: 0;
-  }
-
-  .sm\:focus\:order-1:focus {
-    order: 1;
-  }
-
-  .sm\:focus\:order-2:focus {
-    order: 2;
-  }
-
-  .sm\:focus\:order-3:focus {
-    order: 3;
-  }
-
-  .sm\:focus\:order-4:focus {
-    order: 4;
-  }
-
-  .sm\:focus\:order-5:focus {
-    order: 5;
-  }
-
-  .sm\:focus\:order-6:focus {
-    order: 6;
-  }
-
-  .sm\:focus\:order-7:focus {
-    order: 7;
-  }
-
-  .sm\:focus\:order-8:focus {
-    order: 8;
-  }
-
-  .sm\:focus\:order-9:focus {
-    order: 9;
-  }
-
-  .sm\:focus\:order-10:focus {
-    order: 10;
-  }
-
-  .sm\:focus\:order-11:focus {
-    order: 11;
-  }
-
-  .sm\:focus\:order-12:focus {
-    order: 12;
-  }
-
-  .sm\:focus\:order-first:focus {
-    order: -9999;
-  }
-
-  .sm\:focus\:order-last:focus {
-    order: 9999;
-  }
-
-  .sm\:focus\:order-none:focus {
-    order: 0;
-  }
-
-  .sm\:odd\:order-1:nth-child(odd) {
-    order: 1;
-  }
-
-  .sm\:odd\:order-2:nth-child(odd) {
-    order: 2;
-  }
-
-  .sm\:odd\:order-3:nth-child(odd) {
-    order: 3;
-  }
-
-  .sm\:odd\:order-4:nth-child(odd) {
-    order: 4;
-  }
-
-  .sm\:odd\:order-5:nth-child(odd) {
-    order: 5;
-  }
-
-  .sm\:odd\:order-6:nth-child(odd) {
-    order: 6;
-  }
-
-  .sm\:odd\:order-7:nth-child(odd) {
-    order: 7;
-  }
-
-  .sm\:odd\:order-8:nth-child(odd) {
-    order: 8;
-  }
-
-  .sm\:odd\:order-9:nth-child(odd) {
-    order: 9;
-  }
-
-  .sm\:odd\:order-10:nth-child(odd) {
-    order: 10;
-  }
-
-  .sm\:odd\:order-11:nth-child(odd) {
-    order: 11;
-  }
-
-  .sm\:odd\:order-12:nth-child(odd) {
-    order: 12;
-  }
-
-  .sm\:odd\:order-first:nth-child(odd) {
-    order: -9999;
-  }
-
-  .sm\:odd\:order-last:nth-child(odd) {
-    order: 9999;
-  }
-
-  .sm\:odd\:order-none:nth-child(odd) {
-    order: 0;
-  }
-
-  .sm\:even\:order-1:nth-child(even) {
-    order: 1;
-  }
-
-  .sm\:even\:order-2:nth-child(even) {
-    order: 2;
-  }
-
-  .sm\:even\:order-3:nth-child(even) {
-    order: 3;
-  }
-
-  .sm\:even\:order-4:nth-child(even) {
-    order: 4;
-  }
-
-  .sm\:even\:order-5:nth-child(even) {
-    order: 5;
-  }
-
-  .sm\:even\:order-6:nth-child(even) {
-    order: 6;
-  }
-
-  .sm\:even\:order-7:nth-child(even) {
-    order: 7;
-  }
-
-  .sm\:even\:order-8:nth-child(even) {
-    order: 8;
-  }
-
-  .sm\:even\:order-9:nth-child(even) {
-    order: 9;
-  }
-
-  .sm\:even\:order-10:nth-child(even) {
-    order: 10;
-  }
-
-  .sm\:even\:order-11:nth-child(even) {
-    order: 11;
-  }
-
-  .sm\:even\:order-12:nth-child(even) {
-    order: 12;
-  }
-
-  .sm\:even\:order-first:nth-child(even) {
-    order: -9999;
-  }
-
-  .sm\:even\:order-last:nth-child(even) {
-    order: 9999;
-  }
-
-  .sm\:even\:order-none:nth-child(even) {
     order: 0;
   }
 
@@ -25357,6 +24982,38 @@ video {
     flex-direction: column-reverse;
   }
 
+  .md\:odd\:flex-row:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .md\:odd\:flex-row-reverse:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .md\:odd\:flex-col:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .md\:odd\:flex-col-reverse:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  .md\:even\:flex-row:nth-child(even) {
+    flex-direction: row;
+  }
+
+  .md\:even\:flex-row-reverse:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .md\:even\:flex-col:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .md\:even\:flex-col-reverse:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
   .md\:flex-wrap {
     flex-wrap: wrap;
   }
@@ -25538,246 +25195,6 @@ video {
   }
 
   .md\:order-none {
-    order: 0;
-  }
-
-  .md\:hover\:order-1:hover {
-    order: 1;
-  }
-
-  .md\:hover\:order-2:hover {
-    order: 2;
-  }
-
-  .md\:hover\:order-3:hover {
-    order: 3;
-  }
-
-  .md\:hover\:order-4:hover {
-    order: 4;
-  }
-
-  .md\:hover\:order-5:hover {
-    order: 5;
-  }
-
-  .md\:hover\:order-6:hover {
-    order: 6;
-  }
-
-  .md\:hover\:order-7:hover {
-    order: 7;
-  }
-
-  .md\:hover\:order-8:hover {
-    order: 8;
-  }
-
-  .md\:hover\:order-9:hover {
-    order: 9;
-  }
-
-  .md\:hover\:order-10:hover {
-    order: 10;
-  }
-
-  .md\:hover\:order-11:hover {
-    order: 11;
-  }
-
-  .md\:hover\:order-12:hover {
-    order: 12;
-  }
-
-  .md\:hover\:order-first:hover {
-    order: -9999;
-  }
-
-  .md\:hover\:order-last:hover {
-    order: 9999;
-  }
-
-  .md\:hover\:order-none:hover {
-    order: 0;
-  }
-
-  .md\:focus\:order-1:focus {
-    order: 1;
-  }
-
-  .md\:focus\:order-2:focus {
-    order: 2;
-  }
-
-  .md\:focus\:order-3:focus {
-    order: 3;
-  }
-
-  .md\:focus\:order-4:focus {
-    order: 4;
-  }
-
-  .md\:focus\:order-5:focus {
-    order: 5;
-  }
-
-  .md\:focus\:order-6:focus {
-    order: 6;
-  }
-
-  .md\:focus\:order-7:focus {
-    order: 7;
-  }
-
-  .md\:focus\:order-8:focus {
-    order: 8;
-  }
-
-  .md\:focus\:order-9:focus {
-    order: 9;
-  }
-
-  .md\:focus\:order-10:focus {
-    order: 10;
-  }
-
-  .md\:focus\:order-11:focus {
-    order: 11;
-  }
-
-  .md\:focus\:order-12:focus {
-    order: 12;
-  }
-
-  .md\:focus\:order-first:focus {
-    order: -9999;
-  }
-
-  .md\:focus\:order-last:focus {
-    order: 9999;
-  }
-
-  .md\:focus\:order-none:focus {
-    order: 0;
-  }
-
-  .md\:odd\:order-1:nth-child(odd) {
-    order: 1;
-  }
-
-  .md\:odd\:order-2:nth-child(odd) {
-    order: 2;
-  }
-
-  .md\:odd\:order-3:nth-child(odd) {
-    order: 3;
-  }
-
-  .md\:odd\:order-4:nth-child(odd) {
-    order: 4;
-  }
-
-  .md\:odd\:order-5:nth-child(odd) {
-    order: 5;
-  }
-
-  .md\:odd\:order-6:nth-child(odd) {
-    order: 6;
-  }
-
-  .md\:odd\:order-7:nth-child(odd) {
-    order: 7;
-  }
-
-  .md\:odd\:order-8:nth-child(odd) {
-    order: 8;
-  }
-
-  .md\:odd\:order-9:nth-child(odd) {
-    order: 9;
-  }
-
-  .md\:odd\:order-10:nth-child(odd) {
-    order: 10;
-  }
-
-  .md\:odd\:order-11:nth-child(odd) {
-    order: 11;
-  }
-
-  .md\:odd\:order-12:nth-child(odd) {
-    order: 12;
-  }
-
-  .md\:odd\:order-first:nth-child(odd) {
-    order: -9999;
-  }
-
-  .md\:odd\:order-last:nth-child(odd) {
-    order: 9999;
-  }
-
-  .md\:odd\:order-none:nth-child(odd) {
-    order: 0;
-  }
-
-  .md\:even\:order-1:nth-child(even) {
-    order: 1;
-  }
-
-  .md\:even\:order-2:nth-child(even) {
-    order: 2;
-  }
-
-  .md\:even\:order-3:nth-child(even) {
-    order: 3;
-  }
-
-  .md\:even\:order-4:nth-child(even) {
-    order: 4;
-  }
-
-  .md\:even\:order-5:nth-child(even) {
-    order: 5;
-  }
-
-  .md\:even\:order-6:nth-child(even) {
-    order: 6;
-  }
-
-  .md\:even\:order-7:nth-child(even) {
-    order: 7;
-  }
-
-  .md\:even\:order-8:nth-child(even) {
-    order: 8;
-  }
-
-  .md\:even\:order-9:nth-child(even) {
-    order: 9;
-  }
-
-  .md\:even\:order-10:nth-child(even) {
-    order: 10;
-  }
-
-  .md\:even\:order-11:nth-child(even) {
-    order: 11;
-  }
-
-  .md\:even\:order-12:nth-child(even) {
-    order: 12;
-  }
-
-  .md\:even\:order-first:nth-child(even) {
-    order: -9999;
-  }
-
-  .md\:even\:order-last:nth-child(even) {
-    order: 9999;
-  }
-
-  .md\:even\:order-none:nth-child(even) {
     order: 0;
   }
 
@@ -36333,6 +35750,38 @@ video {
     flex-direction: column-reverse;
   }
 
+  .lg\:odd\:flex-row:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .lg\:odd\:flex-row-reverse:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .lg\:odd\:flex-col:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .lg\:odd\:flex-col-reverse:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  .lg\:even\:flex-row:nth-child(even) {
+    flex-direction: row;
+  }
+
+  .lg\:even\:flex-row-reverse:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .lg\:even\:flex-col:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .lg\:even\:flex-col-reverse:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
   .lg\:flex-wrap {
     flex-wrap: wrap;
   }
@@ -36514,246 +35963,6 @@ video {
   }
 
   .lg\:order-none {
-    order: 0;
-  }
-
-  .lg\:hover\:order-1:hover {
-    order: 1;
-  }
-
-  .lg\:hover\:order-2:hover {
-    order: 2;
-  }
-
-  .lg\:hover\:order-3:hover {
-    order: 3;
-  }
-
-  .lg\:hover\:order-4:hover {
-    order: 4;
-  }
-
-  .lg\:hover\:order-5:hover {
-    order: 5;
-  }
-
-  .lg\:hover\:order-6:hover {
-    order: 6;
-  }
-
-  .lg\:hover\:order-7:hover {
-    order: 7;
-  }
-
-  .lg\:hover\:order-8:hover {
-    order: 8;
-  }
-
-  .lg\:hover\:order-9:hover {
-    order: 9;
-  }
-
-  .lg\:hover\:order-10:hover {
-    order: 10;
-  }
-
-  .lg\:hover\:order-11:hover {
-    order: 11;
-  }
-
-  .lg\:hover\:order-12:hover {
-    order: 12;
-  }
-
-  .lg\:hover\:order-first:hover {
-    order: -9999;
-  }
-
-  .lg\:hover\:order-last:hover {
-    order: 9999;
-  }
-
-  .lg\:hover\:order-none:hover {
-    order: 0;
-  }
-
-  .lg\:focus\:order-1:focus {
-    order: 1;
-  }
-
-  .lg\:focus\:order-2:focus {
-    order: 2;
-  }
-
-  .lg\:focus\:order-3:focus {
-    order: 3;
-  }
-
-  .lg\:focus\:order-4:focus {
-    order: 4;
-  }
-
-  .lg\:focus\:order-5:focus {
-    order: 5;
-  }
-
-  .lg\:focus\:order-6:focus {
-    order: 6;
-  }
-
-  .lg\:focus\:order-7:focus {
-    order: 7;
-  }
-
-  .lg\:focus\:order-8:focus {
-    order: 8;
-  }
-
-  .lg\:focus\:order-9:focus {
-    order: 9;
-  }
-
-  .lg\:focus\:order-10:focus {
-    order: 10;
-  }
-
-  .lg\:focus\:order-11:focus {
-    order: 11;
-  }
-
-  .lg\:focus\:order-12:focus {
-    order: 12;
-  }
-
-  .lg\:focus\:order-first:focus {
-    order: -9999;
-  }
-
-  .lg\:focus\:order-last:focus {
-    order: 9999;
-  }
-
-  .lg\:focus\:order-none:focus {
-    order: 0;
-  }
-
-  .lg\:odd\:order-1:nth-child(odd) {
-    order: 1;
-  }
-
-  .lg\:odd\:order-2:nth-child(odd) {
-    order: 2;
-  }
-
-  .lg\:odd\:order-3:nth-child(odd) {
-    order: 3;
-  }
-
-  .lg\:odd\:order-4:nth-child(odd) {
-    order: 4;
-  }
-
-  .lg\:odd\:order-5:nth-child(odd) {
-    order: 5;
-  }
-
-  .lg\:odd\:order-6:nth-child(odd) {
-    order: 6;
-  }
-
-  .lg\:odd\:order-7:nth-child(odd) {
-    order: 7;
-  }
-
-  .lg\:odd\:order-8:nth-child(odd) {
-    order: 8;
-  }
-
-  .lg\:odd\:order-9:nth-child(odd) {
-    order: 9;
-  }
-
-  .lg\:odd\:order-10:nth-child(odd) {
-    order: 10;
-  }
-
-  .lg\:odd\:order-11:nth-child(odd) {
-    order: 11;
-  }
-
-  .lg\:odd\:order-12:nth-child(odd) {
-    order: 12;
-  }
-
-  .lg\:odd\:order-first:nth-child(odd) {
-    order: -9999;
-  }
-
-  .lg\:odd\:order-last:nth-child(odd) {
-    order: 9999;
-  }
-
-  .lg\:odd\:order-none:nth-child(odd) {
-    order: 0;
-  }
-
-  .lg\:even\:order-1:nth-child(even) {
-    order: 1;
-  }
-
-  .lg\:even\:order-2:nth-child(even) {
-    order: 2;
-  }
-
-  .lg\:even\:order-3:nth-child(even) {
-    order: 3;
-  }
-
-  .lg\:even\:order-4:nth-child(even) {
-    order: 4;
-  }
-
-  .lg\:even\:order-5:nth-child(even) {
-    order: 5;
-  }
-
-  .lg\:even\:order-6:nth-child(even) {
-    order: 6;
-  }
-
-  .lg\:even\:order-7:nth-child(even) {
-    order: 7;
-  }
-
-  .lg\:even\:order-8:nth-child(even) {
-    order: 8;
-  }
-
-  .lg\:even\:order-9:nth-child(even) {
-    order: 9;
-  }
-
-  .lg\:even\:order-10:nth-child(even) {
-    order: 10;
-  }
-
-  .lg\:even\:order-11:nth-child(even) {
-    order: 11;
-  }
-
-  .lg\:even\:order-12:nth-child(even) {
-    order: 12;
-  }
-
-  .lg\:even\:order-first:nth-child(even) {
-    order: -9999;
-  }
-
-  .lg\:even\:order-last:nth-child(even) {
-    order: 9999;
-  }
-
-  .lg\:even\:order-none:nth-child(even) {
     order: 0;
   }
 
@@ -47309,6 +46518,38 @@ video {
     flex-direction: column-reverse;
   }
 
+  .xl\:odd\:flex-row:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .xl\:odd\:flex-row-reverse:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .xl\:odd\:flex-col:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .xl\:odd\:flex-col-reverse:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  .xl\:even\:flex-row:nth-child(even) {
+    flex-direction: row;
+  }
+
+  .xl\:even\:flex-row-reverse:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .xl\:even\:flex-col:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .xl\:even\:flex-col-reverse:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
   .xl\:flex-wrap {
     flex-wrap: wrap;
   }
@@ -47490,246 +46731,6 @@ video {
   }
 
   .xl\:order-none {
-    order: 0;
-  }
-
-  .xl\:hover\:order-1:hover {
-    order: 1;
-  }
-
-  .xl\:hover\:order-2:hover {
-    order: 2;
-  }
-
-  .xl\:hover\:order-3:hover {
-    order: 3;
-  }
-
-  .xl\:hover\:order-4:hover {
-    order: 4;
-  }
-
-  .xl\:hover\:order-5:hover {
-    order: 5;
-  }
-
-  .xl\:hover\:order-6:hover {
-    order: 6;
-  }
-
-  .xl\:hover\:order-7:hover {
-    order: 7;
-  }
-
-  .xl\:hover\:order-8:hover {
-    order: 8;
-  }
-
-  .xl\:hover\:order-9:hover {
-    order: 9;
-  }
-
-  .xl\:hover\:order-10:hover {
-    order: 10;
-  }
-
-  .xl\:hover\:order-11:hover {
-    order: 11;
-  }
-
-  .xl\:hover\:order-12:hover {
-    order: 12;
-  }
-
-  .xl\:hover\:order-first:hover {
-    order: -9999;
-  }
-
-  .xl\:hover\:order-last:hover {
-    order: 9999;
-  }
-
-  .xl\:hover\:order-none:hover {
-    order: 0;
-  }
-
-  .xl\:focus\:order-1:focus {
-    order: 1;
-  }
-
-  .xl\:focus\:order-2:focus {
-    order: 2;
-  }
-
-  .xl\:focus\:order-3:focus {
-    order: 3;
-  }
-
-  .xl\:focus\:order-4:focus {
-    order: 4;
-  }
-
-  .xl\:focus\:order-5:focus {
-    order: 5;
-  }
-
-  .xl\:focus\:order-6:focus {
-    order: 6;
-  }
-
-  .xl\:focus\:order-7:focus {
-    order: 7;
-  }
-
-  .xl\:focus\:order-8:focus {
-    order: 8;
-  }
-
-  .xl\:focus\:order-9:focus {
-    order: 9;
-  }
-
-  .xl\:focus\:order-10:focus {
-    order: 10;
-  }
-
-  .xl\:focus\:order-11:focus {
-    order: 11;
-  }
-
-  .xl\:focus\:order-12:focus {
-    order: 12;
-  }
-
-  .xl\:focus\:order-first:focus {
-    order: -9999;
-  }
-
-  .xl\:focus\:order-last:focus {
-    order: 9999;
-  }
-
-  .xl\:focus\:order-none:focus {
-    order: 0;
-  }
-
-  .xl\:odd\:order-1:nth-child(odd) {
-    order: 1;
-  }
-
-  .xl\:odd\:order-2:nth-child(odd) {
-    order: 2;
-  }
-
-  .xl\:odd\:order-3:nth-child(odd) {
-    order: 3;
-  }
-
-  .xl\:odd\:order-4:nth-child(odd) {
-    order: 4;
-  }
-
-  .xl\:odd\:order-5:nth-child(odd) {
-    order: 5;
-  }
-
-  .xl\:odd\:order-6:nth-child(odd) {
-    order: 6;
-  }
-
-  .xl\:odd\:order-7:nth-child(odd) {
-    order: 7;
-  }
-
-  .xl\:odd\:order-8:nth-child(odd) {
-    order: 8;
-  }
-
-  .xl\:odd\:order-9:nth-child(odd) {
-    order: 9;
-  }
-
-  .xl\:odd\:order-10:nth-child(odd) {
-    order: 10;
-  }
-
-  .xl\:odd\:order-11:nth-child(odd) {
-    order: 11;
-  }
-
-  .xl\:odd\:order-12:nth-child(odd) {
-    order: 12;
-  }
-
-  .xl\:odd\:order-first:nth-child(odd) {
-    order: -9999;
-  }
-
-  .xl\:odd\:order-last:nth-child(odd) {
-    order: 9999;
-  }
-
-  .xl\:odd\:order-none:nth-child(odd) {
-    order: 0;
-  }
-
-  .xl\:even\:order-1:nth-child(even) {
-    order: 1;
-  }
-
-  .xl\:even\:order-2:nth-child(even) {
-    order: 2;
-  }
-
-  .xl\:even\:order-3:nth-child(even) {
-    order: 3;
-  }
-
-  .xl\:even\:order-4:nth-child(even) {
-    order: 4;
-  }
-
-  .xl\:even\:order-5:nth-child(even) {
-    order: 5;
-  }
-
-  .xl\:even\:order-6:nth-child(even) {
-    order: 6;
-  }
-
-  .xl\:even\:order-7:nth-child(even) {
-    order: 7;
-  }
-
-  .xl\:even\:order-8:nth-child(even) {
-    order: 8;
-  }
-
-  .xl\:even\:order-9:nth-child(even) {
-    order: 9;
-  }
-
-  .xl\:even\:order-10:nth-child(even) {
-    order: 10;
-  }
-
-  .xl\:even\:order-11:nth-child(even) {
-    order: 11;
-  }
-
-  .xl\:even\:order-12:nth-child(even) {
-    order: 12;
-  }
-
-  .xl\:even\:order-first:nth-child(even) {
-    order: -9999;
-  }
-
-  .xl\:even\:order-last:nth-child(even) {
-    order: 9999;
-  }
-
-  .xl\:even\:order-none:nth-child(even) {
     order: 0;
   }
 

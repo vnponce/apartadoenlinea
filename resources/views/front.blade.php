@@ -112,7 +112,39 @@
     </div>
     <hr class="w-1/2 mb-5">
     <section class="flex flex-wrap w-full p-2">
-        <div class="flex container p-2 sm:w-1/2 sm:float-left sm:flex-col md:w-1/3 lg:w-1/4 odd:bg-gray-100 sm:odd:bg-white odd:flex-row-reverse">
+        <div class="container bread-card odd:bg-gray-100 sm:odd:bg-white even:flex-row-reverse sm:even:flex-col">
+            <div class="flex-1 flex sm:bg-gray-100">
+                <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
+                <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
+            </div>
+            <div class="flex-1 flex flex-col h-32 overflow-hidden sm:mt-4 sm:h-24">
+                <div class="flex-1 md:text-center">
+                    <div class="md:inline-block">Banderilla mini</div>
+                    <div class="md:inline-block">
+                        <span>$11.50</span>
+                        <span>p/p</span>
+                    </div>
+                </div>
+                <div class="flex-1 truncate">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
+            </div>
+        </div>
+        <div class="container bread-card">
+            <div class="flex-1 flex sm:bg-gray-100">
+                <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
+                <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
+            </div>
+            <div class="flex-1 flex flex-col h-32 overflow-hidden sm:mt-4 sm:h-24">
+                <div class="flex-1 md:text-center">
+                    <div class="md:inline-block">Banderilla mini</div>
+                    <div class="md:inline-block">
+                        <span>$11.50</span>
+                        <span>p/p</span>
+                    </div>
+                </div>
+                <div class="flex-1 truncate">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
+            </div>
+        </div>
+        <div class="container bread-card">
             <div class="flex-1 flex sm:bg-gray-100">
                 <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
                 <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
