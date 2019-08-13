@@ -12,23 +12,6 @@
         header, footer {
             background-color: #ef7d07;
         }
-        .bar1, .bar2, .bar3 {
-            width: 35px;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-
-        .change .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-            transform: rotate(-45deg) translate(-9px, 6px);
-        }
-
-        .change .bar2 {opacity: 0;}
-
-        .change .bar3 {
-            -webkit-transform: rotate(45deg) translate(-8px, -8px);
-            transform: rotate(45deg) translate(-8px, -8px);
-        }
         img > svg {
             fill: white;
         }
@@ -52,45 +35,54 @@
     </style>
 </head>
 <body class="flex flex-col font-body">
-    <header class="p-1">
-        <div class="flex content-end">
-            <div class="flex-1" onclick="myFunction(this)">
-                <div class="bar1 h-1 bg-white"></div>
-                <div class="bar2 h-1 bg-white"></div>
-                <div class="bar3 h-1 bg-white"></div>
+    <header class="p-3 md:px-12">
+        <div class="flex">
+            <div class="flex-1 m-auto h-20 hidden md:block">
+                <img src="/svg/Logo-Full.svg" class="my-auto h-full" alt="">
             </div>
-            <div class="flex-2 flex content-end">
-                <svg class="flex-1 h-5 fill-current stroke-current text-white" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <g id="Empty_Tray">
-                        <path
-                            d="M71.22,62.86H66.67L65,61.43a37.85,37.85,0,0,0,8.83-24.29A36.89,36.89,0,1,0,37,74.27a38.3,38.3,0,0,0,24.22-8.85L63,66.85v4.58L91.46,100,100,91.43ZM37,62.86a25.7,25.7,0,1,1,25.65-25.7A25.58,25.58,0,0,1,37,62.86Z"/>
-                    </g>
-                </svg>
-                <svg class="flex-1 h-5 fill-current stroke-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44.83">
-                    <g id="Empty_Tray">
-                        <polygon id="Tray" points="0 34.83 100 34.83 89.37 44.83 10.59 44.83 0 34.83"/>
-                        <g id="Empty">
+            <div class="flex flex-row md:flex-col flex-1">
+                <nav class="flex-1">
+                    <ul class="md:flex items-center">
+                        <li class="md:ml-4"><a href="#">Home</a></li>
+                        <li class="md:ml-4"><a href="#">About</a></li>
+                        <li class="md:ml-4"><a href="#">Services</a></li>
+                        <li class="md:ml-4"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <img src="Logo-Short.svg" class="md:invisible pt-2 h-20 flex-1 flex-grow-0 m-auto" alt="">
+                <div class="flex-1 flex justify-end">
+                    <svg class="h-4 mr-3 fill-current stroke-current text-white" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <g id="Empty_Tray">
                             <path
-                                d="M27.33,10.15a2.51,2.51,0,0,1,3.21,1.5L35.78,26a2.42,2.42,0,0,1-1.41,3.17,2.57,2.57,0,0,1-3.29-1.46L25.84,13.36A2.51,2.51,0,0,1,27.33,10.15Z"/>
-                            <path
-                                d="M72.64,10.15a2.51,2.51,0,0,1,1.49,3.21L68.92,27.75a2.43,2.43,0,0,1-3.12,1.53A2.58,2.58,0,0,1,64.22,26l5.21-14.39A2.51,2.51,0,0,1,72.64,10.15Z"/>
-                            <path
-                                d="M50,0a2.5,2.5,0,0,1,2.5,2.5v25A2.43,2.43,0,0,1,50.1,30a2.58,2.58,0,0,1-2.59-2.5V2.5A2.5,2.5,0,0,1,50,0Z"/>
+                                d="M71.22,62.86H66.67L65,61.43a37.85,37.85,0,0,0,8.83-24.29A36.89,36.89,0,1,0,37,74.27a38.3,38.3,0,0,0,24.22-8.85L63,66.85v4.58L91.46,100,100,91.43ZM37,62.86a25.7,25.7,0,1,1,25.65-25.7A25.58,25.58,0,0,1,37,62.86Z"/>
                         </g>
-                    </g>
-                </svg>
+                    </svg>
+                    <svg class="h-4 fill-current stroke-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44.83">
+                        <g id="Empty_Tray">
+                            <polygon id="Tray" points="0 34.83 100 34.83 89.37 44.83 10.59 44.83 0 34.83"/>
+                            <g id="Empty">
+                                <path
+                                    d="M27.33,10.15a2.51,2.51,0,0,1,3.21,1.5L35.78,26a2.42,2.42,0,0,1-1.41,3.17,2.57,2.57,0,0,1-3.29-1.46L25.84,13.36A2.51,2.51,0,0,1,27.33,10.15Z"/>
+                                <path
+                                    d="M72.64,10.15a2.51,2.51,0,0,1,1.49,3.21L68.92,27.75a2.43,2.43,0,0,1-3.12,1.53A2.58,2.58,0,0,1,64.22,26l5.21-14.39A2.51,2.51,0,0,1,72.64,10.15Z"/>
+                                <path
+                                    d="M50,0a2.5,2.5,0,0,1,2.5,2.5v25A2.43,2.43,0,0,1,50.1,30a2.58,2.58,0,0,1-2.59-2.5V2.5A2.5,2.5,0,0,1,50,0Z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
             </div>
         </div>
-        <div class="flex pb-1">
+        <!-- <div class="flex pb-1">
             <img src="Logo-Short.svg" class="h-20 flex-1" alt="">
-        </div>
+        </div> -->
         <div id="header-lines"></div>
     </header>
-    <div class="mt-24">
+    <section class="mt-24">
         <span class="block text-4xl text-center font-title font-semibold">PANADERíA</span>
-        <span class="block text-gray-500 text-base text-center max-w-md m-auto">Bienvenido a Panadería la Especial donde encotnrarás la mejor calidad en panes</span>
-    </div>
-    <div class="flex m-auto container">
+        <span class="block p-2 text-gray-500 text-base text-center max-w-md m-auto">Bienvenido a Panadería la Especial donde encotnrarás la mejor calidad y servicio</span>
+    </section>
+    <section class="flex m-auto container">
         <div class="w-full icons p-4">
             <a href="#" class="inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                 <svg class="h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><style>.cls-1{fill:#686868;}</style></defs><title>Pan-dulce</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M50,0A50,50,0,0,0,5.56,27.07a5.41,5.41,0,0,0,2.77.71c3.49,0,5.34-2.67,8.06-7s6-9.64,12.76-9.64,10.1,5.35,12.78,9.64,4.57,7,8.06,7,5.34-2.67,8.07-7,6-9.64,12.76-9.64,10.1,5.35,12.78,9.64,4.57,7,8.07,7a5.41,5.41,0,0,0,2.77-.71A50,50,0,0,0,50,0ZM96.72,32.15a10.88,10.88,0,0,1-5,1.18c-6.75,0-10.1-5.34-12.78-9.64s-4.57-7-8.07-7-5.33,2.66-8.06,7-6,9.64-12.77,9.64S39.9,28,37.22,23.69s-4.57-7-8.07-7-5.33,2.66-8,7-6,9.64-12.77,9.64a10.88,10.88,0,0,1-5.05-1.18,50,50,0,1,0,93.44,0ZM50,68.06a12.5,12.5,0,1,1,12.5-12.5A12.5,12.5,0,0,1,50,68.06Z"/></g></g></svg>
@@ -109,9 +101,9 @@
                 <div class="icon-menu-category-text">Repostería</div>
             </a>
         </div>
-    </div>
+    </section>
     <hr class="w-1/2 mb-5">
-    <section class="flex flex-wrap w-full p-0 sm:p-2">
+    <main class="flex flex-wrap w-full p-0 sm:p-2">
         <div class="container bread-card">
             <div class="flex-1 flex sm:bg-gray-100">
                 <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
@@ -128,16 +120,91 @@
                 <div class="flex-1 truncate text-gray-500 text-base">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
             </div>
         </div>
-    </section>
+        <div class="container bread-card">
+            <div class="flex-1 flex sm:bg-gray-100">
+                <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
+                <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
+            </div>
+            <div class="flex-1 flex flex-col h-32 overflow-hidden sm:mt-4 sm:h-24">
+                <div class="flex-1 sm:text-center text-gray-600 font-medium uppercase">
+                    <div class="first-letter-bigger">Banderilla mini</div>
+                    <div class="text-lg">
+                        <span>$11.50</span>
+                        <span class="text-xs align-top">p/p</span>
+                    </div>
+                </div>
+                <div class="flex-1 truncate text-gray-500 text-base">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
+            </div>
+        </div>
+        <div class="container bread-card">
+            <div class="flex-1 flex sm:bg-gray-100">
+                <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
+                <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
+            </div>
+            <div class="flex-1 flex flex-col h-32 overflow-hidden sm:mt-4 sm:h-24">
+                <div class="flex-1 sm:text-center text-gray-600 font-medium uppercase">
+                    <div class="first-letter-bigger">Banderilla mini</div>
+                    <div class="text-lg">
+                        <span>$11.50</span>
+                        <span class="text-xs align-top">p/p</span>
+                    </div>
+                </div>
+                <div class="flex-1 truncate text-gray-500 text-base">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
+            </div>
+        </div>
+        <div class="container bread-card">
+            <div class="flex-1 flex sm:bg-gray-100">
+                <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
+                <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
+            </div>
+            <div class="flex-1 flex flex-col h-32 overflow-hidden sm:mt-4 sm:h-24">
+                <div class="flex-1 sm:text-center text-gray-600 font-medium uppercase">
+                    <div class="first-letter-bigger">Banderilla mini</div>
+                    <div class="text-lg">
+                        <span>$11.50</span>
+                        <span class="text-xs align-top">p/p</span>
+                    </div>
+                </div>
+                <div class="flex-1 truncate text-gray-500 text-base">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
+            </div>
+        </div>
+        <div class="container bread-card">
+            <div class="flex-1 flex sm:bg-gray-100">
+                <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
+                <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
+            </div>
+            <div class="flex-1 flex flex-col h-32 overflow-hidden sm:mt-4 sm:h-24">
+                <div class="flex-1 sm:text-center text-gray-600 font-medium uppercase">
+                    <div class="first-letter-bigger">Banderilla mini</div>
+                    <div class="text-lg">
+                        <span>$11.50</span>
+                        <span class="text-xs align-top">p/p</span>
+                    </div>
+                </div>
+                <div class="flex-1 truncate text-gray-500 text-base">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
+            </div>
+        </div>
+        <div class="container bread-card">
+            <div class="flex-1 flex sm:bg-gray-100">
+                <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
+                <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
+            </div>
+            <div class="flex-1 flex flex-col h-32 overflow-hidden sm:mt-4 sm:h-24">
+                <div class="flex-1 sm:text-center text-gray-600 font-medium uppercase">
+                    <div class="first-letter-bigger">Banderilla mini</div>
+                    <div class="text-lg">
+                        <span>$11.50</span>
+                        <span class="text-xs align-top">p/p</span>
+                    </div>
+                </div>
+                <div class="flex-1 truncate text-gray-500 text-base">Pan de  pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar en chocolate!</div>
+            </div>
+        </div>
+    </main>
     <footer class="flex h-16">
         <span class="flex-1 m-auto text-center text-white text-xs">Política de Privacidad</span>
         <img src="Logo-Short.svg" class="h-10 flex-1 flex-grow-0 m-auto" alt="">
         <span class="flex-1 m-auto text-center text-white text-xs">Términos y condiciones</span>
     </footer>
 </body>
-<script>
-    function myFunction(x) {
-        x.classList.toggle("change");
-    }
-</script>
 </html>
