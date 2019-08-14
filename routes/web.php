@@ -22,3 +22,7 @@ Route::get('front', function() {
 Route::get('home', function() {
     return view('home');
 });
+
+Route::get('product', function() {
+    return view('product');
+});

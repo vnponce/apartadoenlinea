@@ -1,11 +1,9 @@
-@extends('layout')
+@extends('layout-home')
 
 @section('title', 'Page Title')
 
 @section('content')
-    @include('partials.menu-icons')
-    <hr class="w-1/2 mb-5">
-    <main class="flex flex-wrap w-full p-0 sm:p-2">
+    <main class="flex flex-wrap w-full p-0 pb-16 sm:p-2">
         <div class="container bread-card">
             <div class="flex-1 flex sm:bg-gray-100">
                 <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
