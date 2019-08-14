@@ -37,22 +37,22 @@
 <body class="flex flex-col font-body">
     <header class="md:px-12">
         <div class="flex p-5">
-            <div class="flex-1 m-auto h-20 hidden md:block">
+            <div class="flex-2 m-auto h-20 hidden lg:block">
                 <img src="/svg/Logo-Full.svg" class="my-auto h-full" alt="">
             </div>
-            <div class="flex flex-row md:flex-col flex-1">
+            <div class="flex flex-row lg:flex-col flex-1">
                 <nav class="flex-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer stroke-current text-white md:hidden feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                    <ul class="hidden md:flex items-center justify-between text-white">
-                        <li class="md:ml-4"><a class="block md:inline" href="#">Pan de dulce</a></li>
-                        <li class="md:ml-4"><a class="block md:inline" href="#">Pan de sal</a></li>
-                        <li class="md:ml-4"><a class="block md:inline" href="#">Bocadillos</a></li>
-                        <li class="md:ml-4"><a class="block md:inline" href="#">Repostería</a></li>
-                        <li class="md:ml-4"><a class="block md:inline" href="#">Favoritos</a></li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer stroke-current text-white lg:hidden feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    <ul class="hidden lg:flex items-center justify-end text-white">
+                        <li class="md:ml-5"><a class="block md:inline" href="#">Pan de dulce</a></li>
+                        <li class="md:ml-5"><a class="block md:inline" href="#">Pan de sal</a></li>
+                        <li class="md:ml-5"><a class="block md:inline" href="#">Bocadillos</a></li>
+                        <li class="md:ml-5"><a class="block md:inline" href="#">Repostería</a></li>
+                        <li class="md:ml-5"><a class="block md:inline" href="#">Favoritos</a></li>
                     </ul>
                 </nav>
-                <img src="Logo-Short.svg" class="md:hidden pt-2 h-20 flex-1 flex-grow-0 m-auto" alt="">
-                <div class="flex-1 flex justify-end items-end">
+                <img src="Logo-Short.svg" class="lg:hidden pt-2 h-20 flex-1 flex-grow-0 m-auto" alt="">
+                <div class="flex-1 flex justify-end lg:items-end">
                     <svg class="h-4 mr-3 fill-current stroke-current text-white" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <g id="Empty_Tray">
                             <path
@@ -82,7 +82,7 @@
     </header>
     <section class="mt-24">
         <span class="block text-4xl text-center font-title font-semibold">PANADERíA</span>
-        <span class="block p-2 text-gray-500 text-base text-center max-w-md m-auto">Bienvenido a Panadería la Especial donde encotnrarás la mejor calidad y servicio</span>
+        <span class="block p-2 text-gray-500 text-base text-center max-w-xl m-auto">Bienvenido a Panadería la Especial donde encotnrarás la mejor calidad y servicio</span>
     </section>
     <section class="flex m-auto container">
         <div class="w-full icons p-4">
