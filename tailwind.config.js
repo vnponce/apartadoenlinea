@@ -8,7 +8,7 @@ module.exports = {
     }
   },
     variants: {
-        backgroundColor: ['responsive', 'odd', 'even'],
+        backgroundColor: ['responsive', 'odd', 'even', 'hover'],
         flexDirection: ['responsive', 'odd', 'even'],
     },
   plugins: []
