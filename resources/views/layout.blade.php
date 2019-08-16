@@ -35,7 +35,7 @@
 </head>
 <body class="flex flex-col font-body relative min-h-screen">
 @include('partials.header')
-<main class="container flex flex-wrap w-full p-0 sm:px-2">
+<main class="flex flex-wrap w-full p-0 sm:px-2">
     @yield('content')
 </main>
 
