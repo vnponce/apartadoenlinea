@@ -7,10 +7,10 @@
         <!-- Back button -->
         <svg class="w-8 h-8 mb-4 ml-4 text-lg cursor-pointer sm:w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         <!-- Product -->
-        <div class="flex flex-col pb-16 md:flex-row md:w-11/12 md:m-6 lg:m-0 lg:mb-6">
+        <div class="flex flex-col pb-16 md:flex-row md:w-11/12 md:m-0 md:mb-6">
             <!-- Image -->
-            <div class="bg-gray-100 sm:w-2/3 sm:m-auto lg:m-0 md:4/6 md:flex-1">
-                <img class="h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover" src="/breads/Cuernito.png" alt="Banderilla mini">
+            <div class="bg-gray-100 sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
+                <img class="h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full" src="/breads/Cuernito.png" alt="Banderilla mini">
             </div>
             <!-- Information -->
             <div class="flex flex-col m-5 md:flex-1 lg:ml-24 lg:mt-0">
