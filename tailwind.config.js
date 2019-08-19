@@ -8,6 +8,14 @@ module.exports = {
         'body': ['Roboto'],
       },
       colors: {
+        brand: {
+          orange: '#ef7d07',
+          yellow: '#fdeb1a',
+          green: '#087a35',
+        },
+        background: {
+            gray: colors.gray[100],
+        },
         primary: '#ef7d07',
         secondaryYellow: '#fdeb1a',
         secondaryGreen: '#087a35',

@@ -61,10 +61,10 @@
         @apply w-4/5 h-1 block;
     }
     &::before {
-        @apply bg-secondaryYellow my-3 mr-0 ml-auto;
+        @apply bg-brand-yellow my-3 mr-0 ml-auto;
     }
     &::after {
-        @apply bg-secondaryGreen my-3 mr-auto ml-0;
+        @apply bg-brand-green my-3 mr-auto ml-0;
     }
 }
 

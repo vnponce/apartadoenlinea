@@ -1,4 +1,4 @@
-<header class="md:px-12 bg-primary">
+<header class="md:px-12 bg-brand-orange">
     <div class="flex p-5">
         <div class="flex-2 m-auto h-20 hidden lg:block">
             <img src="/svg/Logo-Full.svg" class="my-auto h-full" alt="">
