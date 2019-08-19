@@ -21,7 +21,7 @@
 .bread-card {
     @apply flex p-3;
     &:nth-child(odd) {
-        @apply bg-gray-100;
+        @apply bg-regularBackground;
     }
     &:nth-child(even) {
         @apply flex-row-reverse;
@@ -47,6 +47,24 @@
 @screen lg {
     .bread-card {
         @apply w-1/4;
+    }
+}
+
+// lines
+#header-lines {
+    @apply absolute w-full left-0;
+    // position: absolute;
+    // left: 0px;
+    // width: 100%;
+    &::before, &::after {
+        content: "";
+        @apply w-4/5 h-1 block;
+    }
+    &::before {
+        @apply bg-secondaryYellow my-3 mr-0 ml-auto;
+    }
+    &::after {
+        @apply bg-secondaryGreen my-3 mr-auto ml-0;
     }
 }
 

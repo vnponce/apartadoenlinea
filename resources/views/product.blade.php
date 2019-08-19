@@ -9,7 +9,7 @@
         <!-- Product -->
         <div class="flex flex-col pb-16 md:flex-row md:w-11/12 md:m-0 md:mb-6">
             <!-- Image -->
-            <div class="bg-gray-100 sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
+            <div class="bg-regularBackground sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
                 <img class="h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full" src="/breads/Cuernito.png" alt="Banderilla mini">
             </div>
             <!-- Information -->
@@ -47,7 +47,7 @@
                 </div>
                 <!-- Button (Poner en la charola). -->
                 <div class="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify">
-                    <button class="w-full bg-orange-500 hover:bg-orange-600 focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0">
+                    <button class="w-full bg-orange-500 hover:bg-orange-600 focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2">
                         Poner en la charola
                     </button>
                 </div>
