@@ -12,9 +12,8 @@ module.exports = {
           orange: '#ef7d07',
           yellow: '#fdeb1a',
           green: '#087a35',
-        },
-        background: {
-            gray: colors.gray[100],
+          gray: colors.gray[100],
+          grayOpt: '#f1f1f1',
         },
         primary: '#ef7d07',
         secondaryYellow: '#fdeb1a',

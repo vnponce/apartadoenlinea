@@ -9,7 +9,7 @@
         <!-- Product -->
         <div class="flex flex-col pb-16 md:flex-row md:w-11/12 md:m-0 md:mb-6">
             <!-- Image -->
-            <div class="bg-regularBackground sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
+            <div class="bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
                 <img class="h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full" src="/breads/Cuernito.png" alt="Banderilla mini">
             </div>
             <!-- Information -->

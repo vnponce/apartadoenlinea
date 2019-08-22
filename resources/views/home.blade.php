@@ -5,7 +5,7 @@
 @section('content')
     <main class="flex flex-wrap w-full p-0 pb-16 sm:px-2">
         <div class="container bread-card">
-            <div class="flex-1 flex sm:bg-regularBackground">
+            <div class="flex-1 flex sm:bg-brand-gray">
                 <!-- <img class="m-auto w-full object-cover align-middle sm:h-64" src="https://via.placeholder.com/125x110" alt="Banderilla mini"> -->
                 <img class="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini">
             </div>
