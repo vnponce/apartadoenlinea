@@ -47,7 +47,7 @@
                 </div>
                 <!-- Button (Poner en la charola). -->
                 <div class="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify">
-                    <button class="w-full bg-orange-500 hover:bg-orange-600 focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2">
+                    <button class="w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2">
                         Poner en la charola
                     </button>
                 </div>

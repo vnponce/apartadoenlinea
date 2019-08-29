@@ -10,7 +10,7 @@
 </head>
 <body class="flex flex-col font-body relative min-h-screen text-regularText">
 @include('partials.header')
-@include('partials.header-description')
+@include('partials.header-description', ['title' => 'PANADERíA', 'description' => 'Bienvenido a Panadería la Especial donde encotnrarás la mejor calidad y servicio'])
 @include('partials.menu-icons')
 <hr class="w-1/2 mb-5">
 @yield('content')
