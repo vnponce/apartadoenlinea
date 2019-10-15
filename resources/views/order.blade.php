@@ -89,8 +89,8 @@
             <div class="w-full bg-brand-gray mt-8 p-4">
                 <div class="flex items-center">
                     <input id="want-invoice" class="mr-2" type="checkbox">
-                    <label for="want-invoice" class="text-brand-orange text-lg">
-                        Quieres factura
+                    <label for="want-invoice" class="text-brand-orange text-lg italic font-thin">
+                        ¿Quieres factura?
                     </label>
                 </div>
                 <!-- RFC -->

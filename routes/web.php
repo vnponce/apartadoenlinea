@@ -30,3 +30,7 @@ Route::get('product', function() {
 Route::get('order', function() {
     return view('order');
 });
+
+Route::get('charola', function() {
+    return view('checkout');
+});
