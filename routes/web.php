@@ -34,3 +34,7 @@ Route::get('order', function() {
 Route::get('charola', function() {
     return view('checkout');
 });
+
+Route::get('compra', function() {
+    return view('success');
+});
