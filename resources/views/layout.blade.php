@@ -10,10 +10,11 @@
 </head>
 <body class="flex flex-col font-body relative min-h-screen text-regularText">
 @include('partials.header')
-<main class="flex flex-wrap w-full p-0">
+<main id="content-wrapper" class="flex flex-wrap w-full p-0">
     @yield('content')
 </main>
 
 @include('partials.footer')
 </body>
+@yield('scripts')
 </html>

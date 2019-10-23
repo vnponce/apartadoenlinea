@@ -20,7 +20,7 @@
                     <span class="flex-1 text-brand-orange font-thin text-right">Prec. Unit.</span>
                 </div>
                 <!-- products list -->
-                <div class="mb-6">
+                <div class="mb-8">
                     <div class="flex">
                         <div class="flex items-center flex-1 inline-block">
                             <svg class="cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500 w-3"  viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="text-sm italic text-brand-orange">No incluir gluten ni conservadores</div>
                 </div>
-                <div class="w-full text-center text-regularText text-xl">Total:</div>
+                <div class="w-full text-center text-regularText text-normal">Total:</div>
                 <div class="w-full text-center text-regularText text-2xl">$64.00</div>
             </div>
             <!-- separator -->
