@@ -11,6 +11,8 @@
 |
 */
 
+use Inertia\Inertia;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,4 +39,11 @@ Route::get('charola', function() {
 
 Route::get('compra', function() {
     return view('success');
+});
+
+// Inertia
+Route::get('inertia', function() {
+    return Inertia::render('Example', [
+        'foo' => 'bar',
+    ]);
 });
