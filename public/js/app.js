@@ -34564,6 +34564,14 @@ var map = {
 	"./Example.js": [
 		"./resources/js/Pages/Example.js",
 		0
+	],
+	"./Home": [
+		"./resources/js/Pages/Home.js",
+		1
+	],
+	"./Home.js": [
+		"./resources/js/Pages/Home.js",
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -34605,6 +34613,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 
 
+ // import Layout from '@Shared/layout';
 
 var app = document.getElementById('app');
 Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaApp"], {

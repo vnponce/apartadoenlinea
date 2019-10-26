@@ -47,3 +47,7 @@ Route::get('inertia', function() {
         'foo' => 'bar',
     ]);
 });
+
+Route::get('home', function() {
+    return Inertia::render('Home');
+});
