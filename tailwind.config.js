@@ -14,6 +14,7 @@ module.exports = {
           green: '#087a35',
           gray: colors.gray[100],
           grayOpt: '#f1f1f1',
+          icons: '#686868',
         },
         primary: '#ef7d07',
         secondaryYellow: '#fdeb1a',
