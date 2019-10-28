@@ -34572,6 +34572,22 @@ var map = {
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		1
+	],
+	"./Order": [
+		"./resources/js/Pages/Order.jsx",
+		3
+	],
+	"./Order.jsx": [
+		"./resources/js/Pages/Order.jsx",
+		3
+	],
+	"./Product": [
+		"./resources/js/Pages/Product.jsx",
+		2
+	],
+	"./Product.jsx": [
+		"./resources/js/Pages/Product.jsx",
+		2
 	]
 };
 function webpackAsyncContext(req) {

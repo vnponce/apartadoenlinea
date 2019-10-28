@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function MenuIcons() {
     return (
-        <section className="flex m-auto container">
+        <section className="flex m-auto container pt-12">
             <div className="w-full icons p-4">
                 <a href="#"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100">

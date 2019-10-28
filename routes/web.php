@@ -25,7 +25,7 @@ Route::get('home', function() {
     return view('home');
 });
 
-Route::get('product', function() {
+Route::get('product-back', function() {
     return view('product');
 });
 
@@ -33,7 +33,7 @@ Route::get('order', function() {
     return view('order');
 });
 
-Route::get('charola', function() {
+Route::get('checkout', function() {
     return view('checkout');
 });
 
@@ -50,4 +50,16 @@ Route::get('inertia', function() {
 
 Route::get('home', function() {
     return Inertia::render('Home');
+});
+
+Route::get('product', function() {
+    return Inertia::render('Product');
+});
+
+Route::get('pedido', function() {
+    return Inertia::render('Order');
+});
+
+Route::get('charola', function() {
+    return Inertia::render('Checkout');
 });
