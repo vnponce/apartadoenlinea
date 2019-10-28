@@ -9,7 +9,7 @@ function Product(props) {
         <Layout title="Producto seleccionado">
             <div className="flex flex-col mt-12 sm:mt-16 sm:flex-row">
                 {/* Back button */}
-                <InertiaLink href="/home">
+                <InertiaLink href="/">
                     <svg className="w-8 h-8 mb-4 ml-4 text-lg sm:w-16" xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
                          strokeLinejoin="round">
@@ -71,7 +71,7 @@ function Product(props) {
                             <button
                                 onClick={() => {
                                     // made animation
-                                    setTimeout(() => Inertia.visit('/home'), 2000);
+                                    setTimeout(() => Inertia.visit('/'), 2000);
                                     // Inertia.visit('/home');
                                 }}
                                 className="w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2">

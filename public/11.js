@@ -1,8 +1,8 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[11],{
 
-/***/ "./resources/js/Pages/Product.jsx":
+/***/ "./resources/js/Pages/Success.jsx":
 /*!****************************************!*\
-  !*** ./resources/js/Pages/Product.jsx ***!
+  !*** ./resources/js/Pages/Success.jsx ***!
   \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -12,95 +12,101 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    background-image:\n        linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),\n        url('/images/successWithoutBlur.jpg');\n    background-size: cover;\n"]);
 
+  _templateObject = function _templateObject() {
+    return data;
+  };
 
-
-
-
-function Product(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Producto seleccionado"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-col mt-12 sm:mt-16 sm:flex-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
-    href: "/"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    className: "w-8 h-8 mb-4 ml-4 text-lg sm:w-16",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
-    x1: "19",
-    y1: "12",
-    x2: "5",
-    y2: "12"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polyline", {
-    points: "12 19 5 12 12 5"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-col pb-16 md:flex-row md:w-11/12 md:m-0 md:mb-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full",
-    src: "/breads/Cuernito.png",
-    alt: "Banderilla mini"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-col m-5 md:flex-1 lg:ml-24 lg:mt-0"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-1 sm:text-center text-gray-700 font-medium uppercase lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "first-letter-bigger text-center lg:text-justify"
-  }, "Banderilla mini"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-2 text-lg"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$11.50"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-xs align-top"
-  }, "p/p"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-4 flex-1 text-gray-600 font-light sm:text-center lg:text-justify"
-  }, "Pan de pasta hojaldrada, con forma de una barra larga y aplanada barnizada con clara de huevo y az\xFAcar. \xA1Buen\xEDsimas para remojar en chocolate!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-1 mt-4 sm:text-center lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "uppercase font-medium text-sm first-letter-bigger text-orange-600"
-  }, "ingredientes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "font-light text-gray-600 font-light"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "- Harina de trigo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "- Agua"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "- Sal"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "hover:border-grey-900 italic"
-  }, "Si no deseas alg\xFAn ingrediente, especif\xEDcalo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    placeholder: "Ej. sin picante",
-    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "hover:border-grey-900 italic"
-  }, "Cantidad:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "number",
-    placeholder: "Cantidad",
-    value: "1",
-    className: "border border-transparent rounded w-1/2 mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: function onClick() {
-      // made animation
-      setTimeout(function () {
-        return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit('/home');
-      }, 2000); // Inertia.visit('/home');
-    },
-    className: "w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2"
-  }, "Poner en la charola"))))));
+  return data;
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Product);
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var SuccessImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+
+function Success(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    title: "Gracias"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "mt-24 w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "block text-brand-orange text-4xl text-center font-title font-semibold"
+  }, "GRACIAS POR TU COMPRA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "block p-2 text-gray-500 text-base text-center max-w-xl m-auto"
+  }, "\xA1Tu pan esta en el horno!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SuccessImage, {
+    className: "w-full h-64 bg-cover"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "flex w-full px-4 pb-24 bg-brand-gray justify-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full md:w-1/2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full mt-5 uppercase text-brand-orange text-center text-sm tracking-wider font-bold"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-lg"
+  }, "r"), "esumen de compra:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "flex w-full mt-4 flex-col items-center md:flex-row md:justify-between"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-thin"
+  }, "Nombre:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold mr-1"
+  }, "Santiago Chavez")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-thin"
+  }, "N\xFAmero de pedido:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold mr-1"
+  }, "00001"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-thin"
+  }, "Recoger en:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold mr-1"
+  }, "Zaragoza")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-thin"
+  }, "D\xEDa:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold mr-1"
+  }, "13 de mayo el 2019")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-thin"
+  }, "Hora:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold mr-1"
+  }, "13:00 hrs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full mt-4 mb-5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+    className: "w-100"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full flex flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex content-between"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flex-1 text-brand-orange font-thin text-left"
+  }, "Producto"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flex-1 text-brand-orange font-thin text-center"
+  }, "Cant."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flex-1 text-brand-orange font-thin text-right"
+  }, "Prec. Unit.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mb-8"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex items-center flex-1 inline-block"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "ml-0 text-lg"
+  }, "Producto")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-1 text-center items-center justify-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "1")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-1 items-center flex-row-reverse"
+  }, "$ 4.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-sm italic text-brand-orange"
+  }, "No incluir gluten ni conservadores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full text-center text-regularText text-normal"
+  }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full text-center text-brand-orange text-2xl"
+  }, "$64.00")))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Success);
 
 /***/ }),
 
@@ -143,9 +149,68 @@ function Layout(_ref) {
   !*** ./resources/js/components/Autocomplete.jsx ***!
   \**************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/vnponce/Projects/laespecial/resources/js/components/Autocomplete.jsx: Unterminated regular expression (15:11)\n\n\u001b[0m \u001b[90m 13 | \u001b[39m\u001b[90m        }),\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[90m        */\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 | \u001b[39m         \u001b[33m*\u001b[39m\u001b[33m/\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m        control\u001b[33m:\u001b[39m () \u001b[33m=>\u001b[39m ({\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m            \u001b[90m// none of react-select's styles are passed to <Control />\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m            \u001b[90m// width: 200,\u001b[39m\u001b[0m\n    at Object.raise (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.readRegexp (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:7036:14)\n    at Object.readToken_slash (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6680:12)\n    at Object.getTokenFromCode (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6958:14)\n    at Object.getTokenFromCode (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:3633:18)\n    at Object.nextToken (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6525:12)\n    at Object.next (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6465:10)\n    at Object.eat (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6470:12)\n    at Object.parseObjectMember (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9216:26)\n    at Object.parseObj (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9154:25)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8784:28)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseVar (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10480:26)\n    at Object.parseVarStatement (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10299:10)\n    at Object.parseStatementContent (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9896:21)\n    at Object.parseStatement (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Object.parseBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Object.parseBlock (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10376:10)\n    at Object.parseFunctionBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9424:24)\n    at Object.parseFunctionBodyAndFinish (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9394:10)\n    at /Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10535:12\n    at Object.withTopicForbiddingContext (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9702:14)\n    at Object.parseFunction (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10534:10)\n    at Object.parseExportDefaultExpression (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10997:19)\n    at Object.parseExport (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10905:31)\n    at Object.parseStatementContent (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9933:27)\n    at Object.parseStatement (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Object.parseBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Object.parseTopLevel (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9758:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Autocomplete; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function Autocomplete() {
+  var customStyles = {
+    option: function option(provided, state) {
+      return _objectSpread({}, provided, {
+        borderBottom: '1px dotted pink',
+        color: state.isSelected ? 'red' : 'blue',
+        padding: 20 // backgroundColor: 'black',
+
+      });
+    },
+    control: function control() {
+      return {
+        // none of react-select's styles are passed to <Control />
+        // width: 200,
+        // backgroundColor: 'black',
+        display: 'flex' // borderBottom: '1px solid grey',
+
+      };
+    },
+    singleValue: function singleValue(provided, state) {
+      var opacity = state.isDisabled ? 0.5 : 1;
+      var transition = 'opacity 300ms';
+      return _objectSpread({}, provided, {
+        opacity: opacity,
+        transition: transition
+      });
+    }
+  };
+  var options = [{
+    value: 'chocolate',
+    label: 'Chocolate'
+  }, {
+    value: 'strawberry',
+    label: 'Strawberry'
+  }, {
+    value: 'vanilla',
+    label: 'Vanilla'
+  }];
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: "mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white",
+    options: options,
+    styles: customStyles,
+    isSearchable: true
+  });
+}
+;
 
 /***/ }),
 
@@ -194,10 +259,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Autocomplete__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Autocomplete */ "./resources/js/components/Autocomplete.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
 function Header() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      showSearch = _useState2[0],
+      setShowSearch = _useState2[1];
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "md:px-12 bg-brand-orange"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -274,7 +352,19 @@ function Header() {
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 flex justify-end lg:items-end"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Autocomplete__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+  }, showSearch && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Autocomplete__WEBPACK_IMPORTED_MODULE_2__["default"], null), !showSearch && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    onClick: function onClick() {
+      return setShowSearch(true);
+    },
+    className: "h-4 mr-3 fill-current stroke-current text-white cursor-pointer",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 100 100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Empty_Tray"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M71.22,62.86H66.67L65,61.43a37.85,37.85,0,0,0,8.83-24.29A36.89,36.89,0,1,0,37,74.27a38.3,38.3,0,0,0,24.22-8.85L63,66.85v4.58L91.46,100,100,91.43ZM37,62.86a25.7,25.7,0,1,1,25.65-25.7A25.58,25.58,0,0,1,37,62.86Z"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/pedido"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     className: "h-4 fill-current stroke-current text-white",

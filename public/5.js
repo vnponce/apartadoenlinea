@@ -1405,6 +1405,17 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-select/src/Select.js":
+/*!*************************************************!*\
+  !*** ./node_modules/react-select/src/Select.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (3:32)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| // @flow\n| \n> import React, { Component, type ElementRef, type Node } from 'react';\n| import memoizeOne from 'memoize-one';\n| import { MenuPlacer } from './components/Menu';");
+
+/***/ }),
+
 /***/ "./node_modules/styled-components/dist/styled-components.browser.esm.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/styled-components/dist/styled-components.browser.esm.js ***!
