@@ -1,26 +1,23 @@
 import React from 'react';
 import Layout from '../Shared/Layout';
-import HeaderDescription from "../components/HeaderDescription";
-import {InertiaLink} from "@inertiajs/inertia-react";
+import Styled from 'styled-components';
 
+const SuccessImage = Styled.div`
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
+        url('/images/successWithoutBlur.jpg');
+    background-size: cover;
+`;
 
 function Success(props) {
     return (
         <Layout title="Gracias">
-            <style>
-            .success-image {
-                background-image:
-                linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-                url('/images/successWithoutBlur.jpg');
-                background-size: cover;
-            }
-            </style>
             <section className="mt-24 w-full">
                 <span className="block text-brand-orange text-4xl text-center font-title font-semibold">GRACIAS POR TU COMPRA</span>
                 <span className="block p-2 text-gray-500 text-base text-center max-w-xl m-auto">¡Tu pan esta en el horno!</span>
             </section>
             {/* image */}
-            <div className="w-full h-64 success-image bg-cover"></div>
+            <SuccessImage className="w-full h-64 bg-cover" />
             <section className="flex w-full px-4 pb-24 bg-brand-gray justify-center">
                 <div className="w-full md:w-1/2">
                     {/* Resumen de compra */}
@@ -96,4 +93,4 @@ function Success(props) {
     );
 }
 
-export default Checkout;
+export default Success;

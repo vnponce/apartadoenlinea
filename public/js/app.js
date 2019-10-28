@@ -34559,63 +34559,53 @@ if (false) {} else {
 var map = {
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
-		9,
 		4
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
-		9,
 		4
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
-		9,
 		0
 	],
 	"./Example.js": [
 		"./resources/js/Pages/Example.js",
-		9,
 		0
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
-		9,
 		1
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
-		9,
 		1
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
-		9,
 		3
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
-		9,
 		3
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
-		9,
 		2
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
-		9,
 		2
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
-		7,
-		5
+		5,
+		6
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
-		7,
-		5
+		5,
+		6
 	]
 };
 function webpackAsyncContext(req) {
@@ -34628,8 +34618,8 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[2]).then(function() {
-		return __webpack_require__.t(id, ids[1])
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(id);
 	});
 }
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {

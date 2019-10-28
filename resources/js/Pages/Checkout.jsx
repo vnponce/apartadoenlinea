@@ -61,7 +61,7 @@ function Checkout(props) {
                                 </label>
                         </div>
                         {/* Paypal button or levantar pedido si es usuario */}
-                        <InertiaLink href="/success" className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
+                        <InertiaLink href="/listo" className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
                             <span>Paypal</span>
                         </InertiaLink>
                     </div>

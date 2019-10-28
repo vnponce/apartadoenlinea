@@ -5,9 +5,9 @@ export default function Header() {
     return (
         <header className="md:px-12 bg-brand-orange">
             <div className="flex p-5">
-                <div className="flex-2 m-auto h-20 hidden lg:block">
+                <InertiaLink href="/" className="flex-2 m-auto h-20 hidden lg:block">
                     <img src="/svg/Logo-Full.svg" className="my-auto h-full" alt="" />
-                </div>
+                </InertiaLink>
                 <div className="flex flex-row lg:flex-col flex-1">
                     <nav className="flex-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -18,15 +18,16 @@ export default function Header() {
                             <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
                         <ul className="hidden lg:flex items-center justify-end text-white">
-                            <li className="md:ml-5"><InertiaLink href="/home">Inicio</InertiaLink></li>
-                            <li className="md:ml-5"><a className="block md:inline" href="#">Pan de dulce</a></li>
-                            <li className="md:ml-5"><a className="block md:inline" href="#">Pan de sal</a></li>
-                            <li className="md:ml-5"><a className="block md:inline" href="#">Bocadillos</a></li>
-                            <li className="md:ml-5"><a className="block md:inline" href="#">Repostería</a></li>
-                            <li className="md:ml-5"><a className="block md:inline" href="#">Favoritos</a></li>
+                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/pan-dulce">Pan de dulce</InertiaLink></li>
+                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/pan-sal">Pan de sal</InertiaLink></li>
+                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/bocadillos">Bocadillos</InertiaLink></li>
+                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/reposteria">Repostería</InertiaLink></li>
+                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/favoritos">Favoritos</InertiaLink></li>
                         </ul>
                     </nav>
-                    <img src="Logo-Short.svg" className="lg:hidden pt-2 h-20 flex-1 flex-grow-0 m-auto" alt="" />
+                    <InertiaLink href="/">
+                        <img src="Logo-Short.svg" className="lg:hidden pt-2 h-20 flex-1 flex-grow-0 m-auto" alt="" />
+                    </InertiaLink>
                     <div className="flex-1 flex justify-end lg:items-end">
                             <svg className="h-4 mr-3 fill-current stroke-current text-white" fill="none"
                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">

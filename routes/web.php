@@ -12,10 +12,11 @@
 */
 
 use Inertia\Inertia;
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
 
 Route::get('front', function() {
     return view('front');
@@ -48,7 +49,7 @@ Route::get('inertia', function() {
     ]);
 });
 
-Route::get('home', function() {
+Route::get('/', function() {
     return Inertia::render('Home');
 });
 
