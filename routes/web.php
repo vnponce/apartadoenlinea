@@ -63,3 +63,7 @@ Route::get('pedido', function() {
 Route::get('charola', function() {
     return Inertia::render('Checkout');
 });
+
+Route::get('listo', function() {
+    return Inertia::render('Success');
+});

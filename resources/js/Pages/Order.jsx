@@ -6,7 +6,7 @@ import HeaderDescription from "../components/HeaderDescription";
 import Input from "../components/Input";
 
 
-function Product(props) {
+function Order(props) {
     return (
         <Layout title="Producto seleccionado">
             <HeaderDescription title="PEDIDOS" description="Por favor recuerda llenar el formulario para indicarnos en dónde recogeras tu pedido."/>
@@ -84,4 +84,4 @@ function Product(props) {
     );
 }
 
-export default Product;
+export default Order;

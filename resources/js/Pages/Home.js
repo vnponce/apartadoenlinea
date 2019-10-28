@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../Shared/Layout';
-import HeaderDescription from "../components/HeaderDescription";
 import MenuIcons from "../components/MenuIcons";
 import BreadCard from "../components/BreadCard";
 
