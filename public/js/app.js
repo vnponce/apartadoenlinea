@@ -34560,12 +34560,14 @@ var map = {
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		1,
-		9
+		9,
+		3
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		1,
-		9
+		9,
+		3
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34588,12 +34590,14 @@ var map = {
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		1,
-		8
+		9,
+		2
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		1,
-		8
+		9,
+		2
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
