@@ -87,6 +87,7 @@ var addToCard = function addToCard(cb) {
 
 function Product(props) {
   var product = props.product;
+  console.log('produtc => ', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('visible'),
       _useState2 = _slicedToArray(_useState, 2),
@@ -138,7 +139,7 @@ function Product(props) {
     className: "first-letter-bigger text-center lg:text-justify"
   }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-2 text-lg"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.formatPrice), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-xs align-top"
   }, "p/p"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-4 flex-1 text-gray-600 font-light sm:text-center lg:text-justify"

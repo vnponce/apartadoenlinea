@@ -73,6 +73,7 @@ const addToCard = cb => {
 
 function Product(props) {
     const { product } = props;
+    console.log('produtc => ', product);
     const [animate, setAnimate] = useState('visible');
     const [disabled, setDisabled] = useState(false);
     return (
@@ -103,7 +104,7 @@ function Product(props) {
                             <div className="first-letter-bigger text-center lg:text-justify">{product.name}</div>
                             {/* Price */}
                             <div className="mt-2 text-lg">
-                                <span>${product.price}</span>
+                                <span>{product.formatPrice}</span>
                                 <span className="text-xs align-top">p/p</span>
                             </div>
                         </div>

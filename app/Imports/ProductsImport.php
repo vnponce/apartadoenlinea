@@ -29,7 +29,7 @@ class ProductsImport implements ToModel
             'ingredients' => $row[4] ?? '',
             'available_time' => $row[5],
             'available' => null,
-            'price' => $row[6] ?? 0,
+            'price' => $row[6] ? $row[6] * 100 : 0,
         ]);
     }
 }

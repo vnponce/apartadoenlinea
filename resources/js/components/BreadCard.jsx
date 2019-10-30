@@ -15,7 +15,7 @@ export default function BreadCard(props) {
                 <div className="flex-1 sm:text-center text-gray-600 font-medium uppercase">
                     <div className="first-letter-bigger">{product.name}</div>
                     <div className="text-lg">
-                        <span>${product.price}</span>
+                        <span>{product.formatPrice}</span>
                         <span className="text-xs align-top">p/p</span>
                     </div>
                 </div>

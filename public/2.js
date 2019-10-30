@@ -212,7 +212,7 @@ function BreadCard(props) {
     className: "first-letter-bigger"
   }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-lg"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.formatPrice), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-xs align-top"
   }, "p/p"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 truncate text-gray-500 text-base"
