@@ -241,7 +241,7 @@ function Footer() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "flex-1 m-auto text-center text-white text-xs"
   }, "Pol\xEDtica de Privacidad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "Logo-Short.svg",
+    src: "/Logo-Short.svg",
     className: "h-10 flex-1 flex-grow-0 m-auto",
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

@@ -48,20 +48,24 @@ var addToCard = function addToCard(cb) {
   console.log('cart =>', cart);
 
   if (imgtodrag) {
-    var imgclone = imgtodrag.clone().offset({// top: imgtodrag.offset().top,
-      // left: imgtodrag.offset().left,
+    var imgclone = imgtodrag.clone().offset({
+      top: imgtodrag.offset().top,
+      left: imgtodrag.offset().left
     }).css({
       opacity: '0.7',
       position: 'absolute',
+      height: 'initial',
       // height: '150px',
       // width: '150px',
+      width: 'initial',
       'z-index': '100'
     }).appendTo($('body')).animate({
       top: cart.offset().top + 10,
       left: cart.offset().left + 15,
       width: 75,
       height: 75
-    }, 1000, 'easeInOutExpo');
+    }, 1000, // 1000000,
+    'easeInOutExpo');
     setTimeout(function () {
       cart.effect('bounce', {
         times: 2
@@ -88,6 +92,11 @@ function Product(props) {
       _useState2 = _slicedToArray(_useState, 2),
       animate = _useState2[0],
       setAnimate = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      disabled = _useState4[0],
+      setDisabled = _useState4[1];
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: product.name
@@ -163,14 +172,17 @@ function Product(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       addToCard();
-      setAnimate('hidden'); // made animation
+      setAnimate('hidden');
+      setDisabled(true); // made animation
       // setTimeout(() => Inertia.visit('/'), 2000);
 
       setTimeout(function () {
-        return setAnimate('visible');
+        setAnimate('visible');
+        setDisabled(false);
       }, 2000); // Inertia.visit('/home');
     },
-    className: "w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2"
+    className: "w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2",
+    disabled: disabled
   }, "Poner en la charola"))))));
 }
 
@@ -331,7 +343,7 @@ function Footer() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "flex-1 m-auto text-center text-white text-xs"
   }, "Pol\xEDtica de Privacidad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "Logo-Short.svg",
+    src: "/Logo-Short.svg",
     className: "h-10 flex-1 flex-grow-0 m-auto",
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

@@ -19,14 +19,16 @@ const addToCard = cb => {
         const imgclone = imgtodrag
             .clone()
             .offset({
-                // top: imgtodrag.offset().top,
-                // left: imgtodrag.offset().left,
+                top: imgtodrag.offset().top,
+                left: imgtodrag.offset().left,
             })
             .css({
                 opacity: '0.7',
                 position: 'absolute',
+                height: 'initial',
                 // height: '150px',
                 // width: '150px',
+                width: 'initial',
                 'z-index': '100',
             })
             .appendTo($('body'))
@@ -38,6 +40,7 @@ const addToCard = cb => {
                     height: 75,
                 },
                 1000,
+                // 1000000,
                 'easeInOutExpo'
             );
 
@@ -71,6 +74,7 @@ const addToCard = cb => {
 function Product(props) {
     const { product } = props;
     const [animate, setAnimate] = useState('visible');
+    const [disabled, setDisabled] = useState(false);
     return (
         <Layout title={product.name}>
             <div className="flex flex-col mt-12 sm:mt-16 sm:flex-row">
@@ -137,12 +141,18 @@ function Product(props) {
                                 onClick={() => {
                                     addToCard();
                                     setAnimate('hidden');
+                                    setDisabled(true);
                                     // made animation
                                     // setTimeout(() => Inertia.visit('/'), 2000);
-                                    setTimeout(() => setAnimate('visible'), 2000);
+                                    setTimeout(() => {
+                                        setAnimate('visible');
+                                        setDisabled(false);
+                                    }, 2000);
                                     // Inertia.visit('/home');
                                 }}
-                                className="w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2">
+                                className="w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2"
+                                disabled={disabled}
+                            >
                                 Poner en la charola
                             </button>
                         </div>
