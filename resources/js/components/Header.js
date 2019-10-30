@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { InertiaLink } from "@inertiajs/inertia-react";
+import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 import Autocomplete from "./Autocomplete";
 
 export default function Header() {
     const [showSearch, setShowSearch] = useState(false);
+    const { categories } = usePage();
+    console.log('categories =>', categories);
     return (
         <header className="md:px-12 bg-brand-orange">
             <div className="flex p-5">
@@ -20,11 +22,18 @@ export default function Header() {
                             <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
                         <ul className="hidden lg:flex items-center justify-end text-white">
+                            {categories.map(category => (
+                                <li className="md:ml-5">
+                                    <InertiaLink className="block md:inline" href={`/${category.id}`}>{category.name}</InertiaLink>
+                                </li>
+                            ))}
+                            {/*
                             <li className="md:ml-5"><InertiaLink className="block md:inline" href="/pan-dulce">Pan de dulce</InertiaLink></li>
                             <li className="md:ml-5"><InertiaLink className="block md:inline" href="/pan-sal">Pan de sal</InertiaLink></li>
                             <li className="md:ml-5"><InertiaLink className="block md:inline" href="/bocadillos">Bocadillos</InertiaLink></li>
                             <li className="md:ml-5"><InertiaLink className="block md:inline" href="/reposteria">Repostería</InertiaLink></li>
                             <li className="md:ml-5"><InertiaLink className="block md:inline" href="/favoritos">Favoritos</InertiaLink></li>
+                            */}
                         </ul>
                     </nav>
                     <InertiaLink href="/">

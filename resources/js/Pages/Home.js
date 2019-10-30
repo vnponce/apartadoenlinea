@@ -12,7 +12,6 @@ function Home(props) {
             <hr className="w-1/2 mb-5" />
             <main className="flex flex-wrap w-full p-0 pb-16 sm:px-2">
                 {products.map(product => {
-                    console.log('product =>', product);
                     return <BreadCard product={product}/>
                 })}
             </main>
