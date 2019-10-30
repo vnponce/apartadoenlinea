@@ -1,11 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../Shared/Layout';
 import {InertiaLink} from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
+import posed from 'react-pose';
 
+
+const Box = posed.div({
+    visible: { opacity: 1, transform: 'scale(1)', },
+    hidden: { opacity: 0, transform: 'scale(0.5)', }
+});
+
+const addToCard = cb => {
+    const cart = $('#charola');
+    const imgtodrag = $('#main-image');
+    console.log('imtoDrag =>', imgtodrag);
+    console.log('cart =>', cart);
+    if (imgtodrag) {
+        const imgclone = imgtodrag
+            .clone()
+            .offset({
+                // top: imgtodrag.offset().top,
+                // left: imgtodrag.offset().left,
+            })
+            .css({
+                opacity: '0.7',
+                position: 'absolute',
+                // height: '150px',
+                // width: '150px',
+                'z-index': '100',
+            })
+            .appendTo($('body'))
+            .animate(
+                {
+                    top: cart.offset().top + 10,
+                    left: cart.offset().left + 15,
+                    width: 75,
+                    height: 75,
+                },
+                1000,
+                'easeInOutExpo'
+            );
+
+        setTimeout(() => {
+            cart.effect(
+                'bounce',
+                {
+                    times: 2,
+                },
+                600
+            );
+        }, 1500);
+
+        imgclone.animate(
+            {
+                width: 0,
+                height: 0,
+            },
+            function() {
+                $(this).detach();
+                /*
+                cb().then(() => {
+                    Router.back();
+                });
+                */
+            }
+        );
+    }
+};
 
 function Product(props) {
     const { product } = props;
+    const [animate, setAnimate] = useState('visible');
     return (
         <Layout title={product.name}>
             <div className="flex flex-col mt-12 sm:mt-16 sm:flex-row">
@@ -21,11 +86,11 @@ function Product(props) {
                 {/* Product */}
                 <div className="flex flex-col pb-16 md:flex-row md:w-11/12 md:m-0 md:mb-6">
                     {/* Image */}
-                    <div className="bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
+                    <Box pose={animate} className="bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
                         <img
                             className="h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full"
-                            src="/breads/Cuernito.png" alt={product.name} />
-                    </div>
+                            src="/breads/Cuernito.png" alt={product.name} id="main-image"/>
+                    </Box>
                     {/* Information */}
                     <div className="flex flex-col m-5 md:flex-1 lg:ml-24 lg:mt-0">
                         {/* Name | Price */}
@@ -70,8 +135,11 @@ function Product(props) {
                             className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify">
                             <button
                                 onClick={() => {
+                                    addToCard();
+                                    setAnimate('hidden');
                                     // made animation
-                                    setTimeout(() => Inertia.visit('/'), 2000);
+                                    // setTimeout(() => Inertia.visit('/'), 2000);
+                                    setTimeout(() => setAnimate('visible'), 2000);
                                     // Inertia.visit('/home');
                                 }}
                                 className="w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2">

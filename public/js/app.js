@@ -34598,12 +34598,14 @@ var map = {
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		4
+		4,
+		6
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		4
+		4,
+		6
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",

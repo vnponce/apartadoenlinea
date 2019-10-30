@@ -381,7 +381,8 @@ function Header() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M71.22,62.86H66.67L65,61.43a37.85,37.85,0,0,0,8.83-24.29A36.89,36.89,0,1,0,37,74.27a38.3,38.3,0,0,0,24.22-8.85L63,66.85v4.58L91.46,100,100,91.43ZM37,62.86a25.7,25.7,0,1,1,25.65-25.7A25.58,25.58,0,0,1,37,62.86Z"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "/pedido"
+    href: "/pedido",
+    id: "charola"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     className: "h-4 fill-current stroke-current text-white",
     xmlns: "http://www.w3.org/2000/svg",

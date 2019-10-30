@@ -1,116 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
 
-/***/ "./resources/js/Pages/Checkout.jsx":
-/*!*****************************************!*\
-  !*** ./resources/js/Pages/Checkout.jsx ***!
-  \*****************************************/
+/***/ "./resources/js/Pages/Product.jsx":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Product.jsx ***!
+  \****************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var _components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/HeaderDescription */ "./resources/js/components/HeaderDescription.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-
-function Checkout(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Mi charola"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "MI CHAROLA",
-    description: "Esto tiene tu charola"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex justify-center w-full pb-24 px-8 content-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "md:w-1/2"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full mt-8 px-2 mb-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-    className: "w-100"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full flex flex-col"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex content-between"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-left"
-  }, "Producto"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-center"
-  }, "Cant."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-right"
-  }, "Prec. Unit.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mb-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center flex-1 inline-block"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    className: "cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500 w-3",
-    viewBox: "0 0 20 20",
-    version: "1.1",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
-    points: "10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "ml-0 text-lg"
-  }, "Producto")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 text-center items-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    className: "w-5 cursor-pointer fill-current text-brand-orange",
-    xmlns: "http://www.w3.org/2000/svg",
-    version: "1.1",
-    x: "0px",
-    y: "0px",
-    viewBox: "0 0 20 20",
-    "enable-background": "new 0 0 20 20"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M16,10c0,0.553-0.048,1-0.601,1H4.601C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H15.4  C15.952,9,16,9.447,16,10z"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 cursor-pointer "
-  }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    className: "w-5 cursor-pointer fill-current text-brand-orange",
-    xmlns: "http://www.w3.org/2000/svg",
-    version: "1.1",
-    x: "0px",
-    y: "0px",
-    viewBox: "0 0 20 20",
-    "enable-background": "new 0 0 20 20"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601  C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399  C15.952,9,16,9.447,16,10z"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 items-center flex-row-reverse"
-  }, "$ 4.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-sm italic text-brand-orange"
-  }, "No incluir gluten ni conservadores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full text-center text-regularText text-normal"
-  }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full text-center text-regularText text-2xl"
-  }, "$64.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full mt-2 px-2 mb-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-    className: "w-100"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center justify-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "checkout-agree",
-    className: "mr-2",
-    type: "checkbox"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    "for": "checkout-agree",
-    className: "text-center text-gray-500 text-base italic"
-  }, "\xBFEl contenido de tu compra es el correcto?")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
-    href: "/listo",
-    className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Paypal"))))));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Checkout);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/vnponce/Projects/laespecial/resources/js/Pages/Product.jsx: Unterminated string constant (10:49)\n\n\u001b[0m \u001b[90m  8 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mBox\u001b[39m \u001b[33m=\u001b[39m posed\u001b[33m.\u001b[39mdiv({\u001b[0m\n\u001b[0m \u001b[90m  9 | \u001b[39m    visible\u001b[33m:\u001b[39m { opacity\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m transform\u001b[33m:\u001b[39m \u001b[32m'scale(1)'\u001b[39m\u001b[33m,\u001b[39m }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 | \u001b[39m    hidden\u001b[33m:\u001b[39m { opacity\u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m,\u001b[39m transform\u001b[33m:\u001b[39m \u001b[32m'scale(0.5)'\u001b[39m\u001b[32m', }\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m\u001b[36mconst\u001b[39m addToCard \u001b[33m=\u001b[39m cb \u001b[33m=>\u001b[39m {\u001b[0m\n    at Object.raise (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.readString (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:7275:14)\n    at Object.getTokenFromCode (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6954:14)\n    at Object.getTokenFromCode (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:3633:18)\n    at Object.nextToken (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6525:12)\n    at Object.next (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6465:10)\n    at Object.parseLiteral (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8928:10)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8750:21)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseObjectProperty (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9281:101)\n    at Object.parseObjPropValue (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9306:101)\n    at Object.parseObjectMember (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9230:10)\n    at Object.parseObj (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9154:25)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8784:28)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseObjectProperty (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9281:101)\n    at Object.parseObjPropValue (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9306:101)\n    at Object.parseObjectMember (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9230:10)\n    at Object.parseObj (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9154:25)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8784:28)\n    at Object.parseExprAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:8187:21)");
 
 /***/ })
 

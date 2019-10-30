@@ -52,7 +52,7 @@ export default function Header() {
                                 </g>
                             </svg>
                         }
-                        <InertiaLink href="/pedido">
+                        <InertiaLink href="/pedido" id="charola">
                             <svg className="h-4 fill-current stroke-current text-white"
                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44.83">
                                 <g id="Empty_Tray">
