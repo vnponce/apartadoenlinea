@@ -34560,12 +34560,12 @@ var map = {
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		9
+		5
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		9
+		5
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34588,36 +34588,36 @@ var map = {
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		1
+		3
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		1
+		3
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		4,
+		1,
 		6
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		4,
+		1,
 		6
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		3,
-		5
+		4,
+		7
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		3,
-		5
+		4,
+		7
 	]
 };
 function webpackAsyncContext(req) {
