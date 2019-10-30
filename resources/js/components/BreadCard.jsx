@@ -1,24 +1,25 @@
 import React from 'react';
 import {InertiaLink} from "@inertiajs/inertia-react";
 
-export default function BreadCard() {
+export default function BreadCard(props) {
+    if (!props.product ) {
+        return false;
+    }
+    const { product } = props;
     return (
         <div className="container bread-card">
-            <InertiaLink href="/product" className="flex-1 flex cursor-pointer sm:bg-brand-gray">
+            <InertiaLink href={`/pan/${product.id}`} className="flex-1 flex cursor-pointer sm:bg-brand-gray">
                 <img className="m-auto w-full object-cover align-middle sm:h-64" src="/breads/Cuernito.png" alt="Banderilla mini" />
             </InertiaLink>
             <InertiaLink href="/product" className="flex-1 flex flex-col h-32 overflow-hidden cursor-pointer sm:mt-4 sm:h-24">
                 <div className="flex-1 sm:text-center text-gray-600 font-medium uppercase">
-                    <div className="first-letter-bigger">Banderilla mini</div>
+                    <div className="first-letter-bigger">{product.name}</div>
                     <div className="text-lg">
-                        <span>$11.50</span>
+                        <span>${product.price}</span>
                         <span className="text-xs align-top">p/p</span>
                     </div>
                 </div>
-                <div className="flex-1 truncate text-gray-500 text-base">Pan de pasta hojaldrada, con forma de
-                    una barra larga y aplanada barnizada con clara de huevo y azúcar. ¡Buenísimas para remojar
-                    en chocolate!
-                </div>
+                <div className="flex-1 truncate text-gray-500 text-base">{product.description}</div>
             </InertiaLink>
         </div>
     )

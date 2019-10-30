@@ -49,13 +49,9 @@ Route::get('inertia', function() {
     ]);
 });
 
-Route::get('/', function() {
-    return Inertia::render('Home');
-});
+Route::get('/', 'ProductController@index');
 
-Route::get('product', function() {
-    return Inertia::render('Product');
-});
+Route::get('pan/{product}', 'ProductController@show');
 
 Route::get('pedido', function() {
     return Inertia::render('Order');
