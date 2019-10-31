@@ -130,11 +130,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Layout(_ref) {
   var title = _ref.title,
       children = _ref.children;
+
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      flash = _usePage.flash;
+
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     document.title = title;
+    console.log('flash =>', flash);
   }, [title]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
     id: "content-wrapper",

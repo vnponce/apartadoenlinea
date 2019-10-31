@@ -57,10 +57,12 @@ Route::get('pedido', function() {
     return Inertia::render('Order');
 });
 
-Route::get('charola', function() {
-    return Inertia::render('Checkout');
-});
+Route::get('charola', 'CartController@index');
 
 Route::get('listo', function() {
     return Inertia::render('Success');
 });
+
+// Card
+Route::post('/cart', 'CartController@store');
+Route::get('/empty', 'CartController@empty');

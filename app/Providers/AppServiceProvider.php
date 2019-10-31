@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Category;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Session\Session;
 use Inertia\Inertia;
 
 class AppServiceProvider extends ServiceProvider
@@ -46,7 +48,18 @@ class AppServiceProvider extends ServiceProvider
             'categories' => function () {
                 $categories = Category::all();
                 return $categories;
-            }
+            },
+            'flash' => [
+                'message' => session()->get('message'),
+            ],
+            'cart' => function () {
+                return [
+                    'content' => Cart::content(),
+                ];
+            },
         ]);
+        Inertia::share('subtotal', function() {
+            return Cart::subtotal();
+        });
     }
 }

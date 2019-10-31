@@ -10,72 +10,96 @@ const Box = posed.div({
     hidden: { opacity: 0, transform: 'scale(0.5)', }
 });
 
-const addToCard = cb => {
-    const cart = $('#charola');
-    const imgtodrag = $('#main-image');
-    console.log('imtoDrag =>', imgtodrag);
-    console.log('cart =>', cart);
-    if (imgtodrag) {
-        const imgclone = imgtodrag
-            .clone()
-            .offset({
-                top: imgtodrag.offset().top,
-                left: imgtodrag.offset().left,
-            })
-            .css({
-                opacity: '0.7',
-                position: 'absolute',
-                height: 'initial',
-                // height: '150px',
-                // width: '150px',
-                width: 'initial',
-                'z-index': '100',
-            })
-            .appendTo($('body'))
-            .animate(
-                {
-                    top: cart.offset().top + 10,
-                    left: cart.offset().left + 15,
-                    width: 75,
-                    height: 75,
-                },
-                1000,
-                // 1000000,
-                'easeInOutExpo'
-            );
-
-        setTimeout(() => {
-            cart.effect(
-                'bounce',
-                {
-                    times: 2,
-                },
-                600
-            );
-        }, 1500);
-
-        imgclone.animate(
-            {
-                width: 0,
-                height: 0,
-            },
-            function() {
-                $(this).detach();
-                /*
-                cb().then(() => {
-                    Router.back();
-                });
-                */
-            }
-        );
-    }
-};
-
 function Product(props) {
     const { product } = props;
     console.log('produtc => ', product);
     const [animate, setAnimate] = useState('visible');
     const [disabled, setDisabled] = useState(false);
+    const [productId] = useState(product.id);
+    const [comment, setComment] = useState('');
+    const [quantity, setQuantity] = useState(1);
+
+    const addToCart = event => {
+        // event.preventDefault();
+        Inertia.post('/cart', {
+            product_id: productId,
+            comment,
+            quantity,
+        })
+        /*
+        addToCardAnimation();
+        setAnimate('hidden');
+        setDisabled(true);
+        // made animation
+        // setTimeout(() => Inertia.visit('/'), 2000);
+        setTimeout(() => {
+            setAnimate('visible');
+            setDisabled(false);
+        }, 2000);
+        // Inertia.visit('/home');
+         */
+    }
+    const addToCardAnimation = cb => {
+        const cart = $('#charola');
+        const imgtodrag = $('#main-image');
+        console.log('imtoDrag =>', imgtodrag);
+        console.log('cart =>', cart);
+        if (imgtodrag) {
+            const imgclone = imgtodrag
+                .clone()
+                .offset({
+                    top: imgtodrag.offset().top,
+                    left: imgtodrag.offset().left,
+                })
+                .css({
+                    opacity: '0.7',
+                    position: 'absolute',
+                    height: 'initial',
+                    // height: '150px',
+                    // width: '150px',
+                    width: 'initial',
+                    'z-index': '100',
+                })
+                .appendTo($('body'))
+                .animate(
+                    {
+                        top: cart.offset().top + 10,
+                        left: cart.offset().left + 15,
+                        width: 75,
+                        height: 75,
+                    },
+                    1000,
+                    // 1000000,
+                    'easeInOutExpo'
+                );
+
+            setTimeout(() => {
+                cart.effect(
+                    'bounce',
+                    {
+                        times: 2,
+                    },
+                    600
+                );
+            }, 1500);
+
+            imgclone.animate(
+                {
+                    width: 0,
+                    height: 0,
+                },
+                function() {
+                    $(this).detach();
+                    /*
+                    cb().then(() => {
+                        Router.back();
+                    });
+                    */
+                }
+            );
+        }
+    };
+
     return (
         <Layout title={product.name}>
             <div className="flex flex-col mt-12 sm:mt-16 sm:flex-row">
@@ -125,32 +149,21 @@ function Product(props) {
                         <div className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify">
                             <p className="hover:border-grey-900 italic">Si no deseas algún ingrediente,
                                 especifícalo:</p>
-                            <input type="text" placeholder="Ej. sin picante"
+                            <input value={comment} type="text" placeholder="Ej. sin picante" onChange={e => setComment(e.target.value)}
                                    className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto" />
                         </div>
                         {/* Qty. */}
                         <div
                             className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0">
                             <p className="hover:border-grey-900 italic">Cantidad:</p>
-                            <input type="number" placeholder="Cantidad" value="1"
+                            <input name="quantity" type="number" placeholder="Cantidad" value={quantity} onChange={e => setQuantity(e.target.value)}
                                    className="border border-transparent rounded w-1/2 mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1" />
                         </div>
                         {/* Button (Poner en la charola). */}
                         <div
                             className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify">
                             <button
-                                onClick={() => {
-                                    addToCard();
-                                    setAnimate('hidden');
-                                    setDisabled(true);
-                                    // made animation
-                                    // setTimeout(() => Inertia.visit('/'), 2000);
-                                    setTimeout(() => {
-                                        setAnimate('visible');
-                                        setDisabled(false);
-                                    }, 2000);
-                                    // Inertia.visit('/home');
-                                }}
+                                onClick={addToCart}
                                 className="w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2"
                                 disabled={disabled}
                             >

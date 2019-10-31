@@ -21,7 +21,7 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -41,50 +41,6 @@ var Box = react_pose__WEBPACK_IMPORTED_MODULE_4__["default"].div({
   }
 });
 
-var addToCard = function addToCard(cb) {
-  var cart = $('#charola');
-  var imgtodrag = $('#main-image');
-  console.log('imtoDrag =>', imgtodrag);
-  console.log('cart =>', cart);
-
-  if (imgtodrag) {
-    var imgclone = imgtodrag.clone().offset({
-      top: imgtodrag.offset().top,
-      left: imgtodrag.offset().left
-    }).css({
-      opacity: '0.7',
-      position: 'absolute',
-      height: 'initial',
-      // height: '150px',
-      // width: '150px',
-      width: 'initial',
-      'z-index': '100'
-    }).appendTo($('body')).animate({
-      top: cart.offset().top + 10,
-      left: cart.offset().left + 15,
-      width: 75,
-      height: 75
-    }, 1000, // 1000000,
-    'easeInOutExpo');
-    setTimeout(function () {
-      cart.effect('bounce', {
-        times: 2
-      }, 600);
-    }, 1500);
-    imgclone.animate({
-      width: 0,
-      height: 0
-    }, function () {
-      $(this).detach();
-      /*
-      cb().then(() => {
-          Router.back();
-      });
-      */
-    });
-  }
-};
-
 function Product(props) {
   var product = props.product;
   console.log('produtc => ', product);
@@ -98,6 +54,85 @@ function Product(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       disabled = _useState4[0],
       setDisabled = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(product.id),
+      _useState6 = _slicedToArray(_useState5, 1),
+      productId = _useState6[0];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      comment = _useState8[0],
+      setComment = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState10 = _slicedToArray(_useState9, 2),
+      quantity = _useState10[0],
+      setQuantity = _useState10[1];
+
+  var addToCart = function addToCart(event) {
+    // event.preventDefault();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post('/cart', {
+      product_id: productId,
+      comment: comment,
+      quantity: quantity
+    });
+    /*
+    addToCardAnimation();
+    setAnimate('hidden');
+    setDisabled(true);
+    // made animation
+    // setTimeout(() => Inertia.visit('/'), 2000);
+    setTimeout(() => {
+        setAnimate('visible');
+        setDisabled(false);
+    }, 2000);
+    // Inertia.visit('/home');
+     */
+  };
+
+  var addToCardAnimation = function addToCardAnimation(cb) {
+    var cart = $('#charola');
+    var imgtodrag = $('#main-image');
+    console.log('imtoDrag =>', imgtodrag);
+    console.log('cart =>', cart);
+
+    if (imgtodrag) {
+      var imgclone = imgtodrag.clone().offset({
+        top: imgtodrag.offset().top,
+        left: imgtodrag.offset().left
+      }).css({
+        opacity: '0.7',
+        position: 'absolute',
+        height: 'initial',
+        // height: '150px',
+        // width: '150px',
+        width: 'initial',
+        'z-index': '100'
+      }).appendTo($('body')).animate({
+        top: cart.offset().top + 10,
+        left: cart.offset().left + 15,
+        width: 75,
+        height: 75
+      }, 1000, // 1000000,
+      'easeInOutExpo');
+      setTimeout(function () {
+        cart.effect('bounce', {
+          times: 2
+        }, 600);
+      }, 1500);
+      imgclone.animate({
+        width: 0,
+        height: 0
+      }, function () {
+        $(this).detach();
+        /*
+        cb().then(() => {
+            Router.back();
+        });
+        */
+      });
+    }
+  };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: product.name
@@ -156,32 +191,30 @@ function Product(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "hover:border-grey-900 italic"
   }, "Si no deseas alg\xFAn ingrediente, especif\xEDcalo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: comment,
     type: "text",
     placeholder: "Ej. sin picante",
+    onChange: function onChange(e) {
+      return setComment(e.target.value);
+    },
     className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "hover:border-grey-900 italic"
   }, "Cantidad:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    name: "quantity",
     type: "number",
     placeholder: "Cantidad",
-    value: "1",
+    value: quantity,
+    onChange: function onChange(e) {
+      return setQuantity(e.target.value);
+    },
     className: "border border-transparent rounded w-1/2 mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: function onClick() {
-      addToCard();
-      setAnimate('hidden');
-      setDisabled(true); // made animation
-      // setTimeout(() => Inertia.visit('/'), 2000);
-
-      setTimeout(function () {
-        setAnimate('visible');
-        setDisabled(false);
-      }, 2000); // Inertia.visit('/home');
-    },
+    onClick: addToCart,
     className: "w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2",
     disabled: disabled
   }, "Poner en la charola"))))));
@@ -211,11 +244,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Layout(_ref) {
   var title = _ref.title,
       children = _ref.children;
+
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      flash = _usePage.flash;
+
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     document.title = title;
+    console.log('flash =>', flash);
   }, [title]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
     id: "content-wrapper",

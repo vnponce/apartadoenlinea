@@ -4,7 +4,8 @@ import MenuIcons from "../components/MenuIcons";
 import BreadCard from "../components/BreadCard";
 
 function Home(props) {
-    const { products } = props;
+    const { products, success_message } = props;
+    console.log('succes_message =>', success_message);
     return (
         <Layout title="Panadría La Especial">
             {/* <HeaderDescription title="PANADERíA" description="Bienvenido a Panadería la Especial donde encotnrarás la mejor calidad y servicio"/> */}
