@@ -427,10 +427,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProductListElement; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__);
+
 
 function ProductListElement(props) {
   var product = props.product;
-  console.log('product list =>', product);
+
+  var removeOneItem = function removeOneItem() {
+    console.log('remove an item');
+    console.log(product.qty + 1);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
+      product_id: product.id,
+      comment: product.options.comment,
+      quantity: -1,
+      redirect: 'product'
+    });
+  };
+
+  var addOneItem = function addOneItem() {
+    console.log('add an item');
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
+      product_id: product.id,
+      comment: product.options.comment,
+      quantity: 1,
+      redirect: 'product'
+    });
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mb-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -449,6 +473,7 @@ function ProductListElement(props) {
   }, product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-1 text-center items-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    onClick: removeOneItem,
     className: "w-5 cursor-pointer fill-current text-brand-orange",
     xmlns: "http://www.w3.org/2000/svg",
     version: "1.1",
@@ -461,6 +486,7 @@ function ProductListElement(props) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "flex-1 cursor-pointer "
   }, product.qty), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    onClick: addOneItem,
     className: "w-5 cursor-pointer fill-current text-brand-orange",
     xmlns: "http://www.w3.org/2000/svg",
     version: "1.1",
@@ -474,7 +500,7 @@ function ProductListElement(props) {
     className: "flex flex-1 items-center flex-row-reverse"
   }, "$", product.price)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-sm italic text-brand-orange"
-  }, product.comments));
+  }, product.options.comment));
 }
 ;
 
