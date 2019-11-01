@@ -44,12 +44,21 @@ class CartController extends Controller
 
     public function updateComment(Request $request, Product $product)
     {
-        // dd('updateComment', $request->toArray(), $product->toArray());
-        // $current = Cart::update($id, ['comment' => $request->comment]);
-        $current = Cart::add($product, $request->quantity, ['comment' => $request->comment])->associate(Product::class);
-        // dd($current);
+        $content = Cart::content();
+        $notUpdatedItems = $content->filter(function ($item) use ($request){
+            return $item->rowId !== $request->remove_rowId;
+        });
         Cart::remove($request->remove_rowId);
-        return back()->with('success_message', 'Instrucciones actualizadas');
+        Cart::add($product, $request->quantity, ['comment' => $request->comment])->associate(Product::class);
+        $notUpdatedItems->map(function($item){
+            Cart::remove($item->rowId);
+            Cart::add($item->id, $item->name, $item->qty, $item->price, ['comment' => $item->options->comment])->associate(Product::class);
+        });
+        $cart = Cart::content();
+        $sorted = $cart->sortBy(function ($product, $key) {
+            return $product->name;
+        });
+        return Inertia::render('Checkout', compact('sorted'));
     }
 
     public function empty()

@@ -4,8 +4,10 @@ import Input from "./Input";
 
 export default function ProductListElement(props) {
     const { product } = props;
+    console.log('product =>', product);
     const [showInput, setShowInput] = useState(false);
     const [comment, setComment] = useState(product.options.comment);
+    console.log('comment =>', comment);
     const removeOneItem = () => {
         console.log('remove an item');
         console.log(product.qty + 1);
@@ -32,6 +34,7 @@ export default function ProductListElement(props) {
     const updateComment = () => {
         setShowInput(false);
         console.log('comment =>', comment);
+        console.log('${product.id} =>', product);
         if(comment === product.options.comment) {
             return false;
         }

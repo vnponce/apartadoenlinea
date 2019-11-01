@@ -24,6 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Checkout(props) {
+  console.log('checkout props =>', props);
+
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])(),
       content = _usePage.cart.content,
       subtotal = _usePage.subtotal;
@@ -111,6 +113,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function ProductListElement(props) {
   var product = props.product;
+  console.log('product =>', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -121,6 +124,8 @@ function ProductListElement(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       comment = _useState4[0],
       setComment = _useState4[1];
+
+  console.log('comment =>', comment);
 
   var removeOneItem = function removeOneItem() {
     console.log('remove an item');
@@ -151,6 +156,7 @@ function ProductListElement(props) {
   var updateComment = function updateComment() {
     setShowInput(false);
     console.log('comment =>', comment);
+    console.log('${product.id} =>', product);
 
     if (comment === product.options.comment) {
       return false;

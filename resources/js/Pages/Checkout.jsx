@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../Shared/Layout';
 import HeaderDescription from "../components/HeaderDescription";
 import {InertiaLink} from "@inertiajs/inertia-react";
@@ -7,6 +7,7 @@ import { usePage } from "@inertiajs/inertia-react";
 
 
 function Checkout(props) {
+    console.log('checkout props =>', props);
     const { cart: { content }, subtotal } = usePage();
     console.log('content =>', content, subtotal);
     return (
