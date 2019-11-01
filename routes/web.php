@@ -66,3 +66,9 @@ Route::get('listo', function() {
 // Card
 Route::post('/cart', 'CartController@store');
 Route::get('/empty', 'CartController@empty');
+/*Route::delete('/cart', function(\Illuminate\Http\Request $request) {
+    dd($request->toArray());
+});*/
+Route::post('/cart/product/{product}/update/comment', 'CartController@updateComment');
+Route::delete('/cart/product/{id}', 'CartController@remove');
+// Route::post('/cart', 'CartController@remove');

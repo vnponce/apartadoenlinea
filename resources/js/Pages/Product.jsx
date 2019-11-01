@@ -3,6 +3,7 @@ import Layout from '../Shared/Layout';
 import {InertiaLink} from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
 import posed from 'react-pose';
+// import $ from 'jquery';
 
 
 const Box = posed.div({
@@ -21,12 +22,6 @@ function Product(props) {
 
     const addToCart = event => {
         // event.preventDefault();
-        Inertia.post('/cart', {
-            product_id: productId,
-            comment,
-            quantity,
-        })
-        /*
         addToCardAnimation();
         setAnimate('hidden');
         setDisabled(true);
@@ -35,9 +30,12 @@ function Product(props) {
         setTimeout(() => {
             setAnimate('visible');
             setDisabled(false);
+            Inertia.post('/cart', {
+                product_id: productId,
+                comment,
+                quantity,
+            })
         }, 2000);
-        // Inertia.visit('/home');
-         */
     }
     const addToCardAnimation = cb => {
         const cart = $('#charola');

@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
 
-/***/ "./resources/js/Pages/Checkout.jsx":
-/*!*****************************************!*\
-  !*** ./resources/js/Pages/Checkout.jsx ***!
-  \*****************************************/
+/***/ "./resources/js/Pages/Product.jsx":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Product.jsx ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12,74 +12,213 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var _components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/HeaderDescription */ "./resources/js/components/HeaderDescription.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_ProductListElement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ProductListElement */ "./resources/js/components/ProductListElement.jsx");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_pose__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-pose */ "./node_modules/react-pose/dist/react-pose.es.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
+ // import $ from 'jquery';
 
+var Box = react_pose__WEBPACK_IMPORTED_MODULE_4__["default"].div({
+  visible: {
+    opacity: 1,
+    transform: 'scale(1)'
+  },
+  hidden: {
+    opacity: 0,
+    transform: 'scale(0.5)'
+  }
+});
 
-function Checkout(props) {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])(),
-      cart = _usePage.cart,
-      subtotal = _usePage.subtotal;
+function Product(props) {
+  var product = props.product;
+  console.log('produtc => ', product);
 
-  console.log('cart =>', cart, subtotal);
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('visible'),
+      _useState2 = _slicedToArray(_useState, 2),
+      animate = _useState2[0],
+      setAnimate = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      disabled = _useState4[0],
+      setDisabled = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(product.id),
+      _useState6 = _slicedToArray(_useState5, 1),
+      productId = _useState6[0];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      comment = _useState8[0],
+      setComment = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState10 = _slicedToArray(_useState9, 2),
+      quantity = _useState10[0],
+      setQuantity = _useState10[1];
+
+  var addToCart = function addToCart(event) {
+    // event.preventDefault();
+    addToCardAnimation();
+    setAnimate('hidden');
+    setDisabled(true); // made animation
+    // setTimeout(() => Inertia.visit('/'), 2000);
+
+    setTimeout(function () {
+      setAnimate('visible');
+      setDisabled(false);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post('/cart', {
+        product_id: productId,
+        comment: comment,
+        quantity: quantity
+      });
+    }, 2000);
+  };
+
+  var addToCardAnimation = function addToCardAnimation(cb) {
+    var cart = $('#charola');
+    var imgtodrag = $('#main-image');
+    console.log('imtoDrag =>', imgtodrag);
+    console.log('cart =>', cart);
+
+    if (imgtodrag) {
+      var imgclone = imgtodrag.clone().offset({
+        top: imgtodrag.offset().top,
+        left: imgtodrag.offset().left
+      }).css({
+        opacity: '0.7',
+        position: 'absolute',
+        height: 'initial',
+        // height: '150px',
+        // width: '150px',
+        width: 'initial',
+        'z-index': '100'
+      }).appendTo($('body')).animate({
+        top: cart.offset().top + 10,
+        left: cart.offset().left + 15,
+        width: 75,
+        height: 75
+      }, 1000, // 1000000,
+      'easeInOutExpo');
+      setTimeout(function () {
+        cart.effect('bounce', {
+          times: 2
+        }, 600);
+      }, 1500);
+      imgclone.animate({
+        width: 0,
+        height: 0
+      }, function () {
+        $(this).detach();
+        /*
+        cb().then(() => {
+            Router.back();
+        });
+        */
+      });
+    }
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Mi charola"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "MI CHAROLA",
-    description: "Esto tiene tu charola"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex justify-center w-full pb-24 px-8 content-center"
+    title: product.name
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "md:w-1/2"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full mt-8 px-2 mb-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-    className: "w-100"
+    className: "flex flex-col mt-12 sm:mt-16 sm:flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+    href: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "w-8 h-8 mb-4 ml-4 text-lg sm:w-16",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    x1: "19",
+    y1: "12",
+    x2: "5",
+    y2: "12"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polyline", {
+    points: "12 19 5 12 12 5"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col pb-16 md:flex-row md:w-11/12 md:m-0 md:mb-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Box, {
+    pose: animate,
+    className: "bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full",
+    src: "/breads/Cuernito.png",
+    alt: product.name,
+    id: "main-image"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full flex flex-col"
+    className: "flex flex-col m-5 md:flex-1 lg:ml-24 lg:mt-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex content-between"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-left"
-  }, "Producto"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-center"
-  }, "Cant."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-right"
-  }, "Prec. Unit.")), Object.keys(cart).map(function (product) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductListElement__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      product: cart[product]
-    });
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full text-center text-regularText text-normal"
-  }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full text-center text-regularText text-2xl"
-  }, "$", subtotal)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full mt-2 px-2 mb-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-    className: "w-100"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center justify-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "checkout-agree",
-    className: "mr-2",
-    type: "checkbox"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    "for": "checkout-agree",
-    className: "text-center text-gray-500 text-base italic"
-  }, "\xBFEl contenido de tu compra es el correcto?")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
-    href: "/listo",
-    className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Paypal"))))));
+    className: "flex-1 sm:text-center text-gray-700 font-medium uppercase lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "first-letter-bigger text-center lg:text-justify"
+  }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-2 text-lg"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.formatPrice), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-xs align-top"
+  }, "p/p"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-4 flex-1 text-gray-600 font-light sm:text-center lg:text-justify"
+  }, product.description), product.ingredients && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-4 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "uppercase font-medium text-sm first-letter-bigger text-orange-600"
+  }, "ingredientes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "font-light text-gray-600 font-light"
+  }, product.ingredients.split(',').map(function (ingredient) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "- ", ingredient);
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "hover:border-grey-900 italic"
+  }, "Si no deseas alg\xFAn ingrediente, especif\xEDcalo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: comment,
+    type: "text",
+    placeholder: "Ej. sin picante",
+    onChange: function onChange(e) {
+      return setComment(e.target.value);
+    },
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "hover:border-grey-900 italic"
+  }, "Cantidad:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    name: "quantity",
+    type: "number",
+    placeholder: "Cantidad",
+    value: quantity,
+    onChange: function onChange(e) {
+      return setQuantity(e.target.value);
+    },
+    className: "border border-transparent rounded w-1/2 mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: addToCart,
+    className: "w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2",
+    disabled: disabled
+  }, "Poner en la charola"))))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Checkout);
+/* harmony default export */ __webpack_exports__["default"] = (Product);
 
 /***/ }),
 
@@ -382,125 +521,6 @@ function Header() {
   })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "header-lines"
   }));
-}
-;
-
-/***/ }),
-
-/***/ "./resources/js/components/HeaderDescription.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/HeaderDescription.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HeaderDescription; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-function HeaderDescription(props) {
-  var title = props.title,
-      description = props.description;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "mt-24 w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "block text-4xl text-center font-title font-semibold"
-  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "block p-2 text-gray-500 text-base text-center max-w-xl m-auto"
-  }, description));
-}
-;
-
-/***/ }),
-
-/***/ "./resources/js/components/ProductListElement.jsx":
-/*!********************************************************!*\
-  !*** ./resources/js/components/ProductListElement.jsx ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProductListElement; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__);
-
-
-function ProductListElement(props) {
-  var product = props.product;
-
-  var removeOneItem = function removeOneItem() {
-    console.log('remove an item');
-    console.log(product.qty + 1);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
-      product_id: product.id,
-      comment: product.options.comment,
-      quantity: -1,
-      redirect: 'product'
-    });
-  };
-
-  var addOneItem = function addOneItem() {
-    console.log('add an item');
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
-      product_id: product.id,
-      comment: product.options.comment,
-      quantity: 1,
-      redirect: 'product'
-    });
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mb-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center flex-1 inline-block"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    className: "cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500 w-3",
-    viewBox: "0 0 20 20",
-    version: "1.1",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
-    points: "10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "ml-0 text-lg"
-  }, product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 text-center items-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    onClick: removeOneItem,
-    className: "w-5 cursor-pointer fill-current text-brand-orange",
-    xmlns: "http://www.w3.org/2000/svg",
-    version: "1.1",
-    x: "0px",
-    y: "0px",
-    viewBox: "0 0 20 20",
-    "enable-background": "new 0 0 20 20"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M16,10c0,0.553-0.048,1-0.601,1H4.601C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H15.4  C15.952,9,16,9.447,16,10z"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 cursor-pointer "
-  }, product.qty), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    onClick: addOneItem,
-    className: "w-5 cursor-pointer fill-current text-brand-orange",
-    xmlns: "http://www.w3.org/2000/svg",
-    version: "1.1",
-    x: "0px",
-    y: "0px",
-    viewBox: "0 0 20 20",
-    "enable-background": "new 0 0 20 20"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601  C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399  C15.952,9,16,9.447,16,10z"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 items-center flex-row-reverse"
-  }, "$", product.price)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-sm italic text-brand-orange"
-  }, product.options.comment));
 }
 ;
 

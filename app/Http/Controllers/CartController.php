@@ -12,7 +12,13 @@ class CartController extends Controller
     public function index()
     {
         $cart = Cart::content();
-        return Inertia::render('Checkout', compact('cart'));
+        // dd($cart);
+        $sorted = $cart->sortBy(function ($product, $key) {
+            //dd($product, $key);
+           return $product->name;
+        });
+        // dd($sorted);
+        return Inertia::render('Checkout', compact('sorted'));
     }
 
     public function store(Request $request)
@@ -28,6 +34,22 @@ class CartController extends Controller
             return back();
         }
         return redirect('/')->with('success_message', 'Listo en tu charola');
+    }
+
+    public function remove(Request $request, $id)
+    {
+        Cart::remove($id);
+        return back()->with('success_message', 'Pan fuera de la charola');
+    }
+
+    public function updateComment(Request $request, Product $product)
+    {
+        // dd('updateComment', $request->toArray(), $product->toArray());
+        // $current = Cart::update($id, ['comment' => $request->comment]);
+        $current = Cart::add($product, $request->quantity, ['comment' => $request->comment])->associate(Product::class);
+        // dd($current);
+        Cart::remove($request->remove_rowId);
+        return back()->with('success_message', 'Instrucciones actualizadas');
     }
 
     public function empty()

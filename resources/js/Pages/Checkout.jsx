@@ -7,8 +7,8 @@ import { usePage } from "@inertiajs/inertia-react";
 
 
 function Checkout(props) {
-    const { cart, subtotal } = usePage();
-    console.log('cart =>', cart, subtotal);
+    const { cart: { content }, subtotal } = usePage();
+    console.log('content =>', content, subtotal);
     return (
         <Layout title="Mi charola">
             <HeaderDescription title="MI CHAROLA" description="Esto tiene tu charola" />
@@ -27,7 +27,7 @@ function Checkout(props) {
                             <span className="flex-1 text-brand-orange font-thin text-right">Prec. Unit.</span>
                         </div>
                         {/* products list */}
-                        { Object.keys(cart).map(product => <ProductListElement product={cart[product]}/>)}
+                        { Object.keys(content).sort().map(product => <ProductListElement product={content[product]}/>)}
                         <div className="w-full text-center text-regularText text-normal">Total:</div>
                         <div className="w-full text-center text-regularText text-2xl">${subtotal}</div>
                     </div>
