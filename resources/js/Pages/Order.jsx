@@ -4,10 +4,21 @@ import {InertiaLink} from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
 import HeaderDescription from "../components/HeaderDescription";
 import Input from "../components/Input";
+import Stores from "../components/Select/Stores";
 
-
-function Order(props) {
+function Order() {
+    // const { stores } = props;
+    // console.log('stores =>', stores);
     const [wantInvoice, setWantInvoice] = useState(false);
+    const [store, setStore] = useState('');
+
+    const onSubmit = () => {
+        console.log('store =>', store);
+        Inertia.post('/order', {
+            store,
+        })
+    };
+
 
     return (
         <Layout title="Producto seleccionado">
@@ -20,7 +31,8 @@ function Order(props) {
                     <div className="lg:w-3/4 lg:float-right">
                         {/* Order place and hour data */}
                         {/* Sucursal */}
-                        <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/>
+                        {/* <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/> */}
+                        <Stores setStore={setStore} store={store} />
                         {/* Día */}
                         <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/>
                         {/* Hora */}
@@ -85,11 +97,17 @@ function Order(props) {
                             </>
                         }
                     </div>
-                    {/* 'Proceder' Next step */}
+                    {/* 'Proceder' Next step
                     <InertiaLink href="/charola"
                                  className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
                         <span>Proceder</span>
                     </InertiaLink>
+                    */}
+                    <button
+                        onClick={onSubmit}
+                        className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
+                        <span>Proceder</span>
+                    </button>
                 </div>
             </div>
         </Layout>

@@ -54,7 +54,8 @@ Route::get('/', 'ProductController@index');
 Route::get('pan/{product}', 'ProductController@show');
 
 Route::get('pedido', function() {
-    return Inertia::render('Order');
+    $stores = \App\Store::all();
+    return Inertia::render('Order', compact('stores'));
 });
 
 Route::get('charola', 'CartController@index');

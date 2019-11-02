@@ -34560,67 +34560,69 @@ var map = {
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		1,
+		2,
 		7
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		1,
+		2,
 		7
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
-		8
+		9
 	],
 	"./Example.js": [
 		"./resources/js/Pages/Example.js",
-		8
+		9
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
 		0,
-		3
+		4
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
-		3
+		4
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		9
+		2,
+		8
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		9
+		2,
+		8
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		2,
+		3,
 		5
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		2,
+		3,
 		5
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		4,
+		1,
 		6
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		4,
+		1,
 		6
 	]
 };

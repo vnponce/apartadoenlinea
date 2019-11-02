@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Category;
+use App\Store;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -56,6 +57,9 @@ class AppServiceProvider extends ServiceProvider
                 return [
                     'content' => Cart::content(),
                 ];
+            },
+            'stores' => function () {
+                return Store::all();
             },
         ]);
         Inertia::share('subtotal', function() {
