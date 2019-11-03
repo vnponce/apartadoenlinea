@@ -3,8 +3,11 @@ import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from "../components/Footer";
 import { usePage } from "@inertiajs/inertia-react";
+import moment from "moment";
 
 export default function Layout({ title, children }) {
+    moment.locale('es');
+
     const { flash } = usePage();
      useEffect(() => {
          document.title = title

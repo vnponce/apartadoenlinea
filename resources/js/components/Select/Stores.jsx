@@ -1,7 +1,6 @@
 import React from 'react';
 import Select, {components} from "react-select";
 import styled from "styled-components";
-import { usePage } from "@inertiajs/inertia-react";
 
 const SelectWrapper = styled.div`
   .shop-option-description {
@@ -39,8 +38,7 @@ const ShopOptionComponent = props => {
 };
 
 export default function Stores(props) {
-    const { setStore } = props;
-    const { stores } = usePage();
+    const { setStore, stores } = props;
     console.log('stores stores =>', stores);
     const storesToSelect = transformStoreList(stores);
     console.log('storesToSelct =>', storesToSelect);

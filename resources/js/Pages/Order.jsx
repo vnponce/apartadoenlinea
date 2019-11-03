@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 import Layout from '../Shared/Layout';
-import {InertiaLink} from "@inertiajs/inertia-react";
+import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
 import HeaderDescription from "../components/HeaderDescription";
 import Input from "../components/Input";
 import Stores from "../components/Select/Stores";
+import DateSelector from "../components/DateSelector";
 
 function Order() {
+    const { stores } = usePage();
     // const { stores } = props;
     // console.log('stores =>', stores);
     const [wantInvoice, setWantInvoice] = useState(false);
     const [store, setStore] = useState('');
+    const [date, setDate] = useState(null);
 
     const onSubmit = () => {
         console.log('store =>', store);
+        console.log('date =>', date);
         Inertia.post('/order', {
             store,
+            date,
         })
     };
 
@@ -32,9 +37,10 @@ function Order() {
                         {/* Order place and hour data */}
                         {/* Sucursal */}
                         {/* <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/> */}
-                        <Stores setStore={setStore} store={store} />
+                        <Stores setStore={setStore} stores={stores} />
                         {/* Día */}
-                        <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/>
+                        {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
+                        <DateSelector date={date} setDate={setDate} store={store && stores.filter(s => s.id === store)[0]} />
                         {/* Hora */}
                         <Input label="Hora" id="hour" placeholder="9:30" value="9:30pm"/>
                         {/* Map */}
