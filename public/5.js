@@ -63,7 +63,49 @@ function Order() {
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState8 = _slicedToArray(_useState7, 2),
       hour = _useState8[0],
-      setHour = _useState8[1];
+      setHour = _useState8[1]; // customer info
+
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      name = _useState10[0],
+      setName = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      lastName = _useState12[0],
+      setLastName = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState14 = _slicedToArray(_useState13, 2),
+      phone = _useState14[0],
+      setPhone = _useState14[1];
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState16 = _slicedToArray(_useState15, 2),
+      email = _useState16[0],
+      setEmail = _useState16[1]; // invoice info
+
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState18 = _slicedToArray(_useState17, 2),
+      invoiceName = _useState18[0],
+      setInvoiceName = _useState18[1];
+
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState20 = _slicedToArray(_useState19, 2),
+      invoiceLastName = _useState20[0],
+      setInvoiceLastName = _useState20[1];
+
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState22 = _slicedToArray(_useState21, 2),
+      invoicePhone = _useState22[0],
+      setInvoicePhone = _useState22[1];
+
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState24 = _slicedToArray(_useState23, 2),
+      invoiceEmail = _useState24[0],
+      setInvoiceEmail = _useState24[1];
 
   var onSubmit = function onSubmit() {
     console.log('store =>', store);

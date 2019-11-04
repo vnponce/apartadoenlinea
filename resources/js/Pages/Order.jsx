@@ -17,6 +17,18 @@ function Order() {
     const [date, setDate] = useState(null);
     const [hour, setHour] = useState(null);
 
+    // customer info
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+
+    // invoice info
+    const [invoiceName, setInvoiceName] = useState('');
+    const [invoiceLastName, setInvoiceLastName] = useState('');
+    const [invoicePhone, setInvoicePhone] = useState('');
+    const [invoiceEmail, setInvoiceEmail] = useState('');
+
     const onSubmit = () => {
         console.log('store =>', store);
         console.log('date =>', date);
