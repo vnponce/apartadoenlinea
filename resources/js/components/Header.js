@@ -5,7 +5,6 @@ import Autocomplete from "./Autocomplete";
 export default function Header() {
     const [showSearch, setShowSearch] = useState(false);
     const { categories } = usePage();
-    console.log('categories =>', categories);
     return (
         <header className="md:px-12 bg-brand-orange">
             <div className="flex p-5">

@@ -18,21 +18,43 @@ function Order() {
     const [hour, setHour] = useState(null);
 
     // customer info
-    const [name, setName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
+    const [customer, setCustomer] = useState({});
 
     // invoice info
-    const [invoiceName, setInvoiceName] = useState('');
-    const [invoiceLastName, setInvoiceLastName] = useState('');
-    const [invoicePhone, setInvoicePhone] = useState('');
-    const [invoiceEmail, setInvoiceEmail] = useState('');
+    const [invoice, setInvoice] = useState({});
+
+    const wantInvoiceOnChange = () => {
+        setWantInvoice(!wantInvoice);
+        if (!invoice.name) {
+            const fullName = (customer.name && customer.lastname) ? customer.name + ' ' + customer.lastname : '';
+            setInvoice({
+                name: fullName,
+                phone: customer.phone || '',
+                email: customer.email || '',
+            })
+        }
+    };
+
+    const customerInfoOnChange = e => {
+        setCustomer({
+            ...customer,
+            [e.target.name]: e.target.value,
+        })
+    };
+
+    const invoiceInfoOnChange = e => {
+        setInvoice({
+            ...invoice,
+            [e.target.name]: e.target.value,
+        })
+    };
 
     const onSubmit = () => {
         console.log('store =>', store);
         console.log('date =>', date);
         console.log('hour =>', hour);
+        console.log('customer =>', customer);
+        console.log('invoice =>', invoice);
         /*
         Inertia.post('/order', {
             store,
@@ -88,19 +110,19 @@ function Order() {
                     {/* Order user data */}
                     <div className="lg:w-3/4">
                         {/* Name */}
-                        <Input label="Nombre" id="name" placeholder="Ej. Juan" value=""/>
+                        <Input label="Nombre" id="name" placeholder="Ej. Juan" value={customer.name} onChange={customerInfoOnChange}/>
                         {/* LastName */}
-                        <Input label="Apellido" id="lastname" placeholder="Apellido" value=""/>
+                        <Input label="Apellido" id="lastname" placeholder="Apellido" value={customer.lastname} onChange={customerInfoOnChange}/>
                         {/* Phone */}
-                        <Input label="Teléfono" id="phone" placeholder="" value="" type="tel"/>
+                        <Input label="Teléfono" id="phone" placeholder="" value={customer.phone} type="phone" onChange={customerInfoOnChange}/>
                         {/* email */}
-                        <Input label="Correo electrónico" id="email" placeholder="" value="" type="email"/>
+                        <Input label="Correo electrónico" id="email" placeholder="" value={customer.email} type="email" onChange={customerInfoOnChange}/>
                     </div>
                     {/* Invoice */}
                     <div className="w-full bg-brand-gray mt-8 p-4">
                         <div className="flex items-center">
                             <input id="want-invoice" className="mr-2" type="checkbox"
-                                   onClick={() => setWantInvoice(!wantInvoice)}/>
+                                   onClick={wantInvoiceOnChange}/>
                             <label htmlFor="want-invoice" className="text-brand-orange text-lg italic font-thin">
                                 ¿Quieres factura?
                             </label>
@@ -108,17 +130,17 @@ function Order() {
                         {wantInvoice &&
                             <>
                                 {/* RFC */}
-                                <Input label="RFC" id="invoice-rfc" />
+                                <Input label="RFC" id="rfc" onChange={invoiceInfoOnChange}/>
                                 {/* Type of... is a selector */}
-                                <Input label="Selector" id="invoice-type" />
+                                <Input label="Selector" id="type" onChange={invoiceInfoOnChange}/>
                                 {/* Address */}
-                                <Input label="Dirección" id="invoice-address" />
+                                <Input label="Dirección" id="address" onChange={invoiceInfoOnChange}/>
                                 {/* Full name */}
-                                <Input label="Nombre completo" id="invoice-full-name" />
+                                <Input label="Nombre completo" id="name" value={invoice.name} onChange={invoiceInfoOnChange}/>
                                 {/* Phone */}
-                                <Input label="Teléfono" id="invoice-phone" type="tel" />
+                                <Input label="Teléfono" id="phone" type="tel" value={invoice.phone} onChange={invoiceInfoOnChange}/>
                                 {/* email */}
-                                <Input label="Correo electrónico" id="email" type="email" />
+                                <Input label="Correo electrónico" id="email" type="email" value={invoice.email} onChange={invoiceInfoOnChange}/>
                             </>
                         }
                     </div>

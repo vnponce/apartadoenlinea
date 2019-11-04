@@ -4,13 +4,9 @@ import Input from "./Input";
 
 export default function ProductListElement(props) {
     const { product } = props;
-    console.log('product =>', product);
     const [showInput, setShowInput] = useState(false);
     const [comment, setComment] = useState(product.options.comment);
-    console.log('comment =>', comment);
     const removeOneItem = () => {
-        console.log('remove an item');
-        console.log(product.qty + 1);
         Inertia.post('/cart', {
             product_id: product.id,
             comment: product.options.comment,
@@ -19,11 +15,9 @@ export default function ProductListElement(props) {
         });
     };
     const removeItem = () => {
-        console.log('removeItem product =>', product.rowId);
         Inertia.delete(`/cart/product/${product.rowId}`);
     };
     const addOneItem = () => {
-        console.log('add an item');
         Inertia.post('/cart', {
             product_id: product.id,
             comment: product.options.comment,
@@ -33,8 +27,6 @@ export default function ProductListElement(props) {
     };
     const updateComment = () => {
         setShowInput(false);
-        console.log('comment =>', comment);
-        console.log('${product.id} =>', product);
         if(comment === product.options.comment) {
             return false;
         }

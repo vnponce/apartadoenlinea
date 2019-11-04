@@ -7,9 +7,7 @@ import { usePage } from "@inertiajs/inertia-react";
 
 
 function Checkout(props) {
-    console.log('checkout props =>', props);
     const { cart: { content }, subtotal } = usePage();
-    console.log('content =>', content, subtotal);
     return (
         <Layout title="Mi charola">
             <HeaderDescription title="MI CHAROLA" description="Esto tiene tu charola" />

@@ -21,6 +21,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
 /* harmony import */ var _components_DateSelector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/DateSelector */ "./resources/js/components/DateSelector.jsx");
 /* harmony import */ var _components_Select_Hour__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Select/Hour */ "./resources/js/components/Select/Hour.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -66,51 +72,44 @@ function Order() {
       setHour = _useState8[1]; // customer info
 
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState10 = _slicedToArray(_useState9, 2),
-      name = _useState10[0],
-      setName = _useState10[1];
+      customer = _useState10[0],
+      setCustomer = _useState10[1]; // invoice info
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState12 = _slicedToArray(_useState11, 2),
-      lastName = _useState12[0],
-      setLastName = _useState12[1];
+      invoice = _useState12[0],
+      setInvoice = _useState12[1];
 
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState14 = _slicedToArray(_useState13, 2),
-      phone = _useState14[0],
-      setPhone = _useState14[1];
+  var wantInvoiceOnChange = function wantInvoiceOnChange() {
+    setWantInvoice(!wantInvoice);
 
-  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState16 = _slicedToArray(_useState15, 2),
-      email = _useState16[0],
-      setEmail = _useState16[1]; // invoice info
+    if (!invoice.name) {
+      var fullName = customer.name && customer.lastname ? customer.name + ' ' + customer.lastname : '';
+      setInvoice({
+        name: fullName,
+        phone: customer.phone || '',
+        email: customer.email || ''
+      });
+    }
+  };
 
+  var customerInfoOnChange = function customerInfoOnChange(e) {
+    setCustomer(_objectSpread({}, customer, _defineProperty({}, e.target.name, e.target.value)));
+  };
 
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState18 = _slicedToArray(_useState17, 2),
-      invoiceName = _useState18[0],
-      setInvoiceName = _useState18[1];
-
-  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState20 = _slicedToArray(_useState19, 2),
-      invoiceLastName = _useState20[0],
-      setInvoiceLastName = _useState20[1];
-
-  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState22 = _slicedToArray(_useState21, 2),
-      invoicePhone = _useState22[0],
-      setInvoicePhone = _useState22[1];
-
-  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState24 = _slicedToArray(_useState23, 2),
-      invoiceEmail = _useState24[0],
-      setInvoiceEmail = _useState24[1];
+  var invoiceInfoOnChange = function invoiceInfoOnChange(e) {
+    setInvoice(_objectSpread({}, invoice, _defineProperty({}, e.target.name, e.target.value)));
+  };
 
   var onSubmit = function onSubmit() {
     console.log('store =>', store);
     console.log('date =>', date);
     console.log('hour =>', hour);
+    console.log('customer =>', customer);
+    console.log('invoice =>', invoice);
     /*
     Inertia.post('/order', {
         store,
@@ -171,24 +170,28 @@ function Order() {
     label: "Nombre",
     id: "name",
     placeholder: "Ej. Juan",
-    value: ""
+    value: customer.name,
+    onChange: customerInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Apellido",
     id: "lastname",
     placeholder: "Apellido",
-    value: ""
+    value: customer.lastname,
+    onChange: customerInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Tel\xE9fono",
     id: "phone",
     placeholder: "",
-    value: "",
-    type: "tel"
+    value: customer.phone,
+    type: "phone",
+    onChange: customerInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Correo electr\xF3nico",
     id: "email",
     placeholder: "",
-    value: "",
-    type: "email"
+    value: customer.email,
+    type: "email",
+    onChange: customerInfoOnChange
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full bg-brand-gray mt-8 p-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -197,32 +200,39 @@ function Order() {
     id: "want-invoice",
     className: "mr-2",
     type: "checkbox",
-    onClick: function onClick() {
-      return setWantInvoice(!wantInvoice);
-    }
+    onClick: wantInvoiceOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "want-invoice",
     className: "text-brand-orange text-lg italic font-thin"
   }, "\xBFQuieres factura?")), wantInvoice && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "RFC",
-    id: "invoice-rfc"
+    id: "rfc",
+    onChange: invoiceInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Selector",
-    id: "invoice-type"
+    id: "type",
+    onChange: invoiceInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Direcci\xF3n",
-    id: "invoice-address"
+    id: "address",
+    onChange: invoiceInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Nombre completo",
-    id: "invoice-full-name"
+    id: "name",
+    value: invoice.name,
+    onChange: invoiceInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Tel\xE9fono",
-    id: "invoice-phone",
-    type: "tel"
+    id: "phone",
+    type: "tel",
+    value: invoice.phone,
+    onChange: invoiceInfoOnChange
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Correo electr\xF3nico",
     id: "email",
-    type: "email"
+    type: "email",
+    value: invoice.email,
+    onChange: invoiceInfoOnChange
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: onSubmit,
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
@@ -288,7 +298,6 @@ function DateSelector(props) {
       setDate = props.setDate,
       _props$store = props.store,
       store = _props$store === void 0 ? false : _props$store;
-  console.log('storeValidDates =>', store);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -527,7 +536,6 @@ function Hour(props) {
       setHour = props.setHour,
       store = props.store,
       date = props.date;
-  console.log('hour =>', hour);
   var gapTimeInMinutes = 30;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"

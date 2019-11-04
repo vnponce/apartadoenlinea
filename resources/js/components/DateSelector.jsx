@@ -19,7 +19,6 @@ export default function DateSelector(props) {
     // moment.locale('es');
     const today = moment();
     const { date, setDate, store = false } = props;
-    console.log('storeValidDates =>', store);
     const [focus, setFocus] = useState(false);
     const pickUpAllowed = dayDate => {
         // @todo: que si son despues de las 8:00pm no poder poner el siguiente día, se hiría hasta el 'pasado mañana'

@@ -13,7 +13,6 @@ const Box = posed.div({
 
 function Product(props) {
     const { product } = props;
-    console.log('produtc => ', product);
     const [animate, setAnimate] = useState('visible');
     const [disabled, setDisabled] = useState(false);
     const [productId] = useState(product.id);
@@ -40,8 +39,6 @@ function Product(props) {
     const addToCardAnimation = cb => {
         const cart = $('#charola');
         const imgtodrag = $('#main-image');
-        console.log('imtoDrag =>', imgtodrag);
-        console.log('cart =>', cart);
         if (imgtodrag) {
             const imgclone = imgtodrag
                 .clone()

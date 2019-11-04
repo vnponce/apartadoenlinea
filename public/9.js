@@ -44,7 +44,6 @@ var Box = react_pose__WEBPACK_IMPORTED_MODULE_4__["default"].div({
 
 function Product(props) {
   var product = props.product;
-  console.log('produtc => ', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('visible'),
       _useState2 = _slicedToArray(_useState, 2),
@@ -91,8 +90,6 @@ function Product(props) {
   var addToCardAnimation = function addToCardAnimation(cb) {
     var cart = $('#charola');
     var imgtodrag = $('#main-image');
-    console.log('imtoDrag =>', imgtodrag);
-    console.log('cart =>', cart);
 
     if (imgtodrag) {
       var imgclone = imgtodrag.clone().offset({

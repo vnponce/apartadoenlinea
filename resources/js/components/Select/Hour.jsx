@@ -45,7 +45,6 @@ const getHoursFromStore = (store, date, gapTimeInMinutes) => {
 
 export default function Hour(props) {
     const { hour, setHour, store, date } = props;
-    console.log('hour =>', hour);
     const gapTimeInMinutes = 30;
 
     return (
