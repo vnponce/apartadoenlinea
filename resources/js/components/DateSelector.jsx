@@ -30,9 +30,8 @@ export default function DateSelector(props) {
             return false;
         }
 
-        console.log('pickUpAllowed => ', dayDate.day(), dayDate);
-
-        return dayDate.day() === 0;
+        // if sunday return true to block day
+        return dayDate.isoWeekday() === 7;
         /*
         const dayNumber = dayDate.day();
         const today = new Date();

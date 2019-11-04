@@ -6,6 +6,7 @@ import HeaderDescription from "../components/HeaderDescription";
 import Input from "../components/Input";
 import Stores from "../components/Select/Stores";
 import DateSelector from "../components/DateSelector";
+import Hour from "../components/Select/Hour";
 
 function Order() {
     const { stores } = usePage();
@@ -14,14 +15,19 @@ function Order() {
     const [wantInvoice, setWantInvoice] = useState(false);
     const [store, setStore] = useState('');
     const [date, setDate] = useState(null);
+    const [hour, setHour] = useState(null);
 
     const onSubmit = () => {
         console.log('store =>', store);
         console.log('date =>', date);
+        console.log('hour =>', hour);
+        /*
         Inertia.post('/order', {
             store,
             date,
+            hour,
         })
+        */
     };
 
 
@@ -41,8 +47,9 @@ function Order() {
                         {/* Día */}
                         {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
                         <DateSelector date={date} setDate={setDate} store={store && stores.filter(s => s.id === store)[0]} />
-                        {/* Hora */}
-                        <Input label="Hora" id="hour" placeholder="9:30" value="9:30pm"/>
+                        {/* Hora*/}
+                        <Hour hour={hour} setHour={setHour} store={store && stores.filter(s => s.id === store)[0]} date={date} />
+                        {/* <Input label="Hora" id="hour" placeholder="9:30" value="9:30pm"/> */}
                         {/* Map */}
                         {/* Mapa */}
                         <div className="hidden border h-56 mt-4 bg-brand-gray sm:block">

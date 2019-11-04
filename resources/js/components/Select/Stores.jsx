@@ -39,9 +39,7 @@ const ShopOptionComponent = props => {
 
 export default function Stores(props) {
     const { setStore, stores } = props;
-    console.log('stores stores =>', stores);
     const storesToSelect = transformStoreList(stores);
-    console.log('storesToSelct =>', storesToSelect);
     return (
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
             <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Sucursal</label>
@@ -64,7 +62,6 @@ export default function Stores(props) {
                     Option: ShopOptionComponent,
                 }}
                 onChange={selected => {
-                    console.log('selected =>', selected.value);
                     setStore(selected.value)
                 }}
                 /*
