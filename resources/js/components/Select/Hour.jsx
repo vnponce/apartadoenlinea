@@ -48,10 +48,6 @@ export default function Hour(props) {
     console.log('hour =>', hour);
     const gapTimeInMinutes = 30;
 
-    useEffect(() => {
-        console.log('cambió día sz');
-    }, [date]);
-
     return (
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
             <label htmlFor="hour" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Hora</label>

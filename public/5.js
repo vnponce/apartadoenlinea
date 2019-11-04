@@ -487,9 +487,6 @@ function Hour(props) {
       date = props.date;
   console.log('hour =>', hour);
   var gapTimeInMinutes = 30;
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('cambió día sz');
-  }, [date]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
