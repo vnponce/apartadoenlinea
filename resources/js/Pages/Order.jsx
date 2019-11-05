@@ -7,6 +7,7 @@ import Input from "../components/Input";
 import Stores from "../components/Select/Stores";
 import DateSelector from "../components/DateSelector";
 import Hour from "../components/Select/Hour";
+import Map from "../components/Map";
 
 function Order() {
     const { stores } = usePage();
@@ -55,11 +56,13 @@ function Order() {
         console.log('hour =>', hour);
         console.log('customer =>', customer);
         console.log('invoice =>', invoice);
+        console.log('wantInvoice =>', wantInvoice);
         /*
         Inertia.post('/order', {
             store,
-            date,
-            hour,
+            // date y hour en un solo string ej. '28/05/2020 7:30'
+            pickUp,
+            // mandar invoice info solo si es 'wantInvoice' true
         })
         */
     };
@@ -87,7 +90,7 @@ function Order() {
                         {/* Map */}
                         {/* Mapa */}
                         <div className="hidden border h-56 mt-4 bg-brand-gray sm:block">
-                            MAPA
+                            <Map />
                         </div>
                         {/* Ver mapa */}
                         <button
@@ -130,11 +133,11 @@ function Order() {
                         {wantInvoice &&
                             <>
                                 {/* RFC */}
-                                <Input label="RFC" id="rfc" onChange={invoiceInfoOnChange}/>
+                                <Input label="RFC" id="rfc" value={invoice.rfc} onChange={invoiceInfoOnChange}/>
                                 {/* Type of... is a selector */}
-                                <Input label="Selector" id="type" onChange={invoiceInfoOnChange}/>
+                                <Input label="Selector" id="type" value={invoice.type} onChange={invoiceInfoOnChange}/>
                                 {/* Address */}
-                                <Input label="Dirección" id="address" onChange={invoiceInfoOnChange}/>
+                                <Input label="Dirección" id="address" value={invoice.address} onChange={invoiceInfoOnChange}/>
                                 {/* Full name */}
                                 <Input label="Nombre completo" id="name" value={invoice.name} onChange={invoiceInfoOnChange}/>
                                 {/* Phone */}
