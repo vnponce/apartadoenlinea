@@ -57,6 +57,7 @@ Route::get('pedido', function() {
     $stores = \App\Store::all();
     return Inertia::render('Order', compact('stores'));
 });
+Route::post('pedido', 'OrderController@setDetails');
 Route::post('pedido', 'OrderController@store');
 
 Route::get('charola', 'CartController@index');

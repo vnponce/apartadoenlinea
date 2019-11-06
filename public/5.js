@@ -116,7 +116,13 @@ function Order() {
     console.log('invoice =>', invoice);
     console.log('wantInvoice =>', wantInvoice);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post('/pedido', {
-      store: store // date y hour en un solo string ej. '28/05/2020 7:30'
+      store: store,
+      date: date,
+      hour: hour,
+      name: customer.name,
+      lastname: customer.lastname,
+      phone: customer.phone,
+      email: customer.email // date y hour en un solo string ej. '28/05/2020 7:30'
       // pickUp,
       // mandar invoice info solo si es 'wantInvoice' true
 

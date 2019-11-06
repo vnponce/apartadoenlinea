@@ -37,8 +37,9 @@ module.exports = {
     */
   },
     variants: {
-        backgroundColor: ['responsive', 'odd', 'even', 'hover'],
+        backgroundColor: ['responsive', 'odd', 'even', 'hover', 'disabled'],
         flexDirection: ['responsive', 'odd', 'even'],
+        opacity: ['disabled'],
     },
   plugins: []
 }

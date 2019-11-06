@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import Layout from '../Shared/Layout';
 import HeaderDescription from "../components/HeaderDescription";
-import {InertiaLink} from "@inertiajs/inertia-react";
 import ProductListElement from "../components/ProductListElement";
 import { usePage } from "@inertiajs/inertia-react";
+import {Inertia} from "@inertiajs/inertia";
 
 
 function Checkout(props) {
     const { cart: { content }, subtotal } = usePage();
+    const [agreeTerms, setAgreeTerms] = useState(false);
+    const createOrder = () => {
+        console.log('create order');
+      Inertia.post('/pedido', )
+    };
     return (
         <Layout title="Mi charola">
             <HeaderDescription title="MI CHAROLA" description="Esto tiene tu charola" />
@@ -26,7 +31,7 @@ function Checkout(props) {
                             <span className="flex-1 text-brand-orange font-thin text-right">Prec. Unit.</span>
                         </div>
                         {/* products list */}
-                        { Object.keys(content).sort().map(product => <ProductListElement product={content[product]}/>)}
+                        { Object.keys(content).sort().filter(product => content[product].id !== 'orderDetailsId').map(product => <ProductListElement product={content[product]}/>)}
                         <div className="w-full text-center text-regularText text-normal">Total:</div>
                         <div className="w-full text-center text-regularText text-2xl">${subtotal}</div>
                     </div>
@@ -38,15 +43,18 @@ function Checkout(props) {
                     <div>
                         {/* 'Proceder' Next step */}
                         <div className="flex items-center justify-center">
-                            <input id="checkout-agree" className="mr-2" type="checkbox" />
+                            <input id="checkout-agree" className="mr-2" type="checkbox" value={agreeTerms} onChange={() => setAgreeTerms(!agreeTerms)}/>
                                 <label for="checkout-agree" className="text-center text-gray-500 text-base italic">
                                     ¿El contenido de tu compra es el correcto?
                                 </label>
                         </div>
                         {/* Paypal button or levantar pedido si es usuario */}
-                        <InertiaLink href="/listo" className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
+                        <button
+                            disabled={!agreeTerms}
+                            onClick={createOrder}
+                            className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75">
                             <span>Paypal</span>
-                        </InertiaLink>
+                        </button>
                     </div>
                 </div>
             </div>

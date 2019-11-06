@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -35,6 +36,17 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->toArray());
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function setDetails(Request $request)
+    {
         $request->validate([
             'store' => 'required',
             'date' => 'required',
@@ -44,6 +56,18 @@ class OrderController extends Controller
             'phone' => 'required',
             'email' => 'required',
         ]);
+//        dd($request->toArray());
+        $current = Cart::add('orderDetailsId', 'OrderDetails', 1, 0, [
+            'store' => $request->store,
+            'date' => $request->date,
+            'hour' => $request->hour,
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'phone' => $request->phone,
+            'email' => $request->email,
+        ]);
+//        dd(Cart::content());
+        return redirect('/charola');
     }
 
     /**
