@@ -49,6 +49,7 @@ export default function DateSelector(props) {
             <DateWrapper className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full">
                 <SingleDatePicker
                     id="date"
+                    name="date"
                     date={date}
                     onDateChange={date => setDate(date)}
                     focused={focus}

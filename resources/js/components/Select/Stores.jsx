@@ -48,6 +48,8 @@ export default function Stores(props) {
                 inputId="store"
                 name="store"
                 className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+                // defaultMenuIsOpen
+                classNamePrefix="stores-selector"
                 /*
                 getOptionValue={option =>
                     option.key

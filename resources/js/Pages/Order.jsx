@@ -10,9 +10,9 @@ import Hour from "../components/Select/Hour";
 import Map from "../components/Map";
 
 function Order() {
-    const { stores } = usePage();
+    const { stores, errors } = usePage();
     // const { stores } = props;
-    // console.log('stores =>', stores);
+    console.log('errors =>', errors);
     const [wantInvoice, setWantInvoice] = useState(false);
     const [store, setStore] = useState('');
     const [date, setDate] = useState(null);
@@ -57,14 +57,13 @@ function Order() {
         console.log('customer =>', customer);
         console.log('invoice =>', invoice);
         console.log('wantInvoice =>', wantInvoice);
-        /*
-        Inertia.post('/order', {
+
+        Inertia.post('/pedido', {
             store,
             // date y hour en un solo string ej. '28/05/2020 7:30'
-            pickUp,
+            // pickUp,
             // mandar invoice info solo si es 'wantInvoice' true
         })
-        */
     };
 
 
@@ -81,11 +80,15 @@ function Order() {
                         {/* Sucursal */}
                         {/* <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/> */}
                         <Stores setStore={setStore} stores={stores} />
+                        {errors && errors.store && <span className="text-sm text-red-500 error store">{errors.store[0]}</span>}
                         {/* Día */}
                         {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
                         <DateSelector date={date} setDate={setDate} store={store && stores.filter(s => s.id === store)[0]} />
+                        {errors && errors.date && <span className="text-sm text-red-500 error date">{errors.date[0]}</span>}
+
                         {/* Hora*/}
                         <Hour hour={hour} setHour={setHour} store={store && stores.filter(s => s.id === store)[0]} date={date} />
+                        {errors && errors.hour && <span className="text-sm text-red-500 error hour">{errors.hour[0]}</span>}
                         {/* <Input label="Hora" id="hour" placeholder="9:30" value="9:30pm"/> */}
                         {/* Map */}
                         {/* Mapa */}
@@ -114,12 +117,16 @@ function Order() {
                     <div className="lg:w-3/4">
                         {/* Name */}
                         <Input label="Nombre" id="name" placeholder="Ej. Juan" value={customer.name} onChange={customerInfoOnChange}/>
+                        {errors && errors.name && <span className="text-sm text-red-500 error name">{errors.name[0]}</span>}
                         {/* LastName */}
                         <Input label="Apellido" id="lastname" placeholder="Apellido" value={customer.lastname} onChange={customerInfoOnChange}/>
+                        {errors && errors.lastname && <span className="text-sm text-red-500 error lastname">{errors.lastname[0]}</span>}
                         {/* Phone */}
                         <Input label="Teléfono" id="phone" placeholder="" value={customer.phone} type="phone" onChange={customerInfoOnChange}/>
+                        {errors && errors.phone && <span className="text-sm text-red-500 error phone">{errors.phone[0]}</span>}
                         {/* email */}
                         <Input label="Correo electrónico" id="email" placeholder="" value={customer.email} type="email" onChange={customerInfoOnChange}/>
+                        {errors && errors.email && <span className="text-sm text-red-500 error email">{errors.email[0]}</span>}
                     </div>
                     {/* Invoice */}
                     <div className="w-full bg-brand-gray mt-8 p-4">
@@ -155,7 +162,7 @@ function Order() {
                     */}
                     <button
                         onClick={onSubmit}
-                        className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
+                        className="next flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
                         <span>Proceder</span>
                     </button>
                 </div>

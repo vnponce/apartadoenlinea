@@ -49,9 +49,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Order() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
-      stores = _usePage.stores; // const { stores } = props;
-  // console.log('stores =>', stores);
+      stores = _usePage.stores,
+      errors = _usePage.errors; // const { stores } = props;
 
+
+  console.log('errors =>', errors);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -113,14 +115,12 @@ function Order() {
     console.log('customer =>', customer);
     console.log('invoice =>', invoice);
     console.log('wantInvoice =>', wantInvoice);
-    /*
-    Inertia.post('/order', {
-        store,
-        // date y hour en un solo string ej. '28/05/2020 7:30'
-        pickUp,
-        // mandar invoice info solo si es 'wantInvoice' true
-    })
-    */
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post('/pedido', {
+      store: store // date y hour en un solo string ej. '28/05/2020 7:30'
+      // pickUp,
+      // mandar invoice info solo si es 'wantInvoice' true
+
+    });
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -137,20 +137,26 @@ function Order() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_6__["default"], {
     setStore: setStore,
     stores: stores
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DateSelector__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), errors && errors.store && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-red-500 error store"
+  }, errors.store[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DateSelector__WEBPACK_IMPORTED_MODULE_7__["default"], {
     date: date,
     setDate: setDate,
     store: store && stores.filter(function (s) {
       return s.id === store;
     })[0]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Hour__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), errors && errors.date && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-red-500 error date"
+  }, errors.date[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Hour__WEBPACK_IMPORTED_MODULE_8__["default"], {
     hour: hour,
     setHour: setHour,
     store: store && stores.filter(function (s) {
       return s.id === store;
     })[0],
     date: date
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), errors && errors.hour && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-red-500 error hour"
+  }, errors.hour[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "hidden border h-56 mt-4 bg-brand-gray sm:block"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white sm:hidden"
@@ -176,27 +182,35 @@ function Order() {
     placeholder: "Ej. Juan",
     value: customer.name,
     onChange: customerInfoOnChange
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), errors && errors.name && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-red-500 error name"
+  }, errors.name[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Apellido",
     id: "lastname",
     placeholder: "Apellido",
     value: customer.lastname,
     onChange: customerInfoOnChange
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), errors && errors.lastname && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-red-500 error lastname"
+  }, errors.lastname[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Tel\xE9fono",
     id: "phone",
     placeholder: "",
     value: customer.phone,
     type: "phone",
     onChange: customerInfoOnChange
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), errors && errors.phone && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-red-500 error phone"
+  }, errors.phone[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Correo electr\xF3nico",
     id: "email",
     placeholder: "",
     value: customer.email,
     type: "email",
     onChange: customerInfoOnChange
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), errors && errors.email && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-red-500 error email"
+  }, errors.email[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full bg-brand-gray mt-8 p-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-center"
@@ -242,7 +256,7 @@ function Order() {
     onChange: invoiceInfoOnChange
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: onSubmit,
-    className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
+    className: "next flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Proceder")))));
 }
 
@@ -339,6 +353,7 @@ function DateSelector(props) {
     className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_3__["SingleDatePicker"], {
     id: "date",
+    name: "date",
     date: date,
     onDateChange: function onDateChange(date) {
       return setDate(date);
@@ -602,6 +617,7 @@ function Hour(props) {
     name: "hour",
     placeholder: "Elige una hora",
     className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full",
+    classNamePrefix: "hour-selector",
     onChange: function onChange(hour) {
       return setHour(hour.value);
     },
@@ -678,7 +694,9 @@ function Stores(props) {
     options: storesToSelect,
     inputId: "store",
     name: "store",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    ,
+    classNamePrefix: "stores-selector"
     /*
     getOptionValue={option =>
         option.key
