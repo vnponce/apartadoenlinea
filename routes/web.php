@@ -48,8 +48,8 @@ Route::get('inertia', function() {
         'foo' => 'bar',
     ]);
 });
-
 Route::get('/', 'ProductController@index');
+Route::get('/category/{category}', 'CategoryController@index');
 
 Route::get('pan/{product}', 'ProductController@show');
 

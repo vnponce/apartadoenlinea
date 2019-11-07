@@ -4,17 +4,22 @@ import MenuIcons from "../components/MenuIcons";
 import BreadCard from "../components/BreadCard";
 import {Pagination} from 'react-laravel-paginex'
 import {Inertia} from "@inertiajs/inertia";
+import HeaderDescription from "../components/HeaderDescription";
 
 
 function Home(props) {
-    const { products, success_message } = props;
-    console.log('home products =>', products);
+    const { products, success_message, category = null } = props;
     console.log('succes_message =>', success_message);
     const getData = data => Inertia.visit(`http://${window.location.hostname}?page=${data.page}`);
     return (
         <Layout title="Panadría La Especial">
-            {/* <HeaderDescription title="PANADERíA" description="Bienvenido a Panadería la Especial donde encotnrarás la mejor calidad y servicio"/> */}
-            <MenuIcons />
+            {category &&
+                <>
+                    <HeaderDescription title={category.name} description=""/>
+                    {/* <div className="mb-16 w-full"></div> */}
+                </>
+            }
+            {!category && <MenuIcons />}
             <hr className="w-1/2 mb-5" />
             <main className="flex flex-wrap w-full p-0 pb-16 sm:px-2">
                 {products.data.map(product => {

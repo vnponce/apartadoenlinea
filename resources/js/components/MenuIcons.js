@@ -1,10 +1,11 @@
 import React from 'react';
+import {InertiaLink} from "@inertiajs/inertia-react";
 
 export default function MenuIcons() {
     return (
         <section className="flex m-auto container pt-12">
             <div className="w-full icons p-4">
-                <a href="#"
+                <InertiaLink href="/category/5"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                     <svg className="fill-current stroke-current h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <title>Pan-dulce</title>
@@ -15,8 +16,8 @@ export default function MenuIcons() {
                         </g>
                     </svg>
                     <div className="icon-menu-category-text first-letter-bigger">Pan de Dulce</div>
-                </a>
-                <a href="#"
+                </InertiaLink>
+                <InertiaLink href="/category/2"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-right md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                     <svg className="fill-current stroke-current h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.53 100">
                         <title>Pan-sal</title>
@@ -31,8 +32,8 @@ export default function MenuIcons() {
                         </g>
                     </svg>
                     <div className="icon-menu-category-text">Pan de sal</div>
-                </a>
-                <a href="#"
+                </InertiaLink>
+                <InertiaLink href="/category/1"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                     <svg className="fill-current stroke-current h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94.55 103.35">
                         <title>Bocadillos</title>
@@ -48,8 +49,8 @@ export default function MenuIcons() {
                         </g>
                     </svg>
                     <div className="icon-menu-category-text">Bocadillos</div>
-                </a>
-                <a href="#"
+                </InertiaLink>
+                <InertiaLink href="/category/3"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-right md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                     <svg className="fill-current stroke-current h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.99 100">
                         <title>Repostería</title>
@@ -63,7 +64,7 @@ export default function MenuIcons() {
                         </g>
                     </svg>
                     <div className="icon-menu-category-text">Repostería</div>
-                </a>
+                </InertiaLink>
             </div>
         </section>
     )

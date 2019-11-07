@@ -542,7 +542,7 @@ function Header() {
       className: "md:ml-5"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
       className: "block md:inline",
-      href: "/".concat(category.id)
+      href: "/category/".concat(category.id)
     }, category.name));
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/"

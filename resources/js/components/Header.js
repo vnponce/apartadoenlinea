@@ -23,7 +23,7 @@ export default function Header() {
                         <ul className="hidden lg:flex items-center justify-end text-white">
                             {categories.map(category => (
                                 <li className="md:ml-5">
-                                    <InertiaLink className="block md:inline" href={`/${category.id}`}>{category.name}</InertiaLink>
+                                    <InertiaLink className="block md:inline" href={`/category/${category.id}`}>{category.name}</InertiaLink>
                                 </li>
                             ))}
                             {/*
