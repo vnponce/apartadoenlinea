@@ -354,7 +354,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 function Autocomplete() {
-  var customStyles = {
+  var customStylesBK = {
     option: function option(provided, state) {
       return _objectSpread({}, provided, {
         borderBottom: '1px dotted pink',
@@ -415,15 +415,14 @@ function Autocomplete() {
     })));
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    className: "mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white",
-    options: options,
-    styles: customStyles,
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"] // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
+  , {
+    className: "mr-3 w-1/3 bg-brand-orange",
+    options: options // styles={customStyles}
+    ,
     isSearchable: true,
-    components: {
-      DropdownIndicator: DropdownIndicator,
-      IndicatorSeparator: null
-    }
+    placeholder: "Buscar" // components={{ DropdownIndicator, IndicatorSeparator: null }}
+
   });
 }
 ;

@@ -2,7 +2,7 @@ import React from 'react';
 import Select from "react-select";
 
 export default function Autocomplete() {
-    const customStyles = {
+    const customStylesBK = {
         option: (provided, state) => ({
             ...provided,
             borderBottom: '1px dotted pink',
@@ -56,11 +56,13 @@ export default function Autocomplete() {
 
     return (
         <Select
-            className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
+            // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
+            className="mr-3 w-1/3 bg-brand-orange"
             options={options}
-            styles={customStyles}
+            // styles={customStyles}
             isSearchable
-            components={{ DropdownIndicator, IndicatorSeparator: null }}
+            placeholder="Buscar"
+            // components={{ DropdownIndicator, IndicatorSeparator: null }}
         />
     )
 };

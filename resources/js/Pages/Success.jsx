@@ -13,7 +13,7 @@ const SuccessImage = Styled.div`
 `;
 
 const config = {
-    angle: "90",
+    angle: "50",
     spread: "107",
     startVelocity: "93",
     elementCount: "111",
@@ -52,7 +52,7 @@ function Success(props) {
                         <span className="text-lg">r</span>esumen de compra:
                     </div>
                     {/* datos de compra */}
-                    <section className="flex w-full mt-4 flex-col items-center md:flex-row md:justify-between">
+                    <section className="flex w-full mt-4 flex-col items-center md:flex-row md:justify-around">
                         {/* Container left */}
                         <div>
                             {/* Name */}
@@ -85,7 +85,7 @@ function Success(props) {
                             </div>
                         </div>
                     </section>
-                    <Confetti active config={ config }/>
+                    <Confetti active={triggerConfetti} config={ config }/>
                     {/* @Todo: why use pb to get footer not hover content */}
                     {/* separator */}
                     <div className="w-full mt-4 mb-5">
@@ -109,7 +109,7 @@ function Success(props) {
                     </div>
                 </div>
             </section>
-            <Confetti active config={ config }/>
+            <Confetti active={triggerConfetti} config={ config }/>
         </Layout>
     );
 }

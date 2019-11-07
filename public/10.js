@@ -276,7 +276,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var SuccessImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
 var config = {
-  angle: "90",
+  angle: "50",
   spread: "107",
   startVelocity: "93",
   elementCount: "111",
@@ -332,7 +332,7 @@ function Success(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-lg"
   }, "r"), "esumen de compra:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "flex w-full mt-4 flex-col items-center md:flex-row md:justify-between"
+    className: "flex w-full mt-4 flex-col items-center md:flex-row md:justify-around"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm font-thin"
   }, "Nombre:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -354,7 +354,7 @@ function Success(props) {
   }, "Hora:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm font-bold ml-1"
   }, order.hour)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dom_confetti__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    active: true,
+    active: triggerConfetti,
     config: config
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full mt-4 mb-5"
@@ -382,7 +382,7 @@ function Success(props) {
   }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-center text-brand-orange text-2xl"
   }, "$", subtotal)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dom_confetti__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    active: true,
+    active: triggerConfetti,
     config: config
   }));
 }
