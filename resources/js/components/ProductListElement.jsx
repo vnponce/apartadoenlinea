@@ -18,6 +18,7 @@ export default function ProductListElement(props) {
         Inertia.delete(`/cart/product/${product.rowId}`);
     };
     const addOneItem = () => {
+        console.log('Addint one item');
         Inertia.post('/cart', {
             product_id: product.id,
             comment: product.options.comment,

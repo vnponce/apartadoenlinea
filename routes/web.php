@@ -62,9 +62,11 @@ Route::post('pedido', 'OrderController@store');
 
 Route::get('charola', 'CartController@index');
 
+/*
 Route::get('listo', function() {
     return Inertia::render('Success');
 });
+*/
 
 // Card
 Route::post('/cart', 'CartController@store');

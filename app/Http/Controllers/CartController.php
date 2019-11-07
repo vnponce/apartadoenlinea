@@ -52,13 +52,27 @@ class CartController extends Controller
         Cart::add($product, $request->quantity, ['comment' => $request->comment])->associate(Product::class);
         $notUpdatedItems->map(function($item){
             Cart::remove($item->rowId);
-            Cart::add($item->id, $item->name, $item->qty, $item->price, ['comment' => $item->options->comment])->associate(Product::class);
+            // si es el que tiene los datos debemos poner los datos completos de nuevo
+            if($item->id === 'orderDetailsId') {
+                Cart::add($item->id, $item->name, $item->qty, $item->price, [
+                    'store' => $item->options->store,
+                    'date' => $item->options->date,
+                    'hour' => $item->options->hour,
+                    'name' => $item->options->name,
+                    'lastname' => $item->options->lastname,
+                    'phone' => $item->options->phone,
+                    'email' => $item->options->email,
+                ]);
+            } else {
+                Cart::add($item->id, $item->name, $item->qty, $item->price, ['comment' => $item->options->comment])->associate(Product::class);
+            }
         });
         $cart = Cart::content();
         $sorted = $cart->sortBy(function ($product, $key) {
             return $product->name;
         });
-        return Inertia::render('Checkout', compact('sorted'));
+        return redirect('/charola');
+        // return Inertia::render('Checkout', compact('sorted'));
     }
 
     public function empty()

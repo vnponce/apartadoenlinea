@@ -487,6 +487,7 @@ function ProductListElement(props) {
   };
 
   var addOneItem = function addOneItem() {
+    console.log('Addint one item');
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
       product_id: product.id,
       comment: product.options.comment,

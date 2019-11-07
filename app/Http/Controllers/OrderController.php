@@ -42,15 +42,16 @@ class OrderController extends Controller
         // 1.- Obtener los detalles de la order
         $total = Cart::subtotal() * 100;
         $cart = Cart::content();
-        // dd($cart);
+//        dd($cart);
         $detailsRowId = $cart->search(function ( $cartItem, $rowId) {
             return $cartItem->id ===  'orderDetailsId';
         });
+//         dd($detailsRowId);
         $detailsData = $cart->get($detailsRowId)->options;
         // -- Cart::remove($detailsRowId);
-        // dd($detailsData);
+//         dd($detailsData);
         $date = substr($detailsData->date, 0, strpos($detailsData->date, "T"));
-        // dd($date);
+//         dd($date);
         $order = Order::create([
             'store_id' => $detailsData->store,
             'date' => $date,
