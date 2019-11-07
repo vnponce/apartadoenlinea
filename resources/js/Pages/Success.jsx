@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../Shared/Layout';
 import Styled from 'styled-components';
 import moment from 'moment';
 import ProductListElement from "../components/ProductListElement";
+import Confetti from "react-dom-confetti";
 
 const SuccessImage = Styled.div`
     background-image:
@@ -11,12 +12,33 @@ const SuccessImage = Styled.div`
     background-size: cover;
 `;
 
+const config = {
+    angle: "90",
+    spread: "107",
+    startVelocity: "93",
+    elementCount: "111",
+    dragFriction: 0.1,
+    duration: "6060",
+    stagger: "0",
+    width: "12px",
+    height: "12px",
+    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+};
+
 function Success(props) {
+    const [triggerConfetti, setTriggerConfeti] = useState(false);
     console.log('props =>', props);
     const { order, subtotal, cart: { content }, stores } = props;
     const store = stores.find(store => store.id === order.store_id);
+
+    const toggleTriggerConfeti = () => setTriggerConfeti(!triggerConfetti);
+    useEffect(() => {
+        setTimeout(toggleTriggerConfeti, 300);
+        //eslint-disable-next-line
+    }, []);
     return (
         <Layout title="Gracias">
+            <Confetti active={triggerConfetti} config={ config }/>
             <section className="mt-24 w-full">
                 <span className="block text-brand-orange text-4xl text-center font-title font-semibold">GRACIAS POR TU COMPRA</span>
                 <span className="block p-2 text-gray-500 text-base text-center max-w-xl m-auto">¡Tu pan esta en el horno!</span>
@@ -63,6 +85,7 @@ function Success(props) {
                             </div>
                         </div>
                     </section>
+                    <Confetti active config={ config }/>
                     {/* @Todo: why use pb to get footer not hover content */}
                     {/* separator */}
                     <div className="w-full mt-4 mb-5">
@@ -79,13 +102,14 @@ function Success(props) {
                         {/* products list */}
                         { Object.keys(content).sort().filter(product => content[product].id !== 'orderDetailsId').map(product =>
                             <ProductListElement product={content[product]} isEditable={false}/>
-                            )
+                        )
                         }
                         <div className="w-full text-center text-regularText text-normal">Total:</div>
                         <div className="w-full text-center text-brand-orange text-2xl">${ subtotal }</div>
                     </div>
                 </div>
             </section>
+            <Confetti active config={ config }/>
         </Layout>
     );
 }
