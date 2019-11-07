@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../Shared/Layout';
 import Styled from 'styled-components';
 import moment from 'moment';
+import ProductListElement from "../components/ProductListElement";
 
 const SuccessImage = Styled.div`
     background-image:
@@ -76,21 +77,10 @@ function Success(props) {
                             <span className="flex-1 text-brand-orange font-thin text-right">Prec. Unit.</span>
                         </div>
                         {/* products list */}
-                        { Object.keys(content).sort().filter(product => content[product].id !== 'orderDetailsId').map(product => (
-                            <div className="mb-8">
-                                {console.log('product =>', content[product])}
-                                <div className="flex">
-                                    <div className="flex items-center flex-1 inline-block">
-                                        <span className="ml-0 text-lg">{ content[product].name }</span>
-                                    </div>
-                                    <div className="flex flex-1 text-center items-center justify-center">
-                                        <span>{ content[product].qty }</span>
-                                    </div>
-                                    <div className="flex flex-1 items-center flex-row-reverse">$ { content[product].price }</div>
-                                </div>
-                                <div className="text-sm italic text-brand-orange">{ content[product].options && content[product].options.comment || '' }</div>
-                            </div>
-                        ))}
+                        { Object.keys(content).sort().filter(product => content[product].id !== 'orderDetailsId').map(product =>
+                            <ProductListElement product={content[product]} isEditable={false}/>
+                            )
+                        }
                         <div className="w-full text-center text-regularText text-normal">Total:</div>
                         <div className="w-full text-center text-brand-orange text-2xl">${ subtotal }</div>
                     </div>

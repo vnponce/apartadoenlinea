@@ -207,7 +207,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function ProductListElement(props) {
-  var product = props.product;
+  var product = props.product,
+      _props$isEditable = props.isEditable,
+      isEditable = _props$isEditable === void 0 ? true : _props$isEditable;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -262,7 +264,7 @@ function ProductListElement(props) {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-center flex-1 inline-block"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  }, isEditable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     onClick: removeItem,
     className: "cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500 w-3",
     viewBox: "0 0 20 20",
@@ -274,7 +276,7 @@ function ProductListElement(props) {
     className: "ml-0 text-lg"
   }, product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-1 text-center items-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  }, isEditable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     onClick: removeOneItem,
     className: "w-5 cursor-pointer fill-current text-brand-orange",
     xmlns: "http://www.w3.org/2000/svg",
@@ -287,7 +289,7 @@ function ProductListElement(props) {
     d: "M16,10c0,0.553-0.048,1-0.601,1H4.601C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H15.4  C15.952,9,16,9.447,16,10z"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "flex-1 cursor-pointer "
-  }, product.qty), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  }, product.qty), isEditable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     onClick: addOneItem,
     className: "w-5 cursor-pointer fill-current text-brand-orange",
     xmlns: "http://www.w3.org/2000/svg",
@@ -305,7 +307,7 @@ function ProductListElement(props) {
       return setShowInput(true);
     },
     className: "text-sm italic text-brand-orange"
-  }, showInput ?
+  }, showInput && isEditable ?
   /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
   react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     name: "comment",
@@ -317,7 +319,7 @@ function ProductListElement(props) {
       return setComment(e.target.value);
     },
     className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full"
-  }) : comment || 'Agregar breve comentario'));
+  }) : comment || (isEditable ? 'Agregar breve comentario' : '')));
 }
 ;
 
