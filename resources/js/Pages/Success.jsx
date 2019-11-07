@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../Shared/Layout';
 import Styled from 'styled-components';
+import moment from 'moment';
 
 const SuccessImage = Styled.div`
     background-image:
@@ -10,6 +11,9 @@ const SuccessImage = Styled.div`
 `;
 
 function Success(props) {
+    console.log('props =>', props);
+    const { order, subtotal, cart: { content }, stores } = props;
+    const store = stores.find(store => store.id === order.store_id);
     return (
         <Layout title="Gracias">
             <section className="mt-24 w-full">
@@ -31,12 +35,12 @@ function Success(props) {
                             {/* Name */}
                             <div>
                                 <span className="text-sm font-thin">Nombre:</span>
-                                <span className="text-sm font-bold mr-1">Santiago Chavez</span>
+                                <span className="text-sm font-bold ml-1">{ order.name } { order.lastname }</span>
                             </div>
                             {/* order number */}
                             <div>
                                 <span className="text-sm font-thin">Número de pedido:</span>
-                                <span className="text-sm font-bold mr-1">00001</span>
+                                <span className="text-sm font-bold ml-1">{ order.id }</span>
                             </div>
                         </div>
                         {/* Container right */}
@@ -44,17 +48,17 @@ function Success(props) {
                             {/* Devliver place */}
                             <div>
                                 <span className="text-sm font-thin">Recoger en:</span>
-                                <span className="text-sm font-bold mr-1">Zaragoza</span>
+                                <span className="text-sm font-bold ml-1">{ store.name }</span>
                             </div>
                             {/* Date */}
                             <div>
                                 <span className="text-sm font-thin">Día:</span>
-                                <span className="text-sm font-bold mr-1">13 de mayo el 2019</span>
+                                <span className="text-sm font-bold ml-1">{ moment(order.date).format('D MMMM, YYYY') }</span>
                             </div>
                             {/* Hour */}
                             <div>
                                 <span className="text-sm font-thin">Hora:</span>
-                                <span className="text-sm font-bold mr-1">13:00 hrs</span>
+                                <span className="text-sm font-bold ml-1">{ order.hour}</span>
                             </div>
                         </div>
                     </section>
@@ -72,20 +76,23 @@ function Success(props) {
                             <span className="flex-1 text-brand-orange font-thin text-right">Prec. Unit.</span>
                         </div>
                         {/* products list */}
-                        <div className="mb-8">
-                            <div className="flex">
-                                <div className="flex items-center flex-1 inline-block">
-                                    <span className="ml-0 text-lg">Producto</span>
+                        { Object.keys(content).sort().filter(product => content[product].id !== 'orderDetailsId').map(product => (
+                            <div className="mb-8">
+                                {console.log('product =>', content[product])}
+                                <div className="flex">
+                                    <div className="flex items-center flex-1 inline-block">
+                                        <span className="ml-0 text-lg">{ content[product].name }</span>
+                                    </div>
+                                    <div className="flex flex-1 text-center items-center justify-center">
+                                        <span>{ content[product].qty }</span>
+                                    </div>
+                                    <div className="flex flex-1 items-center flex-row-reverse">$ { content[product].price }</div>
                                 </div>
-                                <div className="flex flex-1 text-center items-center justify-center">
-                                    <span>1</span>
-                                </div>
-                                <div className="flex flex-1 items-center flex-row-reverse">$ 4.00</div>
+                                <div className="text-sm italic text-brand-orange">{ content[product].options && content[product].options.comment || '' }</div>
                             </div>
-                            <div className="text-sm italic text-brand-orange">No incluir gluten ni conservadores</div>
-                        </div>
+                        ))}
                         <div className="w-full text-center text-regularText text-normal">Total:</div>
-                        <div className="w-full text-center text-brand-orange text-2xl">$64.00</div>
+                        <div className="w-full text-center text-brand-orange text-2xl">${ subtotal }</div>
                     </div>
                 </div>
             </section>

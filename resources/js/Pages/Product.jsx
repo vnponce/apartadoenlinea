@@ -151,7 +151,7 @@ function Product(props) {
                         <div
                             className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0">
                             <p className="hover:border-grey-900 italic">Cantidad:</p>
-                            <input name="quantity" type="number" placeholder="Cantidad" value={quantity} onChange={e => setQuantity(e.target.value)}
+                            <input name="quantity" type="number" min="1" placeholder="Cantidad" value={quantity} onChange={e => setQuantity(e.target.value)}
                                    className="border border-transparent rounded w-1/2 mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1" />
                         </div>
                         {/* Button (Poner en la charola). */}

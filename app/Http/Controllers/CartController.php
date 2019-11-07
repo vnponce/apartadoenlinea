@@ -64,5 +64,6 @@ class CartController extends Controller
     public function empty()
     {
         Cart::destroy();
+        return redirect('/');
     }
 }

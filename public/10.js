@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n    background-image:\n        linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),\n        url('/images/successWithoutBlur.jpg');\n    background-size: cover;\n"]);
 
@@ -28,9 +30,18 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var SuccessImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
 
 function Success(props) {
+  console.log('props =>', props);
+  var order = props.order,
+      subtotal = props.subtotal,
+      content = props.cart.content,
+      stores = props.stores;
+  var store = stores.find(function (store) {
+    return store.id === order.store_id;
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Gracias"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
@@ -54,24 +65,24 @@ function Success(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm font-thin"
   }, "Nombre:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm font-bold mr-1"
-  }, "Santiago Chavez")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold ml-1"
+  }, order.name, " ", order.lastname)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm font-thin"
   }, "N\xFAmero de pedido:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm font-bold mr-1"
-  }, "00001"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold ml-1"
+  }, order.id))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm font-thin"
   }, "Recoger en:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm font-bold mr-1"
-  }, "Zaragoza")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold ml-1"
+  }, store.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm font-thin"
   }, "D\xEDa:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm font-bold mr-1"
-  }, "13 de mayo el 2019")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm font-bold ml-1"
+  }, moment__WEBPACK_IMPORTED_MODULE_3___default()(order.date).format('D MMMM, YYYY'))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm font-thin"
   }, "Hora:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm font-bold mr-1"
-  }, "13:00 hrs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-sm font-bold ml-1"
+  }, order.hour)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full mt-4 mb-5"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     className: "w-100"
@@ -85,25 +96,29 @@ function Success(props) {
     className: "flex-1 text-brand-orange font-thin text-center"
   }, "Cant."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "flex-1 text-brand-orange font-thin text-right"
-  }, "Prec. Unit.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mb-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center flex-1 inline-block"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "ml-0 text-lg"
-  }, "Producto")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 text-center items-center justify-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "1")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 items-center flex-row-reverse"
-  }, "$ 4.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-sm italic text-brand-orange"
-  }, "No incluir gluten ni conservadores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Prec. Unit.")), Object.keys(content).sort().filter(function (product) {
+    return content[product].id !== 'orderDetailsId';
+  }).map(function (product) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "mb-8"
+    }, console.log('product =>', content[product]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "flex"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "flex items-center flex-1 inline-block"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "ml-0 text-lg"
+    }, content[product].name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "flex flex-1 text-center items-center justify-center"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, content[product].qty)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "flex flex-1 items-center flex-row-reverse"
+    }, "$ ", content[product].price)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "text-sm italic text-brand-orange"
+    }, content[product].options && content[product].options.comment || ''));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-center text-regularText text-normal"
   }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-center text-brand-orange text-2xl"
-  }, "$64.00")))));
+  }, "$", subtotal)))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Success);

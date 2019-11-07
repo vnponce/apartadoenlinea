@@ -14,6 +14,8 @@ class Order extends Model
       'date',
       'hour',
       'store_id',
+      'total',
+      'status',
     ];
 
     protected $dates = [
@@ -23,6 +25,6 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)
-            ->withPivot(['price', 'quantity', 'comments']);
+            ->withPivot(['price', 'quantity', 'comment']);
     }
 }

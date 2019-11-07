@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class OrderController extends Controller
 {
@@ -31,8 +32,8 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Inertia\Response
      */
     public function store(Request $request)
     {
@@ -41,11 +42,12 @@ class OrderController extends Controller
         // 1.- Obtener los detalles de la order
         $total = Cart::subtotal() * 100;
         $cart = Cart::content();
+        // dd($cart);
         $detailsRowId = $cart->search(function ( $cartItem, $rowId) {
             return $cartItem->id ===  'orderDetailsId';
         });
         $detailsData = $cart->get($detailsRowId)->options;
-        Cart::remove($detailsRowId);
+        // -- Cart::remove($detailsRowId);
         // dd($detailsData);
         $date = substr($detailsData->date, 0, strpos($detailsData->date, "T"));
         // dd($date);
@@ -59,19 +61,21 @@ class OrderController extends Controller
             'email' => $detailsData->email,
             'total' => $total,
             // @todo: hacer status
-            // 'status' => 'created',
+            'status' => 'created',
         ]);
         // dd($order);
 //        dd($cart);
-        $cart->map(function ($item) use ($order) {
-            // dd($item->options->comment);
+        $cart->filter(function($item) use ($detailsRowId) {
+            return $item->rowId !== $detailsRowId;
+        })->map(function ($item) use ($order) {
+            // dd($item);
            $order->products()->attach($item->id, [
                'price' => $item->price * 100,
                'quantity' => $item->qty,
-               'comment' => $item->options->comment,
+               'comment' => $item->options->comment ?? '',
            ]);
         });
-        dd($order->products);
+        return Inertia::render('Success', compact('order'));
     }
 
     /**

@@ -200,6 +200,7 @@ function Product(props) {
   }, "Cantidad:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     name: "quantity",
     type: "number",
+    min: "1",
     placeholder: "Cantidad",
     value: quantity,
     onChange: function onChange(e) {
