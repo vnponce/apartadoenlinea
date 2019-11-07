@@ -14,6 +14,12 @@ class Product extends Model implements Buyable
         return $this->belongsTo(Category::class);
     }
 
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class)
+            ->withPivot(['price', 'quantity', 'comments']);
+    }
+
     public function getFormatPriceAttribute()
     {
         return money_format('$%i', $this->price / 100);

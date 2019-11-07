@@ -8,6 +8,7 @@ import {Inertia} from "@inertiajs/inertia";
 
 function Checkout(props) {
     const { cart: { content }, subtotal } = usePage();
+    console.log('content =>', content);
     const [agreeTerms, setAgreeTerms] = useState(false);
     const createOrder = () => {
         console.log('create order');

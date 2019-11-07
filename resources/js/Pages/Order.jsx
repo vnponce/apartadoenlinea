@@ -58,7 +58,7 @@ function Order() {
         console.log('invoice =>', invoice);
         console.log('wantInvoice =>', wantInvoice);
 
-        Inertia.post('/pedido', {
+        Inertia.post('/pedido/detalles', {
             store,
             date,
             hour,

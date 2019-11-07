@@ -15,6 +15,18 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('name');
+            $table->string('lastname');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('hour');
+            $table->date('date');
+            $table->integer('total');
+            $table->enum('status', ['created', 'opened', 'payed', 'delivered']);
+            $table->unsignedBigInteger('store_id');
+            $table->foreign('store_id')->references('id')->on('stores');
+
             $table->timestamps();
         });
     }

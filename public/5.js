@@ -115,7 +115,7 @@ function Order() {
     console.log('customer =>', customer);
     console.log('invoice =>', invoice);
     console.log('wantInvoice =>', wantInvoice);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post('/pedido', {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post('/pedido/detalles', {
       store: store,
       date: date,
       hour: hour,

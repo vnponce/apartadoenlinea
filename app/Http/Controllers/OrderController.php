@@ -36,7 +36,42 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->toArray());
+        // dd('store request =>', $request);
+        // if paypayl pasa  o es usuario de panadería no va a paypal- Crear orden
+        // 1.- Obtener los detalles de la order
+        $total = Cart::subtotal() * 100;
+        $cart = Cart::content();
+        $detailsRowId = $cart->search(function ( $cartItem, $rowId) {
+            return $cartItem->id ===  'orderDetailsId';
+        });
+        $detailsData = $cart->get($detailsRowId)->options;
+        Cart::remove($detailsRowId);
+        // dd($detailsData);
+        $date = substr($detailsData->date, 0, strpos($detailsData->date, "T"));
+        // dd($date);
+        $order = Order::create([
+            'store_id' => $detailsData->store,
+            'date' => $date,
+            'hour' => $detailsData->hour,
+            'name' => $detailsData->name,
+            'lastname' => $detailsData->lastname,
+            'phone' => $detailsData->phone,
+            'email' => $detailsData->email,
+            'total' => $total,
+            // @todo: hacer status
+            // 'status' => 'created',
+        ]);
+        // dd($order);
+//        dd($cart);
+        $cart->map(function ($item) use ($order) {
+            // dd($item->options->comment);
+           $order->products()->attach($item->id, [
+               'price' => $item->price * 100,
+               'quantity' => $item->qty,
+               'comment' => $item->options->comment,
+           ]);
+        });
+        dd($order->products);
     }
 
     /**
@@ -47,6 +82,7 @@ class OrderController extends Controller
      */
     public function setDetails(Request $request)
     {
+        // dd('set details', $request->toArray());
         $request->validate([
             'store' => 'required',
             'date' => 'required',
@@ -57,6 +93,15 @@ class OrderController extends Controller
             'email' => 'required',
         ]);
 //        dd($request->toArray());
+        $cart = Cart::content();
+//        dd($cart);
+        $previousOrderDetails = $cart->search(function ( $cartItem, $rowId) {
+           return $cartItem->id ===  'orderDetailsId';
+        });
+//        dd($previousData);
+        if($previousOrderDetails) {
+            Cart::remove($previousOrderDetails);
+        }
         $current = Cart::add('orderDetailsId', 'OrderDetails', 1, 0, [
             'store' => $request->store,
             'date' => $request->date,

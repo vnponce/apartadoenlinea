@@ -38,6 +38,8 @@ function Checkout(props) {
       content = _usePage.cart.content,
       subtotal = _usePage.subtotal;
 
+  console.log('content =>', content);
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       agreeTerms = _useState2[0],
