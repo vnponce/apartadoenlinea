@@ -342,7 +342,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Autocomplete; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var react_select_async__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select/async */ "./node_modules/react-select/async/dist/react-select.browser.esm.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -350,6 +352,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -415,13 +418,41 @@ function Autocomplete() {
     })));
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"] // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
+  var promiseOptions = function promiseOptions(inputValue) {
+    if (inputValue && inputValue.length > 3) {
+      return fetch("/product/search?q=".concat(inputValue)).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        var options = [];
+        console.log('segundo then json =>', json);
+        options = json.map(function (item) {
+          return {
+            value: item.id,
+            label: item.name
+          };
+        });
+        console.log('segundo then options =>', options);
+        return options;
+      })["catch"](function (error) {
+        return console.log('error =>', error);
+      });
+    }
+  };
+
+  var handleChange = function handleChange(selectedOption) {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].visit("/pan/".concat(selectedOption.value));
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select_async__WEBPACK_IMPORTED_MODULE_1__["default"] // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
   , {
     className: "mr-3 w-1/3 bg-brand-orange",
     options: options // styles={customStyles}
     ,
     isSearchable: true,
-    placeholder: "Buscar" // components={{ DropdownIndicator, IndicatorSeparator: null }}
+    placeholder: "Buscar",
+    loadOptions: promiseOptions,
+    onChange: handleChange,
+    autoFocus: true // components={{ DropdownIndicator, IndicatorSeparator: null }}
 
   });
 }
@@ -570,9 +601,9 @@ function Header() {
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/pedido",
     id: "charola"
-  }, content && content.length === 0 || Object.keys(content).filter(function (product) {
+  }, content && (content.length === 0 || Object.keys(content).filter(function (product) {
     return content[product].id !== 'orderDetailsId';
-  }).length === 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  }).length === 0) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     className: "h-4 fill-current stroke-current text-white",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 100 44.83"

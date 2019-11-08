@@ -1,6 +1,6 @@
 import React from 'react';
-import Select from "react-select";
-
+import AsyncSelect from 'react-select/async';
+import {Inertia} from "@inertiajs/inertia";
 export default function Autocomplete() {
     const customStylesBK = {
         option: (provided, state) => ({
@@ -54,14 +54,41 @@ export default function Autocomplete() {
         </div>
     );
 
+    const promiseOptions = inputValue =>{
+        if(inputValue && inputValue.length > 3) {
+            return fetch(`/product/search?q=${inputValue}`, )
+                .then(response => {
+                    return response.json()
+                })
+                .then(json => {
+                    let options = [];
+                    console.log('segundo then json =>', json);
+                    options = json.map(item => ({
+                        value: item.id,
+                        label: item.name,
+                    }));
+                    console.log('segundo then options =>', options);
+                    return options;
+                })
+                .catch(error => console.log('error =>', error))
+        }
+    };
+
+    const handleChange = selectedOption => {
+        Inertia.visit(`/pan/${selectedOption.value}`)
+    };
+
     return (
-        <Select
+        <AsyncSelect
             // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
             className="mr-3 w-1/3 bg-brand-orange"
             options={options}
             // styles={customStyles}
             isSearchable
             placeholder="Buscar"
+            loadOptions={promiseOptions}
+            onChange={handleChange}
+            autoFocus
             // components={{ DropdownIndicator, IndicatorSeparator: null }}
         />
     )

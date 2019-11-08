@@ -164,7 +164,11 @@ function Order() {
     className: "text-sm text-red-500 error hour"
   }, errors.hour[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "hidden border h-56 mt-4 bg-brand-gray sm:block"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    store: store && stores.filter(function (s) {
+      return s.id === store;
+    })[0]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white sm:hidden"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Ver el mapa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     version: "1.1",
@@ -489,7 +493,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @react-google-maps/api */ "./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js");
 
 
-function Map() {
+function Map(props) {
+  console.log('map props =>', props);
+  var _props$store = props.store,
+      _props$store$lat = _props$store.lat,
+      lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
+      _props$store$lon = _props$store.lon,
+      lng = _props$store$lon === void 0 ? "-96.1270615" : _props$store$lon;
+  console.log('lat =>', lat);
+  console.log('lng =>', lng);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["LoadScript"], {
     id: "script-loader",
     googleMapsApiKey: "AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs"
@@ -501,21 +513,21 @@ function Map() {
     },
     zoom: 15,
     center: {
-      lat: 19.1707806,
-      lng: -96.1270615
+      lat: parseFloat(lat),
+      lng: parseFloat(lng) // lat: 19.1707806,
+      // lng: -96.1270615,
+
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
     onLoad: function onLoad(marker) {
       console.log('marker: ', marker);
     },
     position: {
-      lat: 19.1707806,
-      lng: -96.1270615
-    },
-    draggable: true,
-    onDragEnd: function onDragEnd(a, b, c) {
-      return console.log('e onDrag =>', a.latLng.lat(), a.latLng.lng());
-    }
+      lat: parseFloat(lat),
+      lng: parseFloat(lng)
+    } // draggable
+    // onDragEnd={ (a, b, c) => console.log('e onDrag =>', a.latLng.lat(), a.latLng.lng())}
+
   })));
 }
 

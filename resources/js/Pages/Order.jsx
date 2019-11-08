@@ -99,7 +99,7 @@ function Order() {
                         {/* Map */}
                         {/* Mapa */}
                         <div className="hidden border h-56 mt-4 bg-brand-gray sm:block">
-                            <Map />
+                            <Map store={store && stores.filter(s => s.id === store)[0]} />
                         </div>
                         {/* Ver mapa */}
                         <button

@@ -1,7 +1,11 @@
 import React  from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 
-export default function Map() {
+export default function Map(props) {
+    console.log('map props =>', props);
+    const { store: { lat = "19.1707806", lon: lng = "-96.1270615"} } = props;
+    console.log('lat =>', lat);
+    console.log('lng =>', lng);
     return (
         <LoadScript
             id="script-loader"
@@ -15,8 +19,10 @@ export default function Map() {
                 }}
                 zoom={15}
                 center={{
-                    lat: 19.1707806,
-                    lng: -96.1270615,
+                    lat: parseFloat(lat),
+                    lng: parseFloat(lng),
+                    // lat: 19.1707806,
+                    // lng: -96.1270615,
                 }}
             >
                 <Marker
@@ -24,11 +30,11 @@ export default function Map() {
                         console.log('marker: ', marker)
                     }}
                     position={{
-                        lat: 19.1707806,
-                        lng: -96.1270615,
+                        lat: parseFloat(lat),
+                        lng: parseFloat(lng),
                     }}
-                    draggable
-                    onDragEnd={ (a, b, c) => console.log('e onDrag =>', a.latLng.lat(), a.latLng.lng())}
+                    // draggable
+                    // onDragEnd={ (a, b, c) => console.log('e onDrag =>', a.latLng.lat(), a.latLng.lng())}
                 />
             </GoogleMap>
         </LoadScript>

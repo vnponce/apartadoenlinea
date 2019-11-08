@@ -34594,7 +34594,7 @@ var map = {
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		2,
+		10,
 		3,
 		1,
 		5
@@ -34602,7 +34602,7 @@ var map = {
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		2,
+		10,
 		3,
 		1,
 		5
@@ -34624,16 +34624,16 @@ var map = {
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		2,
+		10,
 		1,
-		10
+		2
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		2,
+		10,
 		1,
-		10
+		2
 	]
 };
 function webpackAsyncContext(req) {

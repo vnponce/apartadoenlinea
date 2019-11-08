@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-
+/*
 Route::get('front', function() {
     return view('front');
 });
@@ -41,7 +41,7 @@ Route::get('checkout', function() {
 Route::get('compra', function() {
     return view('success');
 });
-
+*/
 // Inertia
 Route::get('inertia', function() {
     return Inertia::render('Example', [
@@ -77,3 +77,5 @@ Route::get('/empty', 'CartController@empty');
 Route::post('/cart/product/{product}/update/comment', 'CartController@updateComment');
 Route::delete('/cart/product/{id}', 'CartController@remove');
 // Route::post('/cart', 'CartController@remove');
+
+Route::get('product/search', 'ProductController@search');

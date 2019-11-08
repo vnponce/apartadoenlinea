@@ -19,6 +19,13 @@ class ProductController extends Controller
         return Inertia::render('Home', compact('products'));
     }
 
+    public function search(Request $request)
+    {
+        // dd($request->get('search'));
+        $products = Product::where('name', 'like', "%{$request->get('q')}%")->get();
+        return $products;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

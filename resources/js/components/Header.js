@@ -56,7 +56,7 @@ export default function Header() {
                     }
                     {/* Charola icon */}
                     <InertiaLink href="/pedido" id="charola">
-                        {content && content.length === 0 || Object.keys(content).filter(product => content[product].id !== 'orderDetailsId').length === 0&&
+                        {content && (content.length === 0 || Object.keys(content).filter(product => content[product].id !== 'orderDetailsId').length === 0 ) &&
                         <svg className="h-4 fill-current stroke-current text-white"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44.83">
                             <g id="Empty_Tray">

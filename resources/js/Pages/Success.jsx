@@ -4,6 +4,7 @@ import Styled from 'styled-components';
 import moment from 'moment';
 import ProductListElement from "../components/ProductListElement";
 import Confetti from "react-dom-confetti";
+import Map from "../components/Map";
 
 const SuccessImage = Styled.div`
     background-image:
@@ -106,6 +107,13 @@ function Success(props) {
                         }
                         <div className="w-full text-center text-regularText text-normal">Total:</div>
                         <div className="w-full text-center text-brand-orange text-2xl">${ subtotal }</div>
+                        {/* Mapa */}
+                        <div className="hidden border h-56 mt-4 bg-brand-gray sm:block">
+                            <Map store={store}/>
+                            <a target="_blank" rel="noopener noreferrer" href={`https://maps.google.com/?q=${store.lat},${store.lon}&z=8`}>
+                                ir a mapa
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
