@@ -17,7 +17,7 @@ class CartController extends Controller
             //dd($product, $key);
            return $product->name;
         });
-        // dd($sorted);
+//         dd($sorted);
         return Inertia::render('Checkout', compact('sorted'));
     }
 

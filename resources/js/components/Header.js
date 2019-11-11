@@ -38,7 +38,7 @@ export default function Header() {
                     </ul>
                 </nav>
                 <InertiaLink href="/">
-                    <img src="Logo-Short.svg" className="lg:hidden pt-2 h-20 flex-1 flex-grow-0 m-auto" alt=""/>
+                    <img src="/Logo-Short.svg" className="lg:hidden pt-2 h-20 flex-1 flex-grow-0 m-auto" alt=""/>
                 </InertiaLink>
                 <div className="flex-1 flex justify-end lg:items-end">
                     {showSearch &&

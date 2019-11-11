@@ -72,7 +72,7 @@ export default function ProductListElement(props) {
                     </svg>
                     }
                 </div>
-                <div className="flex flex-1 items-center flex-row-reverse">${ product.price }</div>
+                <div className="flex flex-1 items-center flex-row-reverse">${ product.price.toFixed(2) }</div>
             </div>
             <div onClick={() => setShowInput(true)} className="text-sm italic text-brand-orange">
                 {showInput && isEditable ?

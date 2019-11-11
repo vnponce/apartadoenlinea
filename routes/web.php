@@ -79,3 +79,10 @@ Route::delete('/cart/product/{id}', 'CartController@remove');
 // Route::post('/cart', 'CartController@remove');
 
 Route::get('product/search', 'ProductController@search');
+
+Route::get('tyc', 'TyCController@tyc');
+Route::get('politicas', 'TyCController@tyc');
+// testing email view
+Route::get('email', function() {
+    return view('email.order-details-html');
+});

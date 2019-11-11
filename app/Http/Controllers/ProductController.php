@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -15,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate();
+        $favoriteCategory = Category::where('name', 'Favoritos')->first();
+        $products = Product::where('category_id', $favoriteCategory->id)->paginate();
         return Inertia::render('Home', compact('products'));
     }
 

@@ -34,7 +34,7 @@ function Success(props) {
 
     const toggleTriggerConfeti = () => setTriggerConfeti(!triggerConfetti);
     useEffect(() => {
-        setTimeout(toggleTriggerConfeti, 300);
+        setTimeout(toggleTriggerConfeti, 500);
         //eslint-disable-next-line
     }, []);
     return (

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderDetails;
 use App\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -76,6 +77,10 @@ class OrderController extends Controller
                'comment' => $item->options->comment ?? '',
            ]);
         });
+
+        // @todo: Send email
+        \Mail::to($detailsData->email)->send(new OrderDetails($order));
+
         return Inertia::render('Success', compact('order'));
     }
 
@@ -87,7 +92,7 @@ class OrderController extends Controller
      */
     public function setDetails(Request $request)
     {
-        // dd('set details', $request->toArray());
+//         dd('set details', $request->toArray());
         $request->validate([
             'store' => 'required',
             'date' => 'required',
@@ -103,7 +108,7 @@ class OrderController extends Controller
         $previousOrderDetails = $cart->search(function ( $cartItem, $rowId) {
            return $cartItem->id ===  'orderDetailsId';
         });
-//        dd($previousData);
+//        dd($previousOrderDetails);
         if($previousOrderDetails) {
             Cart::remove($previousOrderDetails);
         }
