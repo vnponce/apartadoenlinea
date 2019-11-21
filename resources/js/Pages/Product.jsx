@@ -16,6 +16,7 @@ function Product(props) {
     const [productId] = useState(product.id);
     const [comment, setComment] = useState('');
     const [quantity, setQuantity] = useState(1);
+    const [error, setError] = useState('');
 
     const addToCart = event => {
         // event.preventDefault();
@@ -93,6 +94,19 @@ function Product(props) {
         }
     };
 
+    const validateLength = e => {
+        const { value } = e.target;
+        console.log('value.length =>', value.length);
+        if(value.length < 120) {
+            setComment(e.target.value)
+            setError('');
+            setDisabled(false);
+        } else {
+            console.log('mayor a 120');
+            setDisabled(true);
+            setError('Máximo 120 caracteres')
+        }
+    }
     return (
         <Layout title={product.name}>
             <div className="flex flex-col mt-12 sm:mt-16 sm:flex-row">
@@ -142,8 +156,9 @@ function Product(props) {
                         <div className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify">
                             <p className="hover:border-grey-900 italic">Si no deseas algún ingrediente,
                                 especifícalo:</p>
-                            <input value={comment} type="text" placeholder="Ej. sin picante" onChange={e => setComment(e.target.value)}
+                            <input value={comment} type="text" placeholder="Ej. sin picante" onChange={validateLength}
                                    className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto" />
+                            {error && <p className="text-sm text-red-500 error hour">{error}</p>}
                         </div>
                         {/* Qty. */}
                         <div

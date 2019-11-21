@@ -65,6 +65,11 @@ function Product(props) {
       quantity = _useState10[0],
       setQuantity = _useState10[1];
 
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      error = _useState12[0],
+      setError = _useState12[1];
+
   var addToCart = function addToCart(event) {
     // event.preventDefault();
     addToCardAnimation();
@@ -122,6 +127,21 @@ function Product(props) {
         });
         */
       });
+    }
+  };
+
+  var validateLength = function validateLength(e) {
+    var value = e.target.value;
+    console.log('value.length =>', value.length);
+
+    if (value.length < 120) {
+      setComment(e.target.value);
+      setError('');
+      setDisabled(false);
+    } else {
+      console.log('mayor a 120');
+      setDisabled(true);
+      setError('Máximo 120 caracteres');
     }
   };
 
@@ -188,11 +208,11 @@ function Product(props) {
     value: comment,
     type: "text",
     placeholder: "Ej. sin picante",
-    onChange: function onChange(e) {
-      return setComment(e.target.value);
-    },
+    onChange: validateLength,
     className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), error && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm text-red-500 error hour"
+  }, error)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "hover:border-grey-900 italic"
