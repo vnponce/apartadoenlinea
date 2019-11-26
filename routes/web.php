@@ -86,3 +86,7 @@ Route::get('politicas', 'TyCController@tyc');
 Route::get('email', function() {
     return view('email.order-details-html');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

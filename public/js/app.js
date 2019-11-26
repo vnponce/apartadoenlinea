@@ -34560,98 +34560,110 @@ var map = {
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		5,
-		7
+		1,
+		8
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		5,
-		7
+		1,
+		8
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
-		10
+		11
 	],
 	"./Example.js": [
 		"./resources/js/Pages/Example.js",
-		10
+		11
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
 		0,
-		9,
-		5,
-		8
+		10,
+		1,
+		9
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
-		9,
-		5,
-		8
+		10,
+		1,
+		9
+	],
+	"./Login": [
+		"./resources/js/Pages/Login.jsx",
+		0,
+		1,
+		15
+	],
+	"./Login.jsx": [
+		"./resources/js/Pages/Login.jsx",
+		0,
+		1,
+		15
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		2,
 		3,
+		4,
 		1,
-		5,
-		13
+		6
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		2,
 		3,
+		4,
 		1,
-		5,
-		13
+		6
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		4,
 		5,
-		11
+		1,
+		13
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		4,
 		5,
-		11
+		1,
+		13
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		2,
 		3,
-		5,
-		14
+		1,
+		7
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		2,
 		3,
-		5,
-		14
+		1,
+		7
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		2,
-		5,
-		15
+		1,
+		14
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		2,
-		5,
-		15
+		1,
+		14
 	]
 };
 function webpackAsyncContext(req) {
