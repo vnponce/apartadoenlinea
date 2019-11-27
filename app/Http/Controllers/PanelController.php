@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class PanelController extends Controller
 {
     public function index()
     {
-        return 'hola panel';
+        return Inertia::render('Admin/Dashboard');
     }
 }

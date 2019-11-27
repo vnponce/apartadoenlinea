@@ -34557,17 +34557,29 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./Admin/Dashboard": [
+		"./resources/js/Pages/Admin/Dashboard.jsx",
+		10,
+		21
+	],
+	"./Admin/Dashboard.jsx": [
+		"./resources/js/Pages/Admin/Dashboard.jsx",
+		10,
+		21
+	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
-		12,
-		1,
-		8
+		10,
+		14,
+		7,
+		19
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
-		12,
-		1,
-		8
+		10,
+		14,
+		7,
+		19
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34579,91 +34591,103 @@ var map = {
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
-		12,
 		10,
-		1,
-		9
+		14,
+		23,
+		7,
+		20
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
-		12,
 		10,
-		1,
-		9
+		14,
+		23,
+		7,
+		20
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
-		12,
-		1,
-		15
+		10,
+		14,
+		7,
+		22
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
-		12,
-		1,
-		15
+		10,
+		14,
+		7,
+		22
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
-		12,
-		2,
+		10,
+		14,
 		3,
 		4,
 		1,
-		6
+		7,
+		17
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
-		12,
-		2,
+		10,
+		14,
 		3,
 		4,
 		1,
-		6
+		7,
+		17
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
-		12,
-		5,
-		1,
-		13
+		10,
+		14,
+		0,
+		7,
+		24
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
-		12,
-		5,
-		1,
-		13
+		10,
+		14,
+		0,
+		7,
+		24
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
-		12,
-		2,
+		10,
+		14,
 		3,
-		1,
-		7
+		4,
+		7,
+		18
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
-		12,
-		2,
+		10,
+		14,
 		3,
-		1,
-		7
+		4,
+		7,
+		18
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		12,
-		2,
-		1,
-		14
+		10,
+		14,
+		3,
+		7,
+		25
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		12,
-		2,
-		1,
-		14
+		10,
+		14,
+		3,
+		7,
+		25
 	]
 };
 function webpackAsyncContext(req) {
