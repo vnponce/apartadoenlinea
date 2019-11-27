@@ -718,9 +718,8 @@ function Layout(_ref) {
     className: "topbar-divider d-none d-sm-block"
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     className: "nav-item dropdown no-arrow"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "nav-link dropdown-toggle",
-    href: "#",
     id: "userDropdown",
     role: "button",
     "data-toggle": "dropdown",
@@ -734,9 +733,8 @@ function Layout(_ref) {
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "dropdown-menu dropdown-menu-right shadow animated--grow-in",
     "aria-labelledby": "userDropdown"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    className: "dropdown-item",
-    href: "#"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "dropdown-item"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
     className: "fas fa-user fa-sm fa-fw mr-2 text-gray-400"
   }), "Profile"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
