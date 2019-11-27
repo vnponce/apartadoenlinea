@@ -529,7 +529,8 @@ function Header() {
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
       categories = _usePage.categories,
-      content = _usePage.cart.content;
+      content = _usePage.cart.content,
+      auth = _usePage.auth;
 
   console.log('props =>');
   console.log('content =>', content);
@@ -583,7 +584,12 @@ function Header() {
       className: "block md:inline",
       href: "/category/".concat(category.id)
     }, category.name));
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+  }), auth && auth.user && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "md:ml-5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    className: "block md:inline",
+    href: "/admin/"
+  }, "Panel")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "/Logo-Short.svg",

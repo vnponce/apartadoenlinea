@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Layout from '../Shared/Layout';
 import Input from "../components/Input";
+import {Inertia} from "@inertiajs/inertia";
+import {usePage} from "@inertiajs/inertia-react";
 
 function Login(props) {
     console.log('props =>', props);
+    const [data, setData] = useState({});
+    const { errors } = usePage();
+    console.log('errors =>', errors);
+    console.log('errors.length =>', length);
+    const login = e => {
+        console.log('login con data =>', data);
+        e.preventDefault();
+        Inertia.post('/login', data);
+    };
+    const handleInput = e => {
+        console.log('e.target =>', e.target);
+        const { name, value } = e.target;
+        console.log('e.target.name =>', e.target.name);
+        console.log('e.target.value =>', e.target.value);
+        setData({
+            ...data,
+            [name]: value,
+        });
+    };
     return (
         <div title="Log in" className="container-fluid">
+            {console.log('data =>', data)}
             <div className="max-w-sm mx-auto mt-24 mb-8">
                 {/*
                 <svg className="w-24 mb-8 mx-auto" viewBox="0 0 114 114" xmlns="http://www.w3.org/2000/svg">
@@ -32,33 +54,41 @@ function Login(props) {
                 <img src="/Logo-Short.svg" className="w-24 mb-8 mx-auto" alt=""/>
                 <div className="bg-white shadow px-8 py-12">
                     <form>
-                    <Input
-                        label="Email"
-                        name="email"
-                        type="email"
-                        placeholder="billy@example.com"
-                        className="mb-4"
-                        v-model="form.email"
-                    errors="$page.errors.email"
-                     autofocus
-                />
-                <Input
-                    label="Password"
-                    name="password"
-                    placeholder="••••••"
-                    type="password"
-                    v-model="form.password"
-                errors="$page.errors.email"
-                 className="mb-6"
-            />
-            <div className="flex justify-end">
-                <button type="submit" className="button">
-                    Log in
-                </button>
+                        <Input
+                            value={data.email}
+                            label="Email"
+                            id="email"
+                            type="email"
+                            placeholder="billy@example.com"
+                            className="mb-4"
+                            // errors="$page.errors.email"
+                            onChange={handleInput}
+                            autofocus
+                        />
+                        {errors.email && <p className="text-sm m-auto text-red-500 error hour">{errors.email[0]}</p>}
+                        <Input
+                            label="Password"
+                            value={data.password}
+                            id="password"
+                            placeholder="••••••"
+                            type="password"
+                            // errors="$page.errors.email"
+                            className="mb-6"
+                            onChange={handleInput}
+                        />
+                        {errors.password && <p className="text-sm m-auto text-red-500 error hour">{errors.password[0]}</p>}
+                        <label className="mt-6 select-none flex items-center" htmlFor="remember">
+                            <input id="remember" className="mr-1" type="checkbox" />
+                            <span className="text-sm">Remember Me</span>
+                        </label>
+                        <div className="flex justify-end">
+                            <button type="submit" className="button" onClick={login}>
+                                Log in
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-        </div>
-        </div>
         </div>
     );
 }

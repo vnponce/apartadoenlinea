@@ -13,19 +13,19 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Preparados',
+            'name' => 'Pan de Dulce',
         ]);
         Category::create([
             'name' => 'Pan de Sal',
         ]);
         Category::create([
-            'name' => 'Pan de Sal mini',
+            'name' => 'Bocadillos',
         ]);
         Category::create([
-            'name' => 'Pan de Dulce mini',
+            'name' => 'Repostería',
         ]);
         Category::create([
-            'name' => 'Pan de Dulce',
+            'name' => 'Favoritos',
         ]);
     }
 }

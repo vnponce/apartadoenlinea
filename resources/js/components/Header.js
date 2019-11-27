@@ -4,7 +4,7 @@ import Autocomplete from "./Autocomplete";
 
 export default function Header() {
     const [showSearch, setShowSearch] = useState(false);
-    const { categories, cart: { content } } = usePage();
+    const { categories, cart: { content }, auth } = usePage();
     console.log('props =>');
     console.log('content =>', content);
     return <header className="md:px-12 bg-brand-orange">
@@ -28,13 +28,12 @@ export default function Header() {
                                              href={`/category/${category.id}`}>{category.name}</InertiaLink>
                             </li>
                         ))}
-                        {/*
-                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/pan-dulce">Pan de dulce</InertiaLink></li>
-                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/pan-sal">Pan de sal</InertiaLink></li>
-                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/bocadillos">Bocadillos</InertiaLink></li>
-                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/reposteria">Repostería</InertiaLink></li>
-                            <li className="md:ml-5"><InertiaLink className="block md:inline" href="/favoritos">Favoritos</InertiaLink></li>
-                            */}
+                        {auth && auth.user && (
+                            <li className="md:ml-5">
+                                <InertiaLink className="block md:inline"
+                                             href={`/admin/`}>Panel</InertiaLink>
+                            </li>
+                        )}
                     </ul>
                 </nav>
                 <InertiaLink href="/">

@@ -8,7 +8,7 @@ import {Inertia} from "@inertiajs/inertia";
 
 function Checkout(props) {
     console.log('props => ', props);
-    const { cart: { content }, subtotal } = usePage();
+    const { cart: { content }, subtotal, auth } = usePage();
     console.log('content =>', content);
     console.log('props =>', props);
     const [agreeTerms, setAgreeTerms] = useState(false);
@@ -51,13 +51,23 @@ function Checkout(props) {
                                     ¿El contenido de tu compra es el correcto?
                                 </label>
                         </div>
+                        {auth && auth.user && (
+                            <button
+                                disabled={!agreeTerms}
+                                onClick={createOrder}
+                                className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75">
+                                <span>Crear pedido</span>
+                            </button>
+                        )}
                         {/* Paypal button or levantar pedido si es usuario */}
-                        <button
-                            disabled={!agreeTerms}
-                            onClick={createOrder}
-                            className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75">
-                            <span>Paypal</span>
-                        </button>
+                        {!auth && !auth.user && (
+                            <button
+                                disabled={!agreeTerms}
+                                onClick={createOrder}
+                                className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75">
+                                <span>Paypal</span>
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>

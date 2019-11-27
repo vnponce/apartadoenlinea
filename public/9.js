@@ -35,7 +35,7 @@ function Home(props) {
   console.log('succes_message =>', success_message);
 
   var getData = function getData(data) {
-    return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"].visit("http://".concat(window.location.hostname, "?page=").concat(data.page));
+    return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"].visit("?page=".concat(data.page));
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -99,9 +99,9 @@ function BreadCard(props) {
     className: "container bread-card"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/pan/".concat(product.id),
-    className: "flex-1 flex cursor-pointer sm:bg-brand-gray"
+    className: "flex-1 h-40 flex cursor-pointer sm:bg-brand-gray"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "m-auto w-full object-cover align-middle sm:h-64",
+    className: "m-auto w-full h-40 object-cover align-middle md:h-64",
     src: "/breads/Cuernito.png",
     alt: "Banderilla mini"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {

@@ -38,7 +38,8 @@ function Checkout(props) {
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__["usePage"])(),
       content = _usePage.cart.content,
-      subtotal = _usePage.subtotal;
+      subtotal = _usePage.subtotal,
+      auth = _usePage.auth;
 
   console.log('content =>', content);
   console.log('props =>', props);
@@ -103,7 +104,11 @@ function Checkout(props) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     "for": "checkout-agree",
     className: "text-center text-gray-500 text-base italic"
-  }, "\xBFEl contenido de tu compra es el correcto?")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "\xBFEl contenido de tu compra es el correcto?")), auth && auth.user && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    disabled: !agreeTerms,
+    onClick: createOrder,
+    className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Crear pedido")), !auth && !auth.user && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     disabled: !agreeTerms,
     onClick: createOrder,
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75"

@@ -10,7 +10,7 @@ import HeaderDescription from "../components/HeaderDescription";
 function Home(props) {
     const { products, success_message, category = null } = props;
     console.log('succes_message =>', success_message);
-    const getData = data => Inertia.visit(`http://${window.location.hostname}?page=${data.page}`);
+    const getData = data => Inertia.visit(`?page=${data.page}`);
     return (
         <Layout title="Panadría La Especial">
             {category &&
