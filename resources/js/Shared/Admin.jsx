@@ -1,785 +1,312 @@
 import { InertiaLink } from "@inertiajs/inertia-react";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePage } from "@inertiajs/inertia-react";
 import moment from "moment";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+    .nunito {
+        font-family: 'nunito', font-sans;
+    }
+    
+    .border-b-1 {
+        border-bottom-width: 1px;
+    }
+    
+    .border-l-1 {
+        border-left-width: 1px;
+    }
+    
+    hover\\:border-none:hover {
+        border-style: none;
+    }
+    
+    #sidebar {
+        transition: ease-in-out all .3s;
+        z-index: 9999;
+    }
+    
+    #sidebar span {
+        opacity: 0;
+        position: absolute;
+        transition: ease-in-out all .1s;
+    }
+    
+    #sidebar:hover {
+        width: 150px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        /*shadow-2xl*/
+    }
+    
+    #sidebar:hover span {
+        opacity: 1;
+    }
+`;
 
 export default function Layout({ title, children }) {
     moment.locale('es');
+    const [userMenuDiv, setUserMenuDiv] = useState(null);
+    const [userMenu, setUserMenu] = useState(null);
 
     const { flash } = usePage();
     useEffect(() => {
         document.title = title;
         console.log('flash =>', flash);
     }, [title]);
+    useEffect(() => {
+        setUserMenuDiv(document.getElementById("userMenu"));
+        setUserMenu(document.getElementById("userButton"));
+    }, []);
 
+    /**
+     * JS
+     * */
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+    document.onclick = check;
+    function check(e) {
+        const target = (e && e.target) || (event && event.srcElement);
+        //User Menu
+        if (!checkParent(target, userMenuDiv)) {
+            // click NOT on the menu
+            if (checkParent(target, userMenu)) {
+                // click on the link
+                if (userMenuDiv.classList.contains("invisible")) {
+                    userMenuDiv.classList.remove("invisible");
+                } else {
+                    userMenuDiv.classList.add("invisible");
+                }
+            } else {
+                // click both outside link and outside menu, hide menu
+                userMenuDiv.classList.add("invisible");
+            }
+        }
+    }
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t === elm) {
+                return true;
+            }
+            t = t.parentNode;
+        }
+        return false;
+    }
     return (
-        <>
+        <Wrapper>
             {/* Custom styles for this template*/}
-            <link href="/css/sb-admin-2.min.css" rel="stylesheet" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
                   integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossOrigin="anonymous"/>
-            <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet" />
+            <body className="flex h-screen bg-gray-100 font-sans">
 
-                <body id="page-top">
+            {/* Side bar*/}
+            <div id="sidebar"
+                 className="h-screen w-16 menu bg-white text-white px-4 flex items-center nunito static fixed shadow">
 
-                {/* Page Wrapper */}
-                <div id="wrapper">
-
-                    {/* Sidebar */}
-                    <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-                        {/* Sidebar - Brand */}
-                        <InertiaLink className="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
-                            <div className="sidebar-brand-icon rotate-n-15">
-                                <img src="/Logo-Short.svg" className="pt-2 h-10 flex-1 flex-grow-0 m-auto" alt=""/>
-                            </div>
-                            <div className="sidebar-brand-text mx-3"><sup>Panadería</sup><br/>La Especial</div>
+                <ul className="list-reset ">
+                    <li className="my-2 md:my-0">
+                        <InertiaLink href="/admin"
+                           className="block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                            <i className="fas fa-home fa-fw mr-3"/><span
+                            className="w-full inline-block pb-1 md:pb-0 text-sm">Panel</span>
                         </InertiaLink>
+                    </li>
+                    <li className="my-2 md:my-0 ">
+                        <InertiaLink href="/admin/orders"
+                           className="block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                            <i className="fas fa-tasks fa-fw mr-3"/><span
+                            className="w-full inline-block pb-1 md:pb-0 text-sm">Pedidos</span>
+                        </InertiaLink>
+                    </li>
+                    <li className="my-2 md:my-0">
+                        <InertiaLink href="/admin/stores"
+                           className="block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                            <i className="fa fa-store fa-fw mr-3"/><span
+                            className="w-full inline-block pb-1 md:pb-0 text-sm">Tiendas</span>
+                        </InertiaLink>
+                    </li>
+                    <li className="my-2 md:my-0">
+                        <InertiaLink href="/admin/settings"
+                           className="block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                            <i className="fas fa-cogs fa-fw mr-3 text-indigo-400"/><span
+                            className="w-full inline-block pb-1 md:pb-0 text-sm">Configuración</span>
+                        </InertiaLink>
+                    </li>
+                    <li className="my-2 md:my-0">
+                        <InertiaLink href="/admin/users"
+                           className="block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                            <i className="fa fa-users fa-fw mr-3"/><span
+                            className="w-full inline-block pb-1 md:pb-0 text-sm">Usuarios</span>
+                        </InertiaLink>
+                    </li>
+                </ul>
 
-                        {/* Divider */}
-                        <hr className="sidebar-divider my-0" />
+            </div>
 
-                            {/* Nav Item - Dashboard */}
-                            <li className="nav-item active">
-                                <InertiaLink className="nav-link" href="/admin">
-                                    <i className="fas fa-fw fa-tachometer-alt" />
-                                    <span>Dashboard</span>
-                                </InertiaLink>
-                            </li>
+            <div className="flex flex-row flex-wrap flex-1 flex-grow content-start pl-16">
 
-                            {/* Divider */}
-                            <hr className="sidebar-divider" />
+                <div className="h-40 lg:h-20 w-full flex flex-wrap">
+                    {/*Select*/}
+                    <nav id="header"
+                         className="bg-gray-200 w-full lg:max-w-sm flex items-center border-b-1 border-gray-300 order-2 lg:order-1">
 
-                                {/* Heading */}
-                                <div className="sidebar-heading">
-                                    Interface
+                        <div className="px-2 w-full">
+                            <select name=""
+                                    className="bg-gray-300 border-2 border-gray-200 rounded-full w-full py-3 px-4 text-gray-500 font-bold leading-tight focus:outline-none focus:bg-white focus:shadow-md"
+                                    id="form-field2">
+                                <option value="Default">default</option>
+                                <option value="A">report a</option>
+                                <option value="B">report b</option>
+                                <option value="C">report c</option>
+                            </select>
+                        </div>
+
+                    </nav>
+                    <nav id="header1"
+                         className="bg-gray-100 w-auto flex-1 border-b-1 border-gray-300 order-1 lg:order-2">
+
+                        <div className="flex h-full justify-between items-center">
+
+                            {/*Search*/}
+                            <div className="relative w-full max-w-3xl px-6">
+                                <div className="absolute h-10 mt-1 left-0 top-0 flex items-center pl-10">
+                                    <svg className="h-4 w-4 fill-current text-gray-600"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path
+                                            d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+                                    </svg>
                                 </div>
 
-                                {/* Nav Item - Pages Collapse Menu */}
-                                <li className="nav-item">
-                                    <a className="nav-link collapsed" href="#" data-toggle="collapse"
-                                       data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                        <i className="fas fa-fw fa-cog" />
-                                        <span>Components</span>
-                                    </a>
-                                    <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo"
-                                         data-parent="#accordionSidebar">
-                                        <div className="bg-white py-2 collapse-inner rounded">
-                                            <h6 className="collapse-header">Custom Components:</h6>
-                                            <a className="collapse-item" href="buttons.html">Buttons</a>
-                                            <a className="collapse-item" href="cards.html">Cards</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                <input id="search-toggle" type="search" placeholder="search"
+                                       className="block w-full bg-gray-200 focus:outline-none focus:bg-white focus:shadow-md text-gray-700 font-bold rounded-full pl-12 pr-4 py-3"
+                                       onKeyUp="updateSearchResults(this.value);" />
 
-                                {/* Nav Item - Utilities Collapse Menu */}
-                                <li className="nav-item">
-                                    <a className="nav-link collapsed" href="#" data-toggle="collapse"
-                                       data-target="#collapseUtilities" aria-expanded="true"
-                                       aria-controls="collapseUtilities">
-                                        <i className="fas fa-fw fa-wrench" />
-                                        <span>Utilities</span>
-                                    </a>
-                                    <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
-                                         data-parent="#accordionSidebar">
-                                        <div className="bg-white py-2 collapse-inner rounded">
-                                            <h6 className="collapse-header">Custom Utilities:</h6>
-                                            <a className="collapse-item" href="utilities-color.html">Colors</a>
-                                            <a className="collapse-item" href="utilities-border.html">Borders</a>
-                                            <a className="collapse-item" href="utilities-animation.html">Animations</a>
-                                            <a className="collapse-item" href="utilities-other.html">Other</a>
-                                        </div>
-                                    </div>
-                                </li>
+                            </div>
+                            {/* / Search*/}
 
-                                {/* Divider */}
-                                <hr className="sidebar-divider" />
+                            {/*Menu*/}
 
-                                    {/* Heading */}
-                                    <div className="sidebar-heading">
-                                        Addons
-                                    </div>
+                            <div className="flex relative inline-block pr-6">
 
-                                    {/* Nav Item - Pages Collapse Menu */}
-                                    <li className="nav-item">
-                                        <a className="nav-link collapsed" href="#" data-toggle="collapse"
-                                           data-target="#collapsePages" aria-expanded="true"
-                                           aria-controls="collapsePages">
-                                            <i className="fas fa-fw fa-folder" />
-                                            <span>Pages</span>
-                                        </a>
-                                        <div id="collapsePages" className="collapse" aria-labelledby="headingPages"
-                                             data-parent="#accordionSidebar">
-                                            <div className="bg-white py-2 collapse-inner rounded">
-                                                <h6 className="collapse-header">Login Screens:</h6>
-                                                <a className="collapse-item" href="login.html">Login</a>
-                                                <a className="collapse-item" href="register.html">Register</a>
-                                                <a className="collapse-item" href="forgot-password.html">Forgot
-                                                    Password</a>
-                                                <div className="collapse-divider"/>
-                                                <h6 className="collapse-header">Other Pages:</h6>
-                                                <a className="collapse-item" href="404.html">404 Page</a>
-                                                <a className="collapse-item" href="blank.html">Blank Page</a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    {/* Nav Item - Charts */}
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="charts.html">
-                                            <i className="fas fa-fw fa-chart-area" />
-                                            <span>Charts</span></a>
-                                    </li>
-
-                                    {/* Nav Item - Tables */}
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="tables.html">
-                                            <i className="fas fa-fw fa-table" />
-                                            <span>Tables</span></a>
-                                    </li>
-
-                                    {/* Divider */}
-                                    <hr className="sidebar-divider d-none d-md-block" />
-
-                                        {/* Sidebar Toggler (Sidebar) */}
-                                        <div className="text-center d-none d-md-inline">
-                                            <button className="rounded-circle border-0" id="sidebarToggle" />
-                                        </div>
-
-                    </ul>
-                    {/* End of Sidebar */}
-
-                    {/* Content Wrapper */}
-                    <div id="content-wrapper" className="d-flex flex-column">
-
-                        {/* Main Content */}
-                        <div id="content">
-
-                            {/* Topbar */}
-                            <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                                {/* Sidebar Toggle (Topbar) */}
-                                <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
-                                    <i className="fa fa-bars"/>
-                                </button>
-
-                                {/* Topbar Search */}
-                                <form
-                                    className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                    <div className="input-group">
-                                        <input type="text" className="form-control bg-light border-0 small"
-                                               placeholder="Search for..." aria-label="Search"
-                                               aria-describedby="basic-addon2" />
-                                            <div className="input-group-append">
-                                                <button className="btn btn-primary" type="button">
-                                                    <i className="fas fa-search fa-sm" />
-                                                </button>
-                                            </div>
-                                    </div>
-                                </form>
-
-                                {/* Topbar Navbar */}
-                                <ul className="navbar-nav ml-auto">
-
-                                    {/* Nav Item - Search Dropdown (Visible Only XS) */}
-                                    <li className="nav-item dropdown no-arrow d-sm-none">
-                                        <a className="nav-link dropdown-toggle" href="#" id="searchDropdown"
-                                           role="button" data-toggle="dropdown" aria-haspopup="true"
-                                           aria-expanded="false">
-                                            <i className="fas fa-search fa-fw" />
-                                        </a>
-                                        {/* Dropdown - Messages */}
-                                        <div className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                             aria-labelledby="searchDropdown">
-                                            <form className="form-inline mr-auto w-100 navbar-search">
-                                                <div className="input-group">
-                                                    <input type="text" className="form-control bg-light border-0 small"
-                                                           placeholder="Search for..." aria-label="Search"
-                                                           aria-describedby="basic-addon2" />
-                                                        <div className="input-group-append">
-                                                            <button className="btn btn-primary" type="button">
-                                                                <i className="fas fa-search fa-sm" />
-                                                            </button>
-                                                        </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </li>
-
-                                    {/* Nav Item - Alerts */}
-                                    <li className="nav-item dropdown no-arrow mx-1">
-                                        <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown"
-                                           role="button" data-toggle="dropdown" aria-haspopup="true"
-                                           aria-expanded="false">
-                                            <i className="fas fa-bell fa-fw" />
-                                            {/* Counter - Alerts */}
-                                            <span className="badge badge-danger badge-counter">3+</span>
-                                        </a>
-                                        {/* Dropdown - Alerts */}
-                                        <div
-                                            className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                            aria-labelledby="alertsDropdown">
-                                            <h6 className="dropdown-header">
-                                                Alerts Center
-                                            </h6>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <div className="mr-3">
-                                                    <div className="icon-circle bg-primary">
-                                                        <i className="fas fa-file-alt text-white" />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div className="small text-gray-500">December 12, 2019</div>
-                                                    <span className="font-weight-bold">A new monthly report is ready to download!</span>
-                                                </div>
-                                            </a>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <div className="mr-3">
-                                                    <div className="icon-circle bg-success">
-                                                        <i className="fas fa-donate text-white" />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div className="small text-gray-500">December 7, 2019</div>
-                                                    $290.29 has been deposited into your account!
-                                                </div>
-                                            </a>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <div className="mr-3">
-                                                    <div className="icon-circle bg-warning">
-                                                        <i className="fas fa-exclamation-triangle text-white"/>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div className="small text-gray-500">December 2, 2019</div>
-                                                    Spending Alert: We've noticed unusually high spending for your
-                                                    account.
-                                                </div>
-                                            </a>
-                                            <a className="dropdown-item text-center small text-gray-500" href="#">Show
-                                                All Alerts</a>
-                                        </div>
-                                    </li>
-
-                                    {/* Nav Item - Messages */}
-                                    <li className="nav-item dropdown no-arrow mx-1">
-                                        <a className="nav-link dropdown-toggle" href="#" id="messagesDropdown"
-                                           role="button" data-toggle="dropdown" aria-haspopup="true"
-                                           aria-expanded="false">
-                                            <i className="fas fa-envelope fa-fw"/>
-                                            {/* Counter - Messages */}
-                                            <span className="badge badge-danger badge-counter">7</span>
-                                        </a>
-                                        {/* Dropdown - Messages */}
-                                        <div
-                                            className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                            aria-labelledby="messagesDropdown">
-                                            <h6 className="dropdown-header">
-                                                Message Center
-                                            </h6>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <div className="dropdown-list-image mr-3">
-                                                    <img className="rounded-circle"
-                                                         src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="" />
-                                                        <div className="status-indicator bg-success"/>
-                                                </div>
-                                                <div className="font-weight-bold">
-                                                    <div className="text-truncate">Hi there! I am wondering if you can
-                                                        help me with a problem I've been having.
-                                                    </div>
-                                                    <div className="small text-gray-500">Emily Fowler · 58m</div>
-                                                </div>
-                                            </a>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <div className="dropdown-list-image mr-3">
-                                                    <img className="rounded-circle"
-                                                         src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="" />
-                                                        <div className="status-indicator"/>
-                                                </div>
-                                                <div>
-                                                    <div className="text-truncate">I have the photos that you ordered
-                                                        last month, how would you like them sent to you?
-                                                    </div>
-                                                    <div className="small text-gray-500">Jae Chun · 1d</div>
-                                                </div>
-                                            </a>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <div className="dropdown-list-image mr-3">
-                                                    <img className="rounded-circle"
-                                                         src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="" />
-                                                        <div className="status-indicator bg-warning"/>
-                                                </div>
-                                                <div>
-                                                    <div className="text-truncate">Last month's report looks great, I am
-                                                        very happy with the progress so far, keep up the good work!
-                                                    </div>
-                                                    <div className="small text-gray-500">Morgan Alvarez · 2d</div>
-                                                </div>
-                                            </a>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <div className="dropdown-list-image mr-3">
-                                                    <img className="rounded-circle"
-                                                         src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="" />
-                                                        <div className="status-indicator bg-success"/>
-                                                </div>
-                                                <div>
-                                                    <div className="text-truncate">Am I a good boy? The reason I ask is
-                                                        because someone told me that people say this to all dogs, even
-                                                        if they aren't good...
-                                                    </div>
-                                                    <div className="small text-gray-500">Chicken the Dog · 2w</div>
-                                                </div>
-                                            </a>
-                                            <a className="dropdown-item text-center small text-gray-500" href="#">Read
-                                                More Messages</a>
-                                        </div>
-                                    </li>
-
-                                    <div className="topbar-divider d-none d-sm-block"/>
-
-                                    {/* Nav Item - User Information */}
-                                    <li className="nav-item dropdown no-arrow">
-                                        <div className="nav-link dropdown-toggle" id="userDropdown" role="button"
-                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span
-                                                className="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                                            <img className="img-profile rounded-circle"
-                                                 src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
-                                        </div>
-                                        {/* Dropdown - User Information */}
-                                        <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                             aria-labelledby="userDropdown">
-                                            <div className="dropdown-item">
-                                                <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"/>
-                                                Profile
-                                            </div>
-                                            <a className="dropdown-item" href="#">
-                                                <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"/>
-                                                Settings
-                                            </a>
-                                            <a className="dropdown-item" href="#">
-                                                <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"/>
-                                                Activity Log
-                                            </a>
-                                            <div className="dropdown-divider"/>
-                                            <a className="dropdown-item" href="#" data-toggle="modal"
-                                               data-target="#logoutModal">
-                                                <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"/>
-                                                Logout
-                                            </a>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
-                            </nav>
-                            {/* End of Topbar */}
-
-                            {/* Begin Page Content */}
-                            <div className="container-fluid">
-
-                                {/* Page Heading */}
-                                <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                    <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
-                                    <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-    className="fas fa-download fa-sm text-white-50"/> Generate Report</a>
-                                </div>
-
-                                {/* Content Row */}
-                                <div className="row">
-
-                                    {/* Earnings (Monthly) Card Example */}
-                                    <div className="col-xl-3 col-md-6 mb-4">
-                                        <div className="card border-left-primary shadow h-100 py-2">
-                                            <div className="card-body">
-                                                <div className="row no-gutters align-items-center">
-                                                    <div className="col mr-2">
-                                                        <div
-                                                            className="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings
-                                                            (Monthly)
-                                                        </div>
-                                                        <div
-                                                            className="h5 mb-0 font-weight-bold text-gray-800">$40,000
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-auto">
-                                                        <i className="fas fa-calendar fa-2x text-gray-300"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Earnings (Monthly) Card Example */}
-                                    <div className="col-xl-3 col-md-6 mb-4">
-                                        <div className="card border-left-success shadow h-100 py-2">
-                                            <div className="card-body">
-                                                <div className="row no-gutters align-items-center">
-                                                    <div className="col mr-2">
-                                                        <div
-                                                            className="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings
-                                                            (Annual)
-                                                        </div>
-                                                        <div
-                                                            className="h5 mb-0 font-weight-bold text-gray-800">$215,000
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-auto">
-                                                        <i className="fas fa-dollar-sign fa-2x text-gray-300"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Earnings (Monthly) Card Example */}
-                                    <div className="col-xl-3 col-md-6 mb-4">
-                                        <div className="card border-left-info shadow h-100 py-2">
-                                            <div className="card-body">
-                                                <div className="row no-gutters align-items-center">
-                                                    <div className="col mr-2">
-                                                        <div
-                                                            className="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                                        </div>
-                                                        <div className="row no-gutters align-items-center">
-                                                            <div className="col-auto">
-                                                                <div
-                                                                    className="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%
-                                                                </div>
-                                                            </div>
-                                                            <div className="col">
-                                                                <div className="progress progress-sm mr-2">
-                                                                    <div className="progress-bar bg-info"
-                                                                        role="progressbar" style={{width: '50%'}}
-                                                                        aria-valuenow="50" aria-valuemin="0"
-                                                                        aria-valuemax="100"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-auto">
-                                                        <i className="fas fa-clipboard-list fa-2x text-gray-300"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Pending Requests Card Example */}
-                                    <div className="col-xl-3 col-md-6 mb-4">
-                                        <div className="card border-left-warning shadow h-100 py-2">
-                                            <div className="card-body">
-                                                <div className="row no-gutters align-items-center">
-                                                    <div className="col mr-2">
-                                                        <div
-                                                            className="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending
-                                                            Requests
-                                                        </div>
-                                                        <div className="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                                    </div>
-                                                    <div className="col-auto">
-                                                        <i className="fas fa-comments fa-2x text-gray-300"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Content Row */}
-
-                                <div className="row">
-
-                                    {/* Area Chart */}
-                                    <div className="col-xl-8 col-lg-7">
-                                        <div className="card shadow mb-4">
-                                            {/* Card Header - Dropdown */}
-                                            <div
-                                                className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                <h6 className="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                                <div className="dropdown no-arrow">
-                                                    <a className="dropdown-toggle" href="#" role="button"
-                                                       id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                       aria-expanded="false">
-                                                        <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"/>
-                                                    </a>
-                                                    <div
-                                                        className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                        aria-labelledby="dropdownMenuLink">
-                                                        <div className="dropdown-header">Dropdown Header:</div>
-                                                        <a className="dropdown-item" href="#">Action</a>
-                                                        <a className="dropdown-item" href="#">Another action</a>
-                                                        <div className="dropdown-divider"/>
-                                                        <a className="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Card Body */}
-                                            <div className="card-body">
-                                                <div className="chart-area">
-                                                    <canvas id="myAreaChart"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Pie Chart */}
-                                    <div className="col-xl-4 col-lg-5">
-                                        <div className="card shadow mb-4">
-                                            {/* Card Header - Dropdown */}
-                                            <div
-                                                className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                <h6 className="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                                                <div className="dropdown no-arrow">
-                                                    <a className="dropdown-toggle" href="#" role="button"
-                                                       id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                       aria-expanded="false">
-                                                        <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"/>
-                                                    </a>
-                                                    <div
-                                                        className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                        aria-labelledby="dropdownMenuLink">
-                                                        <div className="dropdown-header">Dropdown Header:</div>
-                                                        <a className="dropdown-item" href="#">Action</a>
-                                                        <a className="dropdown-item" href="#">Another action</a>
-                                                        <div className="dropdown-divider"/>
-                                                        <a className="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Card Body */}
-                                            <div className="card-body">
-                                                <div className="chart-pie pt-4 pb-2">
-                                                    <canvas id="myPieChart"/>
-                                                </div>
-                                                <div className="mt-4 text-center small">
-                    <span className="mr-2">
-                      <i className="fas fa-circle text-primary"/> Direct
-                    </span>
-                                                    <span className="mr-2">
-                      <i className="fas fa-circle text-success"/> Social
-                    </span>
-                                                    <span className="mr-2">
-                      <i className="fas fa-circle text-info"/> Referral
-                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Content Row */}
-                                <div className="row">
-
-                                    {/* Content Column */}
-                                    <div className="col-lg-6 mb-4">
-
-                                        {/* Project Card Example */}
-                                        <div className="card shadow mb-4">
-                                            <div className="card-header py-3">
-                                                <h6 className="m-0 font-weight-bold text-primary">Projects</h6>
-                                            </div>
-                                            <div className="card-body">
-                                                <h4 className="small font-weight-bold">Server Migration <span
-                                                    className="float-right">20%</span></h4>
-                                                <div className="progress mb-4">
-                                                    <div className="progress-bar bg-danger" role="progressbar"
-    style={{ width: '20%' }} aria-valuenow="20" aria-valuemin="0"
-    aria-valuemax="100"/>
-                                                </div>
-                                                <h4 className="small font-weight-bold">Sales Tracking <span
-                                                    className="float-right">40%</span></h4>
-                                                <div className="progress mb-4">
-                                                    <div className="progress-bar bg-warning" role="progressbar"
-    style={{ width: '40%' }} aria-valuenow="40" aria-valuemin="0"
-    aria-valuemax="100"/>
-                                                </div>
-                                                <h4 className="small font-weight-bold">Customer Database <span
-                                                    className="float-right">60%</span></h4>
-                                                <div className="progress mb-4">
-                                                    <div className="progress-bar" role="progressbar" style={{ width: '60%' }}
-    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"/>
-                                                </div>
-                                                <h4 className="small font-weight-bold">Payout Details <span
-                                                    className="float-right">80%</span></h4>
-                                                <div className="progress mb-4">
-                                                    <div className="progress-bar bg-info" role="progressbar"
-    style={{ width: '80%' }} aria-valuenow="80" aria-valuemin="0"
-    aria-valuemax="100"/>
-                                                </div>
-                                                <h4 className="small font-weight-bold">Account Setup <span
-                                                    className="float-right">Complete!</span></h4>
-                                                <div className="progress">
-                                                    <div className="progress-bar bg-success" role="progressbar"
-    style={{ width: '100%' }} aria-valuenow="100" aria-valuemin="0"
-    aria-valuemax="100"/>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Color System */}
-                                        <div className="row">
-                                            <div className="col-lg-6 mb-4">
-                                                <div className="card bg-primary text-white shadow">
-                                                    <div className="card-body">
-                                                        Primary
-                                                        <div className="text-white-50 small">#4e73df</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6 mb-4">
-                                                <div className="card bg-success text-white shadow">
-                                                    <div className="card-body">
-                                                        Success
-                                                        <div className="text-white-50 small">#1cc88a</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6 mb-4">
-                                                <div className="card bg-info text-white shadow">
-                                                    <div className="card-body">
-                                                        Info
-                                                        <div className="text-white-50 small">#36b9cc</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6 mb-4">
-                                                <div className="card bg-warning text-white shadow">
-                                                    <div className="card-body">
-                                                        Warning
-                                                        <div className="text-white-50 small">#f6c23e</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6 mb-4">
-                                                <div className="card bg-danger text-white shadow">
-                                                    <div className="card-body">
-                                                        Danger
-                                                        <div className="text-white-50 small">#e74a3b</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6 mb-4">
-                                                <div className="card bg-secondary text-white shadow">
-                                                    <div className="card-body">
-                                                        Secondary
-                                                        <div className="text-white-50 small">#858796</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div className="col-lg-6 mb-4">
-
-                                        {/* Illustrations */}
-                                        <div className="card shadow mb-4">
-                                            <div className="card-header py-3">
-                                                <h6 className="m-0 font-weight-bold text-primary">Illustrations</h6>
-                                            </div>
-                                            <div className="card-body">
-                                                <div className="text-center">
-                                                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                                                         style={{ width: '25rem' }} src="img/undraw_posting_photo.svg"
-                                                         alt="" />
-                                                </div>
-                                                <p>Add some quality, svg illustrations to your project courtesy of <a
-                                                    target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>,
-                                                    a constantly updated collection of beautiful svg images that you can
-                                                    use completely free and without attribution!</p>
-                                                <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse
-                                                    Illustrations on unDraw &rarr;</a>
-                                            </div>
-                                        </div>
-
-                                        {/* Approach */}
-                                        <div className="card shadow mb-4">
-                                            <div className="card-header py-3">
-                                                <h6 className="m-0 font-weight-bold text-primary">Development
-                                                    Approach</h6>
-                                            </div>
-                                            <div className="card-body">
-                                                <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in
-                                                    order to reduce CSS bloat and poor page performance. Custom CSS
-                                                    classes are used to create custom components and custom utility
-                                                    classes.</p>
-                                                <p className="mb-0">Before working with this theme, you should become
-                                                    familiar with the Bootstrap framework, especially the utility
-                                                    classes.</p>
-                                            </div>
-                                        </div>
-
+                                <div className="relative text-sm">
+                                    <button id="userButton" className="flex items-center focus:outline-none mr-3">
+                                        <img className="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300"
+                                             alt="Avatar of User" />
+                                             <span
+                                                className="hidden md:inline-block">Hi, User
+                                             </span>
+                                            <svg className="pl-2 h-2" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                 viewBox="0 0 129 129"
+                                                 enableBackground="new 0 0 129 129">
+                                                <g>
+                                                    <path
+                                                        d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
+                                                </g>
+                                            </svg>
+                                    </button>
+                                    <div id="userMenu"
+                                         className="bg-white nunito rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
+                                        <ul className="list-reset">
+                                            <li><a href="#"
+                                                   className="px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline">My
+                                                account</a></li>
+                                            <li><a href="#"
+                                                   className="px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline">Notifications</a>
+                                            </li>
+                                            <li>
+                                                <hr className="border-t mx-2 border-gray-400" />
+                                            </li>
+                                            <li><a href="#"
+                                                   className="px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline">Logout</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
 
                             </div>
-                            {/* /.container-fluid */}
+
+                            {/* / Menu */}
 
                         </div>
-                        {/* End of Main Content */}
 
-                        {/* Footer */}
-                        <footer className="sticky-footer bg-white">
-                            <div className="container my-auto">
-                                <div className="copyright text-center my-auto">
-                                    <span>Copyright &copy; Your Website 2019</span>
-                                </div>
-                            </div>
-                        </footer>
-                        {/* End of Footer */}
-
-                    </div>
-                    {/* End of Content Wrapper */}
-
+                    </nav>
                 </div>
-                {/* End of Page Wrapper */}
 
-                {/* Scroll to Top Button*/}
-                <a className="scroll-to-top rounded" href="#page-top">
-                    <i className="fas fa-angle-up"/>
-                </a>
+                {/*Dash Content */}
+                <div id="dash-content"
+                     className="bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start">
 
-                {/* Logout Modal*/}
-                <div className="modal fade" id="logoutModal" tabIndex="-1" role="dialog"
-                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                                <button className="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div className="modal-body">Select "Logout" below if you are ready to end your current
-                                session.
-                            </div>
-                            <div className="modal-footer">
-                                <button className="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                <a className="btn btn-primary" href="login.html">Logout</a>
+                    <div className="w-1/2 lg:w-full">
+                        <div
+                            className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                            <div className="flex flex-col items-center">
+                                <div className="flex-shrink pr-4">
+                                    <div className="rounded-full p-3 bg-gray-300"><i
+                                        className="fa fa-wallet fa-fw fa-inverse text-indigo-500"/></div>
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="font-bold text-3xl">$3249 <span className="text-green-500"><i
+                                        className="fas fa-caret-up"/></span></h3>
+                                    <h5 className="font-bold text-gray-500">Total Revenue</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div className="w-1/2 lg:w-full">
+                        <div
+                            className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                            <div className="flex flex-col items-center">
+                                <div className="flex-shrink pr-4">
+                                    <div className="rounded-full p-3 bg-gray-300"><i
+                                        className="fas fa-users fa-fw fa-inverse text-indigo-500"/></div>
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="font-bold text-3xl">249 <span className="text-orange-500"><i
+                                        className="fas fa-exchange-alt"/></span></h3>
+                                    <h5 className="font-bold text-gray-500">Total Users</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="w-1/2 lg:w-full">
+                        <div
+                            className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                            <div className="flex flex-col items-center">
+                                <div className="flex-shrink pr-4">
+                                    <div className="rounded-full p-3 bg-gray-300"><i
+                                        className="fas fa-user-plus fa-fw fa-inverse text-indigo-500"/></div>
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="font-bold text-3xl">2 <span className="text-yellow-600"><i
+                                        className="fas fa-caret-up"/></span></h3>
+                                    <h5 className="font-bold text-gray-500">New Users</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="w-1/2 lg:w-full">
+                        <div
+                            className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                            <div className="flex flex-col items-center">
+                                <div className="flex-shrink pr-4">
+                                    <div className="rounded-full p-3 bg-gray-300"><i
+                                        className="fas fa-server fa-fw fa-inverse text-indigo-500"/></div>
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="font-bold text-3xl">152 days</h3>
+                                    <h5 className="font-bold text-gray-500">Server Uptime</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                {/* Bootstrap core JavaScript*/}
-                <script src="vendor/jquery/jquery.min.js"/>
-                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"/>
-
-                {/* Core plugin JavaScript*/}
-                <script src="vendor/jquery-easing/jquery.easing.min.js"/>
-
-                {/* Custom scripts for all pages*/}
-                <script src="js/sb-admin-2.min.js"/>
-
-                {/* Page level plugins */}
-                <script src="vendor/chart.js/Chart.min.js"/>
-
-                {/* Page level custom scripts */}
-                <script src="js/demo/chart-area-demo.js"/>
-                <script src="js/demo/chart-pie-demo.js"/>
-
-                </body>
-                </>
+                { children }
+            </div>
+            </body>
+        </Wrapper>
     );
 }
