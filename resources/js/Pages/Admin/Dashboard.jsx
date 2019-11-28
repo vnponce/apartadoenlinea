@@ -1,11 +1,13 @@
 import React from 'react';
 import Admin from "../../Shared/Admin";
+import InfoBoxes from "../../components/Admin/InfoBoxes";
 
 function Dashboard(props) {
     const { products, success_message, category = null } = props;
     console.log('succes_message =>', success_message);
     return (
         <Admin title="Panel">
+            <InfoBoxes />
             {/*Graph Content */}
             <div id="main-content" className="w-full flex-1">
 
