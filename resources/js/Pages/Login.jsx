@@ -5,6 +5,47 @@ import Input from "../components/Input";
 import {Inertia} from "@inertiajs/inertia";
 import {usePage} from "@inertiajs/inertia-react";
 
+export function triggerEvtInput(target, value) {
+    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        HTMLInputElement.prototype,
+        'value'
+    ).set;
+    nativeInputValueSetter.call(target, value);
+
+    const ev2 = new Event('input', { bubbles: true });
+    target.dispatchEvent(ev2);
+}
+
+/**
+ * @return {boolean}
+ */
+export function LOGIN_MOCK_DEV_ONLY(evt) {
+    console.log('LOGIN_MOCK_DEV_ONU');
+    const target = evt.currentTarget;
+    console.log('target =>', target);
+    // if (process.env.NODE_ENV === 'development') {
+        if (
+            // process.env.REACT_APP_LOGIN_MOCK_USER &&
+            // process.env.REACT_APP_LOGIN_MOCK_PASSWORD &&
+            evt.key === 'Tab'
+        ) {
+            evt.preventDefault();
+            if (target.id === 'email') {
+                triggerEvtInput(target, 'god@panaderialaespecial.com.mx');
+                document.querySelector('#password').focus();
+            } else {
+                triggerEvtInput(target, 'secret');
+                const form = document.querySelector('#login-form');
+                console.log('form =>', form);
+                setTimeout(() => form.dispatchEvent(new Event('submit', { bubbles: true })), 600);
+            }
+            return false;
+        }
+    // }
+
+    return true;
+}
+
 function Login(props) {
     console.log('props =>', props);
     const [data, setData] = useState({});
@@ -53,7 +94,7 @@ function Login(props) {
                 */}
                 <img src="/Logo-Short.svg" className="w-24 mb-8 mx-auto" alt=""/>
                 <div className="bg-white shadow px-8 py-12">
-                    <form>
+                    <form id="login-form">
                         <Input
                             value={data.email}
                             label="Email"
@@ -64,6 +105,7 @@ function Login(props) {
                             // errors="$page.errors.email"
                             onChange={handleInput}
                             autofocus
+                            onKeyDown={LOGIN_MOCK_DEV_ONLY}
                         />
                         {errors.email && <p className="text-sm m-auto text-red-500 error hour">{errors.email[0]}</p>}
                         <Input
@@ -75,6 +117,7 @@ function Login(props) {
                             // errors="$page.errors.email"
                             className="mb-6"
                             onChange={handleInput}
+                            onKeyDown={LOGIN_MOCK_DEV_ONLY}
                         />
                         {errors.password && <p className="text-sm m-auto text-red-500 error hour">{errors.password[0]}</p>}
                         <label className="mt-6 select-none flex items-center" htmlFor="remember">

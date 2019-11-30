@@ -4,11 +4,13 @@
 /*!**************************************!*\
   !*** ./resources/js/Pages/Login.jsx ***!
   \**************************************/
-/*! exports provided: default */
+/*! exports provided: triggerEvtInput, LOGIN_MOCK_DEV_ONLY, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triggerEvtInput", function() { return triggerEvtInput; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN_MOCK_DEV_ONLY", function() { return LOGIN_MOCK_DEV_ONLY; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -39,6 +41,48 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+function triggerEvtInput(target, value) {
+  var nativeInputValueSetter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;
+  nativeInputValueSetter.call(target, value);
+  var ev2 = new Event('input', {
+    bubbles: true
+  });
+  target.dispatchEvent(ev2);
+}
+/**
+ * @return {boolean}
+ */
+
+function LOGIN_MOCK_DEV_ONLY(evt) {
+  console.log('LOGIN_MOCK_DEV_ONU');
+  var target = evt.currentTarget;
+  console.log('target =>', target); // if (process.env.NODE_ENV === 'development') {
+
+  if ( // process.env.REACT_APP_LOGIN_MOCK_USER &&
+  // process.env.REACT_APP_LOGIN_MOCK_PASSWORD &&
+  evt.key === 'Tab') {
+    evt.preventDefault();
+
+    if (target.id === 'email') {
+      triggerEvtInput(target, 'god@panaderialaespecial.com.mx');
+      document.querySelector('#password').focus();
+    } else {
+      triggerEvtInput(target, 'secret');
+      var form = document.querySelector('#login-form');
+      console.log('form =>', form);
+      setTimeout(function () {
+        return form.dispatchEvent(new Event('submit', {
+          bubbles: true
+        }));
+      }, 600);
+    }
+
+    return false;
+  } // }
+
+
+  return true;
+}
 
 function Login(props) {
   console.log('props =>', props);
@@ -81,7 +125,9 @@ function Login(props) {
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bg-white shadow px-8 py-12"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    id: "login-form"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
     value: data.email,
     label: "Email",
     id: "email",
@@ -90,7 +136,8 @@ function Login(props) {
     className: "mb-4" // errors="$page.errors.email"
     ,
     onChange: handleInput,
-    autofocus: true
+    autofocus: true,
+    onKeyDown: LOGIN_MOCK_DEV_ONLY
   }), errors.email && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error hour"
   }, errors.email[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -101,7 +148,8 @@ function Login(props) {
     type: "password" // errors="$page.errors.email"
     ,
     className: "mb-6",
-    onChange: handleInput
+    onChange: handleInput,
+    onKeyDown: LOGIN_MOCK_DEV_ONLY
   }), errors.password && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error hour"
   }, errors.password[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -145,13 +193,18 @@ function Input(_ref) {
       inputType = _ref.type,
       inputValue = _ref.value,
       placeholder = _ref.placeholder,
-      onChange = _ref.onChange;
+      onChange = _ref.onChange,
+      _ref$onKeyDown = _ref.onKeyDown,
+      onKeyDown = _ref$onKeyDown === void 0 ? function () {
+    return false;
+  } : _ref$onKeyDown;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: id,
     className: "hover:border-grey-900 italic sm:block"
   }, label ? label : 'Label'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    id: id,
     name: id,
     type: inputType ? inputType : 'text',
     placeholder: placeholder ? placeholder : '',
@@ -160,7 +213,8 @@ function Input(_ref) {
     style: {
       height: '2.4rem'
     },
-    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full"
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full",
+    onKeyDown: onKeyDown
   }));
 }
 ;

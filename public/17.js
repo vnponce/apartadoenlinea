@@ -456,13 +456,18 @@ function Input(_ref) {
       inputType = _ref.type,
       inputValue = _ref.value,
       placeholder = _ref.placeholder,
-      onChange = _ref.onChange;
+      onChange = _ref.onChange,
+      _ref$onKeyDown = _ref.onKeyDown,
+      onKeyDown = _ref$onKeyDown === void 0 ? function () {
+    return false;
+  } : _ref$onKeyDown;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: id,
     className: "hover:border-grey-900 italic sm:block"
   }, label ? label : 'Label'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    id: id,
     name: id,
     type: inputType ? inputType : 'text',
     placeholder: placeholder ? placeholder : '',
@@ -471,7 +476,8 @@ function Input(_ref) {
     style: {
       height: '2.4rem'
     },
-    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full"
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full",
+    onKeyDown: onKeyDown
   }));
 }
 ;

@@ -26,19 +26,21 @@ function Home(props) {
                     return <BreadCard product={product}/>
                 })}
                 <div className="py-10 block w-full flex justify-center">
-                    <Pagination
-                        containerClass="flex flex-wrap h-12"
-                        numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
-                        changePage={getData}
-                        nextButtonText="Siguiente"
-                        buttonIcons
-                        prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        // prevButtonText="Anterior"
-                        // prevButtonIcon="fa fa-chevron-left"
-                        data={products}/>
+                    {products && products.length > 0 && (
+                        <Pagination
+                            containerClass="flex flex-wrap h-12"
+                            numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                            // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                            activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
+                            changePage={getData}
+                            nextButtonText="Siguiente"
+                            buttonIcons
+                            prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                            nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                            // prevButtonText="Anterior"
+                            // prevButtonIcon="fa fa-chevron-left"
+                            data={products}/>
+                    )}
                 </div>
             </main>
         </Layout>

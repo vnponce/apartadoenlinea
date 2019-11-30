@@ -34559,29 +34559,31 @@ if (false) {} else {
 var map = {
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		9,
+		15,
 		21,
-		2
+		2,
+		5
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		9,
+		15,
 		21,
-		2
+		2,
+		5
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
-		9,
-		13,
-		6,
-		19
+		15,
+		14,
+		8,
+		7
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
-		9,
-		13,
-		6,
-		19
+		15,
+		14,
+		8,
+		7
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34593,102 +34595,102 @@ var map = {
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
-		9,
-		13,
-		1,
-		6,
+		15,
+		14,
+		23,
+		8,
 		20
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
-		9,
-		13,
-		1,
-		6,
+		15,
+		14,
+		23,
+		8,
 		20
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
-		9,
-		13,
-		6,
+		15,
+		14,
+		8,
 		22
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
-		9,
-		13,
-		6,
+		15,
+		14,
+		8,
 		22
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
-		9,
-		13,
+		15,
+		14,
 		21,
 		4,
-		23,
-		6,
+		1,
+		8,
 		17
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
-		9,
-		13,
+		15,
+		14,
 		21,
 		4,
-		23,
-		6,
+		1,
+		8,
 		17
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
-		9,
-		13,
+		15,
+		14,
 		0,
-		6,
+		8,
 		24
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
-		9,
-		13,
+		15,
+		14,
 		0,
-		6,
+		8,
 		24
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
-		9,
-		13,
+		15,
+		14,
 		21,
 		4,
-		6,
-		18
+		8,
+		19
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
-		9,
-		13,
+		15,
+		14,
 		21,
 		4,
-		6,
-		18
+		8,
+		19
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		9,
-		13,
+		15,
+		14,
 		21,
-		6,
+		8,
 		25
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		9,
-		13,
+		15,
+		14,
 		21,
-		6,
+		8,
 		25
 	]
 };

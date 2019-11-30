@@ -1,10 +1,104 @@
 import React from 'react';
 import Admin from "../../Shared/Admin";
 import InfoBoxes from "../../components/Admin/InfoBoxes";
+import { useTable } from 'react-table';
+
+function Table({ columns, data }) {
+    // Use the state and functions returned from useTable to build your UI
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
+    } = useTable({
+        columns,
+        data,
+    });
+
+    // Render the UI for your table
+    return (
+        <table className="table-auto" {...getTableProps()}>
+            <thead>
+            {headerGroups.map(headerGroup => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                    {console.log('headerGroups =>', headerGroups)}
+                    {console.log('headerGroup =>', headerGroup)}
+                    {headerGroup.headers.map(column => (
+                        <th className="px-4 py-2 py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                    ))}
+                </tr>
+            ))}
+            </thead>
+            <tbody {...getTableBodyProps()}>
+            {rows.map(
+                (row, i) => {
+                    prepareRow(row);
+                    return (
+                        <tr className={ (i % 2) ? "hover:bg-gray-300" : "hover:bg-gray-300 bg-gray-200"} {...row.getRowProps()}>
+                            {row.cells.map(cell => {
+                                return <td className="py-4 px-6 border-b border-grey-light" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                            })}
+                        </tr>
+                    )}
+            )}
+            </tbody>
+        </table>
+    )
+}
+
 
 function Dashboard(props) {
-    const { products, success_message, category = null } = props;
+    const { orders, ux, success_message } = props;
     console.log('succes_message =>', success_message);
+    console.log('orders =>', orders);
+    console.log('ux =>', ux);
+    const columns = React.useMemo(
+        () => [
+            {
+                Header: '-',
+                accessor: 'id',
+            },
+            {
+                Header: 'Cliente',
+                accessor: 'customer',
+            },
+            {
+                Header: 'Sucrusal',
+                accessor: 'store',
+            },
+            {
+                Header: 'Fecha',
+                accessor: 'date',
+            },
+            {
+                Header: 'Estatus',
+                accessor: 'status',
+            },
+        ],
+        []
+    );
+
+    const data = [
+        {
+            id: 1,
+            customer: 'Abel',
+            store: 'Bernal',
+            date: '17 marzo, 5:00pm',
+            status: 'Visto',
+            order: {
+                products: [
+                    {
+                        name: 'Pambazo',
+                        price: '300',
+                        comments: 'sin nada',
+                    }
+                ],
+                total: 300,
+            }
+        },
+    ];
+
     return (
         <Admin title="Panel">
             <InfoBoxes />
@@ -18,109 +112,19 @@ function Dashboard(props) {
                         {/*"Container" for the graphs"*/}
                         <div className="max-w-full lg:max-w-3xl xl:max-w-5xl">
 
-                            {/*Graph Card*/}
+                            {/*Table orders*/}
                             <div className="border-b p-3">
-                                <h5 className="font-bold text-black">Graph</h5>
+                                <h5 className="font-bold text-black">Pedidos</h5>
+                                <Table columns={columns} data={data} />
                             </div>
-                            <div className="p-5">
-                                <div className="ct-chart ct-golden-section" id="chart1"/>
-                            </div>
-                            {/*/Graph Card*/}
-
-                            {/*Table Card*/}
-                            <div className="p-3">
-                                <div className="border-b p-3">
-                                    <h5 className="font-bold text-black">Table</h5>
-                                </div>
-                                <div className="p-5">
-                                    <table className="w-full p-5 text-gray-700">
-                                        <thead>
-                                        <tr>
-                                            <th className="text-left text-blue-900">Name</th>
-                                            <th className="text-left text-blue-900">Side</th>
-                                            <th className="text-left text-blue-900">Role</th>
-                                        </tr>
-                                        </thead>
-
-                                        <tbody>
-                                        <tr>
-                                            <td>Obi Wan Kenobi</td>
-                                            <td>Light</td>
-                                            <td>Jedi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Greedo</td>
-                                            <td>South</td>
-                                            <td>Scumbag</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Darth Vader</td>
-                                            <td>Dark</td>
-                                            <td>Sith</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-
-                                    <p className="py-2"><a href="#">See More issues...</a></p>
-
-                                </div>
-                            </div>
-                            {/*/table Card*/}
+                            {/*/Table orders*/}
 
                         </div>
 
                     </div>
 
                     <div className="w-full xl:w-1/3 p-6 xl:max-w-4xl border-l-1 border-gray-300">
-
-                        {/*"Container" for the graphs"*/}
-                        <div className="max-w-sm lg:max-w-3xl xl:max-w-5xl">
-
-                            {/*Graph Card*/}
-
-                            <div className="border-b p-3">
-                                <h5 className="font-bold text-black">Graph</h5>
-                            </div>
-                            <div className="p-5">
-                                <div className="ct-chart ct-golden-section" id="chart2"/>
-                            </div>
-
-                            {/*/Graph Card*/}
-
-                            {/*Graph Card*/}
-                            <div className="border-b p-3">
-                                <h5 className="font-bold text-black">Graph</h5>
-                            </div>
-                            <div className="p-5">
-                                <div className="ct-chart ct-golden-section" id="chart3"/>
-                            </div>
-
-                            {/*/Graph Card*/}
-
-                            {/*Graph Card*/}
-
-                            <div className="border-b p-3">
-                                <h5 className="font-bold text-black">Graph</h5>
-                            </div>
-                            <div className="p-5">
-                                <div className="ct-chart ct-golden-section" id="chart4"/>
-                            </div>
-
-                            {/*/Graph Card*/}
-
-                            {/*Template Card*/}
-                            <div className="p-3">
-                                <div className="border-b p-3">
-                                    <h5 className="font-bold text-black">Template</h5>
-                                </div>
-                                <div className="p-5">
-
-                                </div>
-                            </div>
-                            {/*/Template Card*/}
-
-                        </div>
-
+                        Datos de lo seleccionado
                     </div>
 
                 </div>

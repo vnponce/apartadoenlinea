@@ -53,7 +53,7 @@ function Home(props) {
     });
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "py-10 block w-full flex justify-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__["Pagination"], {
+  }, products && products.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__["Pagination"], {
     containerClass: "flex flex-wrap h-12",
     numberButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
     ,
@@ -99,7 +99,7 @@ function BreadCard(props) {
     className: "container bread-card"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/pan/".concat(product.id),
-    className: "flex-1 h-40 flex cursor-pointer sm:bg-brand-gray"
+    className: "flex-1 flex cursor-pointer sm:bg-brand-gray"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "m-auto w-full h-40 object-cover align-middle md:h-64",
     src: "/breads/Cuernito.png",
