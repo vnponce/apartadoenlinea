@@ -419,7 +419,8 @@ function Dashboard(props) {
     });
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// openedAndShow(0);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    openedAndShow(0);
   }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
@@ -620,17 +621,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
+/* harmony import */ var _InfoBoxes_UserDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InfoBoxes/UserDetails */ "./resources/js/components/Admin/InfoBoxes/UserDetails.jsx");
+/* harmony import */ var _InfoBoxes_StoreDetails__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InfoBoxes/StoreDetails */ "./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx");
+
+
 
 
 
 function InfoBoxes(props) {
   var data = props.data;
+  console.log('infoboxes data =>', data);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full h-full lg:max-w-sm flex flex-wrap content-start"
   }, data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
-  }, data.customer.name, data.store.name, data.date.formatted), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "md:mx-6 md:my-3"
+  }, "Pedido No: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, data.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_UserDetails__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    data: data.customer
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_StoreDetails__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    data: data.store
+  })), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"
@@ -647,6 +659,88 @@ function InfoBoxes(props) {
   }, "No hay ningun pedido seleccionado para mostrar informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
     className: "flex-1 mt-3 text-brand-orange"
   }, "Hacer click sobre el pedido para ver los detalles.")))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return StoreDetails; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function StoreDetails(props) {
+  var data = props.data;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-2 md:mx-6 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-shrink pr-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "rounded-full p-3 bg-gray-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-store fa-fw fa-inverse text-indigo-500 text-xl"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-1 flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-lg"
+  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-map-marker-alt fa-fw text-brand-icons text-sm"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, ": ", data.friendlyAddress)))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/InfoBoxes/UserDetails.jsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/Admin/InfoBoxes/UserDetails.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserDetails; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function UserDetails(props) {
+  var data = props.data;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-2 md:mx-6 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-shrink pr-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "rounded-full p-3 bg-gray-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-user fa-fw fa-inverse text-indigo-500 text-xl"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-1 flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-lg"
+  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-mobile-alt fa-fw text-brand-icons text-sm"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, ": ", data.phone)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-at fa-fw text-brand-icons text-sm"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, ": ", data.email)))));
 }
 ;
 

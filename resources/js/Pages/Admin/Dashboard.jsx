@@ -100,7 +100,7 @@ function Dashboard(props) {
     };
 
     useEffect(() => {
-        // openedAndShow(0);
+        openedAndShow(0);
     }, []);
 
     return (

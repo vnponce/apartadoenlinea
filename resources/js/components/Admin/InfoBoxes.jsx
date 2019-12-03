@@ -1,17 +1,23 @@
 import React from 'react';
 import {InertiaLink} from "@inertiajs/inertia-react";
 import Admin from "../../Shared/Admin";
+import UserDetails from "./InfoBoxes/UserDetails";
+import StoreDetails from "./InfoBoxes/StoreDetails";
 
 export default function InfoBoxes(props) {
     const { data } = props;
+    console.log('infoboxes data =>', data);
     return (
     <div id="dash-content"
          className="bg-gray-200 py-6 lg:py-0 w-full h-full lg:max-w-sm flex flex-wrap content-start">
         { data && (
             <div className="w-1/2 lg:w-full">
-                {data.customer.name}
-                {data.store.name}
-                {data.date.formatted}
+                <div
+                    className="md:mx-6 md:my-3">
+                    Pedido No: <strong>{data.id}</strong>
+                </div>
+                <UserDetails data={data.customer} />
+                <StoreDetails data={data.store} />
             </div>
         )}
         { !data && (
