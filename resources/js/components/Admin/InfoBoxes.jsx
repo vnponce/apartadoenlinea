@@ -14,7 +14,14 @@ export default function InfoBoxes(props) {
             <div className="w-1/2 lg:w-full">
                 <div
                     className="md:mx-6 md:my-3">
-                    Pedido No: <strong>{data.id}</strong>
+                    <div>
+                        Pedido No: <strong>{data.id}</strong>
+                    </div>
+                    <div>
+                        <i
+                        className="inline fa fa-calendar-day fa-fw text-brand-icons text-sm mr-3"/>
+                        <strong>{data.date.formatted}</strong>
+                    </div>
                 </div>
                 <UserDetails data={data.customer} />
                 <StoreDetails data={data.store} />
