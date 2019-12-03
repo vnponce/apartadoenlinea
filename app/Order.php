@@ -48,4 +48,20 @@ class Order extends Model
 
         return "{$this->name} {$this->lastname}";
     }
+
+    public function getStatusStepAttribute()
+    {
+        switch ($this->status) {
+            case 'created':
+                return 'Creado';
+            case 'opened':
+                return 'Visto';
+            case 'payed':
+                return 'Pagado';
+            case 'delivered':
+                return 'Entregado';
+            default:
+                return 'N/A';
+        }
+    }
 }

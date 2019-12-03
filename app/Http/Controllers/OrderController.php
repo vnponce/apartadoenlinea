@@ -156,7 +156,9 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->status = $request->status;
+        $order->save();
+        return redirect('/admin');
     }
 
     /**

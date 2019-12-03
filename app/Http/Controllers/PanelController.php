@@ -14,15 +14,14 @@ class PanelController extends Controller
     public function index()
     {
         Date::setLocale('es');
-        $ux = Order::all();
-        $orders = $ux->map(function($order) {
+        $orderAll = Order::all();
+        $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;
-//            $name = "{$order->name} {$order->lastname}";
             return [
                 'id' => $order->id,
                 'date' =>  [
+                    'original' => $date,
                     'formatted' => $date->format('D d M, H:ia'),
-                    'craw' => $date,
                 ],
                 'customer' => [
                     'name' => $order->full_name,
@@ -43,10 +42,13 @@ class PanelController extends Controller
                        ];
                     }),
                 ],
-                'status' => $order->status,
+                'status' => [
+                    'original' => $order->status,
+                    'step' => $order->statusStep,
+                ],
                 'total' => $order->total,
             ];
         });
-        return Inertia::render('Admin/Dashboard', compact('orders', 'ux'));
+        return Inertia::render('Admin/Dashboard', compact('orders'));
     }
 }

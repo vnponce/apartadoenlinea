@@ -3,10 +3,17 @@ import {InertiaLink} from "@inertiajs/inertia-react";
 import Admin from "../../Shared/Admin";
 
 export default function InfoBoxes(props) {
+    const { data } = props;
     return (
     <div id="dash-content"
          className="bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start">
-
+        { data && (
+            <div className="w-1/2 lg:w-full">
+                {data.customer.name}
+                {data.store.name}
+                {data.date.formatted}
+            </div>
+        )}
         <div className="w-1/2 lg:w-full">
             <div
                 className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Admin from "../../Shared/Admin";
 import InfoBoxes from "../../components/Admin/InfoBoxes";
 import { useTable } from 'react-table';
+import {Inertia} from "@inertiajs/inertia";
 
-function Table({ columns, data }) {
+function Table({ columns, data, onClick }) {
     // Use the state and functions returned from useTable to build your UI
     const {
         getTableProps,
@@ -18,12 +19,10 @@ function Table({ columns, data }) {
 
     // Render the UI for your table
     return (
-        <table className="table-auto" {...getTableProps()}>
+        <table className="table-auto w-full" {...getTableProps()}>
             <thead>
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
-                    {console.log('headerGroups =>', headerGroups)}
-                    {console.log('headerGroup =>', headerGroup)}
                     {headerGroup.headers.map(column => (
                         <th className="px-4 py-2 py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light" {...column.getHeaderProps()}>{column.render('Header')}</th>
                     ))}
@@ -35,7 +34,7 @@ function Table({ columns, data }) {
                 (row, i) => {
                     prepareRow(row);
                     return (
-                        <tr className={ (i % 2) ? "hover:bg-gray-300" : "hover:bg-gray-300 bg-gray-200"} {...row.getRowProps()}>
+                        <tr onClick={() => onClick(row)} className={ (i % 2) ? "hover:bg-gray-300 cursor-pointer" : "hover:bg-gray-300 cursor-pointer bg-gray-200"} {...row.getRowProps()}>
                             {row.cells.map(cell => {
                                 return <td className="py-4 px-6 border-b border-grey-light" {...cell.getCellProps()}>{cell.render('Cell')}</td>
                             })}
@@ -49,10 +48,8 @@ function Table({ columns, data }) {
 
 
 function Dashboard(props) {
-    const { orders, ux, success_message } = props;
-    console.log('succes_message =>', success_message);
-    console.log('orders =>', orders);
-    console.log('ux =>', ux);
+    const { orders, success_message } = props;
+    const [dataSelected, setDataSelected] = useState(null);
     const columns = React.useMemo(
         () => [
             {
@@ -62,52 +59,59 @@ function Dashboard(props) {
             {
                 Header: 'Cliente',
                 accessor: 'customer',
+                Cell: data => (
+                    <span className="">{data.cell.value.name}</span>
+                ),
             },
             {
                 Header: 'Sucrusal',
                 accessor: 'store',
+                Cell: data => (
+                    <span className="">{data.cell.value.name}</span>
+                ),
             },
             {
                 Header: 'Fecha',
                 accessor: 'date',
+                Cell: data => (
+                    <span className="">{data.cell.value.formatted}</span>
+                ),
             },
             {
                 Header: 'Estatus',
                 accessor: 'status',
+                Cell: data => (
+                    <span className="">{data.cell.value.step}</span>
+                ),
             },
         ],
         []
     );
 
-    const data = [
-        {
-            id: 1,
-            customer: 'Abel',
-            store: 'Bernal',
-            date: '17 marzo, 5:00pm',
-            status: 'Visto',
-            order: {
-                products: [
-                    {
-                        name: 'Pambazo',
-                        price: '300',
-                        comments: 'sin nada',
-                    }
-                ],
-                total: 300,
-            }
-        },
-    ];
+    const openedAndShow = index => {
+        const data = orders[index];
+        setDataSelected(data);
+        if(data.status.original !== 'created') {
+            return false;
+        }
+        Inertia.put(`pedido/${data.id}`, {
+            status: 'opened',
+        });
+    };
+
+    useEffect(() => {
+        // openedAndShow(0);
+    }, []);
 
     return (
         <Admin title="Panel">
-            <InfoBoxes />
+            <InfoBoxes data={dataSelected}/>
             {/*Graph Content */}
             <div id="main-content" className="w-full flex-1">
 
                 <div className="flex flex-1 flex-wrap">
 
-                    <div className="w-full xl:w-2/3 p-6 xl:max-w-6xl">
+                    <div className="w-full py-6 xl:max-w-6xl">
 
                         {/*"Container" for the graphs"*/}
                         <div className="max-w-full lg:max-w-3xl xl:max-w-5xl">
@@ -115,18 +119,12 @@ function Dashboard(props) {
                             {/*Table orders*/}
                             <div className="border-b p-3">
                                 <h5 className="font-bold text-black">Pedidos</h5>
-                                <Table columns={columns} data={data} />
+                                <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)}/>
                             </div>
                             {/*/Table orders*/}
 
                         </div>
-
                     </div>
-
-                    <div className="w-full xl:w-1/3 p-6 xl:max-w-4xl border-l-1 border-gray-300">
-                        Datos de lo seleccionado
-                    </div>
-
                 </div>
 
             </div>

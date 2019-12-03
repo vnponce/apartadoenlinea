@@ -300,7 +300,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
 /* harmony import */ var _components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Admin/InfoBoxes */ "./resources/js/components/Admin/InfoBoxes.jsx");
 /* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-table */ "./node_modules/react-table/dist/index.es.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -309,7 +320,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function Table(_ref) {
   var columns = _ref.columns,
-      data = _ref.data;
+      data = _ref.data,
+      _onClick = _ref.onClick;
 
   // Use the state and functions returned from useTable to build your UI
   var _useTable = Object(react_table__WEBPACK_IMPORTED_MODULE_3__["useTable"])({
@@ -324,9 +336,9 @@ function Table(_ref) {
 
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", _extends({
-    className: "table-auto"
+    className: "table-auto w-full"
   }, getTableProps()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, headerGroups.map(function (headerGroup) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", headerGroup.getHeaderGroupProps(), console.log('headerGroups =>', headerGroups), console.log('headerGroup =>', headerGroup), headerGroup.headers.map(function (column) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", headerGroup.getHeaderGroupProps(), headerGroup.headers.map(function (column) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", _extends({
         className: "px-4 py-2 py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
       }, column.getHeaderProps()), column.render('Header'));
@@ -334,7 +346,10 @@ function Table(_ref) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", getTableBodyProps(), rows.map(function (row, i) {
     prepareRow(row);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", _extends({
-      className: i % 2 ? "hover:bg-gray-300" : "hover:bg-gray-300 bg-gray-200"
+      onClick: function onClick() {
+        return _onClick(row);
+      },
+      className: i % 2 ? "hover:bg-gray-300 cursor-pointer" : "hover:bg-gray-300 cursor-pointer bg-gray-200"
     }, row.getRowProps()), row.cells.map(function (cell) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", _extends({
         className: "py-4 px-6 border-b border-grey-light"
@@ -345,53 +360,78 @@ function Table(_ref) {
 
 function Dashboard(props) {
   var orders = props.orders,
-      ux = props.ux,
       success_message = props.success_message;
-  console.log('succes_message =>', success_message);
-  console.log('orders =>', orders);
-  console.log('ux =>', ux);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      dataSelected = _useState2[0],
+      setDataSelected = _useState2[1];
+
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     return [{
       Header: '-',
       accessor: 'id'
     }, {
       Header: 'Cliente',
-      accessor: 'customer'
+      accessor: 'customer',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.name);
+      }
     }, {
       Header: 'Sucrusal',
-      accessor: 'store'
+      accessor: 'store',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.name);
+      }
     }, {
       Header: 'Fecha',
-      accessor: 'date'
+      accessor: 'date',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.formatted);
+      }
     }, {
       Header: 'Estatus',
-      accessor: 'status'
+      accessor: 'status',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.step);
+      }
     }];
   }, []);
-  var data = [{
-    id: 1,
-    customer: 'Abel',
-    store: 'Bernal',
-    date: '17 marzo, 5:00pm',
-    status: 'Visto',
-    order: {
-      products: [{
-        name: 'Pambazo',
-        price: '300',
-        comments: 'sin nada'
-      }],
-      total: 300
+
+  var openedAndShow = function openedAndShow(index) {
+    var data = orders[index];
+    setDataSelected(data);
+
+    if (data.status.original !== 'created') {
+      return false;
     }
-  }];
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("pedido/".concat(data.id), {
+      status: 'opened'
+    });
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// openedAndShow(0);
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: dataSelected
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "main-content",
     className: "w-full flex-1"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-1 flex-wrap"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full xl:w-2/3 p-6 xl:max-w-6xl"
+    className: "w-full py-6 xl:max-w-6xl"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "max-w-full lg:max-w-3xl xl:max-w-5xl"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -400,10 +440,11 @@ function Dashboard(props) {
     className: "font-bold text-black"
   }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Table, {
     columns: columns,
-    data: data
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full xl:w-1/3 p-6 xl:max-w-4xl border-l-1 border-gray-300"
-  }, "Datos de lo seleccionado"))));
+    data: orders,
+    onClick: function onClick(row) {
+      return openedAndShow(row.index);
+    }
+  })))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
@@ -583,10 +624,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function InfoBoxes(props) {
+  var data = props.data;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-1/2 lg:w-full"
+  }, data.customer.name, data.store.name, data.date.formatted), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"
