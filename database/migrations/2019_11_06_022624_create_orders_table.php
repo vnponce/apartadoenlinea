@@ -23,7 +23,9 @@ class CreateOrdersTable extends Migration
             $table->string('hour');
             $table->date('date');
             $table->integer('total');
-            $table->enum('status', ['created', 'opened', 'payed', 'delivered']);
+            $table->boolean('payed')->default(false);
+            $table->string('paypal_id');
+            $table->enum('status', ['created', 'opened', 'delivered']);
             $table->unsignedBigInteger('store_id');
             $table->foreign('store_id')->references('id')->on('stores');
 
