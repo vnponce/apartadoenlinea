@@ -3,6 +3,7 @@ import {InertiaLink} from "@inertiajs/inertia-react";
 import Admin from "../../Shared/Admin";
 import UserDetails from "./InfoBoxes/UserDetails";
 import StoreDetails from "./InfoBoxes/StoreDetails";
+import ProductsList from "./InfoBoxes/ProductsList";
 
 export default function InfoBoxes(props) {
     const { data } = props;
@@ -25,6 +26,9 @@ export default function InfoBoxes(props) {
                 </div>
                 <UserDetails data={data.customer} />
                 <StoreDetails data={data.store} />
+                <ProductsList data={data.products} />
+                <div className="w-full text-center text-regularText text-normal">Total:</div>
+                <div className="w-full text-center text-regularText text-2xl">${data.total}</div>
             </div>
         )}
         { !data && (

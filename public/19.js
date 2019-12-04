@@ -533,16 +533,21 @@ function ProductListElement(props) {
   var product = props.product,
       _props$isEditable = props.isEditable,
       isEditable = _props$isEditable === void 0 ? true : _props$isEditable;
+  console.log('ProductListElement product =>', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       showInput = _useState2[0],
       setShowInput = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(product.options.comment),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState4 = _slicedToArray(_useState3, 2),
       comment = _useState4[0],
       setComment = _useState4[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setComment(product.options.comment);
+  }, [product]);
 
   var removeOneItem = function removeOneItem() {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
@@ -583,7 +588,7 @@ function ProductListElement(props) {
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mb-8"
+    className: "mb-8 w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

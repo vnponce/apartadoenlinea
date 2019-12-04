@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Inertia} from "@inertiajs/inertia";
 import Input from "./Input";
 
 export default function ProductListElement(props) {
     const { product, isEditable = true } = props;
+    console.log('ProductListElement product =>', product);
     const [showInput, setShowInput] = useState(false);
-    const [comment, setComment] = useState(product.options.comment);
+    const [comment, setComment] = useState('');
+    useEffect(() => {
+        setComment(product.options.comment);
+    }, [product]);
     const removeOneItem = () => {
         Inertia.post('/cart', {
             product_id: product.id,
@@ -39,7 +43,7 @@ export default function ProductListElement(props) {
         });
     };
     return (
-        <div className="mb-8">
+        <div className="mb-8 w-full">
             <div className="flex">
                 <div className="flex items-center flex-1 inline-block">
                     {isEditable &&

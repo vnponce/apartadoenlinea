@@ -32,21 +32,22 @@ class PanelController extends Controller
                     'friendlyAddress' => $order->store->friendly_address,
                     'name' => $order->store->name,
                 ],
-                'products' => [
+                'products' =>
                     $order->products->map(function($product){
                        return [
-                           'product' => $product->name,
-                           'quantity' => $product->pivot->quantity,
-                           'price' => $product->pivot->price,
-                           'comments' => $product->pivot->comment,
+                           'name' => $product->name,
+                           'qty' => $product->pivot->quantity,
+                           'price' => $product->pivot->price / 100,
+                           'options' => [
+                               'comment' => $product->pivot->comment,
+                           ],
                        ];
                     }),
-                ],
                 'status' => [
                     'original' => $order->status,
                     'step' => $order->statusStep,
                 ],
-                'total' => $order->total,
+                'total' => toFormat($order->total),
             ];
         });
         return Inertia::render('Admin/Dashboard', compact('orders'));
