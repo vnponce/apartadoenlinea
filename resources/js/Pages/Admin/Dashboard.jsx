@@ -3,8 +3,10 @@ import Admin from "../../Shared/Admin";
 import InfoBoxes from "../../components/Admin/InfoBoxes";
 import { useTable } from 'react-table';
 import {Inertia} from "@inertiajs/inertia";
+import Styled from 'styled-components';
+import classNames from 'classnames';
 
-function Table({ columns, data, onClick }) {
+function Table({ columns, data, onClick, selected }) {
     // Use the state and functions returned from useTable to build your UI
     const {
         getTableProps,
@@ -33,11 +35,21 @@ function Table({ columns, data, onClick }) {
             {rows.map(
                 (row, i) => {
                     prepareRow(row);
+                    const cx = classNames(
+                        'hover:bg-gray-300',
+                        'cursor-pointer',
+                        { 'bg-gray-200': (i % 2) },
+                        { 'text-brand-orange': selected && row.original.id === selected.id },
+                    );
                     return (
-                        <tr onClick={() => onClick(row)} className={ (i % 2) ? "hover:bg-gray-300 cursor-pointer" : "hover:bg-gray-300 cursor-pointer bg-gray-200"} {...row.getRowProps()}>
-                            {row.cells.map(cell => {
-                                return <td className="py-4 px-6 border-b border-grey-light" {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                            })}
+                        <tr
+                            id={row.original.id}
+                            onClick={() => onClick(row)}
+                            className={cx}
+                            {...row.getRowProps()}>
+                                {row.cells.map(cell => {
+                                    return <td className="py-4 px-6 border-b border-grey-light" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                })}
                         </tr>
                     )}
             )}
@@ -100,7 +112,7 @@ function Dashboard(props) {
     };
 
     useEffect(() => {
-        openedAndShow(0);
+        // openedAndShow(0);
     }, []);
 
     return (
@@ -119,7 +131,7 @@ function Dashboard(props) {
                             {/*Table orders*/}
                             <div className="border-b p-3">
                                 <h5 className="font-bold text-black">Pedidos</h5>
-                                <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)}/>
+                                <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
                             </div>
                             {/*/Table orders*/}
 

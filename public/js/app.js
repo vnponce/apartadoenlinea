@@ -34559,139 +34559,139 @@ if (false) {} else {
 var map = {
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		16,
-		21,
-		2,
-		5
+		0,
+		3,
+		13,
+		7
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		16,
-		21,
-		2,
-		5
+		0,
+		3,
+		13,
+		7
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
-		16,
-		13,
-		9,
-		7
+		0,
+		1,
+		2,
+		10
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
-		16,
-		13,
-		9,
-		7
+		0,
+		1,
+		2,
+		10
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
-		11
+		15
 	],
 	"./Example.js": [
 		"./resources/js/Pages/Example.js",
-		11
+		15
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
-		16,
-		13,
+		0,
 		1,
-		9,
-		20
+		14,
+		2,
+		11
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
-		16,
-		13,
+		0,
 		1,
-		9,
-		20
+		14,
+		2,
+		11
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
-		16,
-		13,
-		9,
-		22
+		0,
+		1,
+		2,
+		12
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
-		16,
-		13,
-		9,
-		22
+		0,
+		1,
+		2,
+		12
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
-		16,
-		13,
-		21,
+		0,
+		1,
+		3,
 		4,
-		23,
-		9,
-		17
+		5,
+		2,
+		8
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
-		16,
-		13,
-		21,
+		0,
+		1,
+		3,
 		4,
-		23,
-		9,
-		17
+		5,
+		2,
+		8
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
-		16,
-		13,
 		0,
-		9,
-		24
+		1,
+		6,
+		2,
+		16
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
-		16,
-		13,
 		0,
-		9,
-		24
+		1,
+		6,
+		2,
+		16
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
-		16,
-		13,
-		21,
+		0,
+		1,
+		3,
 		4,
-		9,
-		19
+		2,
+		9
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
-		16,
-		13,
-		21,
+		0,
+		1,
+		3,
 		4,
-		9,
-		19
+		2,
+		9
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		16,
-		13,
-		21,
-		9,
-		25
+		0,
+		1,
+		3,
+		2,
+		17
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		16,
-		13,
-		21,
-		9,
-		25
+		0,
+		1,
+		3,
+		2,
+		17
 	]
 };
 function webpackAsyncContext(req) {
