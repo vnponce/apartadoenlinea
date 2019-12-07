@@ -3,14 +3,17 @@ import Admin from "../../Shared/Admin";
 import InfoBoxes from "../../components/Admin/InfoBoxes";
 import { useTable } from 'react-table';
 import {Inertia} from "@inertiajs/inertia";
+import Styled from 'styled-components';
+import classNames from 'classnames';
 import Table from "../../components/Table";
 
-function Dashboard(props) {
-    const { orders, success_message } = props;
+
+function Products(props) {
+    const { products, success_message } = props;
     const [dataSelected, setDataSelected] = useState(null);
     const updateStatus = id => evt => {
         console.log('id =>', id);
-        Inertia.put( `/pedido/${id}`, {
+        Inertia.put( `/products/${id}`, {
             status: evt.target.value,
         });
     };
@@ -18,11 +21,11 @@ function Dashboard(props) {
     const columns = React.useMemo(
         () => [
             {
-                Header: '-',
+                Header: 'Nombre',
                 accessor: 'id',
             },
             {
-                Header: 'Cliente',
+                Header: 'Descripción',
                 accessor: 'customer',
                 Cell: data => (
                     <span className="">{data.cell.value.name}</span>

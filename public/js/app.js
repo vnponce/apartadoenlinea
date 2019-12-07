@@ -34562,14 +34562,32 @@ var map = {
 		0,
 		3,
 		13,
-		7
+		7,
+		18
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
 		3,
 		13,
-		7
+		7,
+		18
+	],
+	"./Admin/Products": [
+		"./resources/js/Pages/Admin/Products.jsx",
+		0,
+		3,
+		13,
+		7,
+		19
+	],
+	"./Admin/Products.jsx": [
+		"./resources/js/Pages/Admin/Products.jsx",
+		0,
+		3,
+		13,
+		7,
+		19
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
