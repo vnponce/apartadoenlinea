@@ -4,6 +4,8 @@ import Admin from "../../Shared/Admin";
 import UserDetails from "./InfoBoxes/UserDetails";
 import StoreDetails from "./InfoBoxes/StoreDetails";
 import ProductsList from "./InfoBoxes/ProductsList";
+import {Inertia} from "@inertiajs/inertia";
+
 
 export default function InfoBoxes(props) {
     const { data } = props;

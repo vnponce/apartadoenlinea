@@ -379,6 +379,15 @@ function Dashboard(props) {
       dataSelected = _useState2[0],
       setDataSelected = _useState2[1];
 
+  var updateStatus = function updateStatus(id) {
+    return function (evt) {
+      console.log('id =>', id);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/pedido/".concat(id), {
+        status: evt.target.value
+      });
+    };
+  };
+
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     return [{
       Header: '-',
@@ -411,9 +420,32 @@ function Dashboard(props) {
       Header: 'Estatus',
       accessor: 'status',
       Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.value.step);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "inline-block relative w-full"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          className: "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
+          onChange: updateStatus(data.cell.row.original.id)
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "opened",
+          selected: data.cell.value.original !== 'opened'
+        }, "Visto"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "placed",
+          selected: data.cell.value.original === 'placed'
+        }, "En ruta/sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "delivered",
+          selected: data.cell.value.original === 'delivered'
+        }, "Entregada"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "-",
+          selected: data.cell.value.original === '-'
+        }, "Pendiente")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+          className: "fill-current h-4 w-4",
+          xmlns: "http://www.w3.org/2000/svg",
+          viewBox: "0 0 20 20"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+          d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+        })))));
       }
     }];
   }, []);
@@ -636,6 +668,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoBoxes_UserDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InfoBoxes/UserDetails */ "./resources/js/components/Admin/InfoBoxes/UserDetails.jsx");
 /* harmony import */ var _InfoBoxes_StoreDetails__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InfoBoxes/StoreDetails */ "./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx");
 /* harmony import */ var _InfoBoxes_ProductsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./InfoBoxes/ProductsList */ "./resources/js/components/Admin/InfoBoxes/ProductsList.jsx");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 

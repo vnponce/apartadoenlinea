@@ -34559,30 +34559,30 @@ if (false) {} else {
 var map = {
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		0,
+		24,
 		3,
 		13,
 		7
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		0,
+		24,
 		3,
 		13,
 		7
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
-		0,
-		1,
-		2,
+		24,
+		23,
+		20,
 		10
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
-		0,
-		1,
-		2,
+		24,
+		23,
+		20,
 		10
 	],
 	"./Example": [
@@ -34595,102 +34595,102 @@ var map = {
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
-		0,
-		1,
-		14,
-		2,
+		24,
+		23,
+		6,
+		20,
 		11
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
-		0,
-		1,
-		14,
-		2,
+		24,
+		23,
+		6,
+		20,
 		11
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
-		0,
-		1,
-		2,
+		24,
+		23,
+		20,
 		12
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
-		0,
-		1,
-		2,
+		24,
+		23,
+		20,
 		12
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
-		0,
-		1,
+		24,
+		23,
 		3,
 		4,
-		5,
-		2,
+		14,
+		20,
 		8
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
-		0,
-		1,
+		24,
+		23,
 		3,
 		4,
-		5,
-		2,
+		14,
+		20,
 		8
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
-		0,
-		1,
-		6,
-		2,
+		24,
+		23,
+		5,
+		20,
 		16
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
-		0,
-		1,
-		6,
-		2,
+		24,
+		23,
+		5,
+		20,
 		16
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
-		0,
-		1,
+		24,
+		23,
 		3,
 		4,
-		2,
+		20,
 		9
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
-		0,
-		1,
+		24,
+		23,
 		3,
 		4,
-		2,
+		20,
 		9
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		0,
-		1,
+		24,
+		23,
 		3,
-		2,
+		20,
 		17
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		0,
-		1,
+		24,
+		23,
 		3,
-		2,
+		20,
 		17
 	]
 };

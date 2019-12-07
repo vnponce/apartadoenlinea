@@ -56,6 +56,8 @@ class Order extends Model
                 return 'Creado';
             case 'opened':
                 return 'Visto';
+            case 'placed':
+                return 'En ruta/sucursal';
             case 'payed':
                 return 'Pagado';
             case 'delivered':
