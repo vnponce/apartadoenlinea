@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Admin from "../../Shared/Admin";
 import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
-import { useTable } from 'react-table';
 import {Inertia} from "@inertiajs/inertia";
-import Styled from 'styled-components';
-import classNames from 'classnames';
 import Table from "../../components/Table";
 
 
 function Users(props) {
     const { users, success_message } = props;
     console.log('users =>', users);
+    console.log('success_message =>', success_message);
     const [dataSelected, setDataSelected] = useState(null);
     const [createUser, setCreateUser] = useState(null);
     const updateStatus = id => evt => {
@@ -62,9 +60,16 @@ function Users(props) {
     };
 
     useEffect(() => {
-        console.log('ALGO');
+        // console.log('ALGO');
         // openedAndShow(0);
     }, []);
+
+    useEffect(() => {
+        console.log('success_message =>', success_message);
+        if(success_message) {
+            setCreateUser(false);
+        }
+    }, [success_message]);
 
     return (
         <Admin title="Panel">
@@ -85,7 +90,8 @@ function Users(props) {
                                 <button
                                     className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
                                     onClick={showCreateUser}>
-                                        Crear usuario
+                                    <i
+                                        className="inline fa fa-user-plus fa-fw"/>
                                 </button>
                                 <Table columns={columns} data={users} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
                             </div>

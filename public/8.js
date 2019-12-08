@@ -460,8 +460,10 @@ function Input(_ref) {
       _ref$onKeyDown = _ref.onKeyDown,
       onKeyDown = _ref$onKeyDown === void 0 ? function () {
     return false;
-  } : _ref$onKeyDown;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  } : _ref$onKeyDown,
+      _ref$error = _ref.error,
+      error = _ref$error === void 0 ? [] : _ref$error;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: id,
@@ -478,7 +480,9 @@ function Input(_ref) {
     },
     className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full",
     onKeyDown: onKeyDown
-  }));
+  })), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm m-auto text-red-500 error ".concat(error)
+  }, error[0]));
 }
 ;
 

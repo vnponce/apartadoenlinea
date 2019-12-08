@@ -27,4 +27,20 @@ class UserController extends Controller
         });
         return Inertia::render('Admin/Users', compact('users'));
     }
+
+    public function store(Request $request)
+    {
+        // dd($request->toArray());
+        $request->validate([
+            'name' => 'required',
+            // 'avatar' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required',
+            'role' => 'required',
+            'store' => 'required',
+        ]);
+        User::create($request->all());
+        $users = User::all();
+        return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'TODO COOOL!');
+    }
 }
