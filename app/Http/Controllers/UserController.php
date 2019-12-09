@@ -35,7 +35,7 @@ class UserController extends Controller
         if(!auth()->user()->isGod) {
             return back();
         }
-        // dd($request->toArray());
+        dd($request->toArray());
         $request->validate([
             'name' => 'required',
             'file' => 'image',
@@ -48,7 +48,10 @@ class UserController extends Controller
         // dd($avatar);
         $request->merge(['avatar' => $avatar]);
 //        dd($request->toArray());
-        User::create($request->all());
+        $user = User::create($request->all());
+        $user->store->create([
+
+        ]);
         $users = User::all();
         return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'TODO COOOL!');
     }

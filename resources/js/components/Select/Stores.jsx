@@ -1,6 +1,7 @@
 import React from 'react';
 import Select, {components} from "react-select";
 import styled from "styled-components";
+import set from "@babel/runtime/helpers/esm/set";
 
 const SelectWrapper = styled.div`
   .shop-option-description {
