@@ -14,36 +14,39 @@ export default function InfoBoxes(props) {
          className="bg-gray-200 py-6 lg:py-0 w-full h-full lg:max-w-sm flex flex-wrap content-start">
         { (data || createUser) && (
             <div className="w-1/2 lg:w-full">
-                {console.log('data dentro de data || createUser =>', data)}
                 <div
                     className="m-2 md:mx-6 md:my-6">
                     {createUser && <CreateUser />}
                     {data && (
                         <>
                             <div className="flex justify-center">
-                                <img alt={data.name} className="h-20 rounded-full mr-4" src={data.avatar}/>
+                                <img alt={data.name} className="w-24 h-24 rounded-full mr-4" src={data.avatar_path}/>
                             </div>
                             <div className="flex flex-row">
                                 <div className="flex flex-1 flex-col">
-                                    <span className="text-lg">{data.name}</span>
-                                    <div>
+                                    <span className="text-lg my-6">{data.name}</span>
+                                    <div className="my-6">
                                         <i
-                                            className="inline fa fa-user-shield fa-fw text-brand-icons"/>
+                                            className="inline fa fa-user-shield fa-fw text-brand-icons text-lg"/>
                                         <span className="inline"> {data.role}</span>
                                     </div>
-                                    <div>
+                                    <div className="my-6">
                                         <i
-                                            className="inline fa fa-at fa-fw text-brand-icons"/>
+                                            className="inline fa fa-at fa-fw text-brand-icons text-lg"/>
                                         <span className="inline"> {data.email}</span>
                                     </div>
-                                    <div>
+                                    <div className="my-6">
                                         <i
-                                            className="inline fa fa-store fa-fw text-brand-icons"/>
+                                            className="inline fa fa-store fa-fw text-brand-icons text-lg"/>
                                         <span className="inline"> {data.stores}</span>
                                     </div>
                                 </div>
                             </div>
-                        </>
+                            <div className="flex flex-row">
+                                <button>Cambiar Contraseña</button>
+                                <button>Editar</button>
+                            </div>
+                            </>
                     )}
 
                 </div>

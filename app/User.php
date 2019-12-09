@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar',
     ];
 
     /**
@@ -27,6 +29,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $appends = ['avatar_path'];
 
     /**
      * The attributes that should be cast to native types.
@@ -39,7 +43,17 @@ class User extends Authenticatable
 
     public function getIsAdminAttribute()
     {
-        return ($this->role === 'god' || $this->role === 'admin');
+        return ($this->isGod || $this->role === 'admin');
+    }
+
+    public function getIsGodAttribute()
+    {
+        return $this->role === 'god';
+    }
+
+    public function getAvatarPathAttribute()
+    {
+        return env('APP_URL').'/'.Str::replaceFirst('public/', '', $this->avatar);
     }
 
 }
