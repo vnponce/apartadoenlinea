@@ -704,6 +704,7 @@ var ShopOptionComponent = function ShopOptionComponent(props) {
   var children = props.children,
       friendlyAddress = props.data.friendlyAddress,
       isSelected = props.isSelected;
+  console.log('ShopOptionComponent props =>', props);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "shop-option-name"
   }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -713,8 +714,17 @@ var ShopOptionComponent = function ShopOptionComponent(props) {
 
 function Stores(props) {
   var setStore = props.setStore,
-      stores = props.stores;
+      stores = props.stores,
+      _props$storeSelected = props.storeSelected,
+      storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
+  console.log('storeSelected =>', storeSelected);
+  console.log('stores =>', stores);
   var storesToSelect = transformStoreList(stores);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (storeSelected) {
+      setStore(storeSelected.id);
+    }
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -743,6 +753,10 @@ function Stores(props) {
     },
     onChange: function onChange(selected) {
       setStore(selected.value);
+    },
+    defaultValue: {
+      label: storeSelected.name,
+      value: storeSelected.id
     }
     /*
     onFocus={

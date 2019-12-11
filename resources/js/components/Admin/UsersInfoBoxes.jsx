@@ -3,7 +3,7 @@ import Input from "../Input";
 import CreateUser from "./UsersInfoBoxes/CreateUser";
 
 export default function InfoBoxes(props) {
-    const { data, createUser = false, setCreateUser } = props;
+    const { data, editUser = false, createUser = false, setCreateUser } = props;
     console.log('UserInfoboxes data =>', data);
     console.log('UserInfoboxes createUser =>', createUser);
     useEffect(() => {
@@ -17,7 +17,8 @@ export default function InfoBoxes(props) {
                 <div
                     className="m-2 md:mx-6 md:my-6">
                     {createUser && <CreateUser />}
-                    {data && (
+                    {data && <CreateUser data={data} />}
+                    {data && false && (
                         <>
                             <div className="flex justify-center">
                                 <img alt={data.name} className="w-24 h-24 rounded-full mr-4" src={data.avatar_path}/>

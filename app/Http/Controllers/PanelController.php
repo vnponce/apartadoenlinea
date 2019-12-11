@@ -14,7 +14,14 @@ class PanelController extends Controller
     public function index()
     {
         Date::setLocale('es');
+        // dd(auth()->user()->stores->first()->orders);
         $orderAll = Order::all();
+        if(!auth()->user()->isAdmin) {
+            $orderAll = auth()->user()->stores->map(function($store) {
+                return $store->orders;
+            })->flatten();
+        }
+//         dd($orderAll);
         $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;
             return [

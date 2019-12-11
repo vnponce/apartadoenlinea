@@ -97,4 +97,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', 'PanelController@index')->name('panel');
     Route::get('users', 'UserController@index')->name('user.index');
     Route::post('users', 'UserController@store')->name('user.create');
+    Route::put('users/{user}', 'UserController@update')->name('user.update');
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Select, {components} from "react-select";
 import styled from "styled-components";
 import set from "@babel/runtime/helpers/esm/set";
@@ -26,6 +26,7 @@ const ShopOptionComponent = props => {
         isSelected,
     } = props;
 
+    console.log('ShopOptionComponent props =>', props);
     return (
         <components.Option {...props}>
             <span className="shop-option-name">{children}</span>
@@ -39,8 +40,17 @@ const ShopOptionComponent = props => {
 };
 
 export default function Stores(props) {
-    const { setStore, stores } = props;
+    const { setStore, stores, storeSelected = false } = props;
+    console.log('storeSelected =>', storeSelected);
+    console.log('stores =>', stores);
     const storesToSelect = transformStoreList(stores);
+
+    useEffect(() => {
+        if(storeSelected){
+            setStore(storeSelected.id);
+        }
+    }, []);
+
     return (
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
             <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Sucursal</label>
@@ -67,6 +77,7 @@ export default function Stores(props) {
                 onChange={selected => {
                     setStore(selected.value)
                 }}
+                defaultValue={{label: storeSelected.name, value: storeSelected.id}}
                 /*
                 onFocus={
                     this.onShopFocus

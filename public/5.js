@@ -172,6 +172,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function InfoBoxes(props) {
   var data = props.data,
+      _props$editUser = props.editUser,
+      editUser = _props$editUser === void 0 ? false : _props$editUser,
       _props$createUser = props.createUser,
       createUser = _props$createUser === void 0 ? false : _props$createUser,
       setCreateUser = props.setCreateUser;
@@ -187,7 +189,9 @@ function InfoBoxes(props) {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-6"
-  }, createUser && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__["default"], null), data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, createUser && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__["default"], null), data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: data
+  }), data && false && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex justify-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     alt: data.name,
@@ -301,7 +305,8 @@ function CreateUser(props) {
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
       errors = _usePage.errors,
-      stores = _usePage.stores;
+      stores = _usePage.stores,
+      success_message = _usePage.success_message;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     // store: 1,
@@ -316,16 +321,31 @@ function CreateUser(props) {
       storeSelected = _useState4[0],
       setStoreSelected = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      avatar = _useState6[0],
-      setAvatar = _useState6[1];
+      editing = _useState6[0],
+      setEditing = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      avatar = _useState8[0],
+      setAvatar = _useState8[1];
 
   var onChange = function onChange(e) {
     setUserData(_objectSpread({}, userData, _defineProperty({}, e.target.name, e.target.value)));
   };
 
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('mounting Create User data =>', data);
+
+    if (data) {
+      setEditing(true);
+      setUserData(_objectSpread({}, data));
+    }
+  }, [data]);
+
   var createUser = function createUser() {
+    console.log('createUSer isEditing =>', editing);
     /*
     const formData = new FormData();
     formData.append("file", avatar, avatar.name);
@@ -335,9 +355,20 @@ function CreateUser(props) {
     formData.set("role", userData.role ? userData.role : '');
     formData.set("store", storeSelected ? storeSelected : '');
      */
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("users", _objectSpread({}, userData, {
-      store: storeSelected
-    }));
+
+    if (editing) {
+      console.log('editing true');
+      console.log('editing userData =>', userData);
+      console.log('editing storeSelected =>', storeSelected);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("users/".concat(userData.id), _objectSpread({}, userData, {
+        store: storeSelected
+      }));
+    } else {
+      console.log('editing else con post');
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("users", _objectSpread({}, userData, {
+        store: storeSelected
+      }));
+    }
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -347,7 +378,7 @@ function CreateUser(props) {
     label: "Nombre de usuario",
     placeholder: "Nombre",
     error: errors.name
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), !editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
     value: userData.email,
     id: "email",
@@ -383,7 +414,11 @@ function CreateUser(props) {
     selected: userData.role === 'manager'
   }, "Manager/Sucursal"))), errors.role && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error role"
-  }, errors.role[0]), userData.role === 'manager' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Stores__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, errors.role[0]), userData.role === 'manager' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, !editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Stores__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    setStore: setStoreSelected,
+    stores: stores
+  }), editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Stores__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    storeSelected: userData.stores[0],
     setStore: setStoreSelected,
     stores: stores
   }), errors.store && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -458,6 +493,7 @@ var ShopOptionComponent = function ShopOptionComponent(props) {
   var children = props.children,
       friendlyAddress = props.data.friendlyAddress,
       isSelected = props.isSelected;
+  console.log('ShopOptionComponent props =>', props);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "shop-option-name"
   }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -467,8 +503,17 @@ var ShopOptionComponent = function ShopOptionComponent(props) {
 
 function Stores(props) {
   var setStore = props.setStore,
-      stores = props.stores;
+      stores = props.stores,
+      _props$storeSelected = props.storeSelected,
+      storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
+  console.log('storeSelected =>', storeSelected);
+  console.log('stores =>', stores);
   var storesToSelect = transformStoreList(stores);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (storeSelected) {
+      setStore(storeSelected.id);
+    }
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -497,6 +542,10 @@ function Stores(props) {
     },
     onChange: function onChange(selected) {
       setStore(selected.value);
+    },
+    defaultValue: {
+      label: storeSelected.name,
+      value: storeSelected.id
     }
     /*
     onFocus={

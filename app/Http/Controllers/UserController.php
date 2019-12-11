@@ -14,6 +14,7 @@ class UserController extends Controller
         $usersAux = $users->map(function($user) {
             $store = 'Todas las tiendas';
             if(!$user->isAdmin) {
+                // dd($user->stores);
                 // dd($user->stores->first()->name);
                 $store = $user->stores->first()->name;
             }
@@ -48,12 +49,34 @@ class UserController extends Controller
         // dd($request->toArray());
         // $avatar = $request->file('file')->store('public/avatars');
         // dd($avatar);
-        // $request->merge(['avatar' => $avatar]);
+        $request->merge(['password' => bcrypt($request->password)]);
 //        dd($request->toArray());
         $user = User::create($request->all());
         $user->stores()->attach($request->store);
         $users = User::all();
         // dd($users);
         return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'TODO COOOL!');
+    }
+
+    public function update(User $user, Request $request)
+    {
+//        dd($user, $request->toArray());
+        $this->validate($request,[
+            'name' => 'required|string|max:255',
+            // 'file' => 'image',
+            // 'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'string|min:6',
+            'role' => 'required',
+            'store' => 'required|exists:stores,id',
+        ]);
+
+        $user->update($request->only('name', 'password', 'role'));
+        if($request->role === 'manager'){
+            $user->stores()->detach();
+            $user->stores()->attach($request->store);
+        }
+        // $users = User::all();
+        // return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'Usuario actualizado correctamente!');
+        return back()->with('success_message', 'Usuario actualizado correctamente!');
     }
 }

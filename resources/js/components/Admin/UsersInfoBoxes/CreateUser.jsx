@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from "../../Input";
 import {usePage} from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
@@ -15,12 +15,13 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 export default function CreateUser(props) {
     const { data } = props;
-    const { errors, stores } = usePage();
+    const { errors, stores, success_message } = usePage();
     const [userData, setUserData] = useState({
         // store: 1,
         role: 'god',
     });
     const [storeSelected, setStoreSelected] = useState(false);
+    const [editing, setEditing] = useState(false);
     const [avatar, setAvatar] = useState(null);
     const onChange = e => {
         setUserData({
@@ -29,7 +30,16 @@ export default function CreateUser(props) {
         })
     };
 
+    useEffect(() => {
+        console.log('mounting Create User data =>', data);
+        if(data) {
+            setEditing(true);
+            setUserData({...data});
+        }
+    }, [data]);
+
     const createUser = () => {
+        console.log('createUSer isEditing =>', editing);
         /*
         const formData = new FormData();
         formData.append("file", avatar, avatar.name);
@@ -39,10 +49,21 @@ export default function CreateUser(props) {
         formData.set("role", userData.role ? userData.role : '');
         formData.set("store", storeSelected ? storeSelected : '');
          */
-        Inertia.post("users", {
-            ...userData,
-            store: storeSelected,
-        });
+        if(editing){
+            console.log('editing true');
+            console.log('editing userData =>', userData);
+            console.log('editing storeSelected =>', storeSelected);
+            Inertia.put(`users/${userData.id}`, {
+                ...userData,
+                store: storeSelected,
+            });
+        } else {
+            console.log('editing else con post');
+            Inertia.post("users", {
+                ...userData,
+                store: storeSelected,
+            });
+        }
     };
     return (
         <>
@@ -61,6 +82,7 @@ export default function CreateUser(props) {
                 placeholder="Nombre"
                 error={errors.name}
             />
+            {!editing &&
             <Input
                 onChange={onChange}
                 value={userData.email}
@@ -69,6 +91,7 @@ export default function CreateUser(props) {
                 placeholder="email"
                 error={errors.email}
             />
+            }
             <Input
                 onChange={onChange}
                 value={userData.password}
@@ -94,7 +117,12 @@ export default function CreateUser(props) {
             {errors.role && <p className={`text-sm m-auto text-red-500 error role`}>{errors.role[0]}</p>}
             {userData.role === 'manager' && (
                 <>
-                    <Stores setStore={setStoreSelected} stores={stores} />
+                    {!editing &&
+                        <Stores setStore={setStoreSelected} stores={stores} />
+                    }
+                    {editing &&
+                        <Stores storeSelected={userData.stores[0]} setStore={setStoreSelected} stores={stores} />
+                    }
                     {errors.store && <p className={`text-sm m-auto text-red-500 error store`}>{errors.store[0]}</p>}
                 </>
             )}
