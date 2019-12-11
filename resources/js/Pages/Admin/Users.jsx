@@ -42,6 +42,14 @@ function Users(props) {
             {
                 Header: 'Tienda',
                 accessor: 'stores',
+                Cell: data => {
+                    console.log('data =>', data);
+                    const { original: user } = data.row;
+                    if(user.isAdmin) {
+                        return <span className="">Todas</span>
+                    }
+                    return <span className="">{user.stores[0].name}</span>;
+                },
             },
         ],
         []

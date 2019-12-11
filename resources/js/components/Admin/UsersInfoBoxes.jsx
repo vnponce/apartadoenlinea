@@ -3,7 +3,7 @@ import Input from "../Input";
 import CreateUser from "./UsersInfoBoxes/CreateUser";
 
 export default function InfoBoxes(props) {
-    const { data, createUser = false } = props;
+    const { data, createUser = false, setCreateUser } = props;
     console.log('UserInfoboxes data =>', data);
     console.log('UserInfoboxes createUser =>', createUser);
     useEffect(() => {
@@ -38,7 +38,7 @@ export default function InfoBoxes(props) {
                                     <div className="my-6">
                                         <i
                                             className="inline fa fa-store fa-fw text-brand-icons text-lg"/>
-                                        <span className="inline"> {data.stores}</span>
+                                        <span className="inline">{ data.isAdmin ? 'Todas' :  data.stores[0].name }</span>
                                     </div>
                                 </div>
                             </div>
@@ -62,10 +62,10 @@ export default function InfoBoxes(props) {
                                 className="fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"/></div>
                         </div>
                         <div className="flex-1 mt-3">
-                            No hay ningun usuario seleccionado para mostrar información.
+                            No hay ningun usuario seleccionado para editar la información.
                         </div>
-                        <small className="flex-1 mt-3 text-brand-orange">
-                            Hacer click sobre el usuario para ver los detalles o en crear usuario.
+                        <small onClick={setCreateUser} className="flex-1 mt-3 text-brand-orange cursor-pointer">
+                            Haz click para crear usuario.
                         </small>
                     </div>
                 </div>

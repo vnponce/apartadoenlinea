@@ -75,7 +75,21 @@ function Users(props) {
       }
     }, {
       Header: 'Tienda',
-      accessor: 'stores'
+      accessor: 'stores',
+      Cell: function Cell(data) {
+        console.log('data =>', data);
+        var user = data.row.original;
+
+        if (user.isAdmin) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: ""
+          }, "Todas");
+        }
+
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, user.stores[0].name);
+      }
     }];
   }, []);
 
@@ -159,7 +173,8 @@ __webpack_require__.r(__webpack_exports__);
 function InfoBoxes(props) {
   var data = props.data,
       _props$createUser = props.createUser,
-      createUser = _props$createUser === void 0 ? false : _props$createUser;
+      createUser = _props$createUser === void 0 ? false : _props$createUser,
+      setCreateUser = props.setCreateUser;
   console.log('UserInfoboxes data =>', data);
   console.log('UserInfoboxes createUser =>', createUser);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -202,7 +217,7 @@ function InfoBoxes(props) {
     className: "inline fa fa-store fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, " ", data.stores)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.isAdmin ? 'Todas' : data.stores[0].name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Cambiar Contrase\xF1a"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Editar"))))), !(data || createUser) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
@@ -218,9 +233,10 @@ function InfoBoxes(props) {
     className: "fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-3"
-  }, "No hay ningun usuario seleccionado para mostrar informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "flex-1 mt-3 text-brand-orange"
-  }, "Hacer click sobre el usuario para ver los detalles o en crear usuario.")))));
+  }, "No hay ningun usuario seleccionado para editar la informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    onClick: setCreateUser,
+    className: "flex-1 mt-3 text-brand-orange cursor-pointer"
+  }, "Haz click para crear usuario.")))));
 }
 ;
 
@@ -310,23 +326,21 @@ function CreateUser(props) {
   };
 
   var createUser = function createUser() {
-    var formData = new FormData();
+    /*
+    const formData = new FormData();
     formData.append("file", avatar, avatar.name);
     formData.set("name", userData.name ? userData.name : '');
     formData.set("email", userData.email ? userData.email : '');
     formData.set("password", userData.password ? userData.password : '');
     formData.set("role", userData.role ? userData.role : '');
     formData.set("store", storeSelected ? storeSelected : '');
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("users", formData);
+     */
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("users", _objectSpread({}, userData, {
+      store: storeSelected
+    }));
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_filepond__WEBPACK_IMPORTED_MODULE_4__["FilePond"], {
-    onupdatefiles: function onupdatefiles(fileItems) {
-      console.log('onupdatefiles =>', fileItems); // setAvatar(fileItems.map(fileItem => fileItem.file));
-
-      setAvatar(fileItems[0].file);
-    }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
     value: userData.name,
     id: "name",

@@ -30,6 +30,7 @@ export default function CreateUser(props) {
     };
 
     const createUser = () => {
+        /*
         const formData = new FormData();
         formData.append("file", avatar, avatar.name);
         formData.set("name", userData.name ? userData.name : '');
@@ -37,15 +38,21 @@ export default function CreateUser(props) {
         formData.set("password", userData.password ? userData.password : '');
         formData.set("role", userData.role ? userData.role : '');
         formData.set("store", storeSelected ? storeSelected : '');
-        Inertia.post("users", formData);
+         */
+        Inertia.post("users", {
+            ...userData,
+            store: storeSelected,
+        });
     };
     return (
         <>
+            {/*
             <FilePond onupdatefiles={fileItems => {
                 console.log('onupdatefiles =>', fileItems);
                 // setAvatar(fileItems.map(fileItem => fileItem.file));
                 setAvatar(fileItems[0].file);
             }}/>
+            */}
             <Input
                 onChange={onChange}
                 value={userData.name}

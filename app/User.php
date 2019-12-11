@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar',
+        'name', 'email', 'password', 'avatar', 'role',
     ];
 
     /**
@@ -30,7 +30,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $appends = ['avatar_path'];
+    protected $appends = ['avatar_path', 'isGod', 'isAdmin'];
+
+    protected $with = ['stores'];
 
     /**
      * The attributes that should be cast to native types.
@@ -56,4 +58,8 @@ class User extends Authenticatable
         return env('APP_URL').'/'.Str::replaceFirst('public/', '', $this->avatar);
     }
 
+    public function stores()
+    {
+        return $this->belongsToMany(Store::class);
+    }
 }
