@@ -483,7 +483,7 @@ function SiteBar(props) {
   }, "Pedidos"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "my-2 md:my-0 "
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "/admin/bread",
+    href: "/admin/products",
     className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-bread-slice fa-fw mr-3"

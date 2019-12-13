@@ -95,7 +95,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Panel
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', 'PanelController@index')->name('panel');
+
     Route::get('users', 'UserController@index')->name('user.index');
     Route::post('users', 'UserController@store')->name('user.create');
     Route::put('users/{user}', 'UserController@update')->name('user.update');
+    Route::group(['prefix' => 'products'], function() {
+        Route::get('/', 'PanelController@products')->name('panel.products');
+    });
+
 });

@@ -28,7 +28,7 @@ class ProductsImport implements ToModel
             'image' => 'my_image',
             'ingredients' => $row[4] ?? '',
             'available_time' => $row[5],
-            'available' => null,
+            'available' => false,
             'price' => $row[6] ? $row[6] * 100 : 0,
         ]);
     }

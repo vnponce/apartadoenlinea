@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[26],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[27],{
 
-/***/ "./resources/js/Pages/Admin/Products.jsx":
-/*!***********************************************!*\
-  !*** ./resources/js/Pages/Admin/Products.jsx ***!
-  \***********************************************/
+/***/ "./resources/js/Pages/Admin/Users.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Admin/Users.jsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12,15 +12,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
-/* harmony import */ var _components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Admin/InfoBoxes */ "./resources/js/components/Admin/InfoBoxes.jsx");
-/* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-table */ "./node_modules/react-table/dist/index.es.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
-/* harmony import */ var _components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Admin/ProductsInfoBoxes */ "./resources/js/components/Admin/ProductsInfoBoxes.jsx");
+/* harmony import */ var _components_Admin_UsersInfoBoxes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Admin/UsersInfoBoxes */ "./resources/js/components/Admin/UsersInfoBoxes.jsx");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -35,23 +30,26 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
-
-
-function Products(props) {
-  var products = props.products,
+function Users(props) {
+  var users = props.users,
       success_message = props.success_message;
+  console.log('users =>', users);
+  console.log('success_message =>', success_message);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
       dataSelected = _useState2[0],
       setDataSelected = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      createUser = _useState4[0],
+      setCreateUser = _useState4[1];
+
   var updateStatus = function updateStatus(id) {
     return function (evt) {
       console.log('id =>', id);
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/products/".concat(id), {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("/users/".concat(id), {
         status: evt.target.value
       });
     };
@@ -62,60 +60,64 @@ function Products(props) {
       Header: 'Nombre',
       accessor: 'name'
     }, {
-      Header: 'Descripción',
-      accessor: 'description',
+      Header: 'email',
+      accessor: 'email'
+    }, {
+      Header: 'role',
+      accessor: 'role'
+    }, {
+      Header: 'password',
+      accessor: 'password',
       Cell: function Cell(data) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: ""
-        }, data.cell.value.name);
+        }, "Change Password");
       }
     }, {
-      Header: 'Ingredientes',
-      accessor: 'ingredients',
+      Header: 'Tienda',
+      accessor: 'stores',
       Cell: function Cell(data) {
+        console.log('data =>', data);
+        var user = data.row.original;
+
+        if (user.isAdmin) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: ""
+          }, "Todas");
+        }
+
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: ""
-        }, data.cell.value.name);
-      }
-    }, {
-      Header: 'Precio',
-      accessor: 'price',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.value.formatted);
-      }
-    }, {
-      Header: 'Disponible',
-      accessor: 'available',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.value.formatted);
+        }, user.stores[0].name);
       }
     }];
   }, []);
 
   var openedAndShow = function openedAndShow(index) {
-    var data = orders[index];
+    var data = users[index];
+    setCreateUser(false);
     setDataSelected(data);
-
-    if (data.status.original !== 'created') {
-      return false;
-    }
-
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("pedido/".concat(data.id), {
-      status: 'opened'
-    });
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// openedAndShow(0);
+  var showCreateUser = function showCreateUser() {
+    console.log('crear usuario');
+    setCreateUser(true);
+    setDataSelected(false);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// console.log('ALGO');
+    // openedAndShow(0);
   }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('success_message =>', success_message);
+
+    if (success_message) {
+      setCreateUser(false);
+    }
+  }, [success_message]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UsersInfoBoxes, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_UsersInfoBoxes__WEBPACK_IMPORTED_MODULE_2__["default"], {
     data: dataSelected,
     createUser: createUser,
     setCreateUser: setCreateUser
@@ -137,24 +139,24 @@ function Products(props) {
     onClick: showCreateUser
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "inline fa fa-user-plus fa-fw"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
     columns: columns,
     data: users,
     onClick: function onClick(row) {
       return openedAndShow(row.index);
     },
     selected: dataSelected
-  }))))))));
+  })))))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
+/* harmony default export */ __webpack_exports__["default"] = (Users);
 
 /***/ }),
 
-/***/ "./resources/js/components/Admin/ProductsInfoBoxes.jsx":
-/*!*************************************************************!*\
-  !*** ./resources/js/components/Admin/ProductsInfoBoxes.jsx ***!
-  \*************************************************************/
+/***/ "./resources/js/components/Admin/UsersInfoBoxes.jsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Admin/UsersInfoBoxes.jsx ***!
+  \**********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

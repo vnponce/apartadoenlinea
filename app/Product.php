@@ -9,6 +9,10 @@ class Product extends Model implements Buyable
 {
     protected $appends = ['formatPrice'];
 
+    protected $casts = [
+        'available' => 'boolean',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

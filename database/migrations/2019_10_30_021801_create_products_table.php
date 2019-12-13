@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('ingredients');
             $table->string('image');
             $table->integer('price');
-            $table->boolean('available')->nullable();
+            $table->boolean('available')->default(false);
             $table->string('available_time')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');

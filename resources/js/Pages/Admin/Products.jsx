@@ -6,11 +6,14 @@ import {Inertia} from "@inertiajs/inertia";
 import Styled from 'styled-components';
 import classNames from 'classnames';
 import Table from "../../components/Table";
+import ProductsInfoBoxes from "../../components/Admin/ProductsInfoBoxes";
 
 
 function Products(props) {
     const { products, success_message } = props;
+    console.log('products =>', products);
     const [dataSelected, setDataSelected] = useState(null);
+    const [createProduct, setCreateProduct] = useState(null);
     const updateStatus = id => evt => {
         console.log('id =>', id);
         Inertia.put( `/products/${id}`, {
@@ -18,59 +21,43 @@ function Products(props) {
         });
     };
 
+    const showCreateProduct = () => {
+        console.log('crear product');
+        setCreateProduct(true);
+        setDataSelected(false);
+    };
+
     const columns = React.useMemo(
         () => [
             {
                 Header: 'Nombre',
-                accessor: 'id',
+                accessor: 'name',
             },
             {
                 Header: 'Descripción',
-                accessor: 'customer',
-                Cell: data => (
-                    <span className="">{data.cell.value.name}</span>
-                ),
+                accessor: 'description',
             },
             {
-                Header: 'Sucrusal',
-                accessor: 'store',
-                Cell: data => (
-                    <span className="">{data.cell.value.name}</span>
-                ),
+                Header: 'Ingredientes',
+                accessor: 'ingredients',
             },
             {
-                Header: 'Fecha',
-                accessor: 'date',
-                Cell: data => (
-                    <span className="">{data.cell.value.formatted}</span>
-                ),
+                Header: 'Precio',
+                accessor: 'price',
+                Cell: data => {
+                    return (
+                        <span className="">{data.row.original.formatPrice}</span>
+                    )
+                },
             },
             {
-                Header: 'Estatus',
-                accessor: 'status',
-                Cell: data => (
-                    <>
-                        {/* start select */}
-                        <div className="inline-block relative w-full">
-                            <select
-                                className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-                                onChange={updateStatus(data.cell.row.original.id)}
-                            >
-                                <option value="opened" selected={data.cell.value.original !== 'opened'}>Visto</option>
-                                <option value="placed" selected={data.cell.value.original === 'placed'}>En ruta/sucursal</option>
-                                <option value="delivered" selected={data.cell.value.original === 'delivered'}>Entregada</option>
-                                <option value="-" selected={data.cell.value.original === '-'}>Pendiente</option>
-                            </select>
-                            <div
-                                className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        {/* end select */}
-                    </>
-                ),
+                Header: 'Disponible',
+                accessor: 'available',
+                Cell: data => {
+                    return (
+                        <span className="">{data.row.original.available}</span>
+                    )
+                },
             },
         ],
         []
@@ -93,7 +80,7 @@ function Products(props) {
 
     return (
         <Admin title="Panel">
-            <InfoBoxes data={dataSelected}/>
+            <ProductsInfoBoxes data={dataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct}/>
             {/*Graph Content */}
             <div id="main-content" className="w-full flex-1">
 
@@ -106,8 +93,14 @@ function Products(props) {
 
                             {/*Table orders*/}
                             <div className="border-b p-3">
-                                <h5 className="font-bold text-black">Pedidos</h5>
-                                <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                                <h5 className="font-bold text-black inline-block">Productos</h5>
+                                <button
+                                    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                                    onClick={showCreateProduct}>
+                                    <i
+                                        className="inline fa fa-bread-slice fa-fw"/>+
+                                </button>
+                                <Table columns={columns} data={products} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
                             </div>
                             {/*/Table orders*/}
 
@@ -120,4 +113,4 @@ function Products(props) {
     );
 }
 
-export default Dashboard;
+export default Products;

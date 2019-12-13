@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -58,5 +59,11 @@ class PanelController extends Controller
             ];
         });
         return Inertia::render('Admin/Dashboard', compact('orders'));
+    }
+
+    public function products()
+    {
+        $products = Product::all();
+        return Inertia::render('Admin/Products', compact('products'));
     }
 }
