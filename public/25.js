@@ -536,10 +536,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 function UserMenu(props) {
   var user = props.user;
+  console.log('user =>', user);
+
+  var logout = function logout() {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post('logout');
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex relative inline-block pr-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -549,7 +558,7 @@ function UserMenu(props) {
     className: "flex items-center focus:outline-none mr-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "w-8 h-8 rounded-full mr-4",
-    src: user.avatar,
+    src: user.avatar || 'https://cdn2.iconfinder.com/data/icons/office-and-business-19/65/61-512.png',
     alt: "Avatar of User"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "hidden md:inline-block"
@@ -566,8 +575,8 @@ function UserMenu(props) {
     className: "bg-white nunito rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "list-reset"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "/logout",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    onClick: logout,
     className: "px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline"
   }, "Logout"))))));
 }

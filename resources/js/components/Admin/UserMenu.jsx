@@ -1,15 +1,20 @@
 import React from 'react';
 import {InertiaLink} from "@inertiajs/inertia-react";
+import {Inertia} from "@inertiajs/inertia";
 
 export default function UserMenu(props) {
     const { user } = props;
+    console.log('user =>', user);
+    const logout = () => {
+      Inertia.post('logout');
+    };
     return (
         <div className="flex relative inline-block pr-6">
 
             <div className="relative text-sm">
                 <button id="userButton" className="flex items-center focus:outline-none mr-3">
                     {/* <img className="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" */}
-                    <img className="w-8 h-8 rounded-full mr-4" src={user.avatar}
+                    <img className="w-8 h-8 rounded-full mr-4" src={user.avatar || 'https://cdn2.iconfinder.com/data/icons/office-and-business-19/65/61-512.png'}
                          alt="Avatar of User" />
                     <span
                         className="hidden md:inline-block">Hola, {user.name}
@@ -38,10 +43,10 @@ export default function UserMenu(props) {
                         </li>
                         */}
                         <li>
-                            <InertiaLink href="/logout"
+                            <a onClick={logout}
                                className="px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline">
                                 Logout
-                            </InertiaLink>
+                            </a>
                         </li>
                     </ul>
                 </div>
