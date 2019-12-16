@@ -22,7 +22,8 @@ export default function InfoBoxes(props) {
                     {data && (
                         <>
                             <div className="flex justify-center">
-                                <img alt={data.name} className="w-24 h-24 rounded-full mr-4" src={data.image}/>
+                                {data.image && <img alt={data.name} className="w-64 h-64 rounded mr-4" src={data.image}/>}
+                                {!data.image && <i className="far fa-image text-6xl rounded mr-4"/>}
                             </div>
                             <div className="flex flex-row">
                                 <div className="flex flex-1 flex-col">

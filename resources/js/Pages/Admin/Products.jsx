@@ -54,9 +54,12 @@ function Products(props) {
                 Header: 'Disponible',
                 accessor: 'available',
                 Cell: data => {
-                    return (
-                        <span className="">{data.row.original.available}</span>
-                    )
+                    const { available } = data.row.original;
+                    if(available) {
+                        return <i className="fas fa-check-circle table m-auto"></i>
+                    } else {
+                        return <i className="fas fa-times-circle table m-auto"></i>
+                    }
                 },
             },
         ],
@@ -64,14 +67,8 @@ function Products(props) {
     );
 
     const openedAndShow = index => {
-        const data = orders[index];
+        const data = products[index];
         setDataSelected(data);
-        if(data.status.original !== 'created') {
-            return false;
-        }
-        Inertia.put(`pedido/${data.id}`, {
-            status: 'opened',
-        });
     };
 
     useEffect(() => {

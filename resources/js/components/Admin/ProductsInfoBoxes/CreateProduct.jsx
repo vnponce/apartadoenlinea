@@ -8,6 +8,7 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import Stores from "../../Select/Stores";
+import {create} from "filepond";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -16,7 +17,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 export default function CreateProduct(props) {
     const { data } = props;
     const { errors, stores, success_message } = usePage();
-    const [userData, setUserData] = useState({
+    const [productData, setProductData] = useState({
         // store: 1,
         role: 'god',
     });
@@ -25,7 +26,7 @@ export default function CreateProduct(props) {
     const [avatar, setAvatar] = useState(null);
     const onChange = e => {
         setUserData({
-            ...userData,
+            ...productData,
             [e.target.name]: e.target.value,
         })
     };
@@ -34,12 +35,12 @@ export default function CreateProduct(props) {
         console.log('mounting Create User data =>', data);
         if(data) {
             setEditing(true);
-            setUserData({...data});
+            setProductData({...data});
         }
     }, [data]);
 
-    const createUser = () => {
-        console.log('createUSer isEditing =>', editing);
+    const createProduct = () => {
+        console.log('createProduct isEditing =>', editing);
         /*
         const formData = new FormData();
         formData.append("file", avatar, avatar.name);
@@ -51,17 +52,17 @@ export default function CreateProduct(props) {
          */
         if(editing){
             console.log('editing true');
-            console.log('editing userData =>', userData);
-            console.log('editing storeSelected =>', storeSelected);
+            console.log('editing productData =>', productData);
+            // console.log('editing storeSelected =>', storeSelected);
             Inertia.put(`users/${userData.id}`, {
-                ...userData,
-                store: storeSelected,
+                ...productData,
+                // store: storeSelected,
             });
         } else {
             console.log('editing else con post');
             Inertia.post("users", {
-                ...userData,
-                store: storeSelected,
+                ...productData,
+                // store: storeSelected,
             });
         }
     };
@@ -76,72 +77,64 @@ export default function CreateProduct(props) {
             */}
             <Input
                 onChange={onChange}
-                value={userData.name}
+                value={productData.name}
                 id="name"
                 label="Nombre de usuario"
                 placeholder="Nombre"
                 error={errors.name}
             />
-            {!editing &&
             <Input
                 onChange={onChange}
-                value={userData.email}
-                id="email"
-                label="Correo Electrónico"
-                placeholder="email"
-                error={errors.email}
+                value={productData.description}
+                id="description"
+                label="Descripción"
+                placeholder="Descripción"
+                error={errors.description}
             />
-            }
             <Input
                 onChange={onChange}
-                value={userData.password}
-                id="password"
-                label="Contraseña"
-                placeholder="Contraseña"
-                type="password"
-                error={errors.password}
+                value={productData.ingredients}
+                id="ingredients"
+                label="Ingredientes"
+                placeholder="Ingredientes separados por coma"
+                error={errors.ingredients}
             />
             <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
-                <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Role</label>
+                <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Categoría</label>
                 <select
-                    id="role"
-                    name="role"
+                    id="category"
+                    name="category"
                     className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                     onChange={onChange}
                 >
-                    <option value="god" selected={userData.role !== 'god'}>Dios</option>
-                    <option value="admin" selected={userData.role === 'admmin'}>Administrador/Matriz</option>
-                    <option value="manager" selected={userData.role === 'manager'}>Manager/Sucursal</option>
+                    <option value="god" selected={productData.category !== 'god'}>Pan de dulce</option>
+                    <option value="admin" selected={productData.category === 'admmin'}>Pan de sal</option>
+                    <option value="manager" selected={productData.category === 'manager'}>Bocadillos</option>
+                    <option value="manager" selected={productData.category === 'manager'}>Repostería</option>
                 </select>
             </div>
-            {errors.role && <p className={`text-sm m-auto text-red-500 error role`}>{errors.role[0]}</p>}
-            {userData.role === 'manager' && (
-                <>
-                    {!editing &&
-                        <Stores setStore={setStoreSelected} stores={stores} />
-                    }
-                    {editing &&
-                        <Stores storeSelected={userData.stores[0]} setStore={setStoreSelected} stores={stores} />
-                    }
-                    {errors.store && <p className={`text-sm m-auto text-red-500 error store`}>{errors.store[0]}</p>}
-                </>
-            )}
-            {userData.role !== 'manager' && (
-                <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
-                    <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Sucursal</label>
-                    <span className="text-base">Visualiza todas las sucursales</span>
-                    <input id="role"
-                           name="role"
-                           type="hidden"
-                           value="1"
-                    />
-                </div>
-            )}
+            {errors.category && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category[0]}</p>}
+
+
+            <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
+                <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Disponible</label>
+                <select
+                    id="available"
+                    name="available"
+                    className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                    onChange={onChange}
+                >
+                    <option value="god" selected={productData.category !== 'god'}>Disponible</option>
+                    <option value="admin" selected={productData.category === 'admmin'}>No disponible</option>
+                </select>
+            </div>
+            {errors.category && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category[0]}</p>}
+
             <hr className="my-6"/>
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
-                onClick={createUser}>
-                Crear usuario
+                onClick={createProduct}>
+                Crear producto
             </button>
         </>
     )
