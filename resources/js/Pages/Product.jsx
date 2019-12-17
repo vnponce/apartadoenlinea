@@ -125,7 +125,7 @@ function Product(props) {
                     <Box pose={animate} className="bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full">
                         <img
                             className="h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full"
-                            src="/breads/Cuernito.png" alt={product.name} id="main-image"/>
+                            src={product.image_path} alt={product.name} id="main-image"/>
                     </Box>
                     {/* Information */}
                     <div className="flex flex-col m-5 md:flex-1 lg:ml-24 lg:mt-0">

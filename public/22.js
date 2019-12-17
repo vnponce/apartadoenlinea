@@ -177,7 +177,7 @@ function Product(props) {
     className: "bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full",
-    src: "/breads/Cuernito.png",
+    src: product.image_path,
     alt: product.name,
     id: "main-image"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

@@ -34583,9 +34583,10 @@ var map = {
 		5,
 		6,
 		4,
+		18,
 		8,
 		13,
-		24
+		7
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
@@ -34595,9 +34596,10 @@ var map = {
 		5,
 		6,
 		4,
+		18,
 		8,
 		13,
-		24
+		7
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",

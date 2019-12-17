@@ -4,6 +4,7 @@ namespace App;
 
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model implements Buyable
 {
@@ -17,7 +18,7 @@ class Product extends Model implements Buyable
       'image',
       'price',
     ];
-    protected $appends = ['formatPrice'];
+    protected $appends = ['formatPrice', 'image_path'];
 
     protected $casts = [
         'available' => 'boolean',
@@ -39,6 +40,12 @@ class Product extends Model implements Buyable
     {
         $this->attributes['price'] = $value * 100;
     }
+
+    public function getImagePathAttribute()
+    {
+        return env('APP_URL').'/'.Str::replaceFirst('public/', '', $this->image);
+    }
+
 
     public function getFormatPriceAttribute()
     {

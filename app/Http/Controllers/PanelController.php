@@ -63,7 +63,7 @@ class PanelController extends Controller
 
     public function products()
     {
-        $products = Product::all();
+        $products = Product::paginate(10);
         return Inertia::render('Admin/Products', compact('products'));
     }
 }

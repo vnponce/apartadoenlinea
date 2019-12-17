@@ -7,6 +7,7 @@ import Styled from 'styled-components';
 import classNames from 'classnames';
 import Table from "../../components/Table";
 import ProductsInfoBoxes from "../../components/Admin/ProductsInfoBoxes";
+import {Pagination} from "react-laravel-paginex";
 
 
 function Products(props) {
@@ -67,13 +68,15 @@ function Products(props) {
     );
 
     const openedAndShow = index => {
-        const data = products[index];
+        const data = products.data[index];
         setDataSelected(data);
     };
 
     useEffect(() => {
         // openedAndShow(0);
     }, []);
+
+    const getData = data => Inertia.visit(`?page=${data.page}`);
 
     return (
         <Admin title="Panel">
@@ -97,9 +100,27 @@ function Products(props) {
                                     <i
                                         className="inline fa fa-bread-slice fa-fw"/>+
                                 </button>
-                                <Table columns={columns} data={products} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                                <Table columns={columns} data={products.data} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
                             </div>
                             {/*/Table orders*/}
+                            <div className="py-10 block w-full flex justify-center">
+                                {products && products.data.length > 0 && (
+                                    <Pagination
+                                        containerClass="flex flex-wrap h-12"
+                                        numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                                        // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                                        activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
+                                        changePage={getData}
+                                        nextButtonText="Siguiente"
+                                        buttonIcons
+                                        prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                                        nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                                        // prevButtonText="Anterior"
+                                        // prevButtonIcon="fa fa-chevron-left"
+                                        data={products}/>
+                                )}
+                            </div>
+
 
                         </div>
                     </div>

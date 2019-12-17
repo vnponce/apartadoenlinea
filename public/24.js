@@ -107,7 +107,7 @@ function Products(props) {
   }, []);
 
   var openedAndShow = function openedAndShow(index) {
-    var data = products[index];
+    var data = products.data[index];
     setDataSelected(data);
   };
 
@@ -139,7 +139,7 @@ function Products(props) {
     className: "inline fa fa-bread-slice fa-fw"
   }), "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_7__["default"], {
     columns: columns,
-    data: products,
+    data: products.data,
     onClick: function onClick(row) {
       return openedAndShow(row.index);
     },
@@ -194,10 +194,10 @@ function InfoBoxes(props) {
     data: data
   }), data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex justify-center"
-  }, data.image && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    alt: data.name,
+  }, data.image_path && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: data.image_path,
     className: "w-64 h-64 rounded mr-4",
-    src: data.image
+    src: data.image_path
   }), !data.image && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "far fa-image text-6xl rounded mr-4"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
