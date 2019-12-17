@@ -17,7 +17,7 @@ export default function InfoBoxes(props) {
             <div className="w-1/2 lg:w-full">
                 <div
                     className="m-2 md:mx-6 md:my-6">
-                    {createProduct && <CreateProduct />}
+                    {createProduct && !data && <CreateProduct setCreateProduct={setCreateProduct}/>}
                     {editProduct && <CreateProduct data={data} />}
                     {data && (
                         <>
@@ -56,7 +56,7 @@ export default function InfoBoxes(props) {
                                     <div className="my-6">
                                         <i
                                             className="inline fa fa-star fa-fw text-brand-icons text-lg"/>
-                                        <span className="inline">{ data.favorite ? 'Disponible' : 'No disponible'}</span>
+                                        <span className="inline">{ data.favorite ? 'Favorito' : 'No es favorito'}</span>
                                     </div>
                                 </div>
                             </div>

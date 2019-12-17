@@ -213,7 +213,9 @@ function InfoBoxes(props) {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-6"
-  }, createProduct && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], null), editProduct && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, createProduct && !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    setCreateProduct: setCreateProduct
+  }), editProduct && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
     data: data
   }), data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex justify-center"
@@ -265,7 +267,7 @@ function InfoBoxes(props) {
     className: "inline fa fa-star fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, data.favorite ? 'Disponible' : 'No disponible')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.favorite ? 'Favorito' : 'No es favorito')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Cambiar Contrase\xF1a"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Editar"))))), !(data || createProduct) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
@@ -350,7 +352,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 Object(react_filepond__WEBPACK_IMPORTED_MODULE_4__["registerPlugin"])(filepond_plugin_image_exif_orientation__WEBPACK_IMPORTED_MODULE_6___default.a, filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_7___default.a);
 function CreateProduct(props) {
-  var data = props.data;
+  var data = props.data,
+      setCreateProduct = props.setCreateProduct;
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
       errors = _usePage.errors,
@@ -358,9 +361,12 @@ function CreateProduct(props) {
       categories = _usePage.categories,
       success_message = _usePage.success_message;
 
+  console.log('errors =>', errors);
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     favorite: 0,
-    available: 0
+    available: 0,
+    category_id: categories[0].id
   }),
       _useState2 = _slicedToArray(_useState, 2),
       productData = _useState2[0],
@@ -398,11 +404,11 @@ function CreateProduct(props) {
     console.log('createProduct isEditing =>', editing);
     var formData = new FormData();
     formData.append("file", avatar, avatar.name);
-    formData.set("name", productData.name ? productData.name : '');
-    formData.set("description", productData.description ? productData.description : '');
-    formData.set("ingredients", productData.ingredients ? productData.ingredients : '');
-    formData.set("price", productData.price ? productData.price : '');
-    formData.set("category_id", productData.category_id ? productData.category_id : '');
+    formData.set("name", productData.name || '');
+    formData.set("description", productData.description || '');
+    formData.set("ingredients", productData.ingredients || '');
+    formData.set("price", productData.price || '');
+    formData.set("category_id", productData.category_id || '');
     formData.set("available", productData.available);
     formData.set("favorite", productData.favorite);
 
@@ -413,7 +419,10 @@ function CreateProduct(props) {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, productData));
     } else {
       console.log('editing else con post');
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", formData); // Inertia.post("products", {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", formData).then(function (response) {
+        console.log('response =>', response);
+        setCreateProduct(false);
+      }); // Inertia.post("products", {
       //     ...productData,
       //     // store: storeSelected,
       // });
@@ -467,11 +476,11 @@ function CreateProduct(props) {
   }, categories.map(function (category) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: category.id,
-      selected: productData.category_id !== category.id
+      selected: productData.category_id === category.id
     }, category.name);
-  }))), errors.category && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }))), errors.category_id && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error category"
-  }, errors.category[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, errors.category_id[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"], {
     label: "Disponible",
     checked: productData.available,
     setChecked: function setChecked() {
@@ -485,7 +494,7 @@ function CreateProduct(props) {
     checked: productData.favorite,
     setChecked: function setChecked() {
       return setProductData(_objectSpread({}, productData, {
-        favorite: productData.available === 0 ? 1 : 0
+        favorite: productData.favorite === 0 ? 1 : 0
       }));
     },
     error: errors.favorite

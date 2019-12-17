@@ -16,11 +16,13 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 
 export default function CreateProduct(props) {
-    const { data } = props;
+    const { data, setCreateProduct } = props;
     const { errors, stores, categories, success_message } = usePage();
+    console.log('errors =>', errors);
     const [productData, setProductData] = useState({
         favorite: 0,
         available: 0,
+        category_id: categories[0].id,
     });
     const [storeSelected, setStoreSelected] = useState(false);
     const [editing, setEditing] = useState(false);
@@ -44,11 +46,11 @@ export default function CreateProduct(props) {
         console.log('createProduct isEditing =>', editing);
         const formData = new FormData();
         formData.append("file", avatar, avatar.name);
-        formData.set("name", productData.name ? productData.name : '');
-        formData.set("description", productData.description ? productData.description : '');
-        formData.set("ingredients", productData.ingredients ? productData.ingredients : '');
-        formData.set("price", productData.price ? productData.price : '');
-        formData.set("category_id", productData.category_id ? productData.category_id : '');
+        formData.set("name", productData.name || '');
+        formData.set("description", productData.description || '');
+        formData.set("ingredients", productData.ingredients || '');
+        formData.set("price", productData.price || '');
+        formData.set("category_id", productData.category_id || '');
         formData.set("available", productData.available);
         formData.set("favorite", productData.favorite);
         if(editing){
@@ -61,7 +63,10 @@ export default function CreateProduct(props) {
             });
         } else {
             console.log('editing else con post');
-            Inertia.post("products", formData);
+            Inertia.post("products", formData).then(response => {
+                console.log('response =>', response);
+                setCreateProduct(false);
+            });
             // Inertia.post("products", {
             //     ...productData,
             //     // store: storeSelected,
@@ -116,14 +121,14 @@ export default function CreateProduct(props) {
                     onChange={onChange}
                 >
                     {categories.map(category => (
-                        <option value={category.id} selected={productData.category_id !== category.id}>{category.name}</option>
+                        <option value={category.id} selected={productData.category_id === category.id}>{category.name}</option>
                     ))}
                 </select>
             </div>
-            {errors.category && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category[0]}</p>}
+            {errors.category_id && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category_id[0]}</p>}
 
             <Checkbox label="Disponible" checked={productData.available} setChecked={() => setProductData({...productData, available: productData.available === 0 ? 1 : 0})} error={errors.available} />
-            <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({...productData, favorite: productData.available === 0 ? 1 : 0})} error={errors.favorite} />
+            <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({...productData, favorite: productData.favorite === 0 ? 1 : 0})} error={errors.favorite} />
             <hr className="my-6"/>
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
