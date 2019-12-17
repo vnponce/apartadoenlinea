@@ -63,11 +63,7 @@ Route::put('pedido/{order}', 'OrderController@update');
 
 Route::get('charola', 'CartController@index');
 
-/*
-Route::get('listo', function() {
-    return Inertia::render('Success');
-});
-*/
+// Route::get('listo', 'OrderController@store');
 
 // Card
 Route::post('/cart', 'CartController@store');

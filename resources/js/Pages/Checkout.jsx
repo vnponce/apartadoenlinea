@@ -60,7 +60,7 @@ function Checkout(props) {
                             </button>
                         )}
                         {/* Paypal button or levantar pedido si es usuario */}
-                        {!auth && !auth.user && (
+                        {!auth.user && (
                             <button
                                 disabled={!agreeTerms}
                                 onClick={createOrder}

@@ -373,7 +373,7 @@ function Checkout(props) {
     disabled: !agreeTerms,
     onClick: createOrder,
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Crear pedido")), !auth && !auth.user && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Crear pedido")), !auth.user && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     disabled: !agreeTerms,
     onClick: createOrder,
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-full md:w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75"
