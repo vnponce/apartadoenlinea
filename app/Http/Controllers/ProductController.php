@@ -16,8 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $favoriteCategory = Category::where('name', 'Favoritos')->first();
-        $products = Product::where('category_id', $favoriteCategory->id)->paginate();
+        $products = Product::where('favorite', true)->paginate();
         return Inertia::render('Home', compact('products'));
     }
 

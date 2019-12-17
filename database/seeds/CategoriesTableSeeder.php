@@ -24,8 +24,10 @@ class CategoriesTableSeeder extends Seeder
         Category::create([
             'name' => 'Repostería',
         ]);
+        /*
         Category::create([
             'name' => 'Favoritos',
         ]);
+        */
     }
 }

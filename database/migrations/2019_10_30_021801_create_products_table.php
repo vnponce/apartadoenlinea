@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->boolean('available')->default(false);
             $table->string('available_time')->nullable();
+            $table->boolean('favorite')->default(false);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
 

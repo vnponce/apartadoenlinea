@@ -9,6 +9,7 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import Stores from "../../Select/Stores";
 import {create} from "filepond";
+import Checkbox from "../../Checkbox";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -79,7 +80,7 @@ export default function CreateProduct(props) {
                 onChange={onChange}
                 value={productData.name}
                 id="name"
-                label="Nombre de usuario"
+                label="Nombre de producto"
                 placeholder="Nombre"
                 error={errors.name}
             />
@@ -115,21 +116,8 @@ export default function CreateProduct(props) {
             </div>
             {errors.category && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category[0]}</p>}
 
-
-            <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
-                <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Disponible</label>
-                <select
-                    id="available"
-                    name="available"
-                    className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-                    onChange={onChange}
-                >
-                    <option value="god" selected={productData.category !== 'god'}>Disponible</option>
-                    <option value="admin" selected={productData.category === 'admmin'}>No disponible</option>
-                </select>
-            </div>
-            {errors.category && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category[0]}</p>}
-
+            <Checkbox label="Disponible" checked={productData.available} setChecked={() => setProductData({...productData, available: !productData.available})} error={errors.available} />
+            <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({...productData, favorite: !productData.favorite})} error={errors.favorite} />
             <hr className="my-6"/>
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"

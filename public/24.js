@@ -291,6 +291,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Select_Stores__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Select/Stores */ "./resources/js/components/Select/Stores.jsx");
 /* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! filepond */ "./node_modules/filepond/dist/filepond.js");
 /* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(filepond__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _Checkbox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Checkbox */ "./resources/js/components/Checkbox.jsx");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -304,6 +305,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -389,7 +391,7 @@ function CreateProduct(props) {
     onChange: onChange,
     value: productData.name,
     id: "name",
-    label: "Nombre de usuario",
+    label: "Nombre de producto",
     placeholder: "Nombre",
     error: errors.name
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -430,30 +432,105 @@ function CreateProduct(props) {
     selected: productData.category === 'manager'
   }, "Reposter\xEDa"))), errors.category && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error category"
-  }, errors.category[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "role",
-    className: "hover:border-grey-900 italic sm:block"
-  }, "Disponible"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    id: "available",
-    name: "available",
-    className: "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
-    onChange: onChange
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "god",
-    selected: productData.category !== 'god'
-  }, "Disponible"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "admin",
-    selected: productData.category === 'admmin'
-  }, "No disponible"))), errors.category && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "text-sm m-auto text-red-500 error category"
-  }, errors.category[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+  }, errors.category[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    label: "Disponible",
+    checked: productData.available,
+    setChecked: function setChecked() {
+      return setProductData(_objectSpread({}, productData, {
+        available: !productData.available
+      }));
+    },
+    error: errors.available
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    label: "Favorito",
+    checked: productData.favorite,
+    setChecked: function setChecked() {
+      return setProductData(_objectSpread({}, productData, {
+        favorite: !productData.favorite
+      }));
+    },
+    error: errors.favorite
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     className: "my-6"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: createProduct
   }, "Crear producto"));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Checkbox.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Checkbox.jsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Checkbox; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    .custom-label input:checked + svg {\n        display: block !important;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+/* To handle checked state this component requires a single of css */
+
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject()); // export default function Checkbox({ id, label, type: inputType, value: inputValue, placeholder, onChange, onKeyDown = () => false, error = [] }) {
+
+function Checkbox(_ref) {
+  var label = _ref.label,
+      _ref$checked = _ref.checked,
+      checked = _ref$checked === void 0 ? false : _ref$checked,
+      setChecked = _ref.setChecked,
+      error = _ref.error;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
+    className: "mt-10"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "custom-label flex cursor-pointer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "select-none"
+  }, label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bg-white shadow w-6 h-6 p-1 flex justify-center items-center ml-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "checkbox",
+    className: "hidden",
+    checked: checked,
+    onClick: setChecked
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "hidden w-4 h-4 text-green-600 pointer-events-none",
+    viewBox: "0 0 172 172"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    fill: "none",
+    strokeWidth: "none",
+    strokeMiterlimit: "10",
+    fontFamily: "none",
+    fontWeight: "none",
+    fontSize: "none",
+    textAnchor: "none"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M0 172V0h172v172z"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M145.433 37.933L64.5 118.8658 33.7337 88.0996l-10.134 10.1341L64.5 139.1341l91.067-91.067z",
+    fill: "currentColor",
+    strokeWidth: "1"
+  }))))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm m-auto text-red-500 error ".concat(error)
+  }, error[0]));
 }
 ;
 
