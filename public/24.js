@@ -329,7 +329,9 @@ function CreateProduct(props) {
       categories = _usePage.categories,
       success_message = _usePage.success_message;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({// store: 1,
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    favorite: 0,
+    available: 0
   }),
       _useState2 = _slicedToArray(_useState, 2),
       productData = _useState2[0],
@@ -365,28 +367,37 @@ function CreateProduct(props) {
 
   var createProduct = function createProduct() {
     console.log('createProduct isEditing =>', editing);
-    /*
-    const formData = new FormData();
+    var formData = new FormData();
     formData.append("file", avatar, avatar.name);
-    formData.set("name", userData.name ? userData.name : '');
-    formData.set("email", userData.email ? userData.email : '');
-    formData.set("password", userData.password ? userData.password : '');
-    formData.set("role", userData.role ? userData.role : '');
-    formData.set("store", storeSelected ? storeSelected : '');
-     */
+    formData.set("name", productData.name ? productData.name : '');
+    formData.set("description", productData.description ? productData.description : '');
+    formData.set("ingredients", productData.ingredients ? productData.ingredients : '');
+    formData.set("price", productData.price ? productData.price : '');
+    formData.set("category_id", productData.category_id ? productData.category_id : '');
+    formData.set("available", productData.available);
+    formData.set("favorite", productData.favorite);
 
     if (editing) {
       console.log('editing true');
       console.log('editing productData =>', productData); // console.log('editing storeSelected =>', storeSelected);
 
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(userData.id), _objectSpread({}, productData));
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, productData));
     } else {
       console.log('editing else con post');
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", _objectSpread({}, productData));
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", formData); // Inertia.post("products", {
+      //     ...productData,
+      //     // store: storeSelected,
+      // });
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_filepond__WEBPACK_IMPORTED_MODULE_4__["FilePond"], {
+    onupdatefiles: function onupdatefiles(fileItems) {
+      console.log('onupdatefiles =>', fileItems); // setAvatar(fileItems.map(fileItem => fileItem.file));
+
+      setAvatar(fileItems[0].file);
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
     value: productData.name,
     id: "name",
@@ -436,7 +447,7 @@ function CreateProduct(props) {
     checked: productData.available,
     setChecked: function setChecked() {
       return setProductData(_objectSpread({}, productData, {
-        available: !productData.available
+        available: productData.available === 0 ? 1 : 0
       }));
     },
     error: errors.available
@@ -445,7 +456,7 @@ function CreateProduct(props) {
     checked: productData.favorite,
     setChecked: function setChecked() {
       return setProductData(_objectSpread({}, productData, {
-        favorite: !productData.favorite
+        favorite: productData.available === 0 ? 1 : 0
       }));
     },
     error: errors.favorite

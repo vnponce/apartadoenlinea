@@ -19,7 +19,8 @@ export default function CreateProduct(props) {
     const { data } = props;
     const { errors, stores, categories, success_message } = usePage();
     const [productData, setProductData] = useState({
-        // store: 1,
+        favorite: 0,
+        available: 0,
     });
     const [storeSelected, setStoreSelected] = useState(false);
     const [editing, setEditing] = useState(false);
@@ -41,40 +42,39 @@ export default function CreateProduct(props) {
 
     const createProduct = () => {
         console.log('createProduct isEditing =>', editing);
-        /*
         const formData = new FormData();
         formData.append("file", avatar, avatar.name);
-        formData.set("name", userData.name ? userData.name : '');
-        formData.set("email", userData.email ? userData.email : '');
-        formData.set("password", userData.password ? userData.password : '');
-        formData.set("role", userData.role ? userData.role : '');
-        formData.set("store", storeSelected ? storeSelected : '');
-         */
+        formData.set("name", productData.name ? productData.name : '');
+        formData.set("description", productData.description ? productData.description : '');
+        formData.set("ingredients", productData.ingredients ? productData.ingredients : '');
+        formData.set("price", productData.price ? productData.price : '');
+        formData.set("category_id", productData.category_id ? productData.category_id : '');
+        formData.set("available", productData.available);
+        formData.set("favorite", productData.favorite);
         if(editing){
             console.log('editing true');
             console.log('editing productData =>', productData);
             // console.log('editing storeSelected =>', storeSelected);
-            Inertia.put(`products/${userData.id}`, {
+            Inertia.put(`products/${productData.id}`, {
                 ...productData,
                 // store: storeSelected,
             });
         } else {
             console.log('editing else con post');
-            Inertia.post("products", {
-                ...productData,
-                // store: storeSelected,
-            });
+            Inertia.post("products", formData);
+            // Inertia.post("products", {
+            //     ...productData,
+            //     // store: storeSelected,
+            // });
         }
     };
     return (
         <>
-            {/*
             <FilePond onupdatefiles={fileItems => {
                 console.log('onupdatefiles =>', fileItems);
                 // setAvatar(fileItems.map(fileItem => fileItem.file));
                 setAvatar(fileItems[0].file);
             }}/>
-            */}
             <Input
                 onChange={onChange}
                 value={productData.name}
@@ -122,8 +122,8 @@ export default function CreateProduct(props) {
             </div>
             {errors.category && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category[0]}</p>}
 
-            <Checkbox label="Disponible" checked={productData.available} setChecked={() => setProductData({...productData, available: !productData.available})} error={errors.available} />
-            <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({...productData, favorite: !productData.favorite})} error={errors.favorite} />
+            <Checkbox label="Disponible" checked={productData.available} setChecked={() => setProductData({...productData, available: productData.available === 0 ? 1 : 0})} error={errors.available} />
+            <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({...productData, favorite: productData.available === 0 ? 1 : 0})} error={errors.favorite} />
             <hr className="my-6"/>
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"

@@ -58,8 +58,13 @@ class ProductController extends Controller
         ]);
 
 //        dd($request->toArray());
+        $image = $request->file('file')->store('public/products');
+
+        $request->merge(['image' => $image]);
+
+//        dd($request->toArray());
         $product = Product::create($request->all());
-        dd($product->toArray());
+//        dd($product->toArray());
         return back()->with('success_message', 'Producto creado satisfactoriamente');
     }
 
