@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('ingredients');
-            $table->string('image');
+            $table->string('image')->default('');
             $table->integer('price');
             $table->boolean('available')->default(false);
             $table->string('available_time')->nullable();

@@ -45,7 +45,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request->toArray());
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'file' => 'image',
+            'ingredients' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'available' => 'required',
+            'favorite' => 'required',
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/'
+        ]);
+
+//        dd($request->toArray());
+        $product = Product::create($request->all());
+        dd($product->toArray());
+        return back()->with('success_message', 'Producto creado satisfactoriamente');
     }
 
     /**

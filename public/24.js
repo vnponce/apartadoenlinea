@@ -326,11 +326,10 @@ function CreateProduct(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
       errors = _usePage.errors,
       stores = _usePage.stores,
+      categories = _usePage.categories,
       success_message = _usePage.success_message;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    // store: 1,
-    role: 'god'
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({// store: 1,
   }),
       _useState2 = _slicedToArray(_useState, 2),
       productData = _useState2[0],
@@ -352,7 +351,7 @@ function CreateProduct(props) {
       setAvatar = _useState8[1];
 
   var onChange = function onChange(e) {
-    setUserData(_objectSpread({}, productData, _defineProperty({}, e.target.name, e.target.value)));
+    setProductData(_objectSpread({}, productData, _defineProperty({}, e.target.name, e.target.value)));
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -380,10 +379,10 @@ function CreateProduct(props) {
       console.log('editing true');
       console.log('editing productData =>', productData); // console.log('editing storeSelected =>', storeSelected);
 
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("users/".concat(userData.id), _objectSpread({}, productData));
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(userData.id), _objectSpread({}, productData));
     } else {
       console.log('editing else con post');
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("users", _objectSpread({}, productData));
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", _objectSpread({}, productData));
     }
   };
 
@@ -408,29 +407,29 @@ function CreateProduct(props) {
     label: "Ingredientes",
     placeholder: "Ingredientes separados por coma",
     error: errors.ingredients
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    onChange: onChange,
+    value: productData.price,
+    id: "price",
+    label: "Precio",
+    placeholder: "12.50",
+    error: errors.price
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "role",
+    htmlFor: "category_id",
     className: "hover:border-grey-900 italic sm:block"
   }, "Categor\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    id: "category",
-    name: "category",
+    id: "category_id",
+    name: "category_id",
     className: "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
     onChange: onChange
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "god",
-    selected: productData.category !== 'god'
-  }, "Pan de dulce"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "admin",
-    selected: productData.category === 'admmin'
-  }, "Pan de sal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "manager",
-    selected: productData.category === 'manager'
-  }, "Bocadillos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "manager",
-    selected: productData.category === 'manager'
-  }, "Reposter\xEDa"))), errors.category && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, categories.map(function (category) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: category.id,
+      selected: productData.category_id !== category.id
+    }, category.name);
+  }))), errors.category && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error category"
   }, errors.category[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"], {
     label: "Disponible",

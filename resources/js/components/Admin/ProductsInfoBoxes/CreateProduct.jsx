@@ -17,16 +17,15 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 export default function CreateProduct(props) {
     const { data } = props;
-    const { errors, stores, success_message } = usePage();
+    const { errors, stores, categories, success_message } = usePage();
     const [productData, setProductData] = useState({
         // store: 1,
-        role: 'god',
     });
     const [storeSelected, setStoreSelected] = useState(false);
     const [editing, setEditing] = useState(false);
     const [avatar, setAvatar] = useState(null);
     const onChange = e => {
-        setUserData({
+        setProductData({
             ...productData,
             [e.target.name]: e.target.value,
         })
@@ -55,13 +54,13 @@ export default function CreateProduct(props) {
             console.log('editing true');
             console.log('editing productData =>', productData);
             // console.log('editing storeSelected =>', storeSelected);
-            Inertia.put(`users/${userData.id}`, {
+            Inertia.put(`products/${userData.id}`, {
                 ...productData,
                 // store: storeSelected,
             });
         } else {
             console.log('editing else con post');
-            Inertia.post("users", {
+            Inertia.post("products", {
                 ...productData,
                 // store: storeSelected,
             });
@@ -100,18 +99,25 @@ export default function CreateProduct(props) {
                 placeholder="Ingredientes separados por coma"
                 error={errors.ingredients}
             />
+            <Input
+                onChange={onChange}
+                value={productData.price}
+                id="price"
+                label="Precio"
+                placeholder="12.50"
+                error={errors.price}
+            />
             <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
-                <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Categoría</label>
+                <label htmlFor="category_id" className="hover:border-grey-900 italic sm:block">Categoría</label>
                 <select
-                    id="category"
-                    name="category"
+                    id="category_id"
+                    name="category_id"
                     className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                     onChange={onChange}
                 >
-                    <option value="god" selected={productData.category !== 'god'}>Pan de dulce</option>
-                    <option value="admin" selected={productData.category === 'admmin'}>Pan de sal</option>
-                    <option value="manager" selected={productData.category === 'manager'}>Bocadillos</option>
-                    <option value="manager" selected={productData.category === 'manager'}>Repostería</option>
+                    {categories.map(category => (
+                        <option value={category.id} selected={productData.category_id !== category.id}>{category.name}</option>
+                    ))}
                 </select>
             </div>
             {errors.category && <p className={`text-sm m-auto text-red-500 error category`}>{errors.category[0]}</p>}

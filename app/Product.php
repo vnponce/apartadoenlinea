@@ -7,10 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model implements Buyable
 {
+    protected $fillable = [
+      'name',
+      'description',
+      'ingredients',
+      'category_id',
+      'available',
+      'favorite',
+      'image',
+      'price',
+    ];
     protected $appends = ['formatPrice'];
 
     protected $casts = [
         'available' => 'boolean',
+        'favorite' => 'boolean',
     ];
 
     public function category()
@@ -22,6 +33,11 @@ class Product extends Model implements Buyable
     {
         return $this->belongsToMany(Order::class)
             ->withPivot(['price', 'quantity', 'comment']);
+    }
+
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = $value * 100;
     }
 
     public function getFormatPriceAttribute()
