@@ -433,12 +433,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function MenuIcons() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      categories = _usePage.categories;
+
+  console.log('categories =>', categories);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "flex m-auto container pt-12"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full icons p-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "/category/5",
+    href: "/category/1",
     className: "text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     className: "fill-current stroke-current h-20 m-auto",
@@ -489,7 +493,7 @@ function MenuIcons() {
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "icon-menu-category-text"
   }, "Pan de sal")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "/category/1",
+    href: "/category/3",
     className: "text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     className: "fill-current stroke-current h-20 m-auto",
@@ -513,7 +517,7 @@ function MenuIcons() {
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "icon-menu-category-text"
   }, "Bocadillos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "/category/3",
+    href: "/category/4",
     className: "text-brand-icons inline-block p-4 h-40 w-1/2 float-right md:w-1/4 md:float-left opacity-75 hover:opacity-100"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     className: "fill-current stroke-current h-20 m-auto",

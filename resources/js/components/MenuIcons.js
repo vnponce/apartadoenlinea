@@ -1,11 +1,13 @@
 import React from 'react';
-import {InertiaLink} from "@inertiajs/inertia-react";
+import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 
 export default function MenuIcons() {
+    const { categories } = usePage();
+    console.log('categories =>', categories);
     return (
         <section className="flex m-auto container pt-12">
             <div className="w-full icons p-4">
-                <InertiaLink href="/category/5"
+                <InertiaLink href="/category/1"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                     <svg className="fill-current stroke-current h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <title>Pan-dulce</title>
@@ -33,7 +35,7 @@ export default function MenuIcons() {
                     </svg>
                     <div className="icon-menu-category-text">Pan de sal</div>
                 </InertiaLink>
-                <InertiaLink href="/category/1"
+                <InertiaLink href="/category/3"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                     <svg className="fill-current stroke-current h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94.55 103.35">
                         <title>Bocadillos</title>
@@ -50,7 +52,7 @@ export default function MenuIcons() {
                     </svg>
                     <div className="icon-menu-category-text">Bocadillos</div>
                 </InertiaLink>
-                <InertiaLink href="/category/3"
+                <InertiaLink href="/category/4"
                    className="text-brand-icons inline-block p-4 h-40 w-1/2 float-right md:w-1/4 md:float-left opacity-75 hover:opacity-100">
                     <svg className="fill-current stroke-current h-20 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.99 100">
                         <title>Repostería</title>
