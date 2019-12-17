@@ -232,34 +232,40 @@ function InfoBoxes(props) {
   }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-user-shield fa-fw text-brand-icons text-lg"
+    className: "inline fa fa-align-left fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, " ", data.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " ", data.description || 'No tiene descripción')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-at fa-fw text-brand-icons text-lg"
+    className: "inline fa fa-list-ul fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, " ", data.ingredients)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " ", data.ingredients || 'No tiene ingredientes')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-store fa-fw text-brand-icons text-lg"
+    className: "inline fa fa-dollar-sign fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, data.price)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.formatPrice)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-store fa-fw text-brand-icons text-lg"
+    className: "inline fa fa-layer-group fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, data.available)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.category.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-store fa-fw text-brand-icons text-lg"
+    className: "inline fa fa-check-circle fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, data.category)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.available ? 'Disponible' : 'No disponible')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-star fa-fw text-brand-icons text-lg"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, data.favorite ? 'Disponible' : 'No disponible')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Cambiar Contrase\xF1a"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Editar"))))), !(data || createProduct) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"

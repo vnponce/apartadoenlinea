@@ -20,6 +20,8 @@ class Product extends Model implements Buyable
     ];
     protected $appends = ['formatPrice', 'image_path'];
 
+    protected $with = ['category'];
+
     protected $casts = [
         'available' => 'boolean',
         'favorite' => 'boolean',

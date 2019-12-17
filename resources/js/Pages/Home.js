@@ -26,7 +26,7 @@ function Home(props) {
                     return <BreadCard product={product}/>
                 })}
                 <div className="py-10 block w-full flex justify-center">
-                    {products && products.length > 0 && (
+                    {products && products.data.length > 0 && (
                         <Pagination
                             containerClass="flex flex-wrap h-12"
                             numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"

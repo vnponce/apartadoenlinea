@@ -30,28 +30,33 @@ export default function InfoBoxes(props) {
                                     <span className="text-lg my-6">{data.name}</span>
                                     <div className="my-6">
                                         <i
-                                            className="inline fa fa-user-shield fa-fw text-brand-icons text-lg"/>
-                                        <span className="inline"> {data.description}</span>
+                                            className="inline fa fa-align-left fa-fw text-brand-icons text-lg"/>
+                                        <span className="inline"> {data.description || 'No tiene descripción' }</span>
                                     </div>
                                     <div className="my-6">
                                         <i
-                                            className="inline fa fa-at fa-fw text-brand-icons text-lg"/>
-                                        <span className="inline"> {data.ingredients}</span>
+                                            className="inline fa fa-list-ul fa-fw text-brand-icons text-lg"/>
+                                        <span className="inline"> {data.ingredients || 'No tiene ingredientes'}</span>
                                     </div>
                                     <div className="my-6">
                                         <i
-                                            className="inline fa fa-store fa-fw text-brand-icons text-lg"/>
-                                        <span className="inline">{ data.price }</span>
+                                            className="inline fa fa-dollar-sign fa-fw text-brand-icons text-lg"/>
+                                        <span className="inline">{ data.formatPrice }</span>
                                     </div>
                                     <div className="my-6">
                                         <i
-                                            className="inline fa fa-store fa-fw text-brand-icons text-lg"/>
-                                        <span className="inline">{ data.available }</span>
+                                            className="inline fa fa-layer-group fa-fw text-brand-icons text-lg"/>
+                                        <span className="inline">{ data.category.name }</span>
                                     </div>
                                     <div className="my-6">
                                         <i
-                                            className="inline fa fa-store fa-fw text-brand-icons text-lg"/>
-                                        <span className="inline">{ data.category }</span>
+                                            className="inline fa fa-check-circle fa-fw text-brand-icons text-lg"/>
+                                        <span className="inline">{ data.available ? 'Disponible' : 'No disponible'}</span>
+                                    </div>
+                                    <div className="my-6">
+                                        <i
+                                            className="inline fa fa-star fa-fw text-brand-icons text-lg"/>
+                                        <span className="inline">{ data.favorite ? 'Disponible' : 'No disponible'}</span>
                                     </div>
                                 </div>
                             </div>
