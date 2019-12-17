@@ -16,14 +16,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('favorite', true)->paginate();
+        $products = Product::where('favorite', true)->where('available', true)->paginate();
         return Inertia::render('Home', compact('products'));
     }
 
     public function search(Request $request)
     {
         // dd($request->get('search'));
-        $products = Product::where('name', 'like', "%{$request->get('q')}%")->get();
+        $products = Product::where('name', 'like', "%{$request->get('q')}%")->where('available', true)->get();
         return $products;
     }
 
@@ -76,6 +76,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        // @todo: redirect if product is not available
         return Inertia::render('Product', compact('product'));
     }
 

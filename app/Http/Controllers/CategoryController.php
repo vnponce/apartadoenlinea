@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index(Category $category)
     {
-        $products = $category->products()->paginate();
+        $products = $category->products()->where('available', true)->paginate();
         return Inertia::render('Home', compact('products', 'category'));
     }
 
