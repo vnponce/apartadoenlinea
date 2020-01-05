@@ -10,6 +10,7 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import Stores from "../../Select/Stores";
 import {create} from "filepond";
 import Checkbox from "../../Checkbox";
+import set from "@babel/runtime/helpers/esm/set";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -42,17 +43,15 @@ export default function CreateProduct(props) {
         }
     }, [data]);
 
+    const cancelProduct = () => {
+        const hostname = window.location.hostname;
+        const url = window.location.href;
+        const [port, path] = url.split(hostname);
+        Inertia.visit(path)
+    };
+
     const createProduct = () => {
         console.log('createProduct isEditing =>', editing);
-        const formData = new FormData();
-        formData.append("file", avatar, avatar.name);
-        formData.set("name", productData.name || '');
-        formData.set("description", productData.description || '');
-        formData.set("ingredients", productData.ingredients || '');
-        formData.set("price", productData.price || '');
-        formData.set("category_id", productData.category_id || '');
-        formData.set("available", productData.available);
-        formData.set("favorite", productData.favorite);
         if(editing){
             console.log('editing true');
             console.log('editing productData =>', productData);
@@ -60,8 +59,20 @@ export default function CreateProduct(props) {
             Inertia.put(`products/${productData.id}`, {
                 ...productData,
                 // store: storeSelected,
+            }).then(response => {
+                console.log('response =>', response);
+                // setEditing(false);
             });
         } else {
+            const formData = new FormData();
+            formData.append("file", avatar, avatar.name);
+            formData.set("name", productData.name || '');
+            formData.set("description", productData.description || '');
+            formData.set("ingredients", productData.ingredients || '');
+            formData.set("price", productData.price || '');
+            formData.set("category_id", productData.category_id || '');
+            formData.set("available", productData.available);
+            formData.set("favorite", productData.favorite);
             console.log('editing else con post');
             Inertia.post("products", formData).then(response => {
                 console.log('response =>', response);
@@ -133,7 +144,12 @@ export default function CreateProduct(props) {
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
                 onClick={createProduct}>
-                Crear producto
+                {editing ? 'Editar' : 'Crear producto'}
+            </button>
+            <button
+                className="inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                onClick={cancelProduct}>
+                Cancelar
             </button>
         </>
     )

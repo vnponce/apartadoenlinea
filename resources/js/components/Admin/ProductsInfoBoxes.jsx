@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from "../Input";
 import CreateProduct from "./ProductsInfoBoxes/CreateProduct";
 import {create} from "filepond";
 
 export default function InfoBoxes(props) {
     const { data, editProduct = false, createProduct = false, setCreateProduct } = props;
+    const [isEditing, setIsEditing] = useState(false);
     console.log('ProductInfoboxes data =>', data);
     console.log('ProductInfoboxes createProduct =>', createProduct);
     useEffect(() => {
@@ -16,10 +17,10 @@ export default function InfoBoxes(props) {
         { (data || createProduct) && (
             <div className="w-1/2 lg:w-full">
                 <div
-                    className="m-2 md:mx-6 md:my-6">
+                    className="m-2 md:mx-6 md:my-3">
                     {createProduct && !data && <CreateProduct setCreateProduct={setCreateProduct}/>}
-                    {editProduct && <CreateProduct data={data} />}
-                    {data && (
+                    {isEditing && <CreateProduct data={data} />}
+                    {data && !isEditing && (
                         <>
                             <div className="flex justify-center">
                                 {data.image_path && <img alt={data.image_path} className="w-64 h-64 rounded mr-4" src={data.image_path}/>}
@@ -27,33 +28,33 @@ export default function InfoBoxes(props) {
                             </div>
                             <div className="flex flex-row">
                                 <div className="flex flex-1 flex-col">
-                                    <span className="text-lg my-6">{data.name}</span>
-                                    <div className="my-6">
+                                    <span className="text-lg my-3">{data.name}</span>
+                                    <div className="my-3">
                                         <i
                                             className="inline fa fa-align-left fa-fw text-brand-icons text-lg"/>
                                         <span className="inline"> {data.description || 'No tiene descripción' }</span>
                                     </div>
-                                    <div className="my-6">
+                                    <div className="my-3">
                                         <i
                                             className="inline fa fa-list-ul fa-fw text-brand-icons text-lg"/>
                                         <span className="inline"> {data.ingredients || 'No tiene ingredientes'}</span>
                                     </div>
-                                    <div className="my-6">
+                                    <div className="my-3">
                                         <i
                                             className="inline fa fa-dollar-sign fa-fw text-brand-icons text-lg"/>
                                         <span className="inline">{ data.formatPrice }</span>
                                     </div>
-                                    <div className="my-6">
+                                    <div className="my-3">
                                         <i
                                             className="inline fa fa-layer-group fa-fw text-brand-icons text-lg"/>
                                         <span className="inline">{ data.category.name }</span>
                                     </div>
-                                    <div className="my-6">
+                                    <div className="my-3">
                                         <i
                                             className="inline fa fa-check-circle fa-fw text-brand-icons text-lg"/>
                                         <span className="inline">{ data.available ? 'Disponible' : 'No disponible'}</span>
                                     </div>
-                                    <div className="my-6">
+                                    <div className="my-3">
                                         <i
                                             className="inline fa fa-star fa-fw text-brand-icons text-lg"/>
                                         <span className="inline">{ data.favorite ? 'Favorito' : 'No es favorito'}</span>
@@ -61,8 +62,9 @@ export default function InfoBoxes(props) {
                                 </div>
                             </div>
                             <div className="flex flex-row">
-                                <button>Cambiar Contraseña</button>
-                                <button>Editar</button>
+                                <button
+                                    className="inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                                    onClick={() => setIsEditing(true)}>Editar</button>
                             </div>
                             </>
                     )}
@@ -73,7 +75,7 @@ export default function InfoBoxes(props) {
         { !(data || createProduct)  && (
             <div className="w-1/2 lg:w-full">
                 <div
-                    className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                    className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-3">
                     <div className="flex flex-col items-center">
                         <div className="flex-shrink pr-4">
                             <div className="rounded-full p-3 bg-gray-400"><i
@@ -92,7 +94,7 @@ export default function InfoBoxes(props) {
         {/*
         <div className="w-1/2 lg:w-full">
             <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-3">
                 <div className="flex flex-col items-center">
                     <div className="flex-shrink pr-4">
                         <div className="rounded-full p-3 bg-gray-300"><i
@@ -109,7 +111,7 @@ export default function InfoBoxes(props) {
 
         <div className="w-1/2 lg:w-full">
             <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-3">
                 <div className="flex flex-col items-center">
                     <div className="flex-shrink pr-4">
                         <div className="rounded-full p-3 bg-gray-300"><i
@@ -126,7 +128,7 @@ export default function InfoBoxes(props) {
 
         <div className="w-1/2 lg:w-full">
             <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-3">
                 <div className="flex flex-col items-center">
                     <div className="flex-shrink pr-4">
                         <div className="rounded-full p-3 bg-gray-300"><i
@@ -143,7 +145,7 @@ export default function InfoBoxes(props) {
 
         <div className="w-1/2 lg:w-full">
             <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-3">
                 <div className="flex flex-col items-center">
                     <div className="flex-shrink pr-4">
                         <div className="rounded-full p-3 bg-gray-300"><i

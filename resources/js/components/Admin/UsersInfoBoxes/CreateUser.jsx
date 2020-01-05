@@ -141,7 +141,7 @@ export default function CreateUser(props) {
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
                 onClick={createUser}>
-                Crear usuario
+                {editing ? 'Editar usuario' : 'Crear usuario' }
             </button>
         </>
     )

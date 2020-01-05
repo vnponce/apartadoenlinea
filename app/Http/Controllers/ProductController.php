@@ -100,7 +100,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+//        dd($request->toArray(), $product->toArray());
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'file' => 'image',
+            'ingredients' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'available' => 'required',
+            'favorite' => 'required',
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/'
+        ]);
+
+        $product->update($request->only('name', 'ingredients', 'description', 'category_id', 'available', 'favorite', 'price'));
+        // $users = User::all();
+        // return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'Usuario actualizado correctamente!');
+        return back()->with('success_message', 'Producto actualizado correctamente!');
+
     }
 
     /**

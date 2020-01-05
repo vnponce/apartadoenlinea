@@ -97,7 +97,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::put('users/{user}', 'UserController@update')->name('user.update');
     Route::group(['prefix' => 'products'], function() {
         Route::get('/', 'PanelController@products')->name('panel.products');
-        Route::post('/', 'ProductController@store')->name('panel.store');
+        Route::post('/', 'ProductController@store')->name('product.store');
+        Route::put('/{product}', 'ProductController@update')->name('product.update');
     });
 
 });

@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->toArray());
+//         dd($request->toArray());
         if(!auth()->user()->isGod) {
             return back();
         }
@@ -52,7 +52,9 @@ class UserController extends Controller
         $request->merge(['password' => bcrypt($request->password)]);
 //        dd($request->toArray());
         $user = User::create($request->all());
-        $user->stores()->attach($request->store);
+        if($request->role === 'manager') {
+            $user->stores()->attach($request->store);
+        }
         $users = User::all();
         // dd($users);
         return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'TODO COOOL!');
