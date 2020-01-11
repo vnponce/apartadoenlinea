@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('hour');
             $table->date('date');
             $table->integer('total');
+            $table->string('employeeName');
             $table->boolean('payed')->default(false);
             $table->string('paypal_id')->default('');
             $table->enum('status', ['created', 'opened', 'placed','delivered']);

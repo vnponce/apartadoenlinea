@@ -68,19 +68,20 @@ export default function DateSelector(props) {
                     }
                     */
                     // Valida que no se pueda pedir el mismo día que se ingresa.
+                    // Esto debe aplicar si es un usuario normal y no de panadería
                     isOutsideRange={day =>
                         !isInclusivelyAfterDay(
                             day,
                             today
-                        ) ||
-                        day.isSame(today, 'd')
+                        ) || false
+                        // day.isSame(today, 'd')
                     }
                     isDayBlocked={
                         pickUpAllowed
                     }
                     //-- orientation="vertical"
                     //-- verticalHeight={350}
-                    displayFormat="D MMMM YY"
+                    displayFormat="D MMMM YYYY"
                     // disabled={!shopSelected}
                     numberOfMonths={1}
                     placeholder="Elige una fecha"

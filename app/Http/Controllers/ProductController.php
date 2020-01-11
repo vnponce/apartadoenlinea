@@ -112,7 +112,16 @@ class ProductController extends Controller
             'price' => 'required|regex:/^\d+(\.\d{1,2})?$/'
         ]);
 
-        $product->update($request->only('name', 'ingredients', 'description', 'category_id', 'available', 'favorite', 'price'));
+        $only = ['name', 'ingredients', 'description', 'category_id', 'available', 'favorite', 'price'];
+
+//        dd($request->toArray());
+        if($request->hasFile('file')) {
+            dd($request->file);
+            $image = $request->file('file')->store('public/products');
+            $request->merge(['image' => $image]);
+            $only->push('image');
+        }
+        $product->update($request->only($only));
         // $users = User::all();
         // return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'Usuario actualizado correctamente!');
         return back()->with('success_message', 'Producto actualizado correctamente!');

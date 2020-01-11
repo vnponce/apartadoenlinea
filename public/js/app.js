@@ -34560,82 +34560,82 @@ var map = {
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
+		3,
 		5,
-		15,
-		26,
-		13,
+		4,
+		8,
 		20
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
+		3,
 		5,
-		15,
-		26,
-		13,
+		4,
+		8,
 		20
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
+		1,
 		3,
 		5,
-		15,
-		18,
-		25,
+		6,
 		9,
-		26,
-		13,
-		7
+		23,
+		4,
+		8,
+		25
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
+		1,
 		3,
 		5,
-		15,
-		18,
-		25,
+		6,
 		9,
-		26,
-		13,
-		7
+		23,
+		4,
+		8,
+		25
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
+		1,
 		3,
 		5,
-		15,
-		18,
-		25,
-		26,
-		27
+		6,
+		9,
+		4,
+		26
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
+		1,
 		3,
 		5,
-		15,
-		18,
-		25,
-		26,
-		27
+		6,
+		9,
+		4,
+		26
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		3,
-		11,
-		14
+		1,
+		12,
+		15
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		3,
-		11,
-		14
+		1,
+		12,
+		15
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34648,103 +34648,103 @@ var map = {
 	"./Home": [
 		"./resources/js/Pages/Home.js",
 		0,
-		3,
-		9,
-		11,
+		1,
+		23,
+		12,
 		16
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
-		3,
-		9,
-		11,
+		1,
+		23,
+		12,
 		16
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		3,
-		11,
-		17
+		1,
+		12,
+		18
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		3,
-		11,
-		17
+		1,
+		12,
+		18
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
+		1,
 		3,
-		5,
-		18,
-		4,
+		6,
+		10,
 		2,
-		11,
-		23
+		12,
+		24
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
+		1,
 		3,
-		5,
-		18,
-		4,
+		6,
+		10,
 		2,
-		11,
-		23
+		12,
+		24
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		3,
-		10,
+		1,
 		11,
+		12,
 		22
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		3,
-		10,
+		1,
 		11,
+		12,
 		22
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
+		1,
 		3,
-		5,
-		4,
-		11,
-		12
+		10,
+		12,
+		13
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
+		1,
 		3,
-		5,
-		4,
-		11,
-		12
+		10,
+		12,
+		13
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
+		1,
 		3,
-		5,
-		11,
+		12,
 		19
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
+		1,
 		3,
-		5,
-		11,
+		12,
 		19
 	]
 };

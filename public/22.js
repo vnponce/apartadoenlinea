@@ -40,6 +40,7 @@ var Box = react_pose__WEBPACK_IMPORTED_MODULE_3__["default"].div({
 
 function Product(props) {
   var product = props.product;
+  console.log(product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('visible'),
       _useState2 = _slicedToArray(_useState, 2),
@@ -192,7 +193,7 @@ function Product(props) {
     className: "text-xs align-top"
   }, "p/p"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-4 flex-1 text-gray-600 font-light sm:text-center lg:text-justify"
-  }, product.description), product.ingredients && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, product.description), product.ingredients && product.allow_ingredients && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "uppercase font-medium text-sm first-letter-bigger text-orange-600"
@@ -200,7 +201,7 @@ function Product(props) {
     className: "font-light text-gray-600 font-light"
   }, product.ingredients.split(',').map(function (ingredient) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "- ", ingredient);
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }))), product.allow_instructions && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "hover:border-grey-900 italic"

@@ -18,7 +18,7 @@ class Product extends Model implements Buyable
       'image',
       'price',
     ];
-    protected $appends = ['formatPrice', 'image_path'];
+    protected $appends = ['formatPrice', 'image_path', 'allow_ingredients', 'allow_instructions'];
 
     protected $with = ['category'];
 
@@ -46,6 +46,16 @@ class Product extends Model implements Buyable
     public function getImagePathAttribute()
     {
         return env('APP_URL').'/'.Str::replaceFirst('public/', '', $this->image);
+    }
+
+    public function getAllowIngredientsAttribute()
+    {
+        return $this->category->name === 'Bocadillos';
+    }
+
+    public function getAllowInstructionsAttribute()
+    {
+        return $this->category->name === 'Bocadillos';
     }
 
 

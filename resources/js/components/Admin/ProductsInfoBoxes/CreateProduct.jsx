@@ -36,7 +36,7 @@ export default function CreateProduct(props) {
     };
 
     useEffect(() => {
-        console.log('mounting Create User data =>', data);
+        console.log('mounting Create Product data =>', data);
         if(data) {
             setEditing(true);
             setProductData({...data});
@@ -50,19 +50,52 @@ export default function CreateProduct(props) {
         Inertia.visit(path)
     };
 
+    const refreshPage = () => {
+        const hostname = window.location.hostname;
+        const url = window.location.href;
+        const [port, path] = url.split(hostname);
+
+        Inertia.visit(path);
+    }
     const createProduct = () => {
         console.log('createProduct isEditing =>', editing);
         if(editing){
             console.log('editing true');
             console.log('editing productData =>', productData);
             // console.log('editing storeSelected =>', storeSelected);
-            Inertia.put(`products/${productData.id}`, {
-                ...productData,
-                // store: storeSelected,
-            }).then(response => {
-                console.log('response =>', response);
-                // setEditing(false);
-            });
+            if(avatar) {
+                console.log('Exist avatar =>', avatar);
+                const formData = new FormData();
+                formData.append("file", avatar, avatar.name);
+                formData.set("name", productData.name || '');
+                formData.set("description", productData.description || '');
+                formData.set("ingredients", productData.ingredients || '');
+                formData.set("price", productData.price || '');
+                formData.set("category_id", productData.category_id || '');
+                formData.set("available", productData.available);
+                formData.set("favorite", productData.favorite);
+                console.log('editing else con post');
+                Inertia.put(`products/${productData.id}`, formData).then(response => {
+                    console.log(`response from products/${productData.id}`, response);
+                    setEditing(false);
+                }).then(response => {
+                    console.log('refreshing page');
+                    // refreshPage()
+                });
+            } else {
+                console.log('editing sin imagen');
+                Inertia.put(`products/${productData.id}`, {
+                    ...productData,
+                    // store: storeSelected,
+                }).then(response => {
+                    console.log('response =>', response);
+                    // refreshPage();
+                    if(Object.keys(errors).length === 0) {
+                        console.log('Errors length === 0', errors);
+                        setEditing(false);
+                    }
+                });
+            }
         } else {
             const formData = new FormData();
             formData.append("file", avatar, avatar.name);
@@ -77,6 +110,8 @@ export default function CreateProduct(props) {
             Inertia.post("products", formData).then(response => {
                 console.log('response =>', response);
                 setCreateProduct(false);
+            }).then(response => {
+                refreshPage()
             });
             // Inertia.post("products", {
             //     ...productData,

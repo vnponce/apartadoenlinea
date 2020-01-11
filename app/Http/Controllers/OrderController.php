@@ -103,6 +103,7 @@ class OrderController extends Controller
             'lastname' => 'required',
             'phone' => 'required',
             'email' => 'required',
+            'employeeName' => 'required',
         ]);
 //        dd($request->toArray());
         $cart = Cart::content();
@@ -122,6 +123,7 @@ class OrderController extends Controller
             'lastname' => $request->lastname,
             'phone' => $request->phone,
             'email' => $request->email,
+            'employeeName' => $request->employeeName,
         ]);
 //        dd(Cart::content());
         return redirect('/charola');

@@ -11,6 +11,7 @@ const Box = posed.div({
 
 function Product(props) {
     const { product } = props;
+    console.log(product);
     const [animate, setAnimate] = useState('visible');
     const [disabled, setDisabled] = useState(false);
     const [productId] = useState(product.id);
@@ -142,7 +143,7 @@ function Product(props) {
                         {/* Description */}
                         <div className="mt-4 flex-1 text-gray-600 font-light sm:text-center lg:text-justify">{product.description}</div>
                         {/* Ingredients */}
-                        {product.ingredients &&
+                        {product.ingredients && product.allow_ingredients &&
                             <div className="flex-1 mt-4 sm:text-center lg:text-justify">
                                 <p className="uppercase font-medium text-sm first-letter-bigger text-orange-600">ingredientes</p>
                                 <ul className="font-light text-gray-600 font-light">
@@ -153,13 +154,15 @@ function Product(props) {
                             </div>
                         }
                         {/* Specifications */}
-                        <div className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify">
-                            <p className="hover:border-grey-900 italic">Si no deseas algún ingrediente,
-                                especifícalo:</p>
-                            <input value={comment} type="text" placeholder="Ej. sin picante" onChange={validateLength}
-                                   className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto" />
-                            {error && <p className="text-sm text-red-500 error hour">{error}</p>}
-                        </div>
+                        {product.allow_instructions &&
+                            <div className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify">
+                                <p className="hover:border-grey-900 italic">Si no deseas algún ingrediente,
+                                    especifícalo:</p>
+                                <input value={comment} type="text" placeholder="Ej. sin picante" onChange={validateLength}
+                                       className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"/>
+                                {error && <p className="text-sm text-red-500 error hour">{error}</p>}
+                            </div>
+                        }
                         {/* Qty. */}
                         <div
                             className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0">
