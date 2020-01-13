@@ -34,7 +34,8 @@ class OrderDetails extends Mailable
     {
         Carbon::setLocale('es');
         $store = $this->order->store->name;
-        $date = $this->order->date->format('l d, F Y');
+        $date = $this->order->date->translatedFormat('l d, F Y');
+//        dd($date);
         // return $this->markdown('email.order-details', compact('store', 'date'));
         return $this->markdown('email.order-details-custom', compact('store', 'date'));
     }
