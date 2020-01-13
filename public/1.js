@@ -239,7 +239,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
+    var source = arguments[i] != null ? Object(arguments[i]) : {};
     var ownKeys = Object.keys(source);
 
     if (typeof Object.getOwnPropertySymbols === 'function') {
@@ -419,16 +419,14 @@ function _toConsumableArray(arr) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _typeof; });
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
-
 function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
     _typeof = function _typeof(obj) {
-      return _typeof2(obj);
+      return typeof obj;
     };
   } else {
     _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
     };
   }
 
@@ -1175,12 +1173,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serializeStyles", function() { return serializeStyles; });
 /* harmony import */ var _emotion_hash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/hash */ "./node_modules/@emotion/hash/dist/hash.browser.esm.js");
 /* harmony import */ var _emotion_unitless__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/unitless */ "./node_modules/@emotion/unitless/dist/unitless.browser.esm.js");
-/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/memoize */ "./node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
+/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/memoize */ "./node_modules/@emotion/serialize/node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
 
 
 
 
 var ILLEGAL_ESCAPE_SEQUENCE_ERROR = "You have illegal escape sequence in your template literal, most likely inside content's property value.\nBecause you write your CSS inside a JavaScript string you actually have to do double escaping, so for example \"content: '\\00d7';\" should become \"content: '\\\\00d7';\".\nYou can read more about this here:\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences";
+var UNDEFINED_AS_OBJECT_KEY_ERROR = "You have passed in falsy value as style object's key (can happen when in example you pass unexported component as computed key).";
 var hyphenateRegex = /[A-Z]|^ms/g;
 var animationRegex = /_EMO_([^_]+?)_([^]*?)_EMO_/g;
 
@@ -1188,15 +1187,15 @@ var isCustomProperty = function isCustomProperty(property) {
   return property.charCodeAt(1) === 45;
 };
 
+var isProcessableValue = function isProcessableValue(value) {
+  return value != null && typeof value !== 'boolean';
+};
+
 var processStyleName = Object(_emotion_memoize__WEBPACK_IMPORTED_MODULE_2__["default"])(function (styleName) {
   return isCustomProperty(styleName) ? styleName : styleName.replace(hyphenateRegex, '-$&').toLowerCase();
 });
 
 var processStyleValue = function processStyleValue(key, value) {
-  if (value == null || typeof value === 'boolean') {
-    return '';
-  }
-
   switch (key) {
     case 'animation':
     case 'animationName':
@@ -1369,7 +1368,7 @@ function createStringFromObject(mergedProps, registered, obj) {
       if (typeof value !== 'object') {
         if (registered != null && registered[value] !== undefined) {
           string += _key + "{" + registered[value] + "}";
-        } else {
+        } else if (isProcessableValue(value)) {
           string += processStyleName(_key) + ":" + processStyleValue(_key, value) + ";";
         }
       } else {
@@ -1379,7 +1378,9 @@ function createStringFromObject(mergedProps, registered, obj) {
 
         if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
           for (var _i = 0; _i < value.length; _i++) {
-            string += processStyleName(_key) + ":" + processStyleValue(_key, value[_i]) + ";";
+            if (isProcessableValue(value[_i])) {
+              string += processStyleName(_key) + ":" + processStyleValue(_key, value[_i]) + ";";
+            }
           }
         } else {
           var interpolated = handleInterpolation(mergedProps, registered, value, false);
@@ -1394,6 +1395,10 @@ function createStringFromObject(mergedProps, registered, obj) {
 
             default:
               {
+                if ( true && _key === 'undefined') {
+                  console.error(UNDEFINED_AS_OBJECT_KEY_ERROR);
+                }
+
                 string += _key + "{" + interpolated + "}";
               }
           }
@@ -1491,6 +1496,28 @@ var serializeStyles = function serializeStyles(args, registered, mergedProps) {
 };
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/@emotion/serialize/node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@emotion/serialize/node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
+  \***************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function memoize(fn) {
+  var cache = {};
+  return function (arg) {
+    if (cache[arg] === undefined) cache[arg] = fn(arg);
+    return cache[arg];
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (memoize);
 
 
 /***/ }),

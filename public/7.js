@@ -149,7 +149,7 @@ function unregisterEvents(events) {
     events = [];
   }
 
-  events.map(unregisterEvent);
+  events.forEach(unregisterEvent);
 }
 function applyUpdatersToPropsAndRegisterEvents(_ref) {
   var updaterMap = _ref.updaterMap,
@@ -337,11 +337,14 @@ var injectScript = function injectScript(_ref) {
 
     if (existingScript) {
       // Same script id/url: keep same script
-      if (existingScript.src === url) {
-        if (existingScript.getAttribute('data-state') === 'ready') {
+      var dataStateAttribute = existingScript.getAttribute('data-state');
+
+      if (existingScript.src === url && dataStateAttribute !== 'error') {
+        if (dataStateAttribute === 'ready') {
           return resolve(id);
         } else {
           var originalInitMap = windowWithGoogleMap.initMap;
+          var originalErrorCallback = existingScript.onerror;
 
           windowWithGoogleMap.initMap = function initMap() {
             if (originalInitMap) {
@@ -351,9 +354,19 @@ var injectScript = function injectScript(_ref) {
             resolve(id);
           };
 
+          existingScript.onerror = function (err) {
+            if (originalErrorCallback) {
+              originalErrorCallback(err);
+            }
+
+            reject(err);
+          };
+
           return;
         }
-      } // Same script id but url changed: recreate the script
+      } // Same script id, but either
+      // 1. requested URL is different
+      // 2. script failed to load
       else {
           existingScript.remove();
         }
@@ -364,7 +377,11 @@ var injectScript = function injectScript(_ref) {
     script.src = url;
     script.id = id;
     script.async = true;
-    script.onerror = reject;
+
+    script.onerror = function onerror(err) {
+      script.setAttribute('data-state', 'error');
+      reject(err);
+    };
 
     windowWithGoogleMap.initMap = function onload() {
       script.setAttribute('data-state', 'ready');
@@ -374,6 +391,7 @@ var injectScript = function injectScript(_ref) {
     document.head.appendChild(script);
   })["catch"](function (err) {
     console.error('injectScript error: ', err);
+    throw err;
   });
 };
 
@@ -406,7 +424,7 @@ var isRobotoStyle = function isRobotoStyle(element) {
   }
 
   return false;
-}; // Preventing the Google Maps libary from downloading an extra font
+}; // Preventing the Google Maps library from downloading an extra font
 
 
 var preventGoogleFonts = function preventGoogleFonts() {
@@ -612,7 +630,7 @@ function (_React$PureComponent) {
 
   _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
     if (this.props.libraries !== prevProps.libraries) {
-      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable ounside of component, or somwhere in config files or ENV variables');
+      console.warn('Performance warning! LoadScript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
     }
 
     if (isBrowser && prevProps.language !== this.props.language) {
@@ -742,7 +760,7 @@ function useLoadScript(_ref) {
   var prevLibraries = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function checkPerformance() {
     if (prevLibraries.current && libraries !== prevLibraries.current) {
-      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
+      console.warn('Performance warning! LoadScript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
     }
 
     prevLibraries.current = libraries;
@@ -839,13 +857,13 @@ function (_PureComponent) {
       instance: trafficLayer
     });
 
-    function setTrafficlayer() {
+    function setTrafficLayer() {
       return {
         trafficLayer: trafficLayer
       };
     }
 
-    this.setState(setTrafficlayer, this.setTrafficLayerCallback);
+    this.setState(setTrafficLayer, this.setTrafficLayerCallback);
   };
 
   _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
@@ -1581,7 +1599,7 @@ function (_React$PureComponent) {
       }
     };
 
-    _this.setInfowindowCallback = function () {
+    _this.setInfoWindowCallback = function () {
       if (_this.state.infoWindow !== null && _this.containerElement !== null) {
         _this.state.infoWindow.setContent(_this.containerElement);
 
@@ -1615,7 +1633,7 @@ function (_React$PureComponent) {
       };
     }
 
-    this.setState(setInfoWindow, this.setInfowindowCallback);
+    this.setState(setInfoWindow, this.setInfoWindowCallback);
   };
 
   _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
@@ -2584,7 +2602,7 @@ function (_React$PureComponent) {
   var _proto = GroundOverlay.prototype;
 
   _proto.componentDidMount = function componentDidMount() {
-    !(!!this.props.url || !!this.props.bounds) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "For GroundOveray, url and bounds are passed in to constructor and are immutable after instantiated. This is the behavior of Google Maps JavaScript API v3 ( See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay) Hence, use the corresponding two props provided by `react-google-maps-api`, url and bounds. In some cases, you'll need the GroundOverlay component to reflect the changes of url and bounds. You can leverage the React's key property to remount the component. Typically, just `key={url}` would serve your need. See https://github.com/tomchentw/react-google-maps/issues/655") : undefined : void 0;
+    !(!!this.props.url || !!this.props.bounds) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "For GroundOverlay, url and bounds are passed in to constructor and are immutable after instantiated. This is the behavior of Google Maps JavaScript API v3 ( See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay) Hence, use the corresponding two props provided by `react-google-maps-api`, url and bounds. In some cases, you'll need the GroundOverlay component to reflect the changes of url and bounds. You can leverage the React's key property to remount the component. Typically, just `key={url}` would serve your need. See https://github.com/tomchentw/react-google-maps/issues/655") : undefined : void 0;
     var groundOverlay = new google.maps.GroundOverlay(this.props.url, this.props.bounds, _extends({}, this.props.options, {
       map: this.context
     }));
@@ -3069,7 +3087,7 @@ function (_React$PureComponent) {
       distanceMatrixService: null
     };
 
-    _this.setDistanceMatrixServiceCallbak = function () {
+    _this.setDistanceMatrixServiceCallback = function () {
       if (_this.state.distanceMatrixService !== null && _this.props.onLoad) {
         _this.props.onLoad(_this.state.distanceMatrixService);
       }
@@ -3090,7 +3108,7 @@ function (_React$PureComponent) {
       };
     }
 
-    this.setState(setDistanceMatrixService, this.setDistanceMatrixServiceCallbak);
+    this.setState(setDistanceMatrixService, this.setDistanceMatrixServiceCallback);
   };
 
   _proto.componentDidUpdate = function componentDidUpdate() {
@@ -3972,7 +3990,11 @@ function () {
       for (var property in object.prototype) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
-        this.prototype[property] = object.prototype[property];
+        if (!this.prototype.hasOwnProperty(property)) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          this.prototype[property] = object.prototype[property];
+        }
       } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
 
@@ -4052,7 +4074,7 @@ function () {
 
     this.boundsChangedListener = google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
-    this.getMap(), 'boundschanged', function boundsChabged() {
+    this.getMap(), 'boundschanged', function boundsChanged() {
       cDraggingMapByCluster = cMouseDownInCluster;
     });
     google.maps.event.addDomListener(this.div, 'mousedown', function onMouseDown() {
@@ -4237,9 +4259,9 @@ function () {
     // @ts-ignore
     var pos = this.getProjection().fromLatLngToDivPixel(latlng);
     pos.x -= this.anchorIcon[1];
-    pos.y -= this.anchorIcon[0];
-    pos.x = pos.x;
-    pos.y = pos.y;
+    pos.y -= this.anchorIcon[0]; // pos.x = pos.x
+    // pos.y = pos.y
+
     return pos;
   };
 

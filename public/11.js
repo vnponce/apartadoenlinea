@@ -1,5 +1,56 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[11],{
 
+/***/ "./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/memoize */ "./node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
+
+
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|default|defer|dir|disabled|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|itemProp|itemScope|itemType|itemID|itemRef|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
+
+var index = Object(_emotion_memoize__WEBPACK_IMPORTED_MODULE_0__["default"])(function (prop) {
+  return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111
+  /* o */
+  && prop.charCodeAt(1) === 110
+  /* n */
+  && prop.charCodeAt(2) < 91;
+}
+/* Z+1 */
+);
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+
+
+/***/ }),
+
+/***/ "./node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function memoize(fn) {
+  var cache = {};
+  return function (arg) {
+    if (cache[arg] === undefined) cache[arg] = fn(arg);
+    return cache[arg];
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (memoize);
+
+
+/***/ }),
+
 /***/ "./node_modules/@popmotion/easing/dist/easing.es.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@popmotion/easing/dist/easing.es.js ***!
@@ -913,7 +964,9 @@ var __assign = function () {
 function __rest(s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0) t[p[i]] = s[p[i]];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+    }
     return t;
 }
 
@@ -1025,12 +1078,12 @@ var intelligentTransition = {
     opacity: linearTween,
     default: popmotion__WEBPACK_IMPORTED_MODULE_0__["tween"]
 };
-var dragAction = /*#__PURE__*/__assign({}, intelligentTransition, { x: /*#__PURE__*/createPointer(pointerX, 'left', 'right', BoundingBoxDimension.width), y: /*#__PURE__*/createPointer(pointerY, 'top', 'bottom', BoundingBoxDimension.height) });
+var dragAction = /*#__PURE__*/__assign( /*#__PURE__*/__assign({}, intelligentTransition), { x: /*#__PURE__*/createPointer(pointerX, 'left', 'right', BoundingBoxDimension.width), y: /*#__PURE__*/createPointer(pointerY, 'top', 'bottom', BoundingBoxDimension.height) });
 var justAxis = function (_a) {
     var from = _a.from;
     return just(from);
 };
-var intelligentDragEnd = /*#__PURE__*/__assign({}, intelligentTransition, { x: justAxis, y: justAxis });
+var intelligentDragEnd = /*#__PURE__*/__assign( /*#__PURE__*/__assign({}, intelligentTransition), { x: justAxis, y: justAxis });
 var defaultTransitions = /*#__PURE__*/new Map([['default', intelligentTransition], ['drag', dragAction], ['dragEnd', intelligentDragEnd]]);
 
 var animationLookup = {
@@ -1125,7 +1178,7 @@ var getAction = function (v, _a, _b) {
         velocity: velocity,
         ease: ease
     } : { ease: ease };
-    return animationLookup[type](__assign({}, baseProps, def));
+    return animationLookup[type](__assign(__assign({}, baseProps), def));
 };
 var isAction = function (action$$1) {
     return typeof action$$1.start !== 'undefined';
@@ -1444,7 +1497,7 @@ var getPosFromMatrix = function (matrix, pos) {
 var getTranslateFromMatrix = function (pos2, pos3) {
     return function (element, bbox, _a) {
         var transform$$1 = _a.transform;
-        if (transform$$1 === 'none') return 0;
+        if (!transform$$1 || transform$$1 === 'none') return 0;
         var matrix3d = transform$$1.match(/^matrix3d\((.+)\)$/);
         if (matrix3d) return getPosFromMatrix(matrix3d[1], pos3);
         return getPosFromMatrix(transform$$1.match(/^matrix\((.+)\)$/)[1], pos2);
@@ -1561,7 +1614,7 @@ var createPoseConfig = function (element, _a) {
         pressable = _a.pressable,
         dragBounds = _a.dragBounds,
         config = __rest(_a, ["onDragStart", "onDragEnd", "onPressStart", "onPressEnd", "draggable", "hoverable", "focusable", "pressable", "dragBounds"]);
-    var poseConfig = __assign({ flip: {} }, config, { props: __assign({}, config.props, { onDragStart: onDragStart,
+    var poseConfig = __assign(__assign({ flip: {} }, config), { props: __assign(__assign({}, config.props), { onDragStart: onDragStart,
             onDragEnd: onDragEnd,
             onPressStart: onPressStart,
             onPressEnd: onPressEnd,
@@ -1575,8 +1628,8 @@ var createPoseConfig = function (element, _a) {
         var _b = dragPoses(draggable),
             drag = _b.drag,
             dragEnd = _b.dragEnd;
-        poseConfig.drag = __assign({}, drag, poseConfig.drag);
-        poseConfig.dragEnd = __assign({}, dragEnd, poseConfig.dragEnd);
+        poseConfig.drag = __assign(__assign({}, drag), poseConfig.drag);
+        poseConfig.dragEnd = __assign(__assign({}, dragEnd), poseConfig.dragEnd);
     }
     return poseConfig;
 };
@@ -1622,7 +1675,7 @@ var domPose = /*#__PURE__*/pose({
         var props = _a.props,
             activeActions = _a.activeActions;
         var measure = props.dimensions.measure;
-        var poserApi = __assign({}, api, { addChild: function (element, childConfig) {
+        var poserApi = __assign(__assign({}, api), { addChild: function (element, childConfig) {
                 return api._addChild(createPoseConfig(element, childConfig), domPose);
             }, measure: measure, flip: function (op) {
                 if (op) {
@@ -3361,7 +3414,7 @@ var createPoseSetter = function (setterProps) {
         var _a = nextProps.delay,
             delay = _a === void 0 ? 0 : _a;
         var hasChildren = children.size;
-        var baseTransitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props, nextProps);
+        var baseTransitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props), nextProps);
         var nextPose = poses[next];
         var getChildAnimations = function () {
             return hasChildren && propagate ? startChildAnimations(children, next, nextPose, baseTransitionProps) : [];
@@ -3387,11 +3440,11 @@ var createPoseSetter = function (setterProps) {
                 valuePoses.splice(insertionIndex, 0, next);
                 return insertionIndex === 0 ? new Promise(function (complete) {
                     var value = values.get(key);
-                    var transitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, baseTransitionProps, { key: key,
+                    var transitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, baseTransitionProps), { key: key,
                         value: value });
                     var target = resolveTarget(value, resolveProp(nextPose[key], transitionProps));
                     if (activeActions.has(key)) stopAction(activeActions.get(key));
-                    var resolveTransitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ to: target }, transitionProps, getTransitionProps(value, target, transitionProps));
+                    var resolveTransitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ to: target }, transitionProps), getTransitionProps(value, target, transitionProps));
                     var transition = resolveTransition(getTransition, key, value, resolveTransitionProps, convertTransitionDefinition, getInstantTransition);
                     var poseDelay = delay || resolveProp(nextPose.delay, transitionProps);
                     if (poseDelay) {
@@ -3415,7 +3468,7 @@ var createPoseSetter = function (setterProps) {
                 });
             }
         }
-        return Promise.all(getParentAnimations().concat(getChildAnimations()));
+        return Promise.all(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spreadArrays"])(getParentAnimations(), getChildAnimations()));
     };
 };
 
@@ -3541,7 +3594,7 @@ var createValueMap = function (props) {
 };
 
 var applyDefaultTransition = function (pose, key, defaultTransitions) {
-    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, pose, { transition: defaultTransitions.has(key) ? defaultTransitions.get(key) : defaultTransitions.get('default') });
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, pose), { transition: defaultTransitions.has(key) ? defaultTransitions.get(key) : defaultTransitions.get('default') });
 };
 var generateTransitions = function (poses, defaultTransitions) {
     Object.keys(poses).forEach(function (key) {
@@ -3595,7 +3648,7 @@ var poseFactory = function (_a) {
         var poses = generateTransitions(selectPoses(config), defaultTransitions);
         var _b = config.props,
             props = _b === void 0 ? {} : _b;
-        if (getDefaultProps) props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, getDefaultProps(config), props);
+        if (getDefaultProps) props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, getDefaultProps(config)), props);
         var passive = config.passive,
             userSetValues = config.values,
             _c = config.initialPose,
@@ -3670,10 +3723,10 @@ var poseFactory = function (_a) {
             },
             has: has,
             setProps: function (newProps) {
-                return state.props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, state.props, newProps);
+                return state.props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, state.props), newProps);
             },
             _addChild: function (childConfig, factory) {
-                var child = factory(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ initialPose: initialPose }, childConfig, { ancestorValues: [{ label: config.label, values: values }].concat(ancestorValues) }));
+                var child = factory(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ initialPose: initialPose }, childConfig), { ancestorValues: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spreadArrays"])([{ label: config.label, values: values }], ancestorValues) }));
                 children.add(child);
                 return child;
             },
@@ -3717,7 +3770,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var popmotion_pose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! popmotion-pose */ "./node_modules/popmotion-pose/dist/popmotion-pose.es.js");
-/* harmony import */ var _emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/is-prop-valid */ "./node_modules/react-pose/node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js");
+/* harmony import */ var _emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/is-prop-valid */ "./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js");
 /* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
 
 
@@ -3847,7 +3900,7 @@ var PoseElement = (function (_super) {
         var props = filterProps(this.props);
         if (this.props.popFromFlow && this.ref && this.ref instanceof HTMLElement) {
             if (!this.popStyle) {
-                props.style = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props.style, calcPopFromFlowStyle(this.ref));
+                props.style = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props.style), calcPopFromFlowStyle(this.ref));
                 this.popStyle = props.style;
             }
             else {
@@ -3863,7 +3916,7 @@ var PoseElement = (function (_super) {
         var _this = this;
         Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["invariant"])(this.ref instanceof Element, "No valid DOM ref found. If you're converting an existing component via posed(Component), you must ensure you're passing the ref to the host DOM node via the React.forwardRef function.");
         var _a = this.props, onValueChange = _a.onValueChange, registerChild = _a.registerChild, values = _a.values, parentValues = _a.parentValues, onDragStart = _a.onDragStart, onDragEnd = _a.onDragEnd, onPressStart = _a.onPressStart, onPressEnd = _a.onPressEnd;
-        var config = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.poseConfig, { initialPose: this.getInitialPose(), values: values || this.poseConfig.values, parentValues: parentValues ? objectToMap(parentValues) : undefined, props: this.getSetProps(), onDragStart: onDragStart,
+        var config = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.poseConfig), { initialPose: this.getInitialPose(), values: values || this.poseConfig.values, parentValues: parentValues ? objectToMap(parentValues) : undefined, props: this.getSetProps(), onDragStart: onDragStart,
             onDragEnd: onDragEnd,
             onPressStart: onPressStart,
             onPressEnd: onPressEnd, onChange: onValueChange });
@@ -4057,7 +4110,7 @@ var getKey = function (child) {
     return childKey.replace('.$', '');
 };
 var prependProps = function (element, props) {
-    return Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(element.type, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ key: element.key, ref: element.ref }, props, element.props));
+    return Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(element.type, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ key: element.key, ref: element.ref }, props), element.props));
 };
 var handleTransition = function (_a, _b) {
     var displayedChildren = _b.displayedChildren, finishedLeaving = _b.finishedLeaving, hasInitialized = _b.hasInitialized, indexedChildren = _b.indexedChildren, scheduleChildRemoval = _b.scheduleChildRemoval;
@@ -4167,7 +4220,7 @@ var Transition = (function (_super) {
         }
         var targetChildren = displayedChildren.filter(function (child) { return !finishedLeaving.hasOwnProperty(child.key); });
         var newState = enterAfterExit
-            ? Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ finishedLeaving: {} }, handleChildrenTransitions(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.props, { enterAfterExit: false }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.state, { displayedChildren: targetChildren }))) : {
+            ? Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ finishedLeaving: {} }, handleChildrenTransitions(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.props), { enterAfterExit: false }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.state), { displayedChildren: targetChildren }))) : {
             finishedLeaving: {},
             displayedChildren: targetChildren
         };
@@ -4206,57 +4259,6 @@ var PoseGroup = (function (_super) {
 
 /* harmony default export */ __webpack_exports__["default"] = (posed);
 
-
-
-/***/ }),
-
-/***/ "./node_modules/react-pose/node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js":
-/*!*******************************************************************************************************!*\
-  !*** ./node_modules/react-pose/node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js ***!
-  \*******************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/memoize */ "./node_modules/react-pose/node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
-
-
-var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|default|defer|dir|disabled|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|itemProp|itemScope|itemType|itemID|itemRef|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
-
-var index = Object(_emotion_memoize__WEBPACK_IMPORTED_MODULE_0__["default"])(function (prop) {
-  return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111
-  /* o */
-  && prop.charCodeAt(1) === 110
-  /* n */
-  && prop.charCodeAt(2) < 91;
-}
-/* Z+1 */
-);
-
-/* harmony default export */ __webpack_exports__["default"] = (index);
-
-
-/***/ }),
-
-/***/ "./node_modules/react-pose/node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/react-pose/node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
-  \*******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function memoize(fn) {
-  var cache = {};
-  return function (arg) {
-    if (cache[arg] === undefined) cache[arg] = fn(arg);
-    return cache[arg];
-  };
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (memoize);
 
 
 /***/ }),
@@ -4589,8 +4591,8 @@ var number = {
     parse: parseFloat,
     transform: function (v) { return v; }
 };
-var alpha = __assign({}, number, { transform: clamp(0, 1) });
-var scale = __assign({}, number, { default: 1 });
+var alpha = __assign(__assign({}, number), { transform: clamp(0, 1) });
+var scale = __assign(__assign({}, number), { default: 1 });
 
 var createUnitType = function (unit) { return ({
     test: function (v) {
@@ -4604,7 +4606,7 @@ var percent = createUnitType('%');
 var px = createUnitType('px');
 var vh = createUnitType('vh');
 var vw = createUnitType('vw');
-var progressPercentage = __assign({}, percent, { parse: function (v) { return percent.parse(v) / 100; }, transform: function (v) { return percent.transform(v * 100); } });
+var progressPercentage = __assign(__assign({}, percent), { parse: function (v) { return percent.parse(v) / 100; }, transform: function (v) { return percent.transform(v * 100); } });
 
 var getValueFromFunctionString = function (value) {
     return value.substring(value.indexOf('(') + 1, value.lastIndexOf(')'));
@@ -4633,7 +4635,7 @@ var hslaTemplate = function (_a) {
     var hue = _a.hue, saturation = _a.saturation, lightness = _a.lightness, _b = _a.alpha, alpha$$1 = _b === void 0 ? 1 : _b;
     return "hsla(" + hue + ", " + saturation + ", " + lightness + ", " + alpha$$1 + ")";
 };
-var rgbUnit = __assign({}, number, { transform: function (v) { return Math.round(clampRgbUnit(v)); } });
+var rgbUnit = __assign(__assign({}, number), { transform: function (v) { return Math.round(clampRgbUnit(v)); } });
 function isColorString(color, colorType) {
     return color.startsWith(colorType) && singleColorRegex.test(color);
 }
@@ -4663,7 +4665,7 @@ var hsla = {
         });
     }
 };
-var hex = __assign({}, rgba, { test: function (v) { return typeof v === 'string' && isColorString(v, '#'); }, parse: function (v) {
+var hex = __assign(__assign({}, rgba), { test: function (v) { return typeof v === 'string' && isColorString(v, '#'); }, parse: function (v) {
         var r = '';
         var g = '';
         var b = '';
@@ -4791,53 +4793,24 @@ var complex = {
 /*!*****************************************************!*\
   !*** ./node_modules/stylefire/dist/stylefire.es.js ***!
   \*****************************************************/
-/*! exports provided: default, createStylerFactory, buildStyleProperty, isTransformProp */
+/*! exports provided: default, createStylerFactory, buildStyleProperty, buildSVGAttrs, transformProps, isTransformProp */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStylerFactory", function() { return createStyler; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildStyleProperty", function() { return buildStyleProperty; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildSVGAttrs", function() { return buildSVGAttrs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transformProps", function() { return transformProps; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isTransformProp", function() { return isTransformProp; });
-/* harmony import */ var framesync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! framesync */ "./node_modules/framesync/dist/framesync.es.js");
-/* harmony import */ var style_value_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! style-value-types */ "./node_modules/style-value-types/dist/style-value-types.es.js");
-/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var framesync__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framesync */ "./node_modules/framesync/dist/framesync.es.js");
+/* harmony import */ var style_value_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! style-value-types */ "./node_modules/style-value-types/dist/style-value-types.es.js");
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
 
 
 
 
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-
-var __assign = function () {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0) t[p[i]] = s[p[i]];
-    return t;
-}
 
 var createStyler = function (_a) {
     var onRead = _a.onRead,
@@ -4850,7 +4823,7 @@ var createStyler = function (_a) {
         if (_a === void 0) {
             _a = {};
         }
-        var props = __rest(_a, []);
+        var props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, []);
         var state = {};
         var changedValues = [];
         var hasChanged = false;
@@ -4866,7 +4839,7 @@ var createStyler = function (_a) {
             }
             if (!hasChanged) {
                 hasChanged = true;
-                framesync__WEBPACK_IMPORTED_MODULE_0__["default"].render(styler.render);
+                framesync__WEBPACK_IMPORTED_MODULE_1__["default"].render(styler.render);
             }
         }
         var styler = {
@@ -4908,13 +4881,6 @@ var REPLACE_TEMPLATE = '$1-$2';
 var camelToDash = function (str) {
     return str.replace(CAMEL_CASE_PATTERN, REPLACE_TEMPLATE).toLowerCase();
 };
-var setDomAttrs = function (element, attrs) {
-    for (var key in attrs) {
-        if (attrs.hasOwnProperty(key)) {
-            element.setAttribute(key, attrs[key]);
-        }
-    }
-};
 
 var camelCache = /*#__PURE__*/new Map();
 var dashCache = /*#__PURE__*/new Map();
@@ -4932,6 +4898,9 @@ var testPrefix = function (key) {
         var noPrefix = prefix === '';
         var prefixedPropertyName = noPrefix ? key : prefix + key.charAt(0).toUpperCase() + key.slice(1);
         if (prefixedPropertyName in testElement.style || noPrefix) {
+            if (noPrefix && key === 'clipPath' && dashCache.has(key)) {
+                return;
+            }
             camelCache.set(key, prefixedPropertyName);
             setDashPrefix(key, "" + (noPrefix ? '' : '-') + camelToDash(prefixedPropertyName));
         }
@@ -4945,12 +4914,14 @@ var prefixer = function (key, asDashCase) {
         asDashCase = false;
     }
     var cache = asDashCase ? dashCache : camelCache;
-    if (!cache.has(key)) isBrowser ? testPrefix(key) : setServerProperty(key);
+    if (!cache.has(key)) {
+        isBrowser ? testPrefix(key) : setServerProperty(key);
+    }
     return cache.get(key) || key;
 };
 
 var axes = ['', 'X', 'Y', 'Z'];
-var order = ['scale', 'rotate', 'skew', 'transformPerspective'];
+var order = ['translate', 'scale', 'rotate', 'skew', 'transformPerspective'];
 var transformProps = /*#__PURE__*/order.reduce(function (acc, key) {
     return axes.reduce(function (axesAcc, axesKey) {
         axesAcc.push(key + axesKey);
@@ -4972,69 +4943,75 @@ function isTransformOriginProp(key) {
     return transformOriginProps.has(key);
 }
 
-var rounded = /*#__PURE__*/__assign({}, style_value_types__WEBPACK_IMPORTED_MODULE_1__["number"], { transform: Math.round });
+var int = /*#__PURE__*/Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])( /*#__PURE__*/Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, style_value_types__WEBPACK_IMPORTED_MODULE_2__["number"]), { transform: Math.round });
 var valueTypes = {
-    color: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    backgroundColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    outlineColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    fill: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    stroke: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    borderColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    borderTopColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    borderRightColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    borderBottomColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    borderLeftColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    borderWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderTopWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderRightWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderBottomWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderLeftWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    radius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderTopLeftRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderTopRightRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderBottomRightRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    borderBottomLeftRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    width: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    maxWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    height: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    maxHeight: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    size: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    top: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    right: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    bottom: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    left: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    padding: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    paddingTop: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    paddingRight: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    paddingBottom: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    paddingLeft: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    margin: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    marginTop: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    marginRight: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    marginBottom: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    marginLeft: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    rotate: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
-    rotateX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
-    rotateY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
-    rotateZ: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
-    scale: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
-    scaleX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
-    scaleY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
-    scaleZ: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
-    skew: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
-    skewX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
-    skewY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
-    distance: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    x: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    y: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    z: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    perspective: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    opacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
-    originX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["progressPercentage"],
-    originY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["progressPercentage"],
-    originZ: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
-    zIndex: rounded
+    color: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    backgroundColor: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    outlineColor: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    fill: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    stroke: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    borderColor: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    borderTopColor: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    borderRightColor: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    borderBottomColor: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    borderLeftColor: style_value_types__WEBPACK_IMPORTED_MODULE_2__["color"],
+    borderWidth: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderTopWidth: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderRightWidth: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderBottomWidth: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderLeftWidth: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderRadius: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    radius: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderTopLeftRadius: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderTopRightRadius: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderBottomRightRadius: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    borderBottomLeftRadius: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    width: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    maxWidth: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    height: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    maxHeight: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    size: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    top: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    right: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    bottom: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    left: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    padding: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    paddingTop: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    paddingRight: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    paddingBottom: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    paddingLeft: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    margin: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    marginTop: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    marginRight: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    marginBottom: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    marginLeft: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    rotate: style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"],
+    rotateX: style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"],
+    rotateY: style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"],
+    rotateZ: style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"],
+    scale: style_value_types__WEBPACK_IMPORTED_MODULE_2__["scale"],
+    scaleX: style_value_types__WEBPACK_IMPORTED_MODULE_2__["scale"],
+    scaleY: style_value_types__WEBPACK_IMPORTED_MODULE_2__["scale"],
+    scaleZ: style_value_types__WEBPACK_IMPORTED_MODULE_2__["scale"],
+    skew: style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"],
+    skewX: style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"],
+    skewY: style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"],
+    distance: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    translateX: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    translateY: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    translateZ: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    x: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    y: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    z: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    perspective: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    opacity: style_value_types__WEBPACK_IMPORTED_MODULE_2__["alpha"],
+    originX: style_value_types__WEBPACK_IMPORTED_MODULE_2__["progressPercentage"],
+    originY: style_value_types__WEBPACK_IMPORTED_MODULE_2__["progressPercentage"],
+    originZ: style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"],
+    zIndex: int,
+    fillOpacity: style_value_types__WEBPACK_IMPORTED_MODULE_2__["alpha"],
+    strokeOpacity: style_value_types__WEBPACK_IMPORTED_MODULE_2__["alpha"],
+    numOctaves: int
 };
 var getValueType = function (key) {
     return valueTypes[key];
@@ -5124,13 +5101,16 @@ function buildStyleProperty(state, enableHardwareAcceleration, styles, transform
         styles.transform = buildTransform(state, transform, transformKeys, transformIsDefault, enableHardwareAcceleration);
     }
     if (hasTransformOrigin) {
-        styles.transformOrigin = (transformOrigin.originX || 0) + " " + (transformOrigin.originY || 0) + " " + (transformOrigin.originZ || 0);
+        styles.transformOrigin = (transformOrigin.originX || '50%') + " " + (transformOrigin.originY || '50%') + " " + (transformOrigin.originZ || 0);
     }
     return styles;
 }
-function createStyleBuilder(enableHardwareAcceleration) {
+function createStyleBuilder(enableHardwareAcceleration, isDashCase) {
     if (enableHardwareAcceleration === void 0) {
         enableHardwareAcceleration = true;
+    }
+    if (isDashCase === void 0) {
+        isDashCase = true;
     }
     var styles = {};
     var transform = {};
@@ -5138,7 +5118,7 @@ function createStyleBuilder(enableHardwareAcceleration) {
     var transformKeys = [];
     return function (state) {
         transformKeys.length = 0;
-        buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, true);
+        buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, isDashCase);
         return styles;
     };
 }
@@ -5187,85 +5167,81 @@ function createCssStyler(element, _a) {
         _a = {};
     }
     var enableHardwareAcceleration = _a.enableHardwareAcceleration,
-        props = __rest(_a, ["enableHardwareAcceleration"]);
-    return cssStyler(__assign({ element: element, buildStyles: createStyleBuilder(enableHardwareAcceleration), preparseOutput: true }, props));
+        props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["enableHardwareAcceleration"]);
+    return cssStyler(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ element: element, buildStyles: createStyleBuilder(enableHardwareAcceleration), preparseOutput: true }, props));
 }
 
 var camelCaseAttributes = /*#__PURE__*/new Set(['baseFrequency', 'diffuseConstant', 'kernelMatrix', 'kernelUnitLength', 'keySplines', 'keyTimes', 'limitingConeAngle', 'markerHeight', 'markerWidth', 'numOctaves', 'targetX', 'targetY', 'surfaceScale', 'specularConstant', 'specularExponent', 'stdDeviation', 'tableValues']);
 
-var ZERO_NOT_ZERO = 0.0000001;
-var progressToPixels = function (progress, length) {
-    return progress * length + 'px';
-};
-var build = function (state, dimensions, isPath, pathLength) {
-    var hasTransform = false;
-    var hasDashArray = false;
-    var props = {};
-    var dashArrayStyles = isPath ? {
-        pathLength: '0',
-        pathSpacing: "" + pathLength
-    } : undefined;
-    var scale$$1 = state.scale !== undefined ? state.scale || ZERO_NOT_ZERO : state.scaleX || 1;
-    var scaleY = state.scaleY !== undefined ? state.scaleY || ZERO_NOT_ZERO : scale$$1 || 1;
-    var transformOriginX = dimensions.width * (state.originX || 50) + dimensions.x;
-    var transformOriginY = dimensions.height * (state.originY || 50) + dimensions.y;
-    var scaleTransformX = -transformOriginX * (scale$$1 * 1);
-    var scaleTransformY = -transformOriginY * (scaleY * 1);
-    var scaleReplaceX = transformOriginX / scale$$1;
-    var scaleReplaceY = transformOriginY / scaleY;
-    var transform = {
-        translate: "translate(" + state.x + ", " + state.y + ") ",
-        scale: "translate(" + scaleTransformX + ", " + scaleTransformY + ") scale(" + scale$$1 + ", " + scaleY + ") translate(" + scaleReplaceX + ", " + scaleReplaceY + ") ",
-        rotate: "rotate(" + state.rotate + ", " + transformOriginX + ", " + transformOriginY + ") ",
-        skewX: "skewX(" + state.skewX + ") ",
-        skewY: "skewY(" + state.skewY + ") "
+var defaultOrigin = 0.5;
+var svgAttrsTemplate = function () {
+    return {
+        style: {}
     };
-    for (var key in state) {
-        if (state.hasOwnProperty(key)) {
-            var value = state[key];
-            if (isTransformProp(key)) {
-                hasTransform = true;
-            } else if (isPath && (key === 'pathLength' || key === 'pathSpacing') && typeof value === 'number') {
-                hasDashArray = true;
-                dashArrayStyles[key] = progressToPixels(value, pathLength);
-            } else if (isPath && key === 'pathOffset') {
-                props['stroke-dashoffset'] = progressToPixels(-value, pathLength);
-            } else {
-                var attrKey = !camelCaseAttributes.has(key) ? camelToDash(key) : key;
-                props[attrKey] = value;
-            }
+};
+var progressToPixels = function (progress, length) {
+    return style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"].transform(progress * length);
+};
+var unmeasured = { x: 0, y: 0, width: 0, height: 0 };
+function calcOrigin(origin, offset, size) {
+    return typeof origin === 'string' ? origin : style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"].transform(offset + size * origin);
+}
+function calculateSVGTransformOrigin(dimensions, originX, originY) {
+    return calcOrigin(originX, dimensions.x, dimensions.width) + " " + calcOrigin(originY, dimensions.y, dimensions.height);
+}
+function buildSVGAttrs(_a, dimensions, totalPathLength, cssBuilder, attrs, isDashCase) {
+    if (dimensions === void 0) {
+        dimensions = unmeasured;
+    }
+    if (cssBuilder === void 0) {
+        cssBuilder = createStyleBuilder(false, false);
+    }
+    if (attrs === void 0) {
+        attrs = svgAttrsTemplate();
+    }
+    if (isDashCase === void 0) {
+        isDashCase = true;
+    }
+    var attrX = _a.attrX,
+        attrY = _a.attrY,
+        originX = _a.originX,
+        originY = _a.originY,
+        pathLength = _a.pathLength,
+        _b = _a.pathSpacing,
+        pathSpacing = _b === void 0 ? 1 : _b,
+        _c = _a.pathOffset,
+        pathOffset = _c === void 0 ? 0 : _c,
+        state = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["attrX", "attrY", "originX", "originY", "pathLength", "pathSpacing", "pathOffset"]);
+    var style = cssBuilder(state);
+    for (var key in style) {
+        if (key === 'transform') {
+            attrs.style.transform = style[key];
+        } else {
+            var attrKey = isDashCase && !camelCaseAttributes.has(key) ? camelToDash(key) : key;
+            attrs[attrKey] = style[key];
         }
     }
-    if (hasDashArray) {
-        props['stroke-dasharray'] = dashArrayStyles.pathLength + ' ' + dashArrayStyles.pathSpacing;
+    if (originX !== undefined || originY !== undefined || style.transform) {
+        attrs.style.transformOrigin = calculateSVGTransformOrigin(dimensions, originX !== undefined ? originX : defaultOrigin, originY !== undefined ? originY : defaultOrigin);
     }
-    if (hasTransform) {
-        props.transform = '';
-        for (var key in transform) {
-            if (transform.hasOwnProperty(key)) {
-                var defaultValue = key === 'scale' ? '1' : '0';
-                props.transform += transform[key].replace(/undefined/g, defaultValue);
-            }
-        }
+    if (attrX !== undefined) attrs.x = attrX;
+    if (attrY !== undefined) attrs.y = attrY;
+    if (totalPathLength !== undefined && pathLength !== undefined) {
+        attrs[isDashCase ? 'stroke-dashoffset' : 'strokeDashoffset'] = progressToPixels(-pathOffset, totalPathLength);
+        attrs[isDashCase ? 'stroke-dasharray' : 'strokeDasharray'] = progressToPixels(pathLength, totalPathLength) + " " + progressToPixels(pathSpacing, totalPathLength);
     }
-    return props;
-};
-
-var int = /*#__PURE__*/__assign({}, style_value_types__WEBPACK_IMPORTED_MODULE_1__["number"], { transform: Math.round });
-var valueTypes$1 = {
-    fill: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    stroke: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
-    scale: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
-    scaleX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
-    scaleY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
-    opacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
-    fillOpacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
-    strokeOpacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
-    numOctaves: int
-};
-var getValueType$1 = function (key) {
-    return valueTypes$1[key];
-};
+    return attrs;
+}
+function createAttrBuilder(dimensions, totalPathLength, isDashCase) {
+    if (isDashCase === void 0) {
+        isDashCase = true;
+    }
+    var attrs = svgAttrsTemplate();
+    var cssBuilder = createStyleBuilder(false, false);
+    return function (state) {
+        return buildSVGAttrs(state, dimensions, totalPathLength, cssBuilder, attrs, isDashCase);
+    };
+}
 
 var getDimensions = function (element) {
     return typeof element.getBBox === 'function' ? element.getBBox() : element.getBoundingClientRect();
@@ -5278,36 +5254,40 @@ var getSVGElementDimensions = function (element) {
     }
 };
 
+var isPath = function (element) {
+    return element.tagName === 'path';
+};
 var svgStyler = /*#__PURE__*/createStyler({
     onRead: function (key, _a) {
         var element = _a.element;
+        key = !camelCaseAttributes.has(key) ? camelToDash(key) : key;
         if (!isTransformProp(key)) {
             return element.getAttribute(key);
         } else {
-            var valueType = getValueType$1(key);
-            return valueType ? valueType.default : 0;
+            var valueType = getValueType(key);
+            return valueType ? valueType.default || 0 : 0;
         }
     },
     onRender: function (state, _a) {
-        var dimensions = _a.dimensions,
-            element = _a.element,
-            isPath = _a.isPath,
-            pathLength = _a.pathLength;
-        setDomAttrs(element, build(state, dimensions, isPath, pathLength));
+        var element = _a.element,
+            buildAttrs = _a.buildAttrs;
+        var attrs = buildAttrs(state);
+        for (var key in attrs) {
+            if (key === 'style') {
+                Object.assign(element.style, attrs.style);
+            } else {
+                element.setAttribute(key, attrs[key]);
+            }
+        }
     }
 });
 var svg = function (element) {
     var dimensions = getSVGElementDimensions(element);
-    var props = {
+    var pathLength = isPath(element) && element.getTotalLength ? element.getTotalLength() : undefined;
+    return svgStyler({
         element: element,
-        dimensions: dimensions,
-        isPath: false
-    };
-    if (element.tagName === 'path') {
-        props.isPath = true;
-        props.pathLength = element.getTotalLength();
-    }
-    return svgStyler(props);
+        buildAttrs: createAttrBuilder(dimensions, pathLength)
+    });
 };
 
 var viewport = /*#__PURE__*/createStyler({
@@ -5334,7 +5314,7 @@ var createDOMStyler = function (node, props) {
     } else if (node === window) {
         styler = viewport(node);
     }
-    Object(hey_listen__WEBPACK_IMPORTED_MODULE_2__["invariant"])(styler !== undefined, 'No valid node provided. Node must be HTMLElement, SVGElement or window.');
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_3__["invariant"])(styler !== undefined, 'No valid node provided. Node must be HTMLElement, SVGElement or window.');
     cache.set(node, styler);
     return styler;
 };

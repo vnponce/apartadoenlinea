@@ -66,79 +66,61 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /*!***************************************************!*\
   !*** ./node_modules/react-table/dist/index.es.js ***!
   \***************************************************/
-/*! exports provided: actions, addActions, defaultColumn, defaultState, useAbsoluteLayout, useBlockLayout, useColumnOrder, useExpanded, useFilters, useGroupBy, usePagination, useResizeColumns, useRowSelect, useRowState, useSortBy, useTable, utils */
+/*! exports provided: actions, defaultColumn, defaultGroupByFn, defaultOrderByFn, ensurePluginOrder, flexRender, functionalUpdate, loopHooks, makePropGetter, makeRenderer, reduceHooks, safeUseLayoutEffect, useAbsoluteLayout, useAsyncDebounce, useBlockLayout, useColumnOrder, useConsumeHookGetter, useExpanded, useFilters, useFlexLayout, useGetLatest, useGlobalFilter, useGroupBy, useMountedLayoutEffect, usePagination, useResizeColumns, useRowSelect, useRowState, useSortBy, useTable */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addActions", function() { return addActions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultColumn", function() { return defaultColumn; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultState", function() { return defaultState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultGroupByFn", function() { return defaultGroupByFn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultOrderByFn", function() { return defaultOrderByFn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ensurePluginOrder", function() { return ensurePluginOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flexRender", function() { return flexRender; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "functionalUpdate", function() { return functionalUpdate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loopHooks", function() { return loopHooks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makePropGetter", function() { return makePropGetter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makeRenderer", function() { return makeRenderer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reduceHooks", function() { return reduceHooks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "safeUseLayoutEffect", function() { return safeUseLayoutEffect; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useAbsoluteLayout", function() { return useAbsoluteLayout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useAsyncDebounce", function() { return useAsyncDebounce; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useBlockLayout", function() { return useBlockLayout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useColumnOrder", function() { return useColumnOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useConsumeHookGetter", function() { return useConsumeHookGetter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useExpanded", function() { return useExpanded; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFilters", function() { return useFilters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFlexLayout", function() { return useFlexLayout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGetLatest", function() { return useGetLatest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGlobalFilter", function() { return useGlobalFilter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGroupBy", function() { return useGroupBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMountedLayoutEffect", function() { return useMountedLayoutEffect; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usePagination", function() { return usePagination; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useResizeColumns", function() { return useResizeColumns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useRowSelect", function() { return useRowSelect; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useRowState", function() { return useRowState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSortBy", function() { return useSortBy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useTable", function() { return useTable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "utils", function() { return utils; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-  return obj;
-}
-
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-    if (enumerableOnly) symbols = symbols.filter(function (sym) {
-      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-    });
-    keys.push.apply(keys, symbols);
-  }
-
-  return keys;
-}
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(source, true).forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(source).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
     }
-  }
 
-  return target;
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
 }
 
 function _objectWithoutPropertiesLoose(source, excluded) {
@@ -154,89 +136,6 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   }
 
   return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-}
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-    return arr2;
-  }
-}
-
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-
-function _iterableToArrayLimit(arr, i) {
-  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
-    return;
-  }
-
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _e = undefined;
-
-  try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
 
 function _toPrimitive(input, hint) {
@@ -258,33 +157,327 @@ function _toPropertyKey(arg) {
   return typeof key === "symbol" ? key : String(key);
 }
 
+var renderErr = 'Renderer Error';
+var actions = {
+  init: 'init'
+};
 var defaultColumn = {
   Cell: function Cell(_ref) {
     var _ref$cell$value = _ref.cell.value,
         value = _ref$cell$value === void 0 ? '' : _ref$cell$value;
-    return String(value);
+    return value;
   },
-  show: true,
   width: 150,
   minWidth: 0,
   maxWidth: Number.MAX_SAFE_INTEGER
-}; // SSR has issues with useLayoutEffect still, so use useEffect during SSR
+};
+function defaultOrderByFn(arr, funcs, dirs) {
+  return [].concat(arr).sort(function (rowA, rowB) {
+    for (var i = 0; i < funcs.length; i += 1) {
+      var sortFn = funcs[i];
+      var desc = dirs[i] === false || dirs[i] === 'desc';
+      var sortInt = sortFn(rowA, rowB);
 
-var safeUseLayoutEffect = typeof window !== 'undefined' && "development" === 'production' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect; // Find the depth of the columns
-
-function findMaxDepth(columns) {
-  var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-  return columns.reduce(function (prev, curr) {
-    if (curr.columns) {
-      return Math.max(prev, findMaxDepth(curr.columns, depth + 1));
+      if (sortInt !== 0) {
+        return desc ? -sortInt : sortInt;
+      }
     }
 
-    return depth;
-  }, 0);
+    return dirs[0] ? rowA.index - rowB.index : rowB.index - rowA.index;
+  });
 }
+function defaultGroupByFn(rows, columnId) {
+  return rows.reduce(function (prev, row, i) {
+    // TODO: Might want to implement a key serializer here so
+    // irregular column values can still be grouped if needed?
+    var resKey = "" + row.values[columnId];
+    prev[resKey] = Array.isArray(prev[resKey]) ? prev[resKey] : [];
+    prev[resKey].push(row);
+    return prev;
+  }, {});
+}
+
+function mergeProps() {
+  for (var _len = arguments.length, propList = new Array(_len), _key = 0; _key < _len; _key++) {
+    propList[_key] = arguments[_key];
+  }
+
+  return propList.reduce(function (props, next) {
+    var style = next.style,
+        className = next.className,
+        rest = _objectWithoutPropertiesLoose(next, ["style", "className"]);
+
+    props = _extends({}, props, {}, rest);
+
+    if (style) {
+      props.style = props.style ? _extends({}, props.style || {}, {}, style || {}) : style;
+    }
+
+    if (className) {
+      props.className = props.className ? props.className + ' ' + className : className;
+    }
+
+    if (props.className === '') {
+      delete props.className;
+    }
+
+    return props;
+  }, {});
+}
+
+function handlePropGetter(prevProps, userProps, meta) {
+  // Handle a lambda, pass it the previous props
+  if (typeof userProps === 'function') {
+    return handlePropGetter({}, userProps(prevProps, meta));
+  } // Handle an array, merge each item as separate props
+
+
+  if (Array.isArray(userProps)) {
+    return mergeProps.apply(void 0, [prevProps].concat(userProps));
+  } // Handle an object by default, merge the two objects
+
+
+  return mergeProps(prevProps, userProps);
+}
+
+var makePropGetter = function makePropGetter(hooks, meta) {
+  if (meta === void 0) {
+    meta = {};
+  }
+
+  return function (userProps) {
+    if (userProps === void 0) {
+      userProps = {};
+    }
+
+    return [].concat(hooks, [userProps]).reduce(function (prev, next) {
+      return handlePropGetter(prev, next, _extends({}, meta, {
+        userProps: userProps
+      }));
+    }, {});
+  };
+};
+var reduceHooks = function reduceHooks(hooks, initial, meta) {
+  if (meta === void 0) {
+    meta = {};
+  }
+
+  return hooks.reduce(function (prev, next) {
+    var nextValue = next(prev, meta);
+
+    if (true) {
+      if (typeof nextValue === 'undefined') {
+        console.info(next);
+        throw new Error('React Table: A reducer hook ☝️ just returned undefined! This is not allowed.');
+      }
+    }
+
+    return nextValue;
+  }, initial);
+};
+var loopHooks = function loopHooks(hooks, meta) {
+  if (meta === void 0) {
+    meta = {};
+  }
+
+  return hooks.forEach(function (hook) {
+    var nextValue = hook(meta);
+
+    if (true) {
+      if (typeof nextValue !== 'undefined') {
+        console.info(hook, nextValue);
+        throw new Error('React Table: A loop-type hook ☝️ just returned a value! This is not allowed.');
+      }
+    }
+  });
+};
+function ensurePluginOrder(plugins, befores, pluginName, afters) {
+  var pluginIndex = plugins.findIndex(function (plugin) {
+    return plugin.pluginName === pluginName;
+  });
+
+  if (pluginIndex === -1) {
+    if (true) {
+      throw new Error("The plugin \"" + pluginName + "\" was not found in the plugin list!\nThis usually means you need to need to name your plugin hook by setting the 'pluginName' property of the hook function, eg:\n\n  " + pluginName + ".pluginName = '" + pluginName + "'\n");
+    }
+  }
+
+  befores.forEach(function (before) {
+    var beforeIndex = plugins.findIndex(function (plugin) {
+      return plugin.pluginName === before;
+    });
+
+    if (beforeIndex > -1 && beforeIndex > pluginIndex) {
+      if (true) {
+        throw new Error("React Table: The " + pluginName + " plugin hook must be placed after the " + before + " plugin hook!");
+      }
+    }
+  });
+  afters.forEach(function (after) {
+    var afterIndex = plugins.findIndex(function (plugin) {
+      return plugin.pluginName === after;
+    });
+
+    if (true) {
+      if (afterIndex > -1 && afterIndex < pluginIndex) {
+        throw new Error("React Table: The " + pluginName + " plugin hook must be placed before the " + after + " plugin hook!");
+      }
+    }
+  });
+}
+function functionalUpdate(updater, old) {
+  return typeof updater === 'function' ? updater(old) : updater;
+}
+function useGetLatest(obj) {
+  var ref = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  ref.current = obj;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function () {
+    return ref.current;
+  }, []);
+} // SSR has issues with useLayoutEffect still, so use useEffect during SSR
+
+var safeUseLayoutEffect = typeof document !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect;
+function useMountedLayoutEffect(fn, deps) {
+  var mountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef(false);
+  safeUseLayoutEffect(function () {
+    if (mountedRef.current) {
+      fn();
+    }
+
+    mountedRef.current = true; // eslint-disable-next-line
+  }, deps);
+}
+function useAsyncDebounce(defaultFn, defaultWait) {
+  if (defaultWait === void 0) {
+    defaultWait = 0;
+  }
+
+  var debounceRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef({});
+  debounceRef.current.defaultFn = defaultFn;
+  debounceRef.current.defaultWait = defaultWait;
+  var debounce = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function _callee2(fn, wait) {
+    return regeneratorRuntime.async(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            if (fn === void 0) {
+              fn = debounceRef.current.defaultFn;
+            }
+
+            if (wait === void 0) {
+              wait = debounceRef.current.defaultWait;
+            }
+
+            if (!debounceRef.current.promise) {
+              debounceRef.current.promise = new Promise(function (resolve, reject) {
+                debounceRef.current.resolve = resolve;
+                debounceRef.current.reject = reject;
+              });
+            }
+
+            if (debounceRef.current.timeout) {
+              clearTimeout(debounceRef.current.timeout);
+            }
+
+            debounceRef.current.timeout = setTimeout(function _callee() {
+              return regeneratorRuntime.async(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      delete debounceRef.current.timeout;
+                      _context.prev = 1;
+                      _context.t0 = debounceRef.current;
+                      _context.next = 5;
+                      return regeneratorRuntime.awrap(fn());
+
+                    case 5:
+                      _context.t1 = _context.sent;
+
+                      _context.t0.resolve.call(_context.t0, _context.t1);
+
+                      _context.next = 12;
+                      break;
+
+                    case 9:
+                      _context.prev = 9;
+                      _context.t2 = _context["catch"](1);
+                      debounceRef.current.reject(_context.t2);
+
+                    case 12:
+                      _context.prev = 12;
+                      delete debounceRef.current.promise;
+                      return _context.finish(12);
+
+                    case 15:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, null, null, [[1, 9, 12, 15]]);
+            }, wait);
+            return _context2.abrupt("return", debounceRef.current.promise);
+
+          case 6:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    });
+  }, []);
+  return debounce;
+}
+function useConsumeHookGetter(hooks, hookName) {
+  var getter = useGetLatest(hooks[hookName]);
+  hooks[hookName] = undefined;
+  return getter;
+}
+function makeRenderer(instance, column, meta) {
+  if (meta === void 0) {
+    meta = {};
+  }
+
+  return function (type, userProps) {
+    if (userProps === void 0) {
+      userProps = {};
+    }
+
+    var Comp = typeof type === 'string' ? column[type] : type;
+
+    if (typeof Comp === 'undefined') {
+      throw new Error(renderErr);
+    }
+
+    return flexRender(Comp, _extends({}, instance, {
+      column: column
+    }, meta, {}, userProps));
+  };
+}
+function flexRender(Comp, props) {
+  return isReactComponent(Comp) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Comp, props) : Comp;
+}
+
+function isClassComponent(component) {
+  return typeof component === 'function' && !!function () {
+    var proto = Object.getPrototypeOf(component);
+    return proto.prototype && proto.prototype.isReactComponent;
+  }();
+}
+
+function isFunctionComponent(component) {
+  return typeof component === 'function';
+}
+
+function isExoticComponent(component) {
+  return typeof component === 'object' && typeof component.$$typeof === 'symbol' && ['react.memo', 'react.forward_ref'].includes(component.$$typeof.description);
+}
+
+function isReactComponent(component) {
+  return isClassComponent(component) || isFunctionComponent(component) || isExoticComponent(component);
+}
+
 function decorateColumn(column, userDefaultColumn, parent, depth, index) {
   // Apply the userDefaultColumn
-  column = _objectSpread2({}, defaultColumn, {}, userDefaultColumn, {}, column); // First check for string accessor
+  column = _extends({}, defaultColumn, {}, userDefaultColumn, {}, column); // First check for string accessor
 
   var _column = column,
       id = _column.id,
@@ -314,9 +507,12 @@ function decorateColumn(column, userDefaultColumn, parent, depth, index) {
     throw new Error('A column ID (or string accessor) is required!');
   }
 
-  column = _objectSpread2({
+  column = _extends({
     // Make sure there is a fallback header, just in case
     Header: function Header() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "\xA0");
+    },
+    Footer: function Footer() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "\xA0");
     }
   }, column, {
@@ -330,8 +526,12 @@ function decorateColumn(column, userDefaultColumn, parent, depth, index) {
   return column;
 } // Build the visible columns, headers and flat column list
 
-function decorateColumnTree(columns, defaultColumn, parent) {
-  var depth = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
+
+function decorateColumnTree(columns, defaultColumn, parent, depth) {
+  if (depth === void 0) {
+    depth = 0;
+  }
+
   return columns.map(function (column, columnIndex) {
     column = decorateColumn(column, defaultColumn, parent, depth, columnIndex);
 
@@ -363,30 +563,30 @@ function makeHeaderGroups(flatColumns, defaultColumn) {
 
       if (column.parent) {
         var similarParentColumns = parentColumns.filter(function (d) {
-          return d.originalID === column.parent.id;
+          return d.originalId === column.parent.id;
         });
 
-        if (isFirst || latestParentColumn.originalID !== column.parent.id) {
-          parentColumns.push(_objectSpread2({}, column.parent, {
-            originalID: column.parent.id,
+        if (isFirst || latestParentColumn.originalId !== column.parent.id) {
+          parentColumns.push(_extends({}, column.parent, {
+            originalId: column.parent.id,
             id: [column.parent.id, similarParentColumns.length].join('_')
           }));
         }
       } else if (hasParents) {
         // If other columns have parents, we'll need to add a place holder if necessary
-        var originalID = [column.id, 'placeholder'].join('_');
+        var originalId = [column.id, 'placeholder'].join('_');
 
         var _similarParentColumns = parentColumns.filter(function (d) {
-          return d.originalID === originalID;
+          return d.originalId === originalId;
         });
 
         var placeholderColumn = decorateColumn({
-          originalID: originalID,
+          originalId: originalId,
           id: [column.id, 'placeholder', _similarParentColumns.length].join('_'),
           placeholderOf: column
         }, defaultColumn);
 
-        if (isFirst || latestParentColumn.originalID !== placeholderColumn.originalID) {
+        if (isFirst || latestParentColumn.originalId !== placeholderColumn.originalId) {
           parentColumns.push(placeholderColumn);
         }
       } // Establish the new headers[] relationship on the parent
@@ -417,36 +617,20 @@ function makeHeaderGroups(flatColumns, defaultColumn) {
   buildGroup(flatColumns);
   return headerGroups.reverse();
 }
-function determineHeaderVisibility(instance) {
-  var headers = instance.headers;
-
-  var handleColumn = function handleColumn(column, parentVisible) {
-    column.isVisible = parentVisible ? typeof column.show === 'function' ? column.show(instance) : !!column.show : false;
-    var totalVisibleHeaderCount = 0;
-
-    if (column.headers && column.headers.length) {
-      column.headers.forEach(function (subColumn) {
-        return totalVisibleHeaderCount += handleColumn(subColumn, column.isVisible);
-      });
-    } else {
-      totalVisibleHeaderCount = column.isVisible ? 1 : 0;
-    }
-
-    column.totalVisibleHeaderCount = totalVisibleHeaderCount;
-    return totalVisibleHeaderCount;
-  };
-
-  var totalVisibleHeaderCount = 0;
-  headers.forEach(function (subHeader) {
-    return totalVisibleHeaderCount += handleColumn(subHeader, true);
-  });
-}
+var pathObjCache = new Map();
 function getBy(obj, path, def) {
   if (!path) {
     return obj;
   }
 
-  var pathObj = makePathArray(path);
+  var cacheKey = typeof path === 'function' ? path : JSON.stringify(path);
+
+  var pathObj = pathObjCache.get(cacheKey) || function () {
+    var pathObj = makePathArray(path);
+    pathObjCache.set(cacheKey, pathObj);
+    return pathObj;
+  }();
+
   var val;
 
   try {
@@ -458,21 +642,6 @@ function getBy(obj, path, def) {
 
   return typeof val !== 'undefined' ? val : def;
 }
-function defaultOrderByFn(arr, funcs, dirs) {
-  return _toConsumableArray(arr).sort(function (rowA, rowB) {
-    for (var i = 0; i < funcs.length; i += 1) {
-      var sortFn = funcs[i];
-      var desc = dirs[i] === false || dirs[i] === 'desc';
-      var sortInt = sortFn(rowA, rowB);
-
-      if (sortInt !== 0) {
-        return desc ? -sortInt : sortInt;
-      }
-    }
-
-    return dirs[0] ? rowA.index - rowB.index : rowB.index - rowA.index;
-  });
-}
 function getFirstDefined() {
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
@@ -483,117 +652,6 @@ function getFirstDefined() {
       return args[i];
     }
   }
-}
-function defaultGroupByFn(rows, columnID) {
-  return rows.reduce(function (prev, row, i) {
-    // TODO: Might want to implement a key serializer here so
-    // irregular column values can still be grouped if needed?
-    var resKey = "".concat(row.values[columnID]);
-    prev[resKey] = Array.isArray(prev[resKey]) ? prev[resKey] : [];
-    prev[resKey].push(row);
-    return prev;
-  }, {});
-}
-function getElementDimensions(element) {
-  var rect = element.getBoundingClientRect();
-  var style = window.getComputedStyle(element);
-  var margins = {
-    left: parseInt(style.marginLeft),
-    right: parseInt(style.marginRight)
-  };
-  var padding = {
-    left: parseInt(style.paddingLeft),
-    right: parseInt(style.paddingRight)
-  };
-  return {
-    left: Math.ceil(rect.left),
-    width: Math.ceil(rect.width),
-    outerWidth: Math.ceil(rect.width + margins.left + margins.right + padding.left + padding.right),
-    marginLeft: margins.left,
-    marginRight: margins.right,
-    paddingLeft: padding.left,
-    paddingRight: padding.right,
-    scrollWidth: element.scrollWidth
-  };
-}
-function flexRender(Comp, props) {
-  return isReactComponent(Comp) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Comp, props) : Comp;
-}
-
-function isClassComponent(component) {
-  return typeof component === 'function' && !!function () {
-    var proto = Object.getPrototypeOf(component);
-    return proto.prototype && proto.prototype.isReactComponent;
-  }();
-}
-
-function isFunctionComponent(component) {
-  return typeof component === 'function';
-}
-
-function isReactComponent(component) {
-  return isClassComponent(component) || isFunctionComponent(component);
-}
-
-var mergeProps = function mergeProps() {
-  var props = {};
-
-  for (var _len2 = arguments.length, groups = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-    groups[_key2] = arguments[_key2];
-  }
-
-  groups.forEach(function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        _ref2$style = _ref2.style,
-        style = _ref2$style === void 0 ? {} : _ref2$style,
-        className = _ref2.className,
-        rest = _objectWithoutProperties(_ref2, ["style", "className"]);
-
-    props = _objectSpread2({}, props, {}, rest, {
-      style: _objectSpread2({}, props.style || {}, {}, style),
-      className: [props.className, className].filter(Boolean).join(' ')
-    });
-  });
-
-  if (props.className === '') {
-    delete props.className;
-  }
-
-  return props;
-};
-var applyHooks = function applyHooks(hooks, initial) {
-  for (var _len3 = arguments.length, args = new Array(_len3 > 2 ? _len3 - 2 : 0), _key3 = 2; _key3 < _len3; _key3++) {
-    args[_key3 - 2] = arguments[_key3];
-  }
-
-  return hooks.reduce(function (prev, next) {
-    var nextValue = next.apply(void 0, [prev].concat(args));
-
-    if (typeof nextValue === 'undefined') {
-      throw new Error('React Table: A hook just returned undefined! This is not allowed.');
-    }
-
-    return nextValue;
-  }, initial);
-};
-var applyPropHooks = function applyPropHooks(hooks) {
-  for (var _len4 = arguments.length, args = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
-    args[_key4 - 1] = arguments[_key4];
-  }
-
-  return hooks.reduce(function (prev, next) {
-    return mergeProps(prev, next.apply(void 0, args));
-  }, {});
-};
-var warnUnknownProps = function warnUnknownProps(props) {
-  if (Object.keys(props).length) {
-    throw new Error("Unknown options passed to useReactTable:\n\n".concat(JSON.stringify(props, null, 2)));
-  }
-};
-function sum(arr) {
-  return arr.reduce(function (prev, curr) {
-    return prev + curr;
-  }, 0);
 }
 function isFunction(a) {
   if (typeof a === 'function') {
@@ -616,44 +674,15 @@ function flattenBy(columns, childKey) {
   recurse(columns);
   return flatColumns;
 }
-function ensurePluginOrder(plugins, befores, pluginName, afters) {
-  var pluginIndex = plugins.findIndex(function (plugin) {
-    return plugin.pluginName === pluginName;
-  });
-
-  if (pluginIndex === -1) {
-    throw new Error("The plugin ".concat(pluginName, " was not found in the plugin list!\nThis usually means you need to need to name your plugin hook by setting the 'pluginName' property of the hook function, eg:\n\n  ").concat(pluginName, ".pluginName = '").concat(pluginName, "'\n"));
-  }
-
-  befores.forEach(function (before) {
-    var beforeIndex = plugins.findIndex(function (plugin) {
-      return plugin.pluginName === before;
-    });
-
-    if (beforeIndex > -1 && beforeIndex > pluginIndex) {
-      throw new Error("React Table: The ".concat(pluginName, " plugin hook must be placed after the ").concat(before, " plugin hook!"));
-    }
-  });
-  afters.forEach(function (after) {
-    var afterIndex = plugins.findIndex(function (plugin) {
-      return plugin.pluginName === after;
-    });
-
-    if (afterIndex > -1 && afterIndex < pluginIndex) {
-      throw new Error("React Table: The ".concat(pluginName, " plugin hook must be placed before the ").concat(after, " plugin hook!"));
-    }
-  });
-}
-function expandRows(rows, _ref3) {
-  var manualExpandedKey = _ref3.manualExpandedKey,
-      expanded = _ref3.expanded,
-      _ref3$expandSubRows = _ref3.expandSubRows,
-      expandSubRows = _ref3$expandSubRows === void 0 ? true : _ref3$expandSubRows;
+function expandRows(rows, _ref) {
+  var manualExpandedKey = _ref.manualExpandedKey,
+      expanded = _ref.expanded,
+      _ref$expandSubRows = _ref.expandSubRows,
+      expandSubRows = _ref$expandSubRows === void 0 ? true : _ref$expandSubRows;
   var expandedRows = [];
 
   var handleRow = function handleRow(row) {
-    var key = row.path.join('.');
-    row.isExpanded = row.original && row.original[manualExpandedKey] || expanded.includes(key);
+    row.isExpanded = row.original && row.original[manualExpandedKey] || expanded[row.id];
     row.canExpand = row.subRows && !!row.subRows.length;
     expandedRows.push(row);
 
@@ -664,7 +693,16 @@ function expandRows(rows, _ref3) {
 
   rows.forEach(handleRow);
   return expandedRows;
+}
+function getFilterMethod(filter, userFilterTypes, filterTypes) {
+  return isFunction(filter) || userFilterTypes[filter] || filterTypes[filter] || filterTypes.text;
+}
+function shouldAutoRemoveFilter(autoRemove, value) {
+  return autoRemove ? autoRemove(value) : typeof value === 'undefined';
 } //
+
+var reOpenBracket = /\[/g;
+var reCloseBracket = /\]/g;
 
 function makePathArray(obj) {
   return flattenDeep(obj) // remove all periods in parts
@@ -672,12 +710,14 @@ function makePathArray(obj) {
     return String(d).replace('.', '_');
   }) // join parts using period
   .join('.') // replace brackets with periods
-  .replace(/\[/g, '.').replace(/\]/g, '') // split it back out on periods
+  .replace(reOpenBracket, '.').replace(reCloseBracket, '') // split it back out on periods
   .split('.');
 }
 
-function flattenDeep(arr) {
-  var newArr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+function flattenDeep(arr, newArr) {
+  if (newArr === void 0) {
+    newArr = [];
+  }
 
   if (!Array.isArray(arr)) {
     newArr.push(arr);
@@ -690,169 +730,407 @@ function flattenDeep(arr) {
   return newArr;
 }
 
-var utils = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  defaultColumn: defaultColumn,
-  safeUseLayoutEffect: safeUseLayoutEffect,
-  findMaxDepth: findMaxDepth,
-  decorateColumn: decorateColumn,
-  decorateColumnTree: decorateColumnTree,
-  makeHeaderGroups: makeHeaderGroups,
-  determineHeaderVisibility: determineHeaderVisibility,
-  getBy: getBy,
-  defaultOrderByFn: defaultOrderByFn,
-  getFirstDefined: getFirstDefined,
-  defaultGroupByFn: defaultGroupByFn,
-  getElementDimensions: getElementDimensions,
-  flexRender: flexRender,
-  mergeProps: mergeProps,
-  applyHooks: applyHooks,
-  applyPropHooks: applyPropHooks,
-  warnUnknownProps: warnUnknownProps,
-  sum: sum,
-  isFunction: isFunction,
-  flattenBy: flattenBy,
-  ensurePluginOrder: ensurePluginOrder,
-  expandRows: expandRows
-});
+var defaultCells = function defaultCells(cell) {
+  return cell.filter(function (d) {
+    return d.column.isVisible;
+  });
+};
 
-var renderErr = 'You must specify a valid render component. This could be "column.Cell", "column.Header", "column.Filter", "column.Aggregated" or any other custom renderer component.';
-var defaultState = {};
+var defaultGetHeaderProps = function defaultGetHeaderProps(props, _ref) {
+  var column = _ref.column;
+  return _extends({
+    key: "header_" + column.id,
+    colSpan: column.totalVisibleHeaderCount
+  }, props);
+};
+
+var defaultGetFooterProps = function defaultGetFooterProps(props, _ref2) {
+  var column = _ref2.column;
+  return _extends({
+    key: "footer_" + column.id,
+    colSpan: column.totalVisibleHeaderCount
+  }, props);
+};
+
+var defaultGetHeaderGroupProps = function defaultGetHeaderGroupProps(props, _ref3) {
+  var index = _ref3.index;
+  return _extends({
+    key: "headerGroup_" + index
+  }, props);
+};
+
+var defaultGetFooterGroupProps = function defaultGetFooterGroupProps(props, _ref4) {
+  var index = _ref4.index;
+  return _extends({
+    key: "footerGroup_" + index
+  }, props);
+};
+
+var defaultGetRowProps = function defaultGetRowProps(props, _ref5) {
+  var row = _ref5.row;
+  return _extends({
+    key: "row_" + row.id
+  }, props);
+};
+
+var defaultGetCellProps = function defaultGetCellProps(props, _ref6) {
+  var cell = _ref6.cell;
+  return _extends({}, props, {
+    key: "cell_" + cell.row.id + "_" + cell.column.id
+  });
+};
+
+function makeDefaultPluginHooks() {
+  return {
+    useOptions: [],
+    stateReducers: [],
+    useControlledState: [],
+    columns: [],
+    columnsDeps: [],
+    flatColumns: [],
+    flatColumnsDeps: [],
+    headerGroups: [],
+    headerGroupsDeps: [],
+    useInstanceBeforeDimensions: [],
+    useInstance: [],
+    useRows: [],
+    cells: [defaultCells],
+    prepareRow: [],
+    getTableProps: [],
+    getTableBodyProps: [],
+    getHeaderGroupProps: [defaultGetHeaderGroupProps],
+    getFooterGroupProps: [defaultGetFooterGroupProps],
+    getHeaderProps: [defaultGetHeaderProps],
+    getFooterProps: [defaultGetFooterProps],
+    getRowProps: [defaultGetRowProps],
+    getCellProps: [defaultGetCellProps],
+    useFinalInstance: []
+  };
+}
+
+actions.resetHiddenColumns = 'resetHiddenColumns';
+actions.toggleHideColumn = 'toggleHideColumn';
+actions.setHiddenColumns = 'setHiddenColumns';
+actions.toggleHideAllColumns = 'toggleHideAllColumns';
+var useColumnVisibility = function useColumnVisibility(hooks) {
+  hooks.getToggleHiddenProps = [defaultGetToggleHiddenProps];
+  hooks.getToggleHideAllColumnsProps = [defaultGetToggleHideAllColumnsProps];
+  hooks.stateReducers.push(reducer);
+  hooks.useInstanceBeforeDimensions.push(useInstanceBeforeDimensions);
+  hooks.headerGroupsDeps.push(function (deps, _ref) {
+    var instance = _ref.instance;
+    return [].concat(deps, [instance.state.hiddenColumns]);
+  });
+  hooks.useInstance.push(useInstance);
+};
+useColumnVisibility.pluginName = 'useColumnVisibility';
+
+var defaultGetToggleHiddenProps = function defaultGetToggleHiddenProps(props, _ref2) {
+  var column = _ref2.column;
+  return [props, {
+    onChange: function onChange(e) {
+      column.toggleHidden(!e.target.checked);
+    },
+    style: {
+      cursor: 'pointer'
+    },
+    checked: column.isVisible,
+    title: 'Toggle Column Visible'
+  }];
+};
+
+var defaultGetToggleHideAllColumnsProps = function defaultGetToggleHideAllColumnsProps(props, _ref3) {
+  var instance = _ref3.instance;
+  return [props, {
+    onChange: function onChange(e) {
+      instance.toggleHideAllColumns(!e.target.checked);
+    },
+    style: {
+      cursor: 'pointer'
+    },
+    checked: !instance.allColumnsHidden && !instance.state.hiddenColumns.length,
+    title: 'Toggle All Columns Hidden',
+    indeterminate: !instance.allColumnsHidden && instance.state.hiddenColumns.length
+  }];
+};
+
+function reducer(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      hiddenColumns: []
+    }, state);
+  }
+
+  if (action.type === actions.resetHiddenColumns) {
+    return _extends({}, state, {
+      hiddenColumns: instance.initialState.hiddenColumns || []
+    });
+  }
+
+  if (action.type === actions.toggleHideColumn) {
+    var should = typeof action.value !== 'undefined' ? action.value : !state.hiddenColumns.includes(action.columnId);
+    var hiddenColumns = should ? [].concat(state.hiddenColumns, [action.columnId]) : state.hiddenColumns.filter(function (d) {
+      return d !== action.columnId;
+    });
+    return _extends({}, state, {
+      hiddenColumns: hiddenColumns
+    });
+  }
+
+  if (action.type === actions.setHiddenColumns) {
+    return _extends({}, state, {
+      hiddenColumns: functionalUpdate(action.value, state.hiddenColumns)
+    });
+  }
+
+  if (action.type === actions.toggleHideAllColumns) {
+    var shouldAll = typeof action.value !== 'undefined' ? action.value : !state.hiddenColumns.length;
+    return _extends({}, state, {
+      hiddenColumns: shouldAll ? instance.flatColumns.map(function (d) {
+        return d.id;
+      }) : []
+    });
+  }
+}
+
+function useInstanceBeforeDimensions(instance) {
+  var headers = instance.headers,
+      hiddenColumns = instance.state.hiddenColumns;
+  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef(false);
+
+  if (!isMountedRef.current) ;
+
+  var handleColumn = function handleColumn(column, parentVisible) {
+    column.isVisible = parentVisible && !hiddenColumns.includes(column.id);
+    var totalVisibleHeaderCount = 0;
+
+    if (column.headers && column.headers.length) {
+      column.headers.forEach(function (subColumn) {
+        return totalVisibleHeaderCount += handleColumn(subColumn, column.isVisible);
+      });
+    } else {
+      totalVisibleHeaderCount = column.isVisible ? 1 : 0;
+    }
+
+    column.totalVisibleHeaderCount = totalVisibleHeaderCount;
+    return totalVisibleHeaderCount;
+  };
+
+  var totalVisibleHeaderCount = 0;
+  headers.forEach(function (subHeader) {
+    return totalVisibleHeaderCount += handleColumn(subHeader, true);
+  });
+}
+
+function useInstance(instance) {
+  var flatHeaders = instance.flatHeaders,
+      dispatch = instance.dispatch,
+      flatColumns = instance.flatColumns,
+      hiddenColumns = instance.state.hiddenColumns;
+  var getInstance = useGetLatest(instance);
+  var allColumnsHidden = flatColumns.length === hiddenColumns.length;
+  var toggleHideColumn = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (columnId, value) {
+    return dispatch({
+      type: actions.toggleHideColumn,
+      columnId: columnId,
+      value: value
+    });
+  }, [dispatch]);
+  var setHiddenColumns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (value) {
+    return dispatch({
+      type: actions.setHiddenColumns,
+      value: value
+    });
+  }, [dispatch]);
+  var toggleHideAllColumns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (value) {
+    return dispatch({
+      type: actions.toggleHideAllColumns,
+      value: value
+    });
+  }, [dispatch]); // Snapshot hook and disallow more from being added
+
+  var getToggleHideAllColumnsPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getToggleHideAllColumnsProps');
+  var getToggleHideAllColumnsProps = makePropGetter(getToggleHideAllColumnsPropsHooks(), {
+    instance: getInstance()
+  }); // Snapshot hook and disallow more from being added
+
+  var getToggleHiddenPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getToggleHiddenProps');
+  flatHeaders.forEach(function (column) {
+    column.toggleHidden = function (value) {
+      dispatch({
+        type: actions.toggleHideColumn,
+        columnId: column.id,
+        value: value
+      });
+    };
+
+    column.getToggleHiddenProps = makePropGetter(getToggleHiddenPropsHooks(), {
+      instance: getInstance(),
+      column: column
+    });
+  });
+  Object.assign(instance, {
+    allColumnsHidden: allColumnsHidden,
+    toggleHideColumn: toggleHideColumn,
+    setHiddenColumns: setHiddenColumns,
+    toggleHideAllColumns: toggleHideAllColumns,
+    getToggleHideAllColumnsProps: getToggleHideAllColumnsProps
+  });
+}
+
 var defaultInitialState = {};
 var defaultColumnInstance = {};
 
-var defaultReducer = function defaultReducer(old, newState) {
-  return newState;
+var defaultReducer = function defaultReducer(state, action, prevState) {
+  return state;
 };
 
 var defaultGetSubRows = function defaultGetSubRows(row, index) {
   return row.subRows || [];
 };
 
-var defaultGetRowID = function defaultGetRowID(row, index) {
-  return index;
+var defaultGetRowId = function defaultGetRowId(row, index, parent) {
+  return "" + (parent ? [parent.id, index].join('.') : index);
 };
 
-var useTable = function useTable(props) {
-  // Destructure props
-  var data = props.data,
-      userColumns = props.columns,
-      _props$initialState = props.initialState,
+var defaultUseControlledState = function defaultUseControlledState(d) {
+  return d;
+};
+
+function applyDefaults(props) {
+  var _props$initialState = props.initialState,
       initialState = _props$initialState === void 0 ? defaultInitialState : _props$initialState,
-      userState = props.state,
       _props$defaultColumn = props.defaultColumn,
       defaultColumn = _props$defaultColumn === void 0 ? defaultColumnInstance : _props$defaultColumn,
       _props$getSubRows = props.getSubRows,
       getSubRows = _props$getSubRows === void 0 ? defaultGetSubRows : _props$getSubRows,
-      _props$getRowID = props.getRowID,
-      getRowID = _props$getRowID === void 0 ? defaultGetRowID : _props$getRowID,
-      _props$reducer = props.reducer,
-      reducer = _props$reducer === void 0 ? defaultReducer : _props$reducer,
-      debug = props.debug;
-  debug =  false ? undefined : debug; // But use the users table state if provided
+      _props$getRowId = props.getRowId,
+      getRowId = _props$getRowId === void 0 ? defaultGetRowId : _props$getRowId,
+      _props$stateReducer = props.stateReducer,
+      stateReducer = _props$stateReducer === void 0 ? defaultReducer : _props$stateReducer,
+      _props$useControlledS = props.useControlledState,
+      useControlledState = _props$useControlledS === void 0 ? defaultUseControlledState : _props$useControlledS,
+      rest = _objectWithoutPropertiesLoose(props, ["initialState", "defaultColumn", "getSubRows", "getRowId", "stateReducer", "useControlledState"]);
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(_objectSpread2({}, defaultState, {}, initialState)),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      originalState = _React$useState2[0],
-      originalSetState = _React$useState2[1];
+  return _extends({}, rest, {
+    initialState: initialState,
+    defaultColumn: defaultColumn,
+    getSubRows: getSubRows,
+    getRowId: getRowId,
+    stateReducer: stateReducer,
+    useControlledState: useControlledState
+  });
+}
 
-  var state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    if (userState) {
-      var newState = _objectSpread2({}, originalState);
-
-      Object.keys(userState).forEach(function (key) {
-        newState[key] = userState[key];
-      });
-      return newState;
-    }
-
-    return originalState;
-  }, [originalState, userState]);
-  var setState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (updater, type) {
-    return originalSetState(function (old) {
-      var newState = typeof updater === 'function' ? updater(old) : updater;
-      return reducer(old, newState, type);
-    });
-  }, [reducer]); // The table instance ref
-
-  var instanceRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef({});
-
+var useTable = function useTable(props) {
   for (var _len = arguments.length, plugins = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     plugins[_key - 1] = arguments[_key];
   }
 
-  Object.assign(instanceRef.current, _objectSpread2({}, props, {
-    data: data,
-    // The raw data
-    state: state,
-    setState: setState,
-    // The resolved table state
-    plugins: plugins,
-    // All resolved plugins
-    hooks: {
-      columnsBeforeHeaderGroups: [],
-      columnsBeforeHeaderGroupsDeps: [],
-      useBeforeDimensions: [],
-      useMain: [],
-      useRows: [],
-      prepareRow: [],
-      getTableProps: [],
-      getTableBodyProps: [],
-      getRowProps: [],
-      getHeaderGroupProps: [],
-      getHeaderProps: [],
-      getCellProps: []
-    }
-  })); // Allow plugins to register hooks
+  // Apply default props
+  props = applyDefaults(props); // Add core plugins
 
-  if ( true && debug) console.time('plugins');
+  plugins = [useColumnVisibility].concat(plugins); // Create the table instance
+
+  var instanceRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef({}); // Create a getter for the instance (helps avoid a lot of potential memory leaks)
+
+  var getInstance = useGetLatest(instanceRef.current); // Assign the props, plugins and hooks to the instance
+
+  Object.assign(getInstance(), _extends({}, props, {
+    plugins: plugins,
+    hooks: makeDefaultPluginHooks()
+  })); // Allow plugins to register hooks as early as possible
+
   plugins.filter(Boolean).forEach(function (plugin) {
-    plugin(instanceRef.current.hooks);
+    plugin(getInstance().hooks);
   });
-  if ( true && debug) console.timeEnd('plugins'); // Decorate All the columns
+  var getUseOptionsHooks = useConsumeHookGetter(getInstance().hooks, 'useOptions'); // Allow useOptions hooks to modify the options coming into the table
+
+  Object.assign(getInstance(), reduceHooks(getUseOptionsHooks(), applyDefaults(props)));
+
+  var _getInstance = getInstance(),
+      data = _getInstance.data,
+      userColumns = _getInstance.columns,
+      initialState = _getInstance.initialState,
+      defaultColumn = _getInstance.defaultColumn,
+      getSubRows = _getInstance.getSubRows,
+      getRowId = _getInstance.getRowId,
+      stateReducer = _getInstance.stateReducer,
+      useControlledState = _getInstance.useControlledState; // Snapshot hook and disallow more from being added
+
+
+  var getStateReducers = useConsumeHookGetter(getInstance().hooks, 'stateReducers'); // Setup user reducer ref
+
+  var getStateReducer = useGetLatest(stateReducer); // Build the reducer
+
+  var reducer = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (state, action) {
+    // Detect invalid actions
+    if (!action.type) {
+      console.info({
+        action: action
+      });
+      throw new Error('Unknown Action 👆');
+    } // Reduce the state from all plugin reducers
+
+
+    return [].concat(getStateReducers(), Array.isArray(getStateReducer()) ? getStateReducer() : [getStateReducer()]).reduce(function (s, handler) {
+      return handler(s, action, state, getInstance()) || s;
+    }, state);
+  }, [getStateReducers, getStateReducer, getInstance]); // Start the reducer
+
+  var _React$useReducer = react__WEBPACK_IMPORTED_MODULE_0___default.a.useReducer(reducer, undefined, function () {
+    return reducer(initialState, {
+      type: actions.init
+    });
+  }),
+      reducerState = _React$useReducer[0],
+      dispatch = _React$useReducer[1]; // Snapshot hook and disallow more from being added
+
+
+  var getUseControlledStateHooks = useConsumeHookGetter(getInstance().hooks, 'useControlledState'); // Allow the user to control the final state with hooks
+
+  var state = reduceHooks([].concat(getUseControlledStateHooks(), [useControlledState]), reducerState, {
+    instance: getInstance()
+  });
+  Object.assign(getInstance(), {
+    state: state,
+    dispatch: dispatch
+  }); // Snapshot hook and disallow more from being added
+
+  var getColumnsHooks = useConsumeHookGetter(getInstance().hooks, 'columns'); // Snapshot hook and disallow more from being added
+
+  var getColumnsDepsHooks = useConsumeHookGetter(getInstance().hooks, 'columnsDeps'); // Decorate All the columns
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    return decorateColumnTree(userColumns, defaultColumn);
-  }, [defaultColumn, userColumns]); // Get the flat list of all columns and allow hooks to decorate
+    return decorateColumnTree(reduceHooks(getColumnsHooks(), userColumns, {
+      instance: getInstance()
+    }), defaultColumn);
+  }, [defaultColumn, getColumnsHooks, getInstance, userColumns].concat(reduceHooks(getColumnsDepsHooks(), [], {
+    instance: getInstance()
+  })));
+  getInstance().columns = columns; // Get the flat list of all columns and allow hooks to decorate
   // those columns (and trigger this memoization via deps)
 
   var flatColumns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    if ( true && debug) console.time('hooks.columnsBeforeHeaderGroups');
-    var newColumns = applyHooks(instanceRef.current.hooks.columnsBeforeHeaderGroups, flattenBy(columns, 'columns'), instanceRef.current);
-    if ( true && debug) console.timeEnd('hooks.columnsBeforeHeaderGroups');
-    return newColumns;
-  }, [columns, debug].concat(_toConsumableArray(applyHooks(instanceRef.current.hooks.columnsBeforeHeaderGroupsDeps, [], instanceRef.current)))); // Make the headerGroups
-
-  var headerGroups = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    return makeHeaderGroups(flatColumns, defaultColumn);
-  }, [defaultColumn, flatColumns]);
-  var headers = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    return headerGroups[0].headers;
-  }, [headerGroups]);
-  Object.assign(instanceRef.current, {
-    columns: columns,
-    flatColumns: flatColumns,
-    headerGroups: headerGroups,
-    headers: headers
-  }); // Access the row model
+    return flattenBy(columns, 'columns');
+  }, [columns]);
+  getInstance().flatColumns = flatColumns; // Access the row model
 
   var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    if ( true && debug) console.time('getAccessedRows');
     var flatRows = []; // Access the row's data
 
-    var accessRow = function accessRow(originalRow, i) {
-      var depth = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-      var parentPath = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
+    var accessRow = function accessRow(originalRow, i, depth, parent) {
+      if (depth === void 0) {
+        depth = 0;
+      }
+
       // Keep the original reference around
       var original = originalRow;
-      var rowID = getRowID(originalRow, i); // Make the new path for the row
-
-      var path = [].concat(_toConsumableArray(parentPath), [rowID]);
+      var id = getRowId(originalRow, i, parent);
       var row = {
+        id: id,
         original: original,
         index: i,
-        path: path,
-        // used to create a key for each row even if not nested
         depth: depth,
         cells: [{}] // This is a dummy cell
 
@@ -863,7 +1141,7 @@ var useTable = function useTable(props) {
 
       if (subRows) {
         row.subRows = subRows.map(function (d, i) {
-          return accessRow(d, i, depth + 1, path);
+          return accessRow(d, i, depth + 1, row);
         });
       } // Override common array functions (and the dummy cell's getCellProps function)
       // to show an error if it is accessed without calling prepareRow
@@ -879,8 +1157,10 @@ var useTable = function useTable(props) {
       row.cells[0].getCellProps = unpreparedAccessWarning; // Create the cells and values
 
       row.values = {};
-      flatColumns.forEach(function (column) {
-        row.values[column.id] = column.accessor ? column.accessor(originalRow, i, {
+      flatColumns.forEach(function (_ref) {
+        var id = _ref.id,
+            accessor = _ref.accessor;
+        row.values[id] = accessor ? accessor(originalRow, i, {
           subRows: subRows,
           depth: depth,
           data: data
@@ -893,202 +1173,297 @@ var useTable = function useTable(props) {
     var accessedData = data.map(function (d, i) {
       return accessRow(d, i);
     });
-    if ( true && debug) console.timeEnd('getAccessedRows');
     return [accessedData, flatRows];
-  }, [debug, data, getRowID, getSubRows, flatColumns]),
-      _React$useMemo2 = _slicedToArray(_React$useMemo, 2),
-      rows = _React$useMemo2[0],
-      flatRows = _React$useMemo2[1];
+  }, [data, flatColumns, getRowId, getSubRows]),
+      rows = _React$useMemo[0],
+      flatRows = _React$useMemo[1];
 
-  instanceRef.current.rows = rows;
-  instanceRef.current.flatRows = flatRows; // Determine column visibility
+  getInstance().rows = rows;
+  getInstance().flatRows = flatRows; // Snapshot hook and disallow more from being added
 
-  determineHeaderVisibility(instanceRef.current); // Provide a flat header list for utilities
+  var flatColumnsHooks = useConsumeHookGetter(getInstance().hooks, 'flatColumns'); // Snapshot hook and disallow more from being added
 
-  instanceRef.current.flatHeaders = headerGroups.reduce(function (all, headerGroup) {
-    return [].concat(_toConsumableArray(all), _toConsumableArray(headerGroup.headers));
-  }, []);
-  if ( true && debug) console.time('hooks.useBeforeDimensions');
-  instanceRef.current = applyHooks(instanceRef.current.hooks.useBeforeDimensions, instanceRef.current);
-  if ( true && debug) console.timeEnd('hooks.useBeforeDimensions');
-  calculateDimensions(instanceRef.current);
-  if ( true && debug) console.time('hooks.useMain');
-  instanceRef.current = applyHooks(instanceRef.current.hooks.useMain, instanceRef.current);
-  if ( true && debug) console.timeEnd('hooks.useMain'); // Each materialized header needs to be assigned a render function and other
+  var flatColumnsDepsHooks = useConsumeHookGetter(getInstance().hooks, 'flatColumnsDeps'); // Get the flat list of all columns AFTER the rows
+  // have been access, and allow hooks to decorate
+  // those columns (and trigger this memoization via deps)
+
+  flatColumns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return reduceHooks(flatColumnsHooks(), flatColumns, {
+      instance: getInstance()
+    });
+  }, [flatColumns, flatColumnsHooks, getInstance].concat(reduceHooks(flatColumnsDepsHooks(), [], {
+    instance: getInstance()
+  })));
+  getInstance().flatColumns = flatColumns; // Snapshot hook and disallow more from being added
+
+  var getHeaderGroups = useConsumeHookGetter(getInstance().hooks, 'headerGroups'); // Snapshot hook and disallow more from being added
+
+  var getHeaderGroupsDeps = useConsumeHookGetter(getInstance().hooks, 'headerGroupsDeps'); // Make the headerGroups
+
+  var headerGroups = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return reduceHooks(getHeaderGroups(), makeHeaderGroups(flatColumns, defaultColumn), getInstance());
+  }, [defaultColumn, flatColumns, getHeaderGroups, getInstance].concat(reduceHooks(getHeaderGroupsDeps(), [], {
+    instance: getInstance()
+  })));
+  getInstance().headerGroups = headerGroups;
+  var headers = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return headerGroups.length ? headerGroups[0].headers : [];
+  }, [headerGroups]);
+  getInstance().headers = headers; // Provide a flat header list for utilities
+
+  getInstance().flatHeaders = headerGroups.reduce(function (all, headerGroup) {
+    return [].concat(all, headerGroup.headers);
+  }, []); // Snapshot hook and disallow more from being added
+
+  var getUseInstanceBeforeDimensions = useConsumeHookGetter(getInstance().hooks, 'useInstanceBeforeDimensions');
+  loopHooks(getUseInstanceBeforeDimensions(), getInstance()); // Header Visibility is needed by this point
+
+  var _calculateHeaderWidth = calculateHeaderWidths(headers),
+      totalColumnsMinWidth = _calculateHeaderWidth[0],
+      totalColumnsWidth = _calculateHeaderWidth[1],
+      totalColumnsMaxWidth = _calculateHeaderWidth[2];
+
+  getInstance().totalColumnsMinWidth = totalColumnsMinWidth;
+  getInstance().totalColumnsWidth = totalColumnsWidth;
+  getInstance().totalColumnsMaxWidth = totalColumnsMaxWidth; // Snapshot hook and disallow more from being added
+
+  var getUseInstance = useConsumeHookGetter(getInstance().hooks, 'useInstance');
+  loopHooks(getUseInstance(), getInstance()); // Snapshot hook and disallow more from being added
+
+  var getHeaderPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getHeaderProps'); // Snapshot hook and disallow more from being added
+
+  var getFooterPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getFooterProps') // Each materialized header needs to be assigned a render function and other
   // prop getter properties here.
-
-  instanceRef.current.flatHeaders.forEach(function (column) {
+  ;
+  [].concat(getInstance().flatHeaders, getInstance().flatColumns).forEach(function (column) {
     // Give columns/headers rendering power
-    column.render = function (type) {
-      var userProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      var Comp = typeof type === 'string' ? column[type] : type;
+    column.render = makeRenderer(getInstance(), column); // Give columns/headers a default getHeaderProps
 
-      if (typeof Comp === 'undefined') {
-        throw new Error(renderErr);
-      }
+    column.getHeaderProps = makePropGetter(getHeaderPropsHooks(), {
+      instance: getInstance(),
+      column: column
+    }); // Give columns/headers a default getFooterProps
 
-      return flexRender(Comp, _objectSpread2({}, instanceRef.current, {
-        column: column
-      }, userProps));
-    }; // Give columns/headers a default getHeaderProps
+    column.getFooterProps = makePropGetter(getFooterPropsHooks(), {
+      instance: getInstance(),
+      column: column
+    });
+  }); // Snapshot hook and disallow more from being added
 
+  var getHeaderGroupPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getHeaderGroupProps'); // Snapshot hook and disallow more from being added
 
-    column.getHeaderProps = function (props) {
-      return mergeProps({
-        key: ['header', column.id].join('_'),
-        colSpan: column.totalVisibleHeaderCount
-      }, applyPropHooks(instanceRef.current.hooks.getHeaderProps, column, instanceRef.current), props);
-    };
-  });
-  instanceRef.current.headerGroups.forEach(function (headerGroup, i) {
+  var getFooterGroupPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getFooterGroupProps');
+  getInstance().headerGroups = getInstance().headerGroups.filter(function (headerGroup, i) {
     // Filter out any headers and headerGroups that don't have visible columns
-    headerGroup.headers = headerGroup.headers.filter(function (header) {
+    headerGroup.headers = headerGroup.headers.filter(function (column) {
       var recurse = function recurse(headers) {
-        return headers.filter(function (header) {
-          if (header.headers) {
-            return recurse(header.headers);
+        return headers.filter(function (column) {
+          if (column.headers) {
+            return recurse(column.headers);
           }
 
-          return header.isVisible;
+          return column.isVisible;
         }).length;
       };
 
-      if (header.headers) {
-        return recurse(header.headers);
+      if (column.headers) {
+        return recurse(column.headers);
       }
 
-      return header.isVisible;
+      return column.isVisible;
     }); // Give headerGroups getRowProps
 
     if (headerGroup.headers.length) {
-      headerGroup.getHeaderGroupProps = function () {
-        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        return mergeProps({
-          key: ["header".concat(i)].join('_')
-        }, applyPropHooks(instanceRef.current.hooks.getHeaderGroupProps, headerGroup, instanceRef.current), props);
-      };
-
+      headerGroup.getHeaderGroupProps = makePropGetter(getHeaderGroupPropsHooks(), {
+        instance: getInstance(),
+        headerGroup: headerGroup,
+        index: i
+      });
+      headerGroup.getFooterGroupProps = makePropGetter(getFooterGroupPropsHooks(), {
+        instance: getInstance(),
+        headerGroup: headerGroup,
+        index: i
+      });
       return true;
     }
-  }); // Run the rows (this could be a dangerous hook with a ton of data)
 
-  if ( true && debug) console.time('hooks.useRows');
-  instanceRef.current.rows = applyHooks(instanceRef.current.hooks.useRows, instanceRef.current.rows, instanceRef.current);
-  if ( true && debug) console.timeEnd('hooks.useRows'); // The prepareRow function is absolutely necessary and MUST be called on
+    return false;
+  });
+  getInstance().footerGroups = [].concat(getInstance().headerGroups).reverse(); // Run the rows (this could be a dangerous hook with a ton of data)
+  // Snapshot hook and disallow more from being added
+
+  var getUseRowsHooks = useConsumeHookGetter(getInstance().hooks, 'useRows');
+  getInstance().rows = reduceHooks(getUseRowsHooks(), getInstance().rows, {
+    instance: getInstance()
+  }); // The prepareRow function is absolutely necessary and MUST be called on
   // any rows the user wishes to be displayed.
+  // Snapshot hook and disallow more from being added
 
-  instanceRef.current.prepareRow = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (row) {
-    row.getRowProps = function (props) {
-      return mergeProps({
-        key: ['row'].concat(_toConsumableArray(row.path)).join('_')
-      }, applyPropHooks(instanceRef.current.hooks.getRowProps, row, instanceRef.current), props);
-    }; // Build the visible cells for each row
+  var getPrepareRowHooks = useConsumeHookGetter(getInstance().hooks, 'prepareRow'); // Snapshot hook and disallow more from being added
 
+  var getRowPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getRowProps'); // Snapshot hook and disallow more from being added
 
-    row.cells = instanceRef.current.flatColumns.filter(function (d) {
-      return d.isVisible;
-    }).map(function (column) {
+  var getCellPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getCellProps'); // Snapshot hook and disallow more from being added
+
+  var cellsHooks = useConsumeHookGetter(getInstance().hooks, 'cells');
+  getInstance().prepareRow = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (row) {
+    row.getRowProps = makePropGetter(getRowPropsHooks(), {
+      instance: getInstance(),
+      row: row
+    }); // Build the visible cells for each row
+
+    row.allCells = flatColumns.map(function (column) {
       var cell = {
         column: column,
         row: row,
         value: row.values[column.id]
       }; // Give each cell a getCellProps base
 
-      cell.getCellProps = function (props) {
-        var columnPathStr = [].concat(_toConsumableArray(row.path), [column.id]).join('_');
-        return mergeProps({
-          key: ['cell', columnPathStr].join('_')
-        }, applyPropHooks(instanceRef.current.hooks.getCellProps, cell, instanceRef.current), props);
-      }; // Give each cell a renderer function (supports multiple renderers)
+      cell.getCellProps = makePropGetter(getCellPropsHooks(), {
+        instance: getInstance(),
+        cell: cell
+      }); // Give each cell a renderer function (supports multiple renderers)
 
-
-      cell.render = function (type) {
-        var userProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-        var Comp = typeof type === 'string' ? column[type] : type;
-
-        if (typeof Comp === 'undefined') {
-          throw new Error(renderErr);
-        }
-
-        return flexRender(Comp, _objectSpread2({}, instanceRef.current, {
-          column: column,
-          row: row,
-          cell: cell
-        }, userProps));
-      };
-
+      cell.render = makeRenderer(getInstance(), column, {
+        row: row,
+        cell: cell
+      });
       return cell;
+    });
+    row.cells = reduceHooks(cellsHooks(), row.allCells, {
+      instance: getInstance()
     }); // need to apply any row specific hooks (useExpanded requires this)
 
-    applyHooks(instanceRef.current.hooks.prepareRow, row, instanceRef.current);
-  }, []);
+    loopHooks(getPrepareRowHooks(), row, {
+      instance: getInstance()
+    });
+  }, [getRowPropsHooks, getInstance, flatColumns, cellsHooks, getPrepareRowHooks, getCellPropsHooks]); // Snapshot hook and disallow more from being added
 
-  instanceRef.current.getTableProps = function (userProps) {
-    return mergeProps(applyPropHooks(instanceRef.current.hooks.getTableProps, instanceRef.current), userProps);
-  };
+  var getTablePropsHooks = useConsumeHookGetter(getInstance().hooks, 'getTableProps');
+  getInstance().getTableProps = makePropGetter(getTablePropsHooks(), {
+    instance: getInstance()
+  }); // Snapshot hook and disallow more from being added
 
-  instanceRef.current.getTableBodyProps = function (userProps) {
-    return mergeProps(applyPropHooks(instanceRef.current.hooks.getTableBodyProps, instanceRef.current), userProps);
-  };
+  var getTableBodyPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getTableBodyProps');
+  getInstance().getTableBodyProps = makePropGetter(getTableBodyPropsHooks(), {
+    instance: getInstance()
+  }); // Snapshot hook and disallow more from being added
 
-  return instanceRef.current;
+  var getUseFinalInstanceHooks = useConsumeHookGetter(getInstance().hooks, 'useFinalInstance');
+  loopHooks(getUseFinalInstanceHooks(), getInstance());
+  return getInstance();
 };
 
-function calculateDimensions(instance) {
-  var headers = instance.headers;
-  instance.totalColumnsWidth = calculateHeaderWidths(headers);
-}
+function calculateHeaderWidths(headers, left) {
+  if (left === void 0) {
+    left = 0;
+  }
 
-function calculateHeaderWidths(headers) {
-  var left = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var sumTotalMinWidth = 0;
   var sumTotalWidth = 0;
+  var sumTotalMaxWidth = 0;
   headers.forEach(function (header) {
     var subHeaders = header.headers;
     header.totalLeft = left;
 
     if (subHeaders && subHeaders.length) {
-      header.totalWidth = calculateHeaderWidths(subHeaders, left);
+      var _calculateHeaderWidth2 = calculateHeaderWidths(subHeaders, left),
+          totalMinWidth = _calculateHeaderWidth2[0],
+          totalWidth = _calculateHeaderWidth2[1],
+          totalMaxWidth = _calculateHeaderWidth2[2];
+
+      header.totalMinWidth = totalMinWidth;
+      header.totalWidth = totalWidth;
+      header.totalMaxWidth = totalMaxWidth;
     } else {
+      header.totalMinWidth = header.minWidth;
       header.totalWidth = Math.min(Math.max(header.minWidth, header.width), header.maxWidth);
+      header.totalMaxWidth = header.maxWidth;
     }
 
     if (header.isVisible) {
       left += header.totalWidth;
+      sumTotalMinWidth += header.totalMinWidth;
       sumTotalWidth += header.totalWidth;
+      sumTotalMaxWidth += header.totalMaxWidth;
     }
   });
-  return sumTotalWidth;
+  return [sumTotalMinWidth, sumTotalWidth, sumTotalMaxWidth];
 }
 
-var actions = {};
-var addActions = function addActions() {
-  for (var _len = arguments.length, acts = new Array(_len), _key = 0; _key < _len; _key++) {
-    acts[_key] = arguments[_key];
-  }
-
-  acts.forEach(function (action) {
-    // Action values are formatted this way to discourage
-    // you (the dev) from interacting with them in any way
-    // other than importing `{ actions } from 'react-table'`
-    // and referencing an action via `actions[actionName]`
-    actions[action] = "React Table Action: ".concat(action);
-  });
-};
-
-defaultState.expanded = [];
-addActions('toggleExpanded', 'useExpanded');
+actions.toggleExpanded = 'toggleExpanded';
+actions.toggleAllExpanded = 'toggleAllExpanded';
+actions.setExpanded = 'setExpanded';
+actions.resetExpanded = 'resetExpanded';
 var useExpanded = function useExpanded(hooks) {
-  hooks.getExpandedToggleProps = [];
-  hooks.useMain.push(useMain);
+  hooks.getExpandedToggleProps = [defaultGetExpandedToggleProps];
+  hooks.stateReducers.push(reducer$1);
+  hooks.useInstance.push(useInstance$1);
 };
 useExpanded.pluginName = 'useExpanded';
 
-var defaultGetResetExpandedDeps = function defaultGetResetExpandedDeps(instance) {
-  return [instance.data];
-};
+var defaultGetExpandedToggleProps = function defaultGetExpandedToggleProps(props, _ref) {
+  var row = _ref.row;
+  return [props, {
+    onClick: function onClick(e) {
+      e.persist();
+      row.toggleExpanded();
+    },
+    style: {
+      cursor: 'pointer'
+    },
+    title: 'Toggle Expanded'
+  }];
+}; // Reducer
 
-function useMain(instance) {
-  var debug = instance.debug,
+
+function reducer$1(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      expanded: {}
+    }, state);
+  }
+
+  if (action.type === actions.resetExpanded) {
+    return _extends({}, state, {
+      expanded: instance.initialState.expanded || {}
+    });
+  }
+
+  if (action.type === actions.setExpanded) {
+    return _extends({}, state, {
+      expanded: functionalUpdate(action.expanded, state.expanded)
+    });
+  }
+
+  if (action.type === actions.toggleExpanded) {
+    var id = action.id,
+        setExpanded = action.expanded;
+    var exists = state.expanded[id];
+    var shouldExist = typeof setExpanded !== 'undefined' ? setExpanded : !exists;
+
+    if (!exists && shouldExist) {
+      var _extends2;
+
+      return _extends({}, state, {
+        expanded: _extends({}, state.expanded, (_extends2 = {}, _extends2[id] = true, _extends2))
+      });
+    } else if (exists && !shouldExist) {
+      var _state$expanded = state.expanded,
+          _ = _state$expanded[id],
+          rest = _objectWithoutPropertiesLoose(_state$expanded, [id].map(_toPropertyKey));
+
+      return _extends({}, state, {
+        expanded: rest
+      });
+    } else {
+      return state;
+    }
+  }
+}
+
+function useInstance$1(instance) {
+  var data = instance.data,
       rows = instance.rows,
       _instance$manualExpan = instance.manualExpandedKey,
       manualExpandedKey = _instance$manualExpan === void 0 ? 'expanded' : _instance$manualExpan,
@@ -1097,68 +1472,42 @@ function useMain(instance) {
       _instance$expandSubRo = instance.expandSubRows,
       expandSubRows = _instance$expandSubRo === void 0 ? true : _instance$expandSubRo,
       hooks = instance.hooks,
+      _instance$autoResetEx = instance.autoResetExpanded,
+      autoResetExpanded = _instance$autoResetEx === void 0 ? true : _instance$autoResetEx,
       expanded = instance.state.expanded,
-      setState = instance.setState,
-      _instance$getResetExp = instance.getResetExpandedDeps,
-      getResetExpandedDeps = _instance$getResetExp === void 0 ? defaultGetResetExpandedDeps : _instance$getResetExp; // Bypass any effects from firing when this changes
+      dispatch = instance.dispatch;
+  var getAutoResetExpanded = useGetLatest(autoResetExpanded); // Bypass any effects from firing when this changes
 
-  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
-  safeUseLayoutEffect(function () {
-    if (isMountedRef.current) {
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          expanded: []
-        });
-      }, actions.pageChange);
-    }
-
-    isMountedRef.current = true;
-  }, [setState].concat(_toConsumableArray(getResetExpandedDeps ? getResetExpandedDeps(instance) : [])));
-
-  var toggleExpandedByPath = function toggleExpandedByPath(path, set) {
-    var key = path.join('.');
-    return setState(function (old) {
-      var exists = old.expanded.includes(key);
-      var shouldExist = typeof set !== 'undefined' ? set : !exists;
-      var newExpanded = new Set(old.expanded);
-
-      if (!exists && shouldExist) {
-        newExpanded.add(key);
-      } else if (exists && !shouldExist) {
-        newExpanded.delete(key);
-      } else {
-        return old;
-      }
-
-      return _objectSpread2({}, old, {
-        expanded: _toConsumableArray(newExpanded.values())
+  useMountedLayoutEffect(function () {
+    if (getAutoResetExpanded()) {
+      dispatch({
+        type: actions.resetExpanded
       });
-    }, actions.toggleExpanded);
-  };
+    }
+  }, [dispatch, data]);
 
+  var toggleExpanded = function toggleExpanded(id, expanded) {
+    dispatch({
+      type: actions.toggleExpanded,
+      id: id,
+      expanded: expanded
+    });
+  }; // use reference to avoid memory leak in #1608
+
+
+  var getInstance = useGetLatest(instance);
+  var getExpandedTogglePropsHooks = useConsumeHookGetter(getInstance().hooks, 'getExpandedToggleProps');
   hooks.prepareRow.push(function (row) {
     row.toggleExpanded = function (set) {
-      return toggleExpandedByPath(row.path, set);
+      return instance.toggleExpanded(row.id, set);
     };
 
-    row.getExpandedToggleProps = function (props) {
-      return mergeProps({
-        onClick: function onClick(e) {
-          e.persist();
-          row.toggleExpanded();
-        },
-        style: {
-          cursor: 'pointer'
-        },
-        title: 'Toggle Expanded'
-      }, applyPropHooks(instance.hooks.getExpandedToggleProps, row, instance), props);
-    };
-
-    return row;
+    row.getExpandedToggleProps = makePropGetter(getExpandedTogglePropsHooks(), {
+      instance: getInstance(),
+      row: row
+    });
   });
   var expandedRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    if ( true && debug) console.info('getExpandedRows');
-
     if (paginateExpandedRows) {
       return expandRows(rows, {
         manualExpandedKey: manualExpandedKey,
@@ -1168,28 +1517,34 @@ function useMain(instance) {
     }
 
     return rows;
-  }, [debug, paginateExpandedRows, rows, manualExpandedKey, expanded, expandSubRows]);
-  var expandedDepth = findExpandedDepth(expanded);
-  return _objectSpread2({}, instance, {
-    toggleExpandedByPath: toggleExpandedByPath,
-    expandedDepth: expandedDepth,
-    rows: expandedRows
+  }, [paginateExpandedRows, rows, manualExpandedKey, expanded, expandSubRows]);
+  var expandedDepth = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return findExpandedDepth(expanded);
+  }, [expanded]);
+  Object.assign(instance, {
+    preExpandedRows: rows,
+    expandedRows: expandedRows,
+    rows: expandedRows,
+    toggleExpanded: toggleExpanded,
+    expandedDepth: expandedDepth
   });
 }
 
 function findExpandedDepth(expanded) {
   var maxDepth = 0;
-  expanded.forEach(function (key) {
-    var path = key.split('.');
-    maxDepth = Math.max(maxDepth, path.length);
+  Object.keys(expanded).forEach(function (id) {
+    var splitId = id.split('.');
+    maxDepth = Math.max(maxDepth, splitId.length);
   });
   return maxDepth;
 }
 
-var text = function text(rows, id, filterValue) {
+var text = function text(rows, ids, filterValue) {
   rows = rows.filter(function (row) {
-    var rowValue = row.values[id];
-    return String(rowValue).toLowerCase().includes(String(filterValue).toLowerCase());
+    return ids.some(function (id) {
+      var rowValue = row.values[id];
+      return String(rowValue).toLowerCase().includes(String(filterValue).toLowerCase());
+    });
   });
   return rows;
 };
@@ -1198,10 +1553,12 @@ text.autoRemove = function (val) {
   return !val;
 };
 
-var exactText = function exactText(rows, id, filterValue) {
+var exactText = function exactText(rows, ids, filterValue) {
   return rows.filter(function (row) {
-    var rowValue = row.values[id];
-    return rowValue !== undefined ? String(rowValue).toLowerCase() === String(filterValue).toLowerCase() : true;
+    return ids.some(function (id) {
+      var rowValue = row.values[id];
+      return rowValue !== undefined ? String(rowValue).toLowerCase() === String(filterValue).toLowerCase() : true;
+    });
   });
 };
 
@@ -1209,10 +1566,12 @@ exactText.autoRemove = function (val) {
   return !val;
 };
 
-var exactTextCase = function exactTextCase(rows, id, filterValue) {
+var exactTextCase = function exactTextCase(rows, ids, filterValue) {
   return rows.filter(function (row) {
-    var rowValue = row.values[id];
-    return rowValue !== undefined ? String(rowValue) === String(filterValue) : true;
+    return ids.some(function (id) {
+      var rowValue = row.values[id];
+      return rowValue !== undefined ? String(rowValue) === String(filterValue) : true;
+    });
   });
 };
 
@@ -1220,10 +1579,12 @@ exactTextCase.autoRemove = function (val) {
   return !val;
 };
 
-var includes = function includes(rows, id, filterValue) {
+var includes = function includes(rows, ids, filterValue) {
   return rows.filter(function (row) {
-    var rowValue = row.values[id];
-    return filterValue.includes(rowValue);
+    return ids.some(function (id) {
+      var rowValue = row.values[id];
+      return filterValue.includes(rowValue);
+    });
   });
 };
 
@@ -1231,11 +1592,13 @@ includes.autoRemove = function (val) {
   return !val || !val.length;
 };
 
-var includesAll = function includesAll(rows, id, filterValue) {
+var includesAll = function includesAll(rows, ids, filterValue) {
   return rows.filter(function (row) {
-    var rowValue = row.values[id];
-    return rowValue && rowValue.length && filterValue.every(function (val) {
-      return rowValue.includes(val);
+    return ids.some(function (id) {
+      var rowValue = row.values[id];
+      return rowValue && rowValue.length && filterValue.every(function (val) {
+        return rowValue.includes(val);
+      });
     });
   });
 };
@@ -1244,10 +1607,12 @@ includesAll.autoRemove = function (val) {
   return !val || !val.length;
 };
 
-var exact = function exact(rows, id, filterValue) {
+var exact = function exact(rows, ids, filterValue) {
   return rows.filter(function (row) {
-    var rowValue = row.values[id];
-    return rowValue === filterValue;
+    return ids.some(function (id) {
+      var rowValue = row.values[id];
+      return rowValue === filterValue;
+    });
   });
 };
 
@@ -1255,11 +1620,13 @@ exact.autoRemove = function (val) {
   return typeof val === 'undefined';
 };
 
-var equals = function equals(rows, id, filterValue) {
+var equals = function equals(rows, ids, filterValue) {
   return rows.filter(function (row) {
-    var rowValue = row.values[id]; // eslint-disable-next-line eqeqeq
+    return ids.some(function (id) {
+      var rowValue = row.values[id]; // eslint-disable-next-line eqeqeq
 
-    return rowValue == filterValue;
+      return rowValue == filterValue;
+    });
   });
 };
 
@@ -1267,11 +1634,10 @@ equals.autoRemove = function (val) {
   return val == null;
 };
 
-var between = function between(rows, id, filterValue) {
+var between = function between(rows, ids, filterValue) {
   var _ref = filterValue || [],
-      _ref2 = _slicedToArray(_ref, 2),
-      min = _ref2[0],
-      max = _ref2[1];
+      min = _ref[0],
+      max = _ref[1];
 
   min = typeof min === 'number' ? min : -Infinity;
   max = typeof max === 'number' ? max : Infinity;
@@ -1283,8 +1649,10 @@ var between = function between(rows, id, filterValue) {
   }
 
   return rows.filter(function (row) {
-    var rowValue = row.values[id];
-    return rowValue >= min && rowValue <= max;
+    return ids.some(function (id) {
+      var rowValue = row.values[id];
+      return rowValue >= min && rowValue <= max;
+    });
   });
 };
 
@@ -1304,15 +1672,103 @@ var filterTypes = /*#__PURE__*/Object.freeze({
   between: between
 });
 
-defaultState.filters = {};
-addActions('setFilter', 'setAllFilters');
+actions.resetFilters = 'resetFilters';
+actions.setFilter = 'setFilter';
+actions.setAllFilters = 'setAllFilters';
 var useFilters = function useFilters(hooks) {
-  hooks.useMain.push(useMain$1);
+  hooks.stateReducers.push(reducer$2);
+  hooks.useInstance.push(useInstance$2);
 };
 useFilters.pluginName = 'useFilters';
 
-function useMain$1(instance) {
-  var debug = instance.debug,
+function reducer$2(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      filters: []
+    }, state);
+  }
+
+  if (action.type === actions.resetFilters) {
+    return _extends({}, state, {
+      filters: instance.initialState.filters || []
+    });
+  }
+
+  if (action.type === actions.setFilter) {
+    var columnId = action.columnId,
+        filterValue = action.filterValue;
+    var flatColumns = instance.flatColumns,
+        userFilterTypes = instance.userFilterTypes;
+    var column = flatColumns.find(function (d) {
+      return d.id === columnId;
+    });
+
+    if (!column) {
+      throw new Error("React-Table: Could not find a column with id: " + columnId);
+    }
+
+    var filterMethod = getFilterMethod(column.filter, userFilterTypes || {}, filterTypes);
+    var previousfilter = state.filters.find(function (d) {
+      return d.id === columnId;
+    });
+    var newFilter = functionalUpdate(filterValue, previousfilter && previousfilter.value); //
+
+    if (shouldAutoRemoveFilter(filterMethod.autoRemove, newFilter)) {
+      return _extends({}, state, {
+        filters: state.filters.filter(function (d) {
+          return d.id !== columnId;
+        })
+      });
+    }
+
+    if (previousfilter) {
+      return _extends({}, state, {
+        filters: state.filters.map(function (d) {
+          if (d.id === columnId) {
+            return {
+              id: columnId,
+              value: newFilter
+            };
+          }
+
+          return d;
+        })
+      });
+    }
+
+    return _extends({}, state, {
+      filters: [].concat(state.filters, [{
+        id: columnId,
+        value: newFilter
+      }])
+    });
+  }
+
+  if (action.type === actions.setAllFilters) {
+    var filters = action.filters;
+    var _flatColumns = instance.flatColumns,
+        _userFilterTypes = instance.filterTypes;
+    return _extends({}, state, {
+      // Filter out undefined values
+      filters: functionalUpdate(filters, state.filters).filter(function (filter) {
+        var column = _flatColumns.find(function (d) {
+          return d.id === filter.id;
+        });
+
+        var filterMethod = getFilterMethod(column.filter, _userFilterTypes || {}, filterTypes);
+
+        if (shouldAutoRemoveFilter(filterMethod.autoRemove, filter.value)) {
+          return false;
+        }
+
+        return true;
+      })
+    });
+  }
+}
+
+function useInstance$2(instance) {
+  var data = instance.data,
       rows = instance.rows,
       flatRows = instance.flatRows,
       flatColumns = instance.flatColumns,
@@ -1322,73 +1778,23 @@ function useMain$1(instance) {
       defaultCanFilter = _instance$defaultCanF === void 0 ? false : _instance$defaultCanF,
       disableFilters = instance.disableFilters,
       filters = instance.state.filters,
-      setState = instance.setState,
-      _instance$getResetFil = instance.getResetFiltersDeps,
-      getResetFiltersDeps = _instance$getResetFil === void 0 ? false : _instance$getResetFil;
-  var preFilteredRows = rows;
-  var preFilteredFlatRows = flatRows; // Bypass any effects from firing when this changes
+      dispatch = instance.dispatch,
+      _instance$autoResetFi = instance.autoResetFilters,
+      autoResetFilters = _instance$autoResetFi === void 0 ? true : _instance$autoResetFi;
 
-  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
-  safeUseLayoutEffect(function () {
-    if (isMountedRef.current) {
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          filters: {}
-        });
-      }, actions.pageChange);
-    }
-
-    isMountedRef.current = true;
-  }, [setState].concat(_toConsumableArray(getResetFiltersDeps ? getResetFiltersDeps(instance) : [])));
-
-  var setFilter = function setFilter(id, updater) {
-    var column = flatColumns.find(function (d) {
-      return d.id === id;
+  var setFilter = function setFilter(columnId, filterValue) {
+    dispatch({
+      type: actions.setFilter,
+      columnId: columnId,
+      filterValue: filterValue
     });
-
-    if (!column) {
-      throw new Error("React-Table: Could not find a column with id: ".concat(id));
-    }
-
-    var filterMethod = getFilterMethod(column.filter, userFilterTypes || {}, filterTypes);
-    return setState(function (old) {
-      var newFilter = typeof updater === 'function' ? updater(old.filters[id]) : updater; //
-
-      if (shouldAutoRemove(filterMethod.autoRemove, newFilter)) {
-        var _old$filters = old.filters,
-            remove = _old$filters[id],
-            newFilters = _objectWithoutProperties(_old$filters, [id].map(_toPropertyKey));
-
-        return _objectSpread2({}, old, {
-          filters: newFilters
-        });
-      }
-
-      return _objectSpread2({}, old, {
-        filters: _objectSpread2({}, old.filters, _defineProperty({}, id, newFilter))
-      });
-    }, actions.setFilter);
   };
 
-  var setAllFilters = function setAllFilters(updater) {
-    return setState(function (old) {
-      var newFilters = typeof updater === 'function' ? updater(old) : updater; // Filter out undefined values
-
-      Object.keys(newFilters).forEach(function (id) {
-        var newFilter = newFilters[id];
-        var column = flatColumns.find(function (d) {
-          return d.id === id;
-        });
-        var filterMethod = getFilterMethod(column.filter, userFilterTypes || {}, filterTypes);
-
-        if (shouldAutoRemove(filterMethod.autoRemove, newFilter)) {
-          delete newFilters[id];
-        }
-      });
-      return _objectSpread2({}, old, {
-        filters: newFilters
-      });
-    }, actions.setAllFilters);
+  var setAllFilters = function setAllFilters(filters) {
+    dispatch({
+      type: actions.setAllFilters,
+      filters: filters
+    });
   };
 
   flatColumns.forEach(function (column) {
@@ -1405,34 +1811,31 @@ function useMain$1(instance) {
     // convenience
 
 
-    column.filterValue = filters[id];
-  }); // TODO: Create a filter cache for incremental high speed multi-filtering
-  // This gets pretty complicated pretty fast, since you have to maintain a
-  // cache for each row group (top-level rows, and each row's recursive subrows)
-  // This would make multi-filtering a lot faster though. Too far?
+    var found = filters.find(function (d) {
+      return d.id === id;
+    });
+    column.filterValue = found && found.value;
+  });
 
   var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    if (manualFilters || !Object.keys(filters).length) {
-      return {
-        filteredRows: rows,
-        filteredFlatRows: flatRows
-      };
+    if (manualFilters || !filters.length) {
+      return [rows, flatRows];
     }
 
-    var filteredFlatRows = [];
-    if ( true && debug) console.info('getFilteredRows'); // Filters top level and nested rows
+    var filteredFlatRows = []; // Filters top level and nested rows
 
-    var filterRows = function filterRows(rows) {
-      var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    var filterRows = function filterRows(rows, depth) {
+      if (depth === void 0) {
+        depth = 0;
+      }
+
       var filteredRows = rows;
-      filteredRows = Object.entries(filters).reduce(function (filteredSoFar, _ref) {
-        var _ref2 = _slicedToArray(_ref, 2),
-            columnID = _ref2[0],
-            filterValue = _ref2[1];
-
+      filteredRows = filters.reduce(function (filteredSoFar, _ref) {
+        var columnId = _ref.id,
+            filterValue = _ref.value;
         // Find the filters column
         var column = flatColumns.find(function (d) {
-          return d.id === columnID;
+          return d.id === columnId;
         });
 
         if (!column) {
@@ -1446,13 +1849,13 @@ function useMain$1(instance) {
         var filterMethod = getFilterMethod(column.filter, userFilterTypes || {}, filterTypes);
 
         if (!filterMethod) {
-          console.warn("Could not find a valid 'column.filter' for column with the ID: ".concat(column.id, "."));
+          console.warn("Could not find a valid 'column.filter' for column with the ID: " + column.id + ".");
           return filteredSoFar;
         } // Pass the rows, id, filterValue and column to the filterMethod
         // to get the filtered rows back
 
 
-        column.filteredRows = filterMethod(filteredSoFar, columnID, filterValue, column);
+        column.filteredRows = filterMethod(filteredSoFar, [columnId], filterValue);
         return column.filteredRows;
       }, rows); // Apply the filter to any subRows
       // We technically could do this recursively in the above loop,
@@ -1466,26 +1869,25 @@ function useMain$1(instance) {
           return row;
         }
 
-        return _objectSpread2({}, row, {
+        return _extends({}, row, {
           subRows: row.subRows && row.subRows.length > 0 ? filterRows(row.subRows, depth + 1) : row.subRows
         });
       });
       return filteredRows;
     };
 
-    return {
-      filteredRows: filterRows(rows),
-      filteredFlatRows: filteredFlatRows
-    };
-  }, [manualFilters, filters, debug, rows, flatRows, flatColumns, userFilterTypes]),
-      filteredRows = _React$useMemo.filteredRows,
-      filteredFlatRows = _React$useMemo.filteredFlatRows;
+    return [filterRows(rows), filteredFlatRows];
+  }, [manualFilters, filters, rows, flatRows, flatColumns, userFilterTypes]),
+      filteredRows = _React$useMemo[0],
+      filteredFlatRows = _React$useMemo[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     // Now that each filtered column has it's partially filtered rows,
     // lets assign the final filtered rows to all of the other columns
     var nonFilteredColumns = flatColumns.filter(function (column) {
-      return !Object.keys(filters).includes(column.id);
+      return !filters.find(function (d) {
+        return d.id === column.id;
+      });
     }); // This essentially enables faceted filter options to be built easily
     // using every column's preFilteredRows value
 
@@ -1494,36 +1896,147 @@ function useMain$1(instance) {
       column.filteredRows = filteredRows;
     });
   }, [filteredRows, filters, flatColumns]);
-  return _objectSpread2({}, instance, {
-    setFilter: setFilter,
-    setAllFilters: setAllFilters,
-    preFilteredRows: preFilteredRows,
-    preFilteredFlatRows: preFilteredFlatRows,
+  var getAutoResetFilters = useGetLatest(autoResetFilters);
+  useMountedLayoutEffect(function () {
+    if (getAutoResetFilters()) {
+      dispatch({
+        type: actions.resetFilters
+      });
+    }
+  }, [dispatch, manualFilters ? null : data]);
+  Object.assign(instance, {
+    preFilteredRows: rows,
+    preFilteredFlatRows: flatRows,
+    filteredRows: filteredRows,
+    filteredFlatRows: filteredFlatRows,
     rows: filteredRows,
-    flatRows: filteredFlatRows
+    flatRows: filteredFlatRows,
+    setFilter: setFilter,
+    setAllFilters: setAllFilters
   });
 }
 
-function shouldAutoRemove(autoRemove, value) {
-  return autoRemove ? autoRemove(value) : typeof value === 'undefined';
+actions.resetGlobalFilter = 'resetGlobalFilter';
+actions.setGlobalFilter = 'setGlobalFilter';
+var useGlobalFilter = function useGlobalFilter(hooks) {
+  hooks.stateReducers.push(reducer$3);
+  hooks.useInstance.push(useInstance$3);
+};
+useGlobalFilter.pluginName = 'useGlobalFilter';
+
+function reducer$3(state, action, previousState, instance) {
+  if (action.type === actions.resetGlobalFilter) {
+    return _extends({}, state, {
+      globalFilter: instance.initialState.globalFilter || undefined
+    });
+  }
+
+  if (action.type === actions.setGlobalFilter) {
+    var filterValue = action.filterValue;
+    var userFilterTypes = instance.userFilterTypes;
+    var filterMethod = getFilterMethod(instance.globalFilter, userFilterTypes || {}, filterTypes);
+    var newFilter = functionalUpdate(filterValue, state.globalFilter); //
+
+    if (shouldAutoRemoveFilter(filterMethod.autoRemove, newFilter)) {
+      var globalFilter = state.globalFilter,
+          stateWithoutGlobalFilter = _objectWithoutPropertiesLoose(state, ["globalFilter"]);
+
+      return stateWithoutGlobalFilter;
+    }
+
+    return _extends({}, state, {
+      globalFilter: newFilter
+    });
+  }
 }
 
-function getFilterMethod(filter, userFilterTypes, filterTypes) {
-  return isFunction(filter) || userFilterTypes[filter] || filterTypes[filter] || filterTypes.text;
+function useInstance$3(instance) {
+  var data = instance.data,
+      rows = instance.rows,
+      flatRows = instance.flatRows,
+      flatColumns = instance.flatColumns,
+      userFilterTypes = instance.filterTypes,
+      globalFilter = instance.globalFilter,
+      manualGlobalFilter = instance.manualGlobalFilter,
+      globalFilterValue = instance.state.globalFilter,
+      dispatch = instance.dispatch,
+      _instance$autoResetGl = instance.autoResetGlobalFilters,
+      autoResetGlobalFilters = _instance$autoResetGl === void 0 ? true : _instance$autoResetGl,
+      plugins = instance.plugins;
+  ensurePluginOrder(plugins, [], 'useGlobalFilter', ['useSortBy', 'useExpanded']);
+
+  var setGlobalFilter = function setGlobalFilter(filterValue) {
+    dispatch({
+      type: actions.setGlobalFilter,
+      filterValue: filterValue
+    });
+  }; // TODO: Create a filter cache for incremental high speed multi-filtering
+  // This gets pretty complicated pretty fast, since you have to maintain a
+  // cache for each row group (top-level rows, and each row's recursive subrows)
+  // This would make multi-filtering a lot faster though. Too far?
+
+
+  var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if (manualGlobalFilter || typeof globalFilterValue === 'undefined') {
+      return [rows, flatRows];
+    }
+
+    var filteredFlatRows = [];
+    var filterMethod = getFilterMethod(globalFilter, userFilterTypes || {}, filterTypes);
+
+    if (!filterMethod) {
+      console.warn("Could not find a valid 'globalFilter' option.");
+      return rows;
+    } // Filters top level and nested rows
+
+
+    var filterRows = function filterRows(filteredRows) {
+      return filterMethod(filteredRows, flatColumns.map(function (d) {
+        return d.id;
+      }), globalFilterValue).map(function (row) {
+        filteredFlatRows.push(row);
+        return _extends({}, row, {
+          subRows: row.subRows && row.subRows.length ? filterRows(row.subRows) : row.subRows
+        });
+      });
+    };
+
+    return [filterRows(rows), filteredFlatRows];
+  }, [manualGlobalFilter, globalFilter, userFilterTypes, rows, flatRows, flatColumns, globalFilterValue]),
+      globalFilteredRows = _React$useMemo[0],
+      globalFilteredFlatRows = _React$useMemo[1];
+
+  var getAutoResetGlobalFilters = useGetLatest(autoResetGlobalFilters);
+  useMountedLayoutEffect(function () {
+    if (getAutoResetGlobalFilters()) {
+      dispatch({
+        type: actions.resetGlobalFilter
+      });
+    }
+  }, [dispatch, manualGlobalFilter ? null : data]);
+  Object.assign(instance, {
+    preGlobalFilteredRows: rows,
+    preGlobalFilteredFlatRows: flatRows,
+    globalFilteredRows: globalFilteredRows,
+    globalFilteredFlatRows: globalFilteredFlatRows,
+    rows: globalFilteredRows,
+    flatRows: globalFilteredFlatRows,
+    setGlobalFilter: setGlobalFilter
+  });
 }
 
-function sum$1(values, rows) {
+function sum(values, rows) {
   return values.reduce(function (sum, next) {
     return sum + next;
   }, 0);
 }
 function average(values, rows) {
-  return Math.round(sum$1(values) / values.length * 100) / 100;
+  return Math.round(sum(values) / values.length * 100) / 100;
 }
 function median(values) {
   values = values.length ? values : [0];
-  var min = Math.min.apply(Math, _toConsumableArray(values));
-  var max = Math.max.apply(Math, _toConsumableArray(values));
+  var min = Math.min.apply(Math, values);
+  var max = Math.max.apply(Math, values);
   return (min + max) / 2;
 }
 function uniqueCount(values) {
@@ -1535,116 +2048,152 @@ function count(values) {
 
 var aggregations = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  sum: sum$1,
+  sum: sum,
   average: average,
   median: median,
   uniqueCount: uniqueCount,
   count: count
 });
 
-defaultState.groupBy = [];
-addActions('toggleGroupBy');
+actions.resetGroupBy = 'resetGroupBy';
+actions.toggleGroupBy = 'toggleGroupBy';
 var useGroupBy = function useGroupBy(hooks) {
-  hooks.columnsBeforeHeaderGroups.push(columnsBeforeHeaderGroups);
-  hooks.columnsBeforeHeaderGroupsDeps.push(function (deps, instance) {
-    deps.push(instance.state.groupBy);
-    return deps;
+  hooks.getGroupByToggleProps = [defaultGetGroupByToggleProps];
+  hooks.stateReducers.push(reducer$4);
+  hooks.flatColumnsDeps.push(function (deps, _ref) {
+    var instance = _ref.instance;
+    return [].concat(deps, [instance.state.groupBy]);
   });
-  hooks.useMain.push(useMain$2);
+  hooks.flatColumns.push(flatColumns);
+  hooks.useInstance.push(useInstance$4);
 };
 useGroupBy.pluginName = 'useGroupBy';
 
-function columnsBeforeHeaderGroups(flatColumns, _ref) {
-  var groupBy = _ref.state.groupBy;
+var defaultGetGroupByToggleProps = function defaultGetGroupByToggleProps(props, _ref2) {
+  var header = _ref2.header;
+  return [props, {
+    onClick: header.canGroupBy ? function (e) {
+      e.persist();
+      header.toggleGroupBy();
+    } : undefined,
+    style: {
+      cursor: header.canGroupBy ? 'pointer' : undefined
+    },
+    title: 'Toggle GroupBy'
+  }];
+}; // Reducer
+
+
+function reducer$4(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      groupBy: []
+    }, state);
+  }
+
+  if (action.type === actions.resetGroupBy) {
+    return _extends({}, state, {
+      groupBy: instance.initialState.groupBy || []
+    });
+  }
+
+  if (action.type === actions.toggleGroupBy) {
+    var columnId = action.columnId,
+        toggle = action.toggle;
+    var resolvedToggle = typeof toggle !== 'undefined' ? toggle : !state.groupBy.includes(columnId);
+
+    if (resolvedToggle) {
+      return _extends({}, state, {
+        groupBy: [].concat(state.groupBy, [columnId])
+      });
+    }
+
+    return _extends({}, state, {
+      groupBy: state.groupBy.filter(function (d) {
+        return d !== columnId;
+      })
+    });
+  }
+}
+
+function flatColumns(flatColumns, _ref3) {
+  var groupBy = _ref3.instance.state.groupBy;
   // Sort grouped columns to the start of the column list
   // before the headers are built
   var groupByColumns = groupBy.map(function (g) {
     return flatColumns.find(function (col) {
       return col.id === g;
     });
+  }).filter(function (col) {
+    return !!col;
   });
   var nonGroupByColumns = flatColumns.filter(function (col) {
     return !groupBy.includes(col.id);
-  }); // If a groupByBoundary column is found, place the groupBy's after it
-
-  var groupByBoundaryColumnIndex = flatColumns.findIndex(function (column) {
-    return column.groupByBoundary;
-  }) + 1;
-  return [].concat(_toConsumableArray(nonGroupByColumns.slice(0, groupByBoundaryColumnIndex)), _toConsumableArray(groupByColumns), _toConsumableArray(nonGroupByColumns.slice(groupByBoundaryColumnIndex)));
+  });
+  flatColumns = [].concat(groupByColumns, nonGroupByColumns);
+  flatColumns.forEach(function (column) {
+    column.isGrouped = groupBy.includes(column.id);
+    column.groupedIndex = groupBy.indexOf(column.id);
+  });
+  return flatColumns;
 }
 
-function useMain$2(instance) {
-  var debug = instance.debug,
+var defaultUserAggregations = {};
+
+function useInstance$4(instance) {
+  var data = instance.data,
       rows = instance.rows,
+      flatRows = instance.flatRows,
       flatColumns = instance.flatColumns,
       flatHeaders = instance.flatHeaders,
       _instance$groupByFn = instance.groupByFn,
       groupByFn = _instance$groupByFn === void 0 ? defaultGroupByFn : _instance$groupByFn,
       manualGroupBy = instance.manualGroupBy,
-      defaultCanGroupBy = instance.defaultCanGroupBy,
-      disableGroupBy = instance.disableGroupBy,
       _instance$aggregation = instance.aggregations,
-      userAggregations = _instance$aggregation === void 0 ? {} : _instance$aggregation,
+      userAggregations = _instance$aggregation === void 0 ? defaultUserAggregations : _instance$aggregation,
       hooks = instance.hooks,
       plugins = instance.plugins,
       groupBy = instance.state.groupBy,
-      setState = instance.setState;
+      dispatch = instance.dispatch,
+      _instance$autoResetGr = instance.autoResetGroupBy,
+      autoResetGroupBy = _instance$autoResetGr === void 0 ? true : _instance$autoResetGr,
+      manaulGroupBy = instance.manaulGroupBy,
+      disableGroupBy = instance.disableGroupBy,
+      defaultCanGroupBy = instance.defaultCanGroupBy;
   ensurePluginOrder(plugins, [], 'useGroupBy', ['useSortBy', 'useExpanded']);
+  var getInstance = useGetLatest(instance);
   flatColumns.forEach(function (column) {
-    var id = column.id,
-        accessor = column.accessor,
+    var accessor = column.accessor,
         defaultColumnGroupBy = column.defaultGroupBy,
         columnDisableGroupBy = column.disableGroupBy;
-    column.isGrouped = groupBy.includes(id);
-    column.groupedIndex = groupBy.indexOf(id);
     column.canGroupBy = accessor ? getFirstDefined(columnDisableGroupBy === true ? false : undefined, disableGroupBy === true ? false : undefined, true) : getFirstDefined(defaultColumnGroupBy, defaultCanGroupBy, false);
 
     if (column.canGroupBy) {
       column.toggleGroupBy = function () {
-        return toggleGroupBy(column.id);
+        return instance.toggleGroupBy(column.id);
       };
     }
 
     column.Aggregated = column.Aggregated || column.Cell;
   });
 
-  var toggleGroupBy = function toggleGroupBy(id, toggle) {
-    return setState(function (old) {
-      var resolvedToggle = typeof toggle !== 'undefined' ? toggle : !groupBy.includes(id);
-
-      if (resolvedToggle) {
-        return _objectSpread2({}, old, {
-          groupBy: [].concat(_toConsumableArray(groupBy), [id])
-        });
-      }
-
-      return _objectSpread2({}, old, {
-        groupBy: groupBy.filter(function (d) {
-          return d !== id;
-        })
-      });
-    }, actions.toggleGroupBy);
+  var toggleGroupBy = function toggleGroupBy(columnId, toggle) {
+    dispatch({
+      type: actions.toggleGroupBy,
+      columnId: columnId,
+      toggle: toggle
+    });
   };
 
-  hooks.getGroupByToggleProps = [];
+  var getGroupByTogglePropsHooks = useConsumeHookGetter(getInstance().hooks, 'getGroupByToggleProps');
   flatHeaders.forEach(function (header) {
-    var canGroupBy = header.canGroupBy;
-
-    header.getGroupByToggleProps = function (props) {
-      return mergeProps({
-        onClick: canGroupBy ? function (e) {
-          e.persist();
-          header.toggleGroupBy();
-        } : undefined,
-        style: {
-          cursor: canGroupBy ? 'pointer' : undefined
-        },
-        title: 'Toggle GroupBy'
-      }, applyPropHooks(instance.hooks.getGroupByToggleProps, header, instance), props);
-    };
+    header.getGroupByToggleProps = makePropGetter(getGroupByTogglePropsHooks(), {
+      instance: getInstance(),
+      header: header
+    });
   });
   hooks.prepareRow.push(function (row) {
-    row.cells.forEach(function (cell) {
+    row.allCells.forEach(function (cell) {
       // Grouped cells are in the groupBy and the pivot cell for the row
       cell.isGrouped = cell.column.isGrouped && cell.column.id === row.groupByID; // Repeated cells are any columns in the groupBy that are not grouped
 
@@ -1652,21 +2201,26 @@ function useMain$2(instance) {
 
       cell.isAggregated = !cell.isGrouped && !cell.isRepeatedValue && row.canExpand;
     });
-    return row;
   });
-  var groupedRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    if (manualGroupBy || !groupBy.length) {
-      return rows;
-    }
 
-    if ( true && debug) console.info('getGroupedRows'); // Find the columns that can or are aggregating
+  var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if (manualGroupBy || !groupBy.length) {
+      return [rows, flatRows];
+    } // Ensure that the list of filtered columns exist
+
+
+    var existingGroupBy = groupBy.filter(function (g) {
+      return flatColumns.find(function (col) {
+        return col.id === g;
+      });
+    }); // Find the columns that can or are aggregating
     // Uses each column to aggregate rows into a single value
 
-    var aggregateRowsToValues = function aggregateRowsToValues(rows, isSourceRows) {
+    var aggregateRowsToValues = function aggregateRowsToValues(rows, isAggregated) {
       var values = {};
       flatColumns.forEach(function (column) {
         // Don't aggregate columns that are in the groupBy
-        if (groupBy.includes(column.id)) {
+        if (existingGroupBy.includes(column.id)) {
           values[column.id] = rows[0] ? rows[0].values[column.id] : null;
           return;
         }
@@ -1684,7 +2238,7 @@ function useMain$2(instance) {
             throw new Error("React Table: Complex aggregators must have 2 values, eg. aggregate: ['sum', 'count']. More info above...");
           }
 
-          if (isSourceRows) {
+          if (isAggregated) {
             aggregator = aggregator[1];
           } else {
             aggregator = aggregator[0];
@@ -1694,7 +2248,7 @@ function useMain$2(instance) {
         var aggregateFn = typeof aggregator === 'function' ? aggregator : userAggregations[aggregator] || aggregations[aggregator];
 
         if (aggregateFn) {
-          values[column.id] = aggregateFn(columnValues, rows);
+          values[column.id] = aggregateFn(columnValues, rows, isAggregated);
         } else if (aggregator) {
           console.info({
             column: column
@@ -1705,52 +2259,70 @@ function useMain$2(instance) {
         }
       });
       return values;
-    }; // Recursively group the data
+    };
 
+    var groupedFlatRows = []; // Recursively group the data
 
-    var groupRecursively = function groupRecursively(rows) {
-      var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-      var parentPath = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+    var groupRecursively = function groupRecursively(rows, depth, parentId) {
+      if (depth === void 0) {
+        depth = 0;
+      }
 
       // This is the last level, just return the rows
-      if (depth >= groupBy.length) {
+      if (depth === existingGroupBy.length) {
         return rows;
       }
 
-      var columnID = groupBy[depth]; // Group the rows together for this level
+      var columnId = existingGroupBy[depth]; // Group the rows together for this level
 
-      var groupedRows = groupByFn(rows, columnID); // Recurse to sub rows before aggregation
+      var groupedRows = groupByFn(rows, columnId); // Recurse to sub rows before aggregation
 
-      groupedRows = Object.entries(groupedRows).map(function (_ref2, index) {
-        var _ref3 = _slicedToArray(_ref2, 2),
-            groupByVal = _ref3[0],
-            subRows = _ref3[1];
-
-        var path = [].concat(_toConsumableArray(parentPath), ["".concat(columnID, ":").concat(groupByVal)]);
-        subRows = groupRecursively(subRows, depth + 1, path);
-        var values = aggregateRowsToValues(subRows, depth + 1 >= groupBy.length);
+      groupedRows = Object.entries(groupedRows).map(function (_ref4, index) {
+        var groupByVal = _ref4[0],
+            subRows = _ref4[1];
+        var id = columnId + ":" + groupByVal;
+        id = parentId ? parentId + ">" + id : id;
+        subRows = groupRecursively(subRows, depth + 1, id);
+        var values = aggregateRowsToValues(subRows, depth < existingGroupBy.length);
         var row = {
-          isAggregated: true,
-          groupByID: columnID,
+          id: id,
+          isGrouped: true,
+          groupByID: columnId,
           groupByVal: groupByVal,
           values: values,
           subRows: subRows,
           depth: depth,
-          index: index,
-          path: path
+          index: index
         };
+        groupedFlatRows.push.apply(groupedFlatRows, [row].concat(subRows));
         return row;
       });
       return groupedRows;
-    }; // Assign the new data
+    };
 
+    var groupedRows = groupRecursively(rows); // Assign the new data
 
-    return groupRecursively(rows);
-  }, [manualGroupBy, groupBy, debug, rows, flatColumns, userAggregations, groupByFn]);
-  return _objectSpread2({}, instance, {
-    toggleGroupBy: toggleGroupBy,
+    return [groupedRows, groupedFlatRows];
+  }, [manualGroupBy, groupBy, rows, flatRows, flatColumns, userAggregations, groupByFn]),
+      groupedRows = _React$useMemo[0],
+      groupedFlatRows = _React$useMemo[1];
+
+  var getAutoResetGroupBy = useGetLatest(autoResetGroupBy);
+  useMountedLayoutEffect(function () {
+    if (getAutoResetGroupBy()) {
+      dispatch({
+        type: actions.resetGroupBy
+      });
+    }
+  }, [dispatch, manaulGroupBy ? null : data]);
+  Object.assign(instance, {
+    preGroupedRows: rows,
+    preGroupedFlatRow: flatRows,
+    groupedRows: groupedRows,
+    groupedFlatRows: groupedFlatRows,
     rows: groupedRows,
-    preGroupedRows: rows
+    flatRows: groupedFlatRows,
+    toggleGroupBy: toggleGroupBy
   });
 }
 
@@ -1758,9 +2330,9 @@ var reSplitAlphaNumeric = /([0-9]+)/gm; // Mixed sorting is slow, but very inclu
 // It handles numbers, mixed alphanumeric combinations, and even
 // null, undefined, and Infinity
 
-var alphanumeric = function alphanumeric(rowA, rowB, columnID) {
-  var a = getRowValueByColumnID(rowA, columnID);
-  var b = getRowValueByColumnID(rowB, columnID); // Force to strings (or "" for unsupported types)
+var alphanumeric = function alphanumeric(rowA, rowB, columnId) {
+  var a = getRowValueByColumnID(rowA, columnId);
+  var b = getRowValueByColumnID(rowB, columnId); // Force to strings (or "" for unsupported types)
 
   a = toString(a);
   b = toString(b); // Split on number groups, but keep the delimiter
@@ -1805,16 +2377,16 @@ var alphanumeric = function alphanumeric(rowA, rowB, columnID) {
 
   return a.length - b.length;
 };
-function datetime(rowA, rowB, columnID) {
-  var a = getRowValueByColumnID(rowA, columnID);
-  var b = getRowValueByColumnID(rowB, columnID);
+function datetime(rowA, rowB, columnId) {
+  var a = getRowValueByColumnID(rowA, columnId);
+  var b = getRowValueByColumnID(rowB, columnId);
   a = a.getTime();
   b = b.getTime();
   return compareBasic(a, b);
 }
-function basic(rowA, rowB, columnID) {
-  var a = getRowValueByColumnID(rowA, columnID);
-  var b = getRowValueByColumnID(rowB, columnID);
+function basic(rowA, rowB, columnId) {
+  var a = getRowValueByColumnID(rowA, columnId);
+  var b = getRowValueByColumnID(rowB, columnId);
   return compareBasic(a, b);
 } // Utils
 
@@ -1822,8 +2394,8 @@ function compareBasic(a, b) {
   return a === b ? 0 : a > b ? 1 : -1;
 }
 
-function getRowValueByColumnID(row, columnID) {
-  return row.values[columnID];
+function getRowValueByColumnID(row, columnId) {
+  return row.values[columnId];
 }
 
 function toString(a) {
@@ -1849,140 +2421,183 @@ var sortTypes = /*#__PURE__*/Object.freeze({
   basic: basic
 });
 
-defaultState.sortBy = [];
+actions.resetSortBy = 'resetSortBy';
+actions.toggleSortBy = 'toggleSortBy';
+actions.clearSortBy = 'clearSortBy';
 defaultColumn.sortType = 'alphanumeric';
 defaultColumn.sortDescFirst = false;
-addActions('sortByChange');
 var useSortBy = function useSortBy(hooks) {
-  hooks.useMain.push(useMain$3);
+  hooks.getSortByToggleProps = [defaultGetSortByToggleProps];
+  hooks.stateReducers.push(reducer$5);
+  hooks.useInstance.push(useInstance$5);
 };
 useSortBy.pluginName = 'useSortBy';
 
-function useMain$3(instance) {
-  var debug = instance.debug,
+var defaultGetSortByToggleProps = function defaultGetSortByToggleProps(props, _ref) {
+  var instance = _ref.instance,
+      column = _ref.column;
+  var _instance$isMultiSort = instance.isMultiSortEvent,
+      isMultiSortEvent = _instance$isMultiSort === void 0 ? function (e) {
+    return e.shiftKey;
+  } : _instance$isMultiSort;
+  return [props, {
+    onClick: column.canSort ? function (e) {
+      e.persist();
+      column.toggleSortBy(undefined, !instance.disableMultiSort && isMultiSortEvent(e));
+    } : undefined,
+    style: {
+      cursor: column.canSort ? 'pointer' : undefined
+    },
+    title: column.canSort ? 'Toggle SortBy' : undefined
+  }];
+}; // Reducer
+
+
+function reducer$5(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      sortBy: []
+    }, state);
+  }
+
+  if (action.type === actions.resetSortBy) {
+    return _extends({}, state, {
+      sortBy: instance.initialState.sortBy || []
+    });
+  }
+
+  if (action.type === actions.clearSortBy) {
+    var sortBy = state.sortBy;
+    var newSortBy = sortBy.filter(function (d) {
+      return d.id !== action.columnId;
+    });
+    return _extends({}, state, {
+      sortBy: newSortBy
+    });
+  }
+
+  if (action.type === actions.toggleSortBy) {
+    var columnId = action.columnId,
+        desc = action.desc,
+        multi = action.multi;
+    var flatColumns = instance.flatColumns,
+        disableMultiSort = instance.disableMultiSort,
+        disableSortRemove = instance.disableSortRemove,
+        disableMultiRemove = instance.disableMultiRemove,
+        _instance$maxMultiSor = instance.maxMultiSortColCount,
+        maxMultiSortColCount = _instance$maxMultiSor === void 0 ? Number.MAX_SAFE_INTEGER : _instance$maxMultiSor;
+    var _sortBy = state.sortBy; // Find the column for this columnId
+
+    var column = flatColumns.find(function (d) {
+      return d.id === columnId;
+    });
+    var sortDescFirst = column.sortDescFirst; // Find any existing sortBy for this column
+
+    var existingSortBy = _sortBy.find(function (d) {
+      return d.id === columnId;
+    });
+
+    var existingIndex = _sortBy.findIndex(function (d) {
+      return d.id === columnId;
+    });
+
+    var hasDescDefined = typeof desc !== 'undefined' && desc !== null;
+    var _newSortBy = []; // What should we do with this sort action?
+
+    var sortAction;
+
+    if (!disableMultiSort && multi) {
+      if (existingSortBy) {
+        sortAction = 'toggle';
+      } else {
+        sortAction = 'add';
+      }
+    } else {
+      // Normal mode
+      if (existingIndex !== _sortBy.length - 1) {
+        sortAction = 'replace';
+      } else if (existingSortBy) {
+        sortAction = 'toggle';
+      } else {
+        sortAction = 'replace';
+      }
+    } // Handle toggle states that will remove the sortBy
+
+
+    if (sortAction === 'toggle' && // Must be toggling
+    !disableSortRemove && // If disableSortRemove, disable in general
+    !hasDescDefined && ( // Must not be setting desc
+    multi ? !disableMultiRemove : true) && ( // If multi, don't allow if disableMultiRemove
+    existingSortBy && // Finally, detect if it should indeed be removed
+    existingSortBy.desc && !sortDescFirst || !existingSortBy.desc && sortDescFirst)) {
+      sortAction = 'remove';
+    }
+
+    if (sortAction === 'replace') {
+      _newSortBy = [{
+        id: columnId,
+        desc: hasDescDefined ? desc : sortDescFirst
+      }];
+    } else if (sortAction === 'add') {
+      _newSortBy = [].concat(_sortBy, [{
+        id: columnId,
+        desc: hasDescDefined ? desc : sortDescFirst
+      }]); // Take latest n columns
+
+      _newSortBy.splice(0, _newSortBy.length - maxMultiSortColCount);
+    } else if (sortAction === 'toggle') {
+      // This flips (or sets) the
+      _newSortBy = _sortBy.map(function (d) {
+        if (d.id === columnId) {
+          return _extends({}, d, {
+            desc: hasDescDefined ? desc : !existingSortBy.desc
+          });
+        }
+
+        return d;
+      });
+    } else if (sortAction === 'remove') {
+      _newSortBy = _sortBy.filter(function (d) {
+        return d.id !== columnId;
+      });
+    }
+
+    return _extends({}, state, {
+      sortBy: _newSortBy
+    });
+  }
+}
+
+function useInstance$5(instance) {
+  var data = instance.data,
       rows = instance.rows,
       flatColumns = instance.flatColumns,
       _instance$orderByFn = instance.orderByFn,
       orderByFn = _instance$orderByFn === void 0 ? defaultOrderByFn : _instance$orderByFn,
       userSortTypes = instance.sortTypes,
-      manualSorting = instance.manualSorting,
+      manualSortBy = instance.manualSortBy,
       defaultCanSort = instance.defaultCanSort,
       disableSortBy = instance.disableSortBy,
-      disableSortRemove = instance.disableSortRemove,
-      disableMultiRemove = instance.disableMultiRemove,
-      disableMultiSort = instance.disableMultiSort,
-      _instance$isMultiSort = instance.isMultiSortEvent,
-      isMultiSortEvent = _instance$isMultiSort === void 0 ? function (e) {
-    return e.shiftKey;
-  } : _instance$isMultiSort,
-      _instance$maxMultiSor = instance.maxMultiSortColCount,
-      maxMultiSortColCount = _instance$maxMultiSor === void 0 ? Number.MAX_SAFE_INTEGER : _instance$maxMultiSor,
       flatHeaders = instance.flatHeaders,
-      hooks = instance.hooks,
       sortBy = instance.state.sortBy,
-      setState = instance.setState,
+      dispatch = instance.dispatch,
       plugins = instance.plugins,
-      _instance$getResetSor = instance.getResetSortByDeps,
-      getResetSortByDeps = _instance$getResetSor === void 0 ? false : _instance$getResetSor;
-  ensurePluginOrder(plugins, ['useFilters'], 'useSortBy', []); // Add custom hooks
+      _instance$autoResetSo = instance.autoResetSortBy,
+      autoResetSortBy = _instance$autoResetSo === void 0 ? true : _instance$autoResetSo;
+  ensurePluginOrder(plugins, ['useFilters'], 'useSortBy', []); // Updates sorting based on a columnId, desc flag and multi flag
 
-  hooks.getSortByToggleProps = []; // Bypass any effects from firing when this changes
-
-  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
-  safeUseLayoutEffect(function () {
-    if (isMountedRef.current) {
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          sortBy: []
-        });
-      }, actions.pageChange);
-    }
-
-    isMountedRef.current = true;
-  }, [setState].concat(_toConsumableArray(getResetSortByDeps ? getResetSortByDeps(instance) : []))); // Updates sorting based on a columnID, desc flag and multi flag
-
-  var toggleSortBy = function toggleSortBy(columnID, desc, multi) {
-    return setState(function (old) {
-      var sortBy = old.sortBy; // Find the column for this columnID
-
-      var column = flatColumns.find(function (d) {
-        return d.id === columnID;
-      });
-      var sortDescFirst = column.sortDescFirst; // Find any existing sortBy for this column
-
-      var existingSortBy = sortBy.find(function (d) {
-        return d.id === columnID;
-      });
-      var existingIndex = sortBy.findIndex(function (d) {
-        return d.id === columnID;
-      });
-      var hasDescDefined = typeof desc !== 'undefined' && desc !== null;
-      var newSortBy = []; // What should we do with this sort action?
-
-      var action;
-
-      if (!disableMultiSort && multi) {
-        if (existingSortBy) {
-          action = 'toggle';
-        } else {
-          action = 'add';
-        }
-      } else {
-        // Normal mode
-        if (existingIndex !== sortBy.length - 1) {
-          action = 'replace';
-        } else if (existingSortBy) {
-          action = 'toggle';
-        } else {
-          action = 'replace';
-        }
-      } // Handle toggle states that will remove the sortBy
+  var toggleSortBy = function toggleSortBy(columnId, desc, multi) {
+    dispatch({
+      type: actions.toggleSortBy,
+      columnId: columnId,
+      desc: desc,
+      multi: multi
+    });
+  }; // use reference to avoid memory leak in #1608
 
 
-      if (action === 'toggle' && // Must be toggling
-      !disableSortRemove && // If disableSortRemove, disable in general
-      !hasDescDefined && ( // Must not be setting desc
-      multi ? !disableMultiRemove : true) && ( // If multi, don't allow if disableMultiRemove
-      existingSortBy && // Finally, detect if it should indeed be removed
-      existingSortBy.desc && !sortDescFirst || !existingSortBy.desc && sortDescFirst)) {
-        action = 'remove';
-      }
-
-      if (action === 'replace') {
-        newSortBy = [{
-          id: columnID,
-          desc: hasDescDefined ? desc : sortDescFirst
-        }];
-      } else if (action === 'add') {
-        newSortBy = [].concat(_toConsumableArray(sortBy), [{
-          id: columnID,
-          desc: hasDescDefined ? desc : sortDescFirst
-        }]); // Take latest n columns
-
-        newSortBy.splice(0, newSortBy.length - maxMultiSortColCount);
-      } else if (action === 'toggle') {
-        // This flips (or sets) the
-        newSortBy = sortBy.map(function (d) {
-          if (d.id === columnID) {
-            return _objectSpread2({}, d, {
-              desc: hasDescDefined ? desc : !existingSortBy.desc
-            });
-          }
-
-          return d;
-        });
-      } else if (action === 'remove') {
-        newSortBy = sortBy.filter(function (d) {
-          return d.id !== columnID;
-        });
-      }
-
-      return _objectSpread2({}, old, {
-        sortBy: newSortBy
-      });
-    }, actions.sortByChange);
-  }; // Add the getSortByToggleProps method to columns and headers
-
+  var getInstance = useGetLatest(instance);
+  var getSortByTogglePropsHooks = useConsumeHookGetter(getInstance().hooks, 'getSortByToggleProps'); // Add the getSortByToggleProps method to columns and headers
 
   flatHeaders.forEach(function (column) {
     var accessor = column.accessor,
@@ -1997,32 +2612,18 @@ function useMain$3(instance) {
         return toggleSortBy(column.id, desc, multi);
       };
 
-      column.clearSorting = function () {
-        return setState(function (old) {
-          var sortBy = old.sortBy;
-          var newSortBy = sortBy.filter(function (d) {
-            return d.id !== column.id;
-          });
-          return _objectSpread2({}, old, {
-            sortBy: newSortBy
-          });
-        }, actions.sortByChange);
+      column.clearSortBy = function () {
+        dispatch({
+          type: actions.clearSortBy,
+          columnId: column.id
+        });
       };
     }
 
-    column.getSortByToggleProps = function (props) {
-      return mergeProps({
-        onClick: canSort ? function (e) {
-          e.persist();
-          column.toggleSortBy(undefined, !instance.disableMultiSort && isMultiSortEvent(e));
-        } : undefined,
-        style: {
-          cursor: canSort ? 'pointer' : undefined
-        },
-        title: 'Toggle SortBy'
-      }, applyPropHooks(instance.hooks.getSortByToggleProps, column, instance), props);
-    };
-
+    column.getSortByToggleProps = makePropGetter(getSortByTogglePropsHooks(), {
+      instance: getInstance(),
+      column: column
+    });
     var columnSort = sortBy.find(function (d) {
       return d.id === id;
     });
@@ -2033,11 +2634,10 @@ function useMain$3(instance) {
     column.isSortedDesc = column.isSorted ? columnSort.desc : undefined;
   });
   var sortedRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    if (manualSorting || !sortBy.length) {
+    if (manualSortBy || !sortBy.length) {
       return rows;
-    }
+    } // Filter out sortBys that correspond to non existing columns
 
-    if ( true && debug) console.time('getSortedRows'); // Filter out sortBys that correspond to non existing columns
 
     var availableSortBy = sortBy.filter(function (sort) {
       return flatColumns.find(function (col) {
@@ -2056,7 +2656,7 @@ function useMain$3(instance) {
         });
 
         if (!column) {
-          throw new Error("React-Table: Could not find a column with id: ".concat(sort.id, " while sorting"));
+          throw new Error("React-Table: Could not find a column with id: " + sort.id + " while sorting");
         }
 
         var sortType = column.sortType; // Look up sortBy functions in this order:
@@ -2070,7 +2670,7 @@ function useMain$3(instance) {
         var sortMethod = isFunction(sortType) || (userSortTypes || {})[sortType] || sortTypes[sortType];
 
         if (!sortMethod) {
-          throw new Error("React-Table: Could not find a valid sortType of '".concat(sortType, "' for column '").concat(sort.id, "'."));
+          throw new Error("React-Table: Could not find a valid sortType of '" + sortType + "' for column '" + sort.id + "'.");
         } // Return the correct sortFn.
         // This function should always return in ascending order
 
@@ -2102,42 +2702,79 @@ function useMain$3(instance) {
       return sortedData;
     };
 
-    if ( true && debug) console.timeEnd('getSortedRows');
     return sortData(rows);
-  }, [manualSorting, sortBy, debug, rows, flatColumns, orderByFn, userSortTypes]);
-  return _objectSpread2({}, instance, {
-    toggleSortBy: toggleSortBy,
+  }, [manualSortBy, sortBy, rows, flatColumns, orderByFn, userSortTypes]);
+  var getAutoResetSortBy = useGetLatest(autoResetSortBy);
+  useMountedLayoutEffect(function () {
+    if (getAutoResetSortBy()) {
+      dispatch({
+        type: actions.resetSortBy
+      });
+    }
+  }, [manualSortBy ? null : data]);
+  Object.assign(instance, {
+    preSortedRows: rows,
+    sortedRows: sortedRows,
     rows: sortedRows,
-    preSortedRows: rows
+    toggleSortBy: toggleSortBy
   });
 }
 
-defaultState.pageSize = 10;
-defaultState.pageIndex = 0;
-addActions('pageChange', 'pageSizeChange');
+var pluginName = 'usePagination'; // Actions
+
+actions.resetPage = 'resetPage';
+actions.gotoPage = 'gotoPage';
+actions.setPageSize = 'setPageSize';
 var usePagination = function usePagination(hooks) {
-  hooks.useMain.push(useMain$4);
+  hooks.stateReducers.push(reducer$6);
+  hooks.useInstance.push(useInstance$6);
 };
-usePagination.pluginName = 'usePagination';
+usePagination.pluginName = pluginName;
 
-var defaultGetResetPageDeps = function defaultGetResetPageDeps(_ref) {
-  var data = _ref.data,
-      manualPagination = _ref.manualPagination,
-      _ref$state = _ref.state,
-      filters = _ref$state.filters,
-      groupBy = _ref$state.groupBy,
-      sortBy = _ref$state.sortBy;
-  return [manualPagination ? null : data, filters, groupBy, sortBy];
-};
+function reducer$6(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      pageSize: 10,
+      pageIndex: 0
+    }, state);
+  }
 
-function useMain$4(instance) {
+  if (action.type === actions.resetPage) {
+    return _extends({}, state, {
+      pageIndex: instance.initialState.pageIndex || 0
+    });
+  }
+
+  if (action.type === actions.gotoPage) {
+    var pageCount = instance.pageCount;
+    var newPageIndex = functionalUpdate(action.pageIndex, state.pageIndex);
+
+    if (newPageIndex < 0 || newPageIndex > pageCount - 1) {
+      return state;
+    }
+
+    return _extends({}, state, {
+      pageIndex: newPageIndex
+    });
+  }
+
+  if (action.type === actions.setPageSize) {
+    var pageSize = action.pageSize;
+    var topRowIndex = state.pageSize * state.pageIndex;
+    var pageIndex = Math.floor(topRowIndex / pageSize);
+    return _extends({}, state, {
+      pageIndex: pageIndex,
+      pageSize: pageSize
+    });
+  }
+}
+
+function useInstance$6(instance) {
   var rows = instance.rows,
-      manualPagination = instance.manualPagination,
-      _instance$getResetPag = instance.getResetPageDeps,
-      getResetPageDeps = _instance$getResetPag === void 0 ? defaultGetResetPageDeps : _instance$getResetPag,
+      _instance$autoResetPa = instance.autoResetPage,
+      autoResetPage = _instance$autoResetPa === void 0 ? true : _instance$autoResetPa,
       _instance$manualExpan = instance.manualExpandedKey,
       manualExpandedKey = _instance$manualExpan === void 0 ? 'expanded' : _instance$manualExpan,
-      debug = instance.debug,
       plugins = instance.plugins,
       userPageCount = instance.pageCount,
       _instance$paginateExp = instance.paginateExpandedRows,
@@ -2148,24 +2785,27 @@ function useMain$4(instance) {
       pageSize = _instance$state.pageSize,
       pageIndex = _instance$state.pageIndex,
       expanded = _instance$state.expanded,
-      setState = instance.setState;
-  ensurePluginOrder(plugins, ['useFilters', 'useGroupBy', 'useSortBy', 'useExpanded'], 'usePagination', []); // Bypass any effects from firing when this changes
-
-  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
-  safeUseLayoutEffect(function () {
-    if (isMountedRef.current) {
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          pageIndex: 0
-        });
-      }, actions.pageChange);
+      filters = _instance$state.filters,
+      groupBy = _instance$state.groupBy,
+      sortBy = _instance$state.sortBy,
+      dispatch = instance.dispatch,
+      data = instance.data,
+      manualPagination = instance.manualPagination,
+      manualFilters = instance.manualFilters,
+      manualGroupBy = instance.manualGroupBy,
+      manualSortBy = instance.manualSortBy;
+  ensurePluginOrder(plugins, ['useFilters', 'useGroupBy', 'useSortBy', 'useExpanded'], 'usePagination', []);
+  var getAutoResetPage = useGetLatest(autoResetPage);
+  useMountedLayoutEffect(function () {
+    if (getAutoResetPage()) {
+      dispatch({
+        type: actions.resetPage
+      });
     }
-
-    isMountedRef.current = true;
-  }, [setState].concat(_toConsumableArray(getResetPageDeps ? getResetPageDeps(instance) : [])));
+  }, [dispatch, manualPagination ? null : data, manualPagination || manualFilters ? null : filters, manualPagination || manualGroupBy ? null : groupBy, manualPagination || manualSortBy ? null : sortBy]);
   var pageCount = manualPagination ? userPageCount : Math.ceil(rows.length / pageSize);
   var pageOptions = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    return pageCount > 0 ? _toConsumableArray(new Array(pageCount)).map(function (d, i) {
+    return pageCount > 0 ? [].concat(new Array(pageCount)).map(function (d, i) {
       return i;
     }) : [];
   }, [pageCount]);
@@ -2175,7 +2815,6 @@ function useMain$4(instance) {
     if (manualPagination) {
       page = rows;
     } else {
-      if ( true && debug) console.info('getPage');
       var pageStart = pageSize * pageIndex;
       var pageEnd = pageStart + pageSize;
       page = rows.slice(pageStart, pageEnd);
@@ -2190,23 +2829,15 @@ function useMain$4(instance) {
       expanded: expanded,
       expandSubRows: expandSubRows
     });
-  }, [debug, expandSubRows, expanded, manualExpandedKey, manualPagination, pageIndex, pageSize, paginateExpandedRows, rows]);
+  }, [expandSubRows, expanded, manualExpandedKey, manualPagination, pageIndex, pageSize, paginateExpandedRows, rows]);
   var canPreviousPage = pageIndex > 0;
   var canNextPage = pageCount === -1 || pageIndex < pageCount - 1;
-  var gotoPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (updater) {
-    if ( true && debug) console.info('gotoPage');
-    return setState(function (old) {
-      var newPageIndex = typeof updater === 'function' ? updater(old.pageIndex) : updater;
-
-      if (newPageIndex < 0 || newPageIndex > pageCount - 1) {
-        return old;
-      }
-
-      return _objectSpread2({}, old, {
-        pageIndex: newPageIndex
-      });
-    }, actions.pageChange);
-  }, [debug, pageCount, setState]);
+  var gotoPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (pageIndex) {
+    dispatch({
+      type: actions.gotoPage,
+      pageIndex: pageIndex
+    });
+  }, [dispatch]);
   var previousPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function () {
     return gotoPage(function (old) {
       return old - 1;
@@ -2218,16 +2849,12 @@ function useMain$4(instance) {
     });
   }, [gotoPage]);
   var setPageSize = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (pageSize) {
-    setState(function (old) {
-      var topRowIndex = old.pageSize * old.pageIndex;
-      var pageIndex = Math.floor(topRowIndex / pageSize);
-      return _objectSpread2({}, old, {
-        pageIndex: pageIndex,
-        pageSize: pageSize
-      });
-    }, actions.pageSizeChange);
-  }, [setState]);
-  return _objectSpread2({}, instance, {
+    dispatch({
+      type: actions.setPageSize,
+      pageSize: pageSize
+    });
+  }, [dispatch]);
+  Object.assign(instance, {
     pageOptions: pageOptions,
     pageCount: pageCount,
     page: page,
@@ -2236,335 +2863,411 @@ function useMain$4(instance) {
     gotoPage: gotoPage,
     previousPage: previousPage,
     nextPage: nextPage,
-    setPageSize: setPageSize,
-    pageIndex: pageIndex,
-    pageSize: pageSize
+    setPageSize: setPageSize
   });
 }
 
-defaultState.selectedRowPaths = [];
-addActions('toggleRowSelected', 'toggleRowSelectedAll');
-var useRowSelect = function useRowSelect(hooks) {
-  hooks.getToggleRowSelectedProps = [];
-  hooks.getToggleAllRowsSelectedProps = [];
-  hooks.useRows.push(useRows);
-  hooks.useMain.push(useMain$5);
-};
-useRowSelect.pluginName = 'useRowSelect';
+var pluginName$1 = 'useRowSelect'; // Actions
 
-function useRows(rows, instance) {
-  var selectedRowPaths = instance.state.selectedRowPaths;
+actions.resetSelectedRows = 'resetSelectedRows';
+actions.toggleAllRowsSelected = 'toggleAllRowsSelected';
+actions.toggleRowSelected = 'toggleRowSelected';
+var useRowSelect = function useRowSelect(hooks) {
+  hooks.getToggleRowSelectedProps = [defaultGetToggleRowSelectedProps];
+  hooks.getToggleAllRowsSelectedProps = [defaultGetToggleAllRowsSelectedProps];
+  hooks.stateReducers.push(reducer$7);
+  hooks.useRows.push(useRows);
+  hooks.useInstance.push(useInstance$7);
+};
+useRowSelect.pluginName = pluginName$1;
+
+var defaultGetToggleRowSelectedProps = function defaultGetToggleRowSelectedProps(props, _ref) {
+  var instance = _ref.instance,
+      row = _ref.row;
+  var _instance$manualRowSe = instance.manualRowSelectedKey,
+      manualRowSelectedKey = _instance$manualRowSe === void 0 ? 'isSelected' : _instance$manualRowSe;
+  var checked = false;
+
+  if (row.original && row.original[manualRowSelectedKey]) {
+    checked = true;
+  } else {
+    checked = row.isSelected;
+  }
+
+  return [props, {
+    onChange: function onChange(e) {
+      row.toggleRowSelected(e.target.checked);
+    },
+    style: {
+      cursor: 'pointer'
+    },
+    checked: checked,
+    title: 'Toggle Row Selected',
+    indeterminate: row.isSomeSelected
+  }];
+};
+
+var defaultGetToggleAllRowsSelectedProps = function defaultGetToggleAllRowsSelectedProps(props, _ref2) {
+  var instance = _ref2.instance;
+  return [props, {
+    onChange: function onChange(e) {
+      instance.toggleAllRowsSelected(e.target.checked);
+    },
+    style: {
+      cursor: 'pointer'
+    },
+    checked: instance.isAllRowsSelected,
+    title: 'Toggle All Rows Selected',
+    indeterminate: Boolean(!instance.isAllRowsSelected && Object.keys(instance.state.selectedRowIds).length)
+  }];
+};
+
+function reducer$7(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      selectedRowIds: {}
+    }, state);
+  }
+
+  if (action.type === actions.resetSelectedRows) {
+    return _extends({}, state, {
+      selectedRowIds: instance.initialState.selectedRowIds || {}
+    });
+  }
+
+  if (action.type === actions.toggleAllRowsSelected) {
+    var selected = action.selected;
+    var isAllRowsSelected = instance.isAllRowsSelected,
+        flatRowsById = instance.flatRowsById;
+    var selectAll = typeof selected !== 'undefined' ? selected : !isAllRowsSelected;
+
+    if (selectAll) {
+      var selectedRowIds = {};
+      Object.keys(flatRowsById).forEach(function (rowId) {
+        selectedRowIds[rowId] = true;
+      });
+      return _extends({}, state, {
+        selectedRowIds: selectedRowIds
+      });
+    }
+
+    return _extends({}, state, {
+      selectedRowIds: {}
+    });
+  }
+
+  if (action.type === actions.toggleRowSelected) {
+    var id = action.id,
+        _selected = action.selected;
+    var flatGroupedRowsById = instance.flatGroupedRowsById; // Join the ids of deep rows
+    // to make a key, then manage all of the keys
+    // in a flat object
+
+    var row = flatGroupedRowsById[id];
+    var isSelected = row.isSelected;
+    var shouldExist = typeof _selected !== 'undefined' ? _selected : !isSelected;
+
+    if (isSelected === shouldExist) {
+      return state;
+    }
+
+    var newSelectedRowIds = _extends({}, state.selectedRowIds);
+
+    var handleRowById = function handleRowById(id) {
+      var row = flatGroupedRowsById[id];
+
+      if (!row.isGrouped) {
+        if (!isSelected && shouldExist) {
+          newSelectedRowIds[id] = true;
+        } else if (isSelected && !shouldExist) {
+          delete newSelectedRowIds[id];
+        }
+      }
+
+      if (row.subRows) {
+        return row.subRows.forEach(function (row) {
+          return handleRowById(row.id);
+        });
+      }
+    };
+
+    handleRowById(id);
+    return _extends({}, state, {
+      selectedRowIds: newSelectedRowIds
+    });
+  }
+}
+
+function useRows(rows, _ref3) {
+  var instance = _ref3.instance;
+  var selectedRowIds = instance.state.selectedRowIds;
   instance.selectedFlatRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     var selectedFlatRows = [];
     rows.forEach(function (row) {
-      if (row.isAggregated) {
-        var subRowPaths = row.subRows.map(function (row) {
-          return row.path;
-        });
-        row.isSelected = subRowPaths.every(function (path) {
-          return selectedRowPaths.includes(path.join('.'));
-        });
-      } else {
-        row.isSelected = selectedRowPaths.includes(row.path.join('.'));
-      }
+      var isSelected = getRowIsSelected(row, selectedRowIds);
+      row.isSelected = !!isSelected;
+      row.isSomeSelected = isSelected === null;
 
-      if (row.isSelected) {
+      if (isSelected) {
         selectedFlatRows.push(row);
       }
     });
     return selectedFlatRows;
-  }, [rows, selectedRowPaths]);
+  }, [rows, selectedRowIds]);
   return rows;
 }
 
-var defaultGetResetSelectedRowPathsDeps = function defaultGetResetSelectedRowPathsDeps(_ref) {
-  var rows = _ref.rows;
-  return [rows];
-};
-
-function useMain$5(instance) {
-  var hooks = instance.hooks,
-      _instance$manualRowSe = instance.manualRowSelectedKey,
-      manualRowSelectedKey = _instance$manualRowSe === void 0 ? 'isSelected' : _instance$manualRowSe,
+function useInstance$7(instance) {
+  var data = instance.data,
+      hooks = instance.hooks,
       plugins = instance.plugins,
       flatRows = instance.flatRows,
-      _instance$getResetSel = instance.getResetSelectedRowPathsDeps,
-      getResetSelectedRowPathsDeps = _instance$getResetSel === void 0 ? defaultGetResetSelectedRowPathsDeps : _instance$getResetSel,
-      selectedRowPaths = instance.state.selectedRowPaths,
-      setState = instance.setState;
+      _instance$autoResetSe = instance.autoResetSelectedRows,
+      autoResetSelectedRows = _instance$autoResetSe === void 0 ? true : _instance$autoResetSe,
+      selectedRowIds = instance.state.selectedRowIds,
+      dispatch = instance.dispatch;
   ensurePluginOrder(plugins, ['useFilters', 'useGroupBy', 'useSortBy'], 'useRowSelect', []);
-  var flatRowPaths = flatRows.map(function (d) {
-    return d.path.join('.');
-  });
-  var isAllRowsSelected = !!flatRowPaths.length && !!selectedRowPaths.length;
+
+  var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    var all = {};
+    var grouped = {};
+    flatRows.forEach(function (row) {
+      if (!row.isGrouped) {
+        all[row.id] = row;
+      }
+
+      grouped[row.id] = row;
+    });
+    return [all, grouped];
+  }, [flatRows]),
+      flatRowsById = _React$useMemo[0],
+      flatGroupedRowsById = _React$useMemo[1];
+
+  var isAllRowsSelected = Boolean(Object.keys(flatRowsById).length && Object.keys(selectedRowIds).length);
 
   if (isAllRowsSelected) {
-    if (flatRowPaths.some(function (d) {
-      return !selectedRowPaths.includes(d);
+    if (Object.keys(flatRowsById).some(function (id) {
+      return !selectedRowIds[id];
     })) {
       isAllRowsSelected = false;
     }
-  } // Bypass any effects from firing when this changes
+  }
 
-
-  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
-  safeUseLayoutEffect(function () {
-    if (isMountedRef.current) {
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          selectedRowPaths: []
-        });
-      }, actions.pageChange);
-    }
-
-    isMountedRef.current = true;
-  }, [setState].concat(_toConsumableArray(getResetSelectedRowPathsDeps ? getResetSelectedRowPathsDeps(instance) : [])));
-
-  var toggleRowSelectedAll = function toggleRowSelectedAll(set) {
-    setState(function (old) {
-      var selectAll = typeof set !== 'undefined' ? set : !isAllRowsSelected;
-      return _objectSpread2({}, old, {
-        selectedRowPaths: selectAll ? flatRowPaths : []
+  var getAutoResetSelectedRows = useGetLatest(autoResetSelectedRows);
+  useMountedLayoutEffect(function () {
+    if (getAutoResetSelectedRows()) {
+      dispatch({
+        type: actions.resetSelectedRows
       });
-    }, actions.toggleRowSelectedAll);
-  };
-
-  var updateParentRow = function updateParentRow(selectedRowPaths, path) {
-    var parentPath = path.slice(0, path.length - 1);
-    var parentKey = parentPath.join('.');
-    var selected = flatRowPaths.filter(function (rowPath) {
-      var path = rowPath;
-      return path !== parentKey && path.startsWith(parentKey) && !selectedRowPaths.has(path);
-    }).length === 0;
-
-    if (selected) {
-      selectedRowPaths.add(parentKey);
-    } else {
-      selectedRowPaths.delete(parentKey);
     }
+  }, [dispatch, data]);
 
-    if (parentPath.length > 1) updateParentRow(selectedRowPaths, parentPath);
+  var toggleAllRowsSelected = function toggleAllRowsSelected(selected) {
+    return dispatch({
+      type: actions.toggleAllRowsSelected,
+      selected: selected
+    });
   };
 
-  var toggleRowSelected = function toggleRowSelected(path, set) {
-    var key = path.join('.');
-    var childRowPrefixKey = [key, '.'].join('');
-    return setState(function (old) {
-      // Join the paths of deep rows
-      // to make a key, then manage all of the keys
-      // in a flat object
-      var exists = old.selectedRowPaths.includes(key);
-      var shouldExist = typeof set !== 'undefined' ? set : !exists;
-      var newSelectedRows = new Set(old.selectedRowPaths);
-
-      if (!exists && shouldExist) {
-        flatRowPaths.forEach(function (rowPath) {
-          if (rowPath === key || rowPath.startsWith(childRowPrefixKey)) {
-            newSelectedRows.add(rowPath);
-          }
-        });
-      } else if (exists && !shouldExist) {
-        flatRowPaths.forEach(function (rowPath) {
-          if (rowPath === key || rowPath.startsWith(childRowPrefixKey)) {
-            newSelectedRows.delete(rowPath);
-          }
-        });
-      } else {
-        return old;
-      } // If the row is a subRow update
-      // its parent row to reflect changes
-
-
-      if (path.length > 1) updateParentRow(newSelectedRows, path);
-      return _objectSpread2({}, old, {
-        selectedRowPaths: _toConsumableArray(newSelectedRows.values())
-      });
-    }, actions.toggleRowSelected);
+  var toggleRowSelected = function toggleRowSelected(id, selected) {
+    return dispatch({
+      type: actions.toggleRowSelected,
+      id: id,
+      selected: selected
+    });
   };
 
-  var getToggleAllRowsSelectedProps = function getToggleAllRowsSelectedProps(props) {
-    return mergeProps({
-      onChange: function onChange(e) {
-        toggleRowSelectedAll(e.target.checked);
-      },
-      style: {
-        cursor: 'pointer'
-      },
-      checked: isAllRowsSelected,
-      title: 'Toggle All Rows Selected'
-    }, applyPropHooks(instance.hooks.getToggleAllRowsSelectedProps, instance), props);
-  };
-
-  hooks.prepareRow.push(function (row) {
-    // Aggregate rows have entirely different select logic
-    if (row.isAggregated) {
-      var subRowPaths = row.subRows.map(function (row) {
-        return row.path;
-      });
-
-      row.toggleRowSelected = function (set) {
-        set = typeof set !== 'undefined' ? set : !row.isSelected;
-        subRowPaths.forEach(function (path) {
-          toggleRowSelected(path, set);
-        });
-      };
-
-      row.getToggleRowSelectedProps = function (props) {
-        var checked = false;
-
-        if (row.original && row.original[manualRowSelectedKey]) {
-          checked = true;
-        } else {
-          checked = row.isSelected;
-        }
-
-        return mergeProps({
-          onChange: function onChange(e) {
-            row.toggleRowSelected(e.target.checked);
-          },
-          style: {
-            cursor: 'pointer'
-          },
-          checked: checked,
-          title: 'Toggle Row Selected'
-        }, applyPropHooks(instance.hooks.getToggleRowSelectedProps, row, instance), props);
-      };
-    } else {
-      row.toggleRowSelected = function (set) {
-        return toggleRowSelected(row.path, set);
-      };
-
-      row.getToggleRowSelectedProps = function (props) {
-        var checked = false;
-
-        if (row.original && row.original[manualRowSelectedKey]) {
-          checked = true;
-        } else {
-          checked = row.isSelected;
-        }
-
-        return mergeProps({
-          onChange: function onChange(e) {
-            row.toggleRowSelected(e.target.checked);
-          },
-          style: {
-            cursor: 'pointer'
-          },
-          checked: checked,
-          title: 'Toggle Row Selected'
-        }, applyPropHooks(instance.hooks.getToggleRowSelectedProps, row, instance), props);
-      };
-    }
-
-    return row;
+  var getInstance = useGetLatest(instance);
+  var getToggleAllRowsSelectedPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getToggleAllRowsSelectedProps');
+  var getToggleAllRowsSelectedProps = makePropGetter(getToggleAllRowsSelectedPropsHooks(), {
+    instance: getInstance()
   });
-  return _objectSpread2({}, instance, {
+  var getToggleRowSelectedPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getToggleRowSelectedProps');
+  hooks.prepareRow.push(function (row) {
+    row.toggleRowSelected = function (set) {
+      return toggleRowSelected(row.id, set);
+    };
+
+    row.getToggleRowSelectedProps = makePropGetter(getToggleRowSelectedPropsHooks(), {
+      instance: getInstance(),
+      row: row
+    });
+  });
+  Object.assign(instance, {
+    flatRowsById: flatRowsById,
+    flatGroupedRowsById: flatGroupedRowsById,
     toggleRowSelected: toggleRowSelected,
-    toggleRowSelectedAll: toggleRowSelectedAll,
+    toggleAllRowsSelected: toggleAllRowsSelected,
     getToggleAllRowsSelectedProps: getToggleAllRowsSelectedProps,
     isAllRowsSelected: isAllRowsSelected
   });
 }
 
-defaultState.rowState = {};
-addActions('setRowState', 'setCellState');
+function getRowIsSelected(row, selectedRowIds) {
+  if (selectedRowIds[row.id]) {
+    return true;
+  }
+
+  if (row.subRows && row.subRows.length) {
+    var allChildrenSelected = true;
+    var someSelected = false;
+    row.subRows.forEach(function (subRow) {
+      // Bail out early if we know both of these
+      if (someSelected && !allChildrenSelected) {
+        return;
+      }
+
+      if (getRowIsSelected(subRow, selectedRowIds)) {
+        someSelected = true;
+      } else {
+        allChildrenSelected = false;
+      }
+    });
+    return allChildrenSelected ? true : someSelected ? null : false;
+  }
+
+  return false;
+}
+
+actions.setRowState = 'setRowState';
+actions.resetRowState = 'resetRowState';
 var useRowState = function useRowState(hooks) {
-  hooks.useMain.push(useMain$6);
+  hooks.stateReducers.push(reducer$8);
+  hooks.useInstance.push(useInstance$8);
 };
 useRowState.pluginName = 'useRowState';
 
-function useMain$6(instance) {
+function reducer$8(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      rowState: {}
+    }, state);
+  }
+
+  if (action.type === actions.resetRowState) {
+    return _extends({}, state, {
+      rowState: instance.initialState.rowState || {}
+    });
+  }
+
+  if (action.type === actions.setRowState) {
+    var _extends2;
+
+    var id = action.id,
+        value = action.value;
+    return _extends({}, state, {
+      rowState: _extends({}, state.rowState, (_extends2 = {}, _extends2[id] = functionalUpdate(value, state.rowState[id] || {}), _extends2))
+    });
+  }
+}
+
+function useInstance$8(instance) {
   var hooks = instance.hooks,
-      rows = instance.rows,
       initialRowStateAccessor = instance.initialRowStateAccessor,
+      _instance$autoResetRo = instance.autoResetRowState,
+      autoResetRowState = _instance$autoResetRo === void 0 ? true : _instance$autoResetRo,
       rowState = instance.state.rowState,
-      setState = instance.setState;
-  var setRowState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (path, updater) {
-    var action = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : actions.setRowState;
-    var pathKey = path.join('.');
-    return setState(function (old) {
-      return _objectSpread2({}, old, {
-        rowState: _objectSpread2({}, old.rowState, _defineProperty({}, pathKey, typeof updater === 'function' ? updater(old.rowState[pathKey]) : updater))
-      });
-    }, action);
-  }, [setState]);
-  var setCellState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (rowPath, columnID, updater) {
+      data = instance.data,
+      dispatch = instance.dispatch;
+  var setRowState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (id, value, columnId) {
+    return dispatch({
+      type: actions.setRowState,
+      id: id,
+      value: value,
+      columnId: columnId
+    });
+  }, [dispatch]);
+  var setCellState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (rowPath, columnId, value) {
     return setRowState(rowPath, function (old) {
-      return _objectSpread2({}, old, {
-        cellState: _objectSpread2({}, old.cellState, _defineProperty({}, columnID, typeof updater === 'function' ? updater(old.cellState[columnID]) : updater))
+      var _extends3;
+
+      return _extends({}, old, {
+        cellState: _extends({}, old.cellState, (_extends3 = {}, _extends3[columnId] = functionalUpdate(value, (old.cellState || {})[columnId] || {}), _extends3))
       });
-    }, actions.setCellState);
+    }, columnId);
   }, [setRowState]);
-  var rowsMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef(); // When data changes, reset row and cell state
-
-  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    if (rowsMountedRef.current) {
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          rowState: {}
-        });
-      }, actions.setRowState);
-    }
-
-    rowsMountedRef.current = true;
-  }, [rows, setState]);
   hooks.prepareRow.push(function (row) {
-    var pathKey = row.path.join('.');
-
     if (row.original) {
-      row.state = (typeof rowState[pathKey] !== 'undefined' ? rowState[pathKey] : initialRowStateAccessor && initialRowStateAccessor(row)) || {};
+      row.state = (typeof rowState[row.id] !== 'undefined' ? rowState[row.id] : initialRowStateAccessor && initialRowStateAccessor(row)) || {};
 
       row.setState = function (updater) {
-        return setRowState(row.path, updater);
+        return setRowState(row.id, updater);
       };
 
       row.cells.forEach(function (cell) {
         cell.state = row.state.cellState || {};
 
         cell.setState = function (updater) {
-          return setCellState(row.path, cell.column.id, updater);
+          return setCellState(row.id, cell.column.id, updater);
         };
       });
     }
-
-    return row;
   });
-  return _objectSpread2({}, instance, {
+  var getAutoResetRowState = useGetLatest(autoResetRowState);
+  useMountedLayoutEffect(function () {
+    if (getAutoResetRowState()) {
+      dispatch({
+        type: actions.resetRowState
+      });
+    }
+  }, [data]);
+  Object.assign(instance, {
     setRowState: setRowState,
     setCellState: setCellState
   });
 }
 
-defaultState.columnOrder = [];
-addActions('setColumnOrder');
+actions.resetColumnOrder = 'resetColumnOrder';
+actions.setColumnOrder = 'setColumnOrder';
 var useColumnOrder = function useColumnOrder(hooks) {
-  hooks.columnsBeforeHeaderGroupsDeps.push(function (deps, instance) {
-    return [].concat(_toConsumableArray(deps), [instance.state.columnOrder]);
+  hooks.stateReducers.push(reducer$9);
+  hooks.flatColumnsDeps.push(function (deps, _ref) {
+    var instance = _ref.instance;
+    return [].concat(deps, [instance.state.columnOrder]);
   });
-  hooks.columnsBeforeHeaderGroups.push(columnsBeforeHeaderGroups$1);
-  hooks.useMain.push(useMain$7);
+  hooks.flatColumns.push(flatColumns$1);
+  hooks.useInstance.push(useInstance$9);
 };
 useColumnOrder.pluginName = 'useColumnOrder';
 
-function columnsBeforeHeaderGroups$1(columns, instance) {
-  var columnOrder = instance.state.columnOrder; // If there is no order, return the normal columns
+function reducer$9(state, action, previousState, instance) {
+  if (action.type === actions.init) {
+    return _extends({
+      columnOrder: []
+    }, state);
+  }
 
+  if (action.type === actions.resetColumnOrder) {
+    return _extends({}, state, {
+      columnOrder: instance.initialState.columnOrder || []
+    });
+  }
+
+  if (action.type === actions.setColumnOrder) {
+    return _extends({}, state, {
+      columnOrder: functionalUpdate(action.columnOrder, state.columnOrder)
+    });
+  }
+}
+
+function flatColumns$1(columns, _ref2) {
+  var columnOrder = _ref2.instance.state.columnOrder;
+
+  // If there is no order, return the normal columns
   if (!columnOrder || !columnOrder.length) {
     return columns;
   }
 
-  var columnOrderCopy = _toConsumableArray(columnOrder); // If there is an order, make a copy of the columns
+  var columnOrderCopy = [].concat(columnOrder); // If there is an order, make a copy of the columns
 
-
-  var columnsCopy = _toConsumableArray(columns); // And make a new ordered array of the columns
-
+  var columnsCopy = [].concat(columns); // And make a new ordered array of the columns
 
   var columnsInOrder = []; // Loop over the columns and place them in order into the new array
 
   var _loop = function _loop() {
-    var targetColumnID = columnOrderCopy.shift();
+    var targetColumnId = columnOrderCopy.shift();
     var foundIndex = columnsCopy.findIndex(function (d) {
-      return d.id === targetColumnID;
+      return d.id === targetColumnId;
     });
 
     if (foundIndex > -1) {
@@ -2577,96 +3280,198 @@ function columnsBeforeHeaderGroups$1(columns, instance) {
   } // If there are any columns left, add them to the end
 
 
-  return [].concat(columnsInOrder, _toConsumableArray(columnsCopy));
+  return [].concat(columnsInOrder, columnsCopy);
 }
 
-function useMain$7(instance) {
-  var setState = instance.setState;
-  var setColumnOrder = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (updater) {
-    return setState(function (old) {
-      return _objectSpread2({}, old, {
-        columnOrder: typeof updater === 'function' ? updater(old.columnOrder) : updater
-      });
-    }, actions.setColumnOrder);
-  }, [setState]);
-  return _objectSpread2({}, instance, {
-    setColumnOrder: setColumnOrder
-  });
+function useInstance$9(instance) {
+  var dispatch = instance.dispatch;
+  instance.setColumnOrder = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (columnOrder) {
+    return dispatch({
+      type: actions.setColumnOrder,
+      columnOrder: columnOrder
+    });
+  }, [dispatch]);
 }
 
-defaultState.columnResizing = {
-  columnWidths: {}
-};
-defaultColumn.canResize = true;
+defaultColumn.canResize = true; // Actions
+
+actions.columnStartResizing = 'columnStartResizing';
+actions.columnResizing = 'columnResizing';
+actions.columnDoneResizing = 'columnDoneResizing';
 var useResizeColumns = function useResizeColumns(hooks) {
-  hooks.useBeforeDimensions.push(useBeforeDimensions);
+  hooks.getResizerProps = [defaultGetResizerProps];
+  hooks.getHeaderProps.push({
+    style: {
+      position: 'relative'
+    }
+  });
+  hooks.stateReducers.push(reducer$a);
+  hooks.useInstanceBeforeDimensions.push(useInstanceBeforeDimensions$1);
 };
-useResizeColumns.pluginName = 'useResizeColumns';
 
-var useBeforeDimensions = function useBeforeDimensions(instance) {
-  instance.hooks.getResizerProps = [];
-  var flatHeaders = instance.flatHeaders,
-      disableResizing = instance.disableResizing,
-      getHeaderProps = instance.hooks.getHeaderProps,
-      columnResizing = instance.state.columnResizing,
-      setState = instance.setState;
-  getHeaderProps.push(function () {
-    return {
-      style: {
-        position: 'relative'
+var defaultGetResizerProps = function defaultGetResizerProps(props, _ref) {
+  var instance = _ref.instance,
+      header = _ref.header;
+  var dispatch = instance.dispatch;
+
+  var onResizeStart = function onResizeStart(e, header) {
+    var isTouchEvent = false;
+
+    if (e.type === 'touchstart') {
+      // lets not respond to multiple touches (e.g. 2 or 3 fingers)
+      if (e.touches && e.touches.length > 1) {
+        return;
+      }
+
+      isTouchEvent = true;
+    }
+
+    var headersToResize = getLeafHeaders(header);
+    var headerIdWidths = headersToResize.map(function (d) {
+      return [d.id, d.totalWidth];
+    });
+    var clientX = isTouchEvent ? Math.round(e.touches[0].clientX) : e.clientX;
+
+    var dispatchMove = function dispatchMove(clientXPos) {
+      dispatch({
+        type: actions.columnResizing,
+        clientX: clientXPos
+      });
+    };
+
+    var dispatchEnd = function dispatchEnd() {
+      return dispatch({
+        type: actions.columnDoneResizing
+      });
+    };
+
+    var handlersAndEvents = {
+      mouse: {
+        moveEvent: 'mousemove',
+        moveHandler: function moveHandler(e) {
+          return dispatchMove(e.clientX);
+        },
+        upEvent: 'mouseup',
+        upHandler: function upHandler(e) {
+          document.removeEventListener('mousemove', handlersAndEvents.mouse.moveHandler);
+          document.removeEventListener('mouseup', handlersAndEvents.mouse.upHandler);
+          dispatchEnd();
+        }
+      },
+      touch: {
+        moveEvent: 'touchmove',
+        moveHandler: function moveHandler(e) {
+          if (e.cancelable) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+
+          dispatchMove(e.touches[0].clientX);
+          return false;
+        },
+        upEvent: 'touchend',
+        upHandler: function upHandler(e) {
+          document.removeEventListener(handlersAndEvents.touch.moveEvent, handlersAndEvents.touch.moveHandler);
+          document.removeEventListener(handlersAndEvents.touch.upEvent, handlersAndEvents.touch.moveHandler);
+          dispatchEnd();
+        }
       }
     };
-  });
-
-  var _onMouseDown = function onMouseDown(e, header) {
-    var headersToResize = getLeafHeaders(header);
-    var startWidths = headersToResize.map(function (header) {
-      return header.totalWidth;
+    var events = isTouchEvent ? handlersAndEvents.touch : handlersAndEvents.mouse;
+    document.addEventListener(events.moveEvent, events.moveHandler, {
+      passive: false
     });
-    var startX = e.clientX;
-
-    var onMouseMove = function onMouseMove(e) {
-      var currentX = e.clientX;
-      var deltaX = currentX - startX;
-      var percentageDeltaX = deltaX / headersToResize.length;
-      var newColumnWidths = {};
-      headersToResize.forEach(function (header, index) {
-        newColumnWidths[header.id] = Math.max(startWidths[index] + percentageDeltaX, 0);
-      });
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          columnResizing: _objectSpread2({}, old.columnResizing, {
-            columnWidths: _objectSpread2({}, old.columnResizing.columnWidths, {}, newColumnWidths)
-          })
-        });
-      });
-    };
-
-    var onMouseUp = function onMouseUp(e) {
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
-      setState(function (old) {
-        return _objectSpread2({}, old, {
-          columnResizing: _objectSpread2({}, old.columnResizing, {
-            startX: null,
-            isResizingColumn: null
-          })
-        });
-      });
-    };
-
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-    setState(function (old) {
-      return _objectSpread2({}, old, {
-        columnResizing: _objectSpread2({}, old.columnResizing, {
-          startX: startX,
-          isResizingColumn: header.id
-        })
-      });
+    document.addEventListener(events.upEvent, events.upHandler, {
+      passive: false
+    });
+    dispatch({
+      type: actions.columnStartResizing,
+      columnId: header.id,
+      columnWidth: header.totalWidth,
+      headerIdWidths: headerIdWidths,
+      clientX: clientX
     });
   };
 
+  return [props, {
+    onMouseDown: function onMouseDown(e) {
+      return e.persist() || onResizeStart(e, header);
+    },
+    onTouchStart: function onTouchStart(e) {
+      return e.persist() || onResizeStart(e, header);
+    },
+    style: {
+      cursor: 'ew-resize'
+    },
+    draggable: false
+  }];
+};
+
+useResizeColumns.pluginName = 'useResizeColumns';
+
+function reducer$a(state, action) {
+  if (action.type === actions.init) {
+    return _extends({
+      columnResizing: {
+        columnWidths: {}
+      }
+    }, state);
+  }
+
+  if (action.type === actions.columnStartResizing) {
+    var clientX = action.clientX,
+        columnId = action.columnId,
+        columnWidth = action.columnWidth,
+        headerIdWidths = action.headerIdWidths;
+    return _extends({}, state, {
+      columnResizing: _extends({}, state.columnResizing, {
+        startX: clientX,
+        headerIdWidths: headerIdWidths,
+        columnWidth: columnWidth,
+        isResizingColumn: columnId
+      })
+    });
+  }
+
+  if (action.type === actions.columnResizing) {
+    var _clientX = action.clientX;
+    var _state$columnResizing = state.columnResizing,
+        startX = _state$columnResizing.startX,
+        _columnWidth = _state$columnResizing.columnWidth,
+        _headerIdWidths = _state$columnResizing.headerIdWidths;
+    var deltaX = _clientX - startX;
+    var percentageDeltaX = deltaX / _columnWidth;
+    var newColumnWidths = {};
+
+    _headerIdWidths.forEach(function (_ref2) {
+      var headerId = _ref2[0],
+          headerWidth = _ref2[1];
+      newColumnWidths[headerId] = Math.max(headerWidth + headerWidth * percentageDeltaX, 0);
+    });
+
+    return _extends({}, state, {
+      columnResizing: _extends({}, state.columnResizing, {
+        columnWidths: _extends({}, state.columnResizing.columnWidths, {}, newColumnWidths)
+      })
+    });
+  }
+
+  if (action.type === actions.columnDoneResizing) {
+    return _extends({}, state, {
+      columnResizing: _extends({}, state.columnResizing, {
+        startX: null,
+        isResizingColumn: null
+      })
+    });
+  }
+}
+
+var useInstanceBeforeDimensions$1 = function useInstanceBeforeDimensions(instance) {
+  var flatHeaders = instance.flatHeaders,
+      disableResizing = instance.disableResizing,
+      columnResizing = instance.state.columnResizing;
+  var getInstance = useGetLatest(instance);
+  var getResizerPropsHooks = useConsumeHookGetter(getInstance().hooks, 'getResizerProps');
   flatHeaders.forEach(function (header) {
     var canResize = getFirstDefined(header.disableResizing === true ? false : undefined, disableResizing === true ? false : undefined, true);
     header.canResize = canResize;
@@ -2674,20 +3479,12 @@ var useBeforeDimensions = function useBeforeDimensions(instance) {
     header.isResizing = columnResizing.isResizingColumn === header.id;
 
     if (canResize) {
-      header.getResizerProps = function (userProps) {
-        return mergeProps({
-          onMouseDown: function onMouseDown(e) {
-            return e.persist() || _onMouseDown(e, header);
-          },
-          style: {
-            cursor: 'ew-resize'
-          },
-          draggable: false
-        }, applyPropHooks(instance.hooks.getResizerProps, header, instance), userProps);
-      };
+      header.getResizerProps = makePropGetter(getResizerPropsHooks(), {
+        instance: getInstance(),
+        header: header
+      });
     }
   });
-  return instance;
 };
 
 function getLeafHeaders(header) {
@@ -2705,101 +3502,139 @@ function getLeafHeaders(header) {
   return leafHeaders;
 }
 
+var cellStyles = {
+  position: 'absolute',
+  top: 0
+};
 var useAbsoluteLayout = function useAbsoluteLayout(hooks) {
-  hooks.useMain.push(useMain$8);
+  hooks.getTableBodyProps.push(getRowStyles);
+  hooks.getRowProps.push(getRowStyles);
+  hooks.getHeaderGroupProps.push(getRowStyles);
+  hooks.useInstance.push(useInstance$a);
+  hooks.getHeaderProps.push(function (props, _ref) {
+    var column = _ref.column;
+    return [props, {
+      style: _extends({}, cellStyles, {
+        left: column.totalLeft + "px",
+        width: column.totalWidth + "px"
+      })
+    }];
+  });
+  hooks.getCellProps.push(function (props, _ref2) {
+    var cell = _ref2.cell;
+    return [props, {
+      style: _extends({}, cellStyles, {
+        left: cell.column.totalLeft + "px",
+        width: cell.column.totalWidth + "px"
+      })
+    }];
+  });
 };
 useAbsoluteLayout.pluginName = 'useAbsoluteLayout';
 
-var useMain$8 = function useMain(instance) {
-  var totalColumnsWidth = instance.totalColumnsWidth,
-      _instance$hooks = instance.hooks,
-      getRowProps = _instance$hooks.getRowProps,
-      getTableBodyProps = _instance$hooks.getTableBodyProps,
-      getHeaderGroupProps = _instance$hooks.getHeaderGroupProps,
-      getHeaderProps = _instance$hooks.getHeaderProps,
-      getCellProps = _instance$hooks.getCellProps;
-  var rowStyles = {
+var getRowStyles = function getRowStyles(props, _ref3) {
+  var instance = _ref3.instance;
+  return [props, {
     style: {
       position: 'relative',
-      width: "".concat(totalColumnsWidth, "px")
+      width: instance.totalColumnsWidth + "px"
     }
-  };
-  getTableBodyProps.push(function () {
-    return rowStyles;
-  });
-  getRowProps.push(function () {
-    return rowStyles;
-  });
-  getHeaderGroupProps.push(function () {
-    return rowStyles;
-  }); // Calculating column/cells widths
+  }];
+};
 
-  var cellStyles = {
-    position: 'absolute',
-    top: 0
-  };
-  getHeaderProps.push(function (header) {
-    return {
-      style: _objectSpread2({}, cellStyles, {
-        left: "".concat(header.totalLeft, "px"),
-        width: "".concat(header.totalWidth, "px")
-      })
-    };
-  });
-  getCellProps.push(function (cell) {
-    return {
-      style: _objectSpread2({}, cellStyles, {
-        left: "".concat(cell.column.totalLeft, "px"),
-        width: "".concat(cell.column.totalWidth, "px")
-      })
-    };
-  });
-  return instance;
+function useInstance$a(_ref4) {
+  var plugins = _ref4.plugins;
+  ensurePluginOrder(plugins, [], useAbsoluteLayout.pluginName, ['useResizeColumns']);
+}
+
+var cellStyles$1 = {
+  display: 'inline-block',
+  boxSizing: 'border-box'
+};
+
+var getRowStyles$1 = function getRowStyles(props, _ref) {
+  var instance = _ref.instance;
+  return [props, {
+    style: {
+      display: 'flex',
+      width: instance.totalColumnsWidth + "px"
+    }
+  }];
 };
 
 var useBlockLayout = function useBlockLayout(hooks) {
-  hooks.useMain.push(useMain$9);
+  hooks.getRowProps.push(getRowStyles$1);
+  hooks.getHeaderGroupProps.push(getRowStyles$1);
+  hooks.getHeaderProps.push(function (props, _ref2) {
+    var column = _ref2.column;
+    return [props, {
+      style: _extends({}, cellStyles$1, {
+        width: column.totalWidth + "px"
+      })
+    }];
+  });
+  hooks.getCellProps.push(function (props, _ref3) {
+    var cell = _ref3.cell;
+    return [props, {
+      style: _extends({}, cellStyles$1, {
+        width: cell.column.totalWidth + "px"
+      })
+    }];
+  });
 };
 useBlockLayout.pluginName = 'useBlockLayout';
 
-var useMain$9 = function useMain(instance) {
-  var totalColumnsWidth = instance.totalColumnsWidth,
-      _instance$hooks = instance.hooks,
-      getRowProps = _instance$hooks.getRowProps,
-      getHeaderGroupProps = _instance$hooks.getHeaderGroupProps,
-      getHeaderProps = _instance$hooks.getHeaderProps,
-      getCellProps = _instance$hooks.getCellProps;
-  var rowStyles = {
+function useFlexLayout(hooks) {
+  hooks.getTableBodyProps.push(getTableBodyProps);
+  hooks.getRowProps.push(getRowStyles$2);
+  hooks.getHeaderGroupProps.push(getRowStyles$2);
+  hooks.getHeaderProps.push(getHeaderProps);
+  hooks.getCellProps.push(getCellProps);
+}
+useFlexLayout.pluginName = 'useFlexLayout';
+
+var getTableBodyProps = function getTableBodyProps(props, _ref) {
+  var instance = _ref.instance;
+  return [props, {
+    style: {
+      minWidth: instance.totalColumnsWidth + "px"
+    }
+  }];
+};
+
+var getRowStyles$2 = function getRowStyles(props, _ref2) {
+  var instance = _ref2.instance;
+  return [props, {
     style: {
       display: 'flex',
-      width: "".concat(totalColumnsWidth, "px")
+      flex: '1 0 auto',
+      minWidth: instance.totalColumnsMinWidth + "px"
     }
-  };
-  getRowProps.push(function () {
-    return rowStyles;
-  });
-  getHeaderGroupProps.push(function () {
-    return rowStyles;
-  });
-  var cellStyles = {
-    display: 'inline-block',
-    boxSizing: 'border-box'
-  };
-  getHeaderProps.push(function (header) {
-    return {
-      style: _objectSpread2({}, cellStyles, {
-        width: "".concat(header.totalWidth, "px")
-      })
-    };
-  });
-  getCellProps.push(function (cell) {
-    return {
-      style: _objectSpread2({}, cellStyles, {
-        width: "".concat(cell.column.totalWidth, "px")
-      })
-    };
-  });
-  return instance;
+  }];
+};
+
+var getHeaderProps = function getHeaderProps(props, _ref3) {
+  var column = _ref3.column;
+  return [props, {
+    style: {
+      boxSizing: 'border-box',
+      flex: column.totalWidth + " 0 auto",
+      minWidth: column.totalMinWidth + "px",
+      width: column.totalWidth + "px"
+    }
+  }];
+};
+
+var getCellProps = function getCellProps(props, _ref4) {
+  var cell = _ref4.cell;
+  return [props, {
+    style: {
+      boxSizing: 'border-box',
+      flex: cell.column.totalWidth + " 0 auto",
+      minWidth: cell.column.totalMinWidth + "px",
+      width: cell.column.totalWidth + "px"
+    }
+  }];
 };
 
 

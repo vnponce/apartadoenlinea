@@ -1,27 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
 
-/***/ "./node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function memoize(fn) {
-  var cache = {};
-  return function (arg) {
-    if (cache[arg] === undefined) cache[arg] = fn(arg);
-    return cache[arg];
-  };
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (memoize);
-
-
-/***/ }),
-
 /***/ "./node_modules/@emotion/unitless/dist/unitless.browser.esm.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@emotion/unitless/dist/unitless.browser.esm.js ***!
@@ -18090,7 +18068,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.11.0
+/** @license React v16.12.0
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -18215,6 +18193,8 @@ function typeOf(object) {
             switch ($$typeofType) {
               case REACT_CONTEXT_TYPE:
               case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
               case REACT_PROVIDER_TYPE:
                 return $$typeofType;
 
@@ -18224,8 +18204,6 @@ function typeOf(object) {
 
         }
 
-      case REACT_LAZY_TYPE:
-      case REACT_MEMO_TYPE:
       case REACT_PORTAL_TYPE:
         return $$typeof;
     }

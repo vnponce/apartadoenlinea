@@ -12,7 +12,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, "/*!\n * FilePondPluginImagePreview 4.5.0\n * Licensed under MIT, https://opensource.org/licenses/MIT/\n * Please visit https://pqina.nl/filepond/ for details.\n */\n\n/* eslint-disable */\n\n.filepond--image-preview-markup {\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n.filepond--image-preview-wrapper {\n  z-index: 2;\n}\n\n.filepond--image-preview-overlay {\n  display: block;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  min-height: 5rem;\n  max-height: 7rem;\n  margin: 0;\n  opacity: 0;\n  z-index: 2;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.filepond--image-preview-overlay svg {\n  width: 100%;\n  height: auto;\n  color: inherit;\n  max-height: inherit;\n}\n\n.filepond--image-preview-overlay-idle {\n  mix-blend-mode: multiply;\n  color: rgba(40, 40, 40, 0.85);\n}\n\n.filepond--image-preview-overlay-success {\n  mix-blend-mode: normal;\n  color: #369763;\n}\n\n.filepond--image-preview-overlay-failure {\n  mix-blend-mode: normal;\n  color: #c44e47;\n}\n\n@supports (-webkit-marquee-repetition: infinite) and\n  ((-o-object-fit: fill) or (object-fit: fill)) {\n  .filepond--image-preview-overlay-idle {\n    mix-blend-mode: normal;\n  }\n}\n\n.filepond--image-preview-wrapper {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: absolute;\n  left: 0;\n  top: 0;\n  right: 0;\n  height: 100%;\n  margin: 0;\n  border-radius: 0.45em;\n  overflow: hidden;\n  background: rgba(0, 0, 0, 0.01);\n}\n\n.filepond--image-preview {\n  position: absolute;\n  left: 0;\n  top: 0;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  height: 100%;\n  width: 100%;\n  pointer-events: none;\n  background: #222;\n  will-change: transform, opacity;\n}\n\n.filepond--image-preview[data-transparency-indicator='grid'] img,\n.filepond--image-preview[data-transparency-indicator='grid'] canvas {\n  background-color: #fff;\n  background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' fill='%23eee'%3E%3Cpath d='M0 0 H50 V50 H0'/%3E%3Cpath d='M50 50 H100 V100 H50'/%3E%3C/svg%3E\");\n  background-size: 1.25em 1.25em;\n}\n\n.filepond--image-clip {\n  position: relative;\n  overflow: hidden;\n  margin: 0 auto;\n}\n\n.filepond--image-bitmap,\n.filepond--image-vector {\n  position: absolute;\n  left: 0;\n  top: 0;\n  will-change: transform;\n}\n\n.filepond--root[data-style-panel-layout~='integrated']\n  .filepond--image-preview-wrapper {\n  border-radius: 0;\n}\n\n.filepond--root[data-style-panel-layout~='integrated']\n  .filepond--image-preview {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--image-preview-wrapper {\n  border-radius: 99999rem;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--image-preview-overlay {\n  top: auto;\n  bottom: 0;\n  -webkit-transform: scaleY(-1);\n  transform: scaleY(-1);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  .filepond--file-action-button[data-align*='bottom']:not([data-align*='center']) {\n  margin-bottom: 0.325em;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  [data-align*='left'] {\n  left: calc(50% - 3em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  [data-align*='right'] {\n  right: calc(50% - 3em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='left'],\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='right'] {\n  margin-bottom: calc(0.325em + 0.1875em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='center'] {\n  margin-top: 0;\n  margin-bottom: 0.1875em;\n  margin-left: 0.1875em;\n}\n", ""]);
+exports.push([module.i, "/*!\n * FilePondPluginImagePreview 4.6.0\n * Licensed under MIT, https://opensource.org/licenses/MIT/\n * Please visit https://pqina.nl/filepond/ for details.\n */\n\n/* eslint-disable */\n\n.filepond--image-preview-markup {\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n.filepond--image-preview-wrapper {\n  z-index: 2;\n}\n\n.filepond--image-preview-overlay {\n  display: block;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  min-height: 5rem;\n  max-height: 7rem;\n  margin: 0;\n  opacity: 0;\n  z-index: 2;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.filepond--image-preview-overlay svg {\n  width: 100%;\n  height: auto;\n  color: inherit;\n  max-height: inherit;\n}\n\n.filepond--image-preview-overlay-idle {\n  mix-blend-mode: multiply;\n  color: rgba(40, 40, 40, 0.85);\n}\n\n.filepond--image-preview-overlay-success {\n  mix-blend-mode: normal;\n  color: #369763;\n}\n\n.filepond--image-preview-overlay-failure {\n  mix-blend-mode: normal;\n  color: #c44e47;\n}\n\n@supports (-webkit-marquee-repetition: infinite) and\n  ((-o-object-fit: fill) or (object-fit: fill)) {\n  .filepond--image-preview-overlay-idle {\n    mix-blend-mode: normal;\n  }\n}\n\n.filepond--image-preview-wrapper {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: absolute;\n  left: 0;\n  top: 0;\n  right: 0;\n  height: 100%;\n  margin: 0;\n  border-radius: 0.45em;\n  overflow: hidden;\n  background: rgba(0, 0, 0, 0.01);\n}\n\n.filepond--image-preview {\n  position: absolute;\n  left: 0;\n  top: 0;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  height: 100%;\n  width: 100%;\n  pointer-events: none;\n  background: #222;\n  will-change: transform, opacity;\n}\n\n.filepond--image-preview[data-transparency-indicator='grid'] img,\n.filepond--image-preview[data-transparency-indicator='grid'] canvas {\n  background-color: #fff;\n  background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' fill='%23eee'%3E%3Cpath d='M0 0 H50 V50 H0'/%3E%3Cpath d='M50 50 H100 V100 H50'/%3E%3C/svg%3E\");\n  background-size: 1.25em 1.25em;\n}\n\n.filepond--image-clip {\n  position: relative;\n  overflow: hidden;\n  margin: 0 auto;\n}\n\n.filepond--image-bitmap,\n.filepond--image-vector {\n  position: absolute;\n  left: 0;\n  top: 0;\n  will-change: transform;\n}\n\n.filepond--root[data-style-panel-layout~='integrated']\n  .filepond--image-preview-wrapper {\n  border-radius: 0;\n}\n\n.filepond--root[data-style-panel-layout~='integrated']\n  .filepond--image-preview {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--image-preview-wrapper {\n  border-radius: 99999rem;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--image-preview-overlay {\n  top: auto;\n  bottom: 0;\n  -webkit-transform: scaleY(-1);\n  transform: scaleY(-1);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  .filepond--file-action-button[data-align*='bottom']:not([data-align*='center']) {\n  margin-bottom: 0.325em;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  [data-align*='left'] {\n  left: calc(50% - 3em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  [data-align*='right'] {\n  right: calc(50% - 3em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='left'],\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='right'] {\n  margin-bottom: calc(0.325em + 0.1875em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='center'] {\n  margin-top: 0;\n  margin-bottom: 0.1875em;\n  margin-left: 0.1875em;\n}\n", ""]);
 
 // exports
 
@@ -31,7 +31,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, "/*!\n * FilePond 4.7.4\n * Licensed under MIT, https://opensource.org/licenses/MIT/\n * Please visit https://pqina.nl/filepond/ for details.\n */\n\n/* eslint-disable */\n\n.filepond--assistant{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--browser.filepond--browser{\n  position:absolute;\n  margin:0;\n  padding:0;\n  left:1em;\n  top:1.75em;\n  width:calc(100% - 2em);\n  opacity:0;\n  font-size:0\n}\n\n.filepond--drip{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  overflow:hidden;\n  opacity:.1;\n  pointer-events:none;\n  border-radius:.5em;\n  background:rgba(0,0,0,.01)\n}\n\n.filepond--drip-blob{\n  -webkit-transform-origin:center center;\n  transform-origin:center center;\n  width:8em;\n  height:8em;\n  margin-left:-4em;\n  margin-top:-4em;\n  background:#292625;\n  border-radius:50%\n}\n\n.filepond--drip-blob,.filepond--drop-label{\n  position:absolute;\n  top:0;\n  left:0;\n  will-change:transform,opacity\n}\n\n.filepond--drop-label{\n  right:0;\n  margin:0;\n  color:#4f4f4f;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  height:0;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--drop-label.filepond--drop-label label{\n  display:block;\n  margin:0;\n  padding:.5em\n}\n\n.filepond--drop-label label{\n  cursor:default;\n  font-size:.875em;\n  font-weight:400;\n  text-align:center;\n  line-height:1.5\n}\n\n.filepond--label-action{\n  text-decoration:underline;\n  -webkit-text-decoration-skip:ink;\n  text-decoration-skip-ink:auto;\n  -webkit-text-decoration-color:#a7a4a4;\n  text-decoration-color:#a7a4a4;\n  cursor:pointer\n}\n\n.filepond--root[data-disabled] .filepond--drop-label label{\n  opacity:.5\n}\n\n.filepond--file-action-button.filepond--file-action-button{\n  font-size:1em;\n  width:1.625em;\n  height:1.625em;\n  font-family:inherit;\n  line-height:inherit;\n  margin:0;\n  padding:0;\n  border:none;\n  outline:none;\n  will-change:transform,opacity\n}\n\n.filepond--file-action-button.filepond--file-action-button span{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--file-action-button.filepond--file-action-button svg{\n  width:100%;\n  height:100%\n}\n\n.filepond--file-action-button.filepond--file-action-button:after{\n  position:absolute;\n  left:-.75em;\n  right:-.75em;\n  top:-.75em;\n  bottom:-.75em;\n  content:\"\"\n}\n\n.filepond--file-action-button{\n  cursor:auto;\n  color:#fff;\n  border-radius:50%;\n  background-color:rgba(0,0,0,.5);\n  background-image:none;\n  box-shadow:0 0 0 0 hsla(0,0%,100%,0);\n  transition:box-shadow .25s ease-in\n}\n\n.filepond--file-action-button:focus,.filepond--file-action-button:hover{\n  box-shadow:0 0 0 .125em hsla(0,0%,100%,.9)\n}\n\n.filepond--file-action-button[disabled]{\n  color:hsla(0,0%,100%,.5);\n  background-color:rgba(0,0,0,.25)\n}\n\n.filepond--file-info{\n  position:static;\n  display:flex;\n  flex-direction:column;\n  align-items:flex-start;\n  flex:1;\n  margin:0 .5em 0 0;\n  min-width:0;\n  will-change:transform,opacity;\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--file-info *{\n  margin:0\n}\n\n.filepond--file-info .filepond--file-info-main{\n  font-size:.75em;\n  line-height:1.2;\n  text-overflow:ellipsis;\n  overflow:hidden;\n  white-space:nowrap;\n  width:100%\n}\n\n.filepond--file-info .filepond--file-info-sub{\n  font-size:.625em;\n  opacity:.5;\n  transition:opacity .25s ease-in-out;\n  white-space:nowrap\n}\n\n.filepond--file-info .filepond--file-info-sub:empty{\n  display:none\n}\n\n.filepond--file-status{\n  position:static;\n  display:flex;\n  flex-direction:column;\n  align-items:flex-end;\n  flex-grow:0;\n  flex-shrink:0;\n  margin:0;\n  min-width:2.25em;\n  text-align:right;\n  will-change:transform,opacity;\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--file-status *{\n  margin:0;\n  white-space:nowrap\n}\n\n.filepond--file-status .filepond--file-status-main{\n  font-size:.75em;\n  line-height:1.2\n}\n\n.filepond--file-status .filepond--file-status-sub{\n  font-size:.625em;\n  opacity:.5;\n  transition:opacity .25s ease-in-out\n}\n\n.filepond--file-wrapper.filepond--file-wrapper{\n  border:none;\n  margin:0;\n  padding:0;\n  min-width:0;\n  height:100%\n}\n\n.filepond--file-wrapper.filepond--file-wrapper>legend{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--file{\n  position:static;\n  display:flex;\n  height:100%;\n  align-items:flex-start;\n  padding:.5625em;\n  color:#fff;\n  border-radius:.5em\n}\n\n.filepond--file .filepond--file-status{\n  margin-left:auto;\n  margin-right:2.25em\n}\n\n.filepond--file .filepond--processing-complete-indicator{\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none;\n  z-index:3\n}\n\n.filepond--file .filepond--file-action-button,.filepond--file .filepond--processing-complete-indicator,.filepond--file .filepond--progress-indicator{\n  position:absolute\n}\n\n.filepond--file [data-align*=left]{\n  left:.5625em\n}\n\n.filepond--file [data-align*=right]{\n  right:.5625em\n}\n\n.filepond--file [data-align*=center]{\n  left:calc(50% - .8125em)\n}\n\n.filepond--file [data-align*=bottom]{\n  bottom:1.125em\n}\n\n.filepond--file [data-align=center]{\n  top:calc(50% - .8125em)\n}\n\n.filepond--file .filepond--progress-indicator{\n  margin-top:.1875em\n}\n\n.filepond--file .filepond--progress-indicator[data-align*=right]{\n  margin-right:.1875em\n}\n\n.filepond--file .filepond--progress-indicator[data-align*=left]{\n  margin-left:.1875em\n}\n\n[data-filepond-item-state*=error] .filepond--file-info,[data-filepond-item-state*=invalid] .filepond--file-info,[data-filepond-item-state=cancelled] .filepond--file-info{\n  margin-right:2.25em\n}\n\n[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing svg{\n  -webkit-animation:fall .5s linear .125s both;\n  animation:fall .5s linear .125s both\n}\n\n[data-filepond-item-state=processing-complete] .filepond--file-info-sub,[data-filepond-item-state=processing-complete] .filepond--file-status-sub{\n  opacity:0\n}\n\n[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing~.filepond--file-info .filepond--file-info-sub,[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing~.filepond--file-status .filepond--file-status-sub{\n  opacity:.5\n}\n\n[data-filepond-item-state*=error] .filepond--file-wrapper,[data-filepond-item-state*=error] .filepond--panel,[data-filepond-item-state*=invalid] .filepond--file-wrapper,[data-filepond-item-state*=invalid] .filepond--panel{\n  -webkit-animation:shake .65s linear both;\n  animation:shake .65s linear both\n}\n\n[data-filepond-item-state*=busy] .filepond--progress-indicator svg{\n  -webkit-animation:spin 1s linear infinite;\n  animation:spin 1s linear infinite\n}\n\n@-webkit-keyframes spin{\n  0%{\n    -webkit-transform:rotate(0deg);\n    transform:rotate(0deg)\n  }\n\n  to{\n    -webkit-transform:rotate(1turn);\n    transform:rotate(1turn)\n  }\n}\n\n@keyframes spin{\n  0%{\n    -webkit-transform:rotate(0deg);\n    transform:rotate(0deg)\n  }\n\n  to{\n    -webkit-transform:rotate(1turn);\n    transform:rotate(1turn)\n  }\n}\n\n@-webkit-keyframes shake{\n  10%,90%{\n    -webkit-transform:translateX(-.0625em);\n    transform:translateX(-.0625em)\n  }\n\n  20%,80%{\n    -webkit-transform:translateX(.125em);\n    transform:translateX(.125em)\n  }\n\n  30%,50%,70%{\n    -webkit-transform:translateX(-.25em);\n    transform:translateX(-.25em)\n  }\n\n  40%,60%{\n    -webkit-transform:translateX(.25em);\n    transform:translateX(.25em)\n  }\n}\n\n@keyframes shake{\n  10%,90%{\n    -webkit-transform:translateX(-.0625em);\n    transform:translateX(-.0625em)\n  }\n\n  20%,80%{\n    -webkit-transform:translateX(.125em);\n    transform:translateX(.125em)\n  }\n\n  30%,50%,70%{\n    -webkit-transform:translateX(-.25em);\n    transform:translateX(-.25em)\n  }\n\n  40%,60%{\n    -webkit-transform:translateX(.25em);\n    transform:translateX(.25em)\n  }\n}\n\n@-webkit-keyframes fall{\n  0%{\n    opacity:0;\n    -webkit-transform:scale(.5);\n    transform:scale(.5);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n\n  70%{\n    opacity:1;\n    -webkit-transform:scale(1.1);\n    transform:scale(1.1);\n    -webkit-animation-timing-function:ease-in-out;\n    animation-timing-function:ease-in-out\n  }\n\n  to{\n    -webkit-transform:scale(1);\n    transform:scale(1);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n}\n\n@keyframes fall{\n  0%{\n    opacity:0;\n    -webkit-transform:scale(.5);\n    transform:scale(.5);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n\n  70%{\n    opacity:1;\n    -webkit-transform:scale(1.1);\n    transform:scale(1.1);\n    -webkit-animation-timing-function:ease-in-out;\n    animation-timing-function:ease-in-out\n  }\n\n  to{\n    -webkit-transform:scale(1);\n    transform:scale(1);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n}\n\n.filepond--hopper[data-hopper-state=drag-over]>*{\n  pointer-events:none\n}\n\n.filepond--hopper[data-hopper-state=drag-over]:after{\n  content:\"\";\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  bottom:0;\n  z-index:100\n}\n\n.filepond--progress-indicator{\n  z-index:103\n}\n\n.filepond--file-action-button{\n  z-index:102\n}\n\n.filepond--file-status{\n  z-index:101\n}\n\n.filepond--file-info{\n  z-index:100\n}\n\n.filepond--item{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  z-index:1;\n  padding:0;\n  margin:.25em;\n  will-change:transform,opacity\n}\n\n.filepond--item>.filepond--panel{\n  z-index:-1\n}\n\n.filepond--item>.filepond--panel .filepond--panel-bottom{\n  box-shadow:0 .0625em .125em -.0625em rgba(0,0,0,.25)\n}\n\n.filepond--item-panel{\n  background-color:#64605e\n}\n\n[data-filepond-item-state=processing-complete] .filepond--item-panel{\n  background-color:#369763\n}\n\n[data-filepond-item-state*=error] .filepond--item-panel,[data-filepond-item-state*=invalid] .filepond--item-panel{\n  background-color:#c44e47\n}\n\n.filepond--item-panel{\n  border-radius:.5em;\n  transition:background-color .25s\n}\n\n.filepond--list-scroller{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  margin:0;\n  will-change:transform\n}\n\n.filepond--list-scroller[data-state=overflow]{\n  overflow-y:scroll;\n  overflow-x:hidden;\n  -webkit-overflow-scrolling:touch;\n  -webkit-mask:linear-gradient(180deg,#000 calc(100% - .5em),transparent);\n  mask:linear-gradient(180deg,#000 calc(100% - .5em),transparent)\n}\n\n.filepond--list-scroller[data-state=overflow] .filepond--list{\n  bottom:0;\n  right:0\n}\n\n.filepond--list-scroller::-webkit-scrollbar{\n  background:transparent\n}\n\n.filepond--list-scroller::-webkit-scrollbar:vertical{\n  width:1em\n}\n\n.filepond--list-scroller::-webkit-scrollbar:horizontal{\n  height:0\n}\n\n.filepond--list-scroller::-webkit-scrollbar-thumb{\n  background-color:rgba(0,0,0,.3);\n  border-radius:99999px;\n  border:.3125em solid transparent;\n  background-clip:content-box\n}\n\n.filepond--list.filepond--list{\n  position:absolute;\n  top:0;\n  margin:0;\n  padding:0;\n  list-style-type:none;\n  will-change:transform\n}\n\n.filepond--list{\n  left:.75em;\n  right:.75em\n}\n\n.filepond--root[data-style-panel-layout~=integrated]{\n  width:100%;\n  height:100%;\n  max-width:none;\n  margin:0\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--panel-root,.filepond--root[data-style-panel-layout~=integrated] .filepond--panel-root{\n  border-radius:0\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--panel-root>*,.filepond--root[data-style-panel-layout~=integrated] .filepond--panel-root>*{\n  display:none\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--drop-label,.filepond--root[data-style-panel-layout~=integrated] .filepond--drop-label{\n  bottom:0;\n  height:auto;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  z-index:7\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--item-panel,.filepond--root[data-style-panel-layout~=integrated] .filepond--item-panel{\n  display:none\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--list-scroller,.filepond--root[data-style-panel-layout~=integrated] .filepond--list-scroller{\n  overflow:hidden;\n  height:100%;\n  margin-top:0;\n  margin-bottom:0\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--list,.filepond--root[data-style-panel-layout~=integrated] .filepond--list{\n  left:0;\n  right:0;\n  height:100%\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--item,.filepond--root[data-style-panel-layout~=integrated] .filepond--item{\n  margin:0\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--file-wrapper,.filepond--root[data-style-panel-layout~=integrated] .filepond--file-wrapper{\n  height:100%\n}\n\n.filepond--root[data-style-panel-layout~=circle]{\n  border-radius:99999rem;\n  overflow:hidden\n}\n\n.filepond--root[data-style-panel-layout~=circle]>.filepond--panel{\n  border-radius:inherit\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--file-info,.filepond--root[data-style-panel-layout~=circle] .filepond--file-status,.filepond--root[data-style-panel-layout~=circle]>.filepond--panel>*{\n  display:none\n}\n\n.filepond--panel-root{\n  border-radius:.5em;\n  background-color:#f1f0ef\n}\n\n.filepond--panel{\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  margin:0;\n  height:100%!important;\n  pointer-events:none\n}\n\n.filepond-panel:not([data-scalable=false]){\n  height:auto!important\n}\n\n.filepond--panel[data-scalable=false]>div{\n  display:none\n}\n\n.filepond--panel[data-scalable=true]{\n  -webkit-transform-style:preserve-3d;\n  transform-style:preserve-3d;\n  background-color:transparent!important;\n  border:none!important\n}\n\n.filepond--panel-bottom,.filepond--panel-center,.filepond--panel-top{\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  margin:0;\n  padding:0\n}\n\n.filepond--panel-bottom,.filepond--panel-top{\n  height:.5em\n}\n\n.filepond--panel-top{\n  border-bottom-left-radius:0!important;\n  border-bottom-right-radius:0!important;\n  border-bottom:none!important\n}\n\n.filepond--panel-top:after{\n  content:\"\";\n  position:absolute;\n  height:2px;\n  left:0;\n  right:0;\n  bottom:-1px;\n  background-color:inherit\n}\n\n.filepond--panel-bottom,.filepond--panel-center{\n  will-change:transform;\n  -webkit-backface-visibility:hidden;\n  backface-visibility:hidden;\n  -webkit-transform-origin:left top;\n  transform-origin:left top;\n  -webkit-transform:translate3d(0,.5em,0);\n  transform:translate3d(0,.5em,0)\n}\n\n.filepond--panel-bottom{\n  border-top-left-radius:0!important;\n  border-top-right-radius:0!important;\n  border-top:none!important\n}\n\n.filepond--panel-bottom:before{\n  content:\"\";\n  position:absolute;\n  height:2px;\n  left:0;\n  right:0;\n  top:-1px;\n  background-color:inherit\n}\n\n.filepond--panel-center{\n  height:100px!important;\n  border-top:none!important;\n  border-bottom:none!important;\n  border-radius:0!important\n}\n\n.filepond--panel-center:not([style]){\n  visibility:hidden\n}\n\n.filepond--progress-indicator{\n  position:static;\n  width:1.25em;\n  height:1.25em;\n  color:#fff;\n  margin:0;\n  pointer-events:none;\n  will-change:transform,opacity\n}\n\n.filepond--progress-indicator svg{\n  width:100%;\n  height:100%;\n  vertical-align:top;\n  transform-box:fill-box\n}\n\n.filepond--progress-indicator path{\n  fill:none;\n  stroke:currentColor\n}\n\n.filepond--list-scroller{\n  z-index:6\n}\n\n.filepond--drop-label{\n  z-index:5\n}\n\n.filepond--drip{\n  z-index:3\n}\n\n.filepond--root>.filepond--panel{\n  z-index:2\n}\n\n.filepond--browser{\n  z-index:1\n}\n\n.filepond--root{\n  box-sizing:border-box;\n  position:relative;\n  margin-bottom:1em;\n  font-size:1rem;\n  line-height:normal;\n  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;\n  font-weight:450;\n  text-align:left;\n  text-rendering:optimizeLegibility;\n  direction:ltr;\n  contain:layout style size\n}\n\n.filepond--root *{\n  box-sizing:inherit;\n  line-height:inherit\n}\n\n.filepond--root :not(text){\n  font-size:inherit\n}\n\n.filepond--root[data-disabled]{\n  pointer-events:none\n}\n\n.filepond--root .filepond--drop-label{\n  min-height:4.75em\n}\n\n.filepond--root .filepond--list-scroller{\n  margin-top:1em;\n  margin-bottom:1em\n}", ""]);
+exports.push([module.i, "/*!\n * FilePond 4.9.3\n * Licensed under MIT, https://opensource.org/licenses/MIT/\n * Please visit https://pqina.nl/filepond/ for details.\n */\n\n/* eslint-disable */\n\n.filepond--assistant{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--browser.filepond--browser{\n  position:absolute;\n  margin:0;\n  padding:0;\n  left:1em;\n  top:1.75em;\n  width:calc(100% - 2em);\n  opacity:0;\n  font-size:0\n}\n\n.filepond--drip{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  overflow:hidden;\n  opacity:.1;\n  pointer-events:none;\n  border-radius:.5em;\n  background:rgba(0,0,0,.01)\n}\n\n.filepond--drip-blob{\n  -webkit-transform-origin:center center;\n  transform-origin:center center;\n  width:8em;\n  height:8em;\n  margin-left:-4em;\n  margin-top:-4em;\n  background:#292625;\n  border-radius:50%\n}\n\n.filepond--drip-blob,.filepond--drop-label{\n  position:absolute;\n  top:0;\n  left:0;\n  will-change:transform,opacity\n}\n\n.filepond--drop-label{\n  right:0;\n  margin:0;\n  color:#4f4f4f;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  height:0;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--drop-label.filepond--drop-label label{\n  display:block;\n  margin:0;\n  padding:.5em\n}\n\n.filepond--drop-label label{\n  cursor:default;\n  font-size:.875em;\n  font-weight:400;\n  text-align:center;\n  line-height:1.5\n}\n\n.filepond--label-action{\n  text-decoration:underline;\n  -webkit-text-decoration-skip:ink;\n  text-decoration-skip-ink:auto;\n  -webkit-text-decoration-color:#a7a4a4;\n  text-decoration-color:#a7a4a4;\n  cursor:pointer\n}\n\n.filepond--root[data-disabled] .filepond--drop-label label{\n  opacity:.5\n}\n\n.filepond--file-action-button.filepond--file-action-button{\n  font-size:1em;\n  width:1.625em;\n  height:1.625em;\n  font-family:inherit;\n  line-height:inherit;\n  margin:0;\n  padding:0;\n  border:none;\n  outline:none;\n  will-change:transform,opacity\n}\n\n.filepond--file-action-button.filepond--file-action-button span{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--file-action-button.filepond--file-action-button svg{\n  width:100%;\n  height:100%\n}\n\n.filepond--file-action-button.filepond--file-action-button:after{\n  position:absolute;\n  left:-.75em;\n  right:-.75em;\n  top:-.75em;\n  bottom:-.75em;\n  content:\"\"\n}\n\n.filepond--file-action-button{\n  cursor:auto;\n  color:#fff;\n  border-radius:50%;\n  background-color:rgba(0,0,0,.5);\n  background-image:none;\n  box-shadow:0 0 0 0 hsla(0,0%,100%,0);\n  transition:box-shadow .25s ease-in\n}\n\n.filepond--file-action-button:focus,.filepond--file-action-button:hover{\n  box-shadow:0 0 0 .125em hsla(0,0%,100%,.9)\n}\n\n.filepond--file-action-button[disabled]{\n  color:hsla(0,0%,100%,.5);\n  background-color:rgba(0,0,0,.25)\n}\n\n.filepond--file-info{\n  position:static;\n  display:flex;\n  flex-direction:column;\n  align-items:flex-start;\n  flex:1;\n  margin:0 .5em 0 0;\n  min-width:0;\n  will-change:transform,opacity;\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--file-info *{\n  margin:0\n}\n\n.filepond--file-info .filepond--file-info-main{\n  font-size:.75em;\n  line-height:1.2;\n  text-overflow:ellipsis;\n  overflow:hidden;\n  white-space:nowrap;\n  width:100%\n}\n\n.filepond--file-info .filepond--file-info-sub{\n  font-size:.625em;\n  opacity:.5;\n  transition:opacity .25s ease-in-out;\n  white-space:nowrap\n}\n\n.filepond--file-info .filepond--file-info-sub:empty{\n  display:none\n}\n\n.filepond--file-status{\n  position:static;\n  display:flex;\n  flex-direction:column;\n  align-items:flex-end;\n  flex-grow:0;\n  flex-shrink:0;\n  margin:0;\n  min-width:2.25em;\n  text-align:right;\n  will-change:transform,opacity;\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--file-status *{\n  margin:0;\n  white-space:nowrap\n}\n\n.filepond--file-status .filepond--file-status-main{\n  font-size:.75em;\n  line-height:1.2\n}\n\n.filepond--file-status .filepond--file-status-sub{\n  font-size:.625em;\n  opacity:.5;\n  transition:opacity .25s ease-in-out\n}\n\n.filepond--file-wrapper.filepond--file-wrapper{\n  border:none;\n  margin:0;\n  padding:0;\n  min-width:0;\n  height:100%\n}\n\n.filepond--file-wrapper.filepond--file-wrapper>legend{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--file{\n  position:static;\n  display:flex;\n  height:100%;\n  align-items:flex-start;\n  padding:.5625em;\n  color:#fff;\n  border-radius:.5em\n}\n\n.filepond--file .filepond--file-status{\n  margin-left:auto;\n  margin-right:2.25em\n}\n\n.filepond--file .filepond--processing-complete-indicator{\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none;\n  z-index:3\n}\n\n.filepond--file .filepond--file-action-button,.filepond--file .filepond--processing-complete-indicator,.filepond--file .filepond--progress-indicator{\n  position:absolute\n}\n\n.filepond--file [data-align*=left]{\n  left:.5625em\n}\n\n.filepond--file [data-align*=right]{\n  right:.5625em\n}\n\n.filepond--file [data-align*=center]{\n  left:calc(50% - .8125em)\n}\n\n.filepond--file [data-align*=bottom]{\n  bottom:1.125em\n}\n\n.filepond--file [data-align=center]{\n  top:calc(50% - .8125em)\n}\n\n.filepond--file .filepond--progress-indicator{\n  margin-top:.1875em\n}\n\n.filepond--file .filepond--progress-indicator[data-align*=right]{\n  margin-right:.1875em\n}\n\n.filepond--file .filepond--progress-indicator[data-align*=left]{\n  margin-left:.1875em\n}\n\n[data-filepond-item-state*=error] .filepond--file-info,[data-filepond-item-state*=invalid] .filepond--file-info,[data-filepond-item-state=cancelled] .filepond--file-info{\n  margin-right:2.25em\n}\n\n[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing svg{\n  -webkit-animation:fall .5s linear .125s both;\n  animation:fall .5s linear .125s both\n}\n\n[data-filepond-item-state=processing-complete] .filepond--file-info-sub,[data-filepond-item-state=processing-complete] .filepond--file-status-sub{\n  opacity:0\n}\n\n[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing~.filepond--file-info .filepond--file-info-sub,[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing~.filepond--file-status .filepond--file-status-sub{\n  opacity:.5\n}\n\n[data-filepond-item-state*=error] .filepond--file-wrapper,[data-filepond-item-state*=error] .filepond--panel,[data-filepond-item-state*=invalid] .filepond--file-wrapper,[data-filepond-item-state*=invalid] .filepond--panel{\n  -webkit-animation:shake .65s linear both;\n  animation:shake .65s linear both\n}\n\n[data-filepond-item-state*=busy] .filepond--progress-indicator svg{\n  -webkit-animation:spin 1s linear infinite;\n  animation:spin 1s linear infinite\n}\n\n@-webkit-keyframes spin{\n  0%{\n    -webkit-transform:rotate(0deg);\n    transform:rotate(0deg)\n  }\n\n  to{\n    -webkit-transform:rotate(1turn);\n    transform:rotate(1turn)\n  }\n}\n\n@keyframes spin{\n  0%{\n    -webkit-transform:rotate(0deg);\n    transform:rotate(0deg)\n  }\n\n  to{\n    -webkit-transform:rotate(1turn);\n    transform:rotate(1turn)\n  }\n}\n\n@-webkit-keyframes shake{\n  10%,90%{\n    -webkit-transform:translateX(-.0625em);\n    transform:translateX(-.0625em)\n  }\n\n  20%,80%{\n    -webkit-transform:translateX(.125em);\n    transform:translateX(.125em)\n  }\n\n  30%,50%,70%{\n    -webkit-transform:translateX(-.25em);\n    transform:translateX(-.25em)\n  }\n\n  40%,60%{\n    -webkit-transform:translateX(.25em);\n    transform:translateX(.25em)\n  }\n}\n\n@keyframes shake{\n  10%,90%{\n    -webkit-transform:translateX(-.0625em);\n    transform:translateX(-.0625em)\n  }\n\n  20%,80%{\n    -webkit-transform:translateX(.125em);\n    transform:translateX(.125em)\n  }\n\n  30%,50%,70%{\n    -webkit-transform:translateX(-.25em);\n    transform:translateX(-.25em)\n  }\n\n  40%,60%{\n    -webkit-transform:translateX(.25em);\n    transform:translateX(.25em)\n  }\n}\n\n@-webkit-keyframes fall{\n  0%{\n    opacity:0;\n    -webkit-transform:scale(.5);\n    transform:scale(.5);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n\n  70%{\n    opacity:1;\n    -webkit-transform:scale(1.1);\n    transform:scale(1.1);\n    -webkit-animation-timing-function:ease-in-out;\n    animation-timing-function:ease-in-out\n  }\n\n  to{\n    -webkit-transform:scale(1);\n    transform:scale(1);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n}\n\n@keyframes fall{\n  0%{\n    opacity:0;\n    -webkit-transform:scale(.5);\n    transform:scale(.5);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n\n  70%{\n    opacity:1;\n    -webkit-transform:scale(1.1);\n    transform:scale(1.1);\n    -webkit-animation-timing-function:ease-in-out;\n    animation-timing-function:ease-in-out\n  }\n\n  to{\n    -webkit-transform:scale(1);\n    transform:scale(1);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n}\n\n.filepond--hopper[data-hopper-state=drag-over]>*{\n  pointer-events:none\n}\n\n.filepond--hopper[data-hopper-state=drag-over]:after{\n  content:\"\";\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  bottom:0;\n  z-index:100\n}\n\n.filepond--progress-indicator{\n  z-index:103\n}\n\n.filepond--file-action-button{\n  z-index:102\n}\n\n.filepond--file-status{\n  z-index:101\n}\n\n.filepond--file-info{\n  z-index:100\n}\n\n.filepond--item{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  z-index:1;\n  padding:0;\n  margin:.25em;\n  will-change:transform,opacity\n}\n\n.filepond--item>.filepond--panel{\n  z-index:-1\n}\n\n.filepond--item>.filepond--panel .filepond--panel-bottom{\n  box-shadow:0 .0625em .125em -.0625em rgba(0,0,0,.25)\n}\n\n.filepond--item>.filepond--file-wrapper,.filepond--item>.filepond--panel{\n  transition:opacity .15s ease-out\n}\n\n.filepond--item[data-drag-state]{\n  cursor:-webkit-grab;\n  cursor:grab\n}\n\n.filepond--item[data-drag-state]>.filepond--panel{\n  transition:box-shadow .125s ease-in-out;\n  box-shadow:0 0 0 transparent\n}\n\n.filepond--item[data-drag-state=drag]{\n  cursor:-webkit-grabbing;\n  cursor:grabbing\n}\n\n.filepond--item[data-drag-state=drag]>.filepond--panel{\n  box-shadow:0 .125em .3125em rgba(0,0,0,.325)\n}\n\n.filepond--item[data-drag-state]:not([data-drag-state=idle]){\n  z-index:2\n}\n\n.filepond--item-panel{\n  background-color:#64605e\n}\n\n[data-filepond-item-state=processing-complete] .filepond--item-panel{\n  background-color:#369763\n}\n\n[data-filepond-item-state*=error] .filepond--item-panel,[data-filepond-item-state*=invalid] .filepond--item-panel{\n  background-color:#c44e47\n}\n\n.filepond--item-panel{\n  border-radius:.5em;\n  transition:background-color .25s\n}\n\n.filepond--list-scroller{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  margin:0;\n  will-change:transform\n}\n\n.filepond--list-scroller[data-state=overflow]{\n  overflow-y:scroll;\n  overflow-x:hidden;\n  -webkit-overflow-scrolling:touch;\n  -webkit-mask:linear-gradient(180deg,#000 calc(100% - .5em),transparent);\n  mask:linear-gradient(180deg,#000 calc(100% - .5em),transparent)\n}\n\n.filepond--list-scroller[data-state=overflow] .filepond--list{\n  bottom:0;\n  right:0\n}\n\n.filepond--list-scroller::-webkit-scrollbar{\n  background:transparent\n}\n\n.filepond--list-scroller::-webkit-scrollbar:vertical{\n  width:1em\n}\n\n.filepond--list-scroller::-webkit-scrollbar:horizontal{\n  height:0\n}\n\n.filepond--list-scroller::-webkit-scrollbar-thumb{\n  background-color:rgba(0,0,0,.3);\n  border-radius:99999px;\n  border:.3125em solid transparent;\n  background-clip:content-box\n}\n\n.filepond--list.filepond--list{\n  position:absolute;\n  top:0;\n  margin:0;\n  padding:0;\n  list-style-type:none;\n  will-change:transform\n}\n\n.filepond--list{\n  left:.75em;\n  right:.75em\n}\n\n.filepond--root[data-style-panel-layout~=integrated]{\n  width:100%;\n  height:100%;\n  max-width:none;\n  margin:0\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--panel-root,.filepond--root[data-style-panel-layout~=integrated] .filepond--panel-root{\n  border-radius:0\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--panel-root>*,.filepond--root[data-style-panel-layout~=integrated] .filepond--panel-root>*{\n  display:none\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--drop-label,.filepond--root[data-style-panel-layout~=integrated] .filepond--drop-label{\n  bottom:0;\n  height:auto;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  z-index:7\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--item-panel,.filepond--root[data-style-panel-layout~=integrated] .filepond--item-panel{\n  display:none\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--list-scroller,.filepond--root[data-style-panel-layout~=integrated] .filepond--list-scroller{\n  overflow:hidden;\n  height:100%;\n  margin-top:0;\n  margin-bottom:0\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--list,.filepond--root[data-style-panel-layout~=integrated] .filepond--list{\n  left:0;\n  right:0;\n  height:100%\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--item,.filepond--root[data-style-panel-layout~=integrated] .filepond--item{\n  margin:0\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--file-wrapper,.filepond--root[data-style-panel-layout~=integrated] .filepond--file-wrapper{\n  height:100%\n}\n\n.filepond--root[data-style-panel-layout~=circle]{\n  border-radius:99999rem;\n  overflow:hidden\n}\n\n.filepond--root[data-style-panel-layout~=circle]>.filepond--panel{\n  border-radius:inherit\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--file-info,.filepond--root[data-style-panel-layout~=circle] .filepond--file-status,.filepond--root[data-style-panel-layout~=circle]>.filepond--panel>*{\n  display:none\n}\n\n.filepond--panel-root{\n  border-radius:.5em;\n  background-color:#f1f0ef\n}\n\n.filepond--panel{\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  margin:0;\n  height:100%!important;\n  pointer-events:none\n}\n\n.filepond-panel:not([data-scalable=false]){\n  height:auto!important\n}\n\n.filepond--panel[data-scalable=false]>div{\n  display:none\n}\n\n.filepond--panel[data-scalable=true]{\n  -webkit-transform-style:preserve-3d;\n  transform-style:preserve-3d;\n  background-color:transparent!important;\n  border:none!important\n}\n\n.filepond--panel-bottom,.filepond--panel-center,.filepond--panel-top{\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  margin:0;\n  padding:0\n}\n\n.filepond--panel-bottom,.filepond--panel-top{\n  height:.5em\n}\n\n.filepond--panel-top{\n  border-bottom-left-radius:0!important;\n  border-bottom-right-radius:0!important;\n  border-bottom:none!important\n}\n\n.filepond--panel-top:after{\n  content:\"\";\n  position:absolute;\n  height:2px;\n  left:0;\n  right:0;\n  bottom:-1px;\n  background-color:inherit\n}\n\n.filepond--panel-bottom,.filepond--panel-center{\n  will-change:transform;\n  -webkit-backface-visibility:hidden;\n  backface-visibility:hidden;\n  -webkit-transform-origin:left top;\n  transform-origin:left top;\n  -webkit-transform:translate3d(0,.5em,0);\n  transform:translate3d(0,.5em,0)\n}\n\n.filepond--panel-bottom{\n  border-top-left-radius:0!important;\n  border-top-right-radius:0!important;\n  border-top:none!important\n}\n\n.filepond--panel-bottom:before{\n  content:\"\";\n  position:absolute;\n  height:2px;\n  left:0;\n  right:0;\n  top:-1px;\n  background-color:inherit\n}\n\n.filepond--panel-center{\n  height:100px!important;\n  border-top:none!important;\n  border-bottom:none!important;\n  border-radius:0!important\n}\n\n.filepond--panel-center:not([style]){\n  visibility:hidden\n}\n\n.filepond--progress-indicator{\n  position:static;\n  width:1.25em;\n  height:1.25em;\n  color:#fff;\n  margin:0;\n  pointer-events:none;\n  will-change:transform,opacity\n}\n\n.filepond--progress-indicator svg{\n  width:100%;\n  height:100%;\n  vertical-align:top;\n  transform-box:fill-box\n}\n\n.filepond--progress-indicator path{\n  fill:none;\n  stroke:currentColor\n}\n\n.filepond--list-scroller{\n  z-index:6\n}\n\n.filepond--drop-label{\n  z-index:5\n}\n\n.filepond--drip{\n  z-index:3\n}\n\n.filepond--root>.filepond--panel{\n  z-index:2\n}\n\n.filepond--browser{\n  z-index:1\n}\n\n.filepond--root{\n  box-sizing:border-box;\n  position:relative;\n  margin-bottom:1em;\n  font-size:1rem;\n  line-height:normal;\n  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;\n  font-weight:450;\n  text-align:left;\n  text-rendering:optimizeLegibility;\n  direction:ltr;\n  contain:layout style size\n}\n\n.filepond--root *{\n  box-sizing:inherit;\n  line-height:inherit\n}\n\n.filepond--root :not(text){\n  font-size:inherit\n}\n\n.filepond--root[data-disabled]{\n  pointer-events:none\n}\n\n.filepond--root .filepond--drop-label{\n  min-height:4.75em\n}\n\n.filepond--root .filepond--list-scroller{\n  margin-top:1em;\n  margin-bottom:1em\n}", ""]);
 
 // exports
 
@@ -245,7 +245,7 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
- * FilePondPluginImagePreview 4.5.0
+ * FilePondPluginImagePreview 4.6.0
  * Licensed under MIT, https://opensource.org/licenses/MIT/
  * Please visit https://pqina.nl/filepond/ for details.
  */
@@ -2015,6 +2015,17 @@ if(false) {}
     };
   };
 
+  var pointsToPathShape = function pointsToPathShape(points) {
+    return points
+      .map(function(point, index) {
+        return ''
+          .concat(index === 0 ? 'M' : 'L', ' ')
+          .concat(point.x, ' ')
+          .concat(point.y);
+      })
+      .join(' ');
+  };
+
   var setAttributes = function setAttributes(element, attr) {
     return Object.keys(attr).forEach(function(key) {
       return element.setAttribute(key, attr[key]);
@@ -2175,14 +2186,32 @@ if(false) {}
     }
   };
 
+  var updatePath = function updatePath(element, markup, size, scale) {
+    setAttributes(
+      element,
+      Object.assign({}, element.styles, {
+        fill: 'none',
+        d: pointsToPathShape(
+          markup.points.map(function(point) {
+            return {
+              x: getMarkupValue(point.x, size, scale, 'width'),
+              y: getMarkupValue(point.y, size, scale, 'height')
+            };
+          })
+        )
+      })
+    );
+  };
+
   var createShape = function createShape(node) {
     return function(markup) {
-      return svg(node);
+      return svg(node, { id: markup.id });
     };
   };
 
   var createImage = function createImage(markup) {
     var shape = svg('image', {
+      id: markup.id,
       'stroke-linecap': 'round',
       'stroke-linejoin': 'round',
       opacity: '0'
@@ -2201,6 +2230,7 @@ if(false) {}
 
   var createLine = function createLine(markup) {
     var shape = svg('g', {
+      id: markup.id,
       'stroke-linecap': 'round',
       'stroke-linejoin': 'round'
     });
@@ -2222,6 +2252,7 @@ if(false) {}
     rect: createShape('rect'),
     ellipse: createShape('ellipse'),
     text: createShape('text'),
+    path: createShape('path'),
     line: createLine
   };
 
@@ -2230,6 +2261,7 @@ if(false) {}
     ellipse: updateEllipse,
     image: updateImage,
     text: updateText,
+    path: updatePath,
     line: updateLine
   };
 
@@ -2244,7 +2276,9 @@ if(false) {}
     size,
     scale
   ) {
-    element.rect = getMarkupRect(markup, size, scale);
+    if (type !== 'path') {
+      element.rect = getMarkupRect(markup, size, scale);
+    }
     element.styles = getMarkupStyles(markup, size, scale);
     UPDATE_TYPE_ROUTES[type](element, markup, size, scale);
   };
@@ -2272,6 +2306,13 @@ if(false) {}
       type = _markup[0],
       props = _markup[1];
 
+    var rect = props.points
+      ? {}
+      : MARKUP_RECT.reduce(function(prev, curr) {
+          prev[curr] = toOptionalFraction(props[curr]);
+          return prev;
+        }, {});
+
     return [
       type,
       Object.assign(
@@ -2279,10 +2320,7 @@ if(false) {}
           zIndex: 0
         },
         props,
-        MARKUP_RECT.reduce(function(prev, curr) {
-          prev[curr] = toOptionalFraction(props[curr]);
-          return prev;
-        }, {})
+        rect
       )
     ];
   };
@@ -3986,7 +4024,7 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
- * FilePond 4.7.4
+ * FilePond 4.9.3
  * Licensed under MIT, https://opensource.org/licenses/MIT/
  * Please visit https://pqina.nl/filepond/ for details.
  */
@@ -4214,6 +4252,25 @@ if(false) {}
       return view;
     };
   };
+
+  var IS_BROWSER = (function() {
+    return (
+      typeof window !== 'undefined' && typeof window.document !== 'undefined'
+    );
+  })();
+  var isBrowser = function isBrowser() {
+    return IS_BROWSER;
+  };
+
+  var testElement = isBrowser() ? createElement('svg') : {};
+  var getChildCount =
+    'children' in testElement
+      ? function(el) {
+          return el.children.length;
+        }
+      : function(el) {
+          return el.childNodes.length;
+        };
 
   var getViewRect = function getViewRect(
     elementRect,
@@ -5346,7 +5403,7 @@ if(false) {}
         });
 
         // append created child views to root node
-        var childCount = element.children.length; // need to know the current child count so appending happens in correct order
+        var childCount = getChildCount(element); // need to know the current child count so appending happens in correct order
         childViews.forEach(function(child, index) {
           internalAPI.appendChild(child.element, childCount + index);
         });
@@ -6195,6 +6252,7 @@ if(false) {}
     allowMultiple: [false, Type.BOOLEAN], // Allow multiple files (disabled by default, as multiple attribute is also required on input to allow multiple)
     allowReplace: [true, Type.BOOLEAN], // Allow dropping a file on other file to replace it (only works when multiple is set to false)
     allowRevert: [true, Type.BOOLEAN], // Allows user to revert file upload
+    allowReorder: [false, Type.BOOLEAN], // Allow reordering of files
 
     // Revert mode
     forceRevert: [false, Type.BOOLEAN], // Set to 'force' to require the file to be reverted before removal
@@ -10527,7 +10585,7 @@ if(false) {}
                 {
                   query: id,
                   item: item,
-                  ready: function ready(file) {
+                  success: function success(file) {
                     dispatch('DID_PREPARE_OUTPUT', { id: id, file: file });
                   }
                 },
@@ -10579,19 +10637,30 @@ if(false) {}
         }, 0);
       },
 
-      SORT: function SORT(_ref4) {
-        var compare = _ref4.compare;
+      MOVE_ITEM: function MOVE_ITEM(_ref4) {
+        var query = _ref4.query,
+          index = _ref4.index;
+        var item = getItemByQuery(state.items, query);
+        if (!item) return;
+        var currentIndex = state.items.indexOf(item);
+        index = limit(index, 0, state.items.length - 1);
+        if (currentIndex === index) return;
+        state.items.splice(index, 0, state.items.splice(currentIndex, 1)[0]);
+      },
+
+      SORT: function SORT(_ref5) {
+        var compare = _ref5.compare;
         sortItems(state, compare);
       },
 
-      ADD_ITEMS: function ADD_ITEMS(_ref5) {
-        var items = _ref5.items,
-          index = _ref5.index,
-          interactionMethod = _ref5.interactionMethod,
-          _ref5$success = _ref5.success,
-          success = _ref5$success === void 0 ? function() {} : _ref5$success,
-          _ref5$failure = _ref5.failure,
-          failure = _ref5$failure === void 0 ? function() {} : _ref5$failure;
+      ADD_ITEMS: function ADD_ITEMS(_ref6) {
+        var items = _ref6.items,
+          index = _ref6.index,
+          interactionMethod = _ref6.interactionMethod,
+          _ref6$success = _ref6.success,
+          success = _ref6$success === void 0 ? function() {} : _ref6$success,
+          _ref6$failure = _ref6.failure,
+          failure = _ref6$failure === void 0 ? function() {} : _ref6$failure;
 
         var currentIndex = index;
 
@@ -10632,17 +10701,17 @@ if(false) {}
        * @param index
        * @param interactionMethod
        */
-      ADD_ITEM: function ADD_ITEM(_ref6) {
-        var source = _ref6.source,
-          _ref6$index = _ref6.index,
-          index = _ref6$index === void 0 ? -1 : _ref6$index,
-          interactionMethod = _ref6.interactionMethod,
-          _ref6$success = _ref6.success,
-          success = _ref6$success === void 0 ? function() {} : _ref6$success,
-          _ref6$failure = _ref6.failure,
-          failure = _ref6$failure === void 0 ? function() {} : _ref6$failure,
-          _ref6$options = _ref6.options,
-          options = _ref6$options === void 0 ? {} : _ref6$options;
+      ADD_ITEM: function ADD_ITEM(_ref7) {
+        var source = _ref7.source,
+          _ref7$index = _ref7.index,
+          index = _ref7$index === void 0 ? -1 : _ref7$index,
+          interactionMethod = _ref7.interactionMethod,
+          _ref7$success = _ref7.success,
+          success = _ref7$success === void 0 ? function() {} : _ref7$success,
+          _ref7$failure = _ref7.failure,
+          failure = _ref7$failure === void 0 ? function() {} : _ref7$failure,
+          _ref7$options = _ref7.options,
+          options = _ref7$options === void 0 ? {} : _ref7$options;
 
         // if no source supplied
         if (isEmpty(source)) {
@@ -10890,7 +10959,7 @@ if(false) {}
                   {
                     query: id,
                     item: item,
-                    ready: function ready(file) {
+                    success: function success(file) {
                       dispatch('DID_PREPARE_OUTPUT', { id: id, file: file });
                       loadComplete();
                     }
@@ -10984,11 +11053,11 @@ if(false) {}
         listUpdated(dispatch, state);
 
         // start loading the source
-        var _ref7 = state.options.server || {},
-          url = _ref7.url,
-          load = _ref7.load,
-          restore = _ref7.restore,
-          fetch = _ref7.fetch;
+        var _ref8 = state.options.server || {},
+          url = _ref8.url,
+          load = _ref8.load,
+          restore = _ref8.restore,
+          fetch = _ref8.fetch;
 
         item.load(
           source,
@@ -11016,12 +11085,21 @@ if(false) {}
         );
       },
 
-      REQUEST_PREPARE_OUTPUT: function REQUEST_PREPARE_OUTPUT(_ref8) {
-        var item = _ref8.item,
-          ready = _ref8.ready;
+      REQUEST_PREPARE_OUTPUT: function REQUEST_PREPARE_OUTPUT(_ref9) {
+        var item = _ref9.item,
+          success = _ref9.success,
+          _ref9$failure = _ref9.failure,
+          failure = _ref9$failure === void 0 ? function() {} : _ref9$failure;
+
+        // error response if item archived
+        var err = {
+          error: createResponse('error', 0, 'Item not found'),
+
+          file: null
+        };
 
         // don't handle archived items, an item could have been archived (load aborted) while waiting to be prepared
-        if (item.archived) return;
+        if (item.archived) return failure(err);
 
         // allow plugins to alter the file data
         applyFilterChain('PREPARE_OUTPUT', item.file, {
@@ -11033,17 +11111,17 @@ if(false) {}
             item: item
           }).then(function(result) {
             // don't handle archived items, an item could have been archived (load aborted) while being prepared
-            if (item.archived) return;
+            if (item.archived) return failure(err);
 
             // we done!
-            ready(result);
+            success(result);
           });
         });
       },
 
-      COMPLETE_LOAD_ITEM: function COMPLETE_LOAD_ITEM(_ref9) {
-        var item = _ref9.item,
-          data = _ref9.data;
+      COMPLETE_LOAD_ITEM: function COMPLETE_LOAD_ITEM(_ref10) {
+        var item = _ref10.item,
+          data = _ref10.data;
         var success = data.success,
           source = data.source;
 
@@ -11090,6 +11168,29 @@ if(false) {}
       RETRY_ITEM_LOAD: getItemByQueryFromState(state, function(item) {
         // try loading the source one more time
         item.retryLoad();
+      }),
+
+      REQUEST_ITEM_PREPARE: getItemByQueryFromState(state, function(
+        item,
+        _success,
+        failure
+      ) {
+        dispatch(
+          'REQUEST_PREPARE_OUTPUT',
+          {
+            query: item.id,
+            item: item,
+            success: function success(file) {
+              dispatch('DID_PREPARE_OUTPUT', { id: item.id, file: file });
+              _success({
+                file: item,
+                output: file
+              });
+            },
+            failure: failure
+          },
+          true
+        );
       }),
 
       REQUEST_ITEM_PROCESSING: getItemByQueryFromState(state, function(
@@ -11406,8 +11507,8 @@ if(false) {}
           .catch(function() {});
       }),
 
-      SET_OPTIONS: function SET_OPTIONS(_ref10) {
-        var options = _ref10.options;
+      SET_OPTIONS: function SET_OPTIONS(_ref11) {
+        var options = _ref11.options;
         forin(options, function(key, value) {
           dispatch('SET_' + fromCamels(key, '_').toUpperCase(), {
             value: value
@@ -12511,6 +12612,24 @@ if(false) {}
 
   var ITEM_SCALE_SPRING = 'spring';
 
+  var StateMap = {
+    DID_START_ITEM_LOAD: 'busy',
+    DID_UPDATE_ITEM_LOAD_PROGRESS: 'loading',
+    DID_THROW_ITEM_INVALID: 'load-invalid',
+    DID_THROW_ITEM_LOAD_ERROR: 'load-error',
+    DID_LOAD_ITEM: 'idle',
+    DID_THROW_ITEM_REMOVE_ERROR: 'remove-error',
+    DID_START_ITEM_REMOVE: 'busy',
+    DID_START_ITEM_PROCESSING: 'busy',
+    DID_REQUEST_ITEM_PROCESSING: 'busy',
+    DID_UPDATE_ITEM_PROCESS_PROGRESS: 'processing',
+    DID_COMPLETE_ITEM_PROCESSING: 'processing-complete',
+    DID_THROW_ITEM_PROCESSING_ERROR: 'processing-error',
+    DID_THROW_ITEM_PROCESSING_REVERT_ERROR: 'processing-revert-error',
+    DID_ABORT_ITEM_PROCESSING: 'cancelled',
+    DID_REVERT_ITEM_PROCESSING: 'idle'
+  };
+
   /**
    * Creates the file view
    */
@@ -12542,96 +12661,175 @@ if(false) {}
 
     // by default not marked for removal
     props.markedForRemoval = false;
-  };
 
-  var StateMap = {
-    DID_START_ITEM_LOAD: 'busy',
-    DID_UPDATE_ITEM_LOAD_PROGRESS: 'loading',
-    DID_THROW_ITEM_INVALID: 'load-invalid',
-    DID_THROW_ITEM_LOAD_ERROR: 'load-error',
-    DID_LOAD_ITEM: 'idle',
-    DID_THROW_ITEM_REMOVE_ERROR: 'remove-error',
-    DID_START_ITEM_REMOVE: 'busy',
-    DID_START_ITEM_PROCESSING: 'busy',
-    DID_REQUEST_ITEM_PROCESSING: 'busy',
-    DID_UPDATE_ITEM_PROCESS_PROGRESS: 'processing',
-    DID_COMPLETE_ITEM_PROCESSING: 'processing-complete',
-    DID_THROW_ITEM_PROCESSING_ERROR: 'processing-error',
-    DID_THROW_ITEM_PROCESSING_REVERT_ERROR: 'processing-revert-error',
-    DID_ABORT_ITEM_PROCESSING: 'cancelled',
-    DID_REVERT_ITEM_PROCESSING: 'idle'
+    // if not allowed to reorder file items, exit here
+    if (!root.query('GET_ALLOW_REORDER')) return;
+
+    // set to idle so shows grab cursor
+    root.element.dataset.dragState = 'idle';
+
+    var grab = function grab(e) {
+      if (!e.isPrimary) return;
+
+      var origin = {
+        x: e.pageX,
+        y: e.pageY
+      };
+
+      props.dragOrigin = {
+        x: root.translateX,
+        y: root.translateY
+      };
+
+      props.dragCenter = {
+        x: e.offsetX,
+        y: e.offsetY
+      };
+
+      root.dispatch('DID_GRAB_ITEM', { id: props.id });
+
+      var drag = function drag(e) {
+        if (!e.isPrimary) return;
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        props.dragOffset = {
+          x: e.pageX - origin.x,
+          y: e.pageY - origin.y
+        };
+
+        root.dispatch('DID_DRAG_ITEM', { id: props.id });
+      };
+
+      var drop = function drop(e) {
+        if (!e.isPrimary) return;
+
+        document.removeEventListener('pointermove', drag);
+        document.removeEventListener('pointerup', drop);
+
+        props.dragOffset = {
+          x: e.pageX - origin.x,
+          y: e.pageY - origin.y
+        };
+
+        root.dispatch('DID_DROP_ITEM', { id: props.id });
+      };
+
+      document.addEventListener('pointermove', drag);
+      document.addEventListener('pointerup', drop);
+    };
+
+    // addEvent(root.element, 'pointerdown', grab);
+    root.element.addEventListener('pointerdown', grab);
   };
 
   var route$1 = createRoute({
     DID_UPDATE_PANEL_HEIGHT: function DID_UPDATE_PANEL_HEIGHT(_ref2) {
       var root = _ref2.root,
         action = _ref2.action;
-      var height = action.height;
-      root.height = height;
+      root.height = action.height;
     }
   });
 
-  var write$4 = function write(_ref3) {
-    var root = _ref3.root,
-      actions = _ref3.actions,
-      props = _ref3.props,
-      shouldOptimize = _ref3.shouldOptimize;
-
-    // select last state change action
-    var action = actions
-      .concat()
-      .filter(function(action) {
-        return /^DID_/.test(action.type);
-      })
-      .reverse()
-      .find(function(action) {
-        return StateMap[action.type];
-      });
-
-    // no need to set same state twice
-    if (action && action.type !== props.currentState) {
-      // set current state
-      props.currentState = action.type;
-
-      // set state
-      root.element.dataset.filepondItemState =
-        StateMap[props.currentState] || '';
-    }
-
-    // route actions
-    var aspectRatio =
-      root.query('GET_ITEM_PANEL_ASPECT_RATIO') ||
-      root.query('GET_PANEL_ASPECT_RATIO');
-    if (!aspectRatio) {
-      route$1({ root: root, actions: actions, props: props });
-      if (!root.height && root.ref.container.rect.element.height > 0) {
-        root.height = root.ref.container.rect.element.height;
+  var write$4 = createRoute(
+    {
+      DID_GRAB_ITEM: function DID_GRAB_ITEM(_ref3) {
+        var root = _ref3.root,
+          props = _ref3.props;
+        props.dragOrigin = {
+          x: root.translateX,
+          y: root.translateY
+        };
+      },
+      DID_DRAG_ITEM: function DID_DRAG_ITEM(_ref4) {
+        var root = _ref4.root;
+        root.element.dataset.dragState = 'drag';
+      },
+      DID_DROP_ITEM: function DID_DROP_ITEM(_ref5) {
+        var root = _ref5.root,
+          props = _ref5.props;
+        props.dragOffset = null;
+        props.dragOrigin = null;
+        root.element.dataset.dragState = 'drop';
       }
-    } else if (!shouldOptimize) {
-      root.height = root.rect.element.width * aspectRatio;
-    }
+    },
+    function(_ref6) {
+      var root = _ref6.root,
+        actions = _ref6.actions,
+        props = _ref6.props,
+        shouldOptimize = _ref6.shouldOptimize;
 
-    // sync panel height with item height
-    if (shouldOptimize) {
-      root.ref.panel.height = null;
-    }
+      if (root.element.dataset.dragState === 'drop') {
+        if (root.scaleX <= 1) {
+          root.element.dataset.dragState = 'idle';
+        }
+      }
 
-    root.ref.panel.height = root.height;
-  };
+      // select last state change action
+      var action = actions
+        .concat()
+        .filter(function(action) {
+          return /^DID_/.test(action.type);
+        })
+        .reverse()
+        .find(function(action) {
+          return StateMap[action.type];
+        });
+
+      // no need to set same state twice
+      if (action && action.type !== props.currentState) {
+        // set current state
+        props.currentState = action.type;
+
+        // set state
+        root.element.dataset.filepondItemState =
+          StateMap[props.currentState] || '';
+      }
+
+      // route actions
+      var aspectRatio =
+        root.query('GET_ITEM_PANEL_ASPECT_RATIO') ||
+        root.query('GET_PANEL_ASPECT_RATIO');
+      if (!aspectRatio) {
+        route$1({ root: root, actions: actions, props: props });
+        if (!root.height && root.ref.container.rect.element.height > 0) {
+          root.height = root.ref.container.rect.element.height;
+        }
+      } else if (!shouldOptimize) {
+        root.height = root.rect.element.width * aspectRatio;
+      }
+
+      // sync panel height with item height
+      if (shouldOptimize) {
+        root.ref.panel.height = null;
+      }
+
+      root.ref.panel.height = root.height;
+    }
+  );
 
   var item = createView({
     create: create$7,
     write: write$4,
-    destroy: function destroy(_ref4) {
-      var root = _ref4.root,
-        props = _ref4.props;
+    destroy: function destroy(_ref7) {
+      var root = _ref7.root,
+        props = _ref7.props;
       root.element.removeEventListener('click', root.ref.handleClick);
       root.dispatch('RELEASE_ITEM', { query: props.id });
     },
     tag: 'li',
     name: 'item',
     mixins: {
-      apis: ['id', 'interactionMethod', 'markedForRemoval', 'spawnDate'],
+      apis: [
+        'id',
+        'interactionMethod',
+        'markedForRemoval',
+        'spawnDate',
+        'dragCenter',
+        'dragOrigin',
+        'dragOffset'
+      ],
       styles: [
         'translateX',
         'translateY',
@@ -12653,12 +12851,13 @@ if(false) {}
 
   var getItemIndexByPosition = function getItemIndexByPosition(
     view,
+    children,
     positionInView
   ) {
     if (!positionInView) return;
 
     var horizontalSpace = view.rect.element.width;
-    var children = view.childViews;
+    // const children = view.childViews;
     var l = children.length;
     var last = null;
 
@@ -12775,19 +12974,29 @@ if(false) {}
     var vy =
       arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
 
-    item.translateX = x;
-    item.translateY = y;
+    // set to null to remove animation while dragging
+    if (item.dragOffset) {
+      item.translateX = null;
+      item.translateY = null;
+      item.translateX = item.dragOrigin.x + item.dragOffset.x;
+      item.translateY = item.dragOrigin.y + item.dragOffset.y;
+      item.scaleX = 1.025;
+      item.scaleY = 1.025;
+    } else {
+      item.translateX = x;
+      item.translateY = y;
 
-    if (Date.now() > item.spawnDate) {
-      // reveal element
-      if (item.opacity === 0) {
-        introItemView(item, x, y, vx, vy);
+      if (Date.now() > item.spawnDate) {
+        // reveal element
+        if (item.opacity === 0) {
+          introItemView(item, x, y, vx, vy);
+        }
+
+        // make sure is default scale every frame
+        item.scaleX = 1;
+        item.scaleY = 1;
+        item.opacity = 1;
       }
-
-      // make sure is default scale every frame
-      item.scaleX = 1;
-      item.scaleY = 1;
-      item.opacity = 1;
     }
   };
 
@@ -12845,12 +13054,84 @@ if(false) {}
     view.markedForRemoval = true;
   };
 
+  var getItemHeight = function getItemHeight(child) {
+    return (
+      child.rect.element.height +
+      child.rect.element.marginBottom * 0.5 +
+      child.rect.element.marginTop * 0.5
+    );
+  };
+
+  var dragItem = function dragItem(_ref4) {
+    var root = _ref4.root,
+      action = _ref4.action,
+      props = _ref4.props;
+    var id = action.id;
+
+    // get the view matching the given id
+    var view = root.childViews.find(function(child) {
+      return child.id === id;
+    });
+
+    // if no view found, exit
+    if (!view) return;
+
+    var dragPosition = {
+      x: 0,
+      y: view.dragOrigin.y + view.dragOffset.y + view.dragCenter.y
+
+      // find new index
+    };
+    var items = root.query('GET_ACTIVE_ITEMS');
+    var visibleChildren = root.childViews.filter(function(child) {
+      return child.rect.element.height;
+    });
+    var children = items.map(function(item) {
+      return visibleChildren.find(function(childView) {
+        return childView.id === item.id;
+      });
+    });
+
+    var l = children.length;
+    var targetIndex = l;
+
+    var childHeight = 0;
+    var childBottom = 0;
+    var childTop = 0;
+
+    var currentIndex = children.findIndex(function(child) {
+      return child === view;
+    });
+    var dragHeight = getItemHeight(view);
+
+    for (var i = 0; i < l; i++) {
+      childHeight = getItemHeight(children[i]);
+      childTop = childBottom;
+      childBottom = childTop + childHeight;
+
+      if (dragPosition.y < childBottom) {
+        if (currentIndex > i) {
+          if (dragPosition.y < childTop + dragHeight) {
+            targetIndex = i;
+            break;
+          }
+          continue;
+        }
+        targetIndex = i;
+        break;
+      }
+    }
+
+    root.dispatch('MOVE_ITEM', { query: view, index: targetIndex });
+  };
+
   /**
    * Setup action routes
    */
   var route$2 = createRoute({
     DID_ADD_ITEM: addItemView,
-    DID_REMOVE_ITEM: removeItemView
+    DID_REMOVE_ITEM: removeItemView,
+    DID_DRAG_ITEM: dragItem
   });
 
   /**
@@ -12859,20 +13140,15 @@ if(false) {}
    * @param actions
    * @param props
    */
-  var write$5 = function write(_ref4) {
-    var root = _ref4.root,
-      props = _ref4.props,
-      actions = _ref4.actions,
-      shouldOptimize = _ref4.shouldOptimize;
+  var write$5 = function write(_ref5) {
+    var root = _ref5.root,
+      props = _ref5.props,
+      actions = _ref5.actions,
+      shouldOptimize = _ref5.shouldOptimize;
 
     // route actions
     route$2({ root: root, props: props, actions: actions });
     var dragCoordinates = props.dragCoordinates;
-
-    // get index
-    var dragIndex = dragCoordinates
-      ? getItemIndexByPosition(root, dragCoordinates)
-      : null;
 
     // available space on horizontal axis
     var horizontalSpace = root.rect.element.width;
@@ -12893,6 +13169,11 @@ if(false) {}
       .filter(function(item) {
         return item;
       });
+
+    // get index
+    var dragIndex = dragCoordinates
+      ? getItemIndexByPosition(root, children, dragCoordinates)
+      : null;
 
     // add index is used to reserve the dropped/added item index till the actual item is rendered
     var addIndex = root.ref.addIndex || null;
@@ -13018,8 +13299,8 @@ if(false) {}
     write: write$5,
     tag: 'ul',
     name: 'list',
-    didWriteView: function didWriteView(_ref5) {
-      var root = _ref5.root;
+    didWriteView: function didWriteView(_ref6) {
+      var root = _ref6.root;
       root.childViews
         .filter(function(view) {
           return view.markedForRemoval && view.opacity === 0 && view.resting;
@@ -14316,6 +14597,10 @@ if(false) {}
 
   var MAX_FILES_LIMIT = 1000000;
 
+  var prevent = function prevent(e) {
+    return e.preventDefault();
+  };
+
   var create$d = function create(_ref) {
     var root = _ref.root,
       props = _ref.props;
@@ -14329,9 +14614,14 @@ if(false) {}
     // Add className
     var className = root.query('GET_CLASS_NAME');
     if (className) {
-      className.split(' ').forEach(function(name) {
-        root.element.classList.add(name);
-      });
+      className
+        .split(' ')
+        .filter(function(name) {
+          return name.length;
+        })
+        .forEach(function(name) {
+          root.element.classList.add(name);
+        });
     }
 
     // Field label
@@ -14391,6 +14681,15 @@ if(false) {}
     // history of updates
     root.ref.previousAspectRatio = null;
     root.ref.updateHistory = [];
+
+    // prevent scrolling and zooming on iOS (only if supports pointer events, for then we can enable reorder)
+    var canHover = window.matchMedia('(pointer: fine) and (hover: hover)')
+      .matches;
+    var hasPointerEvents = 'PointerEvent' in window;
+    if (root.query('GET_ALLOW_REORDER') && hasPointerEvents && !canHover) {
+      root.element.addEventListener('touchmove', prevent, { passive: false });
+      root.element.addEventListener('gesturestart', prevent);
+    }
   };
 
   var write$8 = function write(_ref3) {
@@ -14656,7 +14955,19 @@ if(false) {}
     // get file list reference
     var scrollList = root.ref.list;
     var itemList = scrollList.childViews[0];
-    var children = itemList.childViews;
+    var visibleChildren = itemList.childViews.filter(function(child) {
+      return child.rect.element.height;
+    });
+    var children = root
+      .query('GET_ACTIVE_ITEMS')
+      .map(function(item) {
+        return visibleChildren.find(function(child) {
+          return child.id === item.id;
+        });
+      })
+      .filter(function(item) {
+        return item;
+      });
 
     // no children, done!
     if (children.length === 0) return { visual: visual, bounds: bounds };
@@ -14664,6 +14975,7 @@ if(false) {}
     var horizontalSpace = itemList.rect.element.width;
     var dragIndex = getItemIndexByPosition(
       itemList,
+      children,
       scrollList.dragCoordinates
     );
 
@@ -14745,9 +15057,9 @@ if(false) {}
     return false;
   };
 
-  var getDragIndex = function getDragIndex(list, position) {
+  var getDragIndex = function getDragIndex(list, children, position) {
     var itemList = list.childViews[0];
-    return getItemIndexByPosition(itemList, {
+    return getItemIndexByPosition(itemList, children, {
       left: position.scopeLeft - itemList.rect.element.left,
       top:
         position.scopeTop -
@@ -14808,9 +15120,26 @@ if(false) {}
       );
 
       hopper.onload = function(items, position) {
+        // get item children elements and sort based on list sort
+        var list = root.ref.list.childViews[0];
+        var visibleChildren = list.childViews.filter(function(child) {
+          return child.rect.element.height;
+        });
+        var children = root
+          .query('GET_ACTIVE_ITEMS')
+          .map(function(item) {
+            return visibleChildren.find(function(child) {
+              return child.id === item.id;
+            });
+          })
+          .filter(function(item) {
+            return item;
+          });
+
+        // go
         root.dispatch('ADD_ITEMS', {
           items: items,
-          index: getDragIndex(root.ref.list, position),
+          index: getDragIndex(root.ref.list, children, position),
           interactionMethod: InteractionMethod.DROP
         });
 
@@ -14948,6 +15277,8 @@ if(false) {}
       if (root.ref.hopper) {
         root.ref.hopper.destroy();
       }
+      root.element.removeEventListener('touchmove', prevent);
+      root.element.removeEventListener('gesturestart', prevent);
     },
     mixins: {
       styles: ['height']
@@ -15260,6 +15591,20 @@ if(false) {}
       return store.query('GET_ACTIVE_ITEM', query);
     };
 
+    var prepareFile = function prepareFile(query) {
+      return new Promise(function(resolve, reject) {
+        store.dispatch('REQUEST_ITEM_PREPARE', {
+          query: query,
+          success: function success(item) {
+            resolve(item);
+          },
+          failure: function failure(error) {
+            reject(error);
+          }
+        });
+      });
+    };
+
     var addFile = function addFile(source) {
       var options =
         arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -15340,13 +15685,26 @@ if(false) {}
       });
     };
 
-    var processFiles = function processFiles() {
+    var prepareFiles = function prepareFiles() {
       for (
         var _len2 = arguments.length, args = new Array(_len2), _key2 = 0;
         _key2 < _len2;
         _key2++
       ) {
         args[_key2] = arguments[_key2];
+      }
+      var queries = Array.isArray(args[0]) ? args[0] : args;
+      var items = queries.length ? queries : getFiles();
+      return Promise.all(items.map(prepareFile));
+    };
+
+    var processFiles = function processFiles() {
+      for (
+        var _len3 = arguments.length, args = new Array(_len3), _key3 = 0;
+        _key3 < _len3;
+        _key3++
+      ) {
+        args[_key3] = arguments[_key3];
       }
       var queries = Array.isArray(args[0]) ? args[0] : args;
       if (!queries.length) {
@@ -15369,11 +15727,11 @@ if(false) {}
 
     var removeFiles = function removeFiles() {
       for (
-        var _len3 = arguments.length, args = new Array(_len3), _key3 = 0;
-        _key3 < _len3;
-        _key3++
+        var _len4 = arguments.length, args = new Array(_len4), _key4 = 0;
+        _key4 < _len4;
+        _key4++
       ) {
-        args[_key3] = arguments[_key3];
+        args[_key4] = arguments[_key4];
       }
       var queries = Array.isArray(args[0]) ? args[0] : args;
       var files = getFiles();
@@ -15442,10 +15800,23 @@ if(false) {}
         processFile: processFile,
 
         /**
+         * Request prepare output for file with given name
+         * @param query { string, number, null  }
+         */
+        prepareFile: prepareFile,
+
+        /**
          * Removes a file by its name
          * @param query { string, number, null  }
          */
         removeFile: removeFile,
+
+        /**
+         * Moves a file to a new location in the files list
+         */
+        moveFile: function moveFile(query, index) {
+          return store.dispatch('MOVE_ITEM', { query: query, index: index });
+        },
 
         /**
          * Returns all files (wrapped in public api)
@@ -15461,6 +15832,11 @@ if(false) {}
          * Clears all files from the files list
          */
         removeFiles: removeFiles,
+
+        /**
+         * Starts preparing output of all files
+         */
+        prepareFiles: prepareFiles,
 
         /**
          * Sort list of files
@@ -15958,11 +16334,6 @@ if(false) {}
   var hasTiming = function hasTiming() {
     return 'performance' in window;
   }; // iOS 8.x
-  var isBrowser = function isBrowser() {
-    return (
-      typeof window !== 'undefined' && typeof window.document !== 'undefined'
-    );
-  };
 
   var supported = (function() {
     // Runs immidiately and then remembers result for subsequent calls
