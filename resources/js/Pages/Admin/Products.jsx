@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Admin from "../../Shared/Admin";
-import InfoBoxes from "../../components/Admin/InfoBoxes";
-import { useTable } from 'react-table';
 import {Inertia} from "@inertiajs/inertia";
-import Styled from 'styled-components';
-import classNames from 'classnames';
 import Table from "../../components/Table";
 import ProductsInfoBoxes from "../../components/Admin/ProductsInfoBoxes";
 import {Pagination} from "react-laravel-paginex";
 
 
 function Products(props) {
-    const { products, success_message } = props;
+    const { products } = props;
     console.log('products =>', products);
     const [dataSelected, setDataSelected] = useState(null);
     const [createProduct, setCreateProduct] = useState(null);
     const [editing, setEditing] = useState(false);
-    const updateStatus = id => evt => {
-        console.log('id =>', id);
-        Inertia.put( `/products/${id}`, {
-            status: evt.target.value,
-        });
-    };
 
     const showCreateProduct = () => {
         console.log('crear product');
@@ -74,15 +64,11 @@ function Products(props) {
         setDataSelected(data);
     };
 
-    useEffect(() => {
-        // openedAndShow(0);
-    }, []);
-
     const getData = data => Inertia.visit(`?page=${data.page}`);
 
     return (
         <Admin title="Panel">
-            <ProductsInfoBoxes data={dataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
+            <ProductsInfoBoxes data={dataSelected} setDataSelected={setDataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
             {/*Graph Content */}
             <div id="main-content" className="w-full flex-1">
 

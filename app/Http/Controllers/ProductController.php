@@ -45,7 +45,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->toArray());
+//        dd($request->toArray());
         $request->validate([
             'name' => 'required|string|max:255',
             'file' => 'image',

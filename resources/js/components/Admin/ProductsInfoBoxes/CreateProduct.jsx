@@ -17,7 +17,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 
 export default function CreateProduct(props) {
-    const { data, setCreateProduct, editing = false, setEditing = () => {}} = props;
+    const { data, setCreateProduct, editing = false, setEditing = () => {}, setDataSelected} = props;
     const { errors, stores, categories, flash } = usePage();
     console.log('errors =>', errors);
     console.log('flash =>', flash);
@@ -44,6 +44,7 @@ export default function CreateProduct(props) {
         console.log('flash =>', flash);
         if(flash.success){
             setEditing(false);
+            setDataSelected(false);
         }
     }, [flash]);
 

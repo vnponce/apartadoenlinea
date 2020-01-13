@@ -4,7 +4,7 @@ import CreateProduct from "./ProductsInfoBoxes/CreateProduct";
 import {create} from "filepond";
 
 export default function InfoBoxes(props) {
-    const { data, createProduct = false, setCreateProduct, editing, setEditing } = props;
+    const { data, createProduct = false, setCreateProduct, editing, setEditing, setDataSelected } = props;
     // const [isEditing, setIsEditing] = useState(false);
     console.log('ProductInfoboxes data =>', data);
     console.log('ProductInfoboxes editing =>', editing);
@@ -19,8 +19,8 @@ export default function InfoBoxes(props) {
             <div className="w-1/2 lg:w-full">
                 <div
                     className="m-2 md:mx-6 md:my-3">
-                    {createProduct && !data && <CreateProduct setCreateProduct={setCreateProduct}/>}
-                    {editing && <CreateProduct data={data} editing={editing} setEditing={setEditing}/>}
+                    {createProduct && !data && <CreateProduct setDataSelected={setDataSelected} setCreateProduct={setCreateProduct}/>}
+                    {editing && <CreateProduct setDataSelected={setDataSelected} data={data} editing={editing} setEditing={setEditing}/>}
                     {data && !editing && (
                         <>
                             <div className="flex justify-center">

@@ -43,8 +43,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Products(props) {
-  var products = props.products,
-      success_message = props.success_message;
+  var products = props.products;
   console.log('products =>', products);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
@@ -120,7 +119,9 @@ function Products(props) {
     setDataSelected(data);
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// openedAndShow(0);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // openedAndShow(0);
+    console.log('[Products] flash =>', flash);
   }, []);
 
   var getData = function getData(data) {
