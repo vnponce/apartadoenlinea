@@ -44,6 +44,7 @@ export default function CreateProduct(props) {
         console.log('flash =>', flash);
         if(flash.success){
             setEditing(false);
+            setCreateProduct(false);
             setDataSelected(false);
         }
     }, [flash]);
@@ -123,12 +124,7 @@ export default function CreateProduct(props) {
         } else {
             const formData = getFormData();
             console.log('editing else con post');
-            Inertia.post("products", formData).then(response => {
-                console.log('response =>', response);
-                setCreateProduct(false);
-            }).then(response => {
-                refreshPage()
-            });
+            Inertia.post("products", formData);
             // Inertia.post("products", {
             //     ...productData,
             //     // store: storeSelected,

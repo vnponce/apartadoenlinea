@@ -403,6 +403,7 @@ function CreateProduct(props) {
 
     if (flash.success) {
       setEditing(false);
+      setCreateProduct(false);
       setDataSelected(false);
     }
   }, [flash]);
@@ -512,12 +513,7 @@ function CreateProduct(props) {
     } else {
       var formData = getFormData();
       console.log('editing else con post');
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", formData).then(function (response) {
-        console.log('response =>', response);
-        setCreateProduct(false);
-      }).then(function (response) {
-        refreshPage();
-      }); // Inertia.post("products", {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", formData); // Inertia.post("products", {
       //     ...productData,
       //     // store: storeSelected,
       // });

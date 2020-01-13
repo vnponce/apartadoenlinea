@@ -65,7 +65,7 @@ class ProductController extends Controller
 //        dd($request->toArray());
         $product = Product::create($request->all());
 //        dd($product->toArray());
-        return back()->with('success_message', 'Producto creado satisfactoriamente');
+        return back()->with('success', 'Producto creado satisfactoriamente');
     }
 
     /**
