@@ -20,7 +20,7 @@ export default function InfoBoxes(props) {
                 <div
                     className="m-2 md:mx-6 md:my-3">
                     {createProduct && !data && <CreateProduct setDataSelected={setDataSelected} setCreateProduct={setCreateProduct}/>}
-                    {editing && <CreateProduct setDataSelected={setDataSelected} data={data} editing={editing} setEditing={setEditing}/>}
+                    {editing && <CreateProduct setCreateProduct={setCreateProduct} setDataSelected={setDataSelected} data={data} editing={editing} setEditing={setEditing}/>}
                     {data && !editing && (
                         <>
                             <div className="flex justify-center">

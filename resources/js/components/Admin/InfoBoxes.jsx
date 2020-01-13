@@ -31,6 +31,10 @@ export default function InfoBoxes(props) {
                 <ProductsList data={data.products} />
                 <div className="w-full text-center text-regularText text-normal">Total:</div>
                 <div className="w-full text-center text-regularText text-2xl">${data.total}</div>
+                <div
+                    className="m-2 md:mx-6 md:my-6">
+                    {data.employee.name} levantó este pedido.
+                </div>
             </div>
         )}
         { !data && (

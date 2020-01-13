@@ -38,7 +38,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // dd('store request =>', $request);
+//         dd('store request =>', $request);
         // if paypayl pasa  o es usuario de panadería no va a paypal- Crear orden
         // 1.- Obtener los detalles de la order
         $total = Cart::subtotal() * 100;
@@ -61,6 +61,7 @@ class OrderController extends Controller
             'lastname' => $detailsData->lastname,
             'phone' => $detailsData->phone,
             'email' => $detailsData->email,
+            'employeeName' => $detailsData->employeeName,
             'total' => $total,
             // @todo: hacer status
             'status' => 'created',

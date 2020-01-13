@@ -55,6 +55,9 @@ class PanelController extends Controller
                     'original' => $order->status,
                     'step' => $order->statusStep,
                 ],
+                'employee' => [
+                    'name' => $order->employeeName,
+                ],
                 'total' => toFormat($order->total),
             ];
         });

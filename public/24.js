@@ -1,283 +1,323 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[24],{
 
-/***/ "./resources/js/Pages/Order.jsx":
-/*!**************************************!*\
-  !*** ./resources/js/Pages/Order.jsx ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_HeaderDescription__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/HeaderDescription */ "./resources/js/components/HeaderDescription.js");
-/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Input */ "./resources/js/components/Input.jsx");
-/* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
-/* harmony import */ var _components_DateSelector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/DateSelector */ "./resources/js/components/DateSelector.jsx");
-/* harmony import */ var _components_Select_Hour__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Select/Hour */ "./resources/js/components/Select/Hour.jsx");
-/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Map */ "./resources/js/components/Map.jsx");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-SG": "./node_modules/moment/locale/en-SG.js",
+	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-
-
-
-
-function Order() {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
-      stores = _usePage.stores,
-      errors = _usePage.errors; // const { stores } = props;
-
-
-  console.log('errors =>', errors);
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      wantInvoice = _useState2[0],
-      setWantInvoice = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState4 = _slicedToArray(_useState3, 2),
-      store = _useState4[0],
-      setStore = _useState4[1];
-
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState6 = _slicedToArray(_useState5, 2),
-      date = _useState6[0],
-      setDate = _useState6[1];
-
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState8 = _slicedToArray(_useState7, 2),
-      hour = _useState8[0],
-      setHour = _useState8[1];
-
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState10 = _slicedToArray(_useState9, 2),
-      employeeName = _useState10[0],
-      setEmployeeName = _useState10[1]; // customer info
-
-
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
-      _useState12 = _slicedToArray(_useState11, 2),
-      customer = _useState12[0],
-      setCustomer = _useState12[1]; // invoice info
-
-
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
-      _useState14 = _slicedToArray(_useState13, 2),
-      invoice = _useState14[0],
-      setInvoice = _useState14[1];
-
-  var wantInvoiceOnChange = function wantInvoiceOnChange() {
-    setWantInvoice(!wantInvoice);
-
-    if (!invoice.name) {
-      var fullName = customer.name && customer.lastname ? customer.name + ' ' + customer.lastname : '';
-      setInvoice({
-        name: fullName,
-        phone: customer.phone || '',
-        email: customer.email || ''
-      });
-    }
-  };
-
-  var customerInfoOnChange = function customerInfoOnChange(e) {
-    setCustomer(_objectSpread({}, customer, _defineProperty({}, e.target.name, e.target.value)));
-  };
-
-  var invoiceInfoOnChange = function invoiceInfoOnChange(e) {
-    setInvoice(_objectSpread({}, invoice, _defineProperty({}, e.target.name, e.target.value)));
-  };
-
-  var onSubmit = function onSubmit() {
-    console.log('store =>', store);
-    console.log('date =>', date);
-    console.log('hour =>', hour);
-    console.log('customer =>', customer);
-    console.log('invoice =>', invoice);
-    console.log('wantInvoice =>', wantInvoice);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post('/pedido/detalles', {
-      store: store,
-      date: date,
-      hour: hour,
-      name: customer.name,
-      lastname: customer.lastname,
-      phone: customer.phone,
-      email: customer.email,
-      employeeName: employeeName // date y hour en un solo string ej. '28/05/2020 7:30'
-      // pickUp,
-      // mandar invoice info solo si es 'wantInvoice' true
-
-    });
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Producto seleccionado"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    title: "PEDIDOS",
-    description: "Por favor recuerda llenar el formulario para indicarnos en d\xF3nde recogeras tu pedido."
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-4 w-full pb-24 "
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "px-4 lg:w-1/2 lg:float-left lg:content-end"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "lg:w-3/4 lg:float-right"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    setStore: setStore,
-    stores: stores
-  }), errors && errors.store && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error store"
-  }, errors.store[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DateSelector__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    date: date,
-    setDate: setDate,
-    store: store && stores.filter(function (s) {
-      return s.id === store;
-    })[0]
-  }), errors && errors.date && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error date"
-  }, errors.date[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Hour__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    hour: hour,
-    setHour: setHour,
-    store: store && stores.filter(function (s) {
-      return s.id === store;
-    })[0],
-    date: date
-  }), errors && errors.hour && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error hour"
-  }, errors.hour[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "hidden border h-56 mt-4 bg-brand-gray sm:block"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    store: store && stores.filter(function (s) {
-      return s.id === store;
-    })[0]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white sm:hidden"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Ver el mapa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    version: "1.1",
-    className: "stroke-current fill-current w-6",
-    id: "Location_pin",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 20 20"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M10,2.009c-2.762,0-5,2.229-5,4.99c0,4.774,5,11,5,11s5-6.227,5-11C15,4.239,12.762,2.009,10,2.009zM10,9.76c-1.492,0-2.7-1.209-2.7-2.7s1.208-2.7,2.7-2.7c1.49,0,2.699,1.209,2.699,2.7S11.49,9.76,10,9.76z"
-  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "px-4 mt-8 mb-6 lg:hidden"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-    className: "w-100"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "px-4 lg:w-1/2 lg:float-left"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "lg:w-3/4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    label: "Nombre",
-    id: "name",
-    placeholder: "Ej. Juan",
-    value: customer.name,
-    onChange: customerInfoOnChange
-  }), errors && errors.name && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error name"
-  }, errors.name[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    label: "Apellido",
-    id: "lastname",
-    placeholder: "Apellido",
-    value: customer.lastname,
-    onChange: customerInfoOnChange
-  }), errors && errors.lastname && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error lastname"
-  }, errors.lastname[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    label: "Tel\xE9fono",
-    id: "phone",
-    placeholder: "",
-    value: customer.phone,
-    type: "phone",
-    onChange: customerInfoOnChange
-  }), errors && errors.phone && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error phone"
-  }, errors.phone[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    label: "Correo electr\xF3nico",
-    id: "email",
-    placeholder: "",
-    value: customer.email,
-    type: "email",
-    onChange: customerInfoOnChange
-  }), errors && errors.email && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error email"
-  }, errors.email[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    label: "Quien levant\xF3 el pedido",
-    id: "email",
-    placeholder: "",
-    value: employeeName,
-    type: "email",
-    onChange: function onChange() {
-      return setEmployeeName(e.target.value);
-    }
-  }), errors && errors.employeeName && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm text-red-500 error email"
-  }, errors.employeeName[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: onSubmit,
-    className: "next flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Proceder")))));
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
 }
-
-/* harmony default export */ __webpack_exports__["default"] = (Order);
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./resources/js/components/DateSelector.jsx":
-/*!**************************************************!*\
-  !*** ./resources/js/components/DateSelector.jsx ***!
-  \**************************************************/
+/***/ "./resources/js/Shared/Admin.jsx":
+/*!***************************************!*\
+  !*** ./resources/js/Shared/Admin.jsx ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DateSelector; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dates_initialize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dates/initialize */ "./node_modules/react-dates/initialize.js");
-/* harmony import */ var react_dates_initialize__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dates_initialize__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_dates_lib_css_datepicker_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dates/lib/css/_datepicker.css */ "./node_modules/react-dates/lib/css/_datepicker.css");
-/* harmony import */ var react_dates_lib_css_datepicker_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dates_lib_css_datepicker_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dates */ "./node_modules/react-dates/index.js");
-/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dates__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Layout; });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_Admin_SiteBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Admin/SiteBar */ "./resources/js/components/Admin/SiteBar.jsx");
+/* harmony import */ var _components_Admin_UserMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Admin/UserMenu */ "./resources/js/components/Admin/UserMenu.jsx");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/esm/react-toastify.js");
+/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
+/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_7__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    .DateInput_input {\n        padding: 7px 7px 5px;\n    }\n    .SingleDatePickerInput__withBorder {\n        border-radius: 3px;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    .nunito {\n        font-family: 'nunito', font-sans;\n    }\n    \n    .border-b-1 {\n        border-bottom-width: 1px;\n    }\n    \n    .border-l-1 {\n        border-left-width: 1px;\n    }\n    \n    hover\\:border-none:hover {\n        border-style: none;\n    }\n    \n    #sidebar {\n        transition: ease-in-out all .3s;\n        z-index: 9999;\n    }\n    \n    #sidebar span {\n        opacity: 0;\n        position: absolute;\n        transition: ease-in-out all .1s;\n    }\n    \n    #sidebar:hover {\n        width: 150px;\n        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n        /*shadow-2xl*/\n    }\n    \n    #sidebar:hover span {\n        opacity: 1;\n    }\n"], ["\n    .nunito {\n        font-family: 'nunito', font-sans;\n    }\n    \n    .border-b-1 {\n        border-bottom-width: 1px;\n    }\n    \n    .border-l-1 {\n        border-left-width: 1px;\n    }\n    \n    hover\\\\:border-none:hover {\n        border-style: none;\n    }\n    \n    #sidebar {\n        transition: ease-in-out all .3s;\n        z-index: 9999;\n    }\n    \n    #sidebar span {\n        opacity: 0;\n        position: absolute;\n        transition: ease-in-out all .1s;\n    }\n    \n    #sidebar:hover {\n        width: 150px;\n        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n        /*shadow-2xl*/\n    }\n    \n    #sidebar:hover span {\n        opacity: 1;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -294,119 +334,238 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject());
-function DateSelector(props) {
-  // moment.locale('es');
-  var today = moment__WEBPACK_IMPORTED_MODULE_5___default()();
-  var date = props.date,
-      setDate = props.setDate,
-      _props$store = props.store,
-      store = _props$store === void 0 ? false : _props$store;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+
+
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject());
+function Layout(_ref) {
+  var title = _ref.title,
+      children = _ref.children;
+  moment__WEBPACK_IMPORTED_MODULE_2___default.a.locale('es');
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
+      userMenuDiv = _useState2[0],
+      setUserMenuDiv = _useState2[1];
 
-  var pickUpAllowed = function pickUpAllowed(dayDate) {
-    // @todo: que si son despues de las 8:00pm no poder poner el siguiente día, se hiría hasta el 'pasado mañana'
-    var shopSelected = store; // if the sunday field means that the shop delivers on sundays, leave this, otherwise comment out
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      userMenu = _useState4[0],
+      setUserMenu = _useState4[1];
 
-    if (shopSelected.sunday !== 'Cierra') {
-      return false;
-    } // if sunday return true to block day
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      flash = _usePage.flash,
+      user = _usePage.auth.user;
 
+  console.log('auth =>', user);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    document.title = title;
+    console.log('flash =>', flash);
+  }, [title]);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    setUserMenuDiv(document.getElementById("userMenu"));
+    setUserMenu(document.getElementById("userButton"));
+  }, []);
+  /**
+   * JS
+   * */
 
-    return dayDate.isoWeekday() === 7;
-    /*
-    const dayNumber = dayDate.day();
-    const today = new Date();
-    const todayDayNumber = today.getDate();
-     if (dayNumber <= todayDayNumber) return false;
-     return !shopSelected.deliver_days.includes(dayNumber);
-      */
-  };
+  /*Toggle dropdown list*/
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "store",
-    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
-  }, "D\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DateWrapper, {
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_3__["SingleDatePicker"], {
-    id: "date",
-    name: "date",
-    date: date,
-    onDateChange: function onDateChange(date) {
-      return setDate(date);
-    },
-    focused: focus,
-    onFocusChange: function onFocusChange(props) {
-      return setFocus(props.focused);
-    },
-    disabled: !store,
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // showDefaultInputIcon
+  /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
-    /*
-    date={pickupDate}
-    focused={pickupFocused}
-    onDateChange={
-        this.onPickupDateChange
+  document.onclick = check;
+
+  function check(e) {
+    var target = e && e.target || event && event.srcElement; //User Menu
+
+    if (!checkParent(target, userMenuDiv)) {
+      // click NOT on the menu
+      if (checkParent(target, userMenu)) {
+        // click on the link
+        if (userMenuDiv.classList.contains("invisible")) {
+          userMenuDiv.classList.remove("invisible");
+        } else {
+          userMenuDiv.classList.add("invisible");
+        }
+      } else {
+        // click both outside link and outside menu, hide menu
+        userMenuDiv.classList.add("invisible");
+      }
     }
-    onFocusChange={
-        this.onPickupFocusChange
+  }
+
+  function checkParent(t, elm) {
+    while (t.parentNode) {
+      if (t === elm) {
+        return true;
+      }
+
+      t = t.parentNode;
     }
-    */
-    // Valida que no se pueda pedir el mismo día que se ingresa.
-    // Esto debe aplicar si es un usuario normal y no de panadería
-    ,
-    isOutsideRange: function isOutsideRange(day) {
-      return !Object(react_dates__WEBPACK_IMPORTED_MODULE_3__["isInclusivelyAfterDay"])(day, today) || false;
-    } // day.isSame(today, 'd')
-    ,
-    isDayBlocked: pickUpAllowed //-- orientation="vertical"
-    //-- verticalHeight={350}
-    ,
-    displayFormat: "D MMMM YYYY" // disabled={!shopSelected}
-    ,
-    numberOfMonths: 1,
-    placeholder: "Elige una fecha",
-    phrases: {
-      closeDatePicker: 'Cerrar',
-      clearDates: 'Limpiar'
-    },
-    showClearDate: true,
-    block: true
-  })));
+
+    return false;
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_toastify__WEBPACK_IMPORTED_MODULE_6__["ToastContainer"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css",
+    integrity: "sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=",
+    crossOrigin: "anonymous"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+    href: "https://fonts.googleapis.com/css?family=Nunito:400,700,800",
+    rel: "stylesheet"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("body", {
+    className: "flex h-screen bg-gray-100 font-sans"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Admin_SiteBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "flex flex-row flex-wrap flex-1 flex-grow content-start pl-16"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "h-40 lg:h-20 w-full flex flex-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+    id: "logo",
+    className: "bg-gray-200 w-full lg:max-w-sm flex items-center border-b-1 border-gray-300 order-2 lg:order-1"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: "/",
+    className: "flex-2 m-auto h-16 hidden lg:block"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: "/svg/Logo-Full.svg",
+    className: "my-auto h-full",
+    alt: ""
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+    id: "header1",
+    className: "bg-gray-100 w-auto flex-1 border-b-1 border-gray-300 order-1 lg:order-2"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "flex h-full justify-between items-center"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "relative w-full max-w-3xl px-6"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Admin_UserMenu__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    user: user
+  })))), children)));
 }
-;
 
 /***/ }),
 
-/***/ "./resources/js/components/HeaderDescription.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/HeaderDescription.js ***!
-  \******************************************************/
+/***/ "./resources/js/components/Admin/SiteBar.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Admin/SiteBar.jsx ***!
+  \***************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HeaderDescription; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SiteBar; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
 
-function HeaderDescription(props) {
-  var title = props.title,
-      description = props.description;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "mt-24 w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "block text-4xl text-center font-title font-semibold"
-  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "block p-2 text-gray-500 text-base text-center max-w-xl m-auto"
-  }, description));
+
+function SiteBar(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "sidebar",
+    className: "h-screen w-16 menu bg-white text-white px-4 flex items-center nunito static fixed shadow"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "list-reset "
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-home fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Panel"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0 "
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin/products",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-bread-slice fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Pan"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin/stores",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-store fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Tiendas"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin/users",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-users fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Usuarios")))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/UserMenu.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Admin/UserMenu.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserMenu; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function UserMenu(props) {
+  var user = props.user;
+  console.log('user =>', user);
+
+  var logout = function logout() {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post('logout');
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex relative inline-block pr-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "relative text-sm"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    id: "userButton",
+    className: "flex items-center focus:outline-none mr-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "w-8 h-8 rounded-full mr-4",
+    src: user.avatar || 'https://cdn2.iconfinder.com/data/icons/office-and-business-19/65/61-512.png',
+    alt: "Avatar of User"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "hidden md:inline-block"
+  }, "Hola, ", user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "pl-2 h-2",
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 129 129",
+    enableBackground: "new 0 0 129 129"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "userMenu",
+    className: "bg-white nunito rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "list-reset"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    onClick: logout,
+    className: "px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline"
+  }, "Logout"))))));
 }
 ;
 
@@ -463,301 +622,74 @@ function Input(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Map.jsx":
-/*!*****************************************!*\
-  !*** ./resources/js/components/Map.jsx ***!
-  \*****************************************/
+/***/ "./resources/js/components/Table.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Table.jsx ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Map; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @react-google-maps/api */ "./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js");
+/* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-table */ "./node_modules/react-table/dist/index.es.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
-function Map(props) {
-  console.log('map props =>', props);
-  var _props$store = props.store,
-      _props$store$lat = _props$store.lat,
-      lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
-      _props$store$lon = _props$store.lon,
-      lng = _props$store$lon === void 0 ? "-96.1270615" : _props$store$lon;
-  console.log('lat =>', lat);
-  console.log('lng =>', lng);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["LoadScript"], {
-    id: "script-loader",
-    googleMapsApiKey: "AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["GoogleMap"], {
-    id: "example-map",
-    mapContainerStyle: {
-      height: "225px" // width: "800px"
 
-    },
-    zoom: 15,
-    center: {
-      lat: parseFloat(lat),
-      lng: parseFloat(lng) // lat: 19.1707806,
-      // lng: -96.1270615,
 
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
-    onLoad: function onLoad(marker) {
-      console.log('marker: ', marker);
-    },
-    position: {
-      lat: parseFloat(lat),
-      lng: parseFloat(lng)
-    } // draggable
-    // onDragEnd={ (a, b, c) => console.log('e onDrag =>', a.latLng.lat(), a.latLng.lng())}
 
+function Table(_ref) {
+  var columns = _ref.columns,
+      data = _ref.data,
+      _onClick = _ref.onClick,
+      selected = _ref.selected;
+
+  // Use the state and functions returned from useTable to build your UI
+  var _useTable = Object(react_table__WEBPACK_IMPORTED_MODULE_0__["useTable"])({
+    columns: columns,
+    data: data
+  }),
+      getTableProps = _useTable.getTableProps,
+      getTableBodyProps = _useTable.getTableBodyProps,
+      headerGroups = _useTable.headerGroups,
+      rows = _useTable.rows,
+      prepareRow = _useTable.prepareRow; // Render the UI for your table
+
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("table", _extends({
+    className: "table-auto w-full"
+  }, getTableProps()), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("thead", null, headerGroups.map(function (headerGroup) {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tr", headerGroup.getHeaderGroupProps(), headerGroup.headers.map(function (column) {
+      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("th", _extends({
+        className: "px-4 py-2 py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
+      }, column.getHeaderProps()), column.render('Header'));
+    }));
+  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tbody", getTableBodyProps(), rows.map(function (row, i) {
+    prepareRow(row);
+    var cx = classnames__WEBPACK_IMPORTED_MODULE_1___default()('hover:bg-gray-300', 'cursor-pointer', {
+      'bg-gray-200': i % 2
+    }, {
+      'text-brand-orange': selected && row.original.id === selected.id
+    });
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tr", _extends({
+      id: row.original.id,
+      onClick: function onClick() {
+        return _onClick(row);
+      },
+      className: cx
+    }, row.getRowProps()), row.cells.map(function (cell) {
+      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("td", _extends({
+        className: "py-4 px-6 border-b border-grey-light"
+      }, cell.getCellProps()), cell.render('Cell'));
+    }));
   })));
 }
 
-/***/ }),
-
-/***/ "./resources/js/components/Select/Hour.jsx":
-/*!*************************************************!*\
-  !*** ./resources/js/components/Select/Hour.jsx ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Hour; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-
-var getTimeFromString = function getTimeFromString(date, time) {
-  var clone = date.clone().subtract(12, 'h');
-
-  var _time$split = time.split(':'),
-      _time$split2 = _slicedToArray(_time$split, 2),
-      hours = _time$split2[0],
-      minutes = _time$split2[1];
-
-  return clone.add(hours, 'hours').add(minutes, 'minutes');
-};
-
-var getHoursFromStore = function getHoursFromStore(store, date, gapTimeInMinutes) {
-  if (!store || !date) {
-    return false;
-  }
-
-  var hourPropertyName = 'delivery_time';
-
-  if (date && date.isoWeekday() === 7) {
-    hourPropertyName = 'sunday';
-  }
-
-  var _store$hourPropertyNa = store[hourPropertyName].split(' a '),
-      _store$hourPropertyNa2 = _slicedToArray(_store$hourPropertyNa, 2),
-      openString = _store$hourPropertyNa2[0],
-      closeString = _store$hourPropertyNa2[1]; // 7:00 a 21:00
-
-
-  var open = getTimeFromString(date, openString);
-  var close = getTimeFromString(date, closeString);
-  var hours = [];
-
-  for (open; open <= close; open.add(gapTimeInMinutes, 'm')) {
-    var time = open.format('H:mm');
-    hours.push({
-      value: time,
-      label: time
-    });
-  }
-
-  return hours;
-};
-
-function Hour(props) {
-  var hour = props.hour,
-      setHour = props.setHour,
-      store = props.store,
-      date = props.date;
-  var gapTimeInMinutes = 30;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "hour",
-    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
-  }, "Hora"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    options: getHoursFromStore(store, date, gapTimeInMinutes),
-    inputId: "hour",
-    name: "hour",
-    placeholder: "Elige una hora",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full",
-    classNamePrefix: "hour-selector",
-    onChange: function onChange(hour) {
-      return setHour(hour.value);
-    },
-    isDisabled: !date // defaultValue={defaultValue}
-
-  }));
-}
-;
-
-/***/ }),
-
-/***/ "./resources/js/components/Select/Stores.jsx":
-/*!***************************************************!*\
-  !*** ./resources/js/components/Select/Stores.jsx ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Stores; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/set */ "./node_modules/@babel/runtime/helpers/esm/set.js");
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-
-var transformStoreList = function transformStoreList(stores) {
-  return stores.map(function (store) {
-    return {
-      value: store.id,
-      label: store.name,
-      friendlyAddress: store.friendly_address
-    };
-  });
-};
-
-var ShopOptionComponent = function ShopOptionComponent(props) {
-  var children = props.children,
-      friendlyAddress = props.data.friendlyAddress,
-      isSelected = props.isSelected;
-  console.log('ShopOptionComponent props =>', props);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "shop-option-name"
-  }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "shop-option-description".concat(isSelected ? ' selected' : '')
-  }, friendlyAddress));
-};
-
-function Stores(props) {
-  var setStore = props.setStore,
-      stores = props.stores,
-      _props$storeSelected = props.storeSelected,
-      storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
-  console.log('storeSelected =>', storeSelected);
-  console.log('stores =>', stores);
-  var storesToSelect = transformStoreList(stores);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (storeSelected) {
-      setStore(storeSelected.id);
-    }
-  }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "store",
-    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
-  }, "Sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    options: storesToSelect,
-    inputId: "store",
-    name: "store",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
-    ,
-    classNamePrefix: "stores-selector"
-    /*
-    getOptionValue={option =>
-        option.key
-    }
-    getOptionLabel={option =>
-        option.key
-    }
-    isClearable
-     */
-    ,
-    placeholder: "Elige una sucursal",
-    components: {
-      Option: ShopOptionComponent
-    },
-    onChange: function onChange(selected) {
-      setStore(selected.value);
-    },
-    defaultValue: {
-      label: storeSelected.name,
-      value: storeSelected.id
-    }
-    /*
-    onFocus={
-        this.onShopFocus
-    }
-    value={shopSelected}
-    invalid={
-        this.state
-            .errorsState.store
-    }
-     */
-
-  }));
-}
-;
-
-/***/ }),
-
-/***/ 1:
-/*!********************************!*\
-  !*** ./util.inspect (ignored) ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
+/* harmony default export */ __webpack_exports__["default"] = (Table);
 
 /***/ })
 

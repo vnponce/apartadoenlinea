@@ -48,6 +48,11 @@ Route::get('inertia', function() {
         'foo' => 'bar',
     ]);
 });
+Route::get('mySuccess', function() {
+    return Inertia::render('Success', [
+        'foo' => 'bar',
+    ]);
+});
 Route::get('/', 'ProductController@index');
 Route::get('/category/{category}', 'CategoryController@index');
 

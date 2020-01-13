@@ -17,6 +17,7 @@ class Order extends Model
       'store_id',
       'total',
       'status',
+      'employeeName',
     ];
 
     protected $dates = [

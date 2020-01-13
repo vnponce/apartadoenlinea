@@ -1,4227 +1,2747 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css ***!
-  \***************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/react-table/dist/index.es.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-table/dist/index.es.js ***!
+  \***************************************************/
+/*! exports provided: actions, addActions, defaultColumn, defaultState, useAbsoluteLayout, useBlockLayout, useColumnOrder, useExpanded, useFilters, useGroupBy, usePagination, useResizeColumns, useRowSelect, useRowState, useSortBy, useTable, utils */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "/*!\n * FilePondPluginImagePreview 4.6.0\n * Licensed under MIT, https://opensource.org/licenses/MIT/\n * Please visit https://pqina.nl/filepond/ for details.\n */\n\n/* eslint-disable */\n\n.filepond--image-preview-markup {\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n.filepond--image-preview-wrapper {\n  z-index: 2;\n}\n\n.filepond--image-preview-overlay {\n  display: block;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  min-height: 5rem;\n  max-height: 7rem;\n  margin: 0;\n  opacity: 0;\n  z-index: 2;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.filepond--image-preview-overlay svg {\n  width: 100%;\n  height: auto;\n  color: inherit;\n  max-height: inherit;\n}\n\n.filepond--image-preview-overlay-idle {\n  mix-blend-mode: multiply;\n  color: rgba(40, 40, 40, 0.85);\n}\n\n.filepond--image-preview-overlay-success {\n  mix-blend-mode: normal;\n  color: #369763;\n}\n\n.filepond--image-preview-overlay-failure {\n  mix-blend-mode: normal;\n  color: #c44e47;\n}\n\n@supports (-webkit-marquee-repetition: infinite) and\n  ((-o-object-fit: fill) or (object-fit: fill)) {\n  .filepond--image-preview-overlay-idle {\n    mix-blend-mode: normal;\n  }\n}\n\n.filepond--image-preview-wrapper {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: absolute;\n  left: 0;\n  top: 0;\n  right: 0;\n  height: 100%;\n  margin: 0;\n  border-radius: 0.45em;\n  overflow: hidden;\n  background: rgba(0, 0, 0, 0.01);\n}\n\n.filepond--image-preview {\n  position: absolute;\n  left: 0;\n  top: 0;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  height: 100%;\n  width: 100%;\n  pointer-events: none;\n  background: #222;\n  will-change: transform, opacity;\n}\n\n.filepond--image-preview[data-transparency-indicator='grid'] img,\n.filepond--image-preview[data-transparency-indicator='grid'] canvas {\n  background-color: #fff;\n  background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' fill='%23eee'%3E%3Cpath d='M0 0 H50 V50 H0'/%3E%3Cpath d='M50 50 H100 V100 H50'/%3E%3C/svg%3E\");\n  background-size: 1.25em 1.25em;\n}\n\n.filepond--image-clip {\n  position: relative;\n  overflow: hidden;\n  margin: 0 auto;\n}\n\n.filepond--image-bitmap,\n.filepond--image-vector {\n  position: absolute;\n  left: 0;\n  top: 0;\n  will-change: transform;\n}\n\n.filepond--root[data-style-panel-layout~='integrated']\n  .filepond--image-preview-wrapper {\n  border-radius: 0;\n}\n\n.filepond--root[data-style-panel-layout~='integrated']\n  .filepond--image-preview {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--image-preview-wrapper {\n  border-radius: 99999rem;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--image-preview-overlay {\n  top: auto;\n  bottom: 0;\n  -webkit-transform: scaleY(-1);\n  transform: scaleY(-1);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  .filepond--file-action-button[data-align*='bottom']:not([data-align*='center']) {\n  margin-bottom: 0.325em;\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  [data-align*='left'] {\n  left: calc(50% - 3em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--file\n  [data-align*='right'] {\n  right: calc(50% - 3em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='left'],\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='right'] {\n  margin-bottom: calc(0.325em + 0.1875em);\n}\n\n.filepond--root[data-style-panel-layout~='circle']\n  .filepond--progress-indicator[data-align*='bottom'][data-align*='center'] {\n  margin-top: 0;\n  margin-bottom: 0.1875em;\n  margin-left: 0.1875em;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/filepond/dist/filepond.min.css":
-/*!*************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/filepond/dist/filepond.min.css ***!
-  \*************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "/*!\n * FilePond 4.9.3\n * Licensed under MIT, https://opensource.org/licenses/MIT/\n * Please visit https://pqina.nl/filepond/ for details.\n */\n\n/* eslint-disable */\n\n.filepond--assistant{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--browser.filepond--browser{\n  position:absolute;\n  margin:0;\n  padding:0;\n  left:1em;\n  top:1.75em;\n  width:calc(100% - 2em);\n  opacity:0;\n  font-size:0\n}\n\n.filepond--drip{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  overflow:hidden;\n  opacity:.1;\n  pointer-events:none;\n  border-radius:.5em;\n  background:rgba(0,0,0,.01)\n}\n\n.filepond--drip-blob{\n  -webkit-transform-origin:center center;\n  transform-origin:center center;\n  width:8em;\n  height:8em;\n  margin-left:-4em;\n  margin-top:-4em;\n  background:#292625;\n  border-radius:50%\n}\n\n.filepond--drip-blob,.filepond--drop-label{\n  position:absolute;\n  top:0;\n  left:0;\n  will-change:transform,opacity\n}\n\n.filepond--drop-label{\n  right:0;\n  margin:0;\n  color:#4f4f4f;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  height:0;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--drop-label.filepond--drop-label label{\n  display:block;\n  margin:0;\n  padding:.5em\n}\n\n.filepond--drop-label label{\n  cursor:default;\n  font-size:.875em;\n  font-weight:400;\n  text-align:center;\n  line-height:1.5\n}\n\n.filepond--label-action{\n  text-decoration:underline;\n  -webkit-text-decoration-skip:ink;\n  text-decoration-skip-ink:auto;\n  -webkit-text-decoration-color:#a7a4a4;\n  text-decoration-color:#a7a4a4;\n  cursor:pointer\n}\n\n.filepond--root[data-disabled] .filepond--drop-label label{\n  opacity:.5\n}\n\n.filepond--file-action-button.filepond--file-action-button{\n  font-size:1em;\n  width:1.625em;\n  height:1.625em;\n  font-family:inherit;\n  line-height:inherit;\n  margin:0;\n  padding:0;\n  border:none;\n  outline:none;\n  will-change:transform,opacity\n}\n\n.filepond--file-action-button.filepond--file-action-button span{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--file-action-button.filepond--file-action-button svg{\n  width:100%;\n  height:100%\n}\n\n.filepond--file-action-button.filepond--file-action-button:after{\n  position:absolute;\n  left:-.75em;\n  right:-.75em;\n  top:-.75em;\n  bottom:-.75em;\n  content:\"\"\n}\n\n.filepond--file-action-button{\n  cursor:auto;\n  color:#fff;\n  border-radius:50%;\n  background-color:rgba(0,0,0,.5);\n  background-image:none;\n  box-shadow:0 0 0 0 hsla(0,0%,100%,0);\n  transition:box-shadow .25s ease-in\n}\n\n.filepond--file-action-button:focus,.filepond--file-action-button:hover{\n  box-shadow:0 0 0 .125em hsla(0,0%,100%,.9)\n}\n\n.filepond--file-action-button[disabled]{\n  color:hsla(0,0%,100%,.5);\n  background-color:rgba(0,0,0,.25)\n}\n\n.filepond--file-info{\n  position:static;\n  display:flex;\n  flex-direction:column;\n  align-items:flex-start;\n  flex:1;\n  margin:0 .5em 0 0;\n  min-width:0;\n  will-change:transform,opacity;\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--file-info *{\n  margin:0\n}\n\n.filepond--file-info .filepond--file-info-main{\n  font-size:.75em;\n  line-height:1.2;\n  text-overflow:ellipsis;\n  overflow:hidden;\n  white-space:nowrap;\n  width:100%\n}\n\n.filepond--file-info .filepond--file-info-sub{\n  font-size:.625em;\n  opacity:.5;\n  transition:opacity .25s ease-in-out;\n  white-space:nowrap\n}\n\n.filepond--file-info .filepond--file-info-sub:empty{\n  display:none\n}\n\n.filepond--file-status{\n  position:static;\n  display:flex;\n  flex-direction:column;\n  align-items:flex-end;\n  flex-grow:0;\n  flex-shrink:0;\n  margin:0;\n  min-width:2.25em;\n  text-align:right;\n  will-change:transform,opacity;\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n\n.filepond--file-status *{\n  margin:0;\n  white-space:nowrap\n}\n\n.filepond--file-status .filepond--file-status-main{\n  font-size:.75em;\n  line-height:1.2\n}\n\n.filepond--file-status .filepond--file-status-sub{\n  font-size:.625em;\n  opacity:.5;\n  transition:opacity .25s ease-in-out\n}\n\n.filepond--file-wrapper.filepond--file-wrapper{\n  border:none;\n  margin:0;\n  padding:0;\n  min-width:0;\n  height:100%\n}\n\n.filepond--file-wrapper.filepond--file-wrapper>legend{\n  position:absolute;\n  overflow:hidden;\n  height:1px;\n  width:1px;\n  padding:0;\n  border:0;\n  clip:rect(1px,1px,1px,1px);\n  -webkit-clip-path:inset(50%);\n  clip-path:inset(50%);\n  white-space:nowrap\n}\n\n.filepond--file{\n  position:static;\n  display:flex;\n  height:100%;\n  align-items:flex-start;\n  padding:.5625em;\n  color:#fff;\n  border-radius:.5em\n}\n\n.filepond--file .filepond--file-status{\n  margin-left:auto;\n  margin-right:2.25em\n}\n\n.filepond--file .filepond--processing-complete-indicator{\n  pointer-events:none;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none;\n  z-index:3\n}\n\n.filepond--file .filepond--file-action-button,.filepond--file .filepond--processing-complete-indicator,.filepond--file .filepond--progress-indicator{\n  position:absolute\n}\n\n.filepond--file [data-align*=left]{\n  left:.5625em\n}\n\n.filepond--file [data-align*=right]{\n  right:.5625em\n}\n\n.filepond--file [data-align*=center]{\n  left:calc(50% - .8125em)\n}\n\n.filepond--file [data-align*=bottom]{\n  bottom:1.125em\n}\n\n.filepond--file [data-align=center]{\n  top:calc(50% - .8125em)\n}\n\n.filepond--file .filepond--progress-indicator{\n  margin-top:.1875em\n}\n\n.filepond--file .filepond--progress-indicator[data-align*=right]{\n  margin-right:.1875em\n}\n\n.filepond--file .filepond--progress-indicator[data-align*=left]{\n  margin-left:.1875em\n}\n\n[data-filepond-item-state*=error] .filepond--file-info,[data-filepond-item-state*=invalid] .filepond--file-info,[data-filepond-item-state=cancelled] .filepond--file-info{\n  margin-right:2.25em\n}\n\n[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing svg{\n  -webkit-animation:fall .5s linear .125s both;\n  animation:fall .5s linear .125s both\n}\n\n[data-filepond-item-state=processing-complete] .filepond--file-info-sub,[data-filepond-item-state=processing-complete] .filepond--file-status-sub{\n  opacity:0\n}\n\n[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing~.filepond--file-info .filepond--file-info-sub,[data-filepond-item-state=processing-complete] .filepond--action-revert-item-processing~.filepond--file-status .filepond--file-status-sub{\n  opacity:.5\n}\n\n[data-filepond-item-state*=error] .filepond--file-wrapper,[data-filepond-item-state*=error] .filepond--panel,[data-filepond-item-state*=invalid] .filepond--file-wrapper,[data-filepond-item-state*=invalid] .filepond--panel{\n  -webkit-animation:shake .65s linear both;\n  animation:shake .65s linear both\n}\n\n[data-filepond-item-state*=busy] .filepond--progress-indicator svg{\n  -webkit-animation:spin 1s linear infinite;\n  animation:spin 1s linear infinite\n}\n\n@-webkit-keyframes spin{\n  0%{\n    -webkit-transform:rotate(0deg);\n    transform:rotate(0deg)\n  }\n\n  to{\n    -webkit-transform:rotate(1turn);\n    transform:rotate(1turn)\n  }\n}\n\n@keyframes spin{\n  0%{\n    -webkit-transform:rotate(0deg);\n    transform:rotate(0deg)\n  }\n\n  to{\n    -webkit-transform:rotate(1turn);\n    transform:rotate(1turn)\n  }\n}\n\n@-webkit-keyframes shake{\n  10%,90%{\n    -webkit-transform:translateX(-.0625em);\n    transform:translateX(-.0625em)\n  }\n\n  20%,80%{\n    -webkit-transform:translateX(.125em);\n    transform:translateX(.125em)\n  }\n\n  30%,50%,70%{\n    -webkit-transform:translateX(-.25em);\n    transform:translateX(-.25em)\n  }\n\n  40%,60%{\n    -webkit-transform:translateX(.25em);\n    transform:translateX(.25em)\n  }\n}\n\n@keyframes shake{\n  10%,90%{\n    -webkit-transform:translateX(-.0625em);\n    transform:translateX(-.0625em)\n  }\n\n  20%,80%{\n    -webkit-transform:translateX(.125em);\n    transform:translateX(.125em)\n  }\n\n  30%,50%,70%{\n    -webkit-transform:translateX(-.25em);\n    transform:translateX(-.25em)\n  }\n\n  40%,60%{\n    -webkit-transform:translateX(.25em);\n    transform:translateX(.25em)\n  }\n}\n\n@-webkit-keyframes fall{\n  0%{\n    opacity:0;\n    -webkit-transform:scale(.5);\n    transform:scale(.5);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n\n  70%{\n    opacity:1;\n    -webkit-transform:scale(1.1);\n    transform:scale(1.1);\n    -webkit-animation-timing-function:ease-in-out;\n    animation-timing-function:ease-in-out\n  }\n\n  to{\n    -webkit-transform:scale(1);\n    transform:scale(1);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n}\n\n@keyframes fall{\n  0%{\n    opacity:0;\n    -webkit-transform:scale(.5);\n    transform:scale(.5);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n\n  70%{\n    opacity:1;\n    -webkit-transform:scale(1.1);\n    transform:scale(1.1);\n    -webkit-animation-timing-function:ease-in-out;\n    animation-timing-function:ease-in-out\n  }\n\n  to{\n    -webkit-transform:scale(1);\n    transform:scale(1);\n    -webkit-animation-timing-function:ease-out;\n    animation-timing-function:ease-out\n  }\n}\n\n.filepond--hopper[data-hopper-state=drag-over]>*{\n  pointer-events:none\n}\n\n.filepond--hopper[data-hopper-state=drag-over]:after{\n  content:\"\";\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  bottom:0;\n  z-index:100\n}\n\n.filepond--progress-indicator{\n  z-index:103\n}\n\n.filepond--file-action-button{\n  z-index:102\n}\n\n.filepond--file-status{\n  z-index:101\n}\n\n.filepond--file-info{\n  z-index:100\n}\n\n.filepond--item{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  z-index:1;\n  padding:0;\n  margin:.25em;\n  will-change:transform,opacity\n}\n\n.filepond--item>.filepond--panel{\n  z-index:-1\n}\n\n.filepond--item>.filepond--panel .filepond--panel-bottom{\n  box-shadow:0 .0625em .125em -.0625em rgba(0,0,0,.25)\n}\n\n.filepond--item>.filepond--file-wrapper,.filepond--item>.filepond--panel{\n  transition:opacity .15s ease-out\n}\n\n.filepond--item[data-drag-state]{\n  cursor:-webkit-grab;\n  cursor:grab\n}\n\n.filepond--item[data-drag-state]>.filepond--panel{\n  transition:box-shadow .125s ease-in-out;\n  box-shadow:0 0 0 transparent\n}\n\n.filepond--item[data-drag-state=drag]{\n  cursor:-webkit-grabbing;\n  cursor:grabbing\n}\n\n.filepond--item[data-drag-state=drag]>.filepond--panel{\n  box-shadow:0 .125em .3125em rgba(0,0,0,.325)\n}\n\n.filepond--item[data-drag-state]:not([data-drag-state=idle]){\n  z-index:2\n}\n\n.filepond--item-panel{\n  background-color:#64605e\n}\n\n[data-filepond-item-state=processing-complete] .filepond--item-panel{\n  background-color:#369763\n}\n\n[data-filepond-item-state*=error] .filepond--item-panel,[data-filepond-item-state*=invalid] .filepond--item-panel{\n  background-color:#c44e47\n}\n\n.filepond--item-panel{\n  border-radius:.5em;\n  transition:background-color .25s\n}\n\n.filepond--list-scroller{\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  margin:0;\n  will-change:transform\n}\n\n.filepond--list-scroller[data-state=overflow]{\n  overflow-y:scroll;\n  overflow-x:hidden;\n  -webkit-overflow-scrolling:touch;\n  -webkit-mask:linear-gradient(180deg,#000 calc(100% - .5em),transparent);\n  mask:linear-gradient(180deg,#000 calc(100% - .5em),transparent)\n}\n\n.filepond--list-scroller[data-state=overflow] .filepond--list{\n  bottom:0;\n  right:0\n}\n\n.filepond--list-scroller::-webkit-scrollbar{\n  background:transparent\n}\n\n.filepond--list-scroller::-webkit-scrollbar:vertical{\n  width:1em\n}\n\n.filepond--list-scroller::-webkit-scrollbar:horizontal{\n  height:0\n}\n\n.filepond--list-scroller::-webkit-scrollbar-thumb{\n  background-color:rgba(0,0,0,.3);\n  border-radius:99999px;\n  border:.3125em solid transparent;\n  background-clip:content-box\n}\n\n.filepond--list.filepond--list{\n  position:absolute;\n  top:0;\n  margin:0;\n  padding:0;\n  list-style-type:none;\n  will-change:transform\n}\n\n.filepond--list{\n  left:.75em;\n  right:.75em\n}\n\n.filepond--root[data-style-panel-layout~=integrated]{\n  width:100%;\n  height:100%;\n  max-width:none;\n  margin:0\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--panel-root,.filepond--root[data-style-panel-layout~=integrated] .filepond--panel-root{\n  border-radius:0\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--panel-root>*,.filepond--root[data-style-panel-layout~=integrated] .filepond--panel-root>*{\n  display:none\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--drop-label,.filepond--root[data-style-panel-layout~=integrated] .filepond--drop-label{\n  bottom:0;\n  height:auto;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  z-index:7\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--item-panel,.filepond--root[data-style-panel-layout~=integrated] .filepond--item-panel{\n  display:none\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--list-scroller,.filepond--root[data-style-panel-layout~=integrated] .filepond--list-scroller{\n  overflow:hidden;\n  height:100%;\n  margin-top:0;\n  margin-bottom:0\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--list,.filepond--root[data-style-panel-layout~=integrated] .filepond--list{\n  left:0;\n  right:0;\n  height:100%\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--item,.filepond--root[data-style-panel-layout~=integrated] .filepond--item{\n  margin:0\n}\n\n.filepond--root[data-style-panel-layout~=compact] .filepond--file-wrapper,.filepond--root[data-style-panel-layout~=integrated] .filepond--file-wrapper{\n  height:100%\n}\n\n.filepond--root[data-style-panel-layout~=circle]{\n  border-radius:99999rem;\n  overflow:hidden\n}\n\n.filepond--root[data-style-panel-layout~=circle]>.filepond--panel{\n  border-radius:inherit\n}\n\n.filepond--root[data-style-panel-layout~=circle] .filepond--file-info,.filepond--root[data-style-panel-layout~=circle] .filepond--file-status,.filepond--root[data-style-panel-layout~=circle]>.filepond--panel>*{\n  display:none\n}\n\n.filepond--panel-root{\n  border-radius:.5em;\n  background-color:#f1f0ef\n}\n\n.filepond--panel{\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  margin:0;\n  height:100%!important;\n  pointer-events:none\n}\n\n.filepond-panel:not([data-scalable=false]){\n  height:auto!important\n}\n\n.filepond--panel[data-scalable=false]>div{\n  display:none\n}\n\n.filepond--panel[data-scalable=true]{\n  -webkit-transform-style:preserve-3d;\n  transform-style:preserve-3d;\n  background-color:transparent!important;\n  border:none!important\n}\n\n.filepond--panel-bottom,.filepond--panel-center,.filepond--panel-top{\n  position:absolute;\n  left:0;\n  top:0;\n  right:0;\n  margin:0;\n  padding:0\n}\n\n.filepond--panel-bottom,.filepond--panel-top{\n  height:.5em\n}\n\n.filepond--panel-top{\n  border-bottom-left-radius:0!important;\n  border-bottom-right-radius:0!important;\n  border-bottom:none!important\n}\n\n.filepond--panel-top:after{\n  content:\"\";\n  position:absolute;\n  height:2px;\n  left:0;\n  right:0;\n  bottom:-1px;\n  background-color:inherit\n}\n\n.filepond--panel-bottom,.filepond--panel-center{\n  will-change:transform;\n  -webkit-backface-visibility:hidden;\n  backface-visibility:hidden;\n  -webkit-transform-origin:left top;\n  transform-origin:left top;\n  -webkit-transform:translate3d(0,.5em,0);\n  transform:translate3d(0,.5em,0)\n}\n\n.filepond--panel-bottom{\n  border-top-left-radius:0!important;\n  border-top-right-radius:0!important;\n  border-top:none!important\n}\n\n.filepond--panel-bottom:before{\n  content:\"\";\n  position:absolute;\n  height:2px;\n  left:0;\n  right:0;\n  top:-1px;\n  background-color:inherit\n}\n\n.filepond--panel-center{\n  height:100px!important;\n  border-top:none!important;\n  border-bottom:none!important;\n  border-radius:0!important\n}\n\n.filepond--panel-center:not([style]){\n  visibility:hidden\n}\n\n.filepond--progress-indicator{\n  position:static;\n  width:1.25em;\n  height:1.25em;\n  color:#fff;\n  margin:0;\n  pointer-events:none;\n  will-change:transform,opacity\n}\n\n.filepond--progress-indicator svg{\n  width:100%;\n  height:100%;\n  vertical-align:top;\n  transform-box:fill-box\n}\n\n.filepond--progress-indicator path{\n  fill:none;\n  stroke:currentColor\n}\n\n.filepond--list-scroller{\n  z-index:6\n}\n\n.filepond--drop-label{\n  z-index:5\n}\n\n.filepond--drip{\n  z-index:3\n}\n\n.filepond--root>.filepond--panel{\n  z-index:2\n}\n\n.filepond--browser{\n  z-index:1\n}\n\n.filepond--root{\n  box-sizing:border-box;\n  position:relative;\n  margin-bottom:1em;\n  font-size:1rem;\n  line-height:normal;\n  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;\n  font-weight:450;\n  text-align:left;\n  text-rendering:optimizeLegibility;\n  direction:ltr;\n  contain:layout style size\n}\n\n.filepond--root *{\n  box-sizing:inherit;\n  line-height:inherit\n}\n\n.filepond--root :not(text){\n  font-size:inherit\n}\n\n.filepond--root[data-disabled]{\n  pointer-events:none\n}\n\n.filepond--root .filepond--drop-label{\n  min-height:4.75em\n}\n\n.filepond--root .filepond--list-scroller{\n  margin-top:1em;\n  margin-bottom:1em\n}", ""]);
-
-// exports
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addActions", function() { return addActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultColumn", function() { return defaultColumn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultState", function() { return defaultState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useAbsoluteLayout", function() { return useAbsoluteLayout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useBlockLayout", function() { return useBlockLayout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useColumnOrder", function() { return useColumnOrder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useExpanded", function() { return useExpanded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFilters", function() { return useFilters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGroupBy", function() { return useGroupBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usePagination", function() { return usePagination; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useResizeColumns", function() { return useResizeColumns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useRowSelect", function() { return useRowSelect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useRowState", function() { return useRowState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSortBy", function() { return useSortBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useTable", function() { return useTable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "utils", function() { return utils; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-/***/ }),
-
-/***/ "./node_modules/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js":
-/*!************************************************************************************************************!*\
-  !*** ./node_modules/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js ***!
-  \************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
- * FilePondPluginImageExifOrientation 1.0.6
- * Licensed under MIT, https://opensource.org/licenses/MIT/
- * Please visit https://pqina.nl/filepond/ for details.
- */
-
-/* eslint-disable */
-
-(function(global, factory) {
-   true
-    ? (module.exports = factory())
-    : undefined;
-})(this, function() {
-  'use strict';
-
-  // test if file is of type image
-  var isJPEG = function isJPEG(file) {
-    return /^image\/jpeg/.test(file.type);
-  };
-
-  var Marker = {
-    JPEG: 0xffd8,
-    APP1: 0xffe1,
-    EXIF: 0x45786966,
-    TIFF: 0x4949,
-    Orientation: 0x0112,
-    Unknown: 0xff00
-  };
-
-  var getUint16 = function getUint16(view, offset) {
-    var little =
-      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-    return view.getUint16(offset, little);
-  };
-  var getUint32 = function getUint32(view, offset) {
-    var little =
-      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-    return view.getUint32(offset, little);
-  };
-
-  var getImageOrientation = function getImageOrientation(file) {
-    return new Promise(function(resolve, reject) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        var view = new DataView(e.target.result);
-
-        // Every JPEG file starts from binary value '0xFFD8'
-        if (getUint16(view, 0) !== Marker.JPEG) {
-          // This aint no JPEG
-          resolve(-1);
-          return;
-        }
-
-        var length = view.byteLength;
-        var offset = 2;
-
-        while (offset < length) {
-          var marker = getUint16(view, offset);
-          offset += 2;
-
-          // There's our APP1 Marker
-          if (marker === Marker.APP1) {
-            if (getUint32(view, (offset += 2)) !== Marker.EXIF) {
-              // no EXIF info defined
-              break;
-            }
-
-            // Get TIFF Header
-            var little = getUint16(view, (offset += 6)) === Marker.TIFF;
-            offset += getUint32(view, offset + 4, little);
-
-            var tags = getUint16(view, offset, little);
-            offset += 2;
-
-            for (var i = 0; i < tags; i++) {
-              // found the orientation tag
-              if (
-                getUint16(view, offset + i * 12, little) === Marker.Orientation
-              ) {
-                resolve(getUint16(view, offset + i * 12 + 8, little));
-
-                return;
-              }
-            }
-          } else if ((marker & Marker.Unknown) !== Marker.Unknown) {
-            // Invalid
-            break;
-          } else {
-            offset += getUint16(view, offset);
-          }
-        }
-
-        // Nothing found
-        resolve(-1);
-      };
-
-      // we don't need to read the entire file to get the orientation
-      reader.readAsArrayBuffer(file.slice(0, 64 * 1024));
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
     });
-  };
+  } else {
+    obj[key] = value;
+  }
 
-  /**
-   * Read Image Orientation Plugin
-   */
-  var plugin = function plugin(_ref) {
-    var addFilter = _ref.addFilter,
-      utils = _ref.utils;
-    var Type = utils.Type,
-      isFile = utils.isFile;
+  return obj;
+}
 
-    // subscribe to file load and append required info
-    addFilter('DID_LOAD_ITEM', function(item, _ref2) {
-      var query = _ref2.query;
-      return new Promise(function(resolve, reject) {
-        // get file reference
-        var file = item.file;
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
 
-        // if this is not a jpeg image we are not interested
-        if (
-          !isFile(file) ||
-          !isJPEG(file) ||
-          !query('GET_ALLOW_IMAGE_EXIF_ORIENTATION')
-        ) {
-          // continue with the unaltered dataset
-          return resolve(item);
-        }
-
-        // get orientation from exif data
-        getImageOrientation(file).then(function(orientation) {
-          item.setMetadata('exif', {
-            orientation: orientation
-          });
-
-          resolve(item);
-        });
-      });
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
     });
-
-    // Expose plugin options
-    return {
-      options: {
-        // Enable or disable image orientation reading
-        allowImageExifOrientation: [true, Type.BOOLEAN]
-      }
-    };
-  };
-
-  // fire pluginloaded event if running in browser, this allows registering the plugin when using async script tags
-  var isBrowser =
-    typeof window !== 'undefined' && typeof window.document !== 'undefined';
-  if (isBrowser) {
-    document.dispatchEvent(
-      new CustomEvent('FilePond:pluginloaded', { detail: plugin })
-    );
+    keys.push.apply(keys, symbols);
   }
 
-  return plugin;
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./filepond-plugin-image-preview.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js ***!
-  \******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
- * FilePondPluginImagePreview 4.6.0
- * Licensed under MIT, https://opensource.org/licenses/MIT/
- * Please visit https://pqina.nl/filepond/ for details.
- */
-
-/* eslint-disable */
-
-(function(global, factory) {
-   true
-    ? (module.exports = factory())
-    : undefined;
-})(this, function() {
-  'use strict';
-
-  // test if file is of type image and can be viewed in canvas
-  var isPreviewableImage = function isPreviewableImage(file) {
-    return /^image/.test(file.type);
-  };
-
-  function _typeof(obj) {
-    if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
-      _typeof = function(obj) {
-        return typeof obj;
-      };
-    } else {
-      _typeof = function(obj) {
-        return obj &&
-          typeof Symbol === 'function' &&
-          obj.constructor === Symbol &&
-          obj !== Symbol.prototype
-          ? 'symbol'
-          : typeof obj;
-      };
-    }
-
-    return _typeof(obj);
-  }
-
-  var REACT_ELEMENT_TYPE;
-
-  function _jsx(type, props, key, children) {
-    if (!REACT_ELEMENT_TYPE) {
-      REACT_ELEMENT_TYPE =
-        (typeof Symbol === 'function' &&
-          Symbol.for &&
-          Symbol.for('react.element')) ||
-        0xeac7;
-    }
-
-    var defaultProps = type && type.defaultProps;
-    var childrenLength = arguments.length - 3;
-
-    if (!props && childrenLength !== 0) {
-      props = {
-        children: void 0
-      };
-    }
-
-    if (props && defaultProps) {
-      for (var propName in defaultProps) {
-        if (props[propName] === void 0) {
-          props[propName] = defaultProps[propName];
-        }
-      }
-    } else if (!props) {
-      props = defaultProps || {};
-    }
-
-    if (childrenLength === 1) {
-      props.children = children;
-    } else if (childrenLength > 1) {
-      var childArray = new Array(childrenLength);
-
-      for (var i = 0; i < childrenLength; i++) {
-        childArray[i] = arguments[i + 3];
-      }
-
-      props.children = childArray;
-    }
-
-    return {
-      $$typeof: REACT_ELEMENT_TYPE,
-      type: type,
-      key: key === undefined ? null : '' + key,
-      ref: null,
-      props: props,
-      _owner: null
-    };
-  }
-
-  function _asyncIterator(iterable) {
-    var method;
-
-    if (typeof Symbol === 'function') {
-      if (Symbol.asyncIterator) {
-        method = iterable[Symbol.asyncIterator];
-        if (method != null) return method.call(iterable);
-      }
-
-      if (Symbol.iterator) {
-        method = iterable[Symbol.iterator];
-        if (method != null) return method.call(iterable);
-      }
-    }
-
-    throw new TypeError('Object is not async iterable');
-  }
-
-  function _AwaitValue(value) {
-    this.wrapped = value;
-  }
-
-  function _AsyncGenerator(gen) {
-    var front, back;
-
-    function send(key, arg) {
-      return new Promise(function(resolve, reject) {
-        var request = {
-          key: key,
-          arg: arg,
-          resolve: resolve,
-          reject: reject,
-          next: null
-        };
-
-        if (back) {
-          back = back.next = request;
-        } else {
-          front = back = request;
-          resume(key, arg);
-        }
-      });
-    }
-
-    function resume(key, arg) {
-      try {
-        var result = gen[key](arg);
-        var value = result.value;
-        var wrappedAwait = value instanceof _AwaitValue;
-        Promise.resolve(wrappedAwait ? value.wrapped : value).then(
-          function(arg) {
-            if (wrappedAwait) {
-              resume('next', arg);
-              return;
-            }
-
-            settle(result.done ? 'return' : 'normal', arg);
-          },
-          function(err) {
-            resume('throw', err);
-          }
-        );
-      } catch (err) {
-        settle('throw', err);
-      }
-    }
-
-    function settle(type, value) {
-      switch (type) {
-        case 'return':
-          front.resolve({
-            value: value,
-            done: true
-          });
-          break;
-
-        case 'throw':
-          front.reject(value);
-          break;
-
-        default:
-          front.resolve({
-            value: value,
-            done: false
-          });
-          break;
-      }
-
-      front = front.next;
-
-      if (front) {
-        resume(front.key, front.arg);
-      } else {
-        back = null;
-      }
-    }
-
-    this._invoke = send;
-
-    if (typeof gen.return !== 'function') {
-      this.return = undefined;
-    }
-  }
-
-  if (typeof Symbol === 'function' && Symbol.asyncIterator) {
-    _AsyncGenerator.prototype[Symbol.asyncIterator] = function() {
-      return this;
-    };
-  }
-
-  _AsyncGenerator.prototype.next = function(arg) {
-    return this._invoke('next', arg);
-  };
-
-  _AsyncGenerator.prototype.throw = function(arg) {
-    return this._invoke('throw', arg);
-  };
-
-  _AsyncGenerator.prototype.return = function(arg) {
-    return this._invoke('return', arg);
-  };
-
-  function _wrapAsyncGenerator(fn) {
-    return function() {
-      return new _AsyncGenerator(fn.apply(this, arguments));
-    };
-  }
-
-  function _awaitAsyncGenerator(value) {
-    return new _AwaitValue(value);
-  }
-
-  function _asyncGeneratorDelegate(inner, awaitWrap) {
-    var iter = {},
-      waiting = false;
-
-    function pump(key, value) {
-      waiting = true;
-      value = new Promise(function(resolve) {
-        resolve(inner[key](value));
-      });
-      return {
-        done: false,
-        value: awaitWrap(value)
-      };
-    }
-
-    if (typeof Symbol === 'function' && Symbol.iterator) {
-      iter[Symbol.iterator] = function() {
-        return this;
-      };
-    }
-
-    iter.next = function(value) {
-      if (waiting) {
-        waiting = false;
-        return value;
-      }
-
-      return pump('next', value);
-    };
-
-    if (typeof inner.throw === 'function') {
-      iter.throw = function(value) {
-        if (waiting) {
-          waiting = false;
-          throw value;
-        }
-
-        return pump('throw', value);
-      };
-    }
-
-    if (typeof inner.return === 'function') {
-      iter.return = function(value) {
-        return pump('return', value);
-      };
-    }
-
-    return iter;
-  }
-
-  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-    try {
-      var info = gen[key](arg);
-      var value = info.value;
-    } catch (error) {
-      reject(error);
-      return;
-    }
-
-    if (info.done) {
-      resolve(value);
-    } else {
-      Promise.resolve(value).then(_next, _throw);
-    }
-  }
-
-  function _asyncToGenerator(fn) {
-    return function() {
-      var self = this,
-        args = arguments;
-      return new Promise(function(resolve, reject) {
-        var gen = fn.apply(self, args);
-
-        function _next(value) {
-          asyncGeneratorStep(
-            gen,
-            resolve,
-            reject,
-            _next,
-            _throw,
-            'next',
-            value
-          );
-        }
-
-        function _throw(err) {
-          asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'throw', err);
-        }
-
-        _next(undefined);
-      });
-    };
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError('Cannot call a class as a function');
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ('value' in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _defineEnumerableProperties(obj, descs) {
-    for (var key in descs) {
-      var desc = descs[key];
-      desc.configurable = desc.enumerable = true;
-      if ('value' in desc) desc.writable = true;
-      Object.defineProperty(obj, key, desc);
-    }
-
-    if (Object.getOwnPropertySymbols) {
-      var objectSymbols = Object.getOwnPropertySymbols(descs);
-
-      for (var i = 0; i < objectSymbols.length; i++) {
-        var sym = objectSymbols[i];
-        var desc = descs[sym];
-        desc.configurable = desc.enumerable = true;
-        if ('value' in desc) desc.writable = true;
-        Object.defineProperty(obj, sym, desc);
-      }
-    }
-
-    return obj;
-  }
-
-  function _defaults(obj, defaults) {
-    var keys = Object.getOwnPropertyNames(defaults);
-
-    for (var i = 0; i < keys.length; i++) {
-      var key = keys[i];
-      var value = Object.getOwnPropertyDescriptor(defaults, key);
-
-      if (value && value.configurable && obj[key] === undefined) {
-        Object.defineProperty(obj, key, value);
-      }
-    }
-
-    return obj;
-  }
-
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  function _extends() {
-    _extends =
-      Object.assign ||
-      function(target) {
-        for (var i = 1; i < arguments.length; i++) {
-          var source = arguments[i];
-
-          for (var key in source) {
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-
-        return target;
-      };
-
-    return _extends.apply(this, arguments);
-  }
-
-  function _objectSpread(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-      var ownKeys = Object.keys(source);
-
-      if (typeof Object.getOwnPropertySymbols === 'function') {
-        ownKeys = ownKeys.concat(
-          Object.getOwnPropertySymbols(source).filter(function(sym) {
-            return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-          })
-        );
-      }
-
-      ownKeys.forEach(function(key) {
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
         _defineProperty(target, key, source[key]);
       });
-    }
-
-    return target;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== 'function' && superClass !== null) {
-      throw new TypeError('Super expression must either be null or a function');
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) _setPrototypeOf(subClass, superClass);
-  }
-
-  function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    subClass.__proto__ = superClass;
-  }
-
-  function _getPrototypeOf(o) {
-    _getPrototypeOf = Object.setPrototypeOf
-      ? Object.getPrototypeOf
-      : function _getPrototypeOf(o) {
-          return o.__proto__ || Object.getPrototypeOf(o);
-        };
-    return _getPrototypeOf(o);
-  }
-
-  function _setPrototypeOf(o, p) {
-    _setPrototypeOf =
-      Object.setPrototypeOf ||
-      function _setPrototypeOf(o, p) {
-        o.__proto__ = p;
-        return o;
-      };
-
-    return _setPrototypeOf(o, p);
-  }
-
-  function isNativeReflectConstruct() {
-    if (typeof Reflect === 'undefined' || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === 'function') return true;
-
-    try {
-      Date.prototype.toString.call(Reflect.construct(Date, [], function() {}));
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function _construct(Parent, args, Class) {
-    if (isNativeReflectConstruct()) {
-      _construct = Reflect.construct;
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
     } else {
-      _construct = function _construct(Parent, args, Class) {
-        var a = [null];
-        a.push.apply(a, args);
-        var Constructor = Function.bind.apply(Parent, a);
-        var instance = new Constructor();
-        if (Class) _setPrototypeOf(instance, Class.prototype);
-        return instance;
-      };
-    }
-
-    return _construct.apply(null, arguments);
-  }
-
-  function _isNativeFunction(fn) {
-    return Function.toString.call(fn).indexOf('[native code]') !== -1;
-  }
-
-  function _wrapNativeSuper(Class) {
-    var _cache = typeof Map === 'function' ? new Map() : undefined;
-
-    _wrapNativeSuper = function _wrapNativeSuper(Class) {
-      if (Class === null || !_isNativeFunction(Class)) return Class;
-
-      if (typeof Class !== 'function') {
-        throw new TypeError(
-          'Super expression must either be null or a function'
-        );
-      }
-
-      if (typeof _cache !== 'undefined') {
-        if (_cache.has(Class)) return _cache.get(Class);
-
-        _cache.set(Class, Wrapper);
-      }
-
-      function Wrapper() {
-        return _construct(Class, arguments, _getPrototypeOf(this).constructor);
-      }
-
-      Wrapper.prototype = Object.create(Class.prototype, {
-        constructor: {
-          value: Wrapper,
-          enumerable: false,
-          writable: true,
-          configurable: true
-        }
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
       });
-      return _setPrototypeOf(Wrapper, Class);
-    };
-
-    return _wrapNativeSuper(Class);
-  }
-
-  function _instanceof(left, right) {
-    if (
-      right != null &&
-      typeof Symbol !== 'undefined' &&
-      right[Symbol.hasInstance]
-    ) {
-      return right[Symbol.hasInstance](left);
-    } else {
-      return left instanceof right;
     }
   }
 
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule
-      ? obj
-      : {
-          default: obj
-        };
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
   }
 
-  function _interopRequireWildcard(obj) {
-    if (obj && obj.__esModule) {
-      return obj;
-    } else {
-      var newObj = {};
+  return target;
+}
 
-      if (obj != null) {
-        for (var key in obj) {
-          if (Object.prototype.hasOwnProperty.call(obj, key)) {
-            var desc =
-              Object.defineProperty && Object.getOwnPropertyDescriptor
-                ? Object.getOwnPropertyDescriptor(obj, key)
-                : {};
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
 
-            if (desc.get || desc.set) {
-              Object.defineProperty(newObj, key, desc);
-            } else {
-              newObj[key] = obj[key];
-            }
-          }
-        }
-      }
+  var target = _objectWithoutPropertiesLoose(source, excluded);
 
-      newObj.default = obj;
-      return newObj;
-    }
-  }
+  var key, i;
 
-  function _newArrowCheck(innerThis, boundThis) {
-    if (innerThis !== boundThis) {
-      throw new TypeError('Cannot instantiate an arrow function');
-    }
-  }
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
 
-  function _objectDestructuringEmpty(obj) {
-    if (obj == null) throw new TypeError('Cannot destructure undefined');
-  }
-
-  function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-
-    for (i = 0; i < sourceKeys.length; i++) {
-      key = sourceKeys[i];
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
       if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
       target[key] = source[key];
     }
-
-    return target;
   }
 
-  function _objectWithoutProperties(source, excluded) {
-    if (source == null) return {};
+  return target;
+}
 
-    var target = _objectWithoutPropertiesLoose(source, excluded);
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}
 
-    var key, i;
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
 
-    if (Object.getOwnPropertySymbols) {
-      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
 
-      for (i = 0; i < sourceSymbolKeys.length; i++) {
-        key = sourceSymbolKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-        target[key] = source[key];
-      }
-    }
+    return arr2;
+  }
+}
 
-    return target;
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _iterableToArrayLimit(arr, i) {
+  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+    return;
   }
 
-  function _assertThisInitialized(self) {
-    if (self === void 0) {
-      throw new ReferenceError(
-        "this hasn't been initialised - super() hasn't been called"
-      );
-    }
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
 
-    return self;
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (call && (typeof call === 'object' || typeof call === 'function')) {
-      return call;
-    }
-
-    return _assertThisInitialized(self);
-  }
-
-  function _superPropBase(object, property) {
-    while (!Object.prototype.hasOwnProperty.call(object, property)) {
-      object = _getPrototypeOf(object);
-      if (object === null) break;
-    }
-
-    return object;
-  }
-
-  function _get(target, property, receiver) {
-    if (typeof Reflect !== 'undefined' && Reflect.get) {
-      _get = Reflect.get;
-    } else {
-      _get = function _get(target, property, receiver) {
-        var base = _superPropBase(target, property);
-
-        if (!base) return;
-        var desc = Object.getOwnPropertyDescriptor(base, property);
-
-        if (desc.get) {
-          return desc.get.call(receiver);
-        }
-
-        return desc.value;
-      };
-    }
-
-    return _get(target, property, receiver || target);
-  }
-
-  function set(target, property, value, receiver) {
-    if (typeof Reflect !== 'undefined' && Reflect.set) {
-      set = Reflect.set;
-    } else {
-      set = function set(target, property, value, receiver) {
-        var base = _superPropBase(target, property);
-
-        var desc;
-
-        if (base) {
-          desc = Object.getOwnPropertyDescriptor(base, property);
-
-          if (desc.set) {
-            desc.set.call(receiver, value);
-            return true;
-          } else if (!desc.writable) {
-            return false;
-          }
-        }
-
-        desc = Object.getOwnPropertyDescriptor(receiver, property);
-
-        if (desc) {
-          if (!desc.writable) {
-            return false;
-          }
-
-          desc.value = value;
-          Object.defineProperty(receiver, property, desc);
-        } else {
-          _defineProperty(receiver, property, value);
-        }
-
-        return true;
-      };
-    }
-
-    return set(target, property, value, receiver);
-  }
-
-  function _set(target, property, value, receiver, isStrict) {
-    var s = set(target, property, value, receiver || target);
-
-    if (!s && isStrict) {
-      throw new Error('failed to set property');
-    }
-
-    return value;
-  }
-
-  function _taggedTemplateLiteral(strings, raw) {
-    if (!raw) {
-      raw = strings.slice(0);
-    }
-
-    return Object.freeze(
-      Object.defineProperties(strings, {
-        raw: {
-          value: Object.freeze(raw)
-        }
-      })
-    );
-  }
-
-  function _taggedTemplateLiteralLoose(strings, raw) {
-    if (!raw) {
-      raw = strings.slice(0);
-    }
-
-    strings.raw = raw;
-    return strings;
-  }
-
-  function _temporalRef(val, name) {
-    if (val === _temporalUndefined) {
-      throw new ReferenceError(name + ' is not defined - temporal dead zone');
-    } else {
-      return val;
-    }
-  }
-
-  function _readOnlyError(name) {
-    throw new Error('"' + name + '" is read-only');
-  }
-
-  function _classNameTDZError(name) {
-    throw new Error(
-      'Class "' + name + '" cannot be referenced in computed property keys.'
-    );
-  }
-
-  var _temporalUndefined = {};
-
-  function _slicedToArray(arr, i) {
-    return (
-      _arrayWithHoles(arr) ||
-      _iterableToArrayLimit(arr, i) ||
-      _nonIterableRest()
-    );
-  }
-
-  function _slicedToArrayLoose(arr, i) {
-    return (
-      _arrayWithHoles(arr) ||
-      _iterableToArrayLimitLoose(arr, i) ||
-      _nonIterableRest()
-    );
-  }
-
-  function _toArray(arr) {
-    return _arrayWithHoles(arr) || _iterableToArray(arr) || _nonIterableRest();
-  }
-
-  function _toConsumableArray(arr) {
-    return (
-      _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread()
-    );
-  }
-
-  function _arrayWithoutHoles(arr) {
-    if (Array.isArray(arr)) {
-      for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++)
-        arr2[i] = arr[i];
-
-      return arr2;
-    }
-  }
-
-  function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-
-  function _iterableToArray(iter) {
-    if (
-      Symbol.iterator in Object(iter) ||
-      Object.prototype.toString.call(iter) === '[object Arguments]'
-    )
-      return Array.from(iter);
-  }
-
-  function _iterableToArrayLimit(arr, i) {
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (
-        var _i = arr[Symbol.iterator](), _s;
-        !(_n = (_s = _i.next()).done);
-        _n = true
-      ) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i['return'] != null) _i['return']();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  function _iterableToArrayLimitLoose(arr, i) {
-    var _arr = [];
-
-    for (
-      var _iterator = arr[Symbol.iterator](), _step;
-      !(_step = _iterator.next()).done;
-
-    ) {
-      _arr.push(_step.value);
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
 
       if (i && _arr.length === i) break;
     }
-
-    return _arr;
-  }
-
-  function _nonIterableSpread() {
-    throw new TypeError('Invalid attempt to spread non-iterable instance');
-  }
-
-  function _nonIterableRest() {
-    throw new TypeError('Invalid attempt to destructure non-iterable instance');
-  }
-
-  function _skipFirstGeneratorNext(fn) {
-    return function() {
-      var it = fn.apply(this, arguments);
-      it.next();
-      return it;
-    };
-  }
-
-  function _toPrimitive(input, hint) {
-    if (typeof input !== 'object' || input === null) return input;
-    var prim = input[Symbol.toPrimitive];
-
-    if (prim !== undefined) {
-      var res = prim.call(input, hint || 'default');
-      if (typeof res !== 'object') return res;
-      throw new TypeError('@@toPrimitive must return a primitive value.');
-    }
-
-    return (hint === 'string' ? String : Number)(input);
-  }
-
-  function _toPropertyKey(arg) {
-    var key = _toPrimitive(arg, 'string');
-
-    return typeof key === 'symbol' ? key : String(key);
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error(
-      'Decorating class property failed. Please ensure that ' +
-        'proposal-class-properties is enabled and set to use loose mode. ' +
-        'To use proposal-class-properties in spec mode with decorators, wait for ' +
-        'the next major version of decorators in stage 2.'
-    );
-  }
-
-  function _initializerDefineProperty(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer
-        ? descriptor.initializer.call(context)
-        : void 0
-    });
-  }
-
-  function _applyDecoratedDescriptor(
-    target,
-    property,
-    decorators,
-    descriptor,
-    context
-  ) {
-    var desc = {};
-    Object.keys(descriptor).forEach(function(key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators
-      .slice()
-      .reverse()
-      .reduce(function(desc, decorator) {
-        return decorator(target, property, desc) || desc;
-      }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object.defineProperty(target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  var id = 0;
-
-  function _classPrivateFieldLooseKey(name) {
-    return '__private_' + id++ + '_' + name;
-  }
-
-  function _classPrivateFieldLooseBase(receiver, privateKey) {
-    if (!Object.prototype.hasOwnProperty.call(receiver, privateKey)) {
-      throw new TypeError('attempted to use private field on non-instance');
-    }
-
-    return receiver;
-  }
-
-  function _classPrivateFieldGet(receiver, privateMap) {
-    if (!privateMap.has(receiver)) {
-      throw new TypeError('attempted to get private field on non-instance');
-    }
-
-    var descriptor = privateMap.get(receiver);
-
-    if (descriptor.get) {
-      return descriptor.get.call(receiver);
-    }
-
-    return descriptor.value;
-  }
-
-  function _classPrivateFieldSet(receiver, privateMap, value) {
-    if (!privateMap.has(receiver)) {
-      throw new TypeError('attempted to set private field on non-instance');
-    }
-
-    var descriptor = privateMap.get(receiver);
-
-    if (descriptor.set) {
-      descriptor.set.call(receiver, value);
-    } else {
-      if (!descriptor.writable) {
-        throw new TypeError('attempted to set read only private field');
-      }
-
-      descriptor.value = value;
-    }
-
-    return value;
-  }
-
-  function _classStaticPrivateFieldSpecGet(
-    receiver,
-    classConstructor,
-    descriptor
-  ) {
-    if (receiver !== classConstructor) {
-      throw new TypeError('Private static access of wrong provenance');
-    }
-
-    return descriptor.value;
-  }
-
-  function _classStaticPrivateFieldSpecSet(
-    receiver,
-    classConstructor,
-    descriptor,
-    value
-  ) {
-    if (receiver !== classConstructor) {
-      throw new TypeError('Private static access of wrong provenance');
-    }
-
-    if (!descriptor.writable) {
-      throw new TypeError('attempted to set read only private field');
-    }
-
-    descriptor.value = value;
-    return value;
-  }
-
-  function _classStaticPrivateMethodGet(receiver, classConstructor, method) {
-    if (receiver !== classConstructor) {
-      throw new TypeError('Private static access of wrong provenance');
-    }
-
-    return method;
-  }
-
-  function _classStaticPrivateMethodSet() {
-    throw new TypeError('attempted to set read only static private field');
-  }
-
-  function _decorate(decorators, factory, superClass, mixins) {
-    var api = _getDecoratorsApi();
-
-    if (mixins) {
-      for (var i = 0; i < mixins.length; i++) {
-        api = mixins[i](api);
-      }
-    }
-
-    var r = factory(function initialize(O) {
-      api.initializeInstanceElements(O, decorated.elements);
-    }, superClass);
-    var decorated = api.decorateClass(
-      _coalesceClassElements(r.d.map(_createElementDescriptor)),
-      decorators
-    );
-    api.initializeClassElements(r.F, decorated.elements);
-    return api.runClassFinishers(r.F, decorated.finishers);
-  }
-
-  function _getDecoratorsApi() {
-    _getDecoratorsApi = function() {
-      return api;
-    };
-
-    var api = {
-      elementsDefinitionOrder: [['method'], ['field']],
-      initializeInstanceElements: function(O, elements) {
-        ['method', 'field'].forEach(function(kind) {
-          elements.forEach(function(element) {
-            if (element.kind === kind && element.placement === 'own') {
-              this.defineClassElement(O, element);
-            }
-          }, this);
-        }, this);
-      },
-      initializeClassElements: function(F, elements) {
-        var proto = F.prototype;
-        ['method', 'field'].forEach(function(kind) {
-          elements.forEach(function(element) {
-            var placement = element.placement;
-
-            if (
-              element.kind === kind &&
-              (placement === 'static' || placement === 'prototype')
-            ) {
-              var receiver = placement === 'static' ? F : proto;
-              this.defineClassElement(receiver, element);
-            }
-          }, this);
-        }, this);
-      },
-      defineClassElement: function(receiver, element) {
-        var descriptor = element.descriptor;
-
-        if (element.kind === 'field') {
-          var initializer = element.initializer;
-          descriptor = {
-            enumerable: descriptor.enumerable,
-            writable: descriptor.writable,
-            configurable: descriptor.configurable,
-            value: initializer === void 0 ? void 0 : initializer.call(receiver)
-          };
-        }
-
-        Object.defineProperty(receiver, element.key, descriptor);
-      },
-      decorateClass: function(elements, decorators) {
-        var newElements = [];
-        var finishers = [];
-        var placements = {
-          static: [],
-          prototype: [],
-          own: []
-        };
-        elements.forEach(function(element) {
-          this.addElementPlacement(element, placements);
-        }, this);
-        elements.forEach(function(element) {
-          if (!_hasDecorators(element)) return newElements.push(element);
-          var elementFinishersExtras = this.decorateElement(
-            element,
-            placements
-          );
-          newElements.push(elementFinishersExtras.element);
-          newElements.push.apply(newElements, elementFinishersExtras.extras);
-          finishers.push.apply(finishers, elementFinishersExtras.finishers);
-        }, this);
-
-        if (!decorators) {
-          return {
-            elements: newElements,
-            finishers: finishers
-          };
-        }
-
-        var result = this.decorateConstructor(newElements, decorators);
-        finishers.push.apply(finishers, result.finishers);
-        result.finishers = finishers;
-        return result;
-      },
-      addElementPlacement: function(element, placements, silent) {
-        var keys = placements[element.placement];
-
-        if (!silent && keys.indexOf(element.key) !== -1) {
-          throw new TypeError('Duplicated element (' + element.key + ')');
-        }
-
-        keys.push(element.key);
-      },
-      decorateElement: function(element, placements) {
-        var extras = [];
-        var finishers = [];
-
-        for (
-          var decorators = element.decorators, i = decorators.length - 1;
-          i >= 0;
-          i--
-        ) {
-          var keys = placements[element.placement];
-          keys.splice(keys.indexOf(element.key), 1);
-          var elementObject = this.fromElementDescriptor(element);
-          var elementFinisherExtras = this.toElementFinisherExtras(
-            (0, decorators[i])(elementObject) || elementObject
-          );
-          element = elementFinisherExtras.element;
-          this.addElementPlacement(element, placements);
-
-          if (elementFinisherExtras.finisher) {
-            finishers.push(elementFinisherExtras.finisher);
-          }
-
-          var newExtras = elementFinisherExtras.extras;
-
-          if (newExtras) {
-            for (var j = 0; j < newExtras.length; j++) {
-              this.addElementPlacement(newExtras[j], placements);
-            }
-
-            extras.push.apply(extras, newExtras);
-          }
-        }
-
-        return {
-          element: element,
-          finishers: finishers,
-          extras: extras
-        };
-      },
-      decorateConstructor: function(elements, decorators) {
-        var finishers = [];
-
-        for (var i = decorators.length - 1; i >= 0; i--) {
-          var obj = this.fromClassDescriptor(elements);
-          var elementsAndFinisher = this.toClassDescriptor(
-            (0, decorators[i])(obj) || obj
-          );
-
-          if (elementsAndFinisher.finisher !== undefined) {
-            finishers.push(elementsAndFinisher.finisher);
-          }
-
-          if (elementsAndFinisher.elements !== undefined) {
-            elements = elementsAndFinisher.elements;
-
-            for (var j = 0; j < elements.length - 1; j++) {
-              for (var k = j + 1; k < elements.length; k++) {
-                if (
-                  elements[j].key === elements[k].key &&
-                  elements[j].placement === elements[k].placement
-                ) {
-                  throw new TypeError(
-                    'Duplicated element (' + elements[j].key + ')'
-                  );
-                }
-              }
-            }
-          }
-        }
-
-        return {
-          elements: elements,
-          finishers: finishers
-        };
-      },
-      fromElementDescriptor: function(element) {
-        var obj = {
-          kind: element.kind,
-          key: element.key,
-          placement: element.placement,
-          descriptor: element.descriptor
-        };
-        var desc = {
-          value: 'Descriptor',
-          configurable: true
-        };
-        Object.defineProperty(obj, Symbol.toStringTag, desc);
-        if (element.kind === 'field') obj.initializer = element.initializer;
-        return obj;
-      },
-      toElementDescriptors: function(elementObjects) {
-        if (elementObjects === undefined) return;
-        return _toArray(elementObjects).map(function(elementObject) {
-          var element = this.toElementDescriptor(elementObject);
-          this.disallowProperty(
-            elementObject,
-            'finisher',
-            'An element descriptor'
-          );
-          this.disallowProperty(
-            elementObject,
-            'extras',
-            'An element descriptor'
-          );
-          return element;
-        }, this);
-      },
-      toElementDescriptor: function(elementObject) {
-        var kind = String(elementObject.kind);
-
-        if (kind !== 'method' && kind !== 'field') {
-          throw new TypeError(
-            'An element descriptor\'s .kind property must be either "method" or' +
-              ' "field", but a decorator created an element descriptor with' +
-              ' .kind "' +
-              kind +
-              '"'
-          );
-        }
-
-        var key = _toPropertyKey(elementObject.key);
-
-        var placement = String(elementObject.placement);
-
-        if (
-          placement !== 'static' &&
-          placement !== 'prototype' &&
-          placement !== 'own'
-        ) {
-          throw new TypeError(
-            'An element descriptor\'s .placement property must be one of "static",' +
-              ' "prototype" or "own", but a decorator created an element descriptor' +
-              ' with .placement "' +
-              placement +
-              '"'
-          );
-        }
-
-        var descriptor = elementObject.descriptor;
-        this.disallowProperty(
-          elementObject,
-          'elements',
-          'An element descriptor'
-        );
-        var element = {
-          kind: kind,
-          key: key,
-          placement: placement,
-          descriptor: Object.assign({}, descriptor)
-        };
-
-        if (kind !== 'field') {
-          this.disallowProperty(
-            elementObject,
-            'initializer',
-            'A method descriptor'
-          );
-        } else {
-          this.disallowProperty(
-            descriptor,
-            'get',
-            'The property descriptor of a field descriptor'
-          );
-          this.disallowProperty(
-            descriptor,
-            'set',
-            'The property descriptor of a field descriptor'
-          );
-          this.disallowProperty(
-            descriptor,
-            'value',
-            'The property descriptor of a field descriptor'
-          );
-          element.initializer = elementObject.initializer;
-        }
-
-        return element;
-      },
-      toElementFinisherExtras: function(elementObject) {
-        var element = this.toElementDescriptor(elementObject);
-
-        var finisher = _optionalCallableProperty(elementObject, 'finisher');
-
-        var extras = this.toElementDescriptors(elementObject.extras);
-        return {
-          element: element,
-          finisher: finisher,
-          extras: extras
-        };
-      },
-      fromClassDescriptor: function(elements) {
-        var obj = {
-          kind: 'class',
-          elements: elements.map(this.fromElementDescriptor, this)
-        };
-        var desc = {
-          value: 'Descriptor',
-          configurable: true
-        };
-        Object.defineProperty(obj, Symbol.toStringTag, desc);
-        return obj;
-      },
-      toClassDescriptor: function(obj) {
-        var kind = String(obj.kind);
-
-        if (kind !== 'class') {
-          throw new TypeError(
-            'A class descriptor\'s .kind property must be "class", but a decorator' +
-              ' created a class descriptor with .kind "' +
-              kind +
-              '"'
-          );
-        }
-
-        this.disallowProperty(obj, 'key', 'A class descriptor');
-        this.disallowProperty(obj, 'placement', 'A class descriptor');
-        this.disallowProperty(obj, 'descriptor', 'A class descriptor');
-        this.disallowProperty(obj, 'initializer', 'A class descriptor');
-        this.disallowProperty(obj, 'extras', 'A class descriptor');
-
-        var finisher = _optionalCallableProperty(obj, 'finisher');
-
-        var elements = this.toElementDescriptors(obj.elements);
-        return {
-          elements: elements,
-          finisher: finisher
-        };
-      },
-      runClassFinishers: function(constructor, finishers) {
-        for (var i = 0; i < finishers.length; i++) {
-          var newConstructor = (0, finishers[i])(constructor);
-
-          if (newConstructor !== undefined) {
-            if (typeof newConstructor !== 'function') {
-              throw new TypeError('Finishers must return a constructor.');
-            }
-
-            constructor = newConstructor;
-          }
-        }
-
-        return constructor;
-      },
-      disallowProperty: function(obj, name, objectType) {
-        if (obj[name] !== undefined) {
-          throw new TypeError(
-            objectType + " can't have a ." + name + ' property.'
-          );
-        }
-      }
-    };
-    return api;
-  }
-
-  function _createElementDescriptor(def) {
-    var key = _toPropertyKey(def.key);
-
-    var descriptor;
-
-    if (def.kind === 'method') {
-      descriptor = {
-        value: def.value,
-        writable: true,
-        configurable: true,
-        enumerable: false
-      };
-    } else if (def.kind === 'get') {
-      descriptor = {
-        get: def.value,
-        configurable: true,
-        enumerable: false
-      };
-    } else if (def.kind === 'set') {
-      descriptor = {
-        set: def.value,
-        configurable: true,
-        enumerable: false
-      };
-    } else if (def.kind === 'field') {
-      descriptor = {
-        configurable: true,
-        writable: true,
-        enumerable: true
-      };
-    }
-
-    var element = {
-      kind: def.kind === 'field' ? 'field' : 'method',
-      key: key,
-      placement: def.static
-        ? 'static'
-        : def.kind === 'field'
-        ? 'own'
-        : 'prototype',
-      descriptor: descriptor
-    };
-    if (def.decorators) element.decorators = def.decorators;
-    if (def.kind === 'field') element.initializer = def.value;
-    return element;
-  }
-
-  function _coalesceGetterSetter(element, other) {
-    if (element.descriptor.get !== undefined) {
-      other.descriptor.get = element.descriptor.get;
-    } else {
-      other.descriptor.set = element.descriptor.set;
-    }
-  }
-
-  function _coalesceClassElements(elements) {
-    var newElements = [];
-
-    var isSameElement = function(other) {
-      return (
-        other.kind === 'method' &&
-        other.key === element.key &&
-        other.placement === element.placement
-      );
-    };
-
-    for (var i = 0; i < elements.length; i++) {
-      var element = elements[i];
-      var other;
-
-      if (
-        element.kind === 'method' &&
-        (other = newElements.find(isSameElement))
-      ) {
-        if (
-          _isDataDescriptor(element.descriptor) ||
-          _isDataDescriptor(other.descriptor)
-        ) {
-          if (_hasDecorators(element) || _hasDecorators(other)) {
-            throw new ReferenceError(
-              'Duplicated methods (' + element.key + ") can't be decorated."
-            );
-          }
-
-          other.descriptor = element.descriptor;
-        } else {
-          if (_hasDecorators(element)) {
-            if (_hasDecorators(other)) {
-              throw new ReferenceError(
-                "Decorators can't be placed on different accessors with for " +
-                  'the same property (' +
-                  element.key +
-                  ').'
-              );
-            }
-
-            other.decorators = element.decorators;
-          }
-
-          _coalesceGetterSetter(element, other);
-        }
-      } else {
-        newElements.push(element);
-      }
-    }
-
-    return newElements;
-  }
-
-  function _hasDecorators(element) {
-    return element.decorators && element.decorators.length;
-  }
-
-  function _isDataDescriptor(desc) {
-    return (
-      desc !== undefined &&
-      !(desc.value === undefined && desc.writable === undefined)
-    );
-  }
-
-  function _optionalCallableProperty(obj, name) {
-    var value = obj[name];
-
-    if (value !== undefined && typeof value !== 'function') {
-      throw new TypeError("Expected '" + name + "' to be a function");
-    }
-
-    return value;
-  }
-
-  function _classPrivateMethodGet(receiver, privateSet, fn) {
-    if (!privateSet.has(receiver)) {
-      throw new TypeError('attempted to get private field on non-instance');
-    }
-
-    return fn;
-  }
-
-  function _classPrivateMethodSet() {
-    throw new TypeError('attempted to reassign private method');
-  }
-
-  function _wrapRegExp(re, groups) {
-    _wrapRegExp = function(re, groups) {
-      return new BabelRegExp(re, groups);
-    };
-
-    var _RegExp = _wrapNativeSuper(RegExp);
-
-    var _super = RegExp.prototype;
-
-    var _groups = new WeakMap();
-
-    function BabelRegExp(re, groups) {
-      var _this = _RegExp.call(this, re);
-
-      _groups.set(_this, groups);
-
-      return _this;
-    }
-
-    _inherits(BabelRegExp, _RegExp);
-
-    BabelRegExp.prototype.exec = function(str) {
-      var result = _super.exec.call(this, str);
-
-      if (result) result.groups = buildGroups(result, this);
-      return result;
-    };
-
-    BabelRegExp.prototype[Symbol.replace] = function(str, substitution) {
-      if (typeof substitution === 'string') {
-        var groups = _groups.get(this);
-
-        return _super[Symbol.replace].call(
-          this,
-          str,
-          substitution.replace(/\$<([^>]+)>/g, function(_, name) {
-            return '$' + groups[name];
-          })
-        );
-      } else if (typeof substitution === 'function') {
-        var _this = this;
-
-        return _super[Symbol.replace].call(this, str, function() {
-          var args = [];
-          args.push.apply(args, arguments);
-
-          if (typeof args[args.length - 1] !== 'object') {
-            args.push(buildGroups(args, _this));
-          }
-
-          return substitution.apply(this, args);
-        });
-      } else {
-        return _super[Symbol.replace].call(this, str, substitution);
-      }
-    };
-
-    function buildGroups(result, re) {
-      var g = _groups.get(re);
-
-      return Object.keys(g).reduce(function(groups, name) {
-        groups[name] = result[g[name]];
-        return groups;
-      }, Object.create(null));
-    }
-
-    return _wrapRegExp.apply(this, arguments);
-  }
-
-  var vectorMultiply = function vectorMultiply(v, amount) {
-    return createVector(v.x * amount, v.y * amount);
-  };
-
-  var vectorAdd = function vectorAdd(a, b) {
-    return createVector(a.x + b.x, a.y + b.y);
-  };
-
-  var vectorNormalize = function vectorNormalize(v) {
-    var l = Math.sqrt(v.x * v.x + v.y * v.y);
-    if (l === 0) {
-      return {
-        x: 0,
-        y: 0
-      };
-    }
-    return createVector(v.x / l, v.y / l);
-  };
-
-  var vectorRotate = function vectorRotate(v, radians, origin) {
-    var cos = Math.cos(radians);
-    var sin = Math.sin(radians);
-    var t = createVector(v.x - origin.x, v.y - origin.y);
-    return createVector(
-      origin.x + cos * t.x - sin * t.y,
-      origin.y + sin * t.x + cos * t.y
-    );
-  };
-
-  var createVector = function createVector() {
-    var x =
-      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    var y =
-      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-    return { x: x, y: y };
-  };
-
-  var getMarkupValue = function getMarkupValue(value, size) {
-    var scalar =
-      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-    var axis = arguments.length > 3 ? arguments[3] : undefined;
-    if (typeof value === 'string') {
-      return parseFloat(value) * scalar;
-    }
-    if (typeof value === 'number') {
-      return value * (axis ? size[axis] : Math.min(size.width, size.height));
-    }
-    return;
-  };
-
-  var getMarkupStyles = function getMarkupStyles(markup, size, scale) {
-    var lineStyle = markup.borderStyle || markup.lineStyle || 'solid';
-    var fill = markup.backgroundColor || markup.fontColor || 'transparent';
-    var stroke = markup.borderColor || markup.lineColor || 'transparent';
-    var strokeWidth = getMarkupValue(
-      markup.borderWidth || markup.lineWidth,
-      size,
-      scale
-    );
-    var lineCap = markup.lineCap || 'round';
-    var lineJoin = markup.lineJoin || 'round';
-    var dashes =
-      typeof lineStyle === 'string'
-        ? ''
-        : lineStyle
-            .map(function(v) {
-              return getMarkupValue(v, size, scale);
-            })
-            .join(',');
-    var opacity = markup.opacity || 1;
-    return {
-      'stroke-linecap': lineCap,
-      'stroke-linejoin': lineJoin,
-      'stroke-width': strokeWidth || 0,
-      'stroke-dasharray': dashes,
-      stroke: stroke,
-      fill: fill,
-      opacity: opacity
-    };
-  };
-
-  var isDefined = function isDefined(value) {
-    return value != null;
-  };
-
-  var getMarkupRect = function getMarkupRect(rect, size) {
-    var scalar =
-      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-
-    var left =
-      getMarkupValue(rect.x, size, scalar, 'width') ||
-      getMarkupValue(rect.left, size, scalar, 'width');
-    var top =
-      getMarkupValue(rect.y, size, scalar, 'height') ||
-      getMarkupValue(rect.top, size, scalar, 'height');
-    var width = getMarkupValue(rect.width, size, scalar, 'width');
-    var height = getMarkupValue(rect.height, size, scalar, 'height');
-    var right = getMarkupValue(rect.right, size, scalar, 'width');
-    var bottom = getMarkupValue(rect.bottom, size, scalar, 'height');
-
-    if (!isDefined(top)) {
-      if (isDefined(height) && isDefined(bottom)) {
-        top = size.height - height - bottom;
-      } else {
-        top = bottom;
-      }
-    }
-
-    if (!isDefined(left)) {
-      if (isDefined(width) && isDefined(right)) {
-        left = size.width - width - right;
-      } else {
-        left = right;
-      }
-    }
-
-    if (!isDefined(width)) {
-      if (isDefined(left) && isDefined(right)) {
-        width = size.width - left - right;
-      } else {
-        width = 0;
-      }
-    }
-
-    if (!isDefined(height)) {
-      if (isDefined(top) && isDefined(bottom)) {
-        height = size.height - top - bottom;
-      } else {
-        height = 0;
-      }
-    }
-
-    return {
-      x: left || 0,
-      y: top || 0,
-      width: width || 0,
-      height: height || 0
-    };
-  };
-
-  var pointsToPathShape = function pointsToPathShape(points) {
-    return points
-      .map(function(point, index) {
-        return ''
-          .concat(index === 0 ? 'M' : 'L', ' ')
-          .concat(point.x, ' ')
-          .concat(point.y);
-      })
-      .join(' ');
-  };
-
-  var setAttributes = function setAttributes(element, attr) {
-    return Object.keys(attr).forEach(function(key) {
-      return element.setAttribute(key, attr[key]);
-    });
-  };
-
-  var ns = 'http://www.w3.org/2000/svg';
-  var svg = function svg(tag, attr) {
-    var element = document.createElementNS(ns, tag);
-    if (attr) {
-      setAttributes(element, attr);
-    }
-    return element;
-  };
-
-  var updateRect = function updateRect(element) {
-    return setAttributes(
-      element,
-      Object.assign({}, element.rect, element.styles)
-    );
-  };
-
-  var updateEllipse = function updateEllipse(element) {
-    var cx = element.rect.x + element.rect.width * 0.5;
-    var cy = element.rect.y + element.rect.height * 0.5;
-    var rx = element.rect.width * 0.5;
-    var ry = element.rect.height * 0.5;
-    return setAttributes(
-      element,
-      Object.assign(
-        {
-          cx: cx,
-          cy: cy,
-          rx: rx,
-          ry: ry
-        },
-        element.styles
-      )
-    );
-  };
-
-  var IMAGE_FIT_STYLE = {
-    contain: 'xMidYMid meet',
-    cover: 'xMidYMid slice'
-  };
-
-  var updateImage = function updateImage(element, markup) {
-    setAttributes(
-      element,
-      Object.assign({}, element.rect, element.styles, {
-        preserveAspectRatio: IMAGE_FIT_STYLE[markup.fit] || 'none'
-      })
-    );
-  };
-
-  var TEXT_ANCHOR = {
-    left: 'start',
-    center: 'middle',
-    right: 'end'
-  };
-
-  var updateText = function updateText(element, markup, size, scale) {
-    var fontSize = getMarkupValue(markup.fontSize, size, scale);
-    var fontFamily = markup.fontFamily || 'sans-serif';
-    var fontWeight = markup.fontWeight || 'normal';
-    var textAlign = TEXT_ANCHOR[markup.textAlign] || 'start';
-
-    setAttributes(
-      element,
-      Object.assign({}, element.rect, element.styles, {
-        'stroke-width': 0,
-        'font-weight': fontWeight,
-        'font-size': fontSize,
-        'font-family': fontFamily,
-        'text-anchor': textAlign
-      })
-    );
-
-    // update text
-    if (element.text !== markup.text) {
-      element.text = markup.text;
-      element.textContent = markup.text.length ? markup.text : ' ';
-    }
-  };
-
-  var updateLine = function updateLine(element, markup, size, scale) {
-    setAttributes(
-      element,
-      Object.assign({}, element.rect, element.styles, {
-        fill: 'none'
-      })
-    );
-
-    var line = element.childNodes[0];
-    var begin = element.childNodes[1];
-    var end = element.childNodes[2];
-
-    var origin = element.rect;
-
-    var target = {
-      x: element.rect.x + element.rect.width,
-      y: element.rect.y + element.rect.height
-    };
-
-    setAttributes(line, {
-      x1: origin.x,
-      y1: origin.y,
-      x2: target.x,
-      y2: target.y
-    });
-
-    if (!markup.lineDecoration) return;
-
-    begin.style.display = 'none';
-    end.style.display = 'none';
-
-    var v = vectorNormalize({
-      x: target.x - origin.x,
-      y: target.y - origin.y
-    });
-
-    var l = getMarkupValue(0.05, size, scale);
-
-    if (markup.lineDecoration.indexOf('arrow-begin') !== -1) {
-      var arrowBeginRotationPoint = vectorMultiply(v, l);
-      var arrowBeginCenter = vectorAdd(origin, arrowBeginRotationPoint);
-      var arrowBeginA = vectorRotate(origin, 2, arrowBeginCenter);
-      var arrowBeginB = vectorRotate(origin, -2, arrowBeginCenter);
-
-      setAttributes(begin, {
-        style: 'display:block;',
-        d: 'M'
-          .concat(arrowBeginA.x, ',')
-          .concat(arrowBeginA.y, ' L')
-          .concat(origin.x, ',')
-          .concat(origin.y, ' L')
-          .concat(arrowBeginB.x, ',')
-          .concat(arrowBeginB.y)
-      });
-    }
-
-    if (markup.lineDecoration.indexOf('arrow-end') !== -1) {
-      var arrowEndRotationPoint = vectorMultiply(v, -l);
-      var arrowEndCenter = vectorAdd(target, arrowEndRotationPoint);
-      var arrowEndA = vectorRotate(target, 2, arrowEndCenter);
-      var arrowEndB = vectorRotate(target, -2, arrowEndCenter);
-
-      setAttributes(end, {
-        style: 'display:block;',
-        d: 'M'
-          .concat(arrowEndA.x, ',')
-          .concat(arrowEndA.y, ' L')
-          .concat(target.x, ',')
-          .concat(target.y, ' L')
-          .concat(arrowEndB.x, ',')
-          .concat(arrowEndB.y)
-      });
-    }
-  };
-
-  var updatePath = function updatePath(element, markup, size, scale) {
-    setAttributes(
-      element,
-      Object.assign({}, element.styles, {
-        fill: 'none',
-        d: pointsToPathShape(
-          markup.points.map(function(point) {
-            return {
-              x: getMarkupValue(point.x, size, scale, 'width'),
-              y: getMarkupValue(point.y, size, scale, 'height')
-            };
-          })
-        )
-      })
-    );
-  };
-
-  var createShape = function createShape(node) {
-    return function(markup) {
-      return svg(node, { id: markup.id });
-    };
-  };
-
-  var createImage = function createImage(markup) {
-    var shape = svg('image', {
-      id: markup.id,
-      'stroke-linecap': 'round',
-      'stroke-linejoin': 'round',
-      opacity: '0'
-    });
-
-    shape.onload = function() {
-      shape.setAttribute('opacity', markup.opacity || 1);
-    };
-    shape.setAttributeNS(
-      'http://www.w3.org/1999/xlink',
-      'xlink:href',
-      markup.src
-    );
-    return shape;
-  };
-
-  var createLine = function createLine(markup) {
-    var shape = svg('g', {
-      id: markup.id,
-      'stroke-linecap': 'round',
-      'stroke-linejoin': 'round'
-    });
-
-    var line = svg('line');
-    shape.appendChild(line);
-
-    var begin = svg('path');
-    shape.appendChild(begin);
-
-    var end = svg('path');
-    shape.appendChild(end);
-
-    return shape;
-  };
-
-  var CREATE_TYPE_ROUTES = {
-    image: createImage,
-    rect: createShape('rect'),
-    ellipse: createShape('ellipse'),
-    text: createShape('text'),
-    path: createShape('path'),
-    line: createLine
-  };
-
-  var UPDATE_TYPE_ROUTES = {
-    rect: updateRect,
-    ellipse: updateEllipse,
-    image: updateImage,
-    text: updateText,
-    path: updatePath,
-    line: updateLine
-  };
-
-  var createMarkupByType = function createMarkupByType(type, markup) {
-    return CREATE_TYPE_ROUTES[type](markup);
-  };
-
-  var updateMarkupByType = function updateMarkupByType(
-    element,
-    type,
-    markup,
-    size,
-    scale
-  ) {
-    if (type !== 'path') {
-      element.rect = getMarkupRect(markup, size, scale);
-    }
-    element.styles = getMarkupStyles(markup, size, scale);
-    UPDATE_TYPE_ROUTES[type](element, markup, size, scale);
-  };
-
-  var MARKUP_RECT = [
-    'x',
-    'y',
-    'left',
-    'top',
-    'right',
-    'bottom',
-    'width',
-    'height'
-  ];
-
-  var toOptionalFraction = function toOptionalFraction(value) {
-    return typeof value === 'string' && /%/.test(value)
-      ? parseFloat(value) / 100
-      : value;
-  };
-
-  // adds default markup properties, clones markup
-  var prepareMarkup = function prepareMarkup(markup) {
-    var _markup = _slicedToArray(markup, 2),
-      type = _markup[0],
-      props = _markup[1];
-
-    var rect = props.points
-      ? {}
-      : MARKUP_RECT.reduce(function(prev, curr) {
-          prev[curr] = toOptionalFraction(props[curr]);
-          return prev;
-        }, {});
-
-    return [
-      type,
-      Object.assign(
-        {
-          zIndex: 0
-        },
-        props,
-        rect
-      )
-    ];
-  };
-
-  var sortMarkupByZIndex = function sortMarkupByZIndex(a, b) {
-    if (a[1].zIndex > b[1].zIndex) {
-      return 1;
-    }
-    if (a[1].zIndex < b[1].zIndex) {
-      return -1;
-    }
-    return 0;
-  };
-
-  var createMarkupView = function createMarkupView(_) {
-    return _.utils.createView({
-      name: 'image-preview-markup',
-      tag: 'svg',
-      ignoreRect: true,
-      mixins: {
-        apis: ['width', 'height', 'crop', 'markup', 'resize', 'dirty']
-      },
-
-      write: function write(_ref) {
-        var root = _ref.root,
-          props = _ref.props;
-
-        if (!props.dirty) return;
-        var crop = props.crop,
-          resize = props.resize,
-          markup = props.markup;
-
-        var viewWidth = props.width;
-        var viewHeight = props.height;
-
-        var cropWidth = crop.width;
-        var cropHeight = crop.height;
-
-        if (resize) {
-          var _size = resize.size;
-
-          var outputWidth = _size && _size.width;
-          var outputHeight = _size && _size.height;
-          var outputFit = resize.mode;
-          var outputUpscale = resize.upscale;
-
-          if (outputWidth && !outputHeight) outputHeight = outputWidth;
-          if (outputHeight && !outputWidth) outputWidth = outputHeight;
-
-          var shouldUpscale =
-            cropWidth < outputWidth && cropHeight < outputHeight;
-
-          if (!shouldUpscale || (shouldUpscale && outputUpscale)) {
-            var scalarWidth = outputWidth / cropWidth;
-            var scalarHeight = outputHeight / cropHeight;
-
-            if (outputFit === 'force') {
-              cropWidth = outputWidth;
-              cropHeight = outputHeight;
-            } else {
-              var scalar;
-              if (outputFit === 'cover') {
-                scalar = Math.max(scalarWidth, scalarHeight);
-              } else if (outputFit === 'contain') {
-                scalar = Math.min(scalarWidth, scalarHeight);
-              }
-              cropWidth = cropWidth * scalar;
-              cropHeight = cropHeight * scalar;
-            }
-          }
-        }
-
-        var size = {
-          width: viewWidth,
-          height: viewHeight
-        };
-
-        root.element.setAttribute('width', size.width);
-        root.element.setAttribute('height', size.height);
-
-        var scale = Math.min(viewWidth / cropWidth, viewHeight / cropHeight);
-
-        // clear
-        root.element.innerHTML = '';
-
-        // get filter
-        var markupFilter = root.query('GET_IMAGE_PREVIEW_MARKUP_FILTER');
-
-        // draw new
-        markup
-          .filter(markupFilter)
-          .map(prepareMarkup)
-          .sort(sortMarkupByZIndex)
-          .forEach(function(markup) {
-            var _markup = _slicedToArray(markup, 2),
-              type = _markup[0],
-              settings = _markup[1];
-
-            // create
-            var element = createMarkupByType(type, settings);
-
-            // update
-            updateMarkupByType(element, type, settings, size, scale);
-
-            // add
-            root.element.appendChild(element);
-          });
-      }
-    });
-  };
-
-  var createVector$1 = function createVector(x, y) {
-    return { x: x, y: y };
-  };
-
-  var vectorDot = function vectorDot(a, b) {
-    return a.x * b.x + a.y * b.y;
-  };
-
-  var vectorSubtract = function vectorSubtract(a, b) {
-    return createVector$1(a.x - b.x, a.y - b.y);
-  };
-
-  var vectorDistanceSquared = function vectorDistanceSquared(a, b) {
-    return vectorDot(vectorSubtract(a, b), vectorSubtract(a, b));
-  };
-
-  var vectorDistance = function vectorDistance(a, b) {
-    return Math.sqrt(vectorDistanceSquared(a, b));
-  };
-
-  var getOffsetPointOnEdge = function getOffsetPointOnEdge(length, rotation) {
-    var a = length;
-
-    var A = 1.5707963267948966;
-    var B = rotation;
-    var C = 1.5707963267948966 - rotation;
-
-    var sinA = Math.sin(A);
-    var sinB = Math.sin(B);
-    var sinC = Math.sin(C);
-    var cosC = Math.cos(C);
-    var ratio = a / sinA;
-    var b = ratio * sinB;
-    var c = ratio * sinC;
-
-    return createVector$1(cosC * b, cosC * c);
-  };
-
-  var getRotatedRectSize = function getRotatedRectSize(rect, rotation) {
-    var w = rect.width;
-    var h = rect.height;
-
-    var hor = getOffsetPointOnEdge(w, rotation);
-    var ver = getOffsetPointOnEdge(h, rotation);
-
-    var tl = createVector$1(rect.x + Math.abs(hor.x), rect.y - Math.abs(hor.y));
-
-    var tr = createVector$1(
-      rect.x + rect.width + Math.abs(ver.y),
-      rect.y + Math.abs(ver.x)
-    );
-
-    var bl = createVector$1(
-      rect.x - Math.abs(ver.y),
-      rect.y + rect.height - Math.abs(ver.x)
-    );
-
-    return {
-      width: vectorDistance(tl, tr),
-      height: vectorDistance(tl, bl)
-    };
-  };
-
-  var calculateCanvasSize = function calculateCanvasSize(
-    image,
-    canvasAspectRatio
-  ) {
-    var zoom =
-      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-
-    var imageAspectRatio = image.height / image.width;
-
-    // determine actual pixels on x and y axis
-    var canvasWidth = 1;
-    var canvasHeight = canvasAspectRatio;
-    var imgWidth = 1;
-    var imgHeight = imageAspectRatio;
-    if (imgHeight > canvasHeight) {
-      imgHeight = canvasHeight;
-      imgWidth = imgHeight / imageAspectRatio;
-    }
-
-    var scalar = Math.max(canvasWidth / imgWidth, canvasHeight / imgHeight);
-    var width = image.width / (zoom * scalar * imgWidth);
-    var height = width * canvasAspectRatio;
-
-    return {
-      width: width,
-      height: height
-    };
-  };
-
-  var getImageRectZoomFactor = function getImageRectZoomFactor(
-    imageRect,
-    cropRect,
-    rotation,
-    center
-  ) {
-    // calculate available space round image center position
-    var cx = center.x > 0.5 ? 1 - center.x : center.x;
-    var cy = center.y > 0.5 ? 1 - center.y : center.y;
-    var imageWidth = cx * 2 * imageRect.width;
-    var imageHeight = cy * 2 * imageRect.height;
-
-    // calculate rotated crop rectangle size
-    var rotatedCropSize = getRotatedRectSize(cropRect, rotation);
-
-    // calculate scalar required to fit image
-    return Math.max(
-      rotatedCropSize.width / imageWidth,
-      rotatedCropSize.height / imageHeight
-    );
-  };
-
-  var getCenteredCropRect = function getCenteredCropRect(
-    container,
-    aspectRatio
-  ) {
-    var width = container.width;
-    var height = width * aspectRatio;
-    if (height > container.height) {
-      height = container.height;
-      width = height / aspectRatio;
-    }
-    var x = (container.width - width) * 0.5;
-    var y = (container.height - height) * 0.5;
-
-    return {
-      x: x,
-      y: y,
-      width: width,
-      height: height
-    };
-  };
-
-  var getCurrentCropSize = function getCurrentCropSize(imageSize) {
-    var crop =
-      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var zoom = crop.zoom,
-      rotation = crop.rotation,
-      center = crop.center,
-      aspectRatio = crop.aspectRatio;
-
-    if (!aspectRatio) aspectRatio = imageSize.height / imageSize.width;
-
-    var canvasSize = calculateCanvasSize(imageSize, aspectRatio, zoom);
-
-    var canvasCenter = {
-      x: canvasSize.width * 0.5,
-      y: canvasSize.height * 0.5
-    };
-
-    var stage = {
-      x: 0,
-      y: 0,
-      width: canvasSize.width,
-      height: canvasSize.height,
-      center: canvasCenter
-    };
-
-    var shouldLimit = typeof crop.scaleToFit === 'undefined' || crop.scaleToFit;
-
-    var stageZoomFactor = getImageRectZoomFactor(
-      imageSize,
-      getCenteredCropRect(stage, aspectRatio),
-      rotation,
-      shouldLimit ? center : { x: 0.5, y: 0.5 }
-    );
-
-    var scale = zoom * stageZoomFactor;
-
-    // start drawing
-    return {
-      widthFloat: canvasSize.width / scale,
-      heightFloat: canvasSize.height / scale,
-      width: Math.round(canvasSize.width / scale),
-      height: Math.round(canvasSize.height / scale)
-    };
-  };
-
-  var IMAGE_SCALE_SPRING_PROPS = {
-    type: 'spring',
-    stiffness: 0.5,
-    damping: 0.45,
-    mass: 10
-  };
-
-  // does horizontal and vertical flipping
-  var createBitmapView = function createBitmapView(_) {
-    return _.utils.createView({
-      name: 'image-bitmap',
-      ignoreRect: true,
-      mixins: { styles: ['scaleX', 'scaleY'] },
-      create: function create(_ref) {
-        var root = _ref.root,
-          props = _ref.props;
-        root.appendChild(props.image);
-      }
-    });
-  };
-
-  // shifts and rotates image
-  var createImageCanvasWrapper = function createImageCanvasWrapper(_) {
-    return _.utils.createView({
-      name: 'image-canvas-wrapper',
-      tag: 'div',
-      ignoreRect: true,
-      mixins: {
-        apis: ['crop', 'width', 'height'],
-
-        styles: [
-          'originX',
-          'originY',
-          'translateX',
-          'translateY',
-          'scaleX',
-          'scaleY',
-          'rotateZ'
-        ],
-
-        animations: {
-          originX: IMAGE_SCALE_SPRING_PROPS,
-          originY: IMAGE_SCALE_SPRING_PROPS,
-          scaleX: IMAGE_SCALE_SPRING_PROPS,
-          scaleY: IMAGE_SCALE_SPRING_PROPS,
-          translateX: IMAGE_SCALE_SPRING_PROPS,
-          translateY: IMAGE_SCALE_SPRING_PROPS,
-          rotateZ: IMAGE_SCALE_SPRING_PROPS
-        }
-      },
-
-      create: function create(_ref2) {
-        var root = _ref2.root,
-          props = _ref2.props;
-        props.width = props.image.width;
-        props.height = props.image.height;
-        root.ref.bitmap = root.appendChildView(
-          root.createChildView(createBitmapView(_), { image: props.image })
-        );
-      },
-      write: function write(_ref3) {
-        var root = _ref3.root,
-          props = _ref3.props;
-        var flip = props.crop.flip;
-        var bitmap = root.ref.bitmap;
-        bitmap.scaleX = flip.horizontal ? -1 : 1;
-        bitmap.scaleY = flip.vertical ? -1 : 1;
-      }
-    });
-  };
-
-  // clips canvas to correct aspect ratio
-  var createClipView = function createClipView(_) {
-    return _.utils.createView({
-      name: 'image-clip',
-      tag: 'div',
-      ignoreRect: true,
-      mixins: {
-        apis: [
-          'crop',
-          'markup',
-          'resize',
-          'width',
-          'height',
-          'dirty',
-          'background'
-        ],
-
-        styles: ['width', 'height', 'opacity'],
-        animations: {
-          opacity: { type: 'tween', duration: 250 }
-        }
-      },
-
-      didWriteView: function didWriteView(_ref4) {
-        var root = _ref4.root,
-          props = _ref4.props;
-        if (!props.background) return;
-        root.element.style.backgroundColor = props.background;
-      },
-      create: function create(_ref5) {
-        var root = _ref5.root,
-          props = _ref5.props;
-
-        root.ref.image = root.appendChildView(
-          root.createChildView(
-            createImageCanvasWrapper(_),
-            Object.assign({}, props)
-          )
-        );
-
-        root.ref.createMarkup = function() {
-          if (root.ref.markup) return;
-          root.ref.markup = root.appendChildView(
-            root.createChildView(createMarkupView(_), Object.assign({}, props))
-          );
-        };
-
-        root.ref.destroyMarkup = function() {
-          if (!root.ref.markup) return;
-          root.removeChildView(root.ref.markup);
-          root.ref.markup = null;
-        };
-
-        // set up transparency grid
-        var transparencyIndicator = root.query(
-          'GET_IMAGE_PREVIEW_TRANSPARENCY_INDICATOR'
-        );
-        if (transparencyIndicator === null) {
-          return;
-        }
-
-        // grid pattern
-        if (transparencyIndicator === 'grid') {
-          root.element.dataset.transparencyIndicator = transparencyIndicator;
-        }
-        // basic color
-        else {
-          root.element.dataset.transparencyIndicator = 'color';
-        }
-      },
-      write: function write(_ref6) {
-        var root = _ref6.root,
-          props = _ref6.props,
-          shouldOptimize = _ref6.shouldOptimize;
-        var crop = props.crop,
-          markup = props.markup,
-          resize = props.resize,
-          dirty = props.dirty,
-          width = props.width,
-          height = props.height;
-
-        root.ref.image.crop = crop;
-
-        var stage = {
-          x: 0,
-          y: 0,
-          width: width,
-          height: height,
-          center: {
-            x: width * 0.5,
-            y: height * 0.5
-          }
-        };
-
-        var image = {
-          width: root.ref.image.width,
-          height: root.ref.image.height
-        };
-
-        var origin = {
-          x: crop.center.x * image.width,
-          y: crop.center.y * image.height
-        };
-
-        var translation = {
-          x: stage.center.x - image.width * crop.center.x,
-          y: stage.center.y - image.height * crop.center.y
-        };
-
-        var rotation = Math.PI * 2 + (crop.rotation % (Math.PI * 2));
-
-        var cropAspectRatio = crop.aspectRatio || image.height / image.width;
-
-        var shouldLimit =
-          typeof crop.scaleToFit === 'undefined' || crop.scaleToFit;
-
-        var stageZoomFactor = getImageRectZoomFactor(
-          image,
-          getCenteredCropRect(stage, cropAspectRatio),
-
-          rotation,
-          shouldLimit ? crop.center : { x: 0.5, y: 0.5 }
-        );
-
-        var scale = crop.zoom * stageZoomFactor;
-
-        // update markup view
-        if (markup && markup.length) {
-          root.ref.createMarkup();
-          root.ref.markup.width = width;
-          root.ref.markup.height = height;
-          root.ref.markup.resize = resize;
-          root.ref.markup.dirty = dirty;
-          root.ref.markup.markup = markup;
-          root.ref.markup.crop = getCurrentCropSize(image, crop);
-        } else if (root.ref.markup) {
-          root.ref.destroyMarkup();
-        }
-
-        // update image view
-        var imageView = root.ref.image;
-
-        // don't update clip layout
-        if (shouldOptimize) {
-          imageView.originX = null;
-          imageView.originY = null;
-          imageView.translateX = null;
-          imageView.translateY = null;
-          imageView.rotateZ = null;
-          imageView.scaleX = null;
-          imageView.scaleY = null;
-          return;
-        }
-
-        imageView.originX = origin.x;
-        imageView.originY = origin.y;
-        imageView.translateX = translation.x;
-        imageView.translateY = translation.y;
-        imageView.rotateZ = rotation;
-        imageView.scaleX = scale;
-        imageView.scaleY = scale;
-      }
-    });
-  };
-
-  var createImageView = function createImageView(_) {
-    return _.utils.createView({
-      name: 'image-preview',
-      tag: 'div',
-      ignoreRect: true,
-      mixins: {
-        apis: ['image', 'crop', 'markup', 'resize', 'dirty', 'background'],
-
-        styles: ['translateY', 'scaleX', 'scaleY', 'opacity'],
-
-        animations: {
-          scaleX: IMAGE_SCALE_SPRING_PROPS,
-          scaleY: IMAGE_SCALE_SPRING_PROPS,
-          translateY: IMAGE_SCALE_SPRING_PROPS,
-          opacity: { type: 'tween', duration: 400 }
-        }
-      },
-
-      create: function create(_ref7) {
-        var root = _ref7.root,
-          props = _ref7.props;
-        root.ref.clip = root.appendChildView(
-          root.createChildView(createClipView(_), {
-            id: props.id,
-            image: props.image,
-            crop: props.crop,
-            markup: props.markup,
-            resize: props.resize,
-            dirty: props.dirty,
-            background: props.background
-          })
-        );
-      },
-      write: function write(_ref8) {
-        var root = _ref8.root,
-          props = _ref8.props,
-          shouldOptimize = _ref8.shouldOptimize;
-        var clip = root.ref.clip;
-        var image = props.image,
-          crop = props.crop,
-          markup = props.markup,
-          resize = props.resize,
-          dirty = props.dirty;
-
-        clip.crop = crop;
-        clip.markup = markup;
-        clip.resize = resize;
-        clip.dirty = dirty;
-
-        // don't update clip layout
-        clip.opacity = shouldOptimize ? 0 : 1;
-
-        // don't re-render if optimizing or hidden (width will be zero resulting in weird animations)
-        if (shouldOptimize || root.rect.element.hidden) return;
-
-        // calculate scaled preview image size
-        var imageAspectRatio = image.height / image.width;
-        var aspectRatio = crop.aspectRatio || imageAspectRatio;
-
-        // calculate container size
-        var containerWidth = root.rect.inner.width;
-        var containerHeight = root.rect.inner.height;
-
-        var fixedPreviewHeight = root.query('GET_IMAGE_PREVIEW_HEIGHT');
-        var minPreviewHeight = root.query('GET_IMAGE_PREVIEW_MIN_HEIGHT');
-        var maxPreviewHeight = root.query('GET_IMAGE_PREVIEW_MAX_HEIGHT');
-
-        var panelAspectRatio = root.query('GET_PANEL_ASPECT_RATIO');
-        var allowMultiple = root.query('GET_ALLOW_MULTIPLE');
-
-        if (panelAspectRatio && !allowMultiple) {
-          fixedPreviewHeight = containerWidth * panelAspectRatio;
-          aspectRatio = panelAspectRatio;
-        }
-
-        // determine clip width and height
-        var clipHeight =
-          fixedPreviewHeight !== null
-            ? fixedPreviewHeight
-            : Math.max(
-                minPreviewHeight,
-                Math.min(containerWidth * aspectRatio, maxPreviewHeight)
-              );
-
-        var clipWidth = clipHeight / aspectRatio;
-        if (clipWidth > containerWidth) {
-          clipWidth = containerWidth;
-          clipHeight = clipWidth * aspectRatio;
-        }
-
-        if (clipHeight > containerHeight) {
-          clipHeight = containerHeight;
-          clipWidth = containerHeight / aspectRatio;
-        }
-
-        clip.width = clipWidth;
-        clip.height = clipHeight;
-      }
-    });
-  };
-
-  var SVG_MASK =
-    '<svg width="500" height="200" viewBox="0 0 500 200" preserveAspectRatio="none">\n    <defs>\n        <radialGradient id="gradient-__UID__" cx=".5" cy="1.25" r="1.15">\n            <stop offset=\'50%\' stop-color=\'#000000\'/>\n            <stop offset=\'56%\' stop-color=\'#0a0a0a\'/>\n            <stop offset=\'63%\' stop-color=\'#262626\'/>\n            <stop offset=\'69%\' stop-color=\'#4f4f4f\'/>\n            <stop offset=\'75%\' stop-color=\'#808080\'/>\n            <stop offset=\'81%\' stop-color=\'#b1b1b1\'/>\n            <stop offset=\'88%\' stop-color=\'#dadada\'/>\n            <stop offset=\'94%\' stop-color=\'#f6f6f6\'/>\n            <stop offset=\'100%\' stop-color=\'#ffffff\'/>\n        </radialGradient>\n        <mask id="mask-__UID__">\n            <rect x="0" y="0" width="500" height="200" fill="url(#gradient-__UID__)"></rect>\n        </mask>\n    </defs>\n    <rect x="0" width="500" height="200" fill="currentColor" mask="url(#mask-__UID__)"></rect>\n</svg>';
-
-  var checkedMyBases = false;
-  var SVGMaskUniqueId = 0;
-
-  var createImageOverlayView = function createImageOverlayView(fpAPI) {
-    return fpAPI.utils.createView({
-      name: 'image-preview-overlay',
-      tag: 'div',
-      ignoreRect: true,
-      create: function create(_ref) {
-        var root = _ref.root,
-          props = _ref.props;
-
-        if (!checkedMyBases && document.querySelector('base')) {
-          SVG_MASK = SVG_MASK.replace(
-            /url\(\#/g,
-            'url(' +
-              window.location.href.replace(window.location.hash, '') +
-              '#'
-          );
-          checkedMyBases = true;
-        }
-
-        SVGMaskUniqueId++;
-        root.element.classList.add(
-          'filepond--image-preview-overlay-'.concat(props.status)
-        );
-        root.element.innerHTML = SVG_MASK.replace(/__UID__/g, SVGMaskUniqueId);
-      },
-      mixins: {
-        styles: ['opacity'],
-        animations: {
-          opacity: { type: 'spring', mass: 25 }
-        }
-      }
-    });
-  };
-
-  /**
-   * Bitmap Worker
-   */
-  var BitmapWorker = function BitmapWorker() {
-    self.onmessage = function(e) {
-      createImageBitmap(e.data.message.file).then(function(bitmap) {
-        self.postMessage({ id: e.data.id, message: bitmap }, [bitmap]);
-      });
-    };
-  };
-
-  /**
-   * ColorMatrix Worker
-   */
-  var ColorMatrixWorker = function ColorMatrixWorker() {
-    self.onmessage = function(e) {
-      var imageData = e.data.message.imageData;
-      var matrix = e.data.message.colorMatrix;
-
-      var data = imageData.data;
-      var l = data.length;
-
-      var m11 = matrix[0];
-      var m12 = matrix[1];
-      var m13 = matrix[2];
-      var m14 = matrix[3];
-      var m15 = matrix[4];
-
-      var m21 = matrix[5];
-      var m22 = matrix[6];
-      var m23 = matrix[7];
-      var m24 = matrix[8];
-      var m25 = matrix[9];
-
-      var m31 = matrix[10];
-      var m32 = matrix[11];
-      var m33 = matrix[12];
-      var m34 = matrix[13];
-      var m35 = matrix[14];
-
-      var m41 = matrix[15];
-      var m42 = matrix[16];
-      var m43 = matrix[17];
-      var m44 = matrix[18];
-      var m45 = matrix[19];
-
-      var index = 0,
-        r = 0.0,
-        g = 0.0,
-        b = 0.0,
-        a = 0.0;
-
-      for (; index < l; index += 4) {
-        r = data[index] / 255;
-        g = data[index + 1] / 255;
-        b = data[index + 2] / 255;
-        a = data[index + 3] / 255;
-        data[index] = Math.max(
-          0,
-          Math.min((r * m11 + g * m12 + b * m13 + a * m14 + m15) * 255, 255)
-        );
-        data[index + 1] = Math.max(
-          0,
-          Math.min((r * m21 + g * m22 + b * m23 + a * m24 + m25) * 255, 255)
-        );
-        data[index + 2] = Math.max(
-          0,
-          Math.min((r * m31 + g * m32 + b * m33 + a * m34 + m35) * 255, 255)
-        );
-        data[index + 3] = Math.max(
-          0,
-          Math.min((r * m41 + g * m42 + b * m43 + a * m44 + m45) * 255, 255)
-        );
-      }
-
-      self.postMessage({ id: e.data.id, message: imageData }, [
-        imageData.data.buffer
-      ]);
-    };
-  };
-
-  var getImageSize = function getImageSize(url, cb) {
-    var image = new Image();
-    image.onload = function() {
-      var width = image.naturalWidth;
-      var height = image.naturalHeight;
-      image = null;
-      cb(width, height);
-    };
-    image.src = url;
-  };
-
-  var transforms = {
-    1: function _() {
-      return [1, 0, 0, 1, 0, 0];
-    },
-    2: function _(width) {
-      return [-1, 0, 0, 1, width, 0];
-    },
-    3: function _(width, height) {
-      return [-1, 0, 0, -1, width, height];
-    },
-    4: function _(width, height) {
-      return [1, 0, 0, -1, 0, height];
-    },
-    5: function _() {
-      return [0, 1, 1, 0, 0, 0];
-    },
-    6: function _(width, height) {
-      return [0, 1, -1, 0, height, 0];
-    },
-    7: function _(width, height) {
-      return [0, -1, -1, 0, height, width];
-    },
-    8: function _(width) {
-      return [0, -1, 1, 0, 0, width];
-    }
-  };
-
-  var fixImageOrientation = function fixImageOrientation(
-    ctx,
-    width,
-    height,
-    orientation
-  ) {
-    // no orientation supplied
-    if (orientation === -1) {
-      return;
-    }
-
-    ctx.transform.apply(ctx, transforms[orientation](width, height));
-  };
-
-  // draws the preview image to canvas
-  var createPreviewImage = function createPreviewImage(
-    data,
-    width,
-    height,
-    orientation
-  ) {
-    // can't draw on half pixels
-    width = Math.round(width);
-    height = Math.round(height);
-
-    // draw image
-    var canvas = document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-    var ctx = canvas.getContext('2d');
-
-    // if is rotated incorrectly swap width and height
-    if (orientation >= 5 && orientation <= 8) {
-      var _ref = [height, width];
-      width = _ref[0];
-      height = _ref[1];
-    }
-
-    // correct image orientation
-    fixImageOrientation(ctx, width, height, orientation);
-
-    // draw the image
-    ctx.drawImage(data, 0, 0, width, height);
-
-    return canvas;
-  };
-
-  var isBitmap = function isBitmap(file) {
-    return /^image/.test(file.type) && !/svg/.test(file.type);
-  };
-
-  var MAX_WIDTH = 10;
-  var MAX_HEIGHT = 10;
-
-  var calculateAverageColor = function calculateAverageColor(image) {
-    var scalar = Math.min(MAX_WIDTH / image.width, MAX_HEIGHT / image.height);
-
-    var canvas = document.createElement('canvas');
-    var ctx = canvas.getContext('2d');
-    var width = (canvas.width = Math.ceil(image.width * scalar));
-    var height = (canvas.height = Math.ceil(image.height * scalar));
-    ctx.drawImage(image, 0, 0, width, height);
-    var data = null;
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
     try {
-      data = ctx.getImageData(0, 0, width, height).data;
-    } catch (e) {
-      return null;
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
     }
-    var l = data.length;
-
-    var r = 0;
-    var g = 0;
-    var b = 0;
-    var i = 0;
-
-    for (; i < l; i += 4) {
-      r += data[i] * data[i];
-      g += data[i + 1] * data[i + 1];
-      b += data[i + 2] * data[i + 2];
-    }
-
-    r = averageColor(r, l);
-    g = averageColor(g, l);
-    b = averageColor(b, l);
-
-    return { r: r, g: g, b: b };
-  };
-
-  var averageColor = function averageColor(c, l) {
-    return Math.floor(Math.sqrt(c / (l / 4)));
-  };
-
-  var cloneCanvas = function cloneCanvas(origin, target) {
-    target = target || document.createElement('canvas');
-    target.width = origin.width;
-    target.height = origin.height;
-    var ctx = target.getContext('2d');
-    ctx.drawImage(origin, 0, 0);
-    return target;
-  };
-
-  var cloneImageData = function cloneImageData(imageData) {
-    var id;
-    try {
-      id = new ImageData(imageData.width, imageData.height);
-    } catch (e) {
-      var canvas = document.createElement('canvas');
-      var ctx = canvas.getContext('2d');
-      id = ctx.createImageData(imageData.width, imageData.height);
-    }
-    id.data.set(new Uint8ClampedArray(imageData.data));
-    return id;
-  };
-
-  var loadImage = function loadImage(url) {
-    return new Promise(function(resolve, reject) {
-      var img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.onload = function() {
-        resolve(img);
-      };
-      img.onerror = function(e) {
-        reject(e);
-      };
-      img.src = url;
-    });
-  };
-
-  var createImageWrapperView = function createImageWrapperView(_) {
-    // create overlay view
-    var OverlayView = createImageOverlayView(_);
-
-    var ImageView = createImageView(_);
-    var createWorker = _.utils.createWorker;
-
-    var applyFilter = function applyFilter(root, filter, target) {
-      return new Promise(function(resolve) {
-        // will store image data for future filter updates
-        if (!root.ref.imageData) {
-          root.ref.imageData = target
-            .getContext('2d')
-            .getImageData(0, 0, target.width, target.height);
-        }
-
-        // get image data reference
-        var imageData = cloneImageData(root.ref.imageData);
-
-        if (!filter || filter.length !== 20) {
-          target.getContext('2d').putImageData(imageData, 0, 0);
-          return resolve();
-        }
-
-        var worker = createWorker(ColorMatrixWorker);
-        worker.post(
-          {
-            imageData: imageData,
-            colorMatrix: filter
-          },
-
-          function(response) {
-            // apply filtered colors
-            target.getContext('2d').putImageData(response, 0, 0);
-
-            // stop worker
-            worker.terminate();
-
-            // done!
-            resolve();
-          },
-          [imageData.data.buffer]
-        );
-      });
-    };
-
-    var removeImageView = function removeImageView(root, imageView) {
-      root.removeChildView(imageView);
-      imageView.image.width = 1;
-      imageView.image.height = 1;
-      imageView._destroy();
-    };
-
-    // remove an image
-    var shiftImage = function shiftImage(_ref) {
-      var root = _ref.root;
-      var imageView = root.ref.images.shift();
-      imageView.opacity = 0;
-      imageView.translateY = -15;
-      root.ref.imageViewBin.push(imageView);
-      return imageView;
-    };
-
-    // add new image
-    var pushImage = function pushImage(_ref2) {
-      var root = _ref2.root,
-        props = _ref2.props,
-        image = _ref2.image;
-
-      var id = props.id;
-      var item = root.query('GET_ITEM', { id: id });
-      if (!item) return;
-
-      var crop = item.getMetadata('crop') || {
-        center: {
-          x: 0.5,
-          y: 0.5
-        },
-
-        flip: {
-          horizontal: false,
-          vertical: false
-        },
-
-        zoom: 1,
-        rotation: 0,
-        aspectRatio: null
-      };
-
-      var background = root.query(
-        'GET_IMAGE_TRANSFORM_CANVAS_BACKGROUND_COLOR'
-      );
-
-      var markup;
-      var resize;
-      var dirty = false;
-      if (root.query('GET_IMAGE_PREVIEW_MARKUP_SHOW')) {
-        markup = item.getMetadata('markup') || [];
-        resize = item.getMetadata('resize');
-        dirty = true;
-      }
-
-      // append image presenter
-      var imageView = root.appendChildView(
-        root.createChildView(ImageView, {
-          id: id,
-          image: image,
-          crop: crop,
-          resize: resize,
-          markup: markup,
-          dirty: dirty,
-          background: background,
-          opacity: 0,
-          scaleX: 1.15,
-          scaleY: 1.15,
-          translateY: 15
-        }),
-
-        root.childViews.length
-      );
-
-      root.ref.images.push(imageView);
-
-      // reveal the preview image
-      imageView.opacity = 1;
-      imageView.scaleX = 1;
-      imageView.scaleY = 1;
-      imageView.translateY = 0;
-
-      // the preview is now ready to be drawn
-      setTimeout(function() {
-        root.dispatch('DID_IMAGE_PREVIEW_SHOW', { id: id });
-      }, 250);
-    };
-
-    var updateImage = function updateImage(_ref3) {
-      var root = _ref3.root,
-        props = _ref3.props;
-      var item = root.query('GET_ITEM', { id: props.id });
-      if (!item) return;
-      var imageView = root.ref.images[root.ref.images.length - 1];
-      imageView.crop = item.getMetadata('crop');
-      imageView.background = root.query(
-        'GET_IMAGE_TRANSFORM_CANVAS_BACKGROUND_COLOR'
-      );
-      if (root.query('GET_IMAGE_PREVIEW_MARKUP_SHOW')) {
-        imageView.dirty = true;
-        imageView.resize = item.getMetadata('resize');
-        imageView.markup = item.getMetadata('markup');
-      }
-    };
-
-    // replace image preview
-    var didUpdateItemMetadata = function didUpdateItemMetadata(_ref4) {
-      var root = _ref4.root,
-        props = _ref4.props,
-        action = _ref4.action;
-
-      // only filter and crop trigger redraw
-      if (!/crop|filter|markup|resize/.test(action.change.key)) return;
-
-      // no images to update, exit
-      if (!root.ref.images.length) return;
-
-      // no item found, exit
-      var item = root.query('GET_ITEM', { id: props.id });
-      if (!item) return;
-
-      // for now, update existing image when filtering
-      if (/filter/.test(action.change.key)) {
-        var imageView = root.ref.images[root.ref.images.length - 1];
-        applyFilter(root, action.change.value, imageView.image);
-        return;
-      }
-
-      if (/crop|markup|resize/.test(action.change.key)) {
-        var crop = item.getMetadata('crop');
-        var image = root.ref.images[root.ref.images.length - 1];
-
-        // if aspect ratio has changed, we need to create a new image
-        if (Math.abs(crop.aspectRatio - image.crop.aspectRatio) > 0.00001) {
-          var _imageView = shiftImage({ root: root });
-          pushImage({
-            root: root,
-            props: props,
-            image: cloneCanvas(_imageView.image)
-          });
-        }
-        // if not, we can update the current image
-        else {
-          updateImage({ root: root, props: props });
-        }
-      }
-    };
-
-    var canCreateImageBitmap = function canCreateImageBitmap(file) {
-      return 'createImageBitmap' in window && isBitmap(file);
-    };
-
-    /**
-     * Write handler for when preview container has been created
-     */
-    var didCreatePreviewContainer = function didCreatePreviewContainer(_ref5) {
-      var root = _ref5.root,
-        props = _ref5.props;
-      var id = props.id;
-
-      // we need to get the file data to determine the eventual image size
-      var item = root.query('GET_ITEM', id);
-      if (!item) return;
-
-      // get url to file (we'll revoke it later on when done)
-      var fileURL = URL.createObjectURL(item.file);
-
-      // determine image size of this item
-      getImageSize(fileURL, function(width, height) {
-        // we can now scale the panel to the final size
-        root.dispatch('DID_IMAGE_PREVIEW_CALCULATE_SIZE', {
-          id: id,
-          width: width,
-          height: height
-        });
-      });
-    };
-
-    var drawPreview = function drawPreview(_ref6) {
-      var root = _ref6.root,
-        props = _ref6.props;
-      var id = props.id;
-
-      // we need to get the file data to determine the eventual image size
-      var item = root.query('GET_ITEM', id);
-      if (!item) return;
-
-      // get url to file (we'll revoke it later on when done)
-      var fileURL = URL.createObjectURL(item.file);
-
-      // fallback
-      var loadPreviewFallback = function loadPreviewFallback() {
-        // let's scale the image in the main thread :(
-        loadImage(fileURL).then(previewImageLoaded);
-      };
-
-      // image is now ready
-      var previewImageLoaded = function previewImageLoaded(imageData) {
-        // the file url is no longer needed
-        URL.revokeObjectURL(fileURL);
-
-        // draw the scaled down version here and use that as source so bitmapdata can be closed
-        // orientation info
-        var exif = item.getMetadata('exif') || {};
-        var orientation = exif.orientation || -1;
-
-        // get width and height from action, and swap if orientation is incorrect
-        var width = imageData.width,
-          height = imageData.height;
-        if (orientation >= 5 && orientation <= 8) {
-          var _ref7 = [height, width];
-          width = _ref7[0];
-          height = _ref7[1];
-        }
-
-        // scale canvas based on pixel density
-        // we multiply by .75 as that creates smaller but still clear images on screens with high res displays
-        var pixelDensityFactor = Math.max(1, window.devicePixelRatio * 0.75);
-
-        // we want as much pixels to work with as possible,
-        // this multiplies the minimum image resolution,
-        // so when zooming in it doesn't get too blurry
-        var zoomFactor = root.query('GET_IMAGE_PREVIEW_ZOOM_FACTOR');
-
-        // imaeg scale factor
-        var scaleFactor = zoomFactor * pixelDensityFactor;
-
-        // calculate scaled preview image size
-        var previewImageRatio = height / width;
-
-        // calculate image preview height and width
-        var previewContainerWidth = root.rect.element.width;
-        var previewContainerHeight = root.rect.element.height;
-
-        var imageWidth = previewContainerWidth;
-        var imageHeight = imageWidth * previewImageRatio;
-
-        if (previewImageRatio > 1) {
-          imageWidth = Math.min(width, previewContainerWidth * scaleFactor);
-          imageHeight = imageWidth * previewImageRatio;
-        } else {
-          imageHeight = Math.min(height, previewContainerHeight * scaleFactor);
-          imageWidth = imageHeight / previewImageRatio;
-        }
-
-        // transfer to image tag so no canvas memory wasted on iOS
-        var previewImage = createPreviewImage(
-          imageData,
-          imageWidth,
-          imageHeight,
-          orientation
-        );
-
-        // done
-        var done = function done() {
-          // calculate average image color, disabled for now
-          var averageColor = root.query(
-            'GET_IMAGE_PREVIEW_CALCULATE_AVERAGE_IMAGE_COLOR'
-          )
-            ? calculateAverageColor(data)
-            : null;
-          item.setMetadata('color', averageColor, true);
-
-          // data has been transferred to canvas ( if was ImageBitmap )
-          if ('close' in imageData) {
-            imageData.close();
-          }
-
-          // show the overlay
-          root.ref.overlayShadow.opacity = 1;
-
-          // create the first image
-          pushImage({ root: root, props: props, image: previewImage });
-        };
-
-        // apply filter
-        var filter = item.getMetadata('filter');
-        if (filter) {
-          applyFilter(root, filter, previewImage).then(done);
-        } else {
-          done();
-        }
-      };
-
-      // if we support scaling using createImageBitmap we use a worker
-      if (canCreateImageBitmap(item.file)) {
-        // let's scale the image in a worker
-        var worker = createWorker(BitmapWorker);
-
-        worker.post(
-          {
-            file: item.file
-          },
-
-          function(imageBitmap) {
-            // destroy worker
-            worker.terminate();
-
-            // no bitmap returned, must be something wrong,
-            // try the oldschool way
-            if (!imageBitmap) {
-              loadPreviewFallback();
-              return;
-            }
-
-            // yay we got our bitmap, let's continue showing the preview
-            previewImageLoaded(imageBitmap);
-          }
-        );
-      } else {
-        // create fallback preview
-        loadPreviewFallback();
-      }
-    };
-
-    /**
-     * Write handler for when the preview image is ready to be animated
-     */
-    var didDrawPreview = function didDrawPreview(_ref8) {
-      var root = _ref8.root;
-      // get last added image
-      var image = root.ref.images[root.ref.images.length - 1];
-      image.translateY = 0;
-      image.scaleX = 1.0;
-      image.scaleY = 1.0;
-      image.opacity = 1;
-    };
-
-    /**
-     * Write handler for when the preview has been loaded
-     */
-    var restoreOverlay = function restoreOverlay(_ref9) {
-      var root = _ref9.root;
-      root.ref.overlayShadow.opacity = 1;
-      root.ref.overlayError.opacity = 0;
-      root.ref.overlaySuccess.opacity = 0;
-    };
-
-    var didThrowError = function didThrowError(_ref10) {
-      var root = _ref10.root;
-      root.ref.overlayShadow.opacity = 0.25;
-      root.ref.overlayError.opacity = 1;
-    };
-
-    var didCompleteProcessing = function didCompleteProcessing(_ref11) {
-      var root = _ref11.root;
-      root.ref.overlayShadow.opacity = 0.25;
-      root.ref.overlaySuccess.opacity = 1;
-    };
-
-    /**
-     * Constructor
-     */
-    var create = function create(_ref12) {
-      var root = _ref12.root;
-
-      // image view
-      root.ref.images = [];
-
-      // the preview image data (we need this to filter the image)
-      root.ref.imageData = null;
-
-      // image bin
-      root.ref.imageViewBin = [];
-
-      // image overlays
-      root.ref.overlayShadow = root.appendChildView(
-        root.createChildView(OverlayView, {
-          opacity: 0,
-          status: 'idle'
-        })
-      );
-
-      root.ref.overlaySuccess = root.appendChildView(
-        root.createChildView(OverlayView, {
-          opacity: 0,
-          status: 'success'
-        })
-      );
-
-      root.ref.overlayError = root.appendChildView(
-        root.createChildView(OverlayView, {
-          opacity: 0,
-          status: 'failure'
-        })
-      );
-    };
-
-    return _.utils.createView({
-      name: 'image-preview-wrapper',
-      create: create,
-      styles: ['height'],
-
-      apis: ['height'],
-
-      destroy: function destroy(_ref13) {
-        var root = _ref13.root;
-        // we resize the image so memory on iOS 12 is released more quickly (it seems)
-        root.ref.images.forEach(function(imageView) {
-          imageView.image.width = 1;
-          imageView.image.height = 1;
-        });
-      },
-      didWriteView: function didWriteView(_ref14) {
-        var root = _ref14.root;
-        root.ref.images.forEach(function(imageView) {
-          imageView.dirty = false;
-        });
-      },
-      write: _.utils.createRoute(
-        {
-          // image preview stated
-          DID_IMAGE_PREVIEW_DRAW: didDrawPreview,
-          DID_IMAGE_PREVIEW_CONTAINER_CREATE: didCreatePreviewContainer,
-          DID_FINISH_CALCULATE_PREVIEWSIZE: drawPreview,
-          DID_UPDATE_ITEM_METADATA: didUpdateItemMetadata,
-
-          // file states
-          DID_THROW_ITEM_LOAD_ERROR: didThrowError,
-          DID_THROW_ITEM_PROCESSING_ERROR: didThrowError,
-          DID_THROW_ITEM_INVALID: didThrowError,
-          DID_COMPLETE_ITEM_PROCESSING: didCompleteProcessing,
-          DID_START_ITEM_PROCESSING: restoreOverlay,
-          DID_REVERT_ITEM_PROCESSING: restoreOverlay
-        },
-        function(_ref15) {
-          var root = _ref15.root;
-
-          // views on death row
-          var viewsToRemove = root.ref.imageViewBin.filter(function(imageView) {
-            return imageView.opacity === 0;
-          });
-
-          // views to retain
-          root.ref.imageViewBin = root.ref.imageViewBin.filter(function(
-            imageView
-          ) {
-            return imageView.opacity > 0;
-          });
-
-          // remove these views
-          viewsToRemove.forEach(function(imageView) {
-            return removeImageView(root, imageView);
-          });
-          viewsToRemove.length = 0;
-        }
-      )
-    });
-  };
-
-  /**
-   * Image Preview Plugin
-   */
-  var plugin = function plugin(fpAPI) {
-    var addFilter = fpAPI.addFilter,
-      utils = fpAPI.utils;
-    var Type = utils.Type,
-      createRoute = utils.createRoute,
-      isFile = utils.isFile;
-
-    // imagePreviewView
-    var imagePreviewView = createImageWrapperView(fpAPI);
-
-    // called for each view that is created right after the 'create' method
-    addFilter('CREATE_VIEW', function(viewAPI) {
-      // get reference to created view
-      var is = viewAPI.is,
-        view = viewAPI.view,
-        query = viewAPI.query;
-
-      // only hook up to item view and only if is enabled for this cropper
-      if (!is('file') || !query('GET_ALLOW_IMAGE_PREVIEW')) return;
-
-      // create the image preview plugin, but only do so if the item is an image
-      var didLoadItem = function didLoadItem(_ref) {
-        var root = _ref.root,
-          props = _ref.props;
-        var id = props.id;
-        var item = query('GET_ITEM', id);
-
-        // item could theoretically have been removed in the mean time
-        if (!item || !isFile(item.file) || item.archived) return;
-
-        // get the file object
-        var file = item.file;
-
-        // exit if this is not an image
-        if (!isPreviewableImage(file)) return;
-
-        // test if is filtered
-        if (!query('GET_IMAGE_PREVIEW_FILTER_ITEM')(item)) return;
-
-        // exit if image size is too high and no createImageBitmap support
-        // this would simply bring the browser to its knees and that is not what we want
-        var supportsCreateImageBitmap = 'createImageBitmap' in (window || {});
-        var maxPreviewFileSize = query('GET_IMAGE_PREVIEW_MAX_FILE_SIZE');
-        if (
-          !supportsCreateImageBitmap &&
-          maxPreviewFileSize &&
-          file.size > maxPreviewFileSize
-        )
-          return;
-
-        // set preview view
-        root.ref.imagePreview = view.appendChildView(
-          view.createChildView(imagePreviewView, { id: id })
-        );
-
-        // update height if is fixed
-        var fixedPreviewHeight = root.query('GET_IMAGE_PREVIEW_HEIGHT');
-        if (fixedPreviewHeight) {
-          root.dispatch('DID_UPDATE_PANEL_HEIGHT', {
-            id: item.id,
-            height: fixedPreviewHeight
-          });
-        }
-
-        // now ready
-        var queue =
-          !supportsCreateImageBitmap &&
-          file.size > query('GET_IMAGE_PREVIEW_MAX_INSTANT_PREVIEW_FILE_SIZE');
-        root.dispatch('DID_IMAGE_PREVIEW_CONTAINER_CREATE', { id: id }, queue);
-      };
-
-      var rescaleItem = function rescaleItem(root, props) {
-        if (!root.ref.imagePreview) return;
-        var id = props.id;
-
-        // get item
-        var item = root.query('GET_ITEM', { id: id });
-        if (!item) return;
-
-        // if is fixed height or panel has aspect ratio, exit here, height has already been defined
-        var panelAspectRatio = root.query('GET_PANEL_ASPECT_RATIO');
-        var itemPanelAspectRatio = root.query('GET_ITEM_PANEL_ASPECT_RATIO');
-        var fixedHeight = root.query('GET_IMAGE_PREVIEW_HEIGHT');
-        if (panelAspectRatio || itemPanelAspectRatio || fixedHeight) return;
-
-        // no data!
-        var _root$ref = root.ref,
-          imageWidth = _root$ref.imageWidth,
-          imageHeight = _root$ref.imageHeight;
-        if (!imageWidth || !imageHeight) return;
-
-        // get height min and max
-        var minPreviewHeight = root.query('GET_IMAGE_PREVIEW_MIN_HEIGHT');
-        var maxPreviewHeight = root.query('GET_IMAGE_PREVIEW_MAX_HEIGHT');
-
-        // orientation info
-        var exif = item.getMetadata('exif') || {};
-        var orientation = exif.orientation || -1;
-
-        // get width and height from action, and swap of orientation is incorrect
-        if (orientation >= 5 && orientation <= 8) {
-          var _ref2 = [imageHeight, imageWidth];
-          imageWidth = _ref2[0];
-          imageHeight = _ref2[1];
-        }
-
-        // scale up width and height when we're dealing with an SVG
-        if (!isBitmap(item.file) || root.query('GET_IMAGE_PREVIEW_UPSCALE')) {
-          var scalar = 2048 / imageWidth;
-          imageWidth *= scalar;
-          imageHeight *= scalar;
-        }
-
-        // image aspect ratio
-        var imageAspectRatio = imageHeight / imageWidth;
-
-        // we need the item to get to the crop size
-        var previewAspectRatio =
-          (item.getMetadata('crop') || {}).aspectRatio || imageAspectRatio;
-
-        // preview height range
-        var previewHeightMax = Math.max(
-          minPreviewHeight,
-          Math.min(imageHeight, maxPreviewHeight)
-        );
-        var itemWidth = root.rect.element.width;
-        var previewHeight = Math.min(
-          itemWidth * previewAspectRatio,
-          previewHeightMax
-        );
-
-        // request update to panel height
-        root.dispatch('DID_UPDATE_PANEL_HEIGHT', {
-          id: item.id,
-          height: previewHeight
-        });
-      };
-
-      var didResizeView = function didResizeView(_ref3) {
-        var root = _ref3.root;
-        // actions in next write operation
-        root.ref.shouldRescale = true;
-      };
-
-      var didUpdateItemMetadata = function didUpdateItemMetadata(_ref4) {
-        var root = _ref4.root,
-          action = _ref4.action;
-
-        if (action.change.key !== 'crop') return;
-
-        // actions in next write operation
-        root.ref.shouldRescale = true;
-      };
-
-      var didCalculatePreviewSize = function didCalculatePreviewSize(_ref5) {
-        var root = _ref5.root,
-          action = _ref5.action;
-
-        // remember dimensions
-        root.ref.imageWidth = action.width;
-        root.ref.imageHeight = action.height;
-
-        // actions in next write operation
-        root.ref.shouldRescale = true;
-        root.ref.shouldDrawPreview = true;
-
-        // as image load could take a while and fire when draw loop is resting we need to give it a kick
-        root.dispatch('KICK');
-      };
-
-      // start writing
-      view.registerWriter(
-        createRoute(
-          {
-            DID_RESIZE_ROOT: didResizeView,
-            DID_STOP_RESIZE: didResizeView,
-            DID_LOAD_ITEM: didLoadItem,
-            DID_IMAGE_PREVIEW_CALCULATE_SIZE: didCalculatePreviewSize,
-            DID_UPDATE_ITEM_METADATA: didUpdateItemMetadata
-          },
-          function(_ref6) {
-            var root = _ref6.root,
-              props = _ref6.props;
-
-            // no preview view attached
-            if (!root.ref.imagePreview) return;
-
-            // don't do anything while hidden
-            if (root.rect.element.hidden) return;
-
-            // resize the item panel
-            if (root.ref.shouldRescale) {
-              rescaleItem(root, props);
-              root.ref.shouldRescale = false;
-            }
-
-            if (root.ref.shouldDrawPreview) {
-              // queue till next frame so we're sure the height has been applied this forces the draw image call inside the wrapper view to use the correct height
-              requestAnimationFrame(function() {
-                root.dispatch('DID_FINISH_CALCULATE_PREVIEWSIZE', {
-                  id: props.id
-                });
-              });
-              root.ref.shouldDrawPreview = false;
-            }
-          }
-        )
-      );
-    });
-
-    // expose plugin
-    return {
-      options: {
-        // Enable or disable image preview
-        allowImagePreview: [true, Type.BOOLEAN],
-
-        // filters file items to determine which are shown as preview
-        imagePreviewFilterItem: [
-          function() {
-            return true;
-          },
-          Type.FUNCTION
-        ],
-
-        // Fixed preview height
-        imagePreviewHeight: [null, Type.INT],
-
-        // Min image height
-        imagePreviewMinHeight: [44, Type.INT],
-
-        // Max image height
-        imagePreviewMaxHeight: [256, Type.INT],
-
-        // Max size of preview file for when createImageBitmap is not supported
-        imagePreviewMaxFileSize: [null, Type.INT],
-
-        // The amount of extra pixels added to the image preview to allow comfortable zooming
-        imagePreviewZoomFactor: [2, Type.INT],
-
-        // Should we upscale small images to fit the max bounding box of the preview area
-        imagePreviewUpscale: [false, Type.BOOLEAN],
-
-        // Max size of preview file that we allow to try to instant preview if createImageBitmap is not supported, else image is queued for loading
-        imagePreviewMaxInstantPreviewFileSize: [1000000, Type.INT],
-
-        // Style of the transparancy indicator used behind images
-        imagePreviewTransparencyIndicator: [null, Type.STRING],
-
-        // Enables or disables reading average image color
-        imagePreviewCalculateAverageImageColor: [false, Type.BOOLEAN],
-
-        // Enables or disables the previewing of markup
-        imagePreviewMarkupShow: [true, Type.BOOLEAN],
-
-        // Allows filtering of markup to only show certain shapes
-        imagePreviewMarkupFilter: [
-          function() {
-            return true;
-          },
-          Type.FUNCTION
-        ]
-      }
-    };
-  };
-
-  // fire pluginloaded event if running in browser, this allows registering the plugin when using async script tags
-  var isBrowser =
-    typeof window !== 'undefined' && typeof window.document !== 'undefined';
-  if (isBrowser) {
-    document.dispatchEvent(
-      new CustomEvent('FilePond:pluginloaded', { detail: plugin })
-    );
   }
 
-  return plugin;
+  return _arr;
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+function _toPrimitive(input, hint) {
+  if (typeof input !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (typeof res !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+
+  return (hint === "string" ? String : Number)(input);
+}
+
+function _toPropertyKey(arg) {
+  var key = _toPrimitive(arg, "string");
+
+  return typeof key === "symbol" ? key : String(key);
+}
+
+var defaultColumn = {
+  Cell: function Cell(_ref) {
+    var _ref$cell$value = _ref.cell.value,
+        value = _ref$cell$value === void 0 ? '' : _ref$cell$value;
+    return String(value);
+  },
+  show: true,
+  width: 150,
+  minWidth: 0,
+  maxWidth: Number.MAX_SAFE_INTEGER
+}; // SSR has issues with useLayoutEffect still, so use useEffect during SSR
+
+var safeUseLayoutEffect = typeof window !== 'undefined' && "development" === 'production' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect; // Find the depth of the columns
+
+function findMaxDepth(columns) {
+  var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  return columns.reduce(function (prev, curr) {
+    if (curr.columns) {
+      return Math.max(prev, findMaxDepth(curr.columns, depth + 1));
+    }
+
+    return depth;
+  }, 0);
+}
+function decorateColumn(column, userDefaultColumn, parent, depth, index) {
+  // Apply the userDefaultColumn
+  column = _objectSpread2({}, defaultColumn, {}, userDefaultColumn, {}, column); // First check for string accessor
+
+  var _column = column,
+      id = _column.id,
+      accessor = _column.accessor,
+      Header = _column.Header;
+
+  if (typeof accessor === 'string') {
+    id = id || accessor;
+    var accessorPath = accessor.split('.');
+
+    accessor = function accessor(row) {
+      return getBy(row, accessorPath);
+    };
+  }
+
+  if (!id && typeof Header === 'string' && Header) {
+    id = Header;
+  }
+
+  if (!id && column.columns) {
+    console.error(column);
+    throw new Error('A column ID (or unique "Header" value) is required!');
+  }
+
+  if (!id) {
+    console.error(column);
+    throw new Error('A column ID (or string accessor) is required!');
+  }
+
+  column = _objectSpread2({
+    // Make sure there is a fallback header, just in case
+    Header: function Header() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "\xA0");
+    }
+  }, column, {
+    // Materialize and override this stuff
+    id: id,
+    accessor: accessor,
+    parent: parent,
+    depth: depth,
+    index: index
+  });
+  return column;
+} // Build the visible columns, headers and flat column list
+
+function decorateColumnTree(columns, defaultColumn, parent) {
+  var depth = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
+  return columns.map(function (column, columnIndex) {
+    column = decorateColumn(column, defaultColumn, parent, depth, columnIndex);
+
+    if (column.columns) {
+      column.columns = decorateColumnTree(column.columns, defaultColumn, column, depth + 1);
+    }
+
+    return column;
+  });
+} // Build the header groups from the bottom up
+
+function makeHeaderGroups(flatColumns, defaultColumn) {
+  var headerGroups = []; // Build each header group from the bottom up
+
+  var buildGroup = function buildGroup(columns, depth) {
+    var headerGroup = {
+      headers: []
+    };
+    var parentColumns = []; // Do any of these columns have parents?
+
+    var hasParents = columns.some(function (col) {
+      return col.parent;
+    });
+    columns.forEach(function (column) {
+      // Are we the first column in this group?
+      var isFirst = !parentColumns.length; // What is the latest (last) parent column?
+
+      var latestParentColumn = [].concat(parentColumns).reverse()[0]; // If the column has a parent, add it if necessary
+
+      if (column.parent) {
+        var similarParentColumns = parentColumns.filter(function (d) {
+          return d.originalID === column.parent.id;
+        });
+
+        if (isFirst || latestParentColumn.originalID !== column.parent.id) {
+          parentColumns.push(_objectSpread2({}, column.parent, {
+            originalID: column.parent.id,
+            id: [column.parent.id, similarParentColumns.length].join('_')
+          }));
+        }
+      } else if (hasParents) {
+        // If other columns have parents, we'll need to add a place holder if necessary
+        var originalID = [column.id, 'placeholder'].join('_');
+
+        var _similarParentColumns = parentColumns.filter(function (d) {
+          return d.originalID === originalID;
+        });
+
+        var placeholderColumn = decorateColumn({
+          originalID: originalID,
+          id: [column.id, 'placeholder', _similarParentColumns.length].join('_'),
+          placeholderOf: column
+        }, defaultColumn);
+
+        if (isFirst || latestParentColumn.originalID !== placeholderColumn.originalID) {
+          parentColumns.push(placeholderColumn);
+        }
+      } // Establish the new headers[] relationship on the parent
+
+
+      if (column.parent || hasParents) {
+        latestParentColumn = [].concat(parentColumns).reverse()[0];
+        latestParentColumn.headers = latestParentColumn.headers || [];
+
+        if (!latestParentColumn.headers.includes(column)) {
+          latestParentColumn.headers.push(column);
+        }
+      }
+
+      column.totalHeaderCount = column.headers ? column.headers.reduce(function (sum, header) {
+        return sum + header.totalHeaderCount;
+      }, 0) : 1; // Leaf node columns take up at least one count
+
+      headerGroup.headers.push(column);
+    });
+    headerGroups.push(headerGroup);
+
+    if (parentColumns.length) {
+      buildGroup(parentColumns);
+    }
+  };
+
+  buildGroup(flatColumns);
+  return headerGroups.reverse();
+}
+function determineHeaderVisibility(instance) {
+  var headers = instance.headers;
+
+  var handleColumn = function handleColumn(column, parentVisible) {
+    column.isVisible = parentVisible ? typeof column.show === 'function' ? column.show(instance) : !!column.show : false;
+    var totalVisibleHeaderCount = 0;
+
+    if (column.headers && column.headers.length) {
+      column.headers.forEach(function (subColumn) {
+        return totalVisibleHeaderCount += handleColumn(subColumn, column.isVisible);
+      });
+    } else {
+      totalVisibleHeaderCount = column.isVisible ? 1 : 0;
+    }
+
+    column.totalVisibleHeaderCount = totalVisibleHeaderCount;
+    return totalVisibleHeaderCount;
+  };
+
+  var totalVisibleHeaderCount = 0;
+  headers.forEach(function (subHeader) {
+    return totalVisibleHeaderCount += handleColumn(subHeader, true);
+  });
+}
+function getBy(obj, path, def) {
+  if (!path) {
+    return obj;
+  }
+
+  var pathObj = makePathArray(path);
+  var val;
+
+  try {
+    val = pathObj.reduce(function (cursor, pathPart) {
+      return cursor[pathPart];
+    }, obj);
+  } catch (e) {// continue regardless of error
+  }
+
+  return typeof val !== 'undefined' ? val : def;
+}
+function defaultOrderByFn(arr, funcs, dirs) {
+  return _toConsumableArray(arr).sort(function (rowA, rowB) {
+    for (var i = 0; i < funcs.length; i += 1) {
+      var sortFn = funcs[i];
+      var desc = dirs[i] === false || dirs[i] === 'desc';
+      var sortInt = sortFn(rowA, rowB);
+
+      if (sortInt !== 0) {
+        return desc ? -sortInt : sortInt;
+      }
+    }
+
+    return dirs[0] ? rowA.index - rowB.index : rowB.index - rowA.index;
+  });
+}
+function getFirstDefined() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  for (var i = 0; i < args.length; i += 1) {
+    if (typeof args[i] !== 'undefined') {
+      return args[i];
+    }
+  }
+}
+function defaultGroupByFn(rows, columnID) {
+  return rows.reduce(function (prev, row, i) {
+    // TODO: Might want to implement a key serializer here so
+    // irregular column values can still be grouped if needed?
+    var resKey = "".concat(row.values[columnID]);
+    prev[resKey] = Array.isArray(prev[resKey]) ? prev[resKey] : [];
+    prev[resKey].push(row);
+    return prev;
+  }, {});
+}
+function getElementDimensions(element) {
+  var rect = element.getBoundingClientRect();
+  var style = window.getComputedStyle(element);
+  var margins = {
+    left: parseInt(style.marginLeft),
+    right: parseInt(style.marginRight)
+  };
+  var padding = {
+    left: parseInt(style.paddingLeft),
+    right: parseInt(style.paddingRight)
+  };
+  return {
+    left: Math.ceil(rect.left),
+    width: Math.ceil(rect.width),
+    outerWidth: Math.ceil(rect.width + margins.left + margins.right + padding.left + padding.right),
+    marginLeft: margins.left,
+    marginRight: margins.right,
+    paddingLeft: padding.left,
+    paddingRight: padding.right,
+    scrollWidth: element.scrollWidth
+  };
+}
+function flexRender(Comp, props) {
+  return isReactComponent(Comp) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Comp, props) : Comp;
+}
+
+function isClassComponent(component) {
+  return typeof component === 'function' && !!function () {
+    var proto = Object.getPrototypeOf(component);
+    return proto.prototype && proto.prototype.isReactComponent;
+  }();
+}
+
+function isFunctionComponent(component) {
+  return typeof component === 'function';
+}
+
+function isReactComponent(component) {
+  return isClassComponent(component) || isFunctionComponent(component);
+}
+
+var mergeProps = function mergeProps() {
+  var props = {};
+
+  for (var _len2 = arguments.length, groups = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    groups[_key2] = arguments[_key2];
+  }
+
+  groups.forEach(function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref2$style = _ref2.style,
+        style = _ref2$style === void 0 ? {} : _ref2$style,
+        className = _ref2.className,
+        rest = _objectWithoutProperties(_ref2, ["style", "className"]);
+
+    props = _objectSpread2({}, props, {}, rest, {
+      style: _objectSpread2({}, props.style || {}, {}, style),
+      className: [props.className, className].filter(Boolean).join(' ')
+    });
+  });
+
+  if (props.className === '') {
+    delete props.className;
+  }
+
+  return props;
+};
+var applyHooks = function applyHooks(hooks, initial) {
+  for (var _len3 = arguments.length, args = new Array(_len3 > 2 ? _len3 - 2 : 0), _key3 = 2; _key3 < _len3; _key3++) {
+    args[_key3 - 2] = arguments[_key3];
+  }
+
+  return hooks.reduce(function (prev, next) {
+    var nextValue = next.apply(void 0, [prev].concat(args));
+
+    if (typeof nextValue === 'undefined') {
+      throw new Error('React Table: A hook just returned undefined! This is not allowed.');
+    }
+
+    return nextValue;
+  }, initial);
+};
+var applyPropHooks = function applyPropHooks(hooks) {
+  for (var _len4 = arguments.length, args = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
+    args[_key4 - 1] = arguments[_key4];
+  }
+
+  return hooks.reduce(function (prev, next) {
+    return mergeProps(prev, next.apply(void 0, args));
+  }, {});
+};
+var warnUnknownProps = function warnUnknownProps(props) {
+  if (Object.keys(props).length) {
+    throw new Error("Unknown options passed to useReactTable:\n\n".concat(JSON.stringify(props, null, 2)));
+  }
+};
+function sum(arr) {
+  return arr.reduce(function (prev, curr) {
+    return prev + curr;
+  }, 0);
+}
+function isFunction(a) {
+  if (typeof a === 'function') {
+    return a;
+  }
+}
+function flattenBy(columns, childKey) {
+  var flatColumns = [];
+
+  var recurse = function recurse(columns) {
+    columns.forEach(function (d) {
+      if (!d[childKey]) {
+        flatColumns.push(d);
+      } else {
+        recurse(d[childKey]);
+      }
+    });
+  };
+
+  recurse(columns);
+  return flatColumns;
+}
+function ensurePluginOrder(plugins, befores, pluginName, afters) {
+  var pluginIndex = plugins.findIndex(function (plugin) {
+    return plugin.pluginName === pluginName;
+  });
+
+  if (pluginIndex === -1) {
+    throw new Error("The plugin ".concat(pluginName, " was not found in the plugin list!\nThis usually means you need to need to name your plugin hook by setting the 'pluginName' property of the hook function, eg:\n\n  ").concat(pluginName, ".pluginName = '").concat(pluginName, "'\n"));
+  }
+
+  befores.forEach(function (before) {
+    var beforeIndex = plugins.findIndex(function (plugin) {
+      return plugin.pluginName === before;
+    });
+
+    if (beforeIndex > -1 && beforeIndex > pluginIndex) {
+      throw new Error("React Table: The ".concat(pluginName, " plugin hook must be placed after the ").concat(before, " plugin hook!"));
+    }
+  });
+  afters.forEach(function (after) {
+    var afterIndex = plugins.findIndex(function (plugin) {
+      return plugin.pluginName === after;
+    });
+
+    if (afterIndex > -1 && afterIndex < pluginIndex) {
+      throw new Error("React Table: The ".concat(pluginName, " plugin hook must be placed before the ").concat(after, " plugin hook!"));
+    }
+  });
+}
+function expandRows(rows, _ref3) {
+  var manualExpandedKey = _ref3.manualExpandedKey,
+      expanded = _ref3.expanded,
+      _ref3$expandSubRows = _ref3.expandSubRows,
+      expandSubRows = _ref3$expandSubRows === void 0 ? true : _ref3$expandSubRows;
+  var expandedRows = [];
+
+  var handleRow = function handleRow(row) {
+    var key = row.path.join('.');
+    row.isExpanded = row.original && row.original[manualExpandedKey] || expanded.includes(key);
+    row.canExpand = row.subRows && !!row.subRows.length;
+    expandedRows.push(row);
+
+    if (expandSubRows && row.subRows && row.subRows.length && row.isExpanded) {
+      row.subRows.forEach(handleRow);
+    }
+  };
+
+  rows.forEach(handleRow);
+  return expandedRows;
+} //
+
+function makePathArray(obj) {
+  return flattenDeep(obj) // remove all periods in parts
+  .map(function (d) {
+    return String(d).replace('.', '_');
+  }) // join parts using period
+  .join('.') // replace brackets with periods
+  .replace(/\[/g, '.').replace(/\]/g, '') // split it back out on periods
+  .split('.');
+}
+
+function flattenDeep(arr) {
+  var newArr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+  if (!Array.isArray(arr)) {
+    newArr.push(arr);
+  } else {
+    for (var i = 0; i < arr.length; i += 1) {
+      flattenDeep(arr[i], newArr);
+    }
+  }
+
+  return newArr;
+}
+
+var utils = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  defaultColumn: defaultColumn,
+  safeUseLayoutEffect: safeUseLayoutEffect,
+  findMaxDepth: findMaxDepth,
+  decorateColumn: decorateColumn,
+  decorateColumnTree: decorateColumnTree,
+  makeHeaderGroups: makeHeaderGroups,
+  determineHeaderVisibility: determineHeaderVisibility,
+  getBy: getBy,
+  defaultOrderByFn: defaultOrderByFn,
+  getFirstDefined: getFirstDefined,
+  defaultGroupByFn: defaultGroupByFn,
+  getElementDimensions: getElementDimensions,
+  flexRender: flexRender,
+  mergeProps: mergeProps,
+  applyHooks: applyHooks,
+  applyPropHooks: applyPropHooks,
+  warnUnknownProps: warnUnknownProps,
+  sum: sum,
+  isFunction: isFunction,
+  flattenBy: flattenBy,
+  ensurePluginOrder: ensurePluginOrder,
+  expandRows: expandRows
 });
 
+var renderErr = 'You must specify a valid render component. This could be "column.Cell", "column.Header", "column.Filter", "column.Aggregated" or any other custom renderer component.';
+var defaultState = {};
+var defaultInitialState = {};
+var defaultColumnInstance = {};
 
-/***/ }),
+var defaultReducer = function defaultReducer(old, newState) {
+  return newState;
+};
 
-/***/ "./node_modules/filepond/dist/filepond.min.css":
-/*!*****************************************************!*\
-  !*** ./node_modules/filepond/dist/filepond.min.css ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+var defaultGetSubRows = function defaultGetSubRows(row, index) {
+  return row.subRows || [];
+};
 
+var defaultGetRowID = function defaultGetRowID(row, index) {
+  return index;
+};
 
-var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./filepond.min.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/filepond/dist/filepond.min.css");
+var useTable = function useTable(props) {
+  // Destructure props
+  var data = props.data,
+      userColumns = props.columns,
+      _props$initialState = props.initialState,
+      initialState = _props$initialState === void 0 ? defaultInitialState : _props$initialState,
+      userState = props.state,
+      _props$defaultColumn = props.defaultColumn,
+      defaultColumn = _props$defaultColumn === void 0 ? defaultColumnInstance : _props$defaultColumn,
+      _props$getSubRows = props.getSubRows,
+      getSubRows = _props$getSubRows === void 0 ? defaultGetSubRows : _props$getSubRows,
+      _props$getRowID = props.getRowID,
+      getRowID = _props$getRowID === void 0 ? defaultGetRowID : _props$getRowID,
+      _props$reducer = props.reducer,
+      reducer = _props$reducer === void 0 ? defaultReducer : _props$reducer,
+      debug = props.debug;
+  debug =  false ? undefined : debug; // But use the users table state if provided
 
-if(typeof content === 'string') content = [[module.i, content, '']];
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(_objectSpread2({}, defaultState, {}, initialState)),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      originalState = _React$useState2[0],
+      originalSetState = _React$useState2[1];
 
-var transform;
-var insertInto;
+  var state = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if (userState) {
+      var newState = _objectSpread2({}, originalState);
 
+      Object.keys(userState).forEach(function (key) {
+        newState[key] = userState[key];
+      });
+      return newState;
+    }
 
+    return originalState;
+  }, [originalState, userState]);
+  var setState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (updater, type) {
+    return originalSetState(function (old) {
+      var newState = typeof updater === 'function' ? updater(old) : updater;
+      return reducer(old, newState, type);
+    });
+  }, [reducer]); // The table instance ref
 
-var options = {"hmr":true}
+  var instanceRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef({});
 
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/react-filepond/dist/react-filepond.js":
-/*!************************************************************!*\
-  !*** ./node_modules/react-filepond/dist/react-filepond.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * react-filepond v7.0.1
- * A handy FilePond adapter component for React
- * 
- * Copyright (c) 2019 PQINA
- * https://pqina.nl/filepond
- * 
- * Licensed under the MIT license.
- */
-
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.FilePond = exports.FileStatus = exports.registerPlugin = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _filepond = __webpack_require__(/*! filepond */ "./node_modules/filepond/dist/filepond.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Import required methods and styles from the FilePond module, should not need anything else
-
-
-// We need to be able to call the registerPlugin method directly so we can add plugins
-exports.registerPlugin = _filepond.registerPlugin;
-exports.FileStatus = _filepond.FileStatus;
-
-// Do this once
-
-var isSupported = (0, _filepond.supported)();
-
-// filtered methods
-var filteredMethods = ['setOptions', 'on', 'off', 'onOnce', 'appendTo', 'insertAfter', 'insertBefore', 'isAttachedTo', 'replaceElement', 'restoreElement', 'destroy'];
-
-// The React <FilePond/> wrapper
-
-var FilePond = exports.FilePond = function (_React$Component) {
-  _inherits(FilePond, _React$Component);
-
-  function FilePond(props) {
-    _classCallCheck(this, FilePond);
-
-    var _this = _possibleConstructorReturn(this, (FilePond.__proto__ || Object.getPrototypeOf(FilePond)).call(this, props));
-
-    _this.allowFilesSync = true;
-    return _this;
+  for (var _len = arguments.length, plugins = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    plugins[_key - 1] = arguments[_key];
   }
 
-  // Will setup FilePond instance when mounted
+  Object.assign(instanceRef.current, _objectSpread2({}, props, {
+    data: data,
+    // The raw data
+    state: state,
+    setState: setState,
+    // The resolved table state
+    plugins: plugins,
+    // All resolved plugins
+    hooks: {
+      columnsBeforeHeaderGroups: [],
+      columnsBeforeHeaderGroupsDeps: [],
+      useBeforeDimensions: [],
+      useMain: [],
+      useRows: [],
+      prepareRow: [],
+      getTableProps: [],
+      getTableBodyProps: [],
+      getRowProps: [],
+      getHeaderGroupProps: [],
+      getHeaderProps: [],
+      getCellProps: []
+    }
+  })); // Allow plugins to register hooks
+
+  if ( true && debug) console.time('plugins');
+  plugins.filter(Boolean).forEach(function (plugin) {
+    plugin(instanceRef.current.hooks);
+  });
+  if ( true && debug) console.timeEnd('plugins'); // Decorate All the columns
+
+  var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return decorateColumnTree(userColumns, defaultColumn);
+  }, [defaultColumn, userColumns]); // Get the flat list of all columns and allow hooks to decorate
+  // those columns (and trigger this memoization via deps)
+
+  var flatColumns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if ( true && debug) console.time('hooks.columnsBeforeHeaderGroups');
+    var newColumns = applyHooks(instanceRef.current.hooks.columnsBeforeHeaderGroups, flattenBy(columns, 'columns'), instanceRef.current);
+    if ( true && debug) console.timeEnd('hooks.columnsBeforeHeaderGroups');
+    return newColumns;
+  }, [columns, debug].concat(_toConsumableArray(applyHooks(instanceRef.current.hooks.columnsBeforeHeaderGroupsDeps, [], instanceRef.current)))); // Make the headerGroups
+
+  var headerGroups = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return makeHeaderGroups(flatColumns, defaultColumn);
+  }, [defaultColumn, flatColumns]);
+  var headers = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return headerGroups[0].headers;
+  }, [headerGroups]);
+  Object.assign(instanceRef.current, {
+    columns: columns,
+    flatColumns: flatColumns,
+    headerGroups: headerGroups,
+    headers: headers
+  }); // Access the row model
+
+  var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if ( true && debug) console.time('getAccessedRows');
+    var flatRows = []; // Access the row's data
+
+    var accessRow = function accessRow(originalRow, i) {
+      var depth = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+      var parentPath = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
+      // Keep the original reference around
+      var original = originalRow;
+      var rowID = getRowID(originalRow, i); // Make the new path for the row
+
+      var path = [].concat(_toConsumableArray(parentPath), [rowID]);
+      var row = {
+        original: original,
+        index: i,
+        path: path,
+        // used to create a key for each row even if not nested
+        depth: depth,
+        cells: [{}] // This is a dummy cell
+
+      };
+      flatRows.push(row); // Process any subRows
+
+      var subRows = getSubRows(originalRow, i);
+
+      if (subRows) {
+        row.subRows = subRows.map(function (d, i) {
+          return accessRow(d, i, depth + 1, path);
+        });
+      } // Override common array functions (and the dummy cell's getCellProps function)
+      // to show an error if it is accessed without calling prepareRow
 
 
-  _createClass(FilePond, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
+      var unpreparedAccessWarning = function unpreparedAccessWarning() {
+        throw new Error('React-Table: You have not called prepareRow(row) one or more rows you are attempting to render.');
+      };
 
-      // exit here if not supported
-      if (!isSupported) return;
+      row.cells.map = unpreparedAccessWarning;
+      row.cells.filter = unpreparedAccessWarning;
+      row.cells.forEach = unpreparedAccessWarning;
+      row.cells[0].getCellProps = unpreparedAccessWarning; // Create the cells and values
 
-      var options = Object.assign({}, this.props);
-
-      // if onupdate files is defined, make sure setFiles does not cause race condition
-      if (options.onupdatefiles) {
-        var cb = options.onupdatefiles;
-        options.onupdatefiles = function (items) {
-          _this2.allowFilesSync = false;
-          cb(items);
-        };
-      }
-
-      // Create our pond
-      this._pond = (0, _filepond.create)(this._element, options);
-
-      // Reference pond methods to FilePond component instance
-      Object.keys(this._pond).filter(function (key) {
-        return !filteredMethods.includes(key);
-      }).forEach(function (key) {
-        _this2[key] = _this2._pond[key];
+      row.values = {};
+      flatColumns.forEach(function (column) {
+        row.values[column.id] = column.accessor ? column.accessor(originalRow, i, {
+          subRows: subRows,
+          depth: depth,
+          data: data
+        }) : undefined;
       });
-    }
+      return row;
+    }; // Use the resolved data
 
-    // Will clean up FilePond instance when unmounted
 
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      // exit when no pond defined
-      if (!this._pond) return;
-      this._pond.destroy();
-      this.allowFilesSync = true;
-    }
-  }, {
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate() {
-      if (!this.allowFilesSync) {
-        this.allowFilesSync = true;
-        return false;
+    var accessedData = data.map(function (d, i) {
+      return accessRow(d, i);
+    });
+    if ( true && debug) console.timeEnd('getAccessedRows');
+    return [accessedData, flatRows];
+  }, [debug, data, getRowID, getSubRows, flatColumns]),
+      _React$useMemo2 = _slicedToArray(_React$useMemo, 2),
+      rows = _React$useMemo2[0],
+      flatRows = _React$useMemo2[1];
+
+  instanceRef.current.rows = rows;
+  instanceRef.current.flatRows = flatRows; // Determine column visibility
+
+  determineHeaderVisibility(instanceRef.current); // Provide a flat header list for utilities
+
+  instanceRef.current.flatHeaders = headerGroups.reduce(function (all, headerGroup) {
+    return [].concat(_toConsumableArray(all), _toConsumableArray(headerGroup.headers));
+  }, []);
+  if ( true && debug) console.time('hooks.useBeforeDimensions');
+  instanceRef.current = applyHooks(instanceRef.current.hooks.useBeforeDimensions, instanceRef.current);
+  if ( true && debug) console.timeEnd('hooks.useBeforeDimensions');
+  calculateDimensions(instanceRef.current);
+  if ( true && debug) console.time('hooks.useMain');
+  instanceRef.current = applyHooks(instanceRef.current.hooks.useMain, instanceRef.current);
+  if ( true && debug) console.timeEnd('hooks.useMain'); // Each materialized header needs to be assigned a render function and other
+  // prop getter properties here.
+
+  instanceRef.current.flatHeaders.forEach(function (column) {
+    // Give columns/headers rendering power
+    column.render = function (type) {
+      var userProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var Comp = typeof type === 'string' ? column[type] : type;
+
+      if (typeof Comp === 'undefined') {
+        throw new Error(renderErr);
       }
+
+      return flexRender(Comp, _objectSpread2({}, instanceRef.current, {
+        column: column
+      }, userProps));
+    }; // Give columns/headers a default getHeaderProps
+
+
+    column.getHeaderProps = function (props) {
+      return mergeProps({
+        key: ['header', column.id].join('_'),
+        colSpan: column.totalVisibleHeaderCount
+      }, applyPropHooks(instanceRef.current.hooks.getHeaderProps, column, instanceRef.current), props);
+    };
+  });
+  instanceRef.current.headerGroups.forEach(function (headerGroup, i) {
+    // Filter out any headers and headerGroups that don't have visible columns
+    headerGroup.headers = headerGroup.headers.filter(function (header) {
+      var recurse = function recurse(headers) {
+        return headers.filter(function (header) {
+          if (header.headers) {
+            return recurse(header.headers);
+          }
+
+          return header.isVisible;
+        }).length;
+      };
+
+      if (header.headers) {
+        return recurse(header.headers);
+      }
+
+      return header.isVisible;
+    }); // Give headerGroups getRowProps
+
+    if (headerGroup.headers.length) {
+      headerGroup.getHeaderGroupProps = function () {
+        var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        return mergeProps({
+          key: ["header".concat(i)].join('_')
+        }, applyPropHooks(instanceRef.current.hooks.getHeaderGroupProps, headerGroup, instanceRef.current), props);
+      };
+
       return true;
     }
+  }); // Run the rows (this could be a dangerous hook with a ton of data)
 
-    // Something changed
+  if ( true && debug) console.time('hooks.useRows');
+  instanceRef.current.rows = applyHooks(instanceRef.current.hooks.useRows, instanceRef.current.rows, instanceRef.current);
+  if ( true && debug) console.timeEnd('hooks.useRows'); // The prepareRow function is absolutely necessary and MUST be called on
+  // any rows the user wishes to be displayed.
 
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
+  instanceRef.current.prepareRow = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (row) {
+    row.getRowProps = function (props) {
+      return mergeProps({
+        key: ['row'].concat(_toConsumableArray(row.path)).join('_')
+      }, applyPropHooks(instanceRef.current.hooks.getRowProps, row, instanceRef.current), props);
+    }; // Build the visible cells for each row
 
-      // exit when no pond defined
-      if (!this._pond) return;
 
-      var options = Object.assign({}, this.props);
+    row.cells = instanceRef.current.flatColumns.filter(function (d) {
+      return d.isVisible;
+    }).map(function (column) {
+      var cell = {
+        column: column,
+        row: row,
+        value: row.values[column.id]
+      }; // Give each cell a getCellProps base
 
-      // this is only set onces, on didmount
-      delete options.onupdatefiles;
+      cell.getCellProps = function (props) {
+        var columnPathStr = [].concat(_toConsumableArray(row.path), [column.id]).join('_');
+        return mergeProps({
+          key: ['cell', columnPathStr].join('_')
+        }, applyPropHooks(instanceRef.current.hooks.getCellProps, cell, instanceRef.current), props);
+      }; // Give each cell a renderer function (supports multiple renderers)
 
-      // update pond options based on new props
-      this._pond.setOptions(options);
-    }
 
-    // Renders basic element hook for FilePond to attach to
+      cell.render = function (type) {
+        var userProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        var Comp = typeof type === 'string' ? column[type] : type;
 
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      var _props = this.props,
-          id = _props.id,
-          name = _props.name,
-          className = _props.className,
-          allowMultiple = _props.allowMultiple,
-          required = _props.required,
-          captureMethod = _props.captureMethod,
-          acceptedFileTypes = _props.acceptedFileTypes;
-
-      return (0, _react.createElement)('div', { className: 'filepond--wrapper' }, (0, _react.createElement)('input', {
-        type: 'file',
-        name: name,
-        id: id,
-        accept: acceptedFileTypes,
-        multiple: allowMultiple,
-        required: required,
-        className: className,
-        capture: captureMethod,
-        ref: function ref(element) {
-          return _this3._element = element;
+        if (typeof Comp === 'undefined') {
+          throw new Error(renderErr);
         }
-      }));
+
+        return flexRender(Comp, _objectSpread2({}, instanceRef.current, {
+          column: column,
+          row: row,
+          cell: cell
+        }, userProps));
+      };
+
+      return cell;
+    }); // need to apply any row specific hooks (useExpanded requires this)
+
+    applyHooks(instanceRef.current.hooks.prepareRow, row, instanceRef.current);
+  }, []);
+
+  instanceRef.current.getTableProps = function (userProps) {
+    return mergeProps(applyPropHooks(instanceRef.current.hooks.getTableProps, instanceRef.current), userProps);
+  };
+
+  instanceRef.current.getTableBodyProps = function (userProps) {
+    return mergeProps(applyPropHooks(instanceRef.current.hooks.getTableBodyProps, instanceRef.current), userProps);
+  };
+
+  return instanceRef.current;
+};
+
+function calculateDimensions(instance) {
+  var headers = instance.headers;
+  instance.totalColumnsWidth = calculateHeaderWidths(headers);
+}
+
+function calculateHeaderWidths(headers) {
+  var left = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var sumTotalWidth = 0;
+  headers.forEach(function (header) {
+    var subHeaders = header.headers;
+    header.totalLeft = left;
+
+    if (subHeaders && subHeaders.length) {
+      header.totalWidth = calculateHeaderWidths(subHeaders, left);
+    } else {
+      header.totalWidth = Math.min(Math.max(header.minWidth, header.width), header.maxWidth);
     }
-  }]);
 
-  return FilePond;
-}(_react2.default.Component);
+    if (header.isVisible) {
+      left += header.totalWidth;
+      sumTotalWidth += header.totalWidth;
+    }
+  });
+  return sumTotalWidth;
+}
+
+var actions = {};
+var addActions = function addActions() {
+  for (var _len = arguments.length, acts = new Array(_len), _key = 0; _key < _len; _key++) {
+    acts[_key] = arguments[_key];
+  }
+
+  acts.forEach(function (action) {
+    // Action values are formatted this way to discourage
+    // you (the dev) from interacting with them in any way
+    // other than importing `{ actions } from 'react-table'`
+    // and referencing an action via `actions[actionName]`
+    actions[action] = "React Table Action: ".concat(action);
+  });
+};
+
+defaultState.expanded = [];
+addActions('toggleExpanded', 'useExpanded');
+var useExpanded = function useExpanded(hooks) {
+  hooks.getExpandedToggleProps = [];
+  hooks.useMain.push(useMain);
+};
+useExpanded.pluginName = 'useExpanded';
+
+var defaultGetResetExpandedDeps = function defaultGetResetExpandedDeps(instance) {
+  return [instance.data];
+};
+
+function useMain(instance) {
+  var debug = instance.debug,
+      rows = instance.rows,
+      _instance$manualExpan = instance.manualExpandedKey,
+      manualExpandedKey = _instance$manualExpan === void 0 ? 'expanded' : _instance$manualExpan,
+      _instance$paginateExp = instance.paginateExpandedRows,
+      paginateExpandedRows = _instance$paginateExp === void 0 ? true : _instance$paginateExp,
+      _instance$expandSubRo = instance.expandSubRows,
+      expandSubRows = _instance$expandSubRo === void 0 ? true : _instance$expandSubRo,
+      hooks = instance.hooks,
+      expanded = instance.state.expanded,
+      setState = instance.setState,
+      _instance$getResetExp = instance.getResetExpandedDeps,
+      getResetExpandedDeps = _instance$getResetExp === void 0 ? defaultGetResetExpandedDeps : _instance$getResetExp; // Bypass any effects from firing when this changes
+
+  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  safeUseLayoutEffect(function () {
+    if (isMountedRef.current) {
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          expanded: []
+        });
+      }, actions.pageChange);
+    }
+
+    isMountedRef.current = true;
+  }, [setState].concat(_toConsumableArray(getResetExpandedDeps ? getResetExpandedDeps(instance) : [])));
+
+  var toggleExpandedByPath = function toggleExpandedByPath(path, set) {
+    var key = path.join('.');
+    return setState(function (old) {
+      var exists = old.expanded.includes(key);
+      var shouldExist = typeof set !== 'undefined' ? set : !exists;
+      var newExpanded = new Set(old.expanded);
+
+      if (!exists && shouldExist) {
+        newExpanded.add(key);
+      } else if (exists && !shouldExist) {
+        newExpanded.delete(key);
+      } else {
+        return old;
+      }
+
+      return _objectSpread2({}, old, {
+        expanded: _toConsumableArray(newExpanded.values())
+      });
+    }, actions.toggleExpanded);
+  };
+
+  hooks.prepareRow.push(function (row) {
+    row.toggleExpanded = function (set) {
+      return toggleExpandedByPath(row.path, set);
+    };
+
+    row.getExpandedToggleProps = function (props) {
+      return mergeProps({
+        onClick: function onClick(e) {
+          e.persist();
+          row.toggleExpanded();
+        },
+        style: {
+          cursor: 'pointer'
+        },
+        title: 'Toggle Expanded'
+      }, applyPropHooks(instance.hooks.getExpandedToggleProps, row, instance), props);
+    };
+
+    return row;
+  });
+  var expandedRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if ( true && debug) console.info('getExpandedRows');
+
+    if (paginateExpandedRows) {
+      return expandRows(rows, {
+        manualExpandedKey: manualExpandedKey,
+        expanded: expanded,
+        expandSubRows: expandSubRows
+      });
+    }
+
+    return rows;
+  }, [debug, paginateExpandedRows, rows, manualExpandedKey, expanded, expandSubRows]);
+  var expandedDepth = findExpandedDepth(expanded);
+  return _objectSpread2({}, instance, {
+    toggleExpandedByPath: toggleExpandedByPath,
+    expandedDepth: expandedDepth,
+    rows: expandedRows
+  });
+}
+
+function findExpandedDepth(expanded) {
+  var maxDepth = 0;
+  expanded.forEach(function (key) {
+    var path = key.split('.');
+    maxDepth = Math.max(maxDepth, path.length);
+  });
+  return maxDepth;
+}
+
+var text = function text(rows, id, filterValue) {
+  rows = rows.filter(function (row) {
+    var rowValue = row.values[id];
+    return String(rowValue).toLowerCase().includes(String(filterValue).toLowerCase());
+  });
+  return rows;
+};
+
+text.autoRemove = function (val) {
+  return !val;
+};
+
+var exactText = function exactText(rows, id, filterValue) {
+  return rows.filter(function (row) {
+    var rowValue = row.values[id];
+    return rowValue !== undefined ? String(rowValue).toLowerCase() === String(filterValue).toLowerCase() : true;
+  });
+};
+
+exactText.autoRemove = function (val) {
+  return !val;
+};
+
+var exactTextCase = function exactTextCase(rows, id, filterValue) {
+  return rows.filter(function (row) {
+    var rowValue = row.values[id];
+    return rowValue !== undefined ? String(rowValue) === String(filterValue) : true;
+  });
+};
+
+exactTextCase.autoRemove = function (val) {
+  return !val;
+};
+
+var includes = function includes(rows, id, filterValue) {
+  return rows.filter(function (row) {
+    var rowValue = row.values[id];
+    return filterValue.includes(rowValue);
+  });
+};
+
+includes.autoRemove = function (val) {
+  return !val || !val.length;
+};
+
+var includesAll = function includesAll(rows, id, filterValue) {
+  return rows.filter(function (row) {
+    var rowValue = row.values[id];
+    return rowValue && rowValue.length && filterValue.every(function (val) {
+      return rowValue.includes(val);
+    });
+  });
+};
+
+includesAll.autoRemove = function (val) {
+  return !val || !val.length;
+};
+
+var exact = function exact(rows, id, filterValue) {
+  return rows.filter(function (row) {
+    var rowValue = row.values[id];
+    return rowValue === filterValue;
+  });
+};
+
+exact.autoRemove = function (val) {
+  return typeof val === 'undefined';
+};
+
+var equals = function equals(rows, id, filterValue) {
+  return rows.filter(function (row) {
+    var rowValue = row.values[id]; // eslint-disable-next-line eqeqeq
+
+    return rowValue == filterValue;
+  });
+};
+
+equals.autoRemove = function (val) {
+  return val == null;
+};
+
+var between = function between(rows, id, filterValue) {
+  var _ref = filterValue || [],
+      _ref2 = _slicedToArray(_ref, 2),
+      min = _ref2[0],
+      max = _ref2[1];
+
+  min = typeof min === 'number' ? min : -Infinity;
+  max = typeof max === 'number' ? max : Infinity;
+
+  if (min > max) {
+    var temp = min;
+    min = max;
+    max = temp;
+  }
+
+  return rows.filter(function (row) {
+    var rowValue = row.values[id];
+    return rowValue >= min && rowValue <= max;
+  });
+};
+
+between.autoRemove = function (val) {
+  return !val || typeof val[0] !== 'number' && typeof val[1] !== 'number';
+};
+
+var filterTypes = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  text: text,
+  exactText: exactText,
+  exactTextCase: exactTextCase,
+  includes: includes,
+  includesAll: includesAll,
+  exact: exact,
+  equals: equals,
+  between: between
+});
+
+defaultState.filters = {};
+addActions('setFilter', 'setAllFilters');
+var useFilters = function useFilters(hooks) {
+  hooks.useMain.push(useMain$1);
+};
+useFilters.pluginName = 'useFilters';
+
+function useMain$1(instance) {
+  var debug = instance.debug,
+      rows = instance.rows,
+      flatRows = instance.flatRows,
+      flatColumns = instance.flatColumns,
+      userFilterTypes = instance.filterTypes,
+      manualFilters = instance.manualFilters,
+      _instance$defaultCanF = instance.defaultCanFilter,
+      defaultCanFilter = _instance$defaultCanF === void 0 ? false : _instance$defaultCanF,
+      disableFilters = instance.disableFilters,
+      filters = instance.state.filters,
+      setState = instance.setState,
+      _instance$getResetFil = instance.getResetFiltersDeps,
+      getResetFiltersDeps = _instance$getResetFil === void 0 ? false : _instance$getResetFil;
+  var preFilteredRows = rows;
+  var preFilteredFlatRows = flatRows; // Bypass any effects from firing when this changes
+
+  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  safeUseLayoutEffect(function () {
+    if (isMountedRef.current) {
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          filters: {}
+        });
+      }, actions.pageChange);
+    }
+
+    isMountedRef.current = true;
+  }, [setState].concat(_toConsumableArray(getResetFiltersDeps ? getResetFiltersDeps(instance) : [])));
+
+  var setFilter = function setFilter(id, updater) {
+    var column = flatColumns.find(function (d) {
+      return d.id === id;
+    });
+
+    if (!column) {
+      throw new Error("React-Table: Could not find a column with id: ".concat(id));
+    }
+
+    var filterMethod = getFilterMethod(column.filter, userFilterTypes || {}, filterTypes);
+    return setState(function (old) {
+      var newFilter = typeof updater === 'function' ? updater(old.filters[id]) : updater; //
+
+      if (shouldAutoRemove(filterMethod.autoRemove, newFilter)) {
+        var _old$filters = old.filters,
+            remove = _old$filters[id],
+            newFilters = _objectWithoutProperties(_old$filters, [id].map(_toPropertyKey));
+
+        return _objectSpread2({}, old, {
+          filters: newFilters
+        });
+      }
+
+      return _objectSpread2({}, old, {
+        filters: _objectSpread2({}, old.filters, _defineProperty({}, id, newFilter))
+      });
+    }, actions.setFilter);
+  };
+
+  var setAllFilters = function setAllFilters(updater) {
+    return setState(function (old) {
+      var newFilters = typeof updater === 'function' ? updater(old) : updater; // Filter out undefined values
+
+      Object.keys(newFilters).forEach(function (id) {
+        var newFilter = newFilters[id];
+        var column = flatColumns.find(function (d) {
+          return d.id === id;
+        });
+        var filterMethod = getFilterMethod(column.filter, userFilterTypes || {}, filterTypes);
+
+        if (shouldAutoRemove(filterMethod.autoRemove, newFilter)) {
+          delete newFilters[id];
+        }
+      });
+      return _objectSpread2({}, old, {
+        filters: newFilters
+      });
+    }, actions.setAllFilters);
+  };
+
+  flatColumns.forEach(function (column) {
+    var id = column.id,
+        accessor = column.accessor,
+        columnDefaultCanFilter = column.defaultCanFilter,
+        columnDisableFilters = column.disableFilters; // Determine if a column is filterable
+
+    column.canFilter = accessor ? getFirstDefined(columnDisableFilters === true ? false : undefined, disableFilters === true ? false : undefined, true) : getFirstDefined(columnDefaultCanFilter, defaultCanFilter, false); // Provide the column a way of updating the filter value
+
+    column.setFilter = function (val) {
+      return setFilter(column.id, val);
+    }; // Provide the current filter value to the column for
+    // convenience
 
 
+    column.filterValue = filters[id];
+  }); // TODO: Create a filter cache for incremental high speed multi-filtering
+  // This gets pretty complicated pretty fast, since you have to maintain a
+  // cache for each row group (top-level rows, and each row's recursive subrows)
+  // This would make multi-filtering a lot faster though. Too far?
+
+  var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if (manualFilters || !Object.keys(filters).length) {
+      return {
+        filteredRows: rows,
+        filteredFlatRows: flatRows
+      };
+    }
+
+    var filteredFlatRows = [];
+    if ( true && debug) console.info('getFilteredRows'); // Filters top level and nested rows
+
+    var filterRows = function filterRows(rows) {
+      var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      var filteredRows = rows;
+      filteredRows = Object.entries(filters).reduce(function (filteredSoFar, _ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            columnID = _ref2[0],
+            filterValue = _ref2[1];
+
+        // Find the filters column
+        var column = flatColumns.find(function (d) {
+          return d.id === columnID;
+        });
+
+        if (!column) {
+          return filteredSoFar;
+        }
+
+        if (depth === 0) {
+          column.preFilteredRows = filteredSoFar;
+        }
+
+        var filterMethod = getFilterMethod(column.filter, userFilterTypes || {}, filterTypes);
+
+        if (!filterMethod) {
+          console.warn("Could not find a valid 'column.filter' for column with the ID: ".concat(column.id, "."));
+          return filteredSoFar;
+        } // Pass the rows, id, filterValue and column to the filterMethod
+        // to get the filtered rows back
+
+
+        column.filteredRows = filterMethod(filteredSoFar, columnID, filterValue, column);
+        return column.filteredRows;
+      }, rows); // Apply the filter to any subRows
+      // We technically could do this recursively in the above loop,
+      // but that would severely hinder the API for the user, since they
+      // would be required to do that recursion in some scenarios
+
+      filteredRows = filteredRows.map(function (row) {
+        filteredFlatRows.push(row);
+
+        if (!row.subRows) {
+          return row;
+        }
+
+        return _objectSpread2({}, row, {
+          subRows: row.subRows && row.subRows.length > 0 ? filterRows(row.subRows, depth + 1) : row.subRows
+        });
+      });
+      return filteredRows;
+    };
+
+    return {
+      filteredRows: filterRows(rows),
+      filteredFlatRows: filteredFlatRows
+    };
+  }, [manualFilters, filters, debug, rows, flatRows, flatColumns, userFilterTypes]),
+      filteredRows = _React$useMemo.filteredRows,
+      filteredFlatRows = _React$useMemo.filteredFlatRows;
+
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    // Now that each filtered column has it's partially filtered rows,
+    // lets assign the final filtered rows to all of the other columns
+    var nonFilteredColumns = flatColumns.filter(function (column) {
+      return !Object.keys(filters).includes(column.id);
+    }); // This essentially enables faceted filter options to be built easily
+    // using every column's preFilteredRows value
+
+    nonFilteredColumns.forEach(function (column) {
+      column.preFilteredRows = filteredRows;
+      column.filteredRows = filteredRows;
+    });
+  }, [filteredRows, filters, flatColumns]);
+  return _objectSpread2({}, instance, {
+    setFilter: setFilter,
+    setAllFilters: setAllFilters,
+    preFilteredRows: preFilteredRows,
+    preFilteredFlatRows: preFilteredFlatRows,
+    rows: filteredRows,
+    flatRows: filteredFlatRows
+  });
+}
+
+function shouldAutoRemove(autoRemove, value) {
+  return autoRemove ? autoRemove(value) : typeof value === 'undefined';
+}
+
+function getFilterMethod(filter, userFilterTypes, filterTypes) {
+  return isFunction(filter) || userFilterTypes[filter] || filterTypes[filter] || filterTypes.text;
+}
+
+function sum$1(values, rows) {
+  return values.reduce(function (sum, next) {
+    return sum + next;
+  }, 0);
+}
+function average(values, rows) {
+  return Math.round(sum$1(values) / values.length * 100) / 100;
+}
+function median(values) {
+  values = values.length ? values : [0];
+  var min = Math.min.apply(Math, _toConsumableArray(values));
+  var max = Math.max.apply(Math, _toConsumableArray(values));
+  return (min + max) / 2;
+}
+function uniqueCount(values) {
+  return new Set(values).size;
+}
+function count(values) {
+  return values.length;
+}
+
+var aggregations = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  sum: sum$1,
+  average: average,
+  median: median,
+  uniqueCount: uniqueCount,
+  count: count
+});
+
+defaultState.groupBy = [];
+addActions('toggleGroupBy');
+var useGroupBy = function useGroupBy(hooks) {
+  hooks.columnsBeforeHeaderGroups.push(columnsBeforeHeaderGroups);
+  hooks.columnsBeforeHeaderGroupsDeps.push(function (deps, instance) {
+    deps.push(instance.state.groupBy);
+    return deps;
+  });
+  hooks.useMain.push(useMain$2);
+};
+useGroupBy.pluginName = 'useGroupBy';
+
+function columnsBeforeHeaderGroups(flatColumns, _ref) {
+  var groupBy = _ref.state.groupBy;
+  // Sort grouped columns to the start of the column list
+  // before the headers are built
+  var groupByColumns = groupBy.map(function (g) {
+    return flatColumns.find(function (col) {
+      return col.id === g;
+    });
+  });
+  var nonGroupByColumns = flatColumns.filter(function (col) {
+    return !groupBy.includes(col.id);
+  }); // If a groupByBoundary column is found, place the groupBy's after it
+
+  var groupByBoundaryColumnIndex = flatColumns.findIndex(function (column) {
+    return column.groupByBoundary;
+  }) + 1;
+  return [].concat(_toConsumableArray(nonGroupByColumns.slice(0, groupByBoundaryColumnIndex)), _toConsumableArray(groupByColumns), _toConsumableArray(nonGroupByColumns.slice(groupByBoundaryColumnIndex)));
+}
+
+function useMain$2(instance) {
+  var debug = instance.debug,
+      rows = instance.rows,
+      flatColumns = instance.flatColumns,
+      flatHeaders = instance.flatHeaders,
+      _instance$groupByFn = instance.groupByFn,
+      groupByFn = _instance$groupByFn === void 0 ? defaultGroupByFn : _instance$groupByFn,
+      manualGroupBy = instance.manualGroupBy,
+      defaultCanGroupBy = instance.defaultCanGroupBy,
+      disableGroupBy = instance.disableGroupBy,
+      _instance$aggregation = instance.aggregations,
+      userAggregations = _instance$aggregation === void 0 ? {} : _instance$aggregation,
+      hooks = instance.hooks,
+      plugins = instance.plugins,
+      groupBy = instance.state.groupBy,
+      setState = instance.setState;
+  ensurePluginOrder(plugins, [], 'useGroupBy', ['useSortBy', 'useExpanded']);
+  flatColumns.forEach(function (column) {
+    var id = column.id,
+        accessor = column.accessor,
+        defaultColumnGroupBy = column.defaultGroupBy,
+        columnDisableGroupBy = column.disableGroupBy;
+    column.isGrouped = groupBy.includes(id);
+    column.groupedIndex = groupBy.indexOf(id);
+    column.canGroupBy = accessor ? getFirstDefined(columnDisableGroupBy === true ? false : undefined, disableGroupBy === true ? false : undefined, true) : getFirstDefined(defaultColumnGroupBy, defaultCanGroupBy, false);
+
+    if (column.canGroupBy) {
+      column.toggleGroupBy = function () {
+        return toggleGroupBy(column.id);
+      };
+    }
+
+    column.Aggregated = column.Aggregated || column.Cell;
+  });
+
+  var toggleGroupBy = function toggleGroupBy(id, toggle) {
+    return setState(function (old) {
+      var resolvedToggle = typeof toggle !== 'undefined' ? toggle : !groupBy.includes(id);
+
+      if (resolvedToggle) {
+        return _objectSpread2({}, old, {
+          groupBy: [].concat(_toConsumableArray(groupBy), [id])
+        });
+      }
+
+      return _objectSpread2({}, old, {
+        groupBy: groupBy.filter(function (d) {
+          return d !== id;
+        })
+      });
+    }, actions.toggleGroupBy);
+  };
+
+  hooks.getGroupByToggleProps = [];
+  flatHeaders.forEach(function (header) {
+    var canGroupBy = header.canGroupBy;
+
+    header.getGroupByToggleProps = function (props) {
+      return mergeProps({
+        onClick: canGroupBy ? function (e) {
+          e.persist();
+          header.toggleGroupBy();
+        } : undefined,
+        style: {
+          cursor: canGroupBy ? 'pointer' : undefined
+        },
+        title: 'Toggle GroupBy'
+      }, applyPropHooks(instance.hooks.getGroupByToggleProps, header, instance), props);
+    };
+  });
+  hooks.prepareRow.push(function (row) {
+    row.cells.forEach(function (cell) {
+      // Grouped cells are in the groupBy and the pivot cell for the row
+      cell.isGrouped = cell.column.isGrouped && cell.column.id === row.groupByID; // Repeated cells are any columns in the groupBy that are not grouped
+
+      cell.isRepeatedValue = !cell.isGrouped && cell.column.isGrouped; // Aggregated cells are not grouped, not repeated, but still have subRows
+
+      cell.isAggregated = !cell.isGrouped && !cell.isRepeatedValue && row.canExpand;
+    });
+    return row;
+  });
+  var groupedRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if (manualGroupBy || !groupBy.length) {
+      return rows;
+    }
+
+    if ( true && debug) console.info('getGroupedRows'); // Find the columns that can or are aggregating
+    // Uses each column to aggregate rows into a single value
+
+    var aggregateRowsToValues = function aggregateRowsToValues(rows, isSourceRows) {
+      var values = {};
+      flatColumns.forEach(function (column) {
+        // Don't aggregate columns that are in the groupBy
+        if (groupBy.includes(column.id)) {
+          values[column.id] = rows[0] ? rows[0].values[column.id] : null;
+          return;
+        }
+
+        var columnValues = rows.map(function (d) {
+          return d.values[column.id];
+        });
+        var aggregator = column.aggregate;
+
+        if (Array.isArray(aggregator)) {
+          if (aggregator.length !== 2) {
+            console.info({
+              column: column
+            });
+            throw new Error("React Table: Complex aggregators must have 2 values, eg. aggregate: ['sum', 'count']. More info above...");
+          }
+
+          if (isSourceRows) {
+            aggregator = aggregator[1];
+          } else {
+            aggregator = aggregator[0];
+          }
+        }
+
+        var aggregateFn = typeof aggregator === 'function' ? aggregator : userAggregations[aggregator] || aggregations[aggregator];
+
+        if (aggregateFn) {
+          values[column.id] = aggregateFn(columnValues, rows);
+        } else if (aggregator) {
+          console.info({
+            column: column
+          });
+          throw new Error("React Table: Invalid aggregate option for column listed above");
+        } else {
+          values[column.id] = null;
+        }
+      });
+      return values;
+    }; // Recursively group the data
+
+
+    var groupRecursively = function groupRecursively(rows) {
+      var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      var parentPath = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+      // This is the last level, just return the rows
+      if (depth >= groupBy.length) {
+        return rows;
+      }
+
+      var columnID = groupBy[depth]; // Group the rows together for this level
+
+      var groupedRows = groupByFn(rows, columnID); // Recurse to sub rows before aggregation
+
+      groupedRows = Object.entries(groupedRows).map(function (_ref2, index) {
+        var _ref3 = _slicedToArray(_ref2, 2),
+            groupByVal = _ref3[0],
+            subRows = _ref3[1];
+
+        var path = [].concat(_toConsumableArray(parentPath), ["".concat(columnID, ":").concat(groupByVal)]);
+        subRows = groupRecursively(subRows, depth + 1, path);
+        var values = aggregateRowsToValues(subRows, depth + 1 >= groupBy.length);
+        var row = {
+          isAggregated: true,
+          groupByID: columnID,
+          groupByVal: groupByVal,
+          values: values,
+          subRows: subRows,
+          depth: depth,
+          index: index,
+          path: path
+        };
+        return row;
+      });
+      return groupedRows;
+    }; // Assign the new data
+
+
+    return groupRecursively(rows);
+  }, [manualGroupBy, groupBy, debug, rows, flatColumns, userAggregations, groupByFn]);
+  return _objectSpread2({}, instance, {
+    toggleGroupBy: toggleGroupBy,
+    rows: groupedRows,
+    preGroupedRows: rows
+  });
+}
+
+var reSplitAlphaNumeric = /([0-9]+)/gm; // Mixed sorting is slow, but very inclusive of many edge cases.
+// It handles numbers, mixed alphanumeric combinations, and even
+// null, undefined, and Infinity
+
+var alphanumeric = function alphanumeric(rowA, rowB, columnID) {
+  var a = getRowValueByColumnID(rowA, columnID);
+  var b = getRowValueByColumnID(rowB, columnID); // Force to strings (or "" for unsupported types)
+
+  a = toString(a);
+  b = toString(b); // Split on number groups, but keep the delimiter
+  // Then remove falsey split values
+
+  a = a.split(reSplitAlphaNumeric).filter(Boolean);
+  b = b.split(reSplitAlphaNumeric).filter(Boolean); // While
+
+  while (a.length && b.length) {
+    var aa = a.shift();
+    var bb = b.shift();
+    var an = parseInt(aa, 10);
+    var bn = parseInt(bb, 10);
+    var combo = [an, bn].sort(); // Both are string
+
+    if (isNaN(combo[0])) {
+      if (aa > bb) {
+        return 1;
+      }
+
+      if (bb > aa) {
+        return -1;
+      }
+
+      continue;
+    } // One is a string, one is a number
+
+
+    if (isNaN(combo[1])) {
+      return isNaN(an) ? -1 : 1;
+    } // Both are numbers
+
+
+    if (an > bn) {
+      return 1;
+    }
+
+    if (bn > an) {
+      return -1;
+    }
+  }
+
+  return a.length - b.length;
+};
+function datetime(rowA, rowB, columnID) {
+  var a = getRowValueByColumnID(rowA, columnID);
+  var b = getRowValueByColumnID(rowB, columnID);
+  a = a.getTime();
+  b = b.getTime();
+  return compareBasic(a, b);
+}
+function basic(rowA, rowB, columnID) {
+  var a = getRowValueByColumnID(rowA, columnID);
+  var b = getRowValueByColumnID(rowB, columnID);
+  return compareBasic(a, b);
+} // Utils
+
+function compareBasic(a, b) {
+  return a === b ? 0 : a > b ? 1 : -1;
+}
+
+function getRowValueByColumnID(row, columnID) {
+  return row.values[columnID];
+}
+
+function toString(a) {
+  if (typeof a === 'number') {
+    if (isNaN(a) || a === Infinity || a === -Infinity) {
+      return '';
+    }
+
+    return String(a);
+  }
+
+  if (typeof a === 'string') {
+    return a;
+  }
+
+  return '';
+}
+
+var sortTypes = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  alphanumeric: alphanumeric,
+  datetime: datetime,
+  basic: basic
+});
+
+defaultState.sortBy = [];
+defaultColumn.sortType = 'alphanumeric';
+defaultColumn.sortDescFirst = false;
+addActions('sortByChange');
+var useSortBy = function useSortBy(hooks) {
+  hooks.useMain.push(useMain$3);
+};
+useSortBy.pluginName = 'useSortBy';
+
+function useMain$3(instance) {
+  var debug = instance.debug,
+      rows = instance.rows,
+      flatColumns = instance.flatColumns,
+      _instance$orderByFn = instance.orderByFn,
+      orderByFn = _instance$orderByFn === void 0 ? defaultOrderByFn : _instance$orderByFn,
+      userSortTypes = instance.sortTypes,
+      manualSorting = instance.manualSorting,
+      defaultCanSort = instance.defaultCanSort,
+      disableSortBy = instance.disableSortBy,
+      disableSortRemove = instance.disableSortRemove,
+      disableMultiRemove = instance.disableMultiRemove,
+      disableMultiSort = instance.disableMultiSort,
+      _instance$isMultiSort = instance.isMultiSortEvent,
+      isMultiSortEvent = _instance$isMultiSort === void 0 ? function (e) {
+    return e.shiftKey;
+  } : _instance$isMultiSort,
+      _instance$maxMultiSor = instance.maxMultiSortColCount,
+      maxMultiSortColCount = _instance$maxMultiSor === void 0 ? Number.MAX_SAFE_INTEGER : _instance$maxMultiSor,
+      flatHeaders = instance.flatHeaders,
+      hooks = instance.hooks,
+      sortBy = instance.state.sortBy,
+      setState = instance.setState,
+      plugins = instance.plugins,
+      _instance$getResetSor = instance.getResetSortByDeps,
+      getResetSortByDeps = _instance$getResetSor === void 0 ? false : _instance$getResetSor;
+  ensurePluginOrder(plugins, ['useFilters'], 'useSortBy', []); // Add custom hooks
+
+  hooks.getSortByToggleProps = []; // Bypass any effects from firing when this changes
+
+  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  safeUseLayoutEffect(function () {
+    if (isMountedRef.current) {
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          sortBy: []
+        });
+      }, actions.pageChange);
+    }
+
+    isMountedRef.current = true;
+  }, [setState].concat(_toConsumableArray(getResetSortByDeps ? getResetSortByDeps(instance) : []))); // Updates sorting based on a columnID, desc flag and multi flag
+
+  var toggleSortBy = function toggleSortBy(columnID, desc, multi) {
+    return setState(function (old) {
+      var sortBy = old.sortBy; // Find the column for this columnID
+
+      var column = flatColumns.find(function (d) {
+        return d.id === columnID;
+      });
+      var sortDescFirst = column.sortDescFirst; // Find any existing sortBy for this column
+
+      var existingSortBy = sortBy.find(function (d) {
+        return d.id === columnID;
+      });
+      var existingIndex = sortBy.findIndex(function (d) {
+        return d.id === columnID;
+      });
+      var hasDescDefined = typeof desc !== 'undefined' && desc !== null;
+      var newSortBy = []; // What should we do with this sort action?
+
+      var action;
+
+      if (!disableMultiSort && multi) {
+        if (existingSortBy) {
+          action = 'toggle';
+        } else {
+          action = 'add';
+        }
+      } else {
+        // Normal mode
+        if (existingIndex !== sortBy.length - 1) {
+          action = 'replace';
+        } else if (existingSortBy) {
+          action = 'toggle';
+        } else {
+          action = 'replace';
+        }
+      } // Handle toggle states that will remove the sortBy
+
+
+      if (action === 'toggle' && // Must be toggling
+      !disableSortRemove && // If disableSortRemove, disable in general
+      !hasDescDefined && ( // Must not be setting desc
+      multi ? !disableMultiRemove : true) && ( // If multi, don't allow if disableMultiRemove
+      existingSortBy && // Finally, detect if it should indeed be removed
+      existingSortBy.desc && !sortDescFirst || !existingSortBy.desc && sortDescFirst)) {
+        action = 'remove';
+      }
+
+      if (action === 'replace') {
+        newSortBy = [{
+          id: columnID,
+          desc: hasDescDefined ? desc : sortDescFirst
+        }];
+      } else if (action === 'add') {
+        newSortBy = [].concat(_toConsumableArray(sortBy), [{
+          id: columnID,
+          desc: hasDescDefined ? desc : sortDescFirst
+        }]); // Take latest n columns
+
+        newSortBy.splice(0, newSortBy.length - maxMultiSortColCount);
+      } else if (action === 'toggle') {
+        // This flips (or sets) the
+        newSortBy = sortBy.map(function (d) {
+          if (d.id === columnID) {
+            return _objectSpread2({}, d, {
+              desc: hasDescDefined ? desc : !existingSortBy.desc
+            });
+          }
+
+          return d;
+        });
+      } else if (action === 'remove') {
+        newSortBy = sortBy.filter(function (d) {
+          return d.id !== columnID;
+        });
+      }
+
+      return _objectSpread2({}, old, {
+        sortBy: newSortBy
+      });
+    }, actions.sortByChange);
+  }; // Add the getSortByToggleProps method to columns and headers
+
+
+  flatHeaders.forEach(function (column) {
+    var accessor = column.accessor,
+        defaultColumnCanSort = column.canSort,
+        columnDisableSortBy = column.disableSortBy,
+        id = column.id;
+    var canSort = accessor ? getFirstDefined(columnDisableSortBy === true ? false : undefined, disableSortBy === true ? false : undefined, true) : getFirstDefined(defaultCanSort, defaultColumnCanSort, false);
+    column.canSort = canSort;
+
+    if (column.canSort) {
+      column.toggleSortBy = function (desc, multi) {
+        return toggleSortBy(column.id, desc, multi);
+      };
+
+      column.clearSorting = function () {
+        return setState(function (old) {
+          var sortBy = old.sortBy;
+          var newSortBy = sortBy.filter(function (d) {
+            return d.id !== column.id;
+          });
+          return _objectSpread2({}, old, {
+            sortBy: newSortBy
+          });
+        }, actions.sortByChange);
+      };
+    }
+
+    column.getSortByToggleProps = function (props) {
+      return mergeProps({
+        onClick: canSort ? function (e) {
+          e.persist();
+          column.toggleSortBy(undefined, !instance.disableMultiSort && isMultiSortEvent(e));
+        } : undefined,
+        style: {
+          cursor: canSort ? 'pointer' : undefined
+        },
+        title: 'Toggle SortBy'
+      }, applyPropHooks(instance.hooks.getSortByToggleProps, column, instance), props);
+    };
+
+    var columnSort = sortBy.find(function (d) {
+      return d.id === id;
+    });
+    column.isSorted = !!columnSort;
+    column.sortedIndex = sortBy.findIndex(function (d) {
+      return d.id === id;
+    });
+    column.isSortedDesc = column.isSorted ? columnSort.desc : undefined;
+  });
+  var sortedRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    if (manualSorting || !sortBy.length) {
+      return rows;
+    }
+
+    if ( true && debug) console.time('getSortedRows'); // Filter out sortBys that correspond to non existing columns
+
+    var availableSortBy = sortBy.filter(function (sort) {
+      return flatColumns.find(function (col) {
+        return col.id === sort.id;
+      });
+    });
+
+    var sortData = function sortData(rows) {
+      // Use the orderByFn to compose multiple sortBy's together.
+      // This will also perform a stable sorting using the row index
+      // if needed.
+      var sortedData = orderByFn(rows, availableSortBy.map(function (sort) {
+        // Support custom sorting methods for each column
+        var column = flatColumns.find(function (d) {
+          return d.id === sort.id;
+        });
+
+        if (!column) {
+          throw new Error("React-Table: Could not find a column with id: ".concat(sort.id, " while sorting"));
+        }
+
+        var sortType = column.sortType; // Look up sortBy functions in this order:
+        // column function
+        // column string lookup on user sortType
+        // column string lookup on built-in sortType
+        // default function
+        // default string lookup on user sortType
+        // default string lookup on built-in sortType
+
+        var sortMethod = isFunction(sortType) || (userSortTypes || {})[sortType] || sortTypes[sortType];
+
+        if (!sortMethod) {
+          throw new Error("React-Table: Could not find a valid sortType of '".concat(sortType, "' for column '").concat(sort.id, "'."));
+        } // Return the correct sortFn.
+        // This function should always return in ascending order
+
+
+        return function (a, b) {
+          return sortMethod(a, b, sort.id);
+        };
+      }), // Map the directions
+      availableSortBy.map(function (sort) {
+        // Detect and use the sortInverted option
+        var column = flatColumns.find(function (d) {
+          return d.id === sort.id;
+        });
+
+        if (column && column.sortInverted) {
+          return sort.desc;
+        }
+
+        return !sort.desc;
+      })); // If there are sub-rows, sort them
+
+      sortedData.forEach(function (row) {
+        if (!row.subRows || row.subRows.length <= 1) {
+          return;
+        }
+
+        row.subRows = sortData(row.subRows);
+      });
+      return sortedData;
+    };
+
+    if ( true && debug) console.timeEnd('getSortedRows');
+    return sortData(rows);
+  }, [manualSorting, sortBy, debug, rows, flatColumns, orderByFn, userSortTypes]);
+  return _objectSpread2({}, instance, {
+    toggleSortBy: toggleSortBy,
+    rows: sortedRows,
+    preSortedRows: rows
+  });
+}
+
+defaultState.pageSize = 10;
+defaultState.pageIndex = 0;
+addActions('pageChange', 'pageSizeChange');
+var usePagination = function usePagination(hooks) {
+  hooks.useMain.push(useMain$4);
+};
+usePagination.pluginName = 'usePagination';
+
+var defaultGetResetPageDeps = function defaultGetResetPageDeps(_ref) {
+  var data = _ref.data,
+      manualPagination = _ref.manualPagination,
+      _ref$state = _ref.state,
+      filters = _ref$state.filters,
+      groupBy = _ref$state.groupBy,
+      sortBy = _ref$state.sortBy;
+  return [manualPagination ? null : data, filters, groupBy, sortBy];
+};
+
+function useMain$4(instance) {
+  var rows = instance.rows,
+      manualPagination = instance.manualPagination,
+      _instance$getResetPag = instance.getResetPageDeps,
+      getResetPageDeps = _instance$getResetPag === void 0 ? defaultGetResetPageDeps : _instance$getResetPag,
+      _instance$manualExpan = instance.manualExpandedKey,
+      manualExpandedKey = _instance$manualExpan === void 0 ? 'expanded' : _instance$manualExpan,
+      debug = instance.debug,
+      plugins = instance.plugins,
+      userPageCount = instance.pageCount,
+      _instance$paginateExp = instance.paginateExpandedRows,
+      paginateExpandedRows = _instance$paginateExp === void 0 ? true : _instance$paginateExp,
+      _instance$expandSubRo = instance.expandSubRows,
+      expandSubRows = _instance$expandSubRo === void 0 ? true : _instance$expandSubRo,
+      _instance$state = instance.state,
+      pageSize = _instance$state.pageSize,
+      pageIndex = _instance$state.pageIndex,
+      expanded = _instance$state.expanded,
+      setState = instance.setState;
+  ensurePluginOrder(plugins, ['useFilters', 'useGroupBy', 'useSortBy', 'useExpanded'], 'usePagination', []); // Bypass any effects from firing when this changes
+
+  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  safeUseLayoutEffect(function () {
+    if (isMountedRef.current) {
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          pageIndex: 0
+        });
+      }, actions.pageChange);
+    }
+
+    isMountedRef.current = true;
+  }, [setState].concat(_toConsumableArray(getResetPageDeps ? getResetPageDeps(instance) : [])));
+  var pageCount = manualPagination ? userPageCount : Math.ceil(rows.length / pageSize);
+  var pageOptions = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return pageCount > 0 ? _toConsumableArray(new Array(pageCount)).map(function (d, i) {
+      return i;
+    }) : [];
+  }, [pageCount]);
+  var page = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    var page;
+
+    if (manualPagination) {
+      page = rows;
+    } else {
+      if ( true && debug) console.info('getPage');
+      var pageStart = pageSize * pageIndex;
+      var pageEnd = pageStart + pageSize;
+      page = rows.slice(pageStart, pageEnd);
+    }
+
+    if (paginateExpandedRows) {
+      return page;
+    }
+
+    return expandRows(page, {
+      manualExpandedKey: manualExpandedKey,
+      expanded: expanded,
+      expandSubRows: expandSubRows
+    });
+  }, [debug, expandSubRows, expanded, manualExpandedKey, manualPagination, pageIndex, pageSize, paginateExpandedRows, rows]);
+  var canPreviousPage = pageIndex > 0;
+  var canNextPage = pageCount === -1 || pageIndex < pageCount - 1;
+  var gotoPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (updater) {
+    if ( true && debug) console.info('gotoPage');
+    return setState(function (old) {
+      var newPageIndex = typeof updater === 'function' ? updater(old.pageIndex) : updater;
+
+      if (newPageIndex < 0 || newPageIndex > pageCount - 1) {
+        return old;
+      }
+
+      return _objectSpread2({}, old, {
+        pageIndex: newPageIndex
+      });
+    }, actions.pageChange);
+  }, [debug, pageCount, setState]);
+  var previousPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function () {
+    return gotoPage(function (old) {
+      return old - 1;
+    });
+  }, [gotoPage]);
+  var nextPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function () {
+    return gotoPage(function (old) {
+      return old + 1;
+    });
+  }, [gotoPage]);
+  var setPageSize = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (pageSize) {
+    setState(function (old) {
+      var topRowIndex = old.pageSize * old.pageIndex;
+      var pageIndex = Math.floor(topRowIndex / pageSize);
+      return _objectSpread2({}, old, {
+        pageIndex: pageIndex,
+        pageSize: pageSize
+      });
+    }, actions.pageSizeChange);
+  }, [setState]);
+  return _objectSpread2({}, instance, {
+    pageOptions: pageOptions,
+    pageCount: pageCount,
+    page: page,
+    canPreviousPage: canPreviousPage,
+    canNextPage: canNextPage,
+    gotoPage: gotoPage,
+    previousPage: previousPage,
+    nextPage: nextPage,
+    setPageSize: setPageSize,
+    pageIndex: pageIndex,
+    pageSize: pageSize
+  });
+}
+
+defaultState.selectedRowPaths = [];
+addActions('toggleRowSelected', 'toggleRowSelectedAll');
+var useRowSelect = function useRowSelect(hooks) {
+  hooks.getToggleRowSelectedProps = [];
+  hooks.getToggleAllRowsSelectedProps = [];
+  hooks.useRows.push(useRows);
+  hooks.useMain.push(useMain$5);
+};
+useRowSelect.pluginName = 'useRowSelect';
+
+function useRows(rows, instance) {
+  var selectedRowPaths = instance.state.selectedRowPaths;
+  instance.selectedFlatRows = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    var selectedFlatRows = [];
+    rows.forEach(function (row) {
+      if (row.isAggregated) {
+        var subRowPaths = row.subRows.map(function (row) {
+          return row.path;
+        });
+        row.isSelected = subRowPaths.every(function (path) {
+          return selectedRowPaths.includes(path.join('.'));
+        });
+      } else {
+        row.isSelected = selectedRowPaths.includes(row.path.join('.'));
+      }
+
+      if (row.isSelected) {
+        selectedFlatRows.push(row);
+      }
+    });
+    return selectedFlatRows;
+  }, [rows, selectedRowPaths]);
+  return rows;
+}
+
+var defaultGetResetSelectedRowPathsDeps = function defaultGetResetSelectedRowPathsDeps(_ref) {
+  var rows = _ref.rows;
+  return [rows];
+};
+
+function useMain$5(instance) {
+  var hooks = instance.hooks,
+      _instance$manualRowSe = instance.manualRowSelectedKey,
+      manualRowSelectedKey = _instance$manualRowSe === void 0 ? 'isSelected' : _instance$manualRowSe,
+      plugins = instance.plugins,
+      flatRows = instance.flatRows,
+      _instance$getResetSel = instance.getResetSelectedRowPathsDeps,
+      getResetSelectedRowPathsDeps = _instance$getResetSel === void 0 ? defaultGetResetSelectedRowPathsDeps : _instance$getResetSel,
+      selectedRowPaths = instance.state.selectedRowPaths,
+      setState = instance.setState;
+  ensurePluginOrder(plugins, ['useFilters', 'useGroupBy', 'useSortBy'], 'useRowSelect', []);
+  var flatRowPaths = flatRows.map(function (d) {
+    return d.path.join('.');
+  });
+  var isAllRowsSelected = !!flatRowPaths.length && !!selectedRowPaths.length;
+
+  if (isAllRowsSelected) {
+    if (flatRowPaths.some(function (d) {
+      return !selectedRowPaths.includes(d);
+    })) {
+      isAllRowsSelected = false;
+    }
+  } // Bypass any effects from firing when this changes
+
+
+  var isMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+  safeUseLayoutEffect(function () {
+    if (isMountedRef.current) {
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          selectedRowPaths: []
+        });
+      }, actions.pageChange);
+    }
+
+    isMountedRef.current = true;
+  }, [setState].concat(_toConsumableArray(getResetSelectedRowPathsDeps ? getResetSelectedRowPathsDeps(instance) : [])));
+
+  var toggleRowSelectedAll = function toggleRowSelectedAll(set) {
+    setState(function (old) {
+      var selectAll = typeof set !== 'undefined' ? set : !isAllRowsSelected;
+      return _objectSpread2({}, old, {
+        selectedRowPaths: selectAll ? flatRowPaths : []
+      });
+    }, actions.toggleRowSelectedAll);
+  };
+
+  var updateParentRow = function updateParentRow(selectedRowPaths, path) {
+    var parentPath = path.slice(0, path.length - 1);
+    var parentKey = parentPath.join('.');
+    var selected = flatRowPaths.filter(function (rowPath) {
+      var path = rowPath;
+      return path !== parentKey && path.startsWith(parentKey) && !selectedRowPaths.has(path);
+    }).length === 0;
+
+    if (selected) {
+      selectedRowPaths.add(parentKey);
+    } else {
+      selectedRowPaths.delete(parentKey);
+    }
+
+    if (parentPath.length > 1) updateParentRow(selectedRowPaths, parentPath);
+  };
+
+  var toggleRowSelected = function toggleRowSelected(path, set) {
+    var key = path.join('.');
+    var childRowPrefixKey = [key, '.'].join('');
+    return setState(function (old) {
+      // Join the paths of deep rows
+      // to make a key, then manage all of the keys
+      // in a flat object
+      var exists = old.selectedRowPaths.includes(key);
+      var shouldExist = typeof set !== 'undefined' ? set : !exists;
+      var newSelectedRows = new Set(old.selectedRowPaths);
+
+      if (!exists && shouldExist) {
+        flatRowPaths.forEach(function (rowPath) {
+          if (rowPath === key || rowPath.startsWith(childRowPrefixKey)) {
+            newSelectedRows.add(rowPath);
+          }
+        });
+      } else if (exists && !shouldExist) {
+        flatRowPaths.forEach(function (rowPath) {
+          if (rowPath === key || rowPath.startsWith(childRowPrefixKey)) {
+            newSelectedRows.delete(rowPath);
+          }
+        });
+      } else {
+        return old;
+      } // If the row is a subRow update
+      // its parent row to reflect changes
+
+
+      if (path.length > 1) updateParentRow(newSelectedRows, path);
+      return _objectSpread2({}, old, {
+        selectedRowPaths: _toConsumableArray(newSelectedRows.values())
+      });
+    }, actions.toggleRowSelected);
+  };
+
+  var getToggleAllRowsSelectedProps = function getToggleAllRowsSelectedProps(props) {
+    return mergeProps({
+      onChange: function onChange(e) {
+        toggleRowSelectedAll(e.target.checked);
+      },
+      style: {
+        cursor: 'pointer'
+      },
+      checked: isAllRowsSelected,
+      title: 'Toggle All Rows Selected'
+    }, applyPropHooks(instance.hooks.getToggleAllRowsSelectedProps, instance), props);
+  };
+
+  hooks.prepareRow.push(function (row) {
+    // Aggregate rows have entirely different select logic
+    if (row.isAggregated) {
+      var subRowPaths = row.subRows.map(function (row) {
+        return row.path;
+      });
+
+      row.toggleRowSelected = function (set) {
+        set = typeof set !== 'undefined' ? set : !row.isSelected;
+        subRowPaths.forEach(function (path) {
+          toggleRowSelected(path, set);
+        });
+      };
+
+      row.getToggleRowSelectedProps = function (props) {
+        var checked = false;
+
+        if (row.original && row.original[manualRowSelectedKey]) {
+          checked = true;
+        } else {
+          checked = row.isSelected;
+        }
+
+        return mergeProps({
+          onChange: function onChange(e) {
+            row.toggleRowSelected(e.target.checked);
+          },
+          style: {
+            cursor: 'pointer'
+          },
+          checked: checked,
+          title: 'Toggle Row Selected'
+        }, applyPropHooks(instance.hooks.getToggleRowSelectedProps, row, instance), props);
+      };
+    } else {
+      row.toggleRowSelected = function (set) {
+        return toggleRowSelected(row.path, set);
+      };
+
+      row.getToggleRowSelectedProps = function (props) {
+        var checked = false;
+
+        if (row.original && row.original[manualRowSelectedKey]) {
+          checked = true;
+        } else {
+          checked = row.isSelected;
+        }
+
+        return mergeProps({
+          onChange: function onChange(e) {
+            row.toggleRowSelected(e.target.checked);
+          },
+          style: {
+            cursor: 'pointer'
+          },
+          checked: checked,
+          title: 'Toggle Row Selected'
+        }, applyPropHooks(instance.hooks.getToggleRowSelectedProps, row, instance), props);
+      };
+    }
+
+    return row;
+  });
+  return _objectSpread2({}, instance, {
+    toggleRowSelected: toggleRowSelected,
+    toggleRowSelectedAll: toggleRowSelectedAll,
+    getToggleAllRowsSelectedProps: getToggleAllRowsSelectedProps,
+    isAllRowsSelected: isAllRowsSelected
+  });
+}
+
+defaultState.rowState = {};
+addActions('setRowState', 'setCellState');
+var useRowState = function useRowState(hooks) {
+  hooks.useMain.push(useMain$6);
+};
+useRowState.pluginName = 'useRowState';
+
+function useMain$6(instance) {
+  var hooks = instance.hooks,
+      rows = instance.rows,
+      initialRowStateAccessor = instance.initialRowStateAccessor,
+      rowState = instance.state.rowState,
+      setState = instance.setState;
+  var setRowState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (path, updater) {
+    var action = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : actions.setRowState;
+    var pathKey = path.join('.');
+    return setState(function (old) {
+      return _objectSpread2({}, old, {
+        rowState: _objectSpread2({}, old.rowState, _defineProperty({}, pathKey, typeof updater === 'function' ? updater(old.rowState[pathKey]) : updater))
+      });
+    }, action);
+  }, [setState]);
+  var setCellState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (rowPath, columnID, updater) {
+    return setRowState(rowPath, function (old) {
+      return _objectSpread2({}, old, {
+        cellState: _objectSpread2({}, old.cellState, _defineProperty({}, columnID, typeof updater === 'function' ? updater(old.cellState[columnID]) : updater))
+      });
+    }, actions.setCellState);
+  }, [setRowState]);
+  var rowsMountedRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef(); // When data changes, reset row and cell state
+
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
+    if (rowsMountedRef.current) {
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          rowState: {}
+        });
+      }, actions.setRowState);
+    }
+
+    rowsMountedRef.current = true;
+  }, [rows, setState]);
+  hooks.prepareRow.push(function (row) {
+    var pathKey = row.path.join('.');
+
+    if (row.original) {
+      row.state = (typeof rowState[pathKey] !== 'undefined' ? rowState[pathKey] : initialRowStateAccessor && initialRowStateAccessor(row)) || {};
+
+      row.setState = function (updater) {
+        return setRowState(row.path, updater);
+      };
+
+      row.cells.forEach(function (cell) {
+        cell.state = row.state.cellState || {};
+
+        cell.setState = function (updater) {
+          return setCellState(row.path, cell.column.id, updater);
+        };
+      });
+    }
+
+    return row;
+  });
+  return _objectSpread2({}, instance, {
+    setRowState: setRowState,
+    setCellState: setCellState
+  });
+}
+
+defaultState.columnOrder = [];
+addActions('setColumnOrder');
+var useColumnOrder = function useColumnOrder(hooks) {
+  hooks.columnsBeforeHeaderGroupsDeps.push(function (deps, instance) {
+    return [].concat(_toConsumableArray(deps), [instance.state.columnOrder]);
+  });
+  hooks.columnsBeforeHeaderGroups.push(columnsBeforeHeaderGroups$1);
+  hooks.useMain.push(useMain$7);
+};
+useColumnOrder.pluginName = 'useColumnOrder';
+
+function columnsBeforeHeaderGroups$1(columns, instance) {
+  var columnOrder = instance.state.columnOrder; // If there is no order, return the normal columns
+
+  if (!columnOrder || !columnOrder.length) {
+    return columns;
+  }
+
+  var columnOrderCopy = _toConsumableArray(columnOrder); // If there is an order, make a copy of the columns
+
+
+  var columnsCopy = _toConsumableArray(columns); // And make a new ordered array of the columns
+
+
+  var columnsInOrder = []; // Loop over the columns and place them in order into the new array
+
+  var _loop = function _loop() {
+    var targetColumnID = columnOrderCopy.shift();
+    var foundIndex = columnsCopy.findIndex(function (d) {
+      return d.id === targetColumnID;
+    });
+
+    if (foundIndex > -1) {
+      columnsInOrder.push(columnsCopy.splice(foundIndex, 1)[0]);
+    }
+  };
+
+  while (columnsCopy.length && columnOrderCopy.length) {
+    _loop();
+  } // If there are any columns left, add them to the end
+
+
+  return [].concat(columnsInOrder, _toConsumableArray(columnsCopy));
+}
+
+function useMain$7(instance) {
+  var setState = instance.setState;
+  var setColumnOrder = react__WEBPACK_IMPORTED_MODULE_0___default.a.useCallback(function (updater) {
+    return setState(function (old) {
+      return _objectSpread2({}, old, {
+        columnOrder: typeof updater === 'function' ? updater(old.columnOrder) : updater
+      });
+    }, actions.setColumnOrder);
+  }, [setState]);
+  return _objectSpread2({}, instance, {
+    setColumnOrder: setColumnOrder
+  });
+}
+
+defaultState.columnResizing = {
+  columnWidths: {}
+};
+defaultColumn.canResize = true;
+var useResizeColumns = function useResizeColumns(hooks) {
+  hooks.useBeforeDimensions.push(useBeforeDimensions);
+};
+useResizeColumns.pluginName = 'useResizeColumns';
+
+var useBeforeDimensions = function useBeforeDimensions(instance) {
+  instance.hooks.getResizerProps = [];
+  var flatHeaders = instance.flatHeaders,
+      disableResizing = instance.disableResizing,
+      getHeaderProps = instance.hooks.getHeaderProps,
+      columnResizing = instance.state.columnResizing,
+      setState = instance.setState;
+  getHeaderProps.push(function () {
+    return {
+      style: {
+        position: 'relative'
+      }
+    };
+  });
+
+  var _onMouseDown = function onMouseDown(e, header) {
+    var headersToResize = getLeafHeaders(header);
+    var startWidths = headersToResize.map(function (header) {
+      return header.totalWidth;
+    });
+    var startX = e.clientX;
+
+    var onMouseMove = function onMouseMove(e) {
+      var currentX = e.clientX;
+      var deltaX = currentX - startX;
+      var percentageDeltaX = deltaX / headersToResize.length;
+      var newColumnWidths = {};
+      headersToResize.forEach(function (header, index) {
+        newColumnWidths[header.id] = Math.max(startWidths[index] + percentageDeltaX, 0);
+      });
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          columnResizing: _objectSpread2({}, old.columnResizing, {
+            columnWidths: _objectSpread2({}, old.columnResizing.columnWidths, {}, newColumnWidths)
+          })
+        });
+      });
+    };
+
+    var onMouseUp = function onMouseUp(e) {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+      setState(function (old) {
+        return _objectSpread2({}, old, {
+          columnResizing: _objectSpread2({}, old.columnResizing, {
+            startX: null,
+            isResizingColumn: null
+          })
+        });
+      });
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+    setState(function (old) {
+      return _objectSpread2({}, old, {
+        columnResizing: _objectSpread2({}, old.columnResizing, {
+          startX: startX,
+          isResizingColumn: header.id
+        })
+      });
+    });
+  };
+
+  flatHeaders.forEach(function (header) {
+    var canResize = getFirstDefined(header.disableResizing === true ? false : undefined, disableResizing === true ? false : undefined, true);
+    header.canResize = canResize;
+    header.width = columnResizing.columnWidths[header.id] || header.width;
+    header.isResizing = columnResizing.isResizingColumn === header.id;
+
+    if (canResize) {
+      header.getResizerProps = function (userProps) {
+        return mergeProps({
+          onMouseDown: function onMouseDown(e) {
+            return e.persist() || _onMouseDown(e, header);
+          },
+          style: {
+            cursor: 'ew-resize'
+          },
+          draggable: false
+        }, applyPropHooks(instance.hooks.getResizerProps, header, instance), userProps);
+      };
+    }
+  });
+  return instance;
+};
+
+function getLeafHeaders(header) {
+  var leafHeaders = [];
+
+  var recurseHeader = function recurseHeader(header) {
+    if (header.columns && header.columns.length) {
+      header.columns.map(recurseHeader);
+    }
+
+    leafHeaders.push(header);
+  };
+
+  recurseHeader(header);
+  return leafHeaders;
+}
+
+var useAbsoluteLayout = function useAbsoluteLayout(hooks) {
+  hooks.useMain.push(useMain$8);
+};
+useAbsoluteLayout.pluginName = 'useAbsoluteLayout';
+
+var useMain$8 = function useMain(instance) {
+  var totalColumnsWidth = instance.totalColumnsWidth,
+      _instance$hooks = instance.hooks,
+      getRowProps = _instance$hooks.getRowProps,
+      getTableBodyProps = _instance$hooks.getTableBodyProps,
+      getHeaderGroupProps = _instance$hooks.getHeaderGroupProps,
+      getHeaderProps = _instance$hooks.getHeaderProps,
+      getCellProps = _instance$hooks.getCellProps;
+  var rowStyles = {
+    style: {
+      position: 'relative',
+      width: "".concat(totalColumnsWidth, "px")
+    }
+  };
+  getTableBodyProps.push(function () {
+    return rowStyles;
+  });
+  getRowProps.push(function () {
+    return rowStyles;
+  });
+  getHeaderGroupProps.push(function () {
+    return rowStyles;
+  }); // Calculating column/cells widths
+
+  var cellStyles = {
+    position: 'absolute',
+    top: 0
+  };
+  getHeaderProps.push(function (header) {
+    return {
+      style: _objectSpread2({}, cellStyles, {
+        left: "".concat(header.totalLeft, "px"),
+        width: "".concat(header.totalWidth, "px")
+      })
+    };
+  });
+  getCellProps.push(function (cell) {
+    return {
+      style: _objectSpread2({}, cellStyles, {
+        left: "".concat(cell.column.totalLeft, "px"),
+        width: "".concat(cell.column.totalWidth, "px")
+      })
+    };
+  });
+  return instance;
+};
+
+var useBlockLayout = function useBlockLayout(hooks) {
+  hooks.useMain.push(useMain$9);
+};
+useBlockLayout.pluginName = 'useBlockLayout';
+
+var useMain$9 = function useMain(instance) {
+  var totalColumnsWidth = instance.totalColumnsWidth,
+      _instance$hooks = instance.hooks,
+      getRowProps = _instance$hooks.getRowProps,
+      getHeaderGroupProps = _instance$hooks.getHeaderGroupProps,
+      getHeaderProps = _instance$hooks.getHeaderProps,
+      getCellProps = _instance$hooks.getCellProps;
+  var rowStyles = {
+    style: {
+      display: 'flex',
+      width: "".concat(totalColumnsWidth, "px")
+    }
+  };
+  getRowProps.push(function () {
+    return rowStyles;
+  });
+  getHeaderGroupProps.push(function () {
+    return rowStyles;
+  });
+  var cellStyles = {
+    display: 'inline-block',
+    boxSizing: 'border-box'
+  };
+  getHeaderProps.push(function (header) {
+    return {
+      style: _objectSpread2({}, cellStyles, {
+        width: "".concat(header.totalWidth, "px")
+      })
+    };
+  });
+  getCellProps.push(function (cell) {
+    return {
+      style: _objectSpread2({}, cellStyles, {
+        width: "".concat(cell.column.totalWidth, "px")
+      })
+    };
+  });
+  return instance;
+};
+
+
+//# sourceMappingURL=index.es.js.map
 
 
 /***/ })

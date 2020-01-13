@@ -11,6 +11,8 @@ import Stores from "../../Select/Stores";
 import {create} from "filepond";
 import Checkbox from "../../Checkbox";
 import set from "@babel/runtime/helpers/esm/set";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -19,6 +21,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 export default function CreateProduct(props) {
     const { data, setCreateProduct, editing = false, setEditing = () => {}, setDataSelected} = props;
     const { errors, stores, categories, flash } = usePage();
+    const [successMessageCount, setSuccessMessageCount] = useState(0);
     console.log('errors =>', errors);
     console.log('flash =>', flash);
     const [productData, setProductData] = useState({
@@ -46,6 +49,10 @@ export default function CreateProduct(props) {
             setEditing(false);
             setCreateProduct(false);
             setDataSelected(false);
+            if(successMessageCount === 0) {
+                // toast(flash.success);
+                setSuccessMessageCount(1);
+            }
         }
     }, [flash]);
 
