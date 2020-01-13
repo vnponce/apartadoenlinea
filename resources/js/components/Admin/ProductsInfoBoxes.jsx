@@ -4,9 +4,10 @@ import CreateProduct from "./ProductsInfoBoxes/CreateProduct";
 import {create} from "filepond";
 
 export default function InfoBoxes(props) {
-    const { data, editProduct = false, createProduct = false, setCreateProduct } = props;
-    const [isEditing, setIsEditing] = useState(false);
+    const { data, createProduct = false, setCreateProduct, editing, setEditing } = props;
+    // const [isEditing, setIsEditing] = useState(false);
     console.log('ProductInfoboxes data =>', data);
+    console.log('ProductInfoboxes editing =>', editing);
     console.log('ProductInfoboxes createProduct =>', createProduct);
     useEffect(() => {
        console.log('mounting');
@@ -19,8 +20,8 @@ export default function InfoBoxes(props) {
                 <div
                     className="m-2 md:mx-6 md:my-3">
                     {createProduct && !data && <CreateProduct setCreateProduct={setCreateProduct}/>}
-                    {isEditing && <CreateProduct data={data} />}
-                    {data && !isEditing && (
+                    {editing && <CreateProduct data={data} editing={editing} setEditing={setEditing}/>}
+                    {data && !editing && (
                         <>
                             <div className="flex justify-center">
                                 {data.image_path && <img alt={data.image_path} className="w-64 h-64 rounded mr-4" src={data.image_path}/>}
@@ -64,7 +65,7 @@ export default function InfoBoxes(props) {
                             <div className="flex flex-row">
                                 <button
                                     className="inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
-                                    onClick={() => setIsEditing(true)}>Editar</button>
+                                    onClick={() => setEditing(true)}>Editar</button>
                             </div>
                             </>
                     )}

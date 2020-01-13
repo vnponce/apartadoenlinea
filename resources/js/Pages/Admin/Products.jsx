@@ -15,6 +15,7 @@ function Products(props) {
     console.log('products =>', products);
     const [dataSelected, setDataSelected] = useState(null);
     const [createProduct, setCreateProduct] = useState(null);
+    const [editing, setEditing] = useState(false);
     const updateStatus = id => evt => {
         console.log('id =>', id);
         Inertia.put( `/products/${id}`, {
@@ -26,6 +27,7 @@ function Products(props) {
         console.log('crear product');
         setCreateProduct(true);
         setDataSelected(false);
+        setEditing(false);
     };
 
     const columns = React.useMemo(
@@ -80,7 +82,7 @@ function Products(props) {
 
     return (
         <Admin title="Panel">
-            <ProductsInfoBoxes data={dataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct}/>
+            <ProductsInfoBoxes data={dataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
             {/*Graph Content */}
             <div id="main-content" className="w-full flex-1">
 

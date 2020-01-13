@@ -34583,80 +34583,80 @@ var map = {
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
-		3,
 		5,
-		4,
+		7,
+		17,
 		8,
 		20
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
-		3,
 		5,
-		4,
+		7,
+		17,
 		8,
 		20
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
-		1,
 		3,
 		5,
-		6,
-		9,
+		7,
 		23,
-		4,
+		26,
+		10,
+		17,
 		8,
 		25
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
-		1,
 		3,
 		5,
-		6,
-		9,
+		7,
 		23,
-		4,
+		26,
+		10,
+		17,
 		8,
 		25
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
-		1,
 		3,
 		5,
-		6,
-		9,
-		4,
-		26
+		7,
+		23,
+		26,
+		17,
+		27
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
-		1,
 		3,
 		5,
-		6,
-		9,
-		4,
-		26
+		7,
+		23,
+		26,
+		17,
+		27
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		1,
+		3,
 		12,
 		15
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		1,
+		3,
 		12,
 		15
 	],
@@ -34671,40 +34671,40 @@ var map = {
 	"./Home": [
 		"./resources/js/Pages/Home.js",
 		0,
-		1,
-		23,
+		3,
+		10,
 		12,
 		16
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
-		1,
-		23,
+		3,
+		10,
 		12,
 		16
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		1,
+		3,
 		12,
 		18
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		1,
+		3,
 		12,
 		18
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		1,
 		3,
-		6,
-		10,
+		5,
+		23,
+		9,
 		2,
 		12,
 		24
@@ -34712,10 +34712,10 @@ var map = {
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		1,
 		3,
-		6,
-		10,
+		5,
+		23,
+		9,
 		2,
 		12,
 		24
@@ -34723,7 +34723,7 @@ var map = {
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		1,
+		3,
 		11,
 		12,
 		22
@@ -34731,7 +34731,7 @@ var map = {
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		1,
+		3,
 		11,
 		12,
 		22
@@ -34739,34 +34739,34 @@ var map = {
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		1,
 		3,
-		10,
+		5,
+		9,
 		12,
 		13
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		1,
 		3,
-		10,
+		5,
+		9,
 		12,
 		13
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
-		1,
 		3,
+		5,
 		12,
 		19
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
-		1,
 		3,
+		5,
 		12,
 		19
 	]

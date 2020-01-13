@@ -17,7 +17,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 
 export default function CreateProduct(props) {
-    const { data, setCreateProduct } = props;
+    const { data, setCreateProduct, editing = false, setEditing = () => {}} = props;
     const { errors, stores, categories, success_message } = usePage();
     console.log('errors =>', errors);
     const [productData, setProductData] = useState({
@@ -26,7 +26,7 @@ export default function CreateProduct(props) {
         category_id: categories[0].id,
     });
     const [storeSelected, setStoreSelected] = useState(false);
-    const [editing, setEditing] = useState(false);
+    // const [editing, setEditing] = useState(false);
     const [avatar, setAvatar] = useState(null);
     const onChange = e => {
         setProductData({

@@ -57,6 +57,11 @@ function Products(props) {
       createProduct = _useState4[0],
       setCreateProduct = _useState4[1];
 
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      editing = _useState6[0],
+      setEditing = _useState6[1];
+
   var updateStatus = function updateStatus(id) {
     return function (evt) {
       console.log('id =>', id);
@@ -70,6 +75,7 @@ function Products(props) {
     console.log('crear product');
     setCreateProduct(true);
     setDataSelected(false);
+    setEditing(false);
   };
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
@@ -126,7 +132,9 @@ function Products(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_8__["default"], {
     data: dataSelected,
     createProduct: createProduct,
-    setCreateProduct: setCreateProduct
+    setCreateProduct: setCreateProduct,
+    editing: editing,
+    setEditing: setEditing
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "main-content",
     className: "w-full flex-1"
@@ -190,32 +198,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductsInfoBoxes/CreateProduct */ "./resources/js/components/Admin/ProductsInfoBoxes/CreateProduct.jsx");
 /* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! filepond */ "./node_modules/filepond/dist/filepond.js");
 /* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(filepond__WEBPACK_IMPORTED_MODULE_3__);
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
 
 function InfoBoxes(props) {
   var data = props.data,
-      _props$editProduct = props.editProduct,
-      editProduct = _props$editProduct === void 0 ? false : _props$editProduct,
       _props$createProduct = props.createProduct,
       createProduct = _props$createProduct === void 0 ? false : _props$createProduct,
-      setCreateProduct = props.setCreateProduct;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      isEditing = _useState2[0],
-      setIsEditing = _useState2[1];
+      setCreateProduct = props.setCreateProduct,
+      editing = props.editing,
+      setEditing = props.setEditing; // const [isEditing, setIsEditing] = useState(false);
 
   console.log('ProductInfoboxes data =>', data);
+  console.log('ProductInfoboxes editing =>', editing);
   console.log('ProductInfoboxes createProduct =>', createProduct);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     console.log('mounting');
@@ -229,9 +225,11 @@ function InfoBoxes(props) {
     className: "m-2 md:mx-6 md:my-3"
   }, createProduct && !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
     setCreateProduct: setCreateProduct
-  }), isEditing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    data: data
-  }), data && !isEditing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: data,
+    editing: editing,
+    setEditing: setEditing
+  }), data && !editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex justify-center"
   }, data.image_path && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     alt: data.image_path,
@@ -286,7 +284,7 @@ function InfoBoxes(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: function onClick() {
-      return setIsEditing(true);
+      return setEditing(true);
     }
   }, "Editar"))))), !(data || createProduct) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
@@ -374,7 +372,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 Object(react_filepond__WEBPACK_IMPORTED_MODULE_4__["registerPlugin"])(filepond_plugin_image_exif_orientation__WEBPACK_IMPORTED_MODULE_6___default.a, filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_7___default.a);
 function CreateProduct(props) {
   var data = props.data,
-      setCreateProduct = props.setCreateProduct;
+      setCreateProduct = props.setCreateProduct,
+      _props$editing = props.editing,
+      editing = _props$editing === void 0 ? false : _props$editing,
+      _props$setEditing = props.setEditing,
+      setEditing = _props$setEditing === void 0 ? function () {} : _props$setEditing;
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
       errors = _usePage.errors,
@@ -396,17 +398,13 @@ function CreateProduct(props) {
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
       storeSelected = _useState4[0],
-      setStoreSelected = _useState4[1];
+      setStoreSelected = _useState4[1]; // const [editing, setEditing] = useState(false);
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState6 = _slicedToArray(_useState5, 2),
-      editing = _useState6[0],
-      setEditing = _useState6[1];
-
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState8 = _slicedToArray(_useState7, 2),
-      avatar = _useState8[0],
-      setAvatar = _useState8[1];
+      avatar = _useState6[0],
+      setAvatar = _useState6[1];
 
   var onChange = function onChange(e) {
     setProductData(_objectSpread({}, productData, _defineProperty({}, e.target.name, e.target.value)));
