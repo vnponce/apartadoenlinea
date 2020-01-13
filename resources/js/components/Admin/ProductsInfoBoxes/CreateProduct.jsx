@@ -21,6 +21,10 @@ export default function CreateProduct(props) {
     const { errors, stores, categories, success_message } = usePage();
     console.log('errors =>', errors);
     const [productData, setProductData] = useState({
+        name: '',
+        description: '',
+        ingredients: '',
+        price: '',
         favorite: 0,
         available: 0,
         category_id: categories[0].id,
@@ -56,7 +60,21 @@ export default function CreateProduct(props) {
         const [port, path] = url.split(hostname);
 
         Inertia.visit(path);
-    }
+    };
+    const getFormData = () => {
+        console.log('[getFormData] productData =>', productData);
+        const formData = new FormData();
+        formData.append("file", avatar, avatar.name);
+        formData.set("name", productData.name || '');
+        formData.set("description", productData.description || '');
+        formData.set("ingredients", productData.ingredients || '');
+        formData.set("price", productData.price || '');
+        formData.set("category_id", productData.category_id || '');
+        formData.set("available", productData.available);
+        formData.set("favorite", productData.favorite);
+        console.log('[getFormData] formData =>', formData);
+        return formData;
+    };
     const createProduct = () => {
         console.log('createProduct isEditing =>', editing);
         if(editing){
@@ -65,47 +83,32 @@ export default function CreateProduct(props) {
             // console.log('editing storeSelected =>', storeSelected);
             if(avatar) {
                 console.log('Exist avatar =>', avatar);
-                const formData = new FormData();
-                formData.append("file", avatar, avatar.name);
-                formData.set("name", productData.name || '');
-                formData.set("description", productData.description || '');
-                formData.set("ingredients", productData.ingredients || '');
-                formData.set("price", productData.price || '');
-                formData.set("category_id", productData.category_id || '');
-                formData.set("available", productData.available);
-                formData.set("favorite", productData.favorite);
-                console.log('editing else con post');
-                Inertia.put(`products/${productData.id}`, formData).then(response => {
-                    console.log(`response from products/${productData.id}`, response);
-                    setEditing(false);
-                }).then(response => {
-                    console.log('refreshing page');
-                    // refreshPage()
-                });
+                const updateFormData = getFormData();
+                /*
+                const updateFormData = new FormData();
+                console.log('before updateFormData =>', updateFormData);
+                updateFormData.append("file", avatar, avatar.name);
+                updateFormData.set("name", productData.name || '');
+                updateFormData.set("description", productData.description || '');
+                updateFormData.set("ingredients", productData.ingredients || '');
+                updateFormData.set("price", productData.price || '');
+                updateFormData.set("category_id", productData.category_id || '');
+                updateFormData.set("available", productData.available);
+                updateFormData.set("favorite", productData.favorite);
+
+                 */
+                console.log('editing else con put');
+                console.log('editing else con formData =>', updateFormData);
+                Inertia.put(`products/${productData.id}`, {...updateFormData});
             } else {
                 console.log('editing sin imagen');
                 Inertia.put(`products/${productData.id}`, {
                     ...productData,
                     // store: storeSelected,
-                }).then(response => {
-                    console.log('response =>', response);
-                    // refreshPage();
-                    if(Object.keys(errors).length === 0) {
-                        console.log('Errors length === 0', errors);
-                        setEditing(false);
-                    }
                 });
             }
         } else {
-            const formData = new FormData();
-            formData.append("file", avatar, avatar.name);
-            formData.set("name", productData.name || '');
-            formData.set("description", productData.description || '');
-            formData.set("ingredients", productData.ingredients || '');
-            formData.set("price", productData.price || '');
-            formData.set("category_id", productData.category_id || '');
-            formData.set("available", productData.available);
-            formData.set("favorite", productData.favorite);
+            const formData = getFormData();
             console.log('editing else con post');
             Inertia.post("products", formData).then(response => {
                 console.log('response =>', response);

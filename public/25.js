@@ -387,6 +387,10 @@ function CreateProduct(props) {
   console.log('errors =>', errors);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: '',
+    description: '',
+    ingredients: '',
+    price: '',
     favorite: 0,
     available: 0,
     category_id: categories[0].id
@@ -443,6 +447,21 @@ function CreateProduct(props) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(path);
   };
 
+  var getFormData = function getFormData() {
+    console.log('[getFormData] productData =>', productData);
+    var formData = new FormData();
+    formData.append("file", avatar, avatar.name);
+    formData.set("name", productData.name || '');
+    formData.set("description", productData.description || '');
+    formData.set("ingredients", productData.ingredients || '');
+    formData.set("price", productData.price || '');
+    formData.set("category_id", productData.category_id || '');
+    formData.set("available", productData.available);
+    formData.set("favorite", productData.favorite);
+    console.log('[getFormData] formData =>', formData);
+    return formData;
+  };
+
   var createProduct = function createProduct() {
     console.log('createProduct isEditing =>', editing);
 
@@ -452,54 +471,31 @@ function CreateProduct(props) {
 
       if (avatar) {
         console.log('Exist avatar =>', avatar);
-        var formData = new FormData();
-        formData.append("file", avatar, avatar.name);
-        formData.set("name", productData.name || '');
-        formData.set("description", productData.description || '');
-        formData.set("ingredients", productData.ingredients || '');
-        formData.set("price", productData.price || '');
-        formData.set("category_id", productData.category_id || '');
-        formData.set("available", productData.available);
-        formData.set("favorite", productData.favorite);
-        console.log('editing else con post');
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), formData).then(function (response) {
-          console.log("response from products/".concat(productData.id), response);
-          setEditing(false);
-        }).then(function (response) {
-          console.log('refreshing page'); // refreshPage()
-        });
+        var updateFormData = getFormData();
+        /*
+        const updateFormData = new FormData();
+        console.log('before updateFormData =>', updateFormData);
+        updateFormData.append("file", avatar, avatar.name);
+        updateFormData.set("name", productData.name || '');
+        updateFormData.set("description", productData.description || '');
+        updateFormData.set("ingredients", productData.ingredients || '');
+        updateFormData.set("price", productData.price || '');
+        updateFormData.set("category_id", productData.category_id || '');
+        updateFormData.set("available", productData.available);
+        updateFormData.set("favorite", productData.favorite);
+          */
+
+        console.log('editing else con put');
+        console.log('editing else con formData =>', updateFormData);
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, updateFormData));
       } else {
         console.log('editing sin imagen');
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, productData)).then(function (response) {
-          console.log('response =>', response); // refreshPage();
-
-          if (Object.keys(errors).length === 0) {
-            console.log('Errors length === 0', errors);
-            setEditing(false);
-          }
-        });
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, productData));
       }
     } else {
-      var _formData = new FormData();
-
-      _formData.append("file", avatar, avatar.name);
-
-      _formData.set("name", productData.name || '');
-
-      _formData.set("description", productData.description || '');
-
-      _formData.set("ingredients", productData.ingredients || '');
-
-      _formData.set("price", productData.price || '');
-
-      _formData.set("category_id", productData.category_id || '');
-
-      _formData.set("available", productData.available);
-
-      _formData.set("favorite", productData.favorite);
-
+      var formData = getFormData();
       console.log('editing else con post');
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", _formData).then(function (response) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", formData).then(function (response) {
         console.log('response =>', response);
         setCreateProduct(false);
       }).then(function (response) {
