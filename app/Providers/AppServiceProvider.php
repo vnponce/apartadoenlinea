@@ -31,6 +31,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Inertia::version(function () {
+            return md5_file(public_path('mix-manifest.json'));
+        });
         // Multiple values
         Inertia::share([
             // Synchronously
@@ -51,9 +54,13 @@ class AppServiceProvider extends ServiceProvider
                 $categories = Category::all();
                 return $categories;
             },
-            'flash' => [
-                'message' => session()->get('message'),
-            ],
+            'flash' => function () {
+                return [
+                    'success' => Session::get('success'),
+                    'success_message' => Session::get('success_message'),
+                    'message' => Session::get('message'),
+                ];
+            },
             'cart' => function () {
                 return [
                     'content' => Cart::content(),

@@ -100,7 +100,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        dd($request->toArray(), $product->toArray());
+//        dd($request->toArray(), $product->toArray());
         $request->validate([
             'name' => 'required|string|max:255',
             'file' => 'image',
@@ -112,19 +112,23 @@ class ProductController extends Controller
             'price' => 'required|regex:/^\d+(\.\d{1,2})?$/'
         ]);
 
-        $only = ['name', 'ingredients', 'description', 'category_id', 'available', 'favorite', 'price'];
+        $only = collect(['name', 'ingredients', 'description', 'category_id', 'available', 'favorite', 'price']);
 
 //        dd($request->toArray());
         if($request->hasFile('file')) {
-            dd($request->file);
+//            dd($request->file);
             $image = $request->file('file')->store('public/products');
-            $request->merge(['image' => $image]);
+            $available = ($request->available === 'true') ? true : false;
+            $favorite = ($request->favorite === 'true') ? true : false;
+            $request->merge(['image' => $image, 'available' => $available, 'favorite' => $favorite]);
             $only->push('image');
         }
-        $product->update($request->only($only));
-        // $users = User::all();
-        // return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'Usuario actualizado correctamente!');
-        return back()->with('success_message', 'Producto actualizado correctamente!');
+//        dd($request->toArray(), $only->toArray());
+        $product->update($request->only($only->toArray()));
+//        dd($product);
+        $products = Product::where('favorite', true)->where('available', true)->paginate();
+//         return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'Usuario actualizado correctamente!');
+         return redirect()->back()->with('success', 'Producto actualizado correctamente!');
 
     }
 

@@ -382,9 +382,10 @@ function CreateProduct(props) {
       errors = _usePage.errors,
       stores = _usePage.stores,
       categories = _usePage.categories,
-      success_message = _usePage.success_message;
+      flash = _usePage.flash;
 
   console.log('errors =>', errors);
+  console.log('flash =>', flash);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     name: '',
@@ -414,6 +415,13 @@ function CreateProduct(props) {
     setProductData(_objectSpread({}, productData, _defineProperty({}, e.target.name, e.target.value)));
   };
 
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('flash =>', flash);
+
+    if (flash.success) {
+      setEditing(false);
+    }
+  }, [flash]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     console.log('mounting Create Product data =>', data);
 
@@ -458,7 +466,32 @@ function CreateProduct(props) {
     formData.set("category_id", productData.category_id || '');
     formData.set("available", productData.available);
     formData.set("favorite", productData.favorite);
-    console.log('[getFormData] formData =>', formData);
+    console.log('[getFormData] formData =>', formData); // Display the key/value pairs
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = formData.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var pair = _step.value;
+        console.log('[getFormData] =>' + pair[0] + ', ' + pair[1]);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
     return formData;
   };
 
@@ -487,7 +520,7 @@ function CreateProduct(props) {
 
         console.log('editing else con put');
         console.log('editing else con formData =>', updateFormData);
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, updateFormData));
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products/".concat(productData.id), updateFormData);
       } else {
         console.log('editing sin imagen');
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, productData));

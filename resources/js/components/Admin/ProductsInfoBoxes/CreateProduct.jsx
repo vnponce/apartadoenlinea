@@ -18,8 +18,9 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 export default function CreateProduct(props) {
     const { data, setCreateProduct, editing = false, setEditing = () => {}} = props;
-    const { errors, stores, categories, success_message } = usePage();
+    const { errors, stores, categories, flash } = usePage();
     console.log('errors =>', errors);
+    console.log('flash =>', flash);
     const [productData, setProductData] = useState({
         name: '',
         description: '',
@@ -38,6 +39,13 @@ export default function CreateProduct(props) {
             [e.target.name]: e.target.value,
         })
     };
+
+    useEffect(() => {
+        console.log('flash =>', flash);
+        if(flash.success){
+            setEditing(false);
+        }
+    }, [flash]);
 
     useEffect(() => {
         console.log('mounting Create Product data =>', data);
@@ -73,6 +81,10 @@ export default function CreateProduct(props) {
         formData.set("available", productData.available);
         formData.set("favorite", productData.favorite);
         console.log('[getFormData] formData =>', formData);
+        // Display the key/value pairs
+        for (var pair of formData.entries()) {
+            console.log('[getFormData] =>' + pair[0]+ ', ' + pair[1]);
+        }
         return formData;
     };
     const createProduct = () => {
@@ -99,7 +111,7 @@ export default function CreateProduct(props) {
                  */
                 console.log('editing else con put');
                 console.log('editing else con formData =>', updateFormData);
-                Inertia.put(`products/${productData.id}`, {...updateFormData});
+                Inertia.post(`products/${productData.id}`, updateFormData);
             } else {
                 console.log('editing sin imagen');
                 Inertia.put(`products/${productData.id}`, {

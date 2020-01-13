@@ -99,6 +99,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('/', 'PanelController@products')->name('panel.products');
         Route::post('/', 'ProductController@store')->name('product.store');
         Route::put('/{product}', 'ProductController@update')->name('product.update');
+        Route::post('/{product}', 'ProductController@update')->name('product.update');
     });
 
 });

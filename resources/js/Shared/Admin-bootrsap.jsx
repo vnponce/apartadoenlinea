@@ -9,8 +9,10 @@ export default function Layout({ title, children }) {
     const { flash } = usePage();
     useEffect(() => {
         document.title = title;
-        console.log('flash =>', flash);
     }, [title]);
+    useEffect(() => {
+        console.log('flash =>', flash);
+    }, []);
 
     return (
         <>
