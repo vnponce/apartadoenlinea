@@ -5,6 +5,9 @@ import UserDetails from "./InfoBoxes/UserDetails";
 import StoreDetails from "./InfoBoxes/StoreDetails";
 import ProductsList from "./InfoBoxes/ProductsList";
 import {Inertia} from "@inertiajs/inertia";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+
 
 
 export default function InfoBoxes(props) {
@@ -62,8 +65,26 @@ export default function InfoBoxes(props) {
         console.log(`Vamos a pasar de ${data.status.original} a ${nextStatus.original}`);
         console.log(`nextStatus => ${nextStatus}`);
         if(nextStatus.allowed) {
-            Inertia.put( `/admin/orders/${data.id}`, {
-                status: nextStatus.original,
+            Swal.fire({
+                title: '¿Seguro?',
+                text: `Vamos a pasar la orden de ${data.status.original} a ${nextStatus.original}`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí cambiar estatus',
+                cancelButtonText: 'Cancelar',
+            }).then((result) => {
+                if (result.value) {
+                    Inertia.put( `/admin/orders/${data.id}`, {
+                        status: nextStatus.original,
+                    });
+                //     Swal.fire(
+                //         'Deleted!',
+                //         'Your file has been deleted.',
+                //         'success'
+                //     )
+                }
             });
         }
     };
