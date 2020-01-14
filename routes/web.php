@@ -109,4 +109,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::put('/{order}', 'OrderController@update');
     });
 
+    Route::group(['prefix' => 'stores'], function() {
+        Route::get('/', 'StoreController@index');
+    });
+
 });

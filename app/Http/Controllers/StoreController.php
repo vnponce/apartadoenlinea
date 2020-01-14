@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Store;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class StoreController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        $stores = Store::all();
+        return Inertia::render('Admin/Stores', compact('stores'));
     }
 
     /**

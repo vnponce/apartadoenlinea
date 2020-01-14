@@ -34597,6 +34597,28 @@ var map = {
 		4,
 		14
 	],
+	"./Admin/Stores": [
+		"./resources/js/Pages/Admin/Stores.jsx",
+		0,
+		1,
+		3,
+		5,
+		6,
+		4,
+		17,
+		23
+	],
+	"./Admin/Stores.jsx": [
+		"./resources/js/Pages/Admin/Stores.jsx",
+		0,
+		1,
+		3,
+		5,
+		6,
+		4,
+		17,
+		23
+	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
@@ -34605,7 +34627,8 @@ var map = {
 		5,
 		6,
 		4,
-		17
+		17,
+		25
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
@@ -34615,7 +34638,8 @@ var map = {
 		5,
 		6,
 		4,
-		17
+		17,
+		25
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
