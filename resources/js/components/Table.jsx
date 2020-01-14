@@ -44,7 +44,7 @@ function Table({ columns, data, onClick, selected }) {
                             className={cx}
                             {...row.getRowProps()}>
                             {row.cells.map(cell => {
-                                return <td className="py-4 px-6 border-b border-grey-light" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                return <td className="py-4 px-2 border-b border-grey-light" {...cell.getCellProps()}>{cell.render('Cell')}</td>
                             })}
                         </tr>
                     )}

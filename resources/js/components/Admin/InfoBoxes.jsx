@@ -119,7 +119,7 @@ export default function InfoBoxes(props) {
                 <div className="w-full text-center text-regularText text-2xl">${data.total}</div>
                 <div
                     className="m-2 md:mx-6 md:my-6">
-                    {data.employee.name} levantó este pedido.
+                    <span className="text-lg">{data.employee.name}</span> levantó este pedido.
                 </div>
                 <div className="flex flex-row">
                     <button

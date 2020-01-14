@@ -683,7 +683,7 @@ function Table(_ref) {
       className: cx
     }, row.getRowProps()), row.cells.map(function (cell) {
       return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("td", _extends({
-        className: "py-4 px-6 border-b border-grey-light"
+        className: "py-4 px-2 border-b border-grey-light"
       }, cell.getCellProps()), cell.render('Cell'));
     }));
   })));
