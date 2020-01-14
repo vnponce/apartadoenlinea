@@ -328,7 +328,7 @@ function InfoBoxes(props) {
     if (nextStatus.allowed) {
       sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
         title: '¿Seguro?',
-        text: "Vamos a pasar la orden de ".concat(data.status.original, " a ").concat(nextStatus.original),
+        text: "Vamos a pasar la orden de ".concat(data.status.step, " a ").concat(nextStatus.step),
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

@@ -162,6 +162,9 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $order->status = $request->status;
+        if($request->status === 'delivered') {
+            $order->payed = true;
+        }
         $order->save();
         return redirect('/admin')->with('order', $order);
     }
