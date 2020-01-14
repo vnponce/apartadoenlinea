@@ -51,6 +51,13 @@ function Dashboard(props) {
                     <span className="">{data.cell.value.step}</span>
                 ),
             },
+            {
+                Header: 'Pagado',
+                accessor: 'payed',
+                Cell: data => (
+                    <span className="">{data.cell.value.label}</span>
+                ),
+            },
         ],
         []
     );

@@ -89,6 +89,14 @@ function Dashboard(props) {
           className: ""
         }, data.cell.value.step);
       }
+    }, {
+      Header: 'Pagado',
+      accessor: 'payed',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.label);
+      }
     }];
   }, []);
   {
