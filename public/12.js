@@ -34,7 +34,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Dashboard(props) {
   var orders = props.orders,
-      success_message = props.success_message;
+      success_message = props.success_message,
+      order = props.order;
+  console.log('orders =>', orders);
+  console.log('order =>', order);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -82,51 +85,101 @@ function Dashboard(props) {
       Header: 'Estatus',
       accessor: 'status',
       Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "inline-block relative w-full"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-          className: "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
-          onChange: updateStatus(data.cell.row.original.id)
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "opened",
-          selected: data.cell.value.original !== 'opened'
-        }, "Visto"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "placed",
-          selected: data.cell.value.original === 'placed'
-        }, "En ruta/sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "delivered",
-          selected: data.cell.value.original === 'delivered'
-        }, "Entregada"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "-",
-          selected: data.cell.value.original === '-'
-        }, "Pendiente")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-          className: "fill-current h-4 w-4",
-          xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "0 0 20 20"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-          d: "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-        })))));
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.step);
       }
     }];
   }, []);
+  {
+    /*<>*/
+  }
+  {
+    /*    /!* start select *!/*/
+  }
+  {
+    /*    <div className="inline-block relative w-full">*/
+  }
+  {
+    /*        <select*/
+  }
+  {
+    /*            className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"*/
+  }
+  {
+    /*            onChange={updateStatus(data.cell.row.original.id)}*/
+  }
+  {
+    /*        >*/
+  }
+  {
+    /*            <option value="opened" selected={data.cell.value.original !== 'opened'}>Visto</option>*/
+  }
+  {
+    /*            <option value="placed" selected={data.cell.value.original === 'placed'}>En ruta/sucursal</option>*/
+  }
+  {
+    /*            <option value="delivered" selected={data.cell.value.original === 'delivered'}>Entregada</option>*/
+  }
+  {
+    /*            <option value="-" selected={data.cell.value.original === '-'}>Pendiente</option>*/
+  }
+  {
+    /*        </select>*/
+  }
+  {
+    /*        <div*/
+  }
+  {
+    /*            className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">*/
+  }
+  {
+    /*            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">*/
+  }
+  {
+    /*                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>*/
+  }
+  {
+    /*            </svg>*/
+  }
+  {
+    /*        </div>*/
+  }
+  {
+    /*    </div>*/
+  }
+  {
+    /*    /!* end select *!/*/
+  }
+  {
+    /*</>*/
+  }
 
   var openedAndShow = function openedAndShow(index) {
     var data = orders[index];
     setDataSelected(data);
+    console.log('openedAndShow =>', data);
 
     if (data.status.original !== 'created') {
       return false;
     }
 
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("pedido/".concat(data.id), {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/admin/orders/".concat(data.id), {
       status: 'opened'
     });
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// openedAndShow(0);
-  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // openedAndShow(0);
+    if (orders && dataSelected) {
+      console.log('component update orders =>', orders);
+      console.log('component update dataSelected =>', dataSelected);
+      var orderUpdated = orders.find(function (order) {
+        return order.id === dataSelected.id;
+      });
+      setDataSelected(orderUpdated);
+    }
+  }, [orders]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -178,6 +231,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoBoxes_ProductsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./InfoBoxes/ProductsList */ "./resources/js/components/Admin/InfoBoxes/ProductsList.jsx");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -186,8 +247,85 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function InfoBoxes(props) {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      user = _usePage.auth.user;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      nextStatus = _useState2[0],
+      setNextStatus = _useState2[1];
+
+  console.log('InfoBoxes user =>', user);
   var data = props.data;
   console.log('infoboxes data =>', data);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (data) {
+      var status = data.status;
+
+      switch (status.original) {
+        case 'created':
+        case 'opened':
+          setNextStatus({
+            original: 'journey',
+            step: 'En ruta',
+            allowed: user.isAdmin
+          });
+          break;
+
+        case 'journey':
+          setNextStatus({
+            original: 'placed',
+            step: 'En sucursal',
+            allowed: user.role === 'manager'
+          });
+          break;
+
+        case 'placed':
+          setNextStatus({
+            original: 'delivered',
+            step: 'Entregado',
+            allowed: user.role === 'manager'
+          });
+          break;
+
+        case 'delivered':
+          setNextStatus({
+            original: 'alredyDelivered',
+            step: 'Ya entregado',
+            allowed: false
+          });
+          break;
+
+        default:
+          setNextStatus({
+            original: 'default',
+            step: 'Default',
+            allowed: false
+          });
+          break;
+      }
+    }
+  }, [data]);
+
+  var updateToNextStatus = function updateToNextStatus() {
+    console.log("Vamos a pasar de ".concat(data.status.original, " a ").concat(nextStatus.original));
+    console.log("nextStatus => ".concat(nextStatus));
+
+    if (nextStatus.allowed) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
+        status: nextStatus.original
+      });
+    }
+  };
+
+  var allowedToModify = function allowedToModify() {
+    if (user.isGod) {
+      return true;
+    }
+
+    return nextStatus.allowed;
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full h-full lg:max-w-sm flex flex-wrap content-start"
@@ -209,7 +347,15 @@ function InfoBoxes(props) {
     className: "w-full text-center text-regularText text-2xl"
   }, "$", data.total), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-6"
-  }, data.employee.name, " levant\xF3 este pedido.")), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.employee.name, " levant\xF3 este pedido."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: allowedToModify() ? "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6" : "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6 cursor-not-allowed",
+    onClick: function onClick() {
+      return updateToNextStatus(data.status);
+    },
+    disabled: !allowedToModify()
+  }, nextStatus.step))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"

@@ -163,7 +163,7 @@ class OrderController extends Controller
     {
         $order->status = $request->status;
         $order->save();
-        return redirect('/admin');
+        return redirect('/admin')->with('order', $order);
     }
 
     /**

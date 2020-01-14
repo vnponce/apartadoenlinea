@@ -64,7 +64,6 @@ Route::get('pedido', function() {
 });
 Route::post('pedido/detalles', 'OrderController@setDetails');
 Route::post('pedido', 'OrderController@store');
-Route::put('pedido/{order}', 'OrderController@update');
 
 Route::get('charola', 'CartController@index');
 
@@ -105,6 +104,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::post('/', 'ProductController@store')->name('product.store');
         Route::put('/{product}', 'ProductController@update')->name('product.update');
         Route::post('/{product}', 'ProductController@update')->name('product.update');
+    });
+    Route::group(['prefix' => 'orders'], function() {
+        Route::put('/{order}', 'OrderController@update');
     });
 
 });

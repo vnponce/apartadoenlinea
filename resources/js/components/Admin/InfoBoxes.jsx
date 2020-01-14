@@ -1,5 +1,5 @@
-import React from 'react';
-import {InertiaLink} from "@inertiajs/inertia-react";
+import React, { useState, useEffect } from 'react';
+import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 import Admin from "../../Shared/Admin";
 import UserDetails from "./InfoBoxes/UserDetails";
 import StoreDetails from "./InfoBoxes/StoreDetails";
@@ -8,8 +8,73 @@ import {Inertia} from "@inertiajs/inertia";
 
 
 export default function InfoBoxes(props) {
+    const { auth: { user } } = usePage();
+    const [nextStatus, setNextStatus] = useState(false);
+    console.log('InfoBoxes user =>', user);
     const { data } = props;
     console.log('infoboxes data =>', data);
+
+    useEffect(() => {
+        if(data) {
+            const { status } = data;
+            switch (status.original) {
+                case 'created':
+                case 'opened':
+                    setNextStatus({
+                        original: 'journey',
+                        step: 'En ruta',
+                        allowed: user.isAdmin,
+                    });
+                    break;
+                case 'journey':
+                    setNextStatus({
+                        original: 'placed',
+                        step: 'En sucursal',
+                        allowed: user.role === 'manager',
+                    });
+                    break;
+                case 'placed':
+                    setNextStatus({
+                        original: 'delivered',
+                        step: 'Entregado',
+                        allowed: user.role === 'manager',
+                    });
+                    break;
+                case 'delivered':
+                    setNextStatus({
+                        original: 'alredyDelivered',
+                        step: 'Ya entregado',
+                        allowed: false,
+                    });
+                    break;
+                default:
+                    setNextStatus({
+                        original: 'default',
+                        step: 'Default',
+                        allowed: false,
+                    });
+                    break;
+            }
+        }
+    }, [data]);
+
+    const updateToNextStatus = () => {
+        console.log(`Vamos a pasar de ${data.status.original} a ${nextStatus.original}`);
+        console.log(`nextStatus => ${nextStatus}`);
+        if(nextStatus.allowed) {
+            Inertia.put( `/admin/orders/${data.id}`, {
+                status: nextStatus.original,
+            });
+        }
+    };
+
+    const allowedToModify = () => {
+      if(user.isGod) {
+          return true;
+      }
+      return nextStatus.allowed;
+    };
+
     return (
     <div id="dash-content"
          className="bg-gray-200 py-6 lg:py-0 w-full h-full lg:max-w-sm flex flex-wrap content-start">
@@ -34,6 +99,16 @@ export default function InfoBoxes(props) {
                 <div
                     className="m-2 md:mx-6 md:my-6">
                     {data.employee.name} levantó este pedido.
+                </div>
+                <div className="flex flex-row">
+                    <button
+                        className={allowedToModify() ?
+                            "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6" :
+                            "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6 cursor-not-allowed"
+                        }
+                        onClick={() => updateToNextStatus(data.status)}
+                        disabled={!allowedToModify()}
+                    >{nextStatus.step}</button>
                 </div>
             </div>
         )}
