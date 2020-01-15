@@ -34559,101 +34559,95 @@ if (false) {} else {
 var map = {
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		0,
+		33,
+		9,
 		3,
-		5,
 		19,
-		4,
-		12
+		29,
+		12,
+		0
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
-		0,
+		33,
+		9,
 		3,
-		5,
 		19,
-		4,
-		12
+		29,
+		12,
+		0
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
-		0,
-		1,
+		33,
+		9,
 		3,
 		5,
 		6,
-		8,
-		4,
-		14
+		12,
+		30
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
-		0,
-		1,
+		33,
+		9,
 		3,
 		5,
 		6,
-		8,
-		4,
-		14
+		12,
+		30
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
-		0,
-		1,
+		33,
+		9,
 		3,
 		5,
-		6,
+		12,
 		4,
-		17,
-		23
+		17
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
-		0,
-		1,
+		33,
+		9,
 		3,
 		5,
-		6,
+		12,
 		4,
-		17,
-		23
+		17
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
-		0,
-		1,
+		33,
+		9,
 		3,
 		5,
-		6,
+		12,
 		4,
-		17,
-		25
+		34
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
-		0,
-		1,
+		33,
+		9,
 		3,
 		5,
-		6,
+		12,
 		4,
-		17,
-		25
+		34
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
-		0,
-		1,
+		33,
 		2,
-		15
+		24
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
-		0,
-		1,
+		33,
 		2,
-		15
+		24
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34665,103 +34659,91 @@ var map = {
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
-		0,
-		1,
-		8,
+		33,
+		6,
 		2,
-		16
+		26
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
-		0,
-		1,
-		8,
+		33,
+		6,
 		2,
-		16
+		26
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
-		0,
-		1,
+		33,
 		2,
-		18
+		28
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
-		0,
-		1,
+		33,
 		2,
-		18
+		28
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
-		0,
-		1,
-		3,
-		7,
+		33,
 		9,
+		19,
+		7,
 		2,
-		11
+		27
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
-		0,
-		1,
-		3,
-		7,
+		33,
 		9,
+		19,
+		7,
 		2,
-		11
+		27
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
-		0,
-		1,
-		10,
+		33,
+		8,
 		2,
-		22
+		35
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
-		0,
-		1,
-		10,
+		33,
+		8,
 		2,
-		22
+		35
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
-		0,
-		1,
-		3,
+		33,
+		9,
 		7,
 		2,
-		13
+		10
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
-		0,
-		1,
-		3,
+		33,
+		9,
 		7,
 		2,
-		13
+		10
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		0,
-		1,
-		3,
+		33,
+		9,
 		2,
-		20
+		32
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
-		0,
-		1,
-		3,
+		33,
+		9,
 		2,
-		20
+		32
 	]
 };
 function webpackAsyncContext(req) {

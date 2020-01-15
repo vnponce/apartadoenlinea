@@ -4,11 +4,12 @@ import InfoBoxes from "../../components/Admin/InfoBoxes";
 import { useTable } from 'react-table';
 import {Inertia} from "@inertiajs/inertia";
 import Table from "../../components/Table";
+import SearchBar from "../../components/Admin/SearchBar";
 
 function Dashboard(props) {
-    const { orders, success_message, order } = props;
+    const { orders, success_message, order, stores, searchValues } = props;
     console.log('orders =>', orders);
-    console.log('order =>', order);
+    console.log('[Dashboard] searchValues =>', searchValues);
     const [dataSelected, setDataSelected] = useState(null);
     const updateStatus = id => evt => {
         console.log('id =>', id);
@@ -121,6 +122,7 @@ function Dashboard(props) {
 
                             {/*Table orders*/}
                             <div className="border-b p-3">
+                                <SearchBar stores={stores} searchValues={searchValues}/>
                                 <h5 className="font-bold text-black">Pedidos</h5>
                                 <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
                             </div>

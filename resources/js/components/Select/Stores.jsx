@@ -26,7 +26,7 @@ const ShopOptionComponent = props => {
         isSelected,
     } = props;
 
-    console.log('ShopOptionComponent props =>', props);
+    // console.log('ShopOptionComponent props =>', props);
     return (
         <components.Option {...props}>
             <span className="shop-option-name">{children}</span>

@@ -30,7 +30,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $appends = ['avatar_path', 'isGod', 'isAdmin'];
+    protected $appends = ['avatar_path', 'isGod', 'isAdmin', 'isManager'];
 
     protected $with = ['stores'];
 
@@ -51,6 +51,11 @@ class User extends Authenticatable
     public function getIsGodAttribute()
     {
         return $this->role === 'god';
+    }
+
+    public function getIsManagerAttribute()
+    {
+        return $this->role === 'manager';
     }
 
     public function getAvatarPathAttribute()
