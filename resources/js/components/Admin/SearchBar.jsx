@@ -5,6 +5,7 @@ import DateSelector from "../../components/DateSelector";
 import {isInclusivelyAfterDay, SingleDatePicker} from "react-dates";
 import styled from "styled-components";
 import {Inertia} from "@inertiajs/inertia";
+import {usePage} from "@inertiajs/inertia-react";
 
 const DateWrapper = styled.div`
     .DateInput_input {
@@ -16,6 +17,7 @@ const DateWrapper = styled.div`
 `;
 
 export default function SearchBar(props) {
+    const { auth: { user } } = usePage();
     const { stores, searchValues } = props;
     console.log('[SearchBar] searchValues =>', searchValues);
     const [id, setId] = useState(searchValues.id || '');
@@ -56,42 +58,44 @@ export default function SearchBar(props) {
                     value={id}
                 />
             </div>
-            <div className="inline-block mx-2 w-1/4">
+            { user.isAdmin && (
+                <div className="inline-block mx-2 w-1/4">
                 {console.log('[SearchBar] storeSelected =>', store)}
                 {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
                 <Stores setStore={setStore} stores={stores} />
             </div>
+            )}
             <div className="inline-block mx-2 w-1/4">
-                {/* Día */}
-                {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
-                <div className="font-light text-gray-600 mt-4 lg:text-justify">
-                    <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Día</label>
+                    {/* Día */}
+                    {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
+                    <div className="font-light text-gray-600 mt-4 lg:text-justify">
+                        <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Día</label>
 
-                    <DateWrapper className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full">
-                        <SingleDatePicker
-                            id="date"
-                            name="date"
-                            date={date}
-                            onDateChange={date => setDate(date)}
-                            focused={focus}
-                            onFocusChange={props => setFocus(props.focused)}
-                            // disabled={!store}
-                            className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
-                            displayFormat="D MMMM YYYY"
-                            numberOfMonths={1}
-                            placeholder="Elige una fecha"
-                            isOutsideRange={() => false}
-                            phrases={{
-                                closeDatePicker:
-                                    'Cerrar',
-                                clearDates: 'Limpiar',
-                            }}
-                            showClearDate
-                            block
-                        />
-                    </DateWrapper>
+                        <DateWrapper className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full">
+                            <SingleDatePicker
+                                id="date"
+                                name="date"
+                                date={date}
+                                onDateChange={date => setDate(date)}
+                                focused={focus}
+                                onFocusChange={props => setFocus(props.focused)}
+                                // disabled={!store}
+                                className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+                                displayFormat="D MMMM YYYY"
+                                numberOfMonths={1}
+                                placeholder="Elige una fecha"
+                                isOutsideRange={() => false}
+                                phrases={{
+                                    closeDatePicker:
+                                        'Cerrar',
+                                    clearDates: 'Limpiar',
+                                }}
+                                showClearDate
+                                block
+                            />
+                        </DateWrapper>
+                    </div>
                 </div>
-            </div>
             <div className="flex items-end">
                 <button
                     className="h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"

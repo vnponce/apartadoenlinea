@@ -335,7 +335,7 @@ function InfoBoxes(props) {
     if (nextStatus.allowed) {
       sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
         title: '¿Seguro?',
-        text: "Vamos a pasar la orden de ".concat(data.status.original, " a ").concat(nextStatus.original),
+        text: "Vamos a pasar la orden de ".concat(data.status.step, " a ").concat(nextStatus.step),
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -560,6 +560,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -587,8 +589,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject());
 function SearchBar(props) {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__["usePage"])(),
+      user = _usePage.auth.user;
+
   var stores = props.stores,
       searchValues = props.searchValues;
   console.log('[SearchBar] searchValues =>', searchValues);
@@ -649,7 +655,7 @@ function SearchBar(props) {
     error: [],
     onKeyDown: onChange,
     value: id
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), user.isAdmin && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/4"
   }, console.log('[SearchBar] storeSelected =>', store), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Stores__WEBPACK_IMPORTED_MODULE_2__["default"], {
     setStore: setStore,

@@ -67,7 +67,7 @@ export default function InfoBoxes(props) {
         if(nextStatus.allowed) {
             Swal.fire({
                 title: '¿Seguro?',
-                text: `Vamos a pasar la orden de ${data.status.original} a ${nextStatus.original}`,
+                text: `Vamos a pasar la orden de ${data.status.step} a ${nextStatus.step}`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
