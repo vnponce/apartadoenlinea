@@ -73,7 +73,7 @@ export default function InfoBoxes(props) {
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Sí cambiar estatus',
-                cancelButtonText: 'Cancelar',
+                cancelButtonText: 'No cambiar estatus',
             }).then((result) => {
                 if (result.value) {
                     Inertia.put( `/admin/orders/${data.id}`, {
