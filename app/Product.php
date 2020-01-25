@@ -45,7 +45,7 @@ class Product extends Model implements Buyable
 
     public function getImagePathAttribute()
     {
-        return env('APP_URL').'/'.Str::replaceFirst('public/', '', $this->image);
+        return env('APP_URL_STORAGE').'/'.Str::replaceFirst('public/', '', $this->image);
     }
 
     public function getAllowIngredientsAttribute()
