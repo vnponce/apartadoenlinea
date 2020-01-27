@@ -614,13 +614,13 @@ function Header() {
     id: "Empty_Tray"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M71.22,62.86H66.67L65,61.43a37.85,37.85,0,0,0,8.83-24.29A36.89,36.89,0,1,0,37,74.27a38.3,38.3,0,0,0,24.22-8.85L63,66.85v4.58L91.46,100,100,91.43ZM37,62.86a25.7,25.7,0,1,1,25.65-25.7A25.58,25.58,0,0,1,37,62.86Z"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     href: "/pedido",
     id: "charola"
   }, content && (content.length === 0 || Object.keys(content).filter(function (product) {
     return content[product].id !== 'orderDetailsId';
   }).length === 0) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    className: "h-4 fill-current stroke-current text-white",
+    className: "h-4 fill-current stroke-current text-white cursor-not-allowed",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 100 44.83"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
@@ -638,13 +638,16 @@ function Header() {
     d: "M50,0a2.5,2.5,0,0,1,2.5,2.5v25A2.43,2.43,0,0,1,50.1,30a2.58,2.58,0,0,1-2.59-2.5V2.5A2.5,2.5,0,0,1,50,0Z"
   })))), content && Object.keys(content).filter(function (product) {
     return content[product].id !== 'orderDetailsId';
-  }).length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  }).length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/pedido",
+    id: "charola"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     className: "h-4 fill-current stroke-current text-white",
     viewBox: "0 0 100 34.83"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Con Pan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M0 24.83h100l-10.63 10H10.59L0 24.83zM74.48 12a10.47 10.47 0 0 0-.7-.85A37 37 0 0 0 62.5 2.71v4.62a2.5 2.5 0 0 1-5 0V.82a29.39 29.39 0 0 0-5-.82v7.33a2.5 2.5 0 0 1-5 0V0a29.32 29.32 0 0 0-5 .82v6.51a2.5 2.5 0 0 1-5 0V2.71a37.12 37.12 0 0 0-11.3 8.47 10.47 10.47 0 0 0-.7.85 4.88 4.88 0 0 0-.85 2.8 5 5 0 0 0 5 5h40.7a5 5 0 0 0 5-5 4.88 4.88 0 0 0-.87-2.83z"
-  })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "header-lines"
   }));
 }
