@@ -85,9 +85,12 @@ class OrderController extends Controller
         // @todo: Send email
         \Mail::to($detailsData->email)->send(new OrderDetails($order));
 
-        // Cart::destroy();
+        Cart::remove($detailsRowId);
+        $successCart = Cart::content();
+        $successTotalCart = Cart::subtotal();
+        Cart::destroy();
 
-        return Inertia::render('Success', compact('order'));
+        return Inertia::render('Success', compact('order', 'successCart', 'successTotalCart'));
     }
 
     /**

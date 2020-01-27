@@ -29,7 +29,7 @@ const config = {
 function Success(props) {
     const [triggerConfetti, setTriggerConfeti] = useState(false);
     console.log('props =>', props);
-    const { order, subtotal, cart: { content }, stores } = props;
+    const { order, successTotalCart: subtotal, successCart: content, stores } = props;
     const store = stores.find(store => store.id === order.store_id);
 
     const toggleTriggerConfeti = () => setTriggerConfeti(!triggerConfetti);

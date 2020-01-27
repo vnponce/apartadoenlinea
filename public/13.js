@@ -298,8 +298,8 @@ function Success(props) {
 
   console.log('props =>', props);
   var order = props.order,
-      subtotal = props.subtotal,
-      content = props.cart.content,
+      subtotal = props.successTotalCart,
+      content = props.successCart,
       stores = props.stores;
   var store = stores.find(function (store) {
     return store.id === order.store_id;
