@@ -39,10 +39,13 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 //         dd('store request =>', $request);
+//         dd('Cart::subtotal() =>', Cart::subtotal(2, '', ''));
         // if paypayl pasa  o es usuario de panadería no va a paypal- Crear orden
         // 1.- Obtener los detalles de la order
-        $total = Cart::subtotal() * 100;
+//        $total = Cart::subtotal() * 100;
+        $total = Cart::subtotal(2, '', '') * 1; // Casting to int
         $cart = Cart::content();
+//        dd($total);
 //        dd($cart);
         $detailsRowId = $cart->search(function ( $cartItem, $rowId) {
             return $cartItem->id ===  'orderDetailsId';

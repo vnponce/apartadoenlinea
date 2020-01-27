@@ -13,6 +13,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
+        // I need to export local products table from DB cuz it does not find products .xlsx
         Excel::import(new ProductsImport, './products.xlsx');
     }
 }
