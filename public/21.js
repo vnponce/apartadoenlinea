@@ -65,15 +65,17 @@ function Users(props) {
     }, {
       Header: 'role',
       accessor: 'role'
-    }, {
-      Header: 'password',
-      accessor: 'password',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, "Change Password");
-      }
-    }, {
+    },
+    /*
+    {
+        Header: 'password',
+        accessor: 'password',
+        Cell: data => (
+            <span className="">Change Password</span>
+        ),
+    },
+    */
+    {
       Header: 'Tienda',
       accessor: 'stores',
       Cell: function Cell(data) {

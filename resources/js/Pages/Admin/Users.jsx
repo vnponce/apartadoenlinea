@@ -32,6 +32,7 @@ function Users(props) {
                 Header: 'role',
                 accessor: 'role',
             },
+            /*
             {
                 Header: 'password',
                 accessor: 'password',
@@ -39,6 +40,7 @@ function Users(props) {
                     <span className="">Change Password</span>
                 ),
             },
+            */
             {
                 Header: 'Tienda',
                 accessor: 'stores',
