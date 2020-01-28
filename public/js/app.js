@@ -34563,7 +34563,7 @@ var map = {
 		1,
 		4,
 		6,
-		18,
+		16,
 		3,
 		12
 	],
@@ -34573,81 +34573,83 @@ var map = {
 		1,
 		4,
 		6,
-		18,
+		16,
 		3,
 		12
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
-		1,
 		4,
+		6,
 		5,
 		9,
 		3,
-		16
+		8
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
-		1,
 		4,
+		6,
 		5,
 		9,
 		3,
-		16
+		8
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
-		1,
 		4,
+		6,
 		5,
 		3,
-		8,
+		7,
 		20
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
-		1,
 		4,
+		6,
 		5,
 		3,
-		8,
+		7,
 		20
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
-		1,
 		4,
+		6,
 		5,
 		3,
-		8,
+		7,
 		21
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
-		1,
 		4,
+		6,
 		5,
 		3,
-		8,
+		7,
 		21
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		2,
-		14
+		1,
+		14,
+		27
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		2,
-		14
+		1,
+		14,
+		27
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34660,90 +34662,102 @@ var map = {
 	"./Home": [
 		"./resources/js/Pages/Home.js",
 		0,
+		1,
 		9,
-		2,
-		15
+		14,
+		28
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
+		1,
 		9,
-		2,
-		15
+		14,
+		28
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		2,
-		17
+		1,
+		14,
+		29
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		2,
-		17
+		1,
+		14,
+		29
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		6,
-		7,
-		2,
-		11
+		4,
+		16,
+		24,
+		14,
+		26
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		6,
-		7,
-		2,
-		11
+		4,
+		16,
+		24,
+		14,
+		26
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		10,
+		1,
 		2,
-		23
+		14,
+		31
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		10,
+		1,
 		2,
-		23
+		14,
+		31
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
-		7,
-		2,
-		13
+		4,
+		24,
+		14,
+		25
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
-		7,
-		2,
-		13
+		4,
+		24,
+		14,
+		25
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
-		2,
-		19
+		4,
+		14,
+		30
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
-		2,
-		19
+		4,
+		14,
+		30
 	]
 };
 function webpackAsyncContext(req) {

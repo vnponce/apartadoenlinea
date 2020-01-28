@@ -1,75 +1,56 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[18],{
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/sweetalert2/src/sweetalert2.scss":
-/*!********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/lib/loader.js??ref--7-3!./node_modules/sweetalert2/src/sweetalert2.scss ***!
-  \********************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js ***!
+  \****************************************************************************/
+/*! exports provided: Autocomplete, BicyclingLayer, Circle, Data, DirectionsRenderer, DirectionsService, DistanceMatrixService, DrawingManager, GoogleMap, GroundOverlay, HeatmapLayer, InfoBox, InfoWindow, KmlLayer, LoadScript, LoadScriptNext, Marker, MarkerClusterer, OverlayView, Polygon, Polyline, Rectangle, StandaloneSearchBox, StreetViewPanorama, StreetViewService, TrafficLayer, TransitLayer, useGoogleMap, useLoadScript */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Autocomplete", function() { return Autocomplete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BicyclingLayer", function() { return BicyclingLayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Circle", function() { return Circle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Data", function() { return Data; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectionsRenderer", function() { return DirectionsRenderer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectionsService", function() { return DirectionsService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DistanceMatrixService", function() { return DistanceMatrixService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawingManager", function() { return DrawingManager; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleMap", function() { return GoogleMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroundOverlay", function() { return GroundOverlay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeatmapLayer", function() { return HeatmapLayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoBox", function() { return InfoBoxComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoWindow", function() { return InfoWindow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KmlLayer", function() { return KmlLayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadScript", function() { return LoadScript; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadScriptNext", function() { return LoadScriptNext$1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Marker", function() { return Marker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarkerClusterer", function() { return ClustererComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OverlayView", function() { return OverlayView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Polygon", function() { return Polygon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Polyline", function() { return Polyline; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rectangle", function() { return Rectangle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StandaloneSearchBox", function() { return StandaloneSearchBox; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreetViewPanorama", function() { return StreetViewPanorama; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreetViewService", function() { return StreetViewService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrafficLayer", function() { return TrafficLayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransitLayer", function() { return TransitLayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGoogleMap", function() { return useGoogleMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLoadScript", function() { return useLoadScript; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _react_google_maps_marker_clusterer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @react-google-maps/marker-clusterer */ "./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _react_google_maps_infobox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @react-google-maps/infobox */ "./node_modules/@react-google-maps/infobox/dist/infobox.esm.js");
 
 
-// module
-exports.push([module.i, ".swal2-popup.swal2-toast {\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  padding: 0.625em;\n  overflow-y: hidden;\n  background: #fff;\n  box-shadow: 0 0 0.625em #d9d9d9;\n}\n\n.swal2-popup.swal2-toast .swal2-header {\n  flex-direction: row;\n}\n\n.swal2-popup.swal2-toast .swal2-title {\n  flex-grow: 1;\n  justify-content: flex-start;\n  margin: 0 0.6em;\n  font-size: 1em;\n}\n\n.swal2-popup.swal2-toast .swal2-footer {\n  margin: 0.5em 0 0;\n  padding: 0.5em 0 0;\n  font-size: 0.8em;\n}\n\n.swal2-popup.swal2-toast .swal2-close {\n  position: static;\n  width: 0.8em;\n  height: 0.8em;\n  line-height: 0.8;\n}\n\n.swal2-popup.swal2-toast .swal2-content {\n  justify-content: flex-start;\n  font-size: 1em;\n}\n\n.swal2-popup.swal2-toast .swal2-icon {\n  width: 2em;\n  min-width: 2em;\n  height: 2em;\n  margin: 0;\n}\n\n.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {\n  display: flex;\n  align-items: center;\n  font-size: 1.8em;\n  font-weight: bold;\n}\n\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {\n  .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {\n    font-size: 0.25em;\n  }\n}\n\n.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {\n  width: 2em;\n  height: 2em;\n}\n\n.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line] {\n  top: 0.875em;\n  width: 1.375em;\n}\n\n.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {\n  left: 0.3125em;\n}\n\n.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {\n  right: 0.3125em;\n}\n\n.swal2-popup.swal2-toast .swal2-actions {\n  flex-basis: auto !important;\n  width: auto;\n  height: auto;\n  margin: 0 0.3125em;\n}\n\n.swal2-popup.swal2-toast .swal2-styled {\n  margin: 0 0.3125em;\n  padding: 0.3125em 0.625em;\n  font-size: 1em;\n}\n\n.swal2-popup.swal2-toast .swal2-styled:focus {\n  box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(50, 100, 150, 0.4);\n}\n\n.swal2-popup.swal2-toast .swal2-success {\n  border-color: #a5dc86;\n}\n\n.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line] {\n  position: absolute;\n  width: 1.6em;\n  height: 3em;\n  transform: rotate(45deg);\n  border-radius: 50%;\n}\n\n.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left] {\n  top: -0.8em;\n  left: -0.5em;\n  transform: rotate(-45deg);\n  transform-origin: 2em 2em;\n  border-radius: 4em 0 0 4em;\n}\n\n.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right] {\n  top: -0.25em;\n  left: 0.9375em;\n  transform-origin: 0 1.5em;\n  border-radius: 0 4em 4em 0;\n}\n\n.swal2-popup.swal2-toast .swal2-success .swal2-success-ring {\n  width: 2em;\n  height: 2em;\n}\n\n.swal2-popup.swal2-toast .swal2-success .swal2-success-fix {\n  top: 0;\n  left: 0.4375em;\n  width: 0.4375em;\n  height: 2.6875em;\n}\n\n.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line] {\n  height: 0.3125em;\n}\n\n.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip] {\n  top: 1.125em;\n  left: 0.1875em;\n  width: 0.75em;\n}\n\n.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long] {\n  top: 0.9375em;\n  right: 0.1875em;\n  width: 1.375em;\n}\n\n.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {\n  -webkit-animation: swal2-toast-animate-success-line-tip 0.75s;\n          animation: swal2-toast-animate-success-line-tip 0.75s;\n}\n\n.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {\n  -webkit-animation: swal2-toast-animate-success-line-long 0.75s;\n          animation: swal2-toast-animate-success-line-long 0.75s;\n}\n\n.swal2-popup.swal2-toast.swal2-show {\n  -webkit-animation: swal2-toast-show 0.5s;\n          animation: swal2-toast-show 0.5s;\n}\n\n.swal2-popup.swal2-toast.swal2-hide {\n  -webkit-animation: swal2-toast-hide 0.1s forwards;\n          animation: swal2-toast-hide 0.1s forwards;\n}\n\n.swal2-container {\n  display: flex;\n  position: fixed;\n  z-index: 1060;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  padding: 0.625em;\n  overflow-x: hidden;\n  transition: background-color 0.1s;\n  -webkit-overflow-scrolling: touch;\n}\n\n.swal2-container.swal2-backdrop-show {\n  background: rgba(0, 0, 0, 0.4);\n}\n\n.swal2-container.swal2-backdrop-hide {\n  background: transparent !important;\n}\n\n.swal2-container.swal2-top {\n  align-items: flex-start;\n}\n\n.swal2-container.swal2-top-start, .swal2-container.swal2-top-left {\n  align-items: flex-start;\n  justify-content: flex-start;\n}\n\n.swal2-container.swal2-top-end, .swal2-container.swal2-top-right {\n  align-items: flex-start;\n  justify-content: flex-end;\n}\n\n.swal2-container.swal2-center {\n  align-items: center;\n}\n\n.swal2-container.swal2-center-start, .swal2-container.swal2-center-left {\n  align-items: center;\n  justify-content: flex-start;\n}\n\n.swal2-container.swal2-center-end, .swal2-container.swal2-center-right {\n  align-items: center;\n  justify-content: flex-end;\n}\n\n.swal2-container.swal2-bottom {\n  align-items: flex-end;\n}\n\n.swal2-container.swal2-bottom-start, .swal2-container.swal2-bottom-left {\n  align-items: flex-end;\n  justify-content: flex-start;\n}\n\n.swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {\n  align-items: flex-end;\n  justify-content: flex-end;\n}\n\n.swal2-container.swal2-bottom > :first-child, .swal2-container.swal2-bottom-start > :first-child, .swal2-container.swal2-bottom-left > :first-child, .swal2-container.swal2-bottom-end > :first-child, .swal2-container.swal2-bottom-right > :first-child {\n  margin-top: auto;\n}\n\n.swal2-container.swal2-grow-fullscreen > .swal2-modal {\n  display: flex !important;\n  flex: 1;\n  align-self: stretch;\n  justify-content: center;\n}\n\n.swal2-container.swal2-grow-row > .swal2-modal {\n  display: flex !important;\n  flex: 1;\n  align-content: center;\n  justify-content: center;\n}\n\n.swal2-container.swal2-grow-column {\n  flex: 1;\n  flex-direction: column;\n}\n\n.swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {\n  align-items: center;\n}\n\n.swal2-container.swal2-grow-column.swal2-top-start, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-bottom-start, .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom-left {\n  align-items: flex-start;\n}\n\n.swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-bottom-end, .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom-right {\n  align-items: flex-end;\n}\n\n.swal2-container.swal2-grow-column > .swal2-modal {\n  display: flex !important;\n  flex: 1;\n  align-content: center;\n  justify-content: center;\n}\n\n.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen) > .swal2-modal {\n  margin: auto;\n}\n\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {\n  .swal2-container .swal2-modal {\n    margin: 0 !important;\n  }\n}\n\n.swal2-popup {\n  display: none;\n  position: relative;\n  box-sizing: border-box;\n  flex-direction: column;\n  justify-content: center;\n  width: 32em;\n  max-width: 100%;\n  padding: 1.25em;\n  border: none;\n  border-radius: 0.3125em;\n  background: #fff;\n  font-family: inherit;\n  font-size: 1rem;\n}\n\n.swal2-popup:focus {\n  outline: none;\n}\n\n.swal2-popup.swal2-loading {\n  overflow-y: hidden;\n}\n\n.swal2-header {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.swal2-title {\n  position: relative;\n  max-width: 100%;\n  margin: 0 0 0.4em;\n  padding: 0;\n  color: #595959;\n  font-size: 1.875em;\n  font-weight: 600;\n  text-align: center;\n  text-transform: none;\n  word-wrap: break-word;\n}\n\n.swal2-actions {\n  display: flex;\n  z-index: 1;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  margin: 1.25em auto 0;\n}\n\n.swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {\n  opacity: 0.4;\n}\n\n.swal2-actions:not(.swal2-loading) .swal2-styled:hover {\n  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));\n}\n\n.swal2-actions:not(.swal2-loading) .swal2-styled:active {\n  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));\n}\n\n.swal2-actions.swal2-loading .swal2-styled.swal2-confirm {\n  box-sizing: border-box;\n  width: 2.5em;\n  height: 2.5em;\n  margin: 0.46875em;\n  padding: 0;\n  -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;\n          animation: swal2-rotate-loading 1.5s linear 0s infinite normal;\n  border: 0.25em solid transparent;\n  border-radius: 100%;\n  border-color: transparent;\n  background-color: transparent !important;\n  color: transparent;\n  cursor: default;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.swal2-actions.swal2-loading .swal2-styled.swal2-cancel {\n  margin-right: 30px;\n  margin-left: 30px;\n}\n\n.swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {\n  content: \"\";\n  display: inline-block;\n  width: 15px;\n  height: 15px;\n  margin-left: 5px;\n  -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;\n          animation: swal2-rotate-loading 1.5s linear 0s infinite normal;\n  border: 3px solid #999999;\n  border-radius: 50%;\n  border-right-color: transparent;\n  box-shadow: 1px 1px 1px #fff;\n}\n\n.swal2-styled {\n  margin: 0.3125em;\n  padding: 0.625em 2em;\n  box-shadow: none;\n  font-weight: 500;\n}\n\n.swal2-styled:not([disabled]) {\n  cursor: pointer;\n}\n\n.swal2-styled.swal2-confirm {\n  border: 0;\n  border-radius: 0.25em;\n  background: initial;\n  background-color: #3085d6;\n  color: #fff;\n  font-size: 1.0625em;\n}\n\n.swal2-styled.swal2-cancel {\n  border: 0;\n  border-radius: 0.25em;\n  background: initial;\n  background-color: #aaa;\n  color: #fff;\n  font-size: 1.0625em;\n}\n\n.swal2-styled:focus {\n  outline: none;\n  box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(50, 100, 150, 0.4);\n}\n\n.swal2-styled::-moz-focus-inner {\n  border: 0;\n}\n\n.swal2-footer {\n  justify-content: center;\n  margin: 1.25em 0 0;\n  padding: 1em 0 0;\n  border-top: 1px solid #eee;\n  color: #545454;\n  font-size: 1em;\n}\n\n.swal2-timer-progress-bar {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 0.25em;\n  background: rgba(0, 0, 0, 0.2);\n}\n\n.swal2-image {\n  max-width: 100%;\n  margin: 1.25em auto;\n}\n\n.swal2-close {\n  position: absolute;\n  z-index: 2;\n  /* 1617 */\n  top: 0;\n  right: 0;\n  justify-content: center;\n  width: 1.2em;\n  height: 1.2em;\n  padding: 0;\n  overflow: hidden;\n  transition: color 0.1s ease-out;\n  border: none;\n  border-radius: 0;\n  outline: initial;\n  background: transparent;\n  color: #cccccc;\n  font-family: serif;\n  font-size: 2.5em;\n  line-height: 1.2;\n  cursor: pointer;\n}\n\n.swal2-close:hover {\n  transform: none;\n  background: transparent;\n  color: #f27474;\n}\n\n.swal2-close::-moz-focus-inner {\n  border: 0;\n}\n\n.swal2-content {\n  z-index: 1;\n  justify-content: center;\n  margin: 0;\n  padding: 0;\n  color: #545454;\n  font-size: 1.125em;\n  font-weight: normal;\n  line-height: normal;\n  text-align: center;\n  word-wrap: break-word;\n}\n\n.swal2-input,\n.swal2-file,\n.swal2-textarea,\n.swal2-select,\n.swal2-radio,\n.swal2-checkbox {\n  margin: 1em auto;\n}\n\n.swal2-input,\n.swal2-file,\n.swal2-textarea {\n  box-sizing: border-box;\n  width: 100%;\n  transition: border-color 0.3s, box-shadow 0.3s;\n  border: 1px solid #d9d9d9;\n  border-radius: 0.1875em;\n  background: inherit;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);\n  color: inherit;\n  font-size: 1.125em;\n}\n\n.swal2-input.swal2-inputerror,\n.swal2-file.swal2-inputerror,\n.swal2-textarea.swal2-inputerror {\n  border-color: #f27474 !important;\n  box-shadow: 0 0 2px #f27474 !important;\n}\n\n.swal2-input:focus,\n.swal2-file:focus,\n.swal2-textarea:focus {\n  border: 1px solid #b4dbed;\n  outline: none;\n  box-shadow: 0 0 3px #c4e6f5;\n}\n\n.swal2-input::-webkit-input-placeholder,\n.swal2-file::-webkit-input-placeholder,\n.swal2-textarea::-webkit-input-placeholder {\n  color: #cccccc;\n}\n\n.swal2-input::-moz-placeholder,\n.swal2-file::-moz-placeholder,\n.swal2-textarea::-moz-placeholder {\n  color: #cccccc;\n}\n\n.swal2-input:-ms-input-placeholder,\n.swal2-file:-ms-input-placeholder,\n.swal2-textarea:-ms-input-placeholder {\n  color: #cccccc;\n}\n\n.swal2-input::-ms-input-placeholder,\n.swal2-file::-ms-input-placeholder,\n.swal2-textarea::-ms-input-placeholder {\n  color: #cccccc;\n}\n\n.swal2-input::placeholder,\n.swal2-file::placeholder,\n.swal2-textarea::placeholder {\n  color: #cccccc;\n}\n\n.swal2-range {\n  margin: 1em auto;\n  background: #fff;\n}\n\n.swal2-range input {\n  width: 80%;\n}\n\n.swal2-range output {\n  width: 20%;\n  color: inherit;\n  font-weight: 600;\n  text-align: center;\n}\n\n.swal2-range input,\n.swal2-range output {\n  height: 2.625em;\n  padding: 0;\n  font-size: 1.125em;\n  line-height: 2.625em;\n}\n\n.swal2-input {\n  height: 2.625em;\n  padding: 0 0.75em;\n}\n\n.swal2-input[type=number] {\n  max-width: 10em;\n}\n\n.swal2-file {\n  background: inherit;\n  font-size: 1.125em;\n}\n\n.swal2-textarea {\n  height: 6.75em;\n  padding: 0.75em;\n}\n\n.swal2-select {\n  min-width: 50%;\n  max-width: 100%;\n  padding: 0.375em 0.625em;\n  background: inherit;\n  color: inherit;\n  font-size: 1.125em;\n}\n\n.swal2-radio,\n.swal2-checkbox {\n  align-items: center;\n  justify-content: center;\n  background: #fff;\n  color: inherit;\n}\n\n.swal2-radio label,\n.swal2-checkbox label {\n  margin: 0 0.6em;\n  font-size: 1.125em;\n}\n\n.swal2-radio input,\n.swal2-checkbox input {\n  margin: 0 0.4em;\n}\n\n.swal2-validation-message {\n  display: none;\n  align-items: center;\n  justify-content: center;\n  padding: 0.625em;\n  overflow: hidden;\n  background: #f0f0f0;\n  color: #666666;\n  font-size: 1em;\n  font-weight: 300;\n}\n\n.swal2-validation-message::before {\n  content: \"!\";\n  display: inline-block;\n  width: 1.5em;\n  min-width: 1.5em;\n  height: 1.5em;\n  margin: 0 0.625em;\n  border-radius: 50%;\n  background-color: #f27474;\n  color: #fff;\n  font-weight: 600;\n  line-height: 1.5em;\n  text-align: center;\n}\n\n.swal2-icon {\n  position: relative;\n  box-sizing: content-box;\n  justify-content: center;\n  width: 5em;\n  height: 5em;\n  margin: 1.25em auto 1.875em;\n  border: 0.25em solid transparent;\n  border-radius: 50%;\n  font-family: inherit;\n  line-height: 5em;\n  cursor: default;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.swal2-icon .swal2-icon-content {\n  display: flex;\n  align-items: center;\n  font-size: 3.75em;\n}\n\n.swal2-icon.swal2-error {\n  border-color: #f27474;\n  color: #f27474;\n}\n\n.swal2-icon.swal2-error .swal2-x-mark {\n  position: relative;\n  flex-grow: 1;\n}\n\n.swal2-icon.swal2-error [class^=swal2-x-mark-line] {\n  display: block;\n  position: absolute;\n  top: 2.3125em;\n  width: 2.9375em;\n  height: 0.3125em;\n  border-radius: 0.125em;\n  background-color: #f27474;\n}\n\n.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {\n  left: 1.0625em;\n  transform: rotate(45deg);\n}\n\n.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {\n  right: 1em;\n  transform: rotate(-45deg);\n}\n\n.swal2-icon.swal2-error.swal2-icon-show {\n  -webkit-animation: swal2-animate-error-icon 0.5s;\n          animation: swal2-animate-error-icon 0.5s;\n}\n\n.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark {\n  -webkit-animation: swal2-animate-error-x-mark 0.5s;\n          animation: swal2-animate-error-x-mark 0.5s;\n}\n\n.swal2-icon.swal2-warning {\n  border-color: #facea8;\n  color: #f8bb86;\n}\n\n.swal2-icon.swal2-info {\n  border-color: #9de0f6;\n  color: #3fc3ee;\n}\n\n.swal2-icon.swal2-question {\n  border-color: #c9dae1;\n  color: #87adbd;\n}\n\n.swal2-icon.swal2-success {\n  border-color: #a5dc86;\n  color: #a5dc86;\n}\n\n.swal2-icon.swal2-success [class^=swal2-success-circular-line] {\n  position: absolute;\n  width: 3.75em;\n  height: 7.5em;\n  transform: rotate(45deg);\n  border-radius: 50%;\n}\n\n.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left] {\n  top: -0.4375em;\n  left: -2.0635em;\n  transform: rotate(-45deg);\n  transform-origin: 3.75em 3.75em;\n  border-radius: 7.5em 0 0 7.5em;\n}\n\n.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right] {\n  top: -0.6875em;\n  left: 1.875em;\n  transform: rotate(-45deg);\n  transform-origin: 0 3.75em;\n  border-radius: 0 7.5em 7.5em 0;\n}\n\n.swal2-icon.swal2-success .swal2-success-ring {\n  position: absolute;\n  z-index: 2;\n  top: -0.25em;\n  left: -0.25em;\n  box-sizing: content-box;\n  width: 100%;\n  height: 100%;\n  border: 0.25em solid rgba(165, 220, 134, 0.3);\n  border-radius: 50%;\n}\n\n.swal2-icon.swal2-success .swal2-success-fix {\n  position: absolute;\n  z-index: 1;\n  top: 0.5em;\n  left: 1.625em;\n  width: 0.4375em;\n  height: 5.625em;\n  transform: rotate(-45deg);\n}\n\n.swal2-icon.swal2-success [class^=swal2-success-line] {\n  display: block;\n  position: absolute;\n  z-index: 2;\n  height: 0.3125em;\n  border-radius: 0.125em;\n  background-color: #a5dc86;\n}\n\n.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip] {\n  top: 2.875em;\n  left: 0.875em;\n  width: 1.5625em;\n  transform: rotate(45deg);\n}\n\n.swal2-icon.swal2-success [class^=swal2-success-line][class$=long] {\n  top: 2.375em;\n  right: 0.5em;\n  width: 2.9375em;\n  transform: rotate(-45deg);\n}\n\n.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip {\n  -webkit-animation: swal2-animate-success-line-tip 0.75s;\n          animation: swal2-animate-success-line-tip 0.75s;\n}\n\n.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long {\n  -webkit-animation: swal2-animate-success-line-long 0.75s;\n          animation: swal2-animate-success-line-long 0.75s;\n}\n\n.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right {\n  -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;\n          animation: swal2-rotate-success-circular-line 4.25s ease-in;\n}\n\n.swal2-progress-steps {\n  align-items: center;\n  margin: 0 0 1.25em;\n  padding: 0;\n  background: inherit;\n  font-weight: 600;\n}\n\n.swal2-progress-steps li {\n  display: inline-block;\n  position: relative;\n}\n\n.swal2-progress-steps .swal2-progress-step {\n  z-index: 20;\n  width: 2em;\n  height: 2em;\n  border-radius: 2em;\n  background: #3085d6;\n  color: #fff;\n  line-height: 2em;\n  text-align: center;\n}\n\n.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {\n  background: #3085d6;\n}\n\n.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {\n  background: #add8e6;\n  color: #fff;\n}\n\n.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line {\n  background: #add8e6;\n}\n\n.swal2-progress-steps .swal2-progress-step-line {\n  z-index: 10;\n  width: 2.5em;\n  height: 0.4em;\n  margin: 0 -1px;\n  background: #3085d6;\n}\n\n[class^=swal2] {\n  -webkit-tap-highlight-color: transparent;\n}\n\n.swal2-show {\n  -webkit-animation: swal2-show 0.3s;\n          animation: swal2-show 0.3s;\n}\n\n.swal2-hide {\n  -webkit-animation: swal2-hide 0.15s forwards;\n          animation: swal2-hide 0.15s forwards;\n}\n\n.swal2-noanimation {\n  transition: none;\n}\n\n.swal2-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n\n.swal2-rtl .swal2-close {\n  right: auto;\n  left: 0;\n}\n\n.swal2-rtl .swal2-timer-progress-bar {\n  right: 0;\n  left: auto;\n}\n\n@supports (-ms-accelerator: true) {\n  .swal2-range input {\n    width: 100% !important;\n  }\n\n  .swal2-range output {\n    display: none;\n  }\n}\n\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {\n  .swal2-range input {\n    width: 100% !important;\n  }\n\n  .swal2-range output {\n    display: none;\n  }\n}\n\n@-moz-document url-prefix() {\n  .swal2-close:focus {\n    outline: 2px solid rgba(50, 100, 150, 0.4);\n  }\n}\n\n@-webkit-keyframes swal2-toast-show {\n  0% {\n    transform: translateY(-0.625em) rotateZ(2deg);\n  }\n\n  33% {\n    transform: translateY(0) rotateZ(-2deg);\n  }\n\n  66% {\n    transform: translateY(0.3125em) rotateZ(2deg);\n  }\n\n  100% {\n    transform: translateY(0) rotateZ(0deg);\n  }\n}\n\n@keyframes swal2-toast-show {\n  0% {\n    transform: translateY(-0.625em) rotateZ(2deg);\n  }\n\n  33% {\n    transform: translateY(0) rotateZ(-2deg);\n  }\n\n  66% {\n    transform: translateY(0.3125em) rotateZ(2deg);\n  }\n\n  100% {\n    transform: translateY(0) rotateZ(0deg);\n  }\n}\n\n@-webkit-keyframes swal2-toast-hide {\n  100% {\n    transform: rotateZ(1deg);\n    opacity: 0;\n  }\n}\n\n@keyframes swal2-toast-hide {\n  100% {\n    transform: rotateZ(1deg);\n    opacity: 0;\n  }\n}\n\n@-webkit-keyframes swal2-toast-animate-success-line-tip {\n  0% {\n    top: 0.5625em;\n    left: 0.0625em;\n    width: 0;\n  }\n\n  54% {\n    top: 0.125em;\n    left: 0.125em;\n    width: 0;\n  }\n\n  70% {\n    top: 0.625em;\n    left: -0.25em;\n    width: 1.625em;\n  }\n\n  84% {\n    top: 1.0625em;\n    left: 0.75em;\n    width: 0.5em;\n  }\n\n  100% {\n    top: 1.125em;\n    left: 0.1875em;\n    width: 0.75em;\n  }\n}\n\n@keyframes swal2-toast-animate-success-line-tip {\n  0% {\n    top: 0.5625em;\n    left: 0.0625em;\n    width: 0;\n  }\n\n  54% {\n    top: 0.125em;\n    left: 0.125em;\n    width: 0;\n  }\n\n  70% {\n    top: 0.625em;\n    left: -0.25em;\n    width: 1.625em;\n  }\n\n  84% {\n    top: 1.0625em;\n    left: 0.75em;\n    width: 0.5em;\n  }\n\n  100% {\n    top: 1.125em;\n    left: 0.1875em;\n    width: 0.75em;\n  }\n}\n\n@-webkit-keyframes swal2-toast-animate-success-line-long {\n  0% {\n    top: 1.625em;\n    right: 1.375em;\n    width: 0;\n  }\n\n  65% {\n    top: 1.25em;\n    right: 0.9375em;\n    width: 0;\n  }\n\n  84% {\n    top: 0.9375em;\n    right: 0;\n    width: 1.125em;\n  }\n\n  100% {\n    top: 0.9375em;\n    right: 0.1875em;\n    width: 1.375em;\n  }\n}\n\n@keyframes swal2-toast-animate-success-line-long {\n  0% {\n    top: 1.625em;\n    right: 1.375em;\n    width: 0;\n  }\n\n  65% {\n    top: 1.25em;\n    right: 0.9375em;\n    width: 0;\n  }\n\n  84% {\n    top: 0.9375em;\n    right: 0;\n    width: 1.125em;\n  }\n\n  100% {\n    top: 0.9375em;\n    right: 0.1875em;\n    width: 1.375em;\n  }\n}\n\n@-webkit-keyframes swal2-show {\n  0% {\n    transform: scale(0.7);\n  }\n\n  45% {\n    transform: scale(1.05);\n  }\n\n  80% {\n    transform: scale(0.95);\n  }\n\n  100% {\n    transform: scale(1);\n  }\n}\n\n@keyframes swal2-show {\n  0% {\n    transform: scale(0.7);\n  }\n\n  45% {\n    transform: scale(1.05);\n  }\n\n  80% {\n    transform: scale(0.95);\n  }\n\n  100% {\n    transform: scale(1);\n  }\n}\n\n@-webkit-keyframes swal2-hide {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n\n  100% {\n    transform: scale(0.5);\n    opacity: 0;\n  }\n}\n\n@keyframes swal2-hide {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n\n  100% {\n    transform: scale(0.5);\n    opacity: 0;\n  }\n}\n\n@-webkit-keyframes swal2-animate-success-line-tip {\n  0% {\n    top: 1.1875em;\n    left: 0.0625em;\n    width: 0;\n  }\n\n  54% {\n    top: 1.0625em;\n    left: 0.125em;\n    width: 0;\n  }\n\n  70% {\n    top: 2.1875em;\n    left: -0.375em;\n    width: 3.125em;\n  }\n\n  84% {\n    top: 3em;\n    left: 1.3125em;\n    width: 1.0625em;\n  }\n\n  100% {\n    top: 2.8125em;\n    left: 0.875em;\n    width: 1.5625em;\n  }\n}\n\n@keyframes swal2-animate-success-line-tip {\n  0% {\n    top: 1.1875em;\n    left: 0.0625em;\n    width: 0;\n  }\n\n  54% {\n    top: 1.0625em;\n    left: 0.125em;\n    width: 0;\n  }\n\n  70% {\n    top: 2.1875em;\n    left: -0.375em;\n    width: 3.125em;\n  }\n\n  84% {\n    top: 3em;\n    left: 1.3125em;\n    width: 1.0625em;\n  }\n\n  100% {\n    top: 2.8125em;\n    left: 0.875em;\n    width: 1.5625em;\n  }\n}\n\n@-webkit-keyframes swal2-animate-success-line-long {\n  0% {\n    top: 3.375em;\n    right: 2.875em;\n    width: 0;\n  }\n\n  65% {\n    top: 3.375em;\n    right: 2.875em;\n    width: 0;\n  }\n\n  84% {\n    top: 2.1875em;\n    right: 0;\n    width: 3.4375em;\n  }\n\n  100% {\n    top: 2.375em;\n    right: 0.5em;\n    width: 2.9375em;\n  }\n}\n\n@keyframes swal2-animate-success-line-long {\n  0% {\n    top: 3.375em;\n    right: 2.875em;\n    width: 0;\n  }\n\n  65% {\n    top: 3.375em;\n    right: 2.875em;\n    width: 0;\n  }\n\n  84% {\n    top: 2.1875em;\n    right: 0;\n    width: 3.4375em;\n  }\n\n  100% {\n    top: 2.375em;\n    right: 0.5em;\n    width: 2.9375em;\n  }\n}\n\n@-webkit-keyframes swal2-rotate-success-circular-line {\n  0% {\n    transform: rotate(-45deg);\n  }\n\n  5% {\n    transform: rotate(-45deg);\n  }\n\n  12% {\n    transform: rotate(-405deg);\n  }\n\n  100% {\n    transform: rotate(-405deg);\n  }\n}\n\n@keyframes swal2-rotate-success-circular-line {\n  0% {\n    transform: rotate(-45deg);\n  }\n\n  5% {\n    transform: rotate(-45deg);\n  }\n\n  12% {\n    transform: rotate(-405deg);\n  }\n\n  100% {\n    transform: rotate(-405deg);\n  }\n}\n\n@-webkit-keyframes swal2-animate-error-x-mark {\n  0% {\n    margin-top: 1.625em;\n    transform: scale(0.4);\n    opacity: 0;\n  }\n\n  50% {\n    margin-top: 1.625em;\n    transform: scale(0.4);\n    opacity: 0;\n  }\n\n  80% {\n    margin-top: -0.375em;\n    transform: scale(1.15);\n  }\n\n  100% {\n    margin-top: 0;\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n\n@keyframes swal2-animate-error-x-mark {\n  0% {\n    margin-top: 1.625em;\n    transform: scale(0.4);\n    opacity: 0;\n  }\n\n  50% {\n    margin-top: 1.625em;\n    transform: scale(0.4);\n    opacity: 0;\n  }\n\n  80% {\n    margin-top: -0.375em;\n    transform: scale(1.15);\n  }\n\n  100% {\n    margin-top: 0;\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n\n@-webkit-keyframes swal2-animate-error-icon {\n  0% {\n    transform: rotateX(100deg);\n    opacity: 0;\n  }\n\n  100% {\n    transform: rotateX(0deg);\n    opacity: 1;\n  }\n}\n\n@keyframes swal2-animate-error-icon {\n  0% {\n    transform: rotateX(100deg);\n    opacity: 0;\n  }\n\n  100% {\n    transform: rotateX(0deg);\n    opacity: 1;\n  }\n}\n\n@-webkit-keyframes swal2-rotate-loading {\n  0% {\n    transform: rotate(0deg);\n  }\n\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes swal2-rotate-loading {\n  0% {\n    transform: rotate(0deg);\n  }\n\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\nbody.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {\n  overflow: hidden;\n}\n\nbody.swal2-height-auto {\n  height: auto !important;\n}\n\nbody.swal2-no-backdrop .swal2-container {\n  top: auto;\n  right: auto;\n  bottom: auto;\n  left: auto;\n  max-width: calc(100% - 0.625em * 2);\n  background-color: transparent !important;\n}\n\nbody.swal2-no-backdrop .swal2-container > .swal2-modal {\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-top {\n  top: 0;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-top-start, body.swal2-no-backdrop .swal2-container.swal2-top-left {\n  top: 0;\n  left: 0;\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-top-end, body.swal2-no-backdrop .swal2-container.swal2-top-right {\n  top: 0;\n  right: 0;\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-center {\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-center-start, body.swal2-no-backdrop .swal2-container.swal2-center-left {\n  top: 50%;\n  left: 0;\n  transform: translateY(-50%);\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-center-end, body.swal2-no-backdrop .swal2-container.swal2-center-right {\n  top: 50%;\n  right: 0;\n  transform: translateY(-50%);\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-bottom {\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-bottom-start, body.swal2-no-backdrop .swal2-container.swal2-bottom-left {\n  bottom: 0;\n  left: 0;\n}\n\nbody.swal2-no-backdrop .swal2-container.swal2-bottom-end, body.swal2-no-backdrop .swal2-container.swal2-bottom-right {\n  right: 0;\n  bottom: 0;\n}\n\n@media print {\n  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {\n    overflow-y: scroll !important;\n  }\n\n  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) > [aria-hidden=true] {\n    display: none;\n  }\n\n  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {\n    position: static !important;\n  }\n}\n\nbody.swal2-toast-shown .swal2-container {\n  background-color: transparent;\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-top {\n  top: 0;\n  right: auto;\n  bottom: auto;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .swal2-container.swal2-top-right {\n  top: 0;\n  right: 0;\n  bottom: auto;\n  left: auto;\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-top-start, body.swal2-toast-shown .swal2-container.swal2-top-left {\n  top: 0;\n  right: auto;\n  bottom: auto;\n  left: 0;\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-center-start, body.swal2-toast-shown .swal2-container.swal2-center-left {\n  top: 50%;\n  right: auto;\n  bottom: auto;\n  left: 0;\n  transform: translateY(-50%);\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-center {\n  top: 50%;\n  right: auto;\n  bottom: auto;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-center-end, body.swal2-toast-shown .swal2-container.swal2-center-right {\n  top: 50%;\n  right: 0;\n  bottom: auto;\n  left: auto;\n  transform: translateY(-50%);\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-bottom-start, body.swal2-toast-shown .swal2-container.swal2-bottom-left {\n  top: auto;\n  right: auto;\n  bottom: 0;\n  left: 0;\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-bottom {\n  top: auto;\n  right: auto;\n  bottom: 0;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\nbody.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown .swal2-container.swal2-bottom-right {\n  top: auto;\n  right: 0;\n  bottom: 0;\n  left: auto;\n}\n\nbody.swal2-toast-column .swal2-toast {\n  flex-direction: column;\n  align-items: stretch;\n}\n\nbody.swal2-toast-column .swal2-toast .swal2-actions {\n  flex: 1;\n  align-self: stretch;\n  height: 2.2em;\n  margin-top: 0.3125em;\n}\n\nbody.swal2-toast-column .swal2-toast .swal2-loading {\n  justify-content: center;\n}\n\nbody.swal2-toast-column .swal2-toast .swal2-input {\n  height: 2em;\n  margin: 0.3125em auto;\n  font-size: 1em;\n}\n\nbody.swal2-toast-column .swal2-toast .swal2-validation-message {\n  font-size: 1em;\n}", ""]);
-
-// exports
 
 
-/***/ }),
 
-/***/ "./node_modules/sweetalert2/dist/sweetalert2.js":
-/*!******************************************************!*\
-  !*** ./node_modules/sweetalert2/dist/sweetalert2.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
-* sweetalert2 v9.5.4
-* Released under the MIT License.
-*/
-(function (global, factory) {
-	 true ? module.exports = factory() :
-	undefined;
-}(this, (function () { 'use strict';
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function (obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function (obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -89,2979 +70,5295 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
   }
 
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
+  return target;
+}
+
+var MapContext =
+/*#__PURE__*/
+Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
+function useGoogleMap() {
+  !!!react__WEBPACK_IMPORTED_MODULE_0__["useContext"] ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useGoogleMap is React hook and requires React version 16.8+") : undefined : void 0;
+  var map = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(MapContext);
+  !!!map ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useGoogleMap needs a GoogleMap available up in the tree") : undefined : void 0;
+  return map;
+}
+
+var reduce = function reduce(obj, fn, acc) {
+  return Object.keys(obj).reduce(function reducer(newAcc, key) {
+    return fn(newAcc, obj[key], key);
+  }, acc);
+};
+
+function forEach(obj, fn) {
+  Object.keys(obj).forEach(function iterator(key) {
+    return fn(obj[key], key);
   });
-  if (superClass) _setPrototypeOf(subClass, superClass);
 }
 
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
+/* eslint-disable filenames/match-regex */
+var applyUpdaterToNextProps = function applyUpdaterToNextProps(updaterMap, prevProps, nextProps, instance) {
+  var map = {};
 
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
+  var iter = function iter(fn, key) {
+    var nextValue = nextProps[key];
 
-  return _setPrototypeOf(o, p);
-}
-
-function isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-
-  try {
-    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function _construct(Parent, args, Class) {
-  if (isNativeReflectConstruct()) {
-    _construct = Reflect.construct;
-  } else {
-    _construct = function _construct(Parent, args, Class) {
-      var a = [null];
-      a.push.apply(a, args);
-      var Constructor = Function.bind.apply(Parent, a);
-      var instance = new Constructor();
-      if (Class) _setPrototypeOf(instance, Class.prototype);
-      return instance;
-    };
-  }
-
-  return _construct.apply(null, arguments);
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
-}
-
-function _superPropBase(object, property) {
-  while (!Object.prototype.hasOwnProperty.call(object, property)) {
-    object = _getPrototypeOf(object);
-    if (object === null) break;
-  }
-
-  return object;
-}
-
-function _get(target, property, receiver) {
-  if (typeof Reflect !== "undefined" && Reflect.get) {
-    _get = Reflect.get;
-  } else {
-    _get = function _get(target, property, receiver) {
-      var base = _superPropBase(target, property);
-
-      if (!base) return;
-      var desc = Object.getOwnPropertyDescriptor(base, property);
-
-      if (desc.get) {
-        return desc.get.call(receiver);
-      }
-
-      return desc.value;
-    };
-  }
-
-  return _get(target, property, receiver || target);
-}
-
-var consolePrefix = 'SweetAlert2:';
-/**
- * Filter the unique values into a new array
- * @param arr
- */
-
-var uniqueArray = function uniqueArray(arr) {
-  var result = [];
-
-  for (var i = 0; i < arr.length; i++) {
-    if (result.indexOf(arr[i]) === -1) {
-      result.push(arr[i]);
+    if (nextValue !== prevProps[key]) {
+      map[key] = nextValue;
+      fn(instance, nextValue);
     }
+  };
+
+  forEach(updaterMap, iter);
+  return map;
+};
+function registerEvents(props, instance, eventMap) {
+  var registeredList = reduce(eventMap, function reducer(acc, googleEventName, onEventName) {
+    if (typeof props[onEventName] === 'function') {
+      acc.push(google.maps.event.addListener(instance, googleEventName, props[onEventName]));
+    }
+
+    return acc;
+  }, []);
+  return registeredList;
+}
+
+function unregisterEvent(registered) {
+  google.maps.event.removeListener(registered);
+}
+
+function unregisterEvents(events) {
+  if (events === void 0) {
+    events = [];
   }
 
-  return result;
+  events.map(unregisterEvent);
+}
+function applyUpdatersToPropsAndRegisterEvents(_ref) {
+  var updaterMap = _ref.updaterMap,
+      eventMap = _ref.eventMap,
+      prevProps = _ref.prevProps,
+      nextProps = _ref.nextProps,
+      instance = _ref.instance;
+  var registeredEvents = registerEvents(nextProps, instance, eventMap);
+  applyUpdaterToNextProps(updaterMap, prevProps, nextProps, instance);
+  return registeredEvents;
+}
+
+var eventMap = {
+  onDblClick: "dblclick",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMapTypeIdChanged: "maptypeid_changed",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseDown: "mousedown",
+  onMouseUp: "mouseup",
+  onRightClick: "rightclick",
+  onTilesLoaded: "tilesloaded",
+  onBoundsChanged: "bounds_changed",
+  onCenterChanged: "center_changed",
+  onClick: "click",
+  onDrag: "drag",
+  onHeadingChanged: "heading_changed",
+  onIdle: "idle",
+  onProjectionChanged: "projection_changed",
+  onResize: "resize",
+  onTiltChanged: "tilt_changed",
+  onZoomChanged: "zoom_changed"
 };
-/**
- * Capitalize the first letter of a string
- * @param str
- */
-
-var capitalizeFirstLetter = function capitalizeFirstLetter(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
-/**
- * Returns the array ob object values (Object.values isn't supported in IE11)
- * @param obj
- */
-
-var objectValues = function objectValues(obj) {
-  return Object.keys(obj).map(function (key) {
-    return obj[key];
-  });
-};
-/**
- * Convert NodeList to Array
- * @param nodeList
- */
-
-var toArray = function toArray(nodeList) {
-  return Array.prototype.slice.call(nodeList);
-};
-/**
- * Standardise console warnings
- * @param message
- */
-
-var warn = function warn(message) {
-  console.warn("".concat(consolePrefix, " ").concat(message));
-};
-/**
- * Standardise console errors
- * @param message
- */
-
-var error = function error(message) {
-  console.error("".concat(consolePrefix, " ").concat(message));
-};
-/**
- * Private global state for `warnOnce`
- * @type {Array}
- * @private
- */
-
-var previousWarnOnceMessages = [];
-/**
- * Show a console warning, but only if it hasn't already been shown
- * @param message
- */
-
-var warnOnce = function warnOnce(message) {
-  if (!(previousWarnOnceMessages.indexOf(message) !== -1)) {
-    previousWarnOnceMessages.push(message);
-    warn(message);
-  }
-};
-/**
- * Show a one-time console warning about deprecated params/methods
- */
-
-var warnAboutDepreation = function warnAboutDepreation(deprecatedParam, useInstead) {
-  warnOnce("\"".concat(deprecatedParam, "\" is deprecated and will be removed in the next major release. Please use \"").concat(useInstead, "\" instead."));
-};
-/**
- * If `arg` is a function, call it (with no arguments or context) and return the result.
- * Otherwise, just pass the value through
- * @param arg
- */
-
-var callIfFunction = function callIfFunction(arg) {
-  return typeof arg === 'function' ? arg() : arg;
-};
-var isPromise = function isPromise(arg) {
-  return arg && Promise.resolve(arg) === arg;
-};
-
-var DismissReason = Object.freeze({
-  cancel: 'cancel',
-  backdrop: 'backdrop',
-  close: 'close',
-  esc: 'esc',
-  timer: 'timer'
-});
-
-var isJqueryElement = function isJqueryElement(elem) {
-  return _typeof(elem) === 'object' && elem.jquery;
-};
-
-var isElement = function isElement(elem) {
-  return elem instanceof Element || isJqueryElement(elem);
-};
-
-var argsToParams = function argsToParams(args) {
-  var params = {};
-
-  if (_typeof(args[0]) === 'object' && !isElement(args[0])) {
-    _extends(params, args[0]);
-  } else {
-    ['title', 'html', 'icon'].forEach(function (name, index) {
-      var arg = args[index];
-
-      if (typeof arg === 'string' || isElement(arg)) {
-        params[name] = arg;
-      } else if (arg !== undefined) {
-        error("Unexpected type of ".concat(name, "! Expected \"string\" or \"Element\", got ").concat(_typeof(arg)));
-      }
+var updaterMap = {
+  extraMapTypes: function extraMapTypes(map, extra) {
+    extra.forEach(function forEachExtra(it, i) {
+      map.mapTypes.set(String(i), it);
     });
+  },
+  center: function center(map, _center) {
+    map.setCenter(_center);
+  },
+  clickableIcons: function clickableIcons(map, clickable) {
+    map.setClickableIcons(clickable);
+  },
+  heading: function heading(map, _heading) {
+    map.setHeading(_heading);
+  },
+  mapTypeId: function mapTypeId(map, _mapTypeId) {
+    map.setMapTypeId(_mapTypeId);
+  },
+  options: function options(map, _options) {
+    map.setOptions(_options);
+  },
+  streetView: function streetView(map, _streetView) {
+    map.setStreetView(_streetView);
+  },
+  tilt: function tilt(map, _tilt) {
+    map.setTilt(_tilt);
+  },
+  zoom: function zoom(map, _zoom) {
+    map.setZoom(_zoom);
+  }
+};
+var GoogleMap =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(GoogleMap, _React$PureComponent);
+
+  function GoogleMap() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      map: null
+    };
+    _this.registeredEvents = [];
+    _this.mapRef = null; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.getInstance = function () {
+      return new google.maps.Map(_this.mapRef, _this.props.options);
+    };
+
+    _this.panTo = function (latLng) {
+      var map = _this.getInstance();
+
+      if (map) {
+        map.panTo(latLng);
+      }
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+
+    _this.setMapCallback = function () {
+      if (_this.state.map !== null) {
+        if (_this.props.onLoad) {
+          _this.props.onLoad(_this.state.map);
+        }
+      }
+    };
+    /* eslint-disable @getify/proper-arrows/name */
+
+    /* eslint-disable @getify/proper-arrows/this */
+
+
+    _this.getRef = function (ref) {
+      _this.mapRef = ref;
+    };
+
+    return _this;
   }
 
-  return params;
-};
+  var _proto = GoogleMap.prototype;
 
-var swalPrefix = 'swal2-';
-var prefix = function prefix(items) {
-  var result = {};
+  _proto.componentDidMount = function componentDidMount() {
+    var map = this.getInstance();
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap,
+      eventMap: eventMap,
+      prevProps: {},
+      nextProps: this.props,
+      instance: map
+    });
 
-  for (var i in items) {
-    result[items[i]] = swalPrefix + items[i];
-  }
-
-  return result;
-};
-var swalClasses = prefix(['container', 'shown', 'height-auto', 'iosfix', 'popup', 'modal', 'no-backdrop', 'toast', 'toast-shown', 'toast-column', 'show', 'hide', 'close', 'title', 'header', 'content', 'html-container', 'actions', 'confirm', 'cancel', 'footer', 'icon', 'icon-content', 'image', 'input', 'file', 'range', 'select', 'radio', 'checkbox', 'label', 'textarea', 'inputerror', 'validation-message', 'progress-steps', 'active-progress-step', 'progress-step', 'progress-step-line', 'loading', 'styled', 'top', 'top-start', 'top-end', 'top-left', 'top-right', 'center', 'center-start', 'center-end', 'center-left', 'center-right', 'bottom', 'bottom-start', 'bottom-end', 'bottom-left', 'bottom-right', 'grow-row', 'grow-column', 'grow-fullscreen', 'rtl', 'timer-progress-bar', 'scrollbar-measure', 'icon-success', 'icon-warning', 'icon-info', 'icon-question', 'icon-error']);
-var iconTypes = prefix(['success', 'warning', 'info', 'question', 'error']);
-
-var getContainer = function getContainer() {
-  return document.body.querySelector(".".concat(swalClasses.container));
-};
-var elementBySelector = function elementBySelector(selectorString) {
-  var container = getContainer();
-  return container ? container.querySelector(selectorString) : null;
-};
-
-var elementByClass = function elementByClass(className) {
-  return elementBySelector(".".concat(className));
-};
-
-var getPopup = function getPopup() {
-  return elementByClass(swalClasses.popup);
-};
-var getIcons = function getIcons() {
-  var popup = getPopup();
-  return toArray(popup.querySelectorAll(".".concat(swalClasses.icon)));
-};
-var getIcon = function getIcon() {
-  var visibleIcon = getIcons().filter(function (icon) {
-    return isVisible(icon);
-  });
-  return visibleIcon.length ? visibleIcon[0] : null;
-};
-var getTitle = function getTitle() {
-  return elementByClass(swalClasses.title);
-};
-var getContent = function getContent() {
-  return elementByClass(swalClasses.content);
-};
-var getHtmlContainer = function getHtmlContainer() {
-  return elementByClass(swalClasses['html-container']);
-};
-var getImage = function getImage() {
-  return elementByClass(swalClasses.image);
-};
-var getProgressSteps = function getProgressSteps() {
-  return elementByClass(swalClasses['progress-steps']);
-};
-var getValidationMessage = function getValidationMessage() {
-  return elementByClass(swalClasses['validation-message']);
-};
-var getConfirmButton = function getConfirmButton() {
-  return elementBySelector(".".concat(swalClasses.actions, " .").concat(swalClasses.confirm));
-};
-var getCancelButton = function getCancelButton() {
-  return elementBySelector(".".concat(swalClasses.actions, " .").concat(swalClasses.cancel));
-};
-var getActions = function getActions() {
-  return elementByClass(swalClasses.actions);
-};
-var getHeader = function getHeader() {
-  return elementByClass(swalClasses.header);
-};
-var getFooter = function getFooter() {
-  return elementByClass(swalClasses.footer);
-};
-var getTimerProgressBar = function getTimerProgressBar() {
-  return elementByClass(swalClasses['timer-progress-bar']);
-};
-var getCloseButton = function getCloseButton() {
-  return elementByClass(swalClasses.close);
-}; // https://github.com/jkup/focusable/blob/master/index.js
-
-var focusable = "\n  a[href],\n  area[href],\n  input:not([disabled]),\n  select:not([disabled]),\n  textarea:not([disabled]),\n  button:not([disabled]),\n  iframe,\n  object,\n  embed,\n  [tabindex=\"0\"],\n  [contenteditable],\n  audio[controls],\n  video[controls],\n  summary\n";
-var getFocusableElements = function getFocusableElements() {
-  var focusableElementsWithTabindex = toArray(getPopup().querySelectorAll('[tabindex]:not([tabindex="-1"]):not([tabindex="0"])')) // sort according to tabindex
-  .sort(function (a, b) {
-    a = parseInt(a.getAttribute('tabindex'));
-    b = parseInt(b.getAttribute('tabindex'));
-
-    if (a > b) {
-      return 1;
-    } else if (a < b) {
-      return -1;
+    function setMap() {
+      return {
+        map: map
+      };
     }
 
-    return 0;
-  });
-  var otherFocusableElements = toArray(getPopup().querySelectorAll(focusable)).filter(function (el) {
-    return el.getAttribute('tabindex') !== '-1';
-  });
-  return uniqueArray(focusableElementsWithTabindex.concat(otherFocusableElements)).filter(function (el) {
-    return isVisible(el);
-  });
-};
-var isModal = function isModal() {
-  return !isToast() && !document.body.classList.contains(swalClasses['no-backdrop']);
-};
-var isToast = function isToast() {
-  return document.body.classList.contains(swalClasses['toast-shown']);
-};
-var isLoading = function isLoading() {
-  return getPopup().hasAttribute('data-loading');
-};
+    this.setState(setMap, this.setMapCallback);
+  };
 
-var states = {
-  previousBodyPadding: null
-};
-var hasClass = function hasClass(elem, className) {
-  if (!className) {
-    return false;
-  }
-
-  var classList = className.split(/\s+/);
-
-  for (var i = 0; i < classList.length; i++) {
-    if (!elem.classList.contains(classList[i])) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-var removeCustomClasses = function removeCustomClasses(elem, params) {
-  toArray(elem.classList).forEach(function (className) {
-    if (!(objectValues(swalClasses).indexOf(className) !== -1) && !(objectValues(iconTypes).indexOf(className) !== -1) && !(objectValues(params.showClass).indexOf(className) !== -1)) {
-      elem.classList.remove(className);
-    }
-  });
-};
-
-var applyCustomClass = function applyCustomClass(elem, params, className) {
-  removeCustomClasses(elem, params);
-
-  if (params.customClass && params.customClass[className]) {
-    if (typeof params.customClass[className] !== 'string' && !params.customClass[className].forEach) {
-      return warn("Invalid type of customClass.".concat(className, "! Expected string or iterable object, got \"").concat(_typeof(params.customClass[className]), "\""));
-    }
-
-    addClass(elem, params.customClass[className]);
-  }
-};
-function getInput(content, inputType) {
-  if (!inputType) {
-    return null;
-  }
-
-  switch (inputType) {
-    case 'select':
-    case 'textarea':
-    case 'file':
-      return getChildByClass(content, swalClasses[inputType]);
-
-    case 'checkbox':
-      return content.querySelector(".".concat(swalClasses.checkbox, " input"));
-
-    case 'radio':
-      return content.querySelector(".".concat(swalClasses.radio, " input:checked")) || content.querySelector(".".concat(swalClasses.radio, " input:first-child"));
-
-    case 'range':
-      return content.querySelector(".".concat(swalClasses.range, " input"));
-
-    default:
-      return getChildByClass(content, swalClasses.input);
-  }
-}
-var focusInput = function focusInput(input) {
-  input.focus(); // place cursor at end of text in text input
-
-  if (input.type !== 'file') {
-    // http://stackoverflow.com/a/2345915
-    var val = input.value;
-    input.value = '';
-    input.value = val;
-  }
-};
-var toggleClass = function toggleClass(target, classList, condition) {
-  if (!target || !classList) {
-    return;
-  }
-
-  if (typeof classList === 'string') {
-    classList = classList.split(/\s+/).filter(Boolean);
-  }
-
-  classList.forEach(function (className) {
-    if (target.forEach) {
-      target.forEach(function (elem) {
-        condition ? elem.classList.add(className) : elem.classList.remove(className);
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.map !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap,
+        eventMap: eventMap,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.map
       });
-    } else {
-      condition ? target.classList.add(className) : target.classList.remove(className);
     }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.map !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.map);
+      }
+
+      unregisterEvents(this.registeredEvents);
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      id: this.props.id,
+      ref: this.getRef,
+      style: this.props.mapContainerStyle,
+      className: this.props.mapContainerClassName
+    }, Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MapContext.Provider, {
+      value: this.state.map
+    }, this.state.map !== null ? this.props.children : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null)));
+  };
+
+  return GoogleMap;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+
+var isBrowser = typeof document !== 'undefined';
+
+var injectScript = function injectScript(_ref) {
+  var url = _ref.url,
+      id = _ref.id;
+
+  if (!isBrowser) {
+    return Promise.reject(new Error('document is undefined'));
+  }
+
+  return new Promise(function injectScriptCallback(resolve, reject) {
+    var existingScript = document.getElementById(id);
+    var windowWithGoogleMap = window;
+
+    if (existingScript) {
+      // Same script id/url: keep same script
+      if (existingScript.src === url) {
+        if (existingScript.getAttribute('data-state') === 'ready') {
+          return resolve(id);
+        } else {
+          var originalInitMap = windowWithGoogleMap.initMap;
+
+          windowWithGoogleMap.initMap = function initMap() {
+            if (originalInitMap) {
+              originalInitMap();
+            }
+
+            resolve(id);
+          };
+
+          return;
+        }
+      } // Same script id but url changed: recreate the script
+      else {
+          existingScript.remove();
+        }
+    }
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+    script.id = id;
+    script.async = true;
+    script.onerror = reject;
+
+    windowWithGoogleMap.initMap = function onload() {
+      script.setAttribute('data-state', 'ready');
+      resolve(id);
+    };
+
+    document.head.appendChild(script);
+  })["catch"](function (err) {
+    console.error('injectScript error: ', err);
   });
 };
-var addClass = function addClass(target, classList) {
-  toggleClass(target, classList, true);
-};
-var removeClass = function removeClass(target, classList) {
-  toggleClass(target, classList, false);
-};
-var getChildByClass = function getChildByClass(elem, className) {
-  for (var i = 0; i < elem.childNodes.length; i++) {
-    if (hasClass(elem.childNodes[i], className)) {
-      return elem.childNodes[i];
-    }
-  }
-};
-var applyNumericalStyle = function applyNumericalStyle(elem, property, value) {
-  if (value || parseInt(value) === 0) {
-    elem.style[property] = typeof value === 'number' ? "".concat(value, "px") : value;
-  } else {
-    elem.style.removeProperty(property);
-  }
-};
-var show = function show(elem) {
-  var display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'flex';
-  elem.style.opacity = '';
-  elem.style.display = display;
-};
-var hide = function hide(elem) {
-  elem.style.opacity = '';
-  elem.style.display = 'none';
-};
-var toggle = function toggle(elem, condition, display) {
-  condition ? show(elem, display) : hide(elem);
-}; // borrowed from jquery $(elem).is(':visible') implementation
 
-var isVisible = function isVisible(elem) {
-  return !!(elem && (elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length));
-};
-/* istanbul ignore next */
-
-var isScrollable = function isScrollable(elem) {
-  return !!(elem.scrollHeight > elem.clientHeight);
-}; // borrowed from https://stackoverflow.com/a/46352119
-
-var hasCssAnimation = function hasCssAnimation(elem) {
-  var style = window.getComputedStyle(elem);
-  var animDuration = parseFloat(style.getPropertyValue('animation-duration') || '0');
-  var transDuration = parseFloat(style.getPropertyValue('transition-duration') || '0');
-  return animDuration > 0 || transDuration > 0;
-};
-var contains = function contains(haystack, needle) {
-  if (typeof haystack.contains === 'function') {
-    return haystack.contains(needle);
-  }
-};
-var animateTimerProgressBar = function animateTimerProgressBar(timer) {
-  var reset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var timerProgressBar = getTimerProgressBar();
-
-  if (isVisible(timerProgressBar)) {
-    if (reset) {
-      timerProgressBar.style.transition = 'none';
-      timerProgressBar.style.width = '100%';
-    }
-
-    setTimeout(function () {
-      timerProgressBar.style.transition = "width ".concat(timer / 1000, "s linear");
-      timerProgressBar.style.width = '0%';
-    }, 10);
-  }
-};
-var stopTimerProgressBar = function stopTimerProgressBar() {
-  var timerProgressBar = getTimerProgressBar();
-  var timerProgressBarWidth = parseInt(window.getComputedStyle(timerProgressBar).width);
-  timerProgressBar.style.removeProperty('transition');
-  timerProgressBar.style.width = '100%';
-  var timerProgressBarFullWidth = parseInt(window.getComputedStyle(timerProgressBar).width);
-  var timerProgressBarPercent = parseInt(timerProgressBarWidth / timerProgressBarFullWidth * 100);
-  timerProgressBar.style.removeProperty('transition');
-  timerProgressBar.style.width = "".concat(timerProgressBarPercent, "%");
-};
-
-// Detect Node env
-var isNodeEnv = function isNodeEnv() {
-  return typeof window === 'undefined' || typeof document === 'undefined';
-};
-
-var sweetHTML = "\n <div aria-labelledby=\"".concat(swalClasses.title, "\" aria-describedby=\"").concat(swalClasses.content, "\" class=\"").concat(swalClasses.popup, "\" tabindex=\"-1\">\n   <div class=\"").concat(swalClasses.header, "\">\n     <ul class=\"").concat(swalClasses['progress-steps'], "\"></ul>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.error, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.question, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.warning, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.info, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.success, "\"></div>\n     <img class=\"").concat(swalClasses.image, "\" />\n     <h2 class=\"").concat(swalClasses.title, "\" id=\"").concat(swalClasses.title, "\"></h2>\n     <button type=\"button\" class=\"").concat(swalClasses.close, "\"></button>\n   </div>\n   <div class=\"").concat(swalClasses.content, "\">\n     <div id=\"").concat(swalClasses.content, "\" class=\"").concat(swalClasses['html-container'], "\"></div>\n     <input class=\"").concat(swalClasses.input, "\" />\n     <input type=\"file\" class=\"").concat(swalClasses.file, "\" />\n     <div class=\"").concat(swalClasses.range, "\">\n       <input type=\"range\" />\n       <output></output>\n     </div>\n     <select class=\"").concat(swalClasses.select, "\"></select>\n     <div class=\"").concat(swalClasses.radio, "\"></div>\n     <label for=\"").concat(swalClasses.checkbox, "\" class=\"").concat(swalClasses.checkbox, "\">\n       <input type=\"checkbox\" />\n       <span class=\"").concat(swalClasses.label, "\"></span>\n     </label>\n     <textarea class=\"").concat(swalClasses.textarea, "\"></textarea>\n     <div class=\"").concat(swalClasses['validation-message'], "\" id=\"").concat(swalClasses['validation-message'], "\"></div>\n   </div>\n   <div class=\"").concat(swalClasses.actions, "\">\n     <button type=\"button\" class=\"").concat(swalClasses.confirm, "\">OK</button>\n     <button type=\"button\" class=\"").concat(swalClasses.cancel, "\">Cancel</button>\n   </div>\n   <div class=\"").concat(swalClasses.footer, "\"></div>\n   <div class=\"").concat(swalClasses['timer-progress-bar'], "\"></div>\n </div>\n").replace(/(^|\n)\s*/g, '');
-
-var resetOldContainer = function resetOldContainer() {
-  var oldContainer = getContainer();
-
-  if (!oldContainer) {
-    return;
-  }
-
-  oldContainer.parentNode.removeChild(oldContainer);
-  removeClass([document.documentElement, document.body], [swalClasses['no-backdrop'], swalClasses['toast-shown'], swalClasses['has-column']]);
-};
-
-var oldInputVal; // IE11 workaround, see #1109 for details
-
-var resetValidationMessage = function resetValidationMessage(e) {
-  if (Swal.isVisible() && oldInputVal !== e.target.value) {
-    Swal.resetValidationMessage();
-  }
-
-  oldInputVal = e.target.value;
-};
-
-var addInputChangeListeners = function addInputChangeListeners() {
-  var content = getContent();
-  var input = getChildByClass(content, swalClasses.input);
-  var file = getChildByClass(content, swalClasses.file);
-  var range = content.querySelector(".".concat(swalClasses.range, " input"));
-  var rangeOutput = content.querySelector(".".concat(swalClasses.range, " output"));
-  var select = getChildByClass(content, swalClasses.select);
-  var checkbox = content.querySelector(".".concat(swalClasses.checkbox, " input"));
-  var textarea = getChildByClass(content, swalClasses.textarea);
-  input.oninput = resetValidationMessage;
-  file.onchange = resetValidationMessage;
-  select.onchange = resetValidationMessage;
-  checkbox.onchange = resetValidationMessage;
-  textarea.oninput = resetValidationMessage;
-
-  range.oninput = function (e) {
-    resetValidationMessage(e);
-    rangeOutput.value = range.value;
-  };
-
-  range.onchange = function (e) {
-    resetValidationMessage(e);
-    range.nextSibling.value = range.value;
-  };
-};
-
-var getTarget = function getTarget(target) {
-  return typeof target === 'string' ? document.querySelector(target) : target;
-};
-
-var setupAccessibility = function setupAccessibility(params) {
-  var popup = getPopup();
-  popup.setAttribute('role', params.toast ? 'alert' : 'dialog');
-  popup.setAttribute('aria-live', params.toast ? 'polite' : 'assertive');
-
-  if (!params.toast) {
-    popup.setAttribute('aria-modal', 'true');
-  }
-};
-
-var setupRTL = function setupRTL(targetElement) {
-  if (window.getComputedStyle(targetElement).direction === 'rtl') {
-    addClass(getContainer(), swalClasses.rtl);
-  }
-};
-/*
- * Add modal + backdrop to DOM
- */
+var isRobotoStyle = function isRobotoStyle(element) {
+  // roboto font download
+  if (element.href && element.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
+    return true;
+  } // roboto style elements
 
 
-var init = function init(params) {
-  // Clean up the old popup container if it exists
-  resetOldContainer();
-  /* istanbul ignore if */
+  if (element.tagName.toLowerCase() === 'style' && // @ts-ignore
+  element.styleSheet && // @ts-ignore
+  element.styleSheet.cssText && // @ts-ignore
+  element.styleSheet.cssText.replace('\r\n', '').indexOf('.gm-style') === 0) {
+    // @ts-ignore
+    element.styleSheet.cssText = '';
+    return true;
+  } // roboto style elements for other browsers
 
-  if (isNodeEnv()) {
-    error('SweetAlert2 requires document to initialize');
-    return;
-  }
 
-  var container = document.createElement('div');
-  container.className = swalClasses.container;
-  container.innerHTML = sweetHTML;
-  var targetElement = getTarget(params.target);
-  targetElement.appendChild(container);
-  setupAccessibility(params);
-  setupRTL(targetElement);
-  addInputChangeListeners();
-};
+  if (element.tagName.toLowerCase() === 'style' && element.innerHTML && element.innerHTML.replace('\r\n', '').indexOf('.gm-style') === 0) {
+    element.innerHTML = '';
+    return true;
+  } // when google tries to add empty style
 
-var parseHtmlToContainer = function parseHtmlToContainer(param, target) {
-  // DOM element
-  if (param instanceof HTMLElement) {
-    target.appendChild(param); // JQuery element(s)
-  } else if (_typeof(param) === 'object') {
-    handleJqueryElem(target, param); // Plain string
-  } else if (param) {
-    target.innerHTML = param;
-  }
-};
 
-var handleJqueryElem = function handleJqueryElem(target, elem) {
-  target.innerHTML = '';
-
-  if (0 in elem) {
-    for (var i = 0; i in elem; i++) {
-      target.appendChild(elem[i].cloneNode(true));
-    }
-  } else {
-    target.appendChild(elem.cloneNode(true));
-  }
-};
-
-var animationEndEvent = function () {
-  // Prevent run in Node env
-
-  /* istanbul ignore if */
-  if (isNodeEnv()) {
-    return false;
-  }
-
-  var testEl = document.createElement('div');
-  var transEndEventNames = {
-    WebkitAnimation: 'webkitAnimationEnd',
-    OAnimation: 'oAnimationEnd oanimationend',
-    animation: 'animationend'
-  };
-
-  for (var i in transEndEventNames) {
-    if (Object.prototype.hasOwnProperty.call(transEndEventNames, i) && typeof testEl.style[i] !== 'undefined') {
-      return transEndEventNames[i];
-    }
+  if (element.tagName.toLowerCase() === 'style' && // @ts-ignore
+  !element.styleSheet && !element.innerHTML) {
+    return true;
   }
 
   return false;
-}();
-
-// https://github.com/twbs/bootstrap/blob/master/js/src/modal.js
-
-var measureScrollbar = function measureScrollbar() {
-  var scrollDiv = document.createElement('div');
-  scrollDiv.className = swalClasses['scrollbar-measure'];
-  document.body.appendChild(scrollDiv);
-  var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
-  document.body.removeChild(scrollDiv);
-  return scrollbarWidth;
-};
-
-var renderActions = function renderActions(instance, params) {
-  var actions = getActions();
-  var confirmButton = getConfirmButton();
-  var cancelButton = getCancelButton(); // Actions (buttons) wrapper
-
-  if (!params.showConfirmButton && !params.showCancelButton) {
-    hide(actions);
-  } // Custom class
+}; // Preventing the Google Maps libary from downloading an extra font
 
 
-  applyCustomClass(actions, params, 'actions'); // Render confirm button
+var preventGoogleFonts = function preventGoogleFonts() {
+  // we override these methods only for one particular head element
+  // default methods for other elements are not affected
+  var head = document.getElementsByTagName('head')[0];
+  var trueInsertBefore = head.insertBefore.bind(head); // TODO: adding return before reflect solves the TS issue
+  //@ts-ignore
 
-  renderButton(confirmButton, 'confirm', params); // render Cancel Button
-
-  renderButton(cancelButton, 'cancel', params);
-
-  if (params.buttonsStyling) {
-    handleButtonsStyling(confirmButton, cancelButton, params);
-  } else {
-    removeClass([confirmButton, cancelButton], swalClasses.styled);
-    confirmButton.style.backgroundColor = confirmButton.style.borderLeftColor = confirmButton.style.borderRightColor = '';
-    cancelButton.style.backgroundColor = cancelButton.style.borderLeftColor = cancelButton.style.borderRightColor = '';
-  }
-
-  if (params.reverseButtons) {
-    confirmButton.parentNode.insertBefore(cancelButton, confirmButton);
-  }
-};
-
-function handleButtonsStyling(confirmButton, cancelButton, params) {
-  addClass([confirmButton, cancelButton], swalClasses.styled); // Buttons background colors
-
-  if (params.confirmButtonColor) {
-    confirmButton.style.backgroundColor = params.confirmButtonColor;
-  }
-
-  if (params.cancelButtonColor) {
-    cancelButton.style.backgroundColor = params.cancelButtonColor;
-  } // Loading state
-
-
-  var confirmButtonBackgroundColor = window.getComputedStyle(confirmButton).getPropertyValue('background-color');
-  confirmButton.style.borderLeftColor = confirmButtonBackgroundColor;
-  confirmButton.style.borderRightColor = confirmButtonBackgroundColor;
-}
-
-function renderButton(button, buttonType, params) {
-  toggle(button, params["show".concat(capitalizeFirstLetter(buttonType), "Button")], 'inline-block');
-  button.innerHTML = params["".concat(buttonType, "ButtonText")]; // Set caption text
-
-  button.setAttribute('aria-label', params["".concat(buttonType, "ButtonAriaLabel")]); // ARIA label
-  // Add buttons custom classes
-
-  button.className = swalClasses[buttonType];
-  applyCustomClass(button, params, "".concat(buttonType, "Button"));
-  addClass(button, params["".concat(buttonType, "ButtonClass")]);
-}
-
-function handleBackdropParam(container, backdrop) {
-  if (typeof backdrop === 'string') {
-    container.style.background = backdrop;
-  } else if (!backdrop) {
-    addClass([document.documentElement, document.body], swalClasses['no-backdrop']);
-  }
-}
-
-function handlePositionParam(container, position) {
-  if (position in swalClasses) {
-    addClass(container, swalClasses[position]);
-  } else {
-    warn('The "position" parameter is not valid, defaulting to "center"');
-    addClass(container, swalClasses.center);
-  }
-}
-
-function handleGrowParam(container, grow) {
-  if (grow && typeof grow === 'string') {
-    var growClass = "grow-".concat(grow);
-
-    if (growClass in swalClasses) {
-      addClass(container, swalClasses[growClass]);
+  head.insertBefore = function insertBefore(newElement, referenceElement) {
+    if (!isRobotoStyle(newElement)) {
+      Reflect.apply(trueInsertBefore, head, [newElement, referenceElement]);
     }
-  }
-}
-
-var renderContainer = function renderContainer(instance, params) {
-  var container = getContainer();
-
-  if (!container) {
-    return;
-  }
-
-  handleBackdropParam(container, params.backdrop);
-
-  if (!params.backdrop && params.allowOutsideClick) {
-    warn('"allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`');
-  }
-
-  handlePositionParam(container, params.position);
-  handleGrowParam(container, params.grow); // Custom class
-
-  applyCustomClass(container, params, 'container'); // Set queue step attribute for getQueueStep() method
-
-  var queueStep = document.body.getAttribute('data-swal2-queue-step');
-
-  if (queueStep) {
-    container.setAttribute('data-queue-step', queueStep);
-    document.body.removeAttribute('data-swal2-queue-step');
-  }
-};
-
-/**
- * This module containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
- * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
- * This is the approach that Babel will probably take to implement private methods/fields
- *   https://github.com/tc39/proposal-private-methods
- *   https://github.com/babel/babel/pull/7555
- * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
- *   then we can use that language feature.
- */
-var privateProps = {
-  promise: new WeakMap(),
-  innerParams: new WeakMap(),
-  domCache: new WeakMap()
-};
-
-var inputTypes = ['input', 'file', 'range', 'select', 'radio', 'checkbox', 'textarea'];
-var renderInput = function renderInput(instance, params) {
-  var content = getContent();
-  var innerParams = privateProps.innerParams.get(instance);
-  var rerender = !innerParams || params.input !== innerParams.input;
-  inputTypes.forEach(function (inputType) {
-    var inputClass = swalClasses[inputType];
-    var inputContainer = getChildByClass(content, inputClass); // set attributes
-
-    setAttributes(inputType, params.inputAttributes); // set class
-
-    inputContainer.className = inputClass;
-
-    if (rerender) {
-      hide(inputContainer);
-    }
-  });
-
-  if (params.input) {
-    if (rerender) {
-      showInput(params);
-    } // set custom class
-
-
-    setCustomClass(params);
-  }
-};
-
-var showInput = function showInput(params) {
-  if (!renderInputType[params.input]) {
-    return error("Unexpected type of input! Expected \"text\", \"email\", \"password\", \"number\", \"tel\", \"select\", \"radio\", \"checkbox\", \"textarea\", \"file\" or \"url\", got \"".concat(params.input, "\""));
-  }
-
-  var inputContainer = getInputContainer(params.input);
-  var input = renderInputType[params.input](inputContainer, params);
-  show(input); // input autofocus
-
-  setTimeout(function () {
-    focusInput(input);
-  });
-};
-
-var removeAttributes = function removeAttributes(input) {
-  for (var i = 0; i < input.attributes.length; i++) {
-    var attrName = input.attributes[i].name;
-
-    if (!(['type', 'value', 'style'].indexOf(attrName) !== -1)) {
-      input.removeAttribute(attrName);
-    }
-  }
-};
-
-var setAttributes = function setAttributes(inputType, inputAttributes) {
-  var input = getInput(getContent(), inputType);
-
-  if (!input) {
-    return;
-  }
-
-  removeAttributes(input);
-
-  for (var attr in inputAttributes) {
-    // Do not set a placeholder for <input type="range">
-    // it'll crash Edge, #1298
-    if (inputType === 'range' && attr === 'placeholder') {
-      continue;
-    }
-
-    input.setAttribute(attr, inputAttributes[attr]);
-  }
-};
-
-var setCustomClass = function setCustomClass(params) {
-  var inputContainer = getInputContainer(params.input);
-
-  if (params.customClass) {
-    addClass(inputContainer, params.customClass.input);
-  }
-};
-
-var setInputPlaceholder = function setInputPlaceholder(input, params) {
-  if (!input.placeholder || params.inputPlaceholder) {
-    input.placeholder = params.inputPlaceholder;
-  }
-};
-
-var getInputContainer = function getInputContainer(inputType) {
-  var inputClass = swalClasses[inputType] ? swalClasses[inputType] : swalClasses.input;
-  return getChildByClass(getContent(), inputClass);
-};
-
-var renderInputType = {};
-
-renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = function (input, params) {
-  if (typeof params.inputValue === 'string' || typeof params.inputValue === 'number') {
-    input.value = params.inputValue;
-  } else if (!isPromise(params.inputValue)) {
-    warn("Unexpected type of inputValue! Expected \"string\", \"number\" or \"Promise\", got \"".concat(_typeof(params.inputValue), "\""));
-  }
-
-  setInputPlaceholder(input, params);
-  input.type = params.input;
-  return input;
-};
-
-renderInputType.file = function (input, params) {
-  setInputPlaceholder(input, params);
-  return input;
-};
-
-renderInputType.range = function (range, params) {
-  var rangeInput = range.querySelector('input');
-  var rangeOutput = range.querySelector('output');
-  rangeInput.value = params.inputValue;
-  rangeInput.type = params.input;
-  rangeOutput.value = params.inputValue;
-  return range;
-};
-
-renderInputType.select = function (select, params) {
-  select.innerHTML = '';
-
-  if (params.inputPlaceholder) {
-    var placeholder = document.createElement('option');
-    placeholder.innerHTML = params.inputPlaceholder;
-    placeholder.value = '';
-    placeholder.disabled = true;
-    placeholder.selected = true;
-    select.appendChild(placeholder);
-  }
-
-  return select;
-};
-
-renderInputType.radio = function (radio) {
-  radio.innerHTML = '';
-  return radio;
-};
-
-renderInputType.checkbox = function (checkboxContainer, params) {
-  var checkbox = getInput(getContent(), 'checkbox');
-  checkbox.value = 1;
-  checkbox.id = swalClasses.checkbox;
-  checkbox.checked = Boolean(params.inputValue);
-  var label = checkboxContainer.querySelector('span');
-  label.innerHTML = params.inputPlaceholder;
-  return checkboxContainer;
-};
-
-renderInputType.textarea = function (textarea, params) {
-  textarea.value = params.inputValue;
-  setInputPlaceholder(textarea, params);
-
-  if ('MutationObserver' in window) {
-    // #1699
-    var initialPopupWidth = parseInt(window.getComputedStyle(getPopup()).width);
-    var popupPadding = parseInt(window.getComputedStyle(getPopup()).paddingLeft) + parseInt(window.getComputedStyle(getPopup()).paddingRight);
-
-    var outputsize = function outputsize() {
-      var contentWidth = textarea.offsetWidth + popupPadding;
-
-      if (contentWidth > initialPopupWidth) {
-        getPopup().style.width = "".concat(contentWidth, "px");
-      } else {
-        getPopup().style.width = null;
-      }
-    };
-
-    new MutationObserver(outputsize).observe(textarea, {
-      attributes: true,
-      attributeFilter: ['style']
-    });
-  }
-
-  return textarea;
-};
-
-var renderContent = function renderContent(instance, params) {
-  var content = getContent().querySelector("#".concat(swalClasses.content)); // Content as HTML
-
-  if (params.html) {
-    parseHtmlToContainer(params.html, content);
-    show(content, 'block'); // Content as plain text
-  } else if (params.text) {
-    content.textContent = params.text;
-    show(content, 'block'); // No content
-  } else {
-    hide(content);
-  }
-
-  renderInput(instance, params); // Custom class
-
-  applyCustomClass(getContent(), params, 'content');
-};
-
-var renderFooter = function renderFooter(instance, params) {
-  var footer = getFooter();
-  toggle(footer, params.footer);
-
-  if (params.footer) {
-    parseHtmlToContainer(params.footer, footer);
-  } // Custom class
-
-
-  applyCustomClass(footer, params, 'footer');
-};
-
-var renderCloseButton = function renderCloseButton(instance, params) {
-  var closeButton = getCloseButton();
-  closeButton.innerHTML = params.closeButtonHtml; // Custom class
-
-  applyCustomClass(closeButton, params, 'closeButton');
-  toggle(closeButton, params.showCloseButton);
-  closeButton.setAttribute('aria-label', params.closeButtonAriaLabel);
-};
-
-var renderIcon = function renderIcon(instance, params) {
-  var innerParams = privateProps.innerParams.get(instance); // if the give icon already rendered, apply the custom class without re-rendering the icon
-
-  if (innerParams && params.icon === innerParams.icon && getIcon()) {
-    applyCustomClass(getIcon(), params, 'icon');
-    return;
-  }
-
-  hideAllIcons();
-
-  if (!params.icon) {
-    return;
-  }
-
-  if (Object.keys(iconTypes).indexOf(params.icon) !== -1) {
-    var icon = elementBySelector(".".concat(swalClasses.icon, ".").concat(iconTypes[params.icon]));
-    show(icon); // Custom or default content
-
-    setContent(icon, params);
-    adjustSuccessIconBackgoundColor(); // Custom class
-
-    applyCustomClass(icon, params, 'icon'); // Animate icon
-
-    addClass(icon, params.showClass.icon);
-  } else {
-    error("Unknown icon! Expected \"success\", \"error\", \"warning\", \"info\" or \"question\", got \"".concat(params.icon, "\""));
-  }
-};
-
-var hideAllIcons = function hideAllIcons() {
-  var icons = getIcons();
-
-  for (var i = 0; i < icons.length; i++) {
-    hide(icons[i]);
-  }
-}; // Adjust success icon background color to match the popup background color
-
-
-var adjustSuccessIconBackgoundColor = function adjustSuccessIconBackgoundColor() {
-  var popup = getPopup();
-  var popupBackgroundColor = window.getComputedStyle(popup).getPropertyValue('background-color');
-  var successIconParts = popup.querySelectorAll('[class^=swal2-success-circular-line], .swal2-success-fix');
-
-  for (var i = 0; i < successIconParts.length; i++) {
-    successIconParts[i].style.backgroundColor = popupBackgroundColor;
-  }
-};
-
-var setContent = function setContent(icon, params) {
-  icon.innerHTML = '';
-
-  if (params.iconHtml) {
-    icon.innerHTML = iconContent(params.iconHtml);
-  } else if (params.icon === 'success') {
-    icon.innerHTML = "\n      <div class=\"swal2-success-circular-line-left\"></div>\n      <span class=\"swal2-success-line-tip\"></span> <span class=\"swal2-success-line-long\"></span>\n      <div class=\"swal2-success-ring\"></div> <div class=\"swal2-success-fix\"></div>\n      <div class=\"swal2-success-circular-line-right\"></div>\n    ";
-  } else if (params.icon === 'error') {
-    icon.innerHTML = "\n      <span class=\"swal2-x-mark\">\n        <span class=\"swal2-x-mark-line-left\"></span>\n        <span class=\"swal2-x-mark-line-right\"></span>\n      </span>\n    ";
-  } else {
-    var defaultIconHtml = {
-      question: '?',
-      warning: '!',
-      info: 'i'
-    };
-    icon.innerHTML = iconContent(defaultIconHtml[params.icon]);
-  }
-};
-
-var iconContent = function iconContent(content) {
-  return "<div class=\"".concat(swalClasses['icon-content'], "\">").concat(content, "</div>");
-};
-
-var renderImage = function renderImage(instance, params) {
-  var image = getImage();
-
-  if (!params.imageUrl) {
-    return hide(image);
-  }
-
-  show(image); // Src, alt
-
-  image.setAttribute('src', params.imageUrl);
-  image.setAttribute('alt', params.imageAlt); // Width, height
-
-  applyNumericalStyle(image, 'width', params.imageWidth);
-  applyNumericalStyle(image, 'height', params.imageHeight); // Class
-
-  image.className = swalClasses.image;
-  applyCustomClass(image, params, 'image');
-};
-
-var currentSteps = [];
-/*
- * Global function for chaining sweetAlert popups
- */
-
-var queue = function queue(steps) {
-  var Swal = this;
-  currentSteps = steps;
-
-  var resetAndResolve = function resetAndResolve(resolve, value) {
-    currentSteps = [];
-    resolve(value);
   };
 
-  var queueResult = [];
-  return new Promise(function (resolve) {
-    (function step(i, callback) {
-      if (i < currentSteps.length) {
-        document.body.setAttribute('data-swal2-queue-step', i);
-        Swal.fire(currentSteps[i]).then(function (result) {
-          if (typeof result.value !== 'undefined') {
-            queueResult.push(result.value);
-            step(i + 1, callback);
-          } else {
-            resetAndResolve(resolve, {
-              dismiss: result.dismiss
-            });
-          }
-        });
-      } else {
-        resetAndResolve(resolve, {
-          value: queueResult
-        });
-      }
-    })(0);
-  });
-};
-/*
- * Global function for getting the index of current popup in queue
- */
-
-var getQueueStep = function getQueueStep() {
-  return getContainer().getAttribute('data-queue-step');
-};
-/*
- * Global function for inserting a popup to the queue
- */
-
-var insertQueueStep = function insertQueueStep(step, index) {
-  if (index && index < currentSteps.length) {
-    return currentSteps.splice(index, 0, step);
-  }
-
-  return currentSteps.push(step);
-};
-/*
- * Global function for deleting a popup from the queue
- */
-
-var deleteQueueStep = function deleteQueueStep(index) {
-  if (typeof currentSteps[index] !== 'undefined') {
-    currentSteps.splice(index, 1);
-  }
-};
-
-var createStepElement = function createStepElement(step) {
-  var stepEl = document.createElement('li');
-  addClass(stepEl, swalClasses['progress-step']);
-  stepEl.innerHTML = step;
-  return stepEl;
-};
-
-var createLineElement = function createLineElement(params) {
-  var lineEl = document.createElement('li');
-  addClass(lineEl, swalClasses['progress-step-line']);
-
-  if (params.progressStepsDistance) {
-    lineEl.style.width = params.progressStepsDistance;
-  }
-
-  return lineEl;
-};
-
-var renderProgressSteps = function renderProgressSteps(instance, params) {
-  var progressStepsContainer = getProgressSteps();
-
-  if (!params.progressSteps || params.progressSteps.length === 0) {
-    return hide(progressStepsContainer);
-  }
-
-  show(progressStepsContainer);
-  progressStepsContainer.innerHTML = '';
-  var currentProgressStep = parseInt(params.currentProgressStep === undefined ? getQueueStep() : params.currentProgressStep);
-
-  if (currentProgressStep >= params.progressSteps.length) {
-    warn('Invalid currentProgressStep parameter, it should be less than progressSteps.length ' + '(currentProgressStep like JS arrays starts from 0)');
-  }
-
-  params.progressSteps.forEach(function (step, index) {
-    var stepEl = createStepElement(step);
-    progressStepsContainer.appendChild(stepEl);
-
-    if (index === currentProgressStep) {
-      addClass(stepEl, swalClasses['active-progress-step']);
-    }
-
-    if (index !== params.progressSteps.length - 1) {
-      var lineEl = createLineElement(step);
-      progressStepsContainer.appendChild(lineEl);
-    }
-  });
-};
-
-var renderTitle = function renderTitle(instance, params) {
-  var title = getTitle();
-  toggle(title, params.title || params.titleText);
-
-  if (params.title) {
-    parseHtmlToContainer(params.title, title);
-  }
-
-  if (params.titleText) {
-    title.innerText = params.titleText;
-  } // Custom class
-
-
-  applyCustomClass(title, params, 'title');
-};
-
-var renderHeader = function renderHeader(instance, params) {
-  var header = getHeader(); // Custom class
-
-  applyCustomClass(header, params, 'header'); // Progress steps
-
-  renderProgressSteps(instance, params); // Icon
-
-  renderIcon(instance, params); // Image
-
-  renderImage(instance, params); // Title
-
-  renderTitle(instance, params); // Close button
-
-  renderCloseButton(instance, params);
-};
-
-var renderPopup = function renderPopup(instance, params) {
-  var popup = getPopup(); // Width
-
-  applyNumericalStyle(popup, 'width', params.width); // Padding
-
-  applyNumericalStyle(popup, 'padding', params.padding); // Background
-
-  if (params.background) {
-    popup.style.background = params.background;
-  } // Classes
-
-
-  addClasses(popup, params);
-};
-
-var addClasses = function addClasses(popup, params) {
-  // Default Class + showClass when updating Swal.update({})
-  popup.className = "".concat(swalClasses.popup, " ").concat(isVisible(popup) ? params.showClass.popup : '');
-
-  if (params.toast) {
-    addClass([document.documentElement, document.body], swalClasses['toast-shown']);
-    addClass(popup, swalClasses.toast);
-  } else {
-    addClass(popup, swalClasses.modal);
-  } // Custom class
-
-
-  applyCustomClass(popup, params, 'popup');
-
-  if (typeof params.customClass === 'string') {
-    addClass(popup, params.customClass);
-  } // Icon class (#1842)
-
-
-  if (params.icon) {
-    addClass(popup, swalClasses["icon-".concat(params.icon)]);
-  }
-};
-
-var render = function render(instance, params) {
-  renderPopup(instance, params);
-  renderContainer(instance, params);
-  renderHeader(instance, params);
-  renderContent(instance, params);
-  renderActions(instance, params);
-  renderFooter(instance, params);
-
-  if (typeof params.onRender === 'function') {
-    params.onRender(getPopup());
-  }
-};
-
-/*
- * Global function to determine if SweetAlert2 popup is shown
- */
-
-var isVisible$1 = function isVisible$$1() {
-  return isVisible(getPopup());
-};
-/*
- * Global function to click 'Confirm' button
- */
-
-var clickConfirm = function clickConfirm() {
-  return getConfirmButton() && getConfirmButton().click();
-};
-/*
- * Global function to click 'Cancel' button
- */
-
-var clickCancel = function clickCancel() {
-  return getCancelButton() && getCancelButton().click();
-};
-
-function fire() {
-  var Swal = this;
-
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return _construct(Swal, args);
-}
-
-/**
- * Returns an extended version of `Swal` containing `params` as defaults.
- * Useful for reusing Swal configuration.
- *
- * For example:
- *
- * Before:
- * const textPromptOptions = { input: 'text', showCancelButton: true }
- * const {value: firstName} = await Swal.fire({ ...textPromptOptions, title: 'What is your first name?' })
- * const {value: lastName} = await Swal.fire({ ...textPromptOptions, title: 'What is your last name?' })
- *
- * After:
- * const TextPrompt = Swal.mixin({ input: 'text', showCancelButton: true })
- * const {value: firstName} = await TextPrompt('What is your first name?')
- * const {value: lastName} = await TextPrompt('What is your last name?')
- *
- * @param mixinParams
- */
-function mixin(mixinParams) {
-  var MixinSwal =
-  /*#__PURE__*/
-  function (_this) {
-    _inherits(MixinSwal, _this);
-
-    function MixinSwal() {
-      _classCallCheck(this, MixinSwal);
-
-      return _possibleConstructorReturn(this, _getPrototypeOf(MixinSwal).apply(this, arguments));
-    }
-
-    _createClass(MixinSwal, [{
-      key: "_main",
-      value: function _main(params) {
-        return _get(_getPrototypeOf(MixinSwal.prototype), "_main", this).call(this, _extends({}, mixinParams, params));
-      }
-    }]);
-
-    return MixinSwal;
-  }(this);
-
-  return MixinSwal;
-}
-
-/**
- * Show spinner instead of Confirm button
- */
-
-var showLoading = function showLoading() {
-  var popup = getPopup();
-
-  if (!popup) {
-    Swal.fire();
-  }
-
-  popup = getPopup();
-  var actions = getActions();
-  var confirmButton = getConfirmButton();
-  show(actions);
-  show(confirmButton, 'inline-block');
-  addClass([popup, actions], swalClasses.loading);
-  confirmButton.disabled = true;
-  popup.setAttribute('data-loading', true);
-  popup.setAttribute('aria-busy', true);
-  popup.focus();
-};
-
-var RESTORE_FOCUS_TIMEOUT = 100;
-
-var globalState = {};
-var focusPreviousActiveElement = function focusPreviousActiveElement() {
-  if (globalState.previousActiveElement && globalState.previousActiveElement.focus) {
-    globalState.previousActiveElement.focus();
-    globalState.previousActiveElement = null;
-  } else if (document.body) {
-    document.body.focus();
-  }
-}; // Restore previous active (focused) element
-
-
-var restoreActiveElement = function restoreActiveElement() {
-  return new Promise(function (resolve) {
-    var x = window.scrollX;
-    var y = window.scrollY;
-    globalState.restoreFocusTimeout = setTimeout(function () {
-      focusPreviousActiveElement();
-      resolve();
-    }, RESTORE_FOCUS_TIMEOUT); // issues/900
-
-    if (typeof x !== 'undefined' && typeof y !== 'undefined') {
-      // IE doesn't have scrollX/scrollY support
-      window.scrollTo(x, y);
-    }
-  });
-};
-
-/**
- * If `timer` parameter is set, returns number of milliseconds of timer remained.
- * Otherwise, returns undefined.
- */
-
-var getTimerLeft = function getTimerLeft() {
-  return globalState.timeout && globalState.timeout.getTimerLeft();
-};
-/**
- * Stop timer. Returns number of milliseconds of timer remained.
- * If `timer` parameter isn't set, returns undefined.
- */
-
-var stopTimer = function stopTimer() {
-  if (globalState.timeout) {
-    stopTimerProgressBar();
-    return globalState.timeout.stop();
-  }
-};
-/**
- * Resume timer. Returns number of milliseconds of timer remained.
- * If `timer` parameter isn't set, returns undefined.
- */
-
-var resumeTimer = function resumeTimer() {
-  if (globalState.timeout) {
-    var remaining = globalState.timeout.start();
-    animateTimerProgressBar(remaining);
-    return remaining;
-  }
-};
-/**
- * Resume timer. Returns number of milliseconds of timer remained.
- * If `timer` parameter isn't set, returns undefined.
- */
-
-var toggleTimer = function toggleTimer() {
-  var timer = globalState.timeout;
-  return timer && (timer.running ? stopTimer() : resumeTimer());
-};
-/**
- * Increase timer. Returns number of milliseconds of an updated timer.
- * If `timer` parameter isn't set, returns undefined.
- */
-
-var increaseTimer = function increaseTimer(n) {
-  if (globalState.timeout) {
-    var remaining = globalState.timeout.increase(n);
-    animateTimerProgressBar(remaining, true);
-    return remaining;
-  }
-};
-/**
- * Check if timer is running. Returns true if timer is running
- * or false if timer is paused or stopped.
- * If `timer` parameter isn't set, returns undefined
- */
-
-var isTimerRunning = function isTimerRunning() {
-  return globalState.timeout && globalState.timeout.isRunning();
-};
-
-var defaultParams = {
-  title: '',
-  titleText: '',
-  text: '',
-  html: '',
-  footer: '',
-  icon: undefined,
-  iconHtml: undefined,
-  toast: false,
-  animation: true,
-  showClass: {
-    popup: 'swal2-show',
-    backdrop: 'swal2-backdrop-show',
-    icon: 'swal2-icon-show'
-  },
-  hideClass: {
-    popup: 'swal2-hide',
-    backdrop: 'swal2-backdrop-hide',
-    icon: 'swal2-icon-hide'
-  },
-  customClass: undefined,
-  target: 'body',
-  backdrop: true,
-  heightAuto: true,
-  allowOutsideClick: true,
-  allowEscapeKey: true,
-  allowEnterKey: true,
-  stopKeydownPropagation: true,
-  keydownListenerCapture: false,
-  showConfirmButton: true,
-  showCancelButton: false,
-  preConfirm: undefined,
-  confirmButtonText: 'OK',
-  confirmButtonAriaLabel: '',
-  confirmButtonColor: undefined,
-  cancelButtonText: 'Cancel',
-  cancelButtonAriaLabel: '',
-  cancelButtonColor: undefined,
-  buttonsStyling: true,
-  reverseButtons: false,
-  focusConfirm: true,
-  focusCancel: false,
-  showCloseButton: false,
-  closeButtonHtml: '&times;',
-  closeButtonAriaLabel: 'Close this dialog',
-  showLoaderOnConfirm: false,
-  imageUrl: undefined,
-  imageWidth: undefined,
-  imageHeight: undefined,
-  imageAlt: '',
-  timer: undefined,
-  timerProgressBar: false,
-  width: undefined,
-  padding: undefined,
-  background: undefined,
-  input: undefined,
-  inputPlaceholder: '',
-  inputValue: '',
-  inputOptions: {},
-  inputAutoTrim: true,
-  inputAttributes: {},
-  inputValidator: undefined,
-  validationMessage: undefined,
-  grow: false,
-  position: 'center',
-  progressSteps: [],
-  currentProgressStep: undefined,
-  progressStepsDistance: undefined,
-  onBeforeOpen: undefined,
-  onOpen: undefined,
-  onRender: undefined,
-  onClose: undefined,
-  onAfterClose: undefined,
-  scrollbarPadding: true
-};
-var updatableParams = ['title', 'titleText', 'text', 'html', 'icon', 'customClass', 'showConfirmButton', 'showCancelButton', 'confirmButtonText', 'confirmButtonAriaLabel', 'confirmButtonColor', 'cancelButtonText', 'cancelButtonAriaLabel', 'cancelButtonColor', 'buttonsStyling', 'reverseButtons', 'imageUrl', 'imageWidth', 'imageHeight', 'imageAlt', 'progressSteps', 'currentProgressStep'];
-var deprecatedParams = {
-  animation: 'showClass" and "hideClass'
-};
-var toastIncompatibleParams = ['allowOutsideClick', 'allowEnterKey', 'backdrop', 'focusConfirm', 'focusCancel', 'heightAuto', 'keydownListenerCapture'];
-/**
- * Is valid parameter
- * @param {String} paramName
- */
-
-var isValidParameter = function isValidParameter(paramName) {
-  return Object.prototype.hasOwnProperty.call(defaultParams, paramName);
-};
-/**
- * Is valid parameter for Swal.update() method
- * @param {String} paramName
- */
-
-var isUpdatableParameter = function isUpdatableParameter(paramName) {
-  return updatableParams.indexOf(paramName) !== -1;
-};
-/**
- * Is deprecated parameter
- * @param {String} paramName
- */
-
-var isDeprecatedParameter = function isDeprecatedParameter(paramName) {
-  return deprecatedParams[paramName];
-};
-
-var checkIfParamIsValid = function checkIfParamIsValid(param) {
-  if (!isValidParameter(param)) {
-    warn("Unknown parameter \"".concat(param, "\""));
-  }
-};
-
-var checkIfToastParamIsValid = function checkIfToastParamIsValid(param) {
-  if (toastIncompatibleParams.indexOf(param) !== -1) {
-    warn("The parameter \"".concat(param, "\" is incompatible with toasts"));
-  }
-};
-
-var checkIfParamIsDeprecated = function checkIfParamIsDeprecated(param) {
-  if (isDeprecatedParameter(param)) {
-    warnAboutDepreation(param, isDeprecatedParameter(param));
-  }
-};
-/**
- * Show relevant warnings for given params
- *
- * @param params
- */
-
-
-var showWarningsForParams = function showWarningsForParams(params) {
-  for (var param in params) {
-    checkIfParamIsValid(param);
-
-    if (params.toast) {
-      checkIfToastParamIsValid(param);
-    }
-
-    checkIfParamIsDeprecated(param);
-  }
-};
-
-
-
-var staticMethods = Object.freeze({
-	isValidParameter: isValidParameter,
-	isUpdatableParameter: isUpdatableParameter,
-	isDeprecatedParameter: isDeprecatedParameter,
-	argsToParams: argsToParams,
-	isVisible: isVisible$1,
-	clickConfirm: clickConfirm,
-	clickCancel: clickCancel,
-	getContainer: getContainer,
-	getPopup: getPopup,
-	getTitle: getTitle,
-	getContent: getContent,
-	getHtmlContainer: getHtmlContainer,
-	getImage: getImage,
-	getIcon: getIcon,
-	getIcons: getIcons,
-	getCloseButton: getCloseButton,
-	getActions: getActions,
-	getConfirmButton: getConfirmButton,
-	getCancelButton: getCancelButton,
-	getHeader: getHeader,
-	getFooter: getFooter,
-	getFocusableElements: getFocusableElements,
-	getValidationMessage: getValidationMessage,
-	isLoading: isLoading,
-	fire: fire,
-	mixin: mixin,
-	queue: queue,
-	getQueueStep: getQueueStep,
-	insertQueueStep: insertQueueStep,
-	deleteQueueStep: deleteQueueStep,
-	showLoading: showLoading,
-	enableLoading: showLoading,
-	getTimerLeft: getTimerLeft,
-	stopTimer: stopTimer,
-	resumeTimer: resumeTimer,
-	toggleTimer: toggleTimer,
-	increaseTimer: increaseTimer,
-	isTimerRunning: isTimerRunning
-});
-
-/**
- * Enables buttons and hide loader.
- */
-
-function hideLoading() {
-  // do nothing if popup is closed
-  var innerParams = privateProps.innerParams.get(this);
-
-  if (!innerParams) {
-    return;
-  }
-
-  var domCache = privateProps.domCache.get(this);
-
-  if (!innerParams.showConfirmButton) {
-    hide(domCache.confirmButton);
-
-    if (!innerParams.showCancelButton) {
-      hide(domCache.actions);
-    }
-  }
-
-  removeClass([domCache.popup, domCache.actions], swalClasses.loading);
-  domCache.popup.removeAttribute('aria-busy');
-  domCache.popup.removeAttribute('data-loading');
-  domCache.confirmButton.disabled = false;
-  domCache.cancelButton.disabled = false;
-}
-
-function getInput$1(instance) {
-  var innerParams = privateProps.innerParams.get(instance || this);
-  var domCache = privateProps.domCache.get(instance || this);
-
-  if (!domCache) {
-    return null;
-  }
-
-  return getInput(domCache.content, innerParams.input);
-}
-
-var fixScrollbar = function fixScrollbar() {
-  // for queues, do not do this more than once
-  if (states.previousBodyPadding !== null) {
-    return;
-  } // if the body has overflow
-
-
-  if (document.body.scrollHeight > window.innerHeight) {
-    // add padding so the content doesn't shift after removal of scrollbar
-    states.previousBodyPadding = parseInt(window.getComputedStyle(document.body).getPropertyValue('padding-right'));
-    document.body.style.paddingRight = "".concat(states.previousBodyPadding + measureScrollbar(), "px");
-  }
-};
-var undoScrollbar = function undoScrollbar() {
-  if (states.previousBodyPadding !== null) {
-    document.body.style.paddingRight = "".concat(states.previousBodyPadding, "px");
-    states.previousBodyPadding = null;
-  }
-};
-
-/* istanbul ignore next */
-
-var iOSfix = function iOSfix() {
-  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream || navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
-
-  if (iOS && !hasClass(document.body, swalClasses.iosfix)) {
-    var offset = document.body.scrollTop;
-    document.body.style.top = "".concat(offset * -1, "px");
-    addClass(document.body, swalClasses.iosfix);
-    lockBodyScroll();
-  }
-};
-/* istanbul ignore next */
-
-var lockBodyScroll = function lockBodyScroll() {
-  // #1246
-  var container = getContainer();
-  var preventTouchMove;
-
-  container.ontouchstart = function (e) {
-    preventTouchMove = e.target === container || !isScrollable(container) && e.target.tagName !== 'INPUT' // #1603
-    ;
-  };
-
-  container.ontouchmove = function (e) {
-    if (preventTouchMove) {
-      e.preventDefault();
-      e.stopPropagation();
+  var trueAppend = head.appendChild.bind(head); // TODO: adding return before reflect solves the TS issue
+  //@ts-ignore
+
+  head.appendChild = function appendChild(textNode) {
+    if (!isRobotoStyle(textNode)) {
+      Reflect.apply(trueAppend, head, [textNode]);
     }
   };
 };
-/* istanbul ignore next */
 
+function makeLoadScriptUrl(_ref) {
+  var googleMapsApiKey = _ref.googleMapsApiKey,
+      googleMapsClientId = _ref.googleMapsClientId,
+      _ref$version = _ref.version,
+      version = _ref$version === void 0 ? 'weekly' : _ref$version,
+      language = _ref.language,
+      region = _ref.region,
+      libraries = _ref.libraries,
+      channel = _ref.channel;
+  var params = [];
+  !(googleMapsApiKey && googleMapsClientId || !(googleMapsApiKey && googleMapsClientId)) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to specify either googleMapsApiKey or googleMapsClientId for @react-google-maps/api load script to work. You cannot use both at the same time.') : undefined : void 0;
 
-var undoIOSfix = function undoIOSfix() {
-  if (hasClass(document.body, swalClasses.iosfix)) {
-    var offset = parseInt(document.body.style.top, 10);
-    removeClass(document.body, swalClasses.iosfix);
-    document.body.style.top = '';
-    document.body.scrollTop = offset * -1;
+  if (googleMapsApiKey) {
+    params.push("key=" + googleMapsApiKey);
+  } else if (googleMapsClientId) {
+    params.push("client=" + googleMapsClientId);
   }
+
+  if (version) {
+    params.push("v=" + version);
+  }
+
+  if (language) {
+    params.push("language=" + language);
+  }
+
+  if (region) {
+    params.push("region=" + region);
+  }
+
+  if (libraries && libraries.length) {
+    params.push("libraries=" + libraries.sort().join(','));
+  }
+
+  if (channel) {
+    params.push("channel=" + channel);
+  }
+
+  params.push('callback=initMap');
+  return "https://maps.googleapis.com/maps/api/js?" + params.join('&');
+}
+
+var cleaningUp = false;
+function DefaultLoadingElement() {
+  return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Loading...");
+}
+var defaultLoadScriptProps = {
+  id: 'script-loader',
+  version: 'weekly'
 };
 
-var isIE11 = function isIE11() {
-  return !!window.MSInputMethodContext && !!document.documentMode;
-}; // Fix IE11 centering sweetalert2/issues/933
-
-/* istanbul ignore next */
-
-
-var fixVerticalPositionIE = function fixVerticalPositionIE() {
-  var container = getContainer();
-  var popup = getPopup();
-  container.style.removeProperty('align-items');
-
-  if (popup.offsetTop < 0) {
-    container.style.alignItems = 'flex-start';
-  }
-};
-/* istanbul ignore next */
-
-
-var IEfix = function IEfix() {
-  if (typeof window !== 'undefined' && isIE11()) {
-    fixVerticalPositionIE();
-    window.addEventListener('resize', fixVerticalPositionIE);
-  }
-};
-/* istanbul ignore next */
-
-var undoIEfix = function undoIEfix() {
-  if (typeof window !== 'undefined' && isIE11()) {
-    window.removeEventListener('resize', fixVerticalPositionIE);
-  }
-};
-
-// Adding aria-hidden="true" to elements outside of the active modal dialog ensures that
-// elements not within the active modal dialog will not be surfaced if a user opens a screen
-// reader’s list of elements (headings, form controls, landmarks, etc.) in the document.
-
-var setAriaHidden = function setAriaHidden() {
-  var bodyChildren = toArray(document.body.children);
-  bodyChildren.forEach(function (el) {
-    if (el === getContainer() || contains(el, getContainer())) {
-      return;
-    }
-
-    if (el.hasAttribute('aria-hidden')) {
-      el.setAttribute('data-previous-aria-hidden', el.getAttribute('aria-hidden'));
-    }
-
-    el.setAttribute('aria-hidden', 'true');
-  });
-};
-var unsetAriaHidden = function unsetAriaHidden() {
-  var bodyChildren = toArray(document.body.children);
-  bodyChildren.forEach(function (el) {
-    if (el.hasAttribute('data-previous-aria-hidden')) {
-      el.setAttribute('aria-hidden', el.getAttribute('data-previous-aria-hidden'));
-      el.removeAttribute('data-previous-aria-hidden');
-    } else {
-      el.removeAttribute('aria-hidden');
-    }
-  });
-};
-
-/**
- * This module containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
- * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
- * This is the approach that Babel will probably take to implement private methods/fields
- *   https://github.com/tc39/proposal-private-methods
- *   https://github.com/babel/babel/pull/7555
- * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
- *   then we can use that language feature.
- */
-var privateMethods = {
-  swalPromiseResolve: new WeakMap()
-};
-
-/*
- * Instance method to close sweetAlert
- */
-
-function removePopupAndResetState(instance, container, isToast, onAfterClose) {
-  if (isToast) {
-    triggerOnAfterCloseAndDispose(instance, onAfterClose);
-  } else {
-    restoreActiveElement().then(function () {
-      return triggerOnAfterCloseAndDispose(instance, onAfterClose);
-    });
-    globalState.keydownTarget.removeEventListener('keydown', globalState.keydownHandler, {
-      capture: globalState.keydownListenerCapture
-    });
-    globalState.keydownHandlerAdded = false;
-  }
-
-  if (container.parentNode) {
-    container.parentNode.removeChild(container);
-  }
-
-  if (isModal()) {
-    undoScrollbar();
-    undoIOSfix();
-    undoIEfix();
-    unsetAriaHidden();
-  }
-
-  removeBodyClasses();
-}
-
-function removeBodyClasses() {
-  removeClass([document.documentElement, document.body], [swalClasses.shown, swalClasses['height-auto'], swalClasses['no-backdrop'], swalClasses['toast-shown'], swalClasses['toast-column']]);
-}
-
-function disposeSwal(instance) {
-  // Unset this.params so GC will dispose it (#1569)
-  delete instance.params; // Unset globalState props so GC will dispose globalState (#1569)
-
-  delete globalState.keydownHandler;
-  delete globalState.keydownTarget; // Unset WeakMaps so GC will be able to dispose them (#1569)
-
-  unsetWeakMaps(privateProps);
-  unsetWeakMaps(privateMethods);
-}
-
-function close(resolveValue) {
-  var popup = getPopup();
-
-  if (!popup) {
-    return;
-  }
-
-  var innerParams = privateProps.innerParams.get(this);
-
-  if (!innerParams || hasClass(popup, innerParams.hideClass.popup)) {
-    return;
-  }
-
-  var swalPromiseResolve = privateMethods.swalPromiseResolve.get(this);
-  removeClass(popup, innerParams.showClass.popup);
-  addClass(popup, innerParams.hideClass.popup);
-  var backdrop = getContainer();
-  removeClass(backdrop, innerParams.showClass.backdrop);
-  addClass(backdrop, innerParams.hideClass.backdrop);
-  handlePopupAnimation(this, popup, innerParams); // Resolve Swal promise
-
-  swalPromiseResolve(resolveValue || {});
-}
-
-var handlePopupAnimation = function handlePopupAnimation(instance, popup, innerParams) {
-  var container = getContainer(); // If animation is supported, animate
-
-  var animationIsSupported = animationEndEvent && hasCssAnimation(popup);
-  var onClose = innerParams.onClose,
-      onAfterClose = innerParams.onAfterClose;
-
-  if (onClose !== null && typeof onClose === 'function') {
-    onClose(popup);
-  }
-
-  if (animationIsSupported) {
-    animatePopup(instance, popup, container, onAfterClose);
-  } else {
-    // Otherwise, remove immediately
-    removePopupAndResetState(instance, container, isToast(), onAfterClose);
-  }
-};
-
-var animatePopup = function animatePopup(instance, popup, container, onAfterClose) {
-  globalState.swalCloseEventFinishedCallback = removePopupAndResetState.bind(null, instance, container, isToast(), onAfterClose);
-  popup.addEventListener(animationEndEvent, function (e) {
-    if (e.target === popup) {
-      globalState.swalCloseEventFinishedCallback();
-      delete globalState.swalCloseEventFinishedCallback;
-    }
-  });
-};
-
-var unsetWeakMaps = function unsetWeakMaps(obj) {
-  for (var i in obj) {
-    obj[i] = new WeakMap();
-  }
-};
-
-var triggerOnAfterCloseAndDispose = function triggerOnAfterCloseAndDispose(instance, onAfterClose) {
-  setTimeout(function () {
-    if (onAfterClose !== null && typeof onAfterClose === 'function') {
-      onAfterClose();
-    }
-
-    if (!getPopup()) {
-      disposeSwal(instance);
-    }
-  });
-};
-
-function setButtonsDisabled(instance, buttons, disabled) {
-  var domCache = privateProps.domCache.get(instance);
-  buttons.forEach(function (button) {
-    domCache[button].disabled = disabled;
-  });
-}
-
-function setInputDisabled(input, disabled) {
-  if (!input) {
-    return false;
-  }
-
-  if (input.type === 'radio') {
-    var radiosContainer = input.parentNode.parentNode;
-    var radios = radiosContainer.querySelectorAll('input');
-
-    for (var i = 0; i < radios.length; i++) {
-      radios[i].disabled = disabled;
-    }
-  } else {
-    input.disabled = disabled;
-  }
-}
-
-function enableButtons() {
-  setButtonsDisabled(this, ['confirmButton', 'cancelButton'], false);
-}
-function disableButtons() {
-  setButtonsDisabled(this, ['confirmButton', 'cancelButton'], true);
-}
-function enableInput() {
-  return setInputDisabled(this.getInput(), false);
-}
-function disableInput() {
-  return setInputDisabled(this.getInput(), true);
-}
-
-function showValidationMessage(error) {
-  var domCache = privateProps.domCache.get(this);
-  domCache.validationMessage.innerHTML = error;
-  var popupComputedStyle = window.getComputedStyle(domCache.popup);
-  domCache.validationMessage.style.marginLeft = "-".concat(popupComputedStyle.getPropertyValue('padding-left'));
-  domCache.validationMessage.style.marginRight = "-".concat(popupComputedStyle.getPropertyValue('padding-right'));
-  show(domCache.validationMessage);
-  var input = this.getInput();
-
-  if (input) {
-    input.setAttribute('aria-invalid', true);
-    input.setAttribute('aria-describedBy', swalClasses['validation-message']);
-    focusInput(input);
-    addClass(input, swalClasses.inputerror);
-  }
-} // Hide block with validation message
-
-function resetValidationMessage$1() {
-  var domCache = privateProps.domCache.get(this);
-
-  if (domCache.validationMessage) {
-    hide(domCache.validationMessage);
-  }
-
-  var input = this.getInput();
-
-  if (input) {
-    input.removeAttribute('aria-invalid');
-    input.removeAttribute('aria-describedBy');
-    removeClass(input, swalClasses.inputerror);
-  }
-}
-
-function getProgressSteps$1() {
-  var domCache = privateProps.domCache.get(this);
-  return domCache.progressSteps;
-}
-
-var Timer =
+var LoadScript =
 /*#__PURE__*/
-function () {
-  function Timer(callback, delay) {
-    _classCallCheck(this, Timer);
+function (_React$PureComponent) {
+  _inheritsLoose(LoadScript, _React$PureComponent);
 
-    this.callback = callback;
-    this.remaining = delay;
-    this.running = false;
-    this.start();
-  }
+  function LoadScript() {
+    var _this;
 
-  _createClass(Timer, [{
-    key: "start",
-    value: function start() {
-      if (!this.running) {
-        this.running = true;
-        this.started = new Date();
-        this.id = setTimeout(this.callback, this.remaining);
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.check = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+    _this.state = {
+      loaded: false
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.cleanupCallback = function () {
+      //@ts-ignore
+      delete window.google;
+
+      _this.injectScript();
+    }; // eslint-disable-next-line @getify/proper-arrows/name
+
+
+    _this.isCleaningUp = function () {
+      try {
+        var promiseCallback = function promiseCallback(resolve) {
+          if (!cleaningUp) {
+            resolve();
+          } else {
+            if (isBrowser) {
+              var timer = window.setInterval(function interval() {
+                if (!cleaningUp) {
+                  window.clearInterval(timer);
+                  resolve();
+                }
+              }, 1);
+            }
+          }
+        };
+
+        return Promise.resolve(new Promise(promiseCallback));
+      } catch (e) {
+        return Promise.reject(e);
+      }
+    };
+
+    _this.cleanup = function () {
+      cleaningUp = true;
+      var script = document.getElementById(_this.props.id);
+
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
       }
 
-      return this.remaining;
+      Array.prototype.slice.call(document.getElementsByTagName("script")).filter(function filter(script) {
+        return script.src.includes("maps.googleapis");
+      }).forEach(function forEach(script) {
+        if (script.parentNode) {
+          script.parentNode.removeChild(script);
+        }
+      });
+      Array.prototype.slice.call(document.getElementsByTagName("link")).filter(function filter(link) {
+        return link.href === "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans";
+      }).forEach(function forEach(link) {
+        if (link.parentNode) {
+          link.parentNode.removeChild(link);
+        }
+      });
+      Array.prototype.slice.call(document.getElementsByTagName("style")).filter(function filter(style) {
+        return style.innerText !== undefined && style.innerText.length > 0 && style.innerText.includes(".gm-");
+      }).forEach(function forEach(style) {
+        if (style.parentNode) {
+          style.parentNode.removeChild(style);
+        }
+      });
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+
+    _this.injectScript = function () {
+      if (_this.props.preventGoogleFontsLoading) {
+        preventGoogleFonts();
+      }
+
+      !!!_this.props.id ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'LoadScript requires "id" prop to be a string: %s', _this.props.id) : undefined : void 0;
+      var injectScriptOptions = {
+        id: _this.props.id,
+        url: makeLoadScriptUrl(_this.props)
+      };
+      injectScript(injectScriptOptions) // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+      .then(function () {
+        if (_this.props.onLoad) {
+          _this.props.onLoad();
+        }
+
+        _this.setState(function setLoaded() {
+          return {
+            loaded: true
+          };
+        });
+      }) // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+      ["catch"](function (err) {
+        if (_this.props.onError) {
+          _this.props.onError(err);
+        }
+
+        console.error("\n          There has been an Error with loading Google Maps API script, please check that you provided correct google API key (" + (_this.props.googleMapsApiKey || '-') + ") or Client ID (" + (_this.props.googleMapsClientId || '-') + ") to <LoadScript />\n          Otherwise it is a Network issue.\n        ");
+      });
+    };
+
+    return _this;
+  }
+
+  var _proto = LoadScript.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    if (isBrowser) {
+      // @ts-ignore
+      if (window.google && !cleaningUp) {
+        console.error("google api is already presented");
+        return;
+      }
+
+      this.isCleaningUp().then(this.injectScript)["catch"](function err(err) {
+        console.error("Error at injecting script after cleaning up: ", err);
+      });
     }
-  }, {
-    key: "stop",
-    value: function stop() {
-      if (this.running) {
-        this.running = false;
-        clearTimeout(this.id);
-        this.remaining -= new Date() - this.started;
-      }
+  };
 
-      return this.remaining;
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.props.libraries !== prevProps.libraries) {
+      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable ounside of component, or somwhere in config files or ENV variables');
     }
-  }, {
-    key: "increase",
-    value: function increase(n) {
-      var running = this.running;
 
-      if (running) {
-        this.stop();
-      }
+    if (isBrowser && prevProps.language !== this.props.language) {
+      this.cleanup(); // TODO: refactor to use gDSFP maybe... wait for hooks refactoring.
+      // eslint-disable-next-line react/no-did-update-set-state
 
-      this.remaining += n;
-
-      if (running) {
-        this.start();
-      }
-
-      return this.remaining;
+      this.setState(function setLoaded() {
+        return {
+          loaded: false
+        };
+      }, this.cleanupCallback);
     }
-  }, {
-    key: "getTimerLeft",
-    value: function getTimerLeft() {
-      if (this.running) {
-        this.stop();
-        this.start();
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    var _this2 = this;
+
+    if (isBrowser) {
+      this.cleanup(); // eslint-disable-next-line @getify/proper-arrows/this
+
+      var timeoutCallback = function timeoutCallback() {
+        if (!_this2.check.current) {
+          //@ts-ignore
+          delete window.google;
+          cleaningUp = false;
+        }
+      };
+
+      window.setTimeout(timeoutCallback, 1);
+
+      if (this.props.onUnmount) {
+        this.props.onUnmount();
       }
-
-      return this.remaining;
     }
-  }, {
-    key: "isRunning",
-    value: function isRunning() {
-      return this.running;
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      ref: this.check
+    }), this.state.loaded ? this.props.children : this.props.loadingElement || Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DefaultLoadingElement, null));
+  };
+
+  return LoadScript;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+
+LoadScript.defaultProps = defaultLoadScriptProps;
+
+/* eslint-disable filenames/match-regex */
+var previouslyLoadedUrl;
+function useLoadScript(_ref) {
+  var _ref$id = _ref.id,
+      id = _ref$id === void 0 ? defaultLoadScriptProps.id : _ref$id,
+      _ref$version = _ref.version,
+      version = _ref$version === void 0 ? defaultLoadScriptProps.version : _ref$version,
+      googleMapsApiKey = _ref.googleMapsApiKey,
+      googleMapsClientId = _ref.googleMapsClientId,
+      language = _ref.language,
+      region = _ref.region,
+      libraries = _ref.libraries,
+      preventGoogleFontsLoading = _ref.preventGoogleFontsLoading,
+      channel = _ref.channel;
+  var isMounted = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
+
+  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      isLoaded = _React$useState[0],
+      setLoaded = _React$useState[1];
+
+  var _React$useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(undefined),
+      loadError = _React$useState2[0],
+      setLoadError = _React$useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function trackMountedState() {
+    isMounted.current = true;
+    return function () {
+      isMounted.current = false;
+    };
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function applyPreventGoogleFonts() {
+    if (isBrowser && preventGoogleFontsLoading) {
+      preventGoogleFonts();
     }
-  }]);
-
-  return Timer;
-}();
-
-var defaultInputValidators = {
-  email: function email(string, validationMessage) {
-    return /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]{2,24}$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || 'Invalid email address');
-  },
-  url: function url(string, validationMessage) {
-    // taken from https://stackoverflow.com/a/3809435 with a small change from #1306
-    return /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || 'Invalid URL');
-  }
-};
-
-function setDefaultInputValidators(params) {
-  // Use default `inputValidator` for supported input types if not provided
-  if (!params.inputValidator) {
-    Object.keys(defaultInputValidators).forEach(function (key) {
-      if (params.input === key) {
-        params.inputValidator = defaultInputValidators[key];
-      }
-    });
-  }
-}
-
-function validateCustomTargetElement(params) {
-  // Determine if the custom target element is valid
-  if (!params.target || typeof params.target === 'string' && !document.querySelector(params.target) || typeof params.target !== 'string' && !params.target.appendChild) {
-    warn('Target parameter is not valid, defaulting to "body"');
-    params.target = 'body';
-  }
-}
-/**
- * Set type, text and actions on popup
- *
- * @param params
- * @returns {boolean}
- */
-
-
-function setParameters(params) {
-  setDefaultInputValidators(params); // showLoaderOnConfirm && preConfirm
-
-  if (params.showLoaderOnConfirm && !params.preConfirm) {
-    warn('showLoaderOnConfirm is set to true, but preConfirm is not defined.\n' + 'showLoaderOnConfirm should be used together with preConfirm, see usage example:\n' + 'https://sweetalert2.github.io/#ajax-request');
-  } // params.animation will be actually used in renderPopup.js
-  // but in case when params.animation is a function, we need to call that function
-  // before popup (re)initialization, so it'll be possible to check Swal.isVisible()
-  // inside the params.animation function
-
-
-  params.animation = callIfFunction(params.animation);
-  validateCustomTargetElement(params); // Replace newlines with <br> in title
-
-  if (typeof params.title === 'string') {
-    params.title = params.title.split('\n').join('<br />');
-  }
-
-  init(params);
-}
-
-/**
- * Open popup, add necessary classes and styles, fix scrollbar
- *
- * @param {Array} params
- */
-
-var openPopup = function openPopup(params) {
-  var container = getContainer();
-  var popup = getPopup();
-
-  if (typeof params.onBeforeOpen === 'function') {
-    params.onBeforeOpen(popup);
-  }
-
-  addClasses$1(container, popup, params); // scrolling is 'hidden' until animation is done, after that 'auto'
-
-  setScrollingVisibility(container, popup);
-
-  if (isModal()) {
-    fixScrollContainer(container, params.scrollbarPadding);
-  }
-
-  if (!isToast() && !globalState.previousActiveElement) {
-    globalState.previousActiveElement = document.activeElement;
-  }
-
-  if (typeof params.onOpen === 'function') {
-    setTimeout(function () {
-      return params.onOpen(popup);
-    });
-  }
-};
-
-function swalOpenAnimationFinished(event) {
-  var popup = getPopup();
-
-  if (event.target !== popup) {
-    return;
-  }
-
-  var container = getContainer();
-  popup.removeEventListener(animationEndEvent, swalOpenAnimationFinished);
-  container.style.overflowY = 'auto';
-}
-
-var setScrollingVisibility = function setScrollingVisibility(container, popup) {
-  if (animationEndEvent && hasCssAnimation(popup)) {
-    container.style.overflowY = 'hidden';
-    popup.addEventListener(animationEndEvent, swalOpenAnimationFinished);
-  } else {
-    container.style.overflowY = 'auto';
-  }
-};
-
-var fixScrollContainer = function fixScrollContainer(container, scrollbarPadding) {
-  iOSfix();
-  IEfix();
-  setAriaHidden();
-
-  if (scrollbarPadding) {
-    fixScrollbar();
-  } // sweetalert2/issues/1247
-
-
-  setTimeout(function () {
-    container.scrollTop = 0;
+  }, [preventGoogleFontsLoading]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function validateLoadedState() {
+    if (isLoaded) {
+      ! // @ts-ignore
+      !!window.google ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useLoadScript was marked as loaded, but window.google is not present. Something went wrong.") : undefined : void 0;
+    }
+  }, [isLoaded]);
+  var url = makeLoadScriptUrl({
+    version: version,
+    googleMapsApiKey: googleMapsApiKey,
+    googleMapsClientId: googleMapsClientId,
+    language: language,
+    region: region,
+    libraries: libraries,
+    channel: channel
   });
-};
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function loadScriptAndModifyLoadedState() {
+    if (!isBrowser) {
+      return;
+    }
 
-var addClasses$1 = function addClasses(container, popup, params) {
-  addClass(container, params.showClass.backdrop);
-  show(popup); // Animate popup right after showing it
+    function setLoadedIfMounted() {
+      if (isMounted.current) {
+        setLoaded(true);
+        previouslyLoadedUrl = url;
+      }
+    }
 
-  addClass(popup, params.showClass.popup);
-  addClass([document.documentElement, document.body], swalClasses.shown);
+    if (window.google && previouslyLoadedUrl === url) {
+      setLoadedIfMounted();
+      return;
+    }
 
-  if (params.heightAuto && params.backdrop && !params.toast) {
-    addClass([document.documentElement, document.body], swalClasses['height-auto']);
+    injectScript({
+      id: id,
+      url: url
+    }).then(setLoadedIfMounted)["catch"](function handleInjectError(err) {
+      if (isMounted.current) {
+        setLoadError(err);
+      }
+
+      console.warn("\n        There has been an Error with loading Google Maps API script, please check that you provided correct google API key (" + (googleMapsApiKey || '-') + ") or Client ID (" + (googleMapsClientId || '-') + ")\n        Otherwise it is a Network issue.\n      ");
+      console.error(err);
+    });
+  }, [id, url]);
+  var prevLibraries = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function checkPerformance() {
+    if (prevLibraries.current && libraries !== prevLibraries.current) {
+      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
+    }
+
+    prevLibraries.current = libraries;
+  }, [libraries]);
+  return {
+    isLoaded: isLoaded,
+    loadError: loadError,
+    url: url
+  };
+}
+
+var defaultLoadingElement =
+/*#__PURE__*/
+Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DefaultLoadingElement, null);
+
+function LoadScriptNext(_ref) {
+  var loadingElement = _ref.loadingElement,
+      onLoad = _ref.onLoad,
+      onError = _ref.onError,
+      onUnmount = _ref.onUnmount,
+      children = _ref.children,
+      hookOptions = _objectWithoutPropertiesLoose(_ref, ["loadingElement", "onLoad", "onError", "onUnmount", "children"]);
+
+  var _useLoadScript = useLoadScript(hookOptions),
+      isLoaded = _useLoadScript.isLoaded,
+      loadError = _useLoadScript.loadError;
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnLoad() {
+    if (isLoaded && typeof onLoad === "function") {
+      onLoad();
+    }
+  }, [isLoaded, onLoad]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnError() {
+    if (loadError && typeof onError === "function") {
+      onError(loadError);
+    }
+  }, [loadError, onError]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnUnmount() {
+    return function () {
+      if (onUnmount) {
+        onUnmount();
+      }
+    };
+  }, [onUnmount]);
+  return isLoaded ? children : loadingElement || defaultLoadingElement;
+}
+
+var LoadScriptNext$1 = /*#__PURE__*/
+Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(LoadScriptNext);
+
+var eventMap$1 = {};
+var updaterMap$1 = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
   }
 };
+var TrafficLayer =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inheritsLoose(TrafficLayer, _PureComponent);
 
-var handleInputOptionsAndValue = function handleInputOptionsAndValue(instance, params) {
-  if (params.input === 'select' || params.input === 'radio') {
-    handleInputOptions(instance, params);
-  } else if (['text', 'email', 'number', 'tel', 'textarea'].indexOf(params.input) !== -1 && isPromise(params.inputValue)) {
-    handleInputValue(instance, params);
+  function TrafficLayer() {
+    var _this;
+
+    _this = _PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      trafficLayer: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setTrafficLayerCallback = function () {
+      if (_this.state.trafficLayer !== null) {
+        if (_this.props.onLoad) {
+          // @ts-ignore
+          _this.props.onLoad(_this.state.trafficLayer);
+        }
+      }
+    };
+
+    _this.registeredEvents = [];
+    return _this;
   }
-};
-var getInputValue = function getInputValue(instance, innerParams) {
-  var input = instance.getInput();
 
-  if (!input) {
+  var _proto = TrafficLayer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var trafficLayer = new google.maps.TrafficLayer(_extends({}, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$1,
+      eventMap: eventMap$1,
+      prevProps: {},
+      nextProps: this.props,
+      instance: trafficLayer
+    });
+
+    function setTrafficlayer() {
+      return {
+        trafficLayer: trafficLayer
+      };
+    }
+
+    this.setState(setTrafficlayer, this.setTrafficLayerCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.trafficLayer !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$1,
+        eventMap: eventMap$1,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.trafficLayer
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.trafficLayer !== null) {
+      if (this.props.onUnmount) {
+        // @ts-ignore
+        this.props.onUnmount(this.state.trafficLayer);
+      }
+
+      unregisterEvents(this.registeredEvents); // @ts-ignore
+
+      this.state.trafficLayer.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
     return null;
-  }
-
-  switch (innerParams.input) {
-    case 'checkbox':
-      return getCheckboxValue(input);
-
-    case 'radio':
-      return getRadioValue(input);
-
-    case 'file':
-      return getFileValue(input);
-
-    default:
-      return innerParams.inputAutoTrim ? input.value.trim() : input.value;
-  }
-};
-
-var getCheckboxValue = function getCheckboxValue(input) {
-  return input.checked ? 1 : 0;
-};
-
-var getRadioValue = function getRadioValue(input) {
-  return input.checked ? input.value : null;
-};
-
-var getFileValue = function getFileValue(input) {
-  return input.files.length ? input.getAttribute('multiple') !== null ? input.files : input.files[0] : null;
-};
-
-var handleInputOptions = function handleInputOptions(instance, params) {
-  var content = getContent();
-
-  var processInputOptions = function processInputOptions(inputOptions) {
-    return populateInputOptions[params.input](content, formatInputOptions(inputOptions), params);
   };
 
-  if (isPromise(params.inputOptions)) {
-    showLoading();
-    params.inputOptions.then(function (inputOptions) {
-      instance.hideLoading();
-      processInputOptions(inputOptions);
-    });
-  } else if (_typeof(params.inputOptions) === 'object') {
-    processInputOptions(params.inputOptions);
-  } else {
-    error("Unexpected type of inputOptions! Expected object, Map or Promise, got ".concat(_typeof(params.inputOptions)));
-  }
-};
+  return TrafficLayer;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+TrafficLayer.contextType = MapContext;
 
-var handleInputValue = function handleInputValue(instance, params) {
-  var input = instance.getInput();
-  hide(input);
-  params.inputValue.then(function (inputValue) {
-    input.value = params.input === 'number' ? parseFloat(inputValue) || 0 : "".concat(inputValue);
-    show(input);
-    input.focus();
-    instance.hideLoading();
-  })["catch"](function (err) {
-    error("Error in inputValue promise: ".concat(err));
-    input.value = '';
-    show(input);
-    input.focus();
-    instance.hideLoading();
-  });
-};
+var BicyclingLayer =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(BicyclingLayer, _React$PureComponent);
 
-var populateInputOptions = {
-  select: function select(content, inputOptions, params) {
-    var select = getChildByClass(content, swalClasses.select);
-    inputOptions.forEach(function (inputOption) {
-      var optionValue = inputOption[0];
-      var optionLabel = inputOption[1];
-      var option = document.createElement('option');
-      option.value = optionValue;
-      option.innerHTML = optionLabel;
+  function BicyclingLayer() {
+    var _this;
 
-      if (params.inputValue.toString() === optionValue.toString()) {
-        option.selected = true;
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      bicyclingLayer: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setBicyclingLayerCallback = function () {
+      if (_this.state.bicyclingLayer !== null) {
+        // TODO: how is this possibly null if we're doing a null check
+        // @ts-ignore
+        _this.state.bicyclingLayer.setMap(_this.context);
+
+        if (_this.props.onLoad) {
+          //@ts-ignore
+          _this.props.onLoad(_this.state.bicyclingLayer);
+        }
       }
+    };
 
-      select.appendChild(option);
-    });
-    select.focus();
+    return _this;
+  }
+
+  var _proto = BicyclingLayer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var bicyclingLayer = new google.maps.BicyclingLayer();
+
+    function setBicyclingLayer() {
+      return {
+        bicyclingLayer: bicyclingLayer
+      };
+    }
+
+    this.setState(setBicyclingLayer, this.setBicyclingLayerCallback);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.bicyclingLayer !== null) {
+      if (this.props.onUnmount) {
+        // @ts-ignore
+        this.props.onUnmount(this.state.bicyclingLayer);
+      } // @ts-ignore
+
+
+      this.state.bicyclingLayer.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return BicyclingLayer;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+BicyclingLayer.contextType = MapContext;
+
+var TransitLayer =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(TransitLayer, _React$PureComponent);
+
+  function TransitLayer() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      transitLayer: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setTransitLayerCallback = function () {
+      if (_this.state.transitLayer !== null) {
+        // TODO: how is this possibly null if we're doing a null check
+        // @ts-ignore
+        _this.state.transitLayer.setMap(_this.context);
+
+        if (_this.props.onLoad) {
+          //@ts-ignore
+          _this.props.onLoad(_this.state.transitLayer);
+        }
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = TransitLayer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var transitLayer = new google.maps.TransitLayer();
+
+    function setTransitLayer() {
+      return {
+        transitLayer: transitLayer
+      };
+    }
+
+    this.setState(setTransitLayer, this.setTransitLayerCallback);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.transitLayer !== null) {
+      if (this.props.onUnmount) {
+        // @ts-ignore
+        this.props.onUnmount(this.state.transitLayer);
+      } // @ts-ignore
+
+
+      this.state.transitLayer.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return TransitLayer;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+TransitLayer.contextType = MapContext;
+
+var eventMap$2 = {
+  onCircleComplete: "circlecomplete",
+  onMarkerComplete: "markercomplete",
+  onOverlayComplete: "overlaycomplete",
+  onPolygonComplete: "polygoncomplete",
+  onPolylineComplete: "polylinecomplete",
+  onRectangleComplete: "rectanglecomplete"
+};
+var updaterMap$2 = {
+  drawingMode: function drawingMode(instance, _drawingMode) {
+    instance.setDrawingMode(_drawingMode);
   },
-  radio: function radio(content, inputOptions, params) {
-    var radio = getChildByClass(content, swalClasses.radio);
-    inputOptions.forEach(function (inputOption) {
-      var radioValue = inputOption[0];
-      var radioLabel = inputOption[1];
-      var radioInput = document.createElement('input');
-      var radioLabelElement = document.createElement('label');
-      radioInput.type = 'radio';
-      radioInput.name = swalClasses.radio;
-      radioInput.value = radioValue;
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  }
+};
+var DrawingManager =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(DrawingManager, _React$PureComponent);
 
-      if (params.inputValue.toString() === radioValue.toString()) {
-        radioInput.checked = true;
+  function DrawingManager(props) {
+    var _this;
+
+    _this = _React$PureComponent.call(this, props) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      drawingManager: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setDrawingManagerCallback = function () {
+      if (_this.state.drawingManager !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.drawingManager);
+      }
+    };
+
+    !!!google.maps.drawing ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "Did you include prop libraries={['drawing']} in the URL? %s", google.maps.drawing) : undefined : void 0;
+    return _this;
+  }
+
+  var _proto = DrawingManager.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var drawingManager = new google.maps.drawing.DrawingManager(_extends({}, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$2,
+      eventMap: eventMap$2,
+      prevProps: {},
+      nextProps: this.props,
+      instance: drawingManager
+    });
+
+    function setDrawingManager() {
+      return {
+        drawingManager: drawingManager
+      };
+    }
+
+    this.setState(setDrawingManager, this.setDrawingManagerCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.drawingManager !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$2,
+        eventMap: eventMap$2,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.drawingManager
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.drawingManager !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.drawingManager);
       }
 
-      var label = document.createElement('span');
-      label.innerHTML = radioLabel;
-      label.className = swalClasses.label;
-      radioLabelElement.appendChild(radioInput);
-      radioLabelElement.appendChild(label);
-      radio.appendChild(radioLabelElement);
-    });
-    var radios = radio.querySelectorAll('input');
-
-    if (radios.length) {
-      radios[0].focus();
+      unregisterEvents(this.registeredEvents);
+      this.state.drawingManager.setMap(null);
     }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return DrawingManager;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+DrawingManager.contextType = MapContext;
+
+var eventMap$3 = {
+  onAnimationChanged: "animation_changed",
+  onClick: "click",
+  onClickableChanged: "clickable_changed",
+  onCursorChanged: "cursor_changed",
+  onDblClick: "dblclick",
+  onDrag: "drag",
+  onDragEnd: "dragend",
+  onDraggableChanged: "draggable_changed",
+  onDragStart: "dragstart",
+  onFlatChanged: "flat_changed",
+  onIconChanged: "icon_changed",
+  onMouseDown: "mousedown",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onPositionChanged: "position_changed",
+  onRightClick: "rightclick",
+  onShapeChanged: "shape_changed",
+  onTitleChanged: "title_changed",
+  onVisibleChanged: "visible_changed",
+  onZindexChanged: "zindex_changed"
+};
+var updaterMap$3 = {
+  animation: function animation(instance, _animation) {
+    instance.setAnimation(_animation);
+  },
+  clickable: function clickable(instance, _clickable) {
+    instance.setClickable(_clickable);
+  },
+  cursor: function cursor(instance, _cursor) {
+    instance.setCursor(_cursor);
+  },
+  draggable: function draggable(instance, _draggable) {
+    instance.setDraggable(_draggable);
+  },
+  icon: function icon(instance, _icon) {
+    instance.setIcon(_icon);
+  },
+  label: function label(instance, _label) {
+    instance.setLabel(_label);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  opacity: function opacity(instance, _opacity) {
+    instance.setOpacity(_opacity);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  position: function position(instance, _position) {
+    instance.setPosition(_position);
+  },
+  shape: function shape(instance, _shape) {
+    instance.setShape(_shape);
+  },
+  title: function title(instance, _title) {
+    instance.setTitle(_title);
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible);
+  },
+  zIndex: function zIndex(instance, _zIndex) {
+    instance.setZIndex(_zIndex);
   }
 };
-/**
- * Converts `inputOptions` into an array of `[value, label]`s
- * @param inputOptions
- */
+var Marker =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Marker, _React$PureComponent);
 
-var formatInputOptions = function formatInputOptions(inputOptions) {
-  var result = [];
+  function Marker() {
+    var _this;
 
-  if (typeof Map !== 'undefined' && inputOptions instanceof Map) {
-    inputOptions.forEach(function (value, key) {
-      result.push([key, value]);
-    });
-  } else {
-    Object.keys(inputOptions).forEach(function (key) {
-      result.push([key, inputOptions[key]]);
-    });
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      marker: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setMarkerCallback = function () {
+      if (_this.state.marker !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.marker);
+      }
+    };
+
+    return _this;
   }
 
-  return result;
-};
+  var _proto = Marker.prototype;
 
-var handleConfirmButtonClick = function handleConfirmButtonClick(instance, innerParams) {
-  instance.disableButtons();
-
-  if (innerParams.input) {
-    handleConfirmWithInput(instance, innerParams);
-  } else {
-    confirm(instance, innerParams, true);
-  }
-};
-var handleCancelButtonClick = function handleCancelButtonClick(instance, dismissWith) {
-  instance.disableButtons();
-  dismissWith(DismissReason.cancel);
-};
-
-var handleConfirmWithInput = function handleConfirmWithInput(instance, innerParams) {
-  var inputValue = getInputValue(instance, innerParams);
-
-  if (innerParams.inputValidator) {
-    instance.disableInput();
-    var validationPromise = Promise.resolve().then(function () {
-      return innerParams.inputValidator(inputValue, innerParams.validationMessage);
+  _proto.componentDidMount = function componentDidMount() {
+    var markerOptions = _extends({}, this.props.options || {}, {}, this.props.clusterer ? {} : {
+      map: this.context
+    }, {
+      position: this.props.position
     });
-    validationPromise.then(function (validationMessage) {
-      instance.enableButtons();
-      instance.enableInput();
 
-      if (validationMessage) {
-        instance.showValidationMessage(validationMessage);
+    var marker = new google.maps.Marker(markerOptions);
+
+    if (this.props.clusterer) {
+      this.props.clusterer.addMarker( // @ts-ignore
+      marker, !!this.props.noClustererRedraw);
+    } else {
+      marker.setMap(this.context);
+    }
+
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$3,
+      eventMap: eventMap$3,
+      prevProps: {},
+      nextProps: this.props,
+      instance: marker
+    });
+
+    function setMarker() {
+      return {
+        marker: marker
+      };
+    }
+
+    this.setState(setMarker, this.setMarkerCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.marker !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$3,
+        eventMap: eventMap$3,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.marker
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.marker !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.marker);
+      }
+
+      unregisterEvents(this.registeredEvents);
+
+      if (this.props.clusterer) {
+        this.props.clusterer.removeMarker( // @ts-ignore
+        this.state.marker, !!this.props.noClustererRedraw);
       } else {
-        confirm(instance, innerParams, inputValue);
+        this.state.marker && this.state.marker.setMap(null);
       }
-    });
-  } else if (!instance.getInput().checkValidity()) {
-    instance.enableButtons();
-    instance.showValidationMessage(innerParams.validationMessage);
-  } else {
-    confirm(instance, innerParams, inputValue);
+    }
+  };
+
+  _proto.render = function render() {
+    return this.props.children || null;
+  };
+
+  return Marker;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+Marker.contextType = MapContext;
+
+var eventMap$4 = {
+  onClick: "click",
+  onClusteringBegin: "clusteringbegin",
+  onClusteringEnd: "clusteringend",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover"
+};
+var updaterMap$4 = {
+  averageCenter: function averageCenter(instance, _averageCenter) {
+    instance.setAverageCenter(_averageCenter);
+  },
+  batchSizeIE: function batchSizeIE(instance, _batchSizeIE) {
+    instance.setBatchSizeIE(_batchSizeIE);
+  },
+  calculator: function calculator(instance, _calculator) {
+    instance.setCalculator(_calculator);
+  },
+  clusterClass: function clusterClass(instance, _clusterClass) {
+    instance.setClusterClass(_clusterClass);
+  },
+  enableRetinaIcons: function enableRetinaIcons(instance, _enableRetinaIcons) {
+    instance.setEnableRetinaIcons(_enableRetinaIcons);
+  },
+  gridSize: function gridSize(instance, _gridSize) {
+    instance.setGridSize(_gridSize);
+  },
+  ignoreHidden: function ignoreHidden(instance, _ignoreHidden) {
+    instance.setIgnoreHidden(_ignoreHidden);
+  },
+  imageExtension: function imageExtension(instance, _imageExtension) {
+    instance.setImageExtension(_imageExtension);
+  },
+  imagePath: function imagePath(instance, _imagePath) {
+    instance.setImagePath(_imagePath);
+  },
+  imageSizes: function imageSizes(instance, _imageSizes) {
+    instance.setImageSizes(_imageSizes);
+  },
+  maxZoom: function maxZoom(instance, _maxZoom) {
+    instance.setMaxZoom(_maxZoom);
+  },
+  minimumClusterSize: function minimumClusterSize(instance, _minimumClusterSize) {
+    instance.setMinimumClusterSize(_minimumClusterSize);
+  },
+  styles: function styles(instance, _styles) {
+    instance.setStyles(_styles);
+  },
+  title: function title(instance, _title) {
+    instance.setTitle(_title);
+  },
+  zoomOnClick: function zoomOnClick(instance, _zoomOnClick) {
+    instance.setZoomOnClick(_zoomOnClick);
   }
 };
+var ClustererComponent =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(ClustererComponent, _React$PureComponent);
 
-var succeedWith = function succeedWith(instance, value) {
-  instance.closePopup({
-    value: value
-  });
-};
+  function ClustererComponent() {
+    var _this;
 
-var confirm = function confirm(instance, innerParams, value) {
-  if (innerParams.showLoaderOnConfirm) {
-    showLoading(); // TODO: make showLoading an *instance* method
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      markerClusterer: null
+    };
+
+    _this.setClustererCallback = function () {
+      if (_this.state.markerClusterer !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.markerClusterer);
+      }
+    };
+
+    return _this;
   }
 
-  if (innerParams.preConfirm) {
-    instance.resetValidationMessage();
-    var preConfirmPromise = Promise.resolve().then(function () {
-      return innerParams.preConfirm(value, innerParams.validationMessage);
-    });
-    preConfirmPromise.then(function (preConfirmValue) {
-      if (isVisible(getValidationMessage()) || preConfirmValue === false) {
-        instance.hideLoading();
+  var _proto = ClustererComponent.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    if (this.context) {
+      var markerClusterer = new _react_google_maps_marker_clusterer__WEBPACK_IMPORTED_MODULE_2__["Clusterer"](this.context, [], this.props.options);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$4,
+        eventMap: eventMap$4,
+        prevProps: {},
+        nextProps: this.props,
+        instance: markerClusterer
+      });
+      this.setState(function setClusterer() {
+        return {
+          markerClusterer: markerClusterer
+        };
+      }, this.setClustererCallback);
+    }
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.markerClusterer) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$4,
+        eventMap: eventMap$4,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.markerClusterer
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.markerClusterer !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.markerClusterer);
+      }
+
+      unregisterEvents(this.registeredEvents); //@ts-ignore
+
+      this.state.markerClusterer.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return this.state.markerClusterer !== null ? this.props.children(this.state.markerClusterer) : null;
+  };
+
+  return ClustererComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+ClustererComponent.contextType = MapContext;
+
+var eventMap$5 = {
+  onCloseClick: "closeclick",
+  onContentChanged: "content_changed",
+  onDomReady: "domready",
+  onPositionChanged: "position_changed",
+  onZindexChanged: "zindex_changed"
+};
+var updaterMap$5 = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  position: function position(instance, _position) {
+    if (_position instanceof google.maps.LatLng) {
+      instance.setPosition(_position);
+    } else {
+      instance.setPosition(new google.maps.LatLng(_position.lat, _position.lng));
+    }
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible);
+  },
+  zIndex: function zIndex(instance, _zIndex) {
+    instance.setZIndex(_zIndex);
+  }
+};
+var InfoBoxComponent =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(InfoBoxComponent, _React$PureComponent);
+
+  function InfoBoxComponent() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.containerElement = null;
+    _this.state = {
+      infoBox: null
+    };
+
+    _this.open = function (infoBox, anchor) {
+      if (anchor) {
+        infoBox.open(_this.context, anchor);
+      } else if (infoBox.getPosition()) {
+        infoBox.open(_this.context);
       } else {
-        succeedWith(instance, typeof preConfirmValue === 'undefined' ? value : preConfirmValue);
-      }
-    });
-  } else {
-    succeedWith(instance, value);
-  }
-};
-
-var addKeydownHandler = function addKeydownHandler(instance, globalState, innerParams, dismissWith) {
-  if (globalState.keydownTarget && globalState.keydownHandlerAdded) {
-    globalState.keydownTarget.removeEventListener('keydown', globalState.keydownHandler, {
-      capture: globalState.keydownListenerCapture
-    });
-    globalState.keydownHandlerAdded = false;
-  }
-
-  if (!innerParams.toast) {
-    globalState.keydownHandler = function (e) {
-      return keydownHandler(instance, e, innerParams, dismissWith);
-    };
-
-    globalState.keydownTarget = innerParams.keydownListenerCapture ? window : getPopup();
-    globalState.keydownListenerCapture = innerParams.keydownListenerCapture;
-    globalState.keydownTarget.addEventListener('keydown', globalState.keydownHandler, {
-      capture: globalState.keydownListenerCapture
-    });
-    globalState.keydownHandlerAdded = true;
-  }
-}; // Focus handling
-
-var setFocus = function setFocus(innerParams, index, increment) {
-  var focusableElements = getFocusableElements(); // search for visible elements and select the next possible match
-
-  for (var i = 0; i < focusableElements.length; i++) {
-    index = index + increment; // rollover to first item
-
-    if (index === focusableElements.length) {
-      index = 0; // go to last item
-    } else if (index === -1) {
-      index = focusableElements.length - 1;
-    }
-
-    return focusableElements[index].focus();
-  } // no visible focusable elements, focus the popup
-
-
-  getPopup().focus();
-};
-var arrowKeys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Left', 'Right', 'Up', 'Down' // IE11
-];
-var escKeys = ['Escape', 'Esc' // IE11
-];
-
-var keydownHandler = function keydownHandler(instance, e, innerParams, dismissWith) {
-  if (innerParams.stopKeydownPropagation) {
-    e.stopPropagation();
-  } // ENTER
-
-
-  if (e.key === 'Enter') {
-    handleEnter(instance, e, innerParams); // TAB
-  } else if (e.key === 'Tab') {
-    handleTab(e, innerParams); // ARROWS - switch focus between buttons
-  } else if (arrowKeys.indexOf(e.key) !== -1) {
-    handleArrows(); // ESC
-  } else if (escKeys.indexOf(e.key) !== -1) {
-    handleEsc(e, innerParams, dismissWith);
-  }
-};
-
-var handleEnter = function handleEnter(instance, e, innerParams) {
-  // #720 #721
-  if (e.isComposing) {
-    return;
-  }
-
-  if (e.target && instance.getInput() && e.target.outerHTML === instance.getInput().outerHTML) {
-    if (['textarea', 'file'].indexOf(innerParams.input) !== -1) {
-      return; // do not submit
-    }
-
-    clickConfirm();
-    e.preventDefault();
-  }
-};
-
-var handleTab = function handleTab(e, innerParams) {
-  var targetElement = e.target;
-  var focusableElements = getFocusableElements();
-  var btnIndex = -1;
-
-  for (var i = 0; i < focusableElements.length; i++) {
-    if (targetElement === focusableElements[i]) {
-      btnIndex = i;
-      break;
-    }
-  }
-
-  if (!e.shiftKey) {
-    // Cycle to the next button
-    setFocus(innerParams, btnIndex, 1);
-  } else {
-    // Cycle to the prev button
-    setFocus(innerParams, btnIndex, -1);
-  }
-
-  e.stopPropagation();
-  e.preventDefault();
-};
-
-var handleArrows = function handleArrows() {
-  var confirmButton = getConfirmButton();
-  var cancelButton = getCancelButton(); // focus Cancel button if Confirm button is currently focused
-
-  if (document.activeElement === confirmButton && isVisible(cancelButton)) {
-    cancelButton.focus(); // and vice versa
-  } else if (document.activeElement === cancelButton && isVisible(confirmButton)) {
-    confirmButton.focus();
-  }
-};
-
-var handleEsc = function handleEsc(e, innerParams, dismissWith) {
-  if (callIfFunction(innerParams.allowEscapeKey)) {
-    e.preventDefault();
-    dismissWith(DismissReason.esc);
-  }
-};
-
-var handlePopupClick = function handlePopupClick(domCache, innerParams, dismissWith) {
-  if (innerParams.toast) {
-    handleToastClick(domCache, innerParams, dismissWith);
-  } else {
-    // Ignore click events that had mousedown on the popup but mouseup on the container
-    // This can happen when the user drags a slider
-    handleModalMousedown(domCache); // Ignore click events that had mousedown on the container but mouseup on the popup
-
-    handleContainerMousedown(domCache);
-    handleModalClick(domCache, innerParams, dismissWith);
-  }
-};
-
-var handleToastClick = function handleToastClick(domCache, innerParams, dismissWith) {
-  // Closing toast by internal click
-  domCache.popup.onclick = function () {
-    if (innerParams.showConfirmButton || innerParams.showCancelButton || innerParams.showCloseButton || innerParams.input) {
-      return;
-    }
-
-    dismissWith(DismissReason.close);
-  };
-};
-
-var ignoreOutsideClick = false;
-
-var handleModalMousedown = function handleModalMousedown(domCache) {
-  domCache.popup.onmousedown = function () {
-    domCache.container.onmouseup = function (e) {
-      domCache.container.onmouseup = undefined; // We only check if the mouseup target is the container because usually it doesn't
-      // have any other direct children aside of the popup
-
-      if (e.target === domCache.container) {
-        ignoreOutsideClick = true;
+          true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "You must provide either an anchor or a position prop for <InfoBox>.") : undefined ;
       }
     };
-  };
-};
 
-var handleContainerMousedown = function handleContainerMousedown(domCache) {
-  domCache.container.onmousedown = function () {
-    domCache.popup.onmouseup = function (e) {
-      domCache.popup.onmouseup = undefined; // We also need to check if the mouseup target is a child of the popup
+    _this.setInfoBoxCallback = function () {
+      var _this$props = _this.props,
+          anchor = _this$props.anchor,
+          onLoad = _this$props.onLoad;
+      var infoBox = _this.state.infoBox;
 
-      if (e.target === domCache.popup || domCache.popup.contains(e.target)) {
-        ignoreOutsideClick = true;
+      if (infoBox !== null && _this.containerElement !== null) {
+        infoBox.setContent(_this.containerElement);
+
+        _this.open(infoBox, anchor);
+
+        if (onLoad) {
+          onLoad(infoBox);
+        }
       }
     };
-  };
-};
 
-var handleModalClick = function handleModalClick(domCache, innerParams, dismissWith) {
-  domCache.container.onclick = function (e) {
-    if (ignoreOutsideClick) {
-      ignoreOutsideClick = false;
-      return;
-    }
-
-    if (e.target === domCache.container && callIfFunction(innerParams.allowOutsideClick)) {
-      dismissWith(DismissReason.backdrop);
-    }
-  };
-};
-
-function _main(userParams) {
-  showWarningsForParams(userParams); // Check if there is another Swal closing
-
-  if (getPopup() && globalState.swalCloseEventFinishedCallback) {
-    globalState.swalCloseEventFinishedCallback();
-    delete globalState.swalCloseEventFinishedCallback;
-  } // Check if there is a swal disposal defer timer
-
-
-  if (globalState.deferDisposalTimer) {
-    clearTimeout(globalState.deferDisposalTimer);
-    delete globalState.deferDisposalTimer;
+    return _this;
   }
 
-  var innerParams = prepareParams(userParams);
-  setParameters(innerParams);
-  Object.freeze(innerParams); // clear the previous timer
+  var _proto = InfoBoxComponent.prototype;
 
-  if (globalState.timeout) {
-    globalState.timeout.stop();
-    delete globalState.timeout;
-  } // clear the restore focus timeout
+  _proto.componentDidMount = function componentDidMount() {
+    var options = this.props.options;
 
+    var _ref = options || {},
+        position = _ref.position,
+        infoBoxOptions = _objectWithoutPropertiesLoose(_ref, ["position"]);
 
-  clearTimeout(globalState.restoreFocusTimeout);
-  var domCache = populateDomCache(this);
-  render(this, innerParams);
-  privateProps.innerParams.set(this, innerParams);
-  return swalPromise(this, domCache, innerParams);
+    var positionLatLng;
+
+    if (position && !(position instanceof google.maps.LatLng)) {
+      positionLatLng = new google.maps.LatLng(position.lat, position.lng);
+    }
+
+    var infoBox = new _react_google_maps_infobox__WEBPACK_IMPORTED_MODULE_4__["InfoBox"](_extends({}, infoBoxOptions, {}, positionLatLng ? {
+      position: positionLatLng
+    } : {}));
+    this.containerElement = document.createElement('div');
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$5,
+      eventMap: eventMap$5,
+      prevProps: {},
+      nextProps: this.props,
+      instance: infoBox
+    });
+    this.setState({
+      infoBox: infoBox
+    }, this.setInfoBoxCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    var infoBox = this.state.infoBox;
+
+    if (infoBox !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$5,
+        eventMap: eventMap$5,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: infoBox
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    var onUnmount = this.props.onUnmount;
+    var infoBox = this.state.infoBox;
+
+    if (infoBox !== null) {
+      if (onUnmount) {
+        onUnmount(infoBox);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      infoBox.close();
+    }
+  };
+
+  _proto.render = function render() {
+    if (!this.containerElement) {
+      return null;
+    }
+
+    return Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children), this.containerElement);
+  };
+
+  return InfoBoxComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+InfoBoxComponent.contextType = MapContext;
+
+var eventMap$6 = {
+  onCloseClick: "closeclick",
+  onContentChanged: "content_changed",
+  onDomReady: "domready",
+  onPositionChanged: "position_changed",
+  onZindexChanged: "zindex_changed"
+};
+var updaterMap$6 = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  position: function position(instance, _position) {
+    instance.setPosition(_position);
+  },
+  zIndex: function zIndex(instance, _zIndex) {
+    instance.setZIndex(_zIndex);
+  }
+};
+var InfoWindow =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(InfoWindow, _React$PureComponent);
+
+  function InfoWindow() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.containerElement = null;
+    _this.state = {
+      infoWindow: null
+    };
+
+    _this.open = function (infoWindow, anchor) {
+      if (anchor) {
+        infoWindow.open(_this.context, anchor);
+      } else if (infoWindow.getPosition()) {
+        infoWindow.open(_this.context);
+      } else {
+          true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "You must provide either an anchor (typically render it inside a <Marker>) or a position props for <InfoWindow>.") : undefined ;
+      }
+    };
+
+    _this.setInfowindowCallback = function () {
+      if (_this.state.infoWindow !== null && _this.containerElement !== null) {
+        _this.state.infoWindow.setContent(_this.containerElement);
+
+        _this.open(_this.state.infoWindow, _this.props.anchor);
+
+        if (_this.props.onLoad) {
+          _this.props.onLoad(_this.state.infoWindow);
+        }
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = InfoWindow.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var infoWindow = new google.maps.InfoWindow(_extends({}, this.props.options || {}));
+    this.containerElement = document.createElement("div");
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$6,
+      eventMap: eventMap$6,
+      prevProps: {},
+      nextProps: this.props,
+      instance: infoWindow
+    });
+
+    function setInfoWindow() {
+      return {
+        infoWindow: infoWindow
+      };
+    }
+
+    this.setState(setInfoWindow, this.setInfowindowCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.infoWindow !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$6,
+        eventMap: eventMap$6,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.infoWindow
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.infoWindow !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.state.infoWindow.close();
+    }
+  };
+
+  _proto.render = function render() {
+    return this.containerElement ? Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children), this.containerElement) : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return InfoWindow;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+InfoWindow.contextType = MapContext;
+
+var eventMap$7 = {
+  onClick: "click",
+  onDblClick: "dblclick",
+  onDrag: "drag",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMouseDown: "mousedown",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onRightClick: "rightclick"
+};
+var updaterMap$7 = {
+  draggable: function draggable(instance, _draggable) {
+    instance.setDraggable(_draggable);
+  },
+  editable: function editable(instance, _editable) {
+    instance.setEditable(_editable);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  path: function path(instance, _path) {
+    instance.setPath(_path);
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible);
+  }
+};
+var Polyline =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Polyline, _React$PureComponent);
+
+  function Polyline() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      polyline: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setPolylineCallback = function () {
+      if (_this.state.polyline !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.polyline);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = Polyline.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var polyline = new google.maps.Polyline(_extends({}, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$7,
+      eventMap: eventMap$7,
+      prevProps: {},
+      nextProps: this.props,
+      instance: polyline
+    });
+
+    function setPolyline() {
+      return {
+        polyline: polyline
+      };
+    }
+
+    this.setState(setPolyline, this.setPolylineCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.polyline !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$7,
+        eventMap: eventMap$7,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.polyline
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.polyline !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.polyline);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      this.state.polyline.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return Polyline;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+Polyline.contextType = MapContext;
+
+var eventMap$8 = {
+  onClick: "click",
+  onDblClick: "dblclick",
+  onDrag: "drag",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMouseDown: "mousedown",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onRightClick: "rightclick"
+};
+var updaterMap$8 = {
+  draggable: function draggable(instance, _draggable) {
+    instance.setDraggable(_draggable);
+  },
+  editable: function editable(instance, _editable) {
+    instance.setEditable(_editable);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  path: function path(instance, _path) {
+    instance.setPath(_path);
+  },
+  paths: function paths(instance, _paths) {
+    instance.setPaths(_paths);
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible);
+  }
+};
+var Polygon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Polygon, _React$PureComponent);
+
+  function Polygon() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      polygon: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setPolygonCallback = function () {
+      if (_this.state.polygon !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.polygon);
+      }
+    };
+
+    _this.render = function () {
+      return null;
+    };
+
+    return _this;
+  }
+
+  var _proto = Polygon.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var polygon = new google.maps.Polygon(_extends({}, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$8,
+      eventMap: eventMap$8,
+      prevProps: {},
+      nextProps: this.props,
+      instance: polygon
+    });
+
+    function setPolygon() {
+      return {
+        polygon: polygon
+      };
+    }
+
+    this.setState(setPolygon, this.setPolygonCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.polygon !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$8,
+        eventMap: eventMap$8,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.polygon
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.polygon !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.polygon);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      this.state.polygon && this.state.polygon.setMap(null);
+    }
+  };
+
+  return Polygon;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+Polygon.contextType = MapContext;
+
+var eventMap$9 = {
+  onBoundsChanged: "bounds_changed",
+  onClick: "click",
+  onDblClick: "dblclick",
+  onDrag: "drag",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMouseDown: "mousedown",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onRightClick: "rightclick"
+};
+var updaterMap$9 = {
+  bounds: function bounds(instance, _bounds) {
+    instance.setBounds(_bounds);
+  },
+  draggable: function draggable(instance, _draggable) {
+    instance.setDraggable(_draggable);
+  },
+  editable: function editable(instance, _editable) {
+    instance.setEditable(_editable);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible);
+  }
+};
+var Rectangle =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Rectangle, _React$PureComponent);
+
+  function Rectangle() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      rectangle: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setRectangleCallback = function () {
+      if (_this.state.rectangle !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.rectangle);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = Rectangle.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var rectangle = new google.maps.Rectangle(_extends({}, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$9,
+      eventMap: eventMap$9,
+      prevProps: {},
+      nextProps: this.props,
+      instance: rectangle
+    });
+
+    function setRectangle() {
+      return {
+        rectangle: rectangle
+      };
+    }
+
+    this.setState(setRectangle, this.setRectangleCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.rectangle !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$9,
+        eventMap: eventMap$9,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.rectangle
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.rectangle !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.rectangle);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      this.state.rectangle.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return Rectangle;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+Rectangle.contextType = MapContext;
+
+var eventMap$a = {
+  onCenterChanged: "center_changed",
+  onClick: "click",
+  onDblClick: "dblclick",
+  onDrag: "drag",
+  onDragEnd: "dragend",
+  onDragStart: "dragstart",
+  onMouseDown: "mousedown",
+  onMouseMove: "mousemove",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onRadiusChanged: "radius_changed",
+  onRightClick: "rightclick"
+};
+var updaterMap$a = {
+  center: function center(instance, _center) {
+    instance.setCenter(_center);
+  },
+  draggable: function draggable(instance, _draggable) {
+    instance.setDraggable(_draggable);
+  },
+  editable: function editable(instance, _editable) {
+    instance.setEditable(_editable);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  radius: function radius(instance, _radius) {
+    instance.setRadius(_radius);
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible);
+  }
+};
+var Circle =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Circle, _React$PureComponent);
+
+  function Circle() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      circle: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setCircleCallback = function () {
+      if (_this.state.circle !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.circle);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = Circle.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var circle = new google.maps.Circle(_extends({}, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$a,
+      eventMap: eventMap$a,
+      prevProps: {},
+      nextProps: this.props,
+      instance: circle
+    });
+
+    function setCircle() {
+      return {
+        circle: circle
+      };
+    }
+
+    this.setState(setCircle, this.setCircleCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.circle !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$a,
+        eventMap: eventMap$a,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.circle
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.circle !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.circle);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      this.state.circle && this.state.circle.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return Circle;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+Circle.contextType = MapContext;
+
+var eventMap$b = {
+  onAddFeature: "addfeature",
+  onClick: "click",
+  onDblClick: "dblclick",
+  onMouseDown: "mousedown",
+  onMouseOut: "mouseout",
+  onMouseOver: "mouseover",
+  onMouseUp: "mouseup",
+  onRemoveFeature: "removefeature",
+  onRemoveProperty: "removeproperty",
+  onRightClick: "rightclick",
+  onSetGeometry: "setgeometry",
+  onSetProperty: "setproperty"
+};
+var updaterMap$b = {
+  add: function add(instance, features) {
+    instance.add(features);
+  },
+  addgeojson: function addgeojson(instance, geojson, options) {
+    instance.addGeoJson(geojson, options);
+  },
+  contains: function contains(instance, feature) {
+    instance.contains(feature);
+  },
+  foreach: function foreach(instance, callback) {
+    instance.forEach(callback);
+  },
+  loadgeojson: function loadgeojson(instance, url, options, callback) {
+    instance.loadGeoJson(url, options, callback);
+  },
+  overridestyle: function overridestyle(instance, feature, style) {
+    instance.overrideStyle(feature, style);
+  },
+  remove: function remove(instance, feature) {
+    instance.remove(feature);
+  },
+  revertstyle: function revertstyle(instance, feature) {
+    instance.revertStyle(feature);
+  },
+  controlposition: function controlposition(instance, controlPosition // TODO: ???
+  ) {
+    instance.setControlPosition(controlPosition);
+  },
+  controls: function controls(instance, _controls) {
+    instance.setControls(_controls);
+  },
+  drawingmode: function drawingmode(instance, mode) {
+    instance.setDrawingMode(mode);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  style: function style(instance, _style) {
+    instance.setStyle(_style);
+  },
+  togeojson: function togeojson(instance, callback) {
+    instance.toGeoJson(callback);
+  }
+};
+var Data =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Data, _React$PureComponent);
+
+  function Data() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      data: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setDataCallback = function () {
+      if (_this.state.data !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.data);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = Data.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var data = new google.maps.Data(_extends({}, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$b,
+      eventMap: eventMap$b,
+      prevProps: {},
+      nextProps: this.props,
+      instance: data
+    });
+
+    function setData() {
+      return {
+        data: data
+      };
+    }
+
+    this.setState(setData, this.setDataCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.data !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$b,
+        eventMap: eventMap$b,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.data
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.data !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.data);
+      }
+
+      unregisterEvents(this.registeredEvents);
+
+      if (this.state.data) {
+        this.state.data.setMap(null);
+      }
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return Data;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+Data.contextType = MapContext;
+
+var eventMap$c = {
+  onClick: "click",
+  onDefaultViewportChanged: "defaultviewport_changed",
+  onStatusChanged: "status_changed"
+};
+var updaterMap$c = {
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  url: function url(instance, _url) {
+    instance.setUrl(_url);
+  },
+  zIndex: function zIndex(instance, _zIndex) {
+    instance.setZIndex(_zIndex);
+  }
+};
+var KmlLayer =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inheritsLoose(KmlLayer, _PureComponent);
+
+  function KmlLayer() {
+    var _this;
+
+    _this = _PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      kmlLayer: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setKmlLayerCallback = function () {
+      if (_this.state.kmlLayer !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.kmlLayer);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = KmlLayer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var kmlLayer = new google.maps.KmlLayer(_extends({}, this.props.options, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$c,
+      eventMap: eventMap$c,
+      prevProps: {},
+      nextProps: this.props,
+      instance: kmlLayer
+    });
+
+    function setLmlLayer() {
+      return {
+        kmlLayer: kmlLayer
+      };
+    }
+
+    this.setState(setLmlLayer, this.setKmlLayerCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.kmlLayer !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$c,
+        eventMap: eventMap$c,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.kmlLayer
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.kmlLayer !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.kmlLayer);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      this.state.kmlLayer.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return KmlLayer;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+KmlLayer.contextType = MapContext;
+
+/* eslint-disable filenames/match-regex */
+function getOffsetOverride(containerElement, getPixelPositionOffset) {
+  return typeof getPixelPositionOffset === "function" ? getPixelPositionOffset(containerElement.offsetWidth, containerElement.offsetHeight) : {};
 }
 
-var prepareParams = function prepareParams(userParams) {
-  var showClass = _extends({}, defaultParams.showClass, userParams.showClass);
+var createLatLng = function createLatLng(inst, Type) {
+  return new Type(inst.lat, inst.lng);
+};
 
-  var hideClass = _extends({}, defaultParams.hideClass, userParams.hideClass);
+var createLatLngBounds = function createLatLngBounds(inst, Type) {
+  return new Type(new google.maps.LatLng(inst.ne.lat, inst.ne.lng), new google.maps.LatLng(inst.sw.lat, inst.sw.lng));
+};
 
-  var params = _extends({}, defaultParams, userParams);
+var ensureOfType = function ensureOfType(inst, type, factory) {
+  return inst instanceof type ? inst : factory(inst, type);
+};
 
-  params.showClass = showClass;
-  params.hideClass = hideClass; // @deprecated
+var getLayoutStylesByBounds = function getLayoutStylesByBounds(mapCanvasProjection, offset, bounds) {
+  var ne = mapCanvasProjection.fromLatLngToDivPixel(bounds.getNorthEast());
+  var sw = mapCanvasProjection.fromLatLngToDivPixel(bounds.getSouthWest());
 
-  if (userParams.animation === false) {
-    params.showClass = {
-      popup: '',
-      backdrop: 'swal2-backdrop-show swal2-noanimation'
+  if (ne && sw) {
+    return {
+      left: sw.x + offset.x + "px",
+      top: ne.y + offset.y + "px",
+      width: ne.x - sw.x - offset.x + "px",
+      height: sw.y - ne.y - offset.y + "px"
     };
-    params.hideClass = {};
   }
 
-  return params;
+  return {
+    left: "-9999px",
+    top: "-9999px"
+  };
 };
 
-var swalPromise = function swalPromise(instance, domCache, innerParams) {
-  return new Promise(function (resolve) {
-    // functions to handle all closings/dismissals
-    var dismissWith = function dismissWith(dismiss) {
-      instance.closePopup({
-        dismiss: dismiss
-      });
+var getLayoutStylesByPosition = function getLayoutStylesByPosition(mapCanvasProjection, offset, position) {
+  var point = mapCanvasProjection.fromLatLngToDivPixel(position);
+
+  if (point) {
+    var x = point.x,
+        y = point.y;
+    return {
+      left: x + offset.x + "px",
+      top: y + offset.y + "px"
+    };
+  }
+
+  return {
+    left: "-9999px",
+    top: "-9999px"
+  };
+};
+
+var getLayoutStyles = function getLayoutStyles(mapCanvasProjection, offset, bounds, // eslint-disable-next-line @getify/proper-arrows/params
+position) {
+  return bounds !== undefined ? getLayoutStylesByBounds(mapCanvasProjection, offset, ensureOfType(bounds, google.maps.LatLngBounds, createLatLngBounds)) : getLayoutStylesByPosition(mapCanvasProjection, offset, ensureOfType(position, google.maps.LatLng, createLatLng));
+};
+
+var ContentMountHandler =
+/*#__PURE__*/
+function (_React$Component) {
+  _inheritsLoose(ContentMountHandler, _React$Component);
+
+  function ContentMountHandler() {
+    return _React$Component.apply(this, arguments) || this;
+  }
+
+  var _proto = ContentMountHandler.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    if (this.props.onLoad) this.props.onLoad();
+  };
+
+  _proto.render = function render() {
+    return this.props.children;
+  };
+
+  return ContentMountHandler;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+var OverlayView =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(OverlayView, _React$PureComponent);
+
+  function OverlayView() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      overlayView: null
+    };
+    _this.containerElement = null; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setOverlayViewCallback = function () {
+      if (_this.state.overlayView !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.overlayView);
+      }
+
+      _this.onPositionElement();
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+
+    _this.onAdd = function () {
+      _this.containerElement = document.createElement("div");
+      _this.containerElement.style.position = "absolute";
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+
+    _this.onPositionElement = function () {
+      if (_this.state.overlayView !== null && _this.containerElement !== null) {
+        var mapCanvasProjection = _this.state.overlayView.getProjection();
+
+        var offset = _extends({
+          x: 0,
+          y: 0
+        }, getOffsetOverride(_this.containerElement, _this.props.getPixelPositionOffset));
+
+        var layoutStyles = getLayoutStyles(mapCanvasProjection, offset, _this.props.bounds, _this.props.position);
+        Object.assign(_this.containerElement.style, layoutStyles);
+      }
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+
+    _this.draw = function () {
+      !!!_this.props.mapPaneName ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "OverlayView requires props.mapPaneName but got %s", _this.props.mapPaneName) : undefined : void 0;
+      var overlayView = _this.state.overlayView;
+
+      if (overlayView === null) {
+        return;
+      } // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapPanes
+
+
+      var mapPanes = overlayView.getPanes();
+
+      if (!mapPanes) {
+        return;
+      }
+
+      if (_this.containerElement) {
+        mapPanes[_this.props.mapPaneName].appendChild(_this.containerElement);
+      }
+
+      _this.onPositionElement();
+
+      _this.forceUpdate();
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+
+    _this.onRemove = function () {
+      if (_this.containerElement !== null && _this.containerElement.parentNode) {
+        _this.containerElement.parentNode.removeChild(_this.containerElement);
+
+        delete _this.containerElement;
+      }
     };
 
-    privateMethods.swalPromiseResolve.set(instance, resolve);
-    setupTimer(globalState, innerParams, dismissWith);
+    return _this;
+  }
 
-    domCache.confirmButton.onclick = function () {
-      return handleConfirmButtonClick(instance, innerParams);
-    };
+  var _proto2 = OverlayView.prototype;
 
-    domCache.cancelButton.onclick = function () {
-      return handleCancelButtonClick(instance, dismissWith);
-    };
+  _proto2.componentDidMount = function componentDidMount() {
+    var overlayView = new google.maps.OverlayView(); // You must implement three methods: onAdd(), draw(), and onRemove().
 
-    domCache.closeButton.onclick = function () {
-      return dismissWith(DismissReason.close);
-    };
+    overlayView.onAdd = this.onAdd;
+    overlayView.draw = this.draw;
+    overlayView.onRemove = this.onRemove;
+    overlayView.setMap(this.context); // You must call setMap() with a valid Map object to trigger the call to
+    // the onAdd() method and setMap(null) in order to trigger the onRemove() method.
 
-    handlePopupClick(domCache, innerParams, dismissWith);
-    addKeydownHandler(instance, globalState, innerParams, dismissWith);
-
-    if (innerParams.toast && (innerParams.input || innerParams.footer || innerParams.showCloseButton)) {
-      addClass(document.body, swalClasses['toast-column']);
-    } else {
-      removeClass(document.body, swalClasses['toast-column']);
+    function setOverlayView() {
+      return {
+        overlayView: overlayView
+      };
     }
 
-    handleInputOptionsAndValue(instance, innerParams);
-    openPopup(innerParams);
-    initFocus(domCache, innerParams); // Scroll container to top on open (#1247)
-
-    domCache.container.scrollTop = 0;
-  });
-};
-
-var populateDomCache = function populateDomCache(instance) {
-  var domCache = {
-    popup: getPopup(),
-    container: getContainer(),
-    content: getContent(),
-    actions: getActions(),
-    confirmButton: getConfirmButton(),
-    cancelButton: getCancelButton(),
-    closeButton: getCloseButton(),
-    validationMessage: getValidationMessage(),
-    progressSteps: getProgressSteps()
+    this.setState(setOverlayView);
   };
-  privateProps.domCache.set(instance, domCache);
-  return domCache;
-};
 
-var setupTimer = function setupTimer(globalState$$1, innerParams, dismissWith) {
-  var timerProgressBar = getTimerProgressBar();
-  hide(timerProgressBar);
+  _proto2.componentDidUpdate = function componentDidUpdate(prevProps) {
+    var _this2 = this;
 
-  if (innerParams.timer) {
-    globalState$$1.timeout = new Timer(function () {
-      dismissWith('timer');
-      delete globalState$$1.timeout;
-    }, innerParams.timer);
-
-    if (innerParams.timerProgressBar) {
-      show(timerProgressBar);
+    if (prevProps.position !== this.props.position || prevProps.bounds !== this.props.bounds) {
       setTimeout(function () {
-        animateTimerProgressBar(innerParams.timer);
-      });
-    }
-  }
-};
-
-var initFocus = function initFocus(domCache, innerParams) {
-  if (innerParams.toast) {
-    return;
-  }
-
-  if (!callIfFunction(innerParams.allowEnterKey)) {
-    return blurActiveElement();
-  }
-
-  if (innerParams.focusCancel && isVisible(domCache.cancelButton)) {
-    return domCache.cancelButton.focus();
-  }
-
-  if (innerParams.focusConfirm && isVisible(domCache.confirmButton)) {
-    return domCache.confirmButton.focus();
-  }
-
-  setFocus(innerParams, -1, 1);
-};
-
-var blurActiveElement = function blurActiveElement() {
-  if (document.activeElement && typeof document.activeElement.blur === 'function') {
-    document.activeElement.blur();
-  }
-};
-
-/**
- * Updates popup parameters.
- */
-
-function update(params) {
-  var popup = getPopup();
-  var innerParams = privateProps.innerParams.get(this);
-
-  if (!popup || hasClass(popup, innerParams.hideClass.popup)) {
-    return warn("You're trying to update the closed or closing popup, that won't work. Use the update() method in preConfirm parameter or show a new popup.");
-  }
-
-  var validUpdatableParams = {}; // assign valid params from `params` to `defaults`
-
-  Object.keys(params).forEach(function (param) {
-    if (Swal.isUpdatableParameter(param)) {
-      validUpdatableParams[param] = params[param];
-    } else {
-      warn("Invalid parameter to update: \"".concat(param, "\". Updatable params are listed here: https://github.com/sweetalert2/sweetalert2/blob/master/src/utils/params.js"));
-    }
-  });
-
-  var updatedParams = _extends({}, innerParams, validUpdatableParams);
-
-  render(this, updatedParams);
-  privateProps.innerParams.set(this, updatedParams);
-  Object.defineProperties(this, {
-    params: {
-      value: _extends({}, this.params, params),
-      writable: false,
-      enumerable: true
-    }
-  });
-}
-
-
-
-var instanceMethods = Object.freeze({
-	hideLoading: hideLoading,
-	disableLoading: hideLoading,
-	getInput: getInput$1,
-	close: close,
-	closePopup: close,
-	closeModal: close,
-	closeToast: close,
-	enableButtons: enableButtons,
-	disableButtons: disableButtons,
-	enableInput: enableInput,
-	disableInput: disableInput,
-	showValidationMessage: showValidationMessage,
-	resetValidationMessage: resetValidationMessage$1,
-	getProgressSteps: getProgressSteps$1,
-	_main: _main,
-	update: update
-});
-
-var currentInstance; // SweetAlert constructor
-
-function SweetAlert() {
-  // Prevent run in Node env
-
-  /* istanbul ignore if */
-  if (typeof window === 'undefined') {
-    return;
-  } // Check for the existence of Promise
-
-  /* istanbul ignore if */
-
-
-  if (typeof Promise === 'undefined') {
-    error('This package requires a Promise library, please include a shim to enable it in this browser (See: https://github.com/sweetalert2/sweetalert2/wiki/Migration-from-SweetAlert-to-SweetAlert2#1-ie-support)');
-  }
-
-  currentInstance = this;
-
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  var outerParams = Object.freeze(this.constructor.argsToParams(args));
-  Object.defineProperties(this, {
-    params: {
-      value: outerParams,
-      writable: false,
-      enumerable: true,
-      configurable: true
-    }
-  });
-
-  var promise = this._main(this.params);
-
-  privateProps.promise.set(this, promise);
-} // `catch` cannot be the name of a module export, so we define our thenable methods here instead
-
-
-SweetAlert.prototype.then = function (onFulfilled) {
-  var promise = privateProps.promise.get(this);
-  return promise.then(onFulfilled);
-};
-
-SweetAlert.prototype["finally"] = function (onFinally) {
-  var promise = privateProps.promise.get(this);
-  return promise["finally"](onFinally);
-}; // Assign instance methods from src/instanceMethods/*.js to prototype
-
-
-_extends(SweetAlert.prototype, instanceMethods); // Assign static methods from src/staticMethods/*.js to constructor
-
-
-_extends(SweetAlert, staticMethods); // Proxy to instance methods to constructor, for now, for backwards compatibility
-
-
-Object.keys(instanceMethods).forEach(function (key) {
-  SweetAlert[key] = function () {
-    if (currentInstance) {
-      var _currentInstance;
-
-      return (_currentInstance = currentInstance)[key].apply(_currentInstance, arguments);
+        _this2.state.overlayView !== null && _this2.state.overlayView.draw();
+      }, 0);
     }
   };
-});
-SweetAlert.DismissReason = DismissReason;
-SweetAlert.version = '9.5.4';
 
-var Swal = SweetAlert;
-Swal["default"] = Swal;
+  _proto2.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.overlayView !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.overlayView);
+      }
 
-return Swal;
+      this.state.overlayView.setMap(null);
+    }
+  };
 
-})));
-if (typeof this !== 'undefined' && this.Sweetalert2){  this.swal = this.sweetAlert = this.Swal = this.SweetAlert = this.Sweetalert2}
+  _proto2.render = function render() {
+    return this.containerElement !== null ? Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ContentMountHandler, {
+      onLoad: this.setOverlayViewCallback
+    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children)), this.containerElement) : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return OverlayView;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+OverlayView.FLOAT_PANE = "floatPane";
+OverlayView.MAP_PANE = "mapPane";
+OverlayView.MARKER_LAYER = "markerLayer";
+OverlayView.OVERLAY_LAYER = "overlayLayer";
+OverlayView.OVERLAY_MOUSE_TARGET = "overlayMouseTarget";
+OverlayView.contextType = MapContext;
+
+var eventMap$d = {
+  onDblClick: "dblclick",
+  onClick: "click"
+};
+var updaterMap$d = {
+  opacity: function opacity(instance, _opacity) {
+    instance.setOpacity(_opacity);
+  }
+};
+var GroundOverlay =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(GroundOverlay, _React$PureComponent);
+
+  function GroundOverlay() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      groundOverlay: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setGroundOverlayCallback = function () {
+      if (_this.state.groundOverlay !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.groundOverlay);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = GroundOverlay.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    !(!!this.props.url || !!this.props.bounds) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "For GroundOveray, url and bounds are passed in to constructor and are immutable after instantiated. This is the behavior of Google Maps JavaScript API v3 ( See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay) Hence, use the corresponding two props provided by `react-google-maps-api`, url and bounds. In some cases, you'll need the GroundOverlay component to reflect the changes of url and bounds. You can leverage the React's key property to remount the component. Typically, just `key={url}` would serve your need. See https://github.com/tomchentw/react-google-maps/issues/655") : undefined : void 0;
+    var groundOverlay = new google.maps.GroundOverlay(this.props.url, this.props.bounds, _extends({}, this.props.options, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$d,
+      eventMap: eventMap$d,
+      prevProps: {},
+      nextProps: this.props,
+      instance: groundOverlay
+    });
+
+    function setGroundOverlay() {
+      return {
+        groundOverlay: groundOverlay
+      };
+    }
+
+    this.setState(setGroundOverlay, this.setGroundOverlayCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.groundOverlay !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$d,
+        eventMap: eventMap$d,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.groundOverlay
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.groundOverlay) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.groundOverlay);
+      }
+
+      this.state.groundOverlay.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return GroundOverlay;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+GroundOverlay.defaultProps = {
+  onLoad: function onLoad() {}
+};
+GroundOverlay.contextType = MapContext;
+
+var eventMap$e = {};
+var updaterMap$e = {
+  data: function data(instance, _data) {
+    instance.setData(_data);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  }
+};
+var HeatmapLayer =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(HeatmapLayer, _React$PureComponent);
+
+  function HeatmapLayer() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      heatmapLayer: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setHeatmapLayerCallback = function () {
+      if (_this.state.heatmapLayer !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.heatmapLayer);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = HeatmapLayer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    !!!google.maps.visualization ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'Did you include prop libraries={["visualization"]} to <LoadScript />? %s', google.maps.visualization) : undefined : void 0;
+    !!!this.props.data ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "data property is required in HeatmapLayer %s", this.props.data) : undefined : void 0;
+    var heatmapLayer = new google.maps.visualization.HeatmapLayer(_extends({
+      data: this.props.data
+    }, this.props.options || {}, {
+      map: this.context
+    }));
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$e,
+      eventMap: eventMap$e,
+      prevProps: {},
+      nextProps: this.props,
+      instance: heatmapLayer
+    });
+
+    function setHeatmapLayer() {
+      return {
+        heatmapLayer: heatmapLayer
+      };
+    }
+
+    this.setState(setHeatmapLayer, this.setHeatmapLayerCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    unregisterEvents(this.registeredEvents);
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$e,
+      eventMap: eventMap$e,
+      prevProps: prevProps,
+      nextProps: this.props,
+      instance: this.state.heatmapLayer
+    });
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.heatmapLayer !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.heatmapLayer);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      this.state.heatmapLayer.setMap(null);
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return HeatmapLayer;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+HeatmapLayer.contextType = MapContext;
+
+var eventMap$f = {
+  onCloseClick: "closeclick",
+  onPanoChanged: "pano_changed",
+  onPositionChanged: "position_changed",
+  onPovChanged: "pov_changed",
+  onResize: "resize",
+  onStatusChanged: "status_changed",
+  onVisibleChanged: "visible_changed",
+  onZoomChanged: "zoom_changed"
+};
+var updaterMap$f = {
+  register: function register(instance, provider, options) {
+    instance.registerPanoProvider(provider, options);
+  },
+  links: function links(instance, _links) {
+    instance.setLinks(_links);
+  },
+  motionTracking: function motionTracking(instance, _motionTracking) {
+    instance.setMotionTracking(_motionTracking);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  pano: function pano(instance, _pano) {
+    instance.setPano(_pano);
+  },
+  position: function position(instance, _position) {
+    instance.setPosition(_position);
+  },
+  pov: function pov(instance, _pov) {
+    instance.setPov(_pov);
+  },
+  visible: function visible(instance, _visible) {
+    instance.setVisible(_visible);
+  },
+  zoom: function zoom(instance, _zoom) {
+    instance.setZoom(_zoom);
+  }
+};
+var StreetViewPanorama =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(StreetViewPanorama, _React$PureComponent);
+
+  function StreetViewPanorama() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      streetViewPanorama: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setStreetViewPanoramaCallback = function () {
+      if (_this.state.streetViewPanorama !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.streetViewPanorama);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = StreetViewPanorama.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var streetViewPanorama = this.context.getStreetView();
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$f,
+      eventMap: eventMap$f,
+      prevProps: {},
+      nextProps: this.props,
+      instance: streetViewPanorama
+    });
+
+    function setStreetViewPanorama() {
+      return {
+        streetViewPanorama: streetViewPanorama
+      };
+    }
+
+    this.setState(setStreetViewPanorama, this.setStreetViewPanoramaCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.streetViewPanorama !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$f,
+        eventMap: eventMap$f,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.streetViewPanorama
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.streetViewPanorama !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.streetViewPanorama);
+      }
+
+      unregisterEvents(this.registeredEvents);
+      this.state.streetViewPanorama.setVisible(false);
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return StreetViewPanorama;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+StreetViewPanorama.contextType = MapContext;
+
+var StreetViewService =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(StreetViewService, _React$PureComponent);
+
+  function StreetViewService() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      streetViewService: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setStreetViewServiceCallback = function () {
+      if (_this.state.streetViewService !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.streetViewService);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = StreetViewService.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var streetViewService = new google.maps.StreetViewService();
+
+    function setStreetViewService() {
+      return {
+        streetViewService: streetViewService
+      };
+    }
+
+    this.setState(setStreetViewService);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.streetViewService !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.streetViewService);
+      }
+    }
+  };
+
+  _proto.render = function render() {
+    return null;
+  };
+
+  return StreetViewService;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+StreetViewService.contextType = MapContext;
+
+var DirectionsService =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(DirectionsService, _React$PureComponent);
+
+  function DirectionsService() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      directionsService: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setDirectionsServiceCallback = function () {
+      if (_this.state.directionsService !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.directionsService);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = DirectionsService.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    !!!this.props.options ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "DirectionsService expected options object as parameter, but got %s", this.props.options) : undefined : void 0;
+    var directionsService = new google.maps.DirectionsService();
+
+    function setDirectionsService() {
+      return {
+        directionsService: directionsService
+      };
+    }
+
+    this.setState(setDirectionsService, this.setDirectionsServiceCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    if (this.state.directionsService !== null) {
+      this.state.directionsService.route(this.props.options, this.props.callback);
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.directionsService !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.directionsService);
+      }
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return DirectionsService;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+
+var eventMap$g = {
+  onDirectionsChanged: "directions_changed"
+};
+var updaterMap$g = {
+  directions: function directions(instance, _directions) {
+    instance.setDirections(_directions);
+  },
+  map: function map(instance, _map) {
+    instance.setMap(_map);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  panel: function panel(instance, _panel) {
+    instance.setPanel(_panel);
+  },
+  routeIndex: function routeIndex(instance, _routeIndex) {
+    instance.setRouteIndex(_routeIndex);
+  }
+};
+var DirectionsRenderer =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(DirectionsRenderer, _React$PureComponent);
+
+  function DirectionsRenderer() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.state = {
+      directionsRenderer: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setDirectionsRendererCallback = function () {
+      if (_this.state.directionsRenderer !== null) {
+        _this.state.directionsRenderer.setMap(_this.context);
+
+        if (_this.props.onLoad) {
+          _this.props.onLoad(_this.state.directionsRenderer);
+        }
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = DirectionsRenderer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var directionsRenderer = new google.maps.DirectionsRenderer(this.props.options);
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$g,
+      eventMap: eventMap$g,
+      prevProps: {},
+      nextProps: this.props,
+      instance: directionsRenderer
+    });
+    this.setState(function setDirectionsRenderer() {
+      return {
+        directionsRenderer: directionsRenderer
+      };
+    }, this.setDirectionsRendererCallback);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.directionsRenderer !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$g,
+        eventMap: eventMap$g,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.directionsRenderer
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.directionsRenderer !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.directionsRenderer);
+      }
+
+      unregisterEvents(this.registeredEvents);
+
+      if (this.state.directionsRenderer) {
+        this.state.directionsRenderer.setMap(null);
+      }
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return DirectionsRenderer;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+DirectionsRenderer.contextType = MapContext;
+
+var DistanceMatrixService =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(DistanceMatrixService, _React$PureComponent);
+
+  function DistanceMatrixService() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.state = {
+      distanceMatrixService: null
+    };
+
+    _this.setDistanceMatrixServiceCallbak = function () {
+      if (_this.state.distanceMatrixService !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.distanceMatrixService);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = DistanceMatrixService.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    !!!this.props.options ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'DistanceMatrixService expected options object as parameter, but go %s', this.props.options) : undefined : void 0;
+    var distanceMatrixService = new google.maps.DistanceMatrixService();
+
+    function setDistanceMatrixService() {
+      return {
+        distanceMatrixService: distanceMatrixService
+      };
+    }
+
+    this.setState(setDistanceMatrixService, this.setDistanceMatrixServiceCallbak);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    if (this.state.distanceMatrixService !== null) {
+      this.state.distanceMatrixService.getDistanceMatrix(this.props.options, this.props.callback);
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.distanceMatrixService !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.distanceMatrixService);
+      }
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+  };
+
+  return DistanceMatrixService;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+
+var eventMap$h = {
+  onPlacesChanged: "places_changed"
+};
+var updaterMap$h = {
+  bounds: function bounds(instance, _bounds) {
+    instance.setBounds(_bounds);
+  }
+};
+
+var StandaloneSearchBox =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(StandaloneSearchBox, _React$PureComponent);
+
+  function StandaloneSearchBox() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.containerElement = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+    _this.state = {
+      searchBox: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setSearchBoxCallback = function () {
+      if (_this.state.searchBox !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.searchBox);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = StandaloneSearchBox.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    !!!google.maps.places ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places) : undefined : void 0;
+
+    if (this.containerElement !== null && this.containerElement.current !== null) {
+      var input = this.containerElement.current.querySelector("input");
+
+      if (input) {
+        var searchBox = new google.maps.places.SearchBox( // @ts-ignore
+        input, this.props.options);
+        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+          updaterMap: updaterMap$h,
+          eventMap: eventMap$h,
+          prevProps: {},
+          nextProps: this.props,
+          instance: searchBox
+        });
+        this.setState(function setSearchBox() {
+          return {
+            searchBox: searchBox
+          };
+        }, this.setSearchBoxCallback);
+      }
+    }
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.state.searchBox !== null) {
+      unregisterEvents(this.registeredEvents);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$h,
+        eventMap: eventMap$h,
+        prevProps: prevProps,
+        nextProps: this.props,
+        instance: this.state.searchBox
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.searchBox !== null) {
+      if (this.props.onUnmount) {
+        this.props.onUnmount(this.state.searchBox);
+      }
+
+      unregisterEvents(this.registeredEvents);
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      ref: this.containerElement
+    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children));
+  };
+
+  return StandaloneSearchBox;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+
+StandaloneSearchBox.contextType = MapContext;
+
+var eventMap$i = {
+  onPlaceChanged: "place_changed"
+};
+var updaterMap$i = {
+  bounds: function bounds(instance, _bounds) {
+    instance.setBounds(_bounds);
+  },
+  restrictions: function restrictions(instance, _restrictions) {
+    instance.setComponentRestrictions(_restrictions);
+  },
+  fields: function fields(instance, _fields) {
+    instance.setFields(_fields);
+  },
+  options: function options(instance, _options) {
+    instance.setOptions(_options);
+  },
+  types: function types(instance, _types) {
+    instance.setTypes(_types);
+  }
+};
+var Autocomplete =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Autocomplete, _React$PureComponent);
+
+  function Autocomplete() {
+    var _this;
+
+    _this = _React$PureComponent.apply(this, arguments) || this;
+    _this.registeredEvents = [];
+    _this.containerElement = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+    _this.state = {
+      autocomplete: null
+    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    _this.setAutocompleteCallback = function () {
+      if (_this.state.autocomplete !== null && _this.props.onLoad) {
+        _this.props.onLoad(_this.state.autocomplete);
+      }
+    };
+
+    return _this;
+  }
+
+  var _proto = Autocomplete.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    !!!google.maps.places ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places) : undefined : void 0; // TODO: why is this possibly null
+    // @ts-ignore
+
+    var input = this.containerElement.current.querySelector("input");
+
+    if (input) {
+      var autocomplete = new google.maps.places.Autocomplete(input, this.props.options);
+      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+        updaterMap: updaterMap$i,
+        eventMap: eventMap$i,
+        prevProps: {},
+        nextProps: this.props,
+        instance: autocomplete
+      });
+      this.setState(function setAutocomplete() {
+        return {
+          autocomplete: autocomplete
+        };
+      }, this.setAutocompleteCallback);
+    }
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    unregisterEvents(this.registeredEvents);
+    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
+      updaterMap: updaterMap$i,
+      eventMap: eventMap$i,
+      prevProps: prevProps,
+      nextProps: this.props,
+      instance: this.state.autocomplete
+    });
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.state.autocomplete !== null) {
+      unregisterEvents(this.registeredEvents);
+    }
+  };
+
+  _proto.render = function render() {
+    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      ref: this.containerElement
+    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children));
+  };
+
+  return Autocomplete;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+Autocomplete.contextType = MapContext;
+
+
+//# sourceMappingURL=reactgooglemapsapi.esm.js.map
 
 
 /***/ }),
 
-/***/ "./node_modules/sweetalert2/src/sweetalert2.scss":
-/*!*******************************************************!*\
-  !*** ./node_modules/sweetalert2/src/sweetalert2.scss ***!
-  \*******************************************************/
+/***/ "./node_modules/@react-google-maps/infobox/dist/infobox.esm.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@react-google-maps/infobox/dist/infobox.esm.js ***!
+  \*********************************************************************/
+/*! exports provided: InfoBox */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoBox", function() { return InfoBox; });
+var InfoBox =
+/*#__PURE__*/
+function () {
+  function InfoBox(options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    this.extend(InfoBox, google.maps.OverlayView); // Standard options (in common with google.maps.InfoWindow):
+
+    this.content = options.content || '';
+    this.disableAutoPan = options.disableAutoPan || false;
+    this.maxWidth = options.maxWidth || 0;
+    this.pixelOffset = options.pixelOffset || new google.maps.Size(0, 0);
+    this.position = options.position || new google.maps.LatLng(0, 0);
+    this.zIndex = options.zIndex || null; // Additional options (unique to InfoBox):
+
+    this.boxClass = options.boxClass || 'infoBox';
+    this.boxStyle = options.boxStyle || {};
+    this.closeBoxMargin = options.closeBoxMargin || '2px';
+    this.closeBoxURL = options.closeBoxURL || 'http://www.google.com/intl/en_us/mapfiles/close.gif';
+
+    if (options.closeBoxURL === '') {
+      this.closeBoxURL = '';
+    }
+
+    this.infoBoxClearance = options.infoBoxClearance || new google.maps.Size(1, 1);
+
+    if (typeof options.visible === 'undefined') {
+      if (typeof options.isHidden === 'undefined') {
+        options.visible = true;
+      } else {
+        options.visible = !options.isHidden;
+      }
+    }
+
+    this.isHidden = !options.visible;
+    this.alignBottom = options.alignBottom || false;
+    this.pane = options.pane || 'floatPane';
+    this.enableEventPropagation = options.enableEventPropagation || false;
+    this.div = null;
+    this.closeListener = null;
+    this.moveListener = null;
+    this.mapListener = null;
+    this.contextListener = null;
+    this.eventListeners = null;
+    this.fixedWidthSet = null;
+  }
+
+  var _proto = InfoBox.prototype;
+
+  _proto.createInfoBoxDiv = function createInfoBoxDiv() {
+    var _this = this;
+
+    // This handler prevents an event in the InfoBox from being passed on to the map.
+    function cancelHandler(event) {
+      event.cancelBubble = true;
+
+      if (event.stopPropagation) {
+        event.stopPropagation();
+      }
+    } // This handler ignores the current event in the InfoBox and conditionally prevents
+    // the event from being passed on to the map. It is used for the contextmenu event.
+    // eslint-disable-next-line  @getify/proper-arrows/this
+
+
+    var ignoreHandler = function ignoreHandler(event) {
+      event.returnValue = false;
+
+      if (event.preventDefault) {
+        event.preventDefault();
+      }
+
+      if (!_this.enableEventPropagation) {
+        cancelHandler(event);
+      }
+    };
+
+    if (!this.div) {
+      this.div = document.createElement('div');
+      this.setBoxStyle();
+
+      if (typeof this.content === 'string') {
+        this.div.innerHTML = this.getCloseBoxImg() + this.content;
+      } else {
+        this.div.innerHTML = this.getCloseBoxImg();
+        this.div.appendChild(this.content);
+      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+
+
+      var panes = this.getPanes();
+      panes[this.pane].appendChild(this.div); // Add the InfoBox div to the DOM
+
+      this.addClickHandler();
+
+      if (this.div.style.width) {
+        this.fixedWidthSet = true;
+      } else {
+        if (this.maxWidth !== 0 && this.div.offsetWidth > this.maxWidth) {
+          this.div.style.width = this.maxWidth + 'px';
+          this.fixedWidthSet = true;
+        } else {
+          // The following code is needed to overcome problems with MSIE
+          var bw = this.getBoxWidths();
+          this.div.style.width = this.div.offsetWidth - bw.left - bw.right + 'px';
+          this.fixedWidthSet = false;
+        }
+      }
+
+      this.panBox(this.disableAutoPan);
+
+      if (!this.enableEventPropagation) {
+        this.eventListeners = []; // Cancel event propagation.
+        // Note: mousemove not included (to resolve Issue 152)
+
+        var events = ['mousedown', 'mouseover', 'mouseout', 'mouseup', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'];
+
+        for (var i = 0; i < events.length; i++) {
+          this.eventListeners.push(google.maps.event.addDomListener(this.div, events[i], cancelHandler));
+        } // Workaround for Google bug that causes the cursor to change to a pointer
+        // when the mouse moves over a marker underneath InfoBox.
+
+
+        this.eventListeners.push(google.maps.event.addDomListener(this.div, 'mouseover', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+        function () {
+          if (_this.div) {
+            _this.div.style.cursor = 'default';
+          }
+        }));
+      }
+
+      this.contextListener = google.maps.event.addDomListener(this.div, 'contextmenu', ignoreHandler);
+      /**
+       * This event is fired when the DIV containing the InfoBox's content is attached to the DOM.
+       * @name InfoBox#domready
+       * @event
+       */
+
+      google.maps.event.trigger(this, 'domready');
+    }
+  };
+
+  _proto.getCloseBoxImg = function getCloseBoxImg() {
+    var img = '';
+
+    if (this.closeBoxURL !== '') {
+      img = '<img';
+      img += " src='" + this.closeBoxURL + "'";
+      img += ' align=right'; // Do this because Opera chokes on style='float: right;'
+
+      img += " style='";
+      img += ' position: relative;'; // Required by MSIE
+
+      img += ' cursor: pointer;';
+      img += ' margin: ' + this.closeBoxMargin + ';';
+      img += "'>";
+    }
+
+    return img;
+  };
+
+  _proto.addClickHandler = function addClickHandler() {
+    if (this.div && this.div.firstChild && this.closeBoxURL !== '') {
+      var closeBox = this.div.firstChild;
+      this.closeListener = google.maps.event.addDomListener(closeBox, 'click', this.getCloseClickHandler());
+    } else {
+      this.closeListener = null;
+    }
+  };
+
+  _proto.getCloseClickHandler = function getCloseClickHandler() {
+    var _this2 = this;
+
+    // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+    return function (event) {
+      // 1.0.3 fix: Always prevent propagation of a close box click to the map:
+      event.cancelBubble = true;
+
+      if (event.stopPropagation) {
+        event.stopPropagation();
+      }
+      /**
+       * This event is fired when the InfoBox's close box is clicked.
+       * @name InfoBox#closeclick
+       * @event
+       */
+
+
+      google.maps.event.trigger(_this2, 'closeclick');
+
+      _this2.close();
+    };
+  };
+
+  _proto.panBox = function panBox(disablePan) {
+    if (this.div && !disablePan) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      var map = this.getMap(); // Only pan if attached to map, not panorama
+
+      if (map instanceof google.maps.Map) {
+        var xOffset = 0;
+        var yOffset = 0;
+        var bounds = map.getBounds();
+
+        if (bounds && !bounds.contains(this.position)) {
+          // Marker not in visible area of map, so set center
+          // of map to the marker position first.
+          map.setCenter(this.position);
+        }
+
+        var mapDiv = map.getDiv(); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+
+        var mapWidth = mapDiv.offsetWidth; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+
+        var mapHeight = mapDiv.offsetHeight;
+        var iwOffsetX = this.pixelOffset.width;
+        var iwOffsetY = this.pixelOffset.height;
+        var iwWidth = this.div.offsetWidth;
+        var iwHeight = this.div.offsetHeight;
+        var padX = this.infoBoxClearance.width;
+        var padY = this.infoBoxClearance.height; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+
+        var projection = this.getProjection();
+        var pixPosition = projection.fromLatLngToContainerPixel(this.position);
+
+        if (pixPosition.x < -iwOffsetX + padX) {
+          xOffset = pixPosition.x + iwOffsetX - padX;
+        } else if (pixPosition.x + iwWidth + iwOffsetX + padX > mapWidth) {
+          xOffset = pixPosition.x + iwWidth + iwOffsetX + padX - mapWidth;
+        }
+
+        if (this.alignBottom) {
+          if (pixPosition.y < -iwOffsetY + padY + iwHeight) {
+            yOffset = pixPosition.y + iwOffsetY - padY - iwHeight;
+          } else if (pixPosition.y + iwOffsetY + padY > mapHeight) {
+            yOffset = pixPosition.y + iwOffsetY + padY - mapHeight;
+          }
+        } else {
+          if (pixPosition.y < -iwOffsetY + padY) {
+            yOffset = pixPosition.y + iwOffsetY - padY;
+          } else if (pixPosition.y + iwHeight + iwOffsetY + padY > mapHeight) {
+            yOffset = pixPosition.y + iwHeight + iwOffsetY + padY - mapHeight;
+          }
+        }
+
+        if (!(xOffset === 0 && yOffset === 0)) {
+          // Move the map to the shifted center.
+          map.panBy(xOffset, yOffset);
+        }
+      }
+    }
+  };
+
+  _proto.setBoxStyle = function setBoxStyle() {
+    if (this.div) {
+      // Apply style values from the style sheet defined in the boxClass parameter:
+      this.div.className = this.boxClass; // Clear existing inline style values:
+
+      this.div.style.cssText = ''; // Apply style values defined in the boxStyle parameter:
+
+      var boxStyle = this.boxStyle;
+
+      for (var i in boxStyle) {
+        if (boxStyle.hasOwnProperty(i)) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          this.div.style[i] = boxStyle[i];
+        }
+      } // Fix for iOS disappearing InfoBox problem
+      // See http://stackoverflow.com/questions/9229535/google-maps-markers-disappear-at-certain-zoom-level-only-on-iphone-ipad
+
+
+      this.div.style.webkitTransform = 'translateZ(0)'; // Fix up opacity style for benefit of MSIE
+
+      if (typeof this.div.style.opacity !== 'undefined' && this.div.style.opacity !== '') {
+        // See http://www.quirksmode.org/css/opacity.html
+        var opacity = parseFloat(this.div.style.opacity || ''); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+
+        this.div.style.msFilter = '"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"';
+        this.div.style.filter = 'alpha(opacity=' + opacity * 100 + ')';
+      } // Apply required styles
+
+
+      this.div.style.position = 'absolute';
+      this.div.style.visibility = 'hidden';
+
+      if (this.zIndex !== null) {
+        this.div.style.zIndex = this.zIndex + '';
+      }
+
+      if (!this.div.style.overflow) {
+        this.div.style.overflow = 'auto';
+      }
+    }
+  };
+
+  _proto.getBoxWidths = function getBoxWidths() {
+    var bw = {
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
+    };
+
+    if (!this.div) {
+      return bw;
+    }
+
+    if (document.defaultView && document.defaultView.getComputedStyle) {
+      var ownerDocument = this.div.ownerDocument;
+      var computedStyle = ownerDocument && ownerDocument.defaultView ? ownerDocument.defaultView.getComputedStyle(this.div, '') : null;
+
+      if (computedStyle) {
+        // The computed styles are always in pixel units (good!)
+        bw.top = parseInt(computedStyle.borderTopWidth || '', 10) || 0;
+        bw.bottom = parseInt(computedStyle.borderBottomWidth || '', 10) || 0;
+        bw.left = parseInt(computedStyle.borderLeftWidth || '', 10) || 0;
+        bw.right = parseInt(computedStyle.borderRightWidth || '', 10) || 0;
+      }
+    } else if ( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    document.documentElement.currentStyle // MSIE
+    ) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        var currentStyle = this.div.currentStyle;
+
+        if (currentStyle) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // The current styles may not be in pixel units, but assume they are (bad!)
+          bw.top = parseInt(currentStyle.borderTopWidth || '', 10) || 0;
+          bw.bottom = parseInt(currentStyle.borderBottomWidth || '', 10) || 0;
+          bw.left = parseInt(currentStyle.borderLeftWidth || '', 10) || 0;
+          bw.right = parseInt(currentStyle.borderRightWidth || '', 10) || 0;
+        }
+      }
+
+    return bw;
+  };
+
+  _proto.onRemove = function onRemove() {
+    if (this.div && this.div.parentNode) {
+      this.div.parentNode.removeChild(this.div);
+      this.div = null;
+    }
+  };
+
+  _proto.draw = function draw() {
+    this.createInfoBoxDiv();
+
+    if (this.div) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      var projection = this.getProjection();
+      var pixPosition = projection.fromLatLngToDivPixel(this.position);
+      this.div.style.left = pixPosition.x + this.pixelOffset.width + 'px';
+
+      if (this.alignBottom) {
+        this.div.style.bottom = -(pixPosition.y + this.pixelOffset.height) + 'px';
+      } else {
+        this.div.style.top = pixPosition.y + this.pixelOffset.height + 'px';
+      }
+
+      if (this.isHidden) {
+        this.div.style.visibility = 'hidden';
+      } else {
+        this.div.style.visibility = 'visible';
+      }
+    }
+  };
+
+  _proto.setOptions = function setOptions(options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    if (typeof options.boxClass !== 'undefined') {
+      // Must be first
+      this.boxClass = options.boxClass;
+      this.setBoxStyle();
+    }
+
+    if (typeof options.boxStyle !== 'undefined') {
+      // Must be second
+      this.boxStyle = options.boxStyle;
+      this.setBoxStyle();
+    }
+
+    if (typeof options.content !== 'undefined') {
+      this.setContent(options.content);
+    }
+
+    if (typeof options.disableAutoPan !== 'undefined') {
+      this.disableAutoPan = options.disableAutoPan;
+    }
+
+    if (typeof options.maxWidth !== 'undefined') {
+      this.maxWidth = options.maxWidth;
+    }
+
+    if (typeof options.pixelOffset !== 'undefined') {
+      this.pixelOffset = options.pixelOffset;
+    }
+
+    if (typeof options.alignBottom !== 'undefined') {
+      this.alignBottom = options.alignBottom;
+    }
+
+    if (typeof options.position !== 'undefined') {
+      this.setPosition(options.position);
+    }
+
+    if (typeof options.zIndex !== 'undefined') {
+      this.setZIndex(options.zIndex);
+    }
+
+    if (typeof options.closeBoxMargin !== 'undefined') {
+      this.closeBoxMargin = options.closeBoxMargin;
+    }
+
+    if (typeof options.closeBoxURL !== 'undefined') {
+      this.closeBoxURL = options.closeBoxURL;
+    }
+
+    if (typeof options.infoBoxClearance !== 'undefined') {
+      this.infoBoxClearance = options.infoBoxClearance;
+    }
+
+    if (typeof options.isHidden !== 'undefined') {
+      this.isHidden = options.isHidden;
+    }
+
+    if (typeof options.visible !== 'undefined') {
+      this.isHidden = !options.visible;
+    }
+
+    if (typeof options.enableEventPropagation !== 'undefined') {
+      this.enableEventPropagation = options.enableEventPropagation;
+    }
+
+    if (this.div) {
+      this.draw();
+    }
+  };
+
+  _proto.setContent = function setContent(content) {
+    this.content = content;
+
+    if (this.div) {
+      if (this.closeListener) {
+        google.maps.event.removeListener(this.closeListener);
+        this.closeListener = null;
+      } // Odd code required to make things work with MSIE.
+
+
+      if (!this.fixedWidthSet) {
+        this.div.style.width = '';
+      }
+
+      if (typeof content === 'string') {
+        this.div.innerHTML = this.getCloseBoxImg() + content;
+      } else {
+        this.div.innerHTML = this.getCloseBoxImg();
+        this.div.appendChild(content);
+      } // Perverse code required to make things work with MSIE.
+      // (Ensures the close box does, in fact, float to the right.)
+
+
+      if (!this.fixedWidthSet) {
+        this.div.style.width = this.div.offsetWidth + 'px';
+
+        if (typeof content === 'string') {
+          this.div.innerHTML = this.getCloseBoxImg() + content;
+        } else {
+          this.div.innerHTML = this.getCloseBoxImg();
+          this.div.appendChild(content);
+        }
+      }
+
+      this.addClickHandler();
+    }
+    /**
+     * This event is fired when the content of the InfoBox changes.
+     * @name InfoBox#content_changed
+     * @event
+     */
+
+
+    google.maps.event.trigger(this, 'content_changed');
+  };
+
+  _proto.setPosition = function setPosition(latLng) {
+    this.position = latLng;
+
+    if (this.div) {
+      this.draw();
+    }
+    /**
+     * This event is fired when the position of the InfoBox changes.
+     * @name InfoBox#position_changed
+     * @event
+     */
+
+
+    google.maps.event.trigger(this, 'position_changed');
+  };
+
+  _proto.setVisible = function setVisible(isVisible) {
+    this.isHidden = !isVisible;
+
+    if (this.div) {
+      this.div.style.visibility = this.isHidden ? 'hidden' : 'visible';
+    }
+  };
+
+  _proto.setZIndex = function setZIndex(index) {
+    this.zIndex = index;
+
+    if (this.div) {
+      this.div.style.zIndex = index + '';
+    }
+    /**
+     * This event is fired when the zIndex of the InfoBox changes.
+     * @name InfoBox#zindex_changed
+     * @event
+     */
+
+
+    google.maps.event.trigger(this, 'zindex_changed');
+  };
+
+  _proto.getContent = function getContent() {
+    return this.content;
+  };
+
+  _proto.getPosition = function getPosition() {
+    return this.position;
+  };
+
+  _proto.getZIndex = function getZIndex() {
+    return this.zIndex;
+  };
+
+  _proto.getVisible = function getVisible() {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    var map = this.getMap();
+    var isVisible;
+
+    if (typeof map === 'undefined' || map === null) {
+      isVisible = false;
+    } else {
+      isVisible = !this.isHidden;
+    }
+
+    return isVisible;
+  };
+
+  _proto.show = function show() {
+    this.isHidden = false;
+
+    if (this.div) {
+      this.div.style.visibility = 'visible';
+    }
+  };
+
+  _proto.hide = function hide() {
+    this.isHidden = true;
+
+    if (this.div) {
+      this.div.style.visibility = 'hidden';
+    }
+  };
+
+  _proto.open = function open(map, anchor) {
+    var _this3 = this;
+
+    if (anchor) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      this.position = anchor.getPosition();
+      this.moveListener = google.maps.event.addListener(anchor, 'position_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+      function () {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        var position = anchor.getPosition();
+
+        _this3.setPosition(position);
+      });
+      this.mapListener = google.maps.event.addListener(anchor, 'map_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+      function () {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        _this3.setMap(anchor.map);
+      });
+    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+
+
+    this.setMap(map);
+
+    if (this.div) {
+      this.panBox();
+    }
+  };
+
+  _proto.close = function close() {
+    if (this.closeListener) {
+      google.maps.event.removeListener(this.closeListener);
+      this.closeListener = null;
+    }
+
+    if (this.eventListeners) {
+      for (var i = 0; i < this.eventListeners.length; i++) {
+        google.maps.event.removeListener(this.eventListeners[i]);
+      }
+
+      this.eventListeners = null;
+    }
+
+    if (this.moveListener) {
+      google.maps.event.removeListener(this.moveListener);
+      this.moveListener = null;
+    }
+
+    if (this.mapListener) {
+      google.maps.event.removeListener(this.mapListener);
+      this.mapListener = null;
+    }
+
+    if (this.contextListener) {
+      google.maps.event.removeListener(this.contextListener);
+      this.contextListener = null;
+    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+
+
+    this.setMap(null);
+  };
+
+  _proto.extend = function extend(obj1, obj2) {
+    return function applyExtend(object) {
+      // eslint-disable-next-line guard-for-in
+      for (var property in object.prototype) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        this.prototype[property] = object.prototype[property];
+      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+
+
+      return this;
+    }.apply(obj1, [obj2]);
+  };
+
+  return InfoBox;
+}();
+
+
+//# sourceMappingURL=infobox.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js ***!
+  \**************************************************************************************/
+/*! exports provided: Cluster, ClusterIcon, Clusterer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cluster", function() { return Cluster; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClusterIcon", function() { return ClusterIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Clusterer", function() { return Clusterer; });
+var ClusterIcon =
+/*#__PURE__*/
+function () {
+  function ClusterIcon(cluster, styles) {
+    cluster.getClusterer().extend(ClusterIcon, google.maps.OverlayView);
+    this.cluster = cluster;
+    this.className = this.cluster.getClusterer().getClusterClass();
+    this.styles = styles;
+    this.center = undefined;
+    this.div = null;
+    this.sums = null;
+    this.visible = false;
+    this.boundsChangedListener = null;
+    this.url = '';
+    this.height = 0;
+    this.width = 0;
+    this.anchorText = [0, 0];
+    this.anchorIcon = [0, 0];
+    this.textColor = 'black';
+    this.textSize = 11;
+    this.textDecoration = 'none';
+    this.fontWeight = 'bold';
+    this.fontStyle = 'normal';
+    this.fontFamily = 'Arial,sans-serif';
+    this.backgroundPosition = '0 0'; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+
+    this.setMap(cluster.getMap()); // Note: this causes onAdd to be called
+  }
+
+  var _proto = ClusterIcon.prototype;
+
+  _proto.onAdd = function onAdd() {
+    var _this = this;
+
+    var cMouseDownInCluster;
+    var cDraggingMapByCluster;
+    this.div = document.createElement('div');
+    this.div.className = this.className;
+
+    if (this.visible) {
+      this.show();
+    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+
+
+    this.getPanes().overlayMouseTarget.appendChild(this.div); // Fix for Issue 157
+
+    this.boundsChangedListener = google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.getMap(), 'boundschanged', function boundsChabged() {
+      cDraggingMapByCluster = cMouseDownInCluster;
+    });
+    google.maps.event.addDomListener(this.div, 'mousedown', function onMouseDown() {
+      cMouseDownInCluster = true;
+      cDraggingMapByCluster = false;
+    }); // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    google.maps.event.addDomListener(this.div, 'click', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+    function (event) {
+      cMouseDownInCluster = false;
+
+      if (!cDraggingMapByCluster) {
+        var markerClusterer = _this.cluster.getClusterer();
+        /**
+         * This event is fired when a cluster marker is clicked.
+         * @name MarkerClusterer#click
+         * @param {Cluster} c The cluster that was clicked.
+         * @event
+         */
+
+
+        google.maps.event.trigger(markerClusterer, 'click', _this.cluster);
+        google.maps.event.trigger(markerClusterer, 'clusterclick', _this.cluster); // deprecated name
+        // The default click handler follows. Disable it by setting
+        // the zoomOnClick property to false.
+
+        if (markerClusterer.getZoomOnClick()) {
+          // Zoom into the cluster.
+          var maxZoom = markerClusterer.getMaxZoom();
+
+          var bounds = _this.cluster.getBounds(); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+
+
+          markerClusterer.getMap().fitBounds(bounds); // There is a fix for Issue 170 here:
+
+          setTimeout(function timeout() {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+            // @ts-ignore
+            markerClusterer.getMap().fitBounds(bounds); // Don't zoom beyond the max zoom level
+            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+            // @ts-ignore
+
+            if (maxZoom !== null && markerClusterer.getMap().getZoom() > maxZoom) {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+              // @ts-ignore
+              markerClusterer.getMap().setZoom(maxZoom + 1);
+            }
+          }, 100);
+        } // Prevent event propagation to the map:
+
+
+        event.cancelBubble = true;
+
+        if (event.stopPropagation) {
+          event.stopPropagation();
+        }
+      }
+    });
+    google.maps.event.addDomListener(this.div, 'mouseover', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+    function () {
+      /**
+       * This event is fired when the mouse moves over a cluster marker.
+       * @name MarkerClusterer#mouseover
+       * @param {Cluster} c The cluster that the mouse moved over.
+       * @event
+       */
+      google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseover', _this.cluster);
+    }); // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+
+    google.maps.event.addDomListener(this.div, 'mouseout', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+    function () {
+      /**
+       * This event is fired when the mouse moves out of a cluster marker.
+       * @name MarkerClusterer#mouseout
+       * @param {Cluster} c The cluster that the mouse moved out of.
+       * @event
+       */
+      google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseout', _this.cluster);
+    });
+  };
+
+  _proto.onRemove = function onRemove() {
+    if (this.div && this.div.parentNode) {
+      this.hide();
+
+      if (this.boundsChangedListener !== null) {
+        google.maps.event.removeListener(this.boundsChangedListener);
+      }
+
+      google.maps.event.clearInstanceListeners(this.div);
+      this.div.parentNode.removeChild(this.div);
+      this.div = null;
+    }
+  };
+
+  _proto.draw = function draw() {
+    if (this.visible && this.div !== null && this.center) {
+      var _this$getPosFromLatLn = this.getPosFromLatLng(this.center),
+          x = _this$getPosFromLatLn.x,
+          y = _this$getPosFromLatLn.y;
+
+      this.div.style.top = y + 'px';
+      this.div.style.left = x + 'px';
+    }
+  };
+
+  _proto.hide = function hide() {
+    if (this.div) {
+      this.div.style.display = 'none';
+    }
+
+    this.visible = false;
+  };
+
+  _proto.show = function show() {
+    if (this.div && this.center) {
+      var img = '',
+          divTitle = ''; // NOTE: values must be specified in px units
+
+      var bp = this.backgroundPosition.split(' ');
+      var spriteH = parseInt(bp[0].replace(/^\s+|\s+$/g, ''), 10);
+      var spriteV = parseInt(bp[1].replace(/^\s+|\s+$/g, ''), 10);
+      var pos = this.getPosFromLatLng(this.center);
+
+      if (this.sums === null || typeof this.sums.title === 'undefined' || this.sums.title === '') {
+        divTitle = this.cluster.getClusterer().getTitle();
+      } else {
+        divTitle = this.sums.title;
+      }
+
+      this.div.style.cssText = this.createCss(pos);
+      img = "<img alt='" + divTitle + "' src='" + this.url + "' style='position: absolute; top: " + spriteV + 'px; left: ' + spriteH + 'px; '; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      //@ts-ignore
+
+      if (!this.cluster.getClusterer().enableRetinaIcons) {
+        img += 'clip: rect(' + -1 * spriteV + 'px, ' + (-1 * spriteH + this.width) + 'px, ' + (-1 * spriteV + this.height) + 'px, ' + -1 * spriteH + 'px);';
+      }
+
+      img += "'>";
+      this.div.innerHTML = img + "<div style='" + 'position: absolute;' + 'top: ' + this.anchorText[0] + 'px;' + 'left: ' + this.anchorText[1] + 'px;' + 'color: ' + this.textColor + ';' + 'font-size: ' + this.textSize + 'px;' + 'font-family: ' + this.fontFamily + ';' + 'font-weight: ' + this.fontWeight + ';' + 'font-style: ' + this.fontStyle + ';' + 'text-decoration: ' + this.textDecoration + ';' + 'text-align: center;' + 'width: ' + this.width + 'px;' + 'line-height:' + this.height + 'px;' + "'>" + // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      this.sums.text + '</div>';
+      this.div.title = divTitle;
+      this.div.style.display = '';
+    }
+
+    this.visible = true;
+  };
+
+  _proto.useStyle = function useStyle(sums) {
+    this.sums = sums;
+    var style = this.styles[Math.min(this.styles.length - 1, Math.max(0, sums.index - 1))];
+    this.url = style.url;
+    this.height = style.height;
+    this.width = style.width;
+    this.anchorText = style.anchorText || [0, 0];
+    this.anchorIcon = style.anchorIcon || [this.height / 2, this.width / 2];
+    this.textColor = style.textColor || 'black';
+    this.textSize = style.textSize || 11;
+    this.textDecoration = style.textDecoration || 'none';
+    this.fontWeight = style.fontWeight || 'bold';
+    this.fontStyle = style.fontStyle || 'normal';
+    this.fontFamily = style.fontFamily || 'Arial,sans-serif';
+    this.backgroundPosition = style.backgroundPosition || '0 0';
+  };
+
+  _proto.setCenter = function setCenter(center) {
+    this.center = center;
+  };
+
+  _proto.createCss = function createCss(pos) {
+    var style = [];
+    style.push('cursor: pointer;');
+    style.push('position: absolute; top: ' + pos.y + 'px; left: ' + pos.x + 'px;');
+    style.push('width: ' + this.width + 'px; height: ' + this.height + 'px;');
+    return style.join('');
+  };
+
+  _proto.getPosFromLatLng = function getPosFromLatLng(latlng) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    var pos = this.getProjection().fromLatLngToDivPixel(latlng);
+    pos.x -= this.anchorIcon[1];
+    pos.y -= this.anchorIcon[0];
+    pos.x = pos.x;
+    pos.y = pos.y;
+    return pos;
+  };
+
+  return ClusterIcon;
+}();
+
+var Cluster =
+/*#__PURE__*/
+function () {
+  function Cluster(markerClusterer) {
+    this.markerClusterer = markerClusterer; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+
+    this.map = this.markerClusterer.getMap();
+    this.gridSize = this.markerClusterer.getGridSize();
+    this.minClusterSize = this.markerClusterer.getMinimumClusterSize();
+    this.averageCenter = this.markerClusterer.getAverageCenter();
+    this.markers = [];
+    this.center = undefined;
+    this.bounds = null;
+    this.clusterIcon = new ClusterIcon(this, this.markerClusterer.getStyles());
+  }
+
+  var _proto = Cluster.prototype;
+
+  _proto.getSize = function getSize() {
+    return this.markers.length;
+  };
+
+  _proto.getMarkers = function getMarkers() {
+    return this.markers;
+  };
+
+  _proto.getCenter = function getCenter() {
+    return this.center;
+  };
+
+  _proto.getMap = function getMap() {
+    return this.map;
+  };
+
+  _proto.getClusterer = function getClusterer() {
+    return this.markerClusterer;
+  };
+
+  _proto.getBounds = function getBounds() {
+    var bounds = new google.maps.LatLngBounds(this.center, this.center);
+    var markers = this.getMarkers();
+
+    for (var i = 0; i < markers.length; i++) {
+      var position = markers[i].getPosition();
+
+      if (position) {
+        bounds.extend(position);
+      }
+    }
+
+    return bounds;
+  };
+
+  _proto.remove = function remove() {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.clusterIcon.setMap(null);
+    this.markers = [];
+    delete this.markers;
+  };
+
+  _proto.addMarker = function addMarker(marker) {
+    if (this.isMarkerAlreadyAdded(marker)) {
+      return false;
+    }
+
+    if (!this.center) {
+      var position = marker.getPosition();
+
+      if (position) {
+        this.center = position;
+        this.calculateBounds();
+      }
+    } else {
+      if (this.averageCenter) {
+        var _position = marker.getPosition();
+
+        if (_position) {
+          var length = this.markers.length + 1;
+          this.center = new google.maps.LatLng((this.center.lat() * (length - 1) + _position.lat()) / length, (this.center.lng() * (length - 1) + _position.lng()) / length);
+          this.calculateBounds();
+        }
+      }
+    }
+
+    marker.isAdded = true;
+    this.markers.push(marker);
+    var mCount = this.markers.length;
+    var maxZoom = this.markerClusterer.getMaxZoom();
+
+    if (maxZoom !== null && this.map.getZoom() > maxZoom) {
+      // Zoomed in past max zoom, so show the marker.
+      if (marker.getMap() !== this.map) {
+        marker.setMap(this.map);
+      }
+    } else if (mCount < this.minClusterSize) {
+      // Min cluster size not reached so show the marker.
+      if (marker.getMap() !== this.map) {
+        marker.setMap(this.map);
+      }
+    } else if (mCount === this.minClusterSize) {
+      // Hide the markers that were showing.
+      for (var i = 0; i < mCount; i++) {
+        this.markers[i].setMap(null);
+      }
+    } else {
+      marker.setMap(null);
+    }
+
+    this.updateIcon();
+    return true;
+  };
+
+  _proto.isMarkerInClusterBounds = function isMarkerInClusterBounds(marker) {
+    if (this.bounds !== null) {
+      var position = marker.getPosition();
+
+      if (position) {
+        return this.bounds.contains(position);
+      }
+    }
+
+    return false;
+  };
+
+  _proto.calculateBounds = function calculateBounds() {
+    this.bounds = this.markerClusterer.getExtendedBounds(new google.maps.LatLngBounds(this.center, this.center));
+  };
+
+  _proto.updateIcon = function updateIcon() {
+    var mCount = this.markers.length;
+    var maxZoom = this.markerClusterer.getMaxZoom();
+
+    if (maxZoom !== null && this.map.getZoom() > maxZoom) {
+      this.clusterIcon.hide();
+      return;
+    }
+
+    if (mCount < this.minClusterSize) {
+      // Min cluster size not yet reached.
+      this.clusterIcon.hide();
+      return;
+    }
+
+    if (this.center) {
+      this.clusterIcon.setCenter(this.center);
+    }
+
+    this.clusterIcon.useStyle(this.markerClusterer.getCalculator()(this.markers, this.markerClusterer.getStyles().length));
+    this.clusterIcon.show();
+  };
+
+  _proto.isMarkerAlreadyAdded = function isMarkerAlreadyAdded(marker) {
+    if (this.markers.indexOf) {
+      return this.markers.includes(marker);
+    } else {
+      for (var i = 0; i < this.markers.length; i++) {
+        if (marker === this.markers[i]) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  };
+
+  return Cluster;
+}();
+
+/* eslint-disable filenames/match-regex */
+
+var CALCULATOR = function CALCULATOR(markers, numStyles) {
+  var index = 0;
+  var title = '';
+  var count = markers.length.toString();
+  var dv = count;
+
+  while (dv !== 0) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    dv = parseInt(dv, 10) / 10;
+    index++;
+  }
+
+  index = Math.min(index, numStyles);
+  return {
+    text: count,
+    index: index,
+    title: title
+  };
+};
+
+var BATCH_SIZE = 2000;
+var BATCH_SIZE_IE = 500;
+var IMAGE_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
+var IMAGE_EXTENSION = 'png';
+var IMAGE_SIZES = [53, 56, 66, 78, 90];
+var CLUSTERER_CLASS = 'cluster';
+var Clusterer =
+/*#__PURE__*/
+function () {
+  function Clusterer(map, optMarkers, optOptions) {
+    if (optMarkers === void 0) {
+      optMarkers = [];
+    }
+
+    if (optOptions === void 0) {
+      optOptions = {};
+    }
+
+    this.extend(Clusterer, google.maps.OverlayView);
+    this.markers = [];
+    this.clusters = [];
+    this.listeners = [];
+    this.activeMap = null;
+    this.ready = false;
+    this.gridSize = optOptions.gridSize || 60;
+    this.minClusterSize = optOptions.minimumClusterSize || 2;
+    this.maxZoom = optOptions.maxZoom || null;
+    this.styles = optOptions.styles || [];
+    this.title = optOptions.title || '';
+    this.zoomOnClick = true;
+
+    if (optOptions.zoomOnClick !== undefined) {
+      this.zoomOnClick = optOptions.zoomOnClick;
+    }
+
+    this.averageCenter = false;
+
+    if (optOptions.averageCenter !== undefined) {
+      this.averageCenter = optOptions.averageCenter;
+    }
+
+    this.ignoreHidden = false;
+
+    if (optOptions.ignoreHidden !== undefined) {
+      this.ignoreHidden = optOptions.ignoreHidden;
+    }
+
+    this.enableRetinaIcons = false;
+
+    if (optOptions.enableRetinaIcons !== undefined) {
+      this.enableRetinaIcons = optOptions.enableRetinaIcons;
+    }
+
+    this.imagePath = optOptions.imagePath || IMAGE_PATH;
+    this.imageExtension = optOptions.imageExtension || IMAGE_EXTENSION;
+    this.imageSizes = optOptions.imageSizes || IMAGE_SIZES;
+    this.calculator = optOptions.calculator || CALCULATOR;
+    this.batchSize = optOptions.batchSize || BATCH_SIZE;
+    this.batchSizeIE = optOptions.batchSizeIE || BATCH_SIZE_IE;
+    this.clusterClass = optOptions.clusterClass || CLUSTERER_CLASS;
+
+    if (navigator.userAgent.toLowerCase().indexOf('msie') !== -1) {
+      // Try to avoid IE timeout when processing a huge number of markers:
+      this.batchSize = this.batchSizeIE;
+    }
+
+    this.timerRefStatic = null;
+    this.setupStyles();
+    this.addMarkers(optMarkers, true); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+
+    this.setMap(map); // Note: this causes onAdd to be called
+  }
+
+  var _proto = Clusterer.prototype;
+
+  _proto.onAdd = function onAdd() {
+    var _this = this;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.activeMap = this.getMap();
+    this.ready = true;
+    this.repaint(); // Add the map event listeners
+
+    this.listeners = [google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.getMap(), 'zoom_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+    function () {
+      _this.resetViewport(false); // Workaround for this Google bug: when map is at level 0 and "-" of
+      // zoom slider is clicked, a "zoom_changed" event is fired even though
+      // the map doesn't zoom out any further. In this situation, no "idle"
+      // event is triggered so the cluster markers that have been removed
+      // do not get redrawn. Same goes for a zoom in at maxZoom.
+
+
+      if ( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      _this.getMap().getZoom() === (_this.get('minZoom') || 0) || // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      _this.getMap().getZoom() === _this.get('maxZoom')) {
+        google.maps.event.trigger(_this, 'idle');
+      }
+    }), google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.getMap(), 'idle', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
+    function () {
+      _this.redraw();
+    })];
+  } // eslint-disable-next-line @getify/proper-arrows/this
+  ;
+
+  _proto.onRemove = function onRemove() {
+    // Put all the managed markers back on the map:
+    for (var i = 0; i < this.markers.length; i++) {
+      if (this.markers[i].getMap() !== this.activeMap) {
+        this.markers[i].setMap(this.activeMap);
+      }
+    } // Remove all clusters:
+
+
+    for (var _i = 0; _i < this.clusters.length; _i++) {
+      this.clusters[_i].remove();
+    }
+
+    this.clusters = []; // Remove map event listeners:
+
+    for (var _i2 = 0; _i2 < this.listeners.length; _i2++) {
+      google.maps.event.removeListener(this.listeners[_i2]);
+    }
+
+    this.listeners = [];
+    this.activeMap = null;
+    this.ready = false;
+  } // eslint-disable-next-line @typescript-eslint/no-empty-function
+  ;
+
+  _proto.draw = function draw() {};
+
+  _proto.setupStyles = function setupStyles() {
+    if (this.styles.length > 0) {
+      return;
+    }
+
+    for (var i = 0; i < this.imageSizes.length; i++) {
+      this.styles.push({
+        url: this.imagePath + (i + 1) + '.' + this.imageExtension,
+        height: this.imageSizes[i],
+        width: this.imageSizes[i]
+      });
+    }
+  };
+
+  _proto.fitMapToMarkers = function fitMapToMarkers() {
+    var markers = this.getMarkers();
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0; i < markers.length; i++) {
+      var position = markers[i].getPosition();
+
+      if (position) {
+        bounds.extend(position);
+      }
+    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+
+
+    this.getMap().fitBounds(bounds);
+  };
+
+  _proto.getGridSize = function getGridSize() {
+    return this.gridSize;
+  };
+
+  _proto.setGridSize = function setGridSize(gridSize) {
+    this.gridSize = gridSize;
+  };
+
+  _proto.getMinimumClusterSize = function getMinimumClusterSize() {
+    return this.minClusterSize;
+  };
+
+  _proto.setMinimumClusterSize = function setMinimumClusterSize(minimumClusterSize) {
+    this.minClusterSize = minimumClusterSize;
+  };
+
+  _proto.getMaxZoom = function getMaxZoom() {
+    return this.maxZoom;
+  };
+
+  _proto.setMaxZoom = function setMaxZoom(maxZoom) {
+    this.maxZoom = maxZoom;
+  };
+
+  _proto.getStyles = function getStyles() {
+    return this.styles;
+  };
+
+  _proto.setStyles = function setStyles(styles) {
+    this.styles = styles;
+  };
+
+  _proto.getTitle = function getTitle() {
+    return this.title;
+  };
+
+  _proto.setTitle = function setTitle(title) {
+    this.title = title;
+  };
+
+  _proto.getZoomOnClick = function getZoomOnClick() {
+    return this.zoomOnClick;
+  };
+
+  _proto.setZoomOnClick = function setZoomOnClick(zoomOnClick) {
+    this.zoomOnClick = zoomOnClick;
+  };
+
+  _proto.getAverageCenter = function getAverageCenter() {
+    return this.averageCenter;
+  };
+
+  _proto.setAverageCenter = function setAverageCenter(averageCenter) {
+    this.averageCenter = averageCenter;
+  };
+
+  _proto.getIgnoreHidden = function getIgnoreHidden() {
+    return this.ignoreHidden;
+  };
+
+  _proto.setIgnoreHidden = function setIgnoreHidden(ignoreHidden) {
+    this.ignoreHidden = ignoreHidden;
+  };
+
+  _proto.getEnableRetinaIcons = function getEnableRetinaIcons() {
+    return this.enableRetinaIcons;
+  };
+
+  _proto.setEnableRetinaIcons = function setEnableRetinaIcons(enableRetinaIcons) {
+    this.enableRetinaIcons = enableRetinaIcons;
+  };
+
+  _proto.getImageExtension = function getImageExtension() {
+    return this.imageExtension;
+  };
+
+  _proto.setImageExtension = function setImageExtension(imageExtension) {
+    this.imageExtension = imageExtension;
+  };
+
+  _proto.getImagePath = function getImagePath() {
+    return this.imagePath;
+  };
+
+  _proto.setImagePath = function setImagePath(imagePath) {
+    this.imagePath = imagePath;
+  };
+
+  _proto.getImageSizes = function getImageSizes() {
+    return this.imageSizes;
+  };
+
+  _proto.setImageSizes = function setImageSizes(imageSizes) {
+    this.imageSizes = imageSizes;
+  };
+
+  _proto.getCalculator = function getCalculator() {
+    return this.calculator;
+  };
+
+  _proto.setCalculator = function setCalculator(calculator) {
+    this.calculator = calculator;
+  };
+
+  _proto.getBatchSizeIE = function getBatchSizeIE() {
+    return this.batchSizeIE;
+  };
+
+  _proto.setBatchSizeIE = function setBatchSizeIE(batchSizeIE) {
+    this.batchSizeIE = batchSizeIE;
+  };
+
+  _proto.getClusterClass = function getClusterClass() {
+    return this.clusterClass;
+  };
+
+  _proto.setClusterClass = function setClusterClass(clusterClass) {
+    this.clusterClass = clusterClass;
+  };
+
+  _proto.getMarkers = function getMarkers() {
+    return this.markers;
+  };
+
+  _proto.getTotalMarkers = function getTotalMarkers() {
+    return this.markers.length;
+  };
+
+  _proto.getClusters = function getClusters() {
+    return this.clusters;
+  };
+
+  _proto.getTotalClusters = function getTotalClusters() {
+    return this.clusters.length;
+  };
+
+  _proto.addMarker = function addMarker(marker, optNoDraw) {
+    this.pushMarkerTo(marker);
+
+    if (!optNoDraw) {
+      this.redraw();
+    }
+  };
+
+  _proto.addMarkers = function addMarkers(markers, optNoDraw) {
+    for (var key in markers) {
+      if (markers.hasOwnProperty(key)) {
+        this.pushMarkerTo(markers[key]);
+      }
+    }
+
+    if (!optNoDraw) {
+      this.redraw();
+    }
+  };
+
+  _proto.pushMarkerTo = function pushMarkerTo(marker) {
+    var _this2 = this;
+
+    // If the marker is draggable add a listener so we can update the clusters on the dragend:
+    if (marker.getDraggable()) {
+      // eslint-disable-next-line @getify/proper-arrows/name, @getify/proper-arrows/this
+      google.maps.event.addListener(marker, 'dragend', function () {
+        if (_this2.ready) {
+          marker.isAdded = false;
+
+          _this2.repaint();
+        }
+      });
+    }
+
+    marker.isAdded = false;
+    this.markers.push(marker);
+  };
+
+  _proto.removeMarker_ = function removeMarker_(marker) {
+    var index = -1;
+
+    if (this.markers.indexOf) {
+      index = this.markers.indexOf(marker);
+    } else {
+      for (var i = 0; i < this.markers.length; i++) {
+        if (marker === this.markers[i]) {
+          index = i;
+          break;
+        }
+      }
+    }
+
+    if (index === -1) {
+      // Marker is not in our list of markers, so do nothing:
+      return false;
+    }
+
+    marker.setMap(null);
+    this.markers.splice(index, 1); // Remove the marker from the list of managed markers
+
+    return true;
+  };
+
+  _proto.removeMarker = function removeMarker(marker, optNoDraw) {
+    var removed = this.removeMarker_(marker);
+
+    if (!optNoDraw && removed) {
+      this.repaint();
+    }
+
+    return removed;
+  };
+
+  _proto.removeMarkers = function removeMarkers(markers, optNoDraw) {
+    var removed = false;
+
+    for (var i = 0; i < markers.length; i++) {
+      removed = removed || this.removeMarker_(markers[i]);
+    }
+
+    if (!optNoDraw && removed) {
+      this.repaint();
+    }
+
+    return removed;
+  };
+
+  _proto.clearMarkers = function clearMarkers() {
+    this.resetViewport(true);
+    this.markers = [];
+  };
+
+  _proto.repaint = function repaint() {
+    var oldClusters = this.clusters.slice();
+    this.clusters = [];
+    this.resetViewport(false);
+    this.redraw(); // Remove the old clusters.
+    // Do it in a timeout to prevent blinking effect.
+
+    setTimeout(function timeout() {
+      for (var i = 0; i < oldClusters.length; i++) {
+        oldClusters[i].remove();
+      }
+    }, 0);
+  };
+
+  _proto.getExtendedBounds = function getExtendedBounds(bounds) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    var projection = this.getProjection(); // Convert the points to pixels and the extend out by the grid size.
+
+    var trPix = projection.fromLatLngToDivPixel( // Turn the bounds into latlng.
+    new google.maps.LatLng(bounds.getNorthEast().lat(), bounds.getNorthEast().lng()));
+    trPix.x += this.gridSize;
+    trPix.y -= this.gridSize;
+    var blPix = projection.fromLatLngToDivPixel( // Turn the bounds into latlng.
+    new google.maps.LatLng(bounds.getSouthWest().lat(), bounds.getSouthWest().lng()));
+    blPix.x -= this.gridSize;
+    blPix.y += this.gridSize; // Extend the bounds to contain the new bounds.
+
+    bounds.extend( // Convert the pixel points back to LatLng nw
+    projection.fromDivPixelToLatLng(trPix));
+    bounds.extend( // Convert the pixel points back to LatLng sw
+    projection.fromDivPixelToLatLng(blPix));
+    return bounds;
+  };
+
+  _proto.redraw = function redraw() {
+    // Redraws all the clusters.
+    this.createClusters(0);
+  };
+
+  _proto.resetViewport = function resetViewport(optHide) {
+    // Remove all the clusters
+    for (var i = 0; i < this.clusters.length; i++) {
+      this.clusters[i].remove();
+    }
+
+    this.clusters = []; // Reset the markers to not be added and to be removed from the map.
+
+    for (var _i3 = 0; _i3 < this.markers.length; _i3++) {
+      var marker = this.markers[_i3];
+      marker.isAdded = false;
+
+      if (optHide) {
+        marker.setMap(null);
+      }
+    }
+  };
+
+  _proto.distanceBetweenPoints = function distanceBetweenPoints(p1, p2) {
+    var R = 6371; // Radius of the Earth in km
+
+    var dLat = (p2.lat() - p1.lat()) * Math.PI / 180;
+    var dLon = (p2.lng() - p1.lng()) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(p1.lat() * Math.PI / 180) * Math.cos(p2.lat() * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+  };
+
+  _proto.isMarkerInBounds = function isMarkerInBounds(marker, bounds) {
+    var position = marker.getPosition();
+
+    if (position) {
+      return bounds.contains(position);
+    }
+
+    return false;
+  };
+
+  _proto.addToClosestCluster = function addToClosestCluster(marker) {
+    var cluster;
+    var distance = 40000; // Some large number
+
+    var clusterToAddTo = null;
+
+    for (var i = 0; i < this.clusters.length; i++) {
+      cluster = this.clusters[i];
+      var center = cluster.getCenter();
+      var position = marker.getPosition();
+
+      if (center && position) {
+        var d = this.distanceBetweenPoints(center, position);
+
+        if (d < distance) {
+          distance = d;
+          clusterToAddTo = cluster;
+        }
+      }
+    }
+
+    if (clusterToAddTo && clusterToAddTo.isMarkerInClusterBounds(marker)) {
+      clusterToAddTo.addMarker(marker);
+    } else {
+      cluster = new Cluster(this);
+      cluster.addMarker(marker);
+      this.clusters.push(cluster);
+    }
+  };
+
+  _proto.createClusters = function createClusters(iFirst) {
+    var _this3 = this;
+
+    if (!this.ready) {
+      return;
+    } // Cancel previous batch processing if we're working on the first batch:
+
+
+    if (iFirst === 0) {
+      /**
+       * This event is fired when the <code>Clusterer</code> begins
+       *  clustering markers.
+       * @name Clusterer#clusteringbegin
+       * @param {Clusterer} mc The Clusterer whose markers are being clustered.
+       * @event
+       */
+      google.maps.event.trigger(this, 'clusteringbegin', this);
+
+      if (this.timerRefStatic !== null) {
+        window.clearTimeout(this.timerRefStatic);
+        delete this.timerRefStatic;
+      }
+    } // Get our current map view bounds.
+    // Create a new bounds object so we don't affect the map.
+    //
+    // See Comments 9 & 11 on Issue 3651 relating to this workaround for a Google Maps bug:
+
+
+    var mapBounds = // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.getMap().getZoom() > 3 ? new google.maps.LatLngBounds( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.getMap().getBounds().getSouthWest(), // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    this.getMap().getBounds().getNorthEast()) : new google.maps.LatLngBounds(new google.maps.LatLng(85.02070771743472, -178.48388434375), new google.maps.LatLng(-85.08136444384544, 178.00048865625));
+    var bounds = this.getExtendedBounds(mapBounds);
+    var iLast = Math.min(iFirst + this.batchSize, this.markers.length);
+
+    for (var i = iFirst; i < iLast; i++) {
+      var marker = this.markers[i];
+
+      if (!marker.isAdded && this.isMarkerInBounds(marker, bounds)) {
+        if (!this.ignoreHidden || this.ignoreHidden && marker.getVisible()) {
+          this.addToClosestCluster(marker);
+        }
+      }
+    }
+
+    if (iLast < this.markers.length) {
+      this.timerRefStatic = window.setTimeout( // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+      function () {
+        _this3.createClusters(iLast);
+      }, 0);
+    } else {
+      this.timerRefStatic = null;
+      /**
+       * This event is fired when the <code>Clusterer</code> stops
+       *  clustering markers.
+       * @name Clusterer#clusteringend
+       * @param {Clusterer} mc The Clusterer whose markers are being clustered.
+       * @event
+       */
+
+      google.maps.event.trigger(this, 'clusteringend', this);
+    }
+  };
+
+  _proto.extend = function extend(obj1, obj2) {
+    return function applyExtend(object) {
+      // eslint-disable-next-line guard-for-in
+      for (var property in object.prototype) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        this.prototype[property] = object.prototype[property];
+      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+
+
+      return this;
+    }.apply(obj1, [obj2]);
+  };
+
+  return Clusterer;
+}();
+
+
+//# sourceMappingURL=markerclusterer.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/invariant/browser.js":
+/*!*******************************************!*\
+  !*** ./node_modules/invariant/browser.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-var content = __webpack_require__(/*! !../../css-loader!../../postcss-loader/src??ref--7-2!../../sass-loader/lib/loader.js??ref--7-3!./sweetalert2.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/sweetalert2/src/sweetalert2.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
 
 
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
 
-var options = {"hmr":true}
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (true) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
 
-options.transform = transform
-options.insertInto = undefined;
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
 
-var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
 
-if(content.locals) module.exports = content.locals;
+module.exports = invariant;
 
-if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/react-select/async/dist/react-select.browser.esm.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/react-select/async/dist/react-select.browser.esm.js ***!
+  \**************************************************************************/
+/*! exports provided: default, defaultProps, makeAsyncSelect */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultProps", function() { return defaultProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makeAsyncSelect", function() { return makeAsyncSelect; });
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectSpread */ "./node_modules/@babel/runtime/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var memoize_one__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! memoize-one */ "./node_modules/memoize-one/dist/memoize-one.esm.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @babel/runtime/helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _dist_chunk_39d3fda8_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../dist/chunk-39d3fda8.browser.esm.js */ "./node_modules/react-select/dist/chunk-39d3fda8.browser.esm.js");
+/* harmony import */ var _dist_chunk_80640036_browser_esm_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../dist/chunk-80640036.browser.esm.js */ "./node_modules/react-select/dist/chunk-80640036.browser.esm.js");
+/* harmony import */ var _dist_base_dist_react_select_cac0a5ae_browser_esm_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../dist/base/dist/react-select-cac0a5ae.browser.esm.js */ "./node_modules/react-select/dist/base/dist/react-select-cac0a5ae.browser.esm.js");
+/* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @emotion/css */ "./node_modules/@emotion/css/dist/css.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react_input_autosize__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-input-autosize */ "./node_modules/react-input-autosize/lib/AutosizeInput.js");
+/* harmony import */ var react_input_autosize__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(react_input_autosize__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _dist_chunk_b36baf1a_browser_esm_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../dist/chunk-b36baf1a.browser.esm.js */ "./node_modules/react-select/dist/chunk-b36baf1a.browser.esm.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var defaultProps = {
+  cacheOptions: false,
+  defaultOptions: false,
+  filterOption: null
+};
+var makeAsyncSelect = function makeAsyncSelect(SelectComponent) {
+  var _class, _temp;
+
+  return _temp = _class =
+  /*#__PURE__*/
+  function (_Component) {
+    Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(Async, _Component);
+
+    function Async(props) {
+      var _this;
+
+      Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Async);
+
+      _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7__["default"])(Async).call(this));
+
+      Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(_this)), "select", void 0);
+
+      Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(_this)), "lastRequest", void 0);
+
+      Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(_this)), "mounted", false);
+
+      Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(_this)), "optionsCache", {});
+
+      Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__["default"])(_this)), "handleInputChange", function (newValue, actionMeta) {
+        var _this$props = _this.props,
+            cacheOptions = _this$props.cacheOptions,
+            onInputChange = _this$props.onInputChange; // TODO
+
+        var inputValue = Object(_dist_chunk_39d3fda8_browser_esm_js__WEBPACK_IMPORTED_MODULE_17__["k"])(newValue, actionMeta, onInputChange);
+
+        if (!inputValue) {
+          delete _this.lastRequest;
+
+          _this.setState({
+            inputValue: '',
+            loadedInputValue: '',
+            loadedOptions: [],
+            isLoading: false,
+            passEmptyOptions: false
+          });
+
+          return;
+        }
+
+        if (cacheOptions && _this.optionsCache[inputValue]) {
+          _this.setState({
+            inputValue: inputValue,
+            loadedInputValue: inputValue,
+            loadedOptions: _this.optionsCache[inputValue],
+            isLoading: false,
+            passEmptyOptions: false
+          });
+        } else {
+          var request = _this.lastRequest = {};
+
+          _this.setState({
+            inputValue: inputValue,
+            isLoading: true,
+            passEmptyOptions: !_this.state.loadedInputValue
+          }, function () {
+            _this.loadOptions(inputValue, function (options) {
+              if (!_this.mounted) return;
+
+              if (options) {
+                _this.optionsCache[inputValue] = options;
+              }
+
+              if (request !== _this.lastRequest) return;
+              delete _this.lastRequest;
+
+              _this.setState({
+                isLoading: false,
+                loadedInputValue: inputValue,
+                loadedOptions: options || [],
+                passEmptyOptions: false
+              });
+            });
+          });
+        }
+
+        return inputValue;
+      });
+
+      _this.state = {
+        defaultOptions: Array.isArray(props.defaultOptions) ? props.defaultOptions : undefined,
+        inputValue: typeof props.inputValue !== 'undefined' ? props.inputValue : '',
+        isLoading: props.defaultOptions === true,
+        loadedOptions: [],
+        passEmptyOptions: false
+      };
+      return _this;
+    }
+
+    Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(Async, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        var _this2 = this;
+
+        this.mounted = true;
+        var defaultOptions = this.props.defaultOptions;
+        var inputValue = this.state.inputValue;
+
+        if (defaultOptions === true) {
+          this.loadOptions(inputValue, function (options) {
+            if (!_this2.mounted) return;
+            var isLoading = !!_this2.lastRequest;
+
+            _this2.setState({
+              defaultOptions: options || [],
+              isLoading: isLoading
+            });
+          });
+        }
+      }
+    }, {
+      key: "UNSAFE_componentWillReceiveProps",
+      value: function UNSAFE_componentWillReceiveProps(nextProps) {
+        // if the cacheOptions prop changes, clear the cache
+        if (nextProps.cacheOptions !== this.props.cacheOptions) {
+          this.optionsCache = {};
+        }
+
+        if (nextProps.defaultOptions !== this.props.defaultOptions) {
+          this.setState({
+            defaultOptions: Array.isArray(nextProps.defaultOptions) ? nextProps.defaultOptions : undefined
+          });
+        }
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        this.mounted = false;
+      }
+    }, {
+      key: "focus",
+      value: function focus() {
+        this.select.focus();
+      }
+    }, {
+      key: "blur",
+      value: function blur() {
+        this.select.blur();
+      }
+    }, {
+      key: "loadOptions",
+      value: function loadOptions(inputValue, callback) {
+        var loadOptions = this.props.loadOptions;
+        if (!loadOptions) return callback();
+        var loader = loadOptions(inputValue, callback);
+
+        if (loader && typeof loader.then === 'function') {
+          loader.then(callback, function () {
+            return callback();
+          });
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this3 = this;
+
+        var _this$props2 = this.props,
+            loadOptions = _this$props2.loadOptions,
+            props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_this$props2, ["loadOptions"]);
+
+        var _this$state = this.state,
+            defaultOptions = _this$state.defaultOptions,
+            inputValue = _this$state.inputValue,
+            isLoading = _this$state.isLoading,
+            loadedInputValue = _this$state.loadedInputValue,
+            loadedOptions = _this$state.loadedOptions,
+            passEmptyOptions = _this$state.passEmptyOptions;
+        var options = passEmptyOptions ? [] : inputValue && loadedInputValue ? loadedOptions : defaultOptions || [];
+        return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(SelectComponent, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+          ref: function ref(_ref) {
+            _this3.select = _ref;
+          },
+          options: options,
+          isLoading: isLoading,
+          onInputChange: this.handleInputChange
+        }));
+      }
+    }]);
+
+    return Async;
+  }(react__WEBPACK_IMPORTED_MODULE_11__["Component"]), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(_class, "defaultProps", defaultProps), _temp;
+};
+var SelectState = Object(_dist_chunk_b36baf1a_browser_esm_js__WEBPACK_IMPORTED_MODULE_23__["m"])(_dist_base_dist_react_select_cac0a5ae_browser_esm_js__WEBPACK_IMPORTED_MODULE_19__["S"]);
+var Async = makeAsyncSelect(SelectState);
+
+/* harmony default export */ __webpack_exports__["default"] = (Async);
+
+
 
 /***/ })
 

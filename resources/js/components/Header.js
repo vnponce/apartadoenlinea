@@ -1,12 +1,39 @@
 import React, { useState } from 'react';
 import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 import Autocomplete from "./Autocomplete";
+import {Inertia} from "@inertiajs/inertia";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+
 
 export default function Header() {
     const [showSearch, setShowSearch] = useState(false);
     const { categories, cart: { content }, auth } = usePage();
     console.log('props =>');
     console.log('content =>', content);
+
+    const removeItems = () => {
+        Swal.fire({
+            title: '¿Seguro?',
+            text: `Eliminar artículos de la charola`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí eliminar',
+            cancelButtonText: 'No, mantener pan en la charola',
+        }).then((result) => {
+            if (result.value) {
+                Inertia.visit( `/empty`);
+                //     Swal.fire(
+                //         'Deleted!',
+                //         'Your file has been deleted.',
+                //         'success'
+                //     )
+            }
+        });
+    }
+
     return <header className="md:px-12 bg-brand-orange">
         <div className="flex p-5">
             <InertiaLink href="/" className="flex-2 m-auto h-20 hidden lg:block">
@@ -82,6 +109,13 @@ export default function Header() {
                         </InertiaLink>
                         }
                     </span>
+                    {/* trash */}
+                    {content && Object.keys(content).filter(product => content[product].id !== 'orderDetailsId').length > 0 &&
+                        <i
+                            className="ml-2 inline fa fa-trash fa-fw fill-current stroke-current text-white cursor-pointer hover:text-orange-900"
+                            onClick={removeItems}
+                        />
+                    }
                 </div>
             </div>
         </div>
