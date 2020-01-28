@@ -269,13 +269,12 @@ var Async = makeAsyncSelect(SelectState);
 /*!**************************************!*\
   !*** ./resources/js/Pages/Login.jsx ***!
   \**************************************/
-/*! exports provided: triggerEvtInput, LOGIN_MOCK_DEV_ONLY, default */
+/*! exports provided: triggerEvtInput, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triggerEvtInput", function() { return triggerEvtInput; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN_MOCK_DEV_ONLY", function() { return LOGIN_MOCK_DEV_ONLY; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -314,40 +313,6 @@ function triggerEvtInput(target, value) {
   });
   target.dispatchEvent(ev2);
 }
-/**
- * @return {boolean}
- */
-
-function LOGIN_MOCK_DEV_ONLY(evt) {
-  console.log('LOGIN_MOCK_DEV_ONU');
-  var target = evt.currentTarget;
-  console.log('target =>', target); // if (process.env.NODE_ENV === 'development') {
-
-  if ( // process.env.REACT_APP_LOGIN_MOCK_USER &&
-  // process.env.REACT_APP_LOGIN_MOCK_PASSWORD &&
-  evt.key === 'Tab') {
-    evt.preventDefault();
-
-    if (target.id === 'email') {
-      triggerEvtInput(target, 'god@panaderialaespecial.com.mx');
-      document.querySelector('#password').focus();
-    } else {
-      triggerEvtInput(target, 'secret');
-      var form = document.querySelector('#login-form');
-      console.log('form =>', form);
-      setTimeout(function () {
-        return form.dispatchEvent(new Event('submit', {
-          bubbles: true
-        }));
-      }, 600);
-    }
-
-    return false;
-  } // }
-
-
-  return true;
-}
 
 function Login(props) {
   console.log('props =>', props);
@@ -378,6 +343,43 @@ function Login(props) {
     console.log('e.target.value =>', e.target.value);
     setData(_objectSpread({}, data, _defineProperty({}, name, value)));
   };
+  /**
+   * @return {boolean}
+   */
+
+
+  function LOGIN_MOCK_DEV_ONLY(evt) {
+    var _props$app = props.app,
+        env = _props$app.env,
+        mock = _props$app.mock;
+    console.log('LOGIN_MOCK_DEV_ONU env =>', env);
+    var target = evt.currentTarget;
+    console.log('target =>', target);
+
+    if (env === 'local') {
+      if (mock && mock.username && mock.password && evt.key === 'Tab') {
+        evt.preventDefault();
+
+        if (target.id === 'email') {
+          triggerEvtInput(target, mock.username);
+          document.querySelector('#password').focus();
+        } else {
+          triggerEvtInput(target, mock.password);
+          var form = document.querySelector('#login-form'); // console.log('form =>', form);
+
+          setTimeout(function () {
+            return form.dispatchEvent(new Event('submit', {
+              bubbles: true
+            }));
+          }, 600);
+        }
+
+        return false;
+      }
+    }
+
+    return true;
+  }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     title: "Log in",

@@ -16,35 +16,6 @@ export function triggerEvtInput(target, value) {
     target.dispatchEvent(ev2);
 }
 
-/**
- * @return {boolean}
- */
-export function LOGIN_MOCK_DEV_ONLY(evt) {
-    console.log('LOGIN_MOCK_DEV_ONU');
-    const target = evt.currentTarget;
-    console.log('target =>', target);
-    // if (process.env.NODE_ENV === 'development') {
-        if (
-            // process.env.REACT_APP_LOGIN_MOCK_USER &&
-            // process.env.REACT_APP_LOGIN_MOCK_PASSWORD &&
-            evt.key === 'Tab'
-        ) {
-            evt.preventDefault();
-            if (target.id === 'email') {
-                triggerEvtInput(target, 'god@panaderialaespecial.com.mx');
-                document.querySelector('#password').focus();
-            } else {
-                triggerEvtInput(target, 'secret');
-                const form = document.querySelector('#login-form');
-                console.log('form =>', form);
-                setTimeout(() => form.dispatchEvent(new Event('submit', { bubbles: true })), 600);
-            }
-            return false;
-        }
-    // }
-
-    return true;
-}
 
 function Login(props) {
     console.log('props =>', props);
@@ -67,6 +38,38 @@ function Login(props) {
             [name]: value,
         });
     };
+    /**
+     * @return {boolean}
+     */
+    function LOGIN_MOCK_DEV_ONLY(evt) {
+        const { app: { env, mock } } = props;
+        console.log('LOGIN_MOCK_DEV_ONU env =>', env);
+        const target = evt.currentTarget;
+        console.log('target =>', target);
+        if (env === 'local') {
+            if (
+                mock &&
+                mock.username &&
+                mock.password &&
+                evt.key === 'Tab'
+            ) {
+                evt.preventDefault();
+                if (target.id === 'email') {
+                    triggerEvtInput(target, mock.username);
+                    document.querySelector('#password').focus();
+                } else {
+                    triggerEvtInput(target, mock.password);
+                    const form = document.querySelector('#login-form');
+                    // console.log('form =>', form);
+                    setTimeout(() => form.dispatchEvent(new Event('submit', { bubbles: true })), 600);
+                }
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     return (
         <div title="Log in" className="container-fluid">
             {console.log('data =>', data)}
