@@ -494,7 +494,7 @@ function SiteBar(props) {
     className: "fa fa-store fa-fw mr-3"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "w-full inline-block pb-1 md:pb-0 text-sm"
-  }, "Tiendas"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "Sucursales"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "my-2 md:my-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/admin/users",

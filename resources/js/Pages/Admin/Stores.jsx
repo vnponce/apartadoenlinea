@@ -3,12 +3,13 @@ import Admin from "../../Shared/Admin";
 // import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 import {Inertia} from "@inertiajs/inertia";
 import Table from "../../components/Table";
-import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
+import StoresInfoBoxes from "../../components/Admin/StoresInfoBoxes";
 
 
 function Stores(props) {
     const { stores, success_message } = props;
     console.log('stores =>', stores);
+    const [storeId, setStoreId] = useState(false);
     const columns = React.useMemo(
         () => [
             {
@@ -53,9 +54,15 @@ function Stores(props) {
         []
     );
 
+    const openedAndShow = index => {
+        const data = stores[index];
+        setStoreId(data.id);
+        setStoreId(data.id);
+    };
+
     return (
         <Admin title="Panel">
-            <UsersInfoBoxes data={false} createUser={false} setCreateUser={() => {}}/>
+            <StoresInfoBoxes id={storeId} createStore={false} setCreateStore={() => {}}/>
             {/*Graph Content */}
             <div id="main-content" className="w-full flex-1">
 
@@ -75,7 +82,7 @@ function Stores(props) {
                                     <i
                                         className="inline fa fa-store fa-fw"/>
                                 </button>
-                                <Table columns={columns} data={stores} onClick={row => console.log('store =>', row)} selected={false}/>
+                                <Table columns={columns} data={stores} onClick={row => openedAndShow(row.index)} selected={false}/>
                             </div>
                             {/*/Table orders*/}
 

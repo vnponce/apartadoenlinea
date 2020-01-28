@@ -111,6 +111,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::group(['prefix' => 'stores'], function() {
         Route::get('/', 'StoreController@index');
+        Route::put('/{store}', 'StoreController@update')->name('store.update');
     });
 
 });

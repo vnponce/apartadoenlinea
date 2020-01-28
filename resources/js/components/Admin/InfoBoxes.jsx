@@ -100,7 +100,7 @@ export default function InfoBoxes(props) {
 
     return (
     <div id="dash-content"
-         className="bg-gray-200 py-6 lg:py-0 w-full h-full lg:max-w-sm flex flex-wrap content-start">
+         className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
         { data && (
             <div className="w-1/2 lg:w-full">
                 <div

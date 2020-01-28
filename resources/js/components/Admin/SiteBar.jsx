@@ -34,7 +34,7 @@ export default function SiteBar(props) {
                     <InertiaLink href="/admin/stores"
                                  className="block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
                         <i className="fa fa-store fa-fw mr-3"/><span
-                        className="w-full inline-block pb-1 md:pb-0 text-sm">Tiendas</span>
+                        className="w-full inline-block pb-1 md:pb-0 text-sm">Sucursales</span>
                     </InertiaLink>
                 </li>
                 {/*

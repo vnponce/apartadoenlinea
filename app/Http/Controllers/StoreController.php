@@ -71,7 +71,19 @@ class StoreController extends Controller
      */
     public function update(Request $request, Store $store)
     {
-        //
+//        dd($store, $request->toArray());
+        $this->validate($request,[
+            // 'name' => 'required|string|max:255',
+            // 'file' => 'image',
+            // 'email' => 'required|string|email|max:255|unique:users',
+            'friendly_address' => 'string|min:6',
+            'address' => 'required|min:6',
+            'lat' => 'required',
+            'lon' => 'required',
+        ]);
+
+        $store->update($request->only('friendly_address', 'address', 'lat', 'lon'));
+        return back()->with('success_message', 'Sucursal actualizado correctamente!');
     }
 
     /**
