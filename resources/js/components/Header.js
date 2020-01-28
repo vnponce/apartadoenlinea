@@ -111,10 +111,20 @@ export default function Header() {
                     </span>
                     {/* trash */}
                     {content && Object.keys(content).filter(product => content[product].id !== 'orderDetailsId').length > 0 &&
-                        <i
-                            className="ml-2 inline fa fa-trash fa-fw fill-current stroke-current text-white cursor-pointer hover:text-orange-900"
-                            onClick={removeItems}
-                        />
+                        <span>
+                            <i
+                                tabIndex="0"
+                                className="ml-2 inline fa fa-trash fa-fw fill-current stroke-current text-white cursor-pointer hover:text-orange-900"
+                                onClick={removeItems}
+                                onKeyDown={ e => {
+                                    e.stopPropagation();
+                                    if(e.key === 'Enter')
+                                    {
+                                        setTimeout(removeItems, 500);
+                                    }
+                                }}
+                            />
+                        </span>
                     }
                 </div>
             </div>

@@ -680,10 +680,18 @@ function Header() {
     d: "M0 24.83h100l-10.63 10H10.59L0 24.83zM74.48 12a10.47 10.47 0 0 0-.7-.85A37 37 0 0 0 62.5 2.71v4.62a2.5 2.5 0 0 1-5 0V.82a29.39 29.39 0 0 0-5-.82v7.33a2.5 2.5 0 0 1-5 0V0a29.32 29.32 0 0 0-5 .82v6.51a2.5 2.5 0 0 1-5 0V2.71a37.12 37.12 0 0 0-11.3 8.47 10.47 10.47 0 0 0-.7.85 4.88 4.88 0 0 0-.85 2.8 5 5 0 0 0 5 5h40.7a5 5 0 0 0 5-5 4.88 4.88 0 0 0-.87-2.83z"
   })))), content && Object.keys(content).filter(function (product) {
     return content[product].id !== 'orderDetailsId';
-  }).length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+  }).length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    tabIndex: "0",
     className: "ml-2 inline fa fa-trash fa-fw fill-current stroke-current text-white cursor-pointer hover:text-orange-900",
-    onClick: removeItems
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    onClick: removeItems,
+    onKeyDown: function onKeyDown(e) {
+      e.stopPropagation();
+
+      if (e.key === 'Enter') {
+        setTimeout(removeItems, 500);
+      }
+    }
+  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "header-lines"
   }));
 }
