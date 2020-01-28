@@ -8,6 +8,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 export default function Header() {
     const [showSearch, setShowSearch] = useState(false);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
     const { categories, cart: { content }, auth } = usePage();
     console.log('props =>');
     console.log('content =>', content);
@@ -41,13 +42,18 @@ export default function Header() {
             </InertiaLink>
             <div className="flex flex-row lg:flex-col flex-1">
                 <nav className="flex-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                         className="cursor-pointer stroke-current text-white lg:hidden feather feather-menu">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
+                    {!showMobileMenu && (
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                             className="cursor-pointer stroke-current text-white lg:hidden feather feather-menu"
+                             onClick={() => setShowMobileMenu(true)}
+                        >
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    )}
+                    {showMobileMenu && <span className="cursor-pointer text-white text-xl" onClick={() => setShowMobileMenu(false)}>X</span>}
                     <ul className="hidden lg:flex items-center justify-end text-white">
                         {categories.map(category => (
                             <li className="md:ml-5">
@@ -129,6 +135,23 @@ export default function Header() {
                 </div>
             </div>
         </div>
+        {/* Mobile menu*/}
+        {showMobileMenu && (
+            <ul className="flex flex-col w-full items-center justify-end text-white">
+            {categories.map(category => (
+                <li className="md:ml-5">
+                    <InertiaLink className="block md:inline"
+                                 href={`/category/${category.id}`}>{category.name}</InertiaLink>
+                </li>
+            ))}
+            {auth && auth.user && (
+                <li className="md:ml-5">
+                    <InertiaLink className="block md:inline"
+                                 href={`/admin/`}>Panel</InertiaLink>
+                </li>
+            )}
+        </ul>
+        )}
         <div id="header-lines"></div>
     </header>
 };
