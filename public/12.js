@@ -280,8 +280,11 @@ function InfoBoxes(props) {
   var data = props.data;
   console.log('infoboxes data =>', data);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('useEffect =>', data);
+
     if (data) {
-      var status = data.status;
+      var status = data.status,
+          name = data.store.name;
 
       switch (status.original) {
         case 'created':
@@ -297,7 +300,7 @@ function InfoBoxes(props) {
           setNextStatus({
             original: 'placed',
             step: 'En sucursal',
-            allowed: user.role === 'manager'
+            allowed: user.role === 'manager' || user.isAdmin && name === 'Miguel Alemán'
           });
           break;
 
@@ -305,7 +308,7 @@ function InfoBoxes(props) {
           setNextStatus({
             original: 'delivered',
             step: 'Entregado',
-            allowed: user.role === 'manager'
+            allowed: user.role === 'manager' || user.isAdmin && name === 'Miguel Alemán'
           });
           break;
 
@@ -331,8 +334,9 @@ function InfoBoxes(props) {
   var updateToNextStatus = function updateToNextStatus() {
     console.log("Vamos a pasar de ".concat(data.status.original, " a ").concat(nextStatus.original));
     console.log("nextStatus => ".concat(nextStatus));
+    console.log("".concat(nextStatus));
 
-    if (nextStatus.allowed) {
+    if (nextStatus.allowed || user.isGod) {
       sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
         title: '¿Seguro?',
         text: "Vamos a pasar la orden de ".concat(data.status.step, " a ").concat(nextStatus.step),

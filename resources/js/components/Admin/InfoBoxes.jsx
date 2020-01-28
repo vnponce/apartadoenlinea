@@ -18,8 +18,9 @@ export default function InfoBoxes(props) {
     console.log('infoboxes data =>', data);
 
     useEffect(() => {
+        console.log('useEffect =>', data);
         if(data) {
-            const { status } = data;
+            const { status, store: { name } } = data;
             switch (status.original) {
                 case 'created':
                 case 'opened':
@@ -33,14 +34,14 @@ export default function InfoBoxes(props) {
                     setNextStatus({
                         original: 'placed',
                         step: 'En sucursal',
-                        allowed: user.role === 'manager',
+                        allowed: user.role === 'manager' || (user.isAdmin && name === 'Miguel Alemán'),
                     });
                     break;
                 case 'placed':
                     setNextStatus({
                         original: 'delivered',
                         step: 'Entregado',
-                        allowed: user.role === 'manager',
+                        allowed: user.role === 'manager' || (user.isAdmin && name === 'Miguel Alemán'),
                     });
                     break;
                 case 'delivered':
@@ -64,7 +65,8 @@ export default function InfoBoxes(props) {
     const updateToNextStatus = () => {
         console.log(`Vamos a pasar de ${data.status.original} a ${nextStatus.original}`);
         console.log(`nextStatus => ${nextStatus}`);
-        if(nextStatus.allowed) {
+        console.log(`${nextStatus}`);
+        if(nextStatus.allowed || user.isGod) {
             Swal.fire({
                 title: '¿Seguro?',
                 text: `Vamos a pasar la orden de ${data.status.step} a ${nextStatus.step}`,
