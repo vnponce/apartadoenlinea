@@ -50,6 +50,13 @@ export default function SearchBar(props) {
                 friendlyAddress: storeSelected.friendly_address,
             })
         }
+        if (store === null) {
+            setStoreObject({
+                id: '',
+                name: '',
+                friendlyAddress: '',
+            })
+        }
     }, [store]);
     const onChange = e => {
         setId(e.target.value);

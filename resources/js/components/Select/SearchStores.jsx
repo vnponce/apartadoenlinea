@@ -74,7 +74,13 @@ export default function Stores(props) {
                     Option: ShopOptionComponent,
                 }}
                 onChange={selected => {
-                    setStore(selected.value)
+                    console.log('selected =>', selected);
+                    if(selected === null) {
+                        console.log('selected =>', selected);
+                        setStore(null)
+                    } else {
+                        setStore(selected.value)
+                    }
                 }}
                 // defaultValue={{label: storeSelected.name }}
                 value={[{label: storeSelected.name, value: storeSelected.id}]}

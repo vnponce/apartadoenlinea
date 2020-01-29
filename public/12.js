@@ -652,6 +652,14 @@ function SearchBar(props) {
         friendlyAddress: storeSelected.friendly_address
       });
     }
+
+    if (store === null) {
+      setStoreObject({
+        id: '',
+        name: '',
+        friendlyAddress: ''
+      });
+    }
   }, [store]);
 
   var onChange = function onChange(e) {
@@ -1113,7 +1121,14 @@ function Stores(props) {
       Option: ShopOptionComponent
     },
     onChange: function onChange(selected) {
-      setStore(selected.value);
+      console.log('selected =>', selected);
+
+      if (selected === null) {
+        console.log('selected =>', selected);
+        setStore(null);
+      } else {
+        setStore(selected.value);
+      }
     } // defaultValue={{label: storeSelected.name }}
     ,
     value: [{
