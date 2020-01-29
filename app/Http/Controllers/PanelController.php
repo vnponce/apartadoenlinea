@@ -16,6 +16,7 @@ class PanelController extends Controller
     {
         Date::setLocale('es');
         $orderAll = Order::all();
+        // $orderAll = Order::whereDate('date', Carbon::today())->get();
         $searchValues = collect([
             'id' => '',
             'store' => '',

@@ -7,6 +7,7 @@ import styled from "styled-components";
 import {Inertia} from "@inertiajs/inertia";
 import {usePage} from "@inertiajs/inertia-react";
 import moment from "moment";
+import SearchStatus from "../Select/SearchStatus";
 
 const DateWrapper = styled.div`
     .DateInput_input {
@@ -80,7 +81,7 @@ export default function SearchBar(props) {
 
     return (
         <div className="flex">
-            <div className="inline-block mx-2 w-1/4">
+            <div className="inline-block mx-2 w-1/5">
                 <Input
                     id="id"
                     label="Id"
@@ -92,13 +93,13 @@ export default function SearchBar(props) {
                 />
             </div>
             { user.isAdmin && (
-                <div className="inline-block mx-2 w-1/4">
-                {console.log('[SearchBar] storeSelected =>', store)}
-                {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
-                <Stores setStore={setStore} stores={stores} storeSelected={storeObject}/>
-            </div>
+                <div className="inline-block mx-2 w-1/5">
+                    {console.log('[SearchBar] storeSelected =>', store)}
+                    {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
+                    <Stores setStore={setStore} stores={stores} storeSelected={storeObject}/>
+                </div>
             )}
-            <div className="inline-block mx-2 w-1/4">
+            <div className="inline-block mx-2 w-1/5">
                     {/* Día */}
                     {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
                     <div className="font-light text-gray-600 mt-4 lg:text-justify">
@@ -129,6 +130,9 @@ export default function SearchBar(props) {
                         </DateWrapper>
                     </div>
                 </div>
+            <div className="inline-block mx-2 w-1/5">
+                <SearchStatus />
+            </div>
             <div className="flex items-end">
                 <button
                     className="h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"
