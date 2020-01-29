@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Input from "../Input";
 import Stores from "../Select/SearchStores";
-import DateSelector from "../../components/DateSelector";
+import DateSelector from "../../components/DateSelector";  // jajaja if I remove this line, i get white page jajajaja
 import {isInclusivelyAfterDay, SingleDatePicker} from "react-dates";
 import styled from "styled-components";
 import {Inertia} from "@inertiajs/inertia";
 import {usePage} from "@inertiajs/inertia-react";
+import moment from "moment";
 
 const DateWrapper = styled.div`
     .DateInput_input {
@@ -36,6 +37,10 @@ export default function SearchBar(props) {
                 friendlyAddress: searchData.friendly_address,
             })
         }
+        if(searchValues && searchValues.date !== '') {
+            // if search values has date value, needs to be set datepicker component with date const.
+            setDate(moment(searchValues.date));
+        }
     }, [searchValues]);
 
     useEffect(() => {
@@ -50,6 +55,7 @@ export default function SearchBar(props) {
                 friendlyAddress: storeSelected.friendly_address,
             })
         }
+        // if user clear store selector it must remove selected store
         if (store === null) {
             setStoreObject({
                 id: '',
@@ -65,9 +71,8 @@ export default function SearchBar(props) {
     const toSearch = () => {
       console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}`);
       const searchId = id ? `id=${id}` : '';
-      const searchStore = storeObject ? `store=${storeObject.id}` : '';
+      const searchStore = storeObject && storeObject.id ? `store=${storeObject.id}` : '';
       const searchDate = date ? `date=${date}` : '';
-      const searchString = '';
 
       let url = `/admin?${searchId}&${searchStore}&${searchDate}`;
       Inertia.visit(url)

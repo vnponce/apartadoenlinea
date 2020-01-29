@@ -23,7 +23,7 @@ class PanelController extends Controller
         ]);
         if(request('id') || request('store') || request('date')) {
             $query = app(Order::class)->newQuery();
-            // dd((new Carbon(request('date')))->format('d M y H:m'));
+//             dd((new Carbon(request('date')))->format('d M y H:m'));
             if (request()->filled('id')) {
                 $id = request()->get('id');
                 $searchValues['id'] = $id;
@@ -33,6 +33,13 @@ class PanelController extends Controller
                 $store = request()->get('store');
                 $searchValues['store'] = $store;
                 $query->where('store_id', $store);
+            }
+            if (request()->filled('date')) {
+                // $date = request()->get('date');
+                $date = (new Carbon(request('date')));
+//                dd((new Carbon(request('date')))->format('d M y H:m'));
+                $searchValues['date'] = $date;
+                $query->whereDate('date', $date);
             }
             $orderAll = $query->get();
         }

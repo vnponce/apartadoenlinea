@@ -566,6 +566,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -588,6 +590,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
+ // jajaja if I remove this line, i get white page jajajaja
 
 
 
@@ -639,6 +643,11 @@ function SearchBar(props) {
         friendlyAddress: searchData.friendly_address
       });
     }
+
+    if (searchValues && searchValues.date !== '') {
+      // if search values has date value, needs to be set datepicker component with date const.
+      setDate(moment__WEBPACK_IMPORTED_MODULE_8___default()(searchValues.date));
+    }
   }, [searchValues]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (store && stores) {
@@ -651,7 +660,8 @@ function SearchBar(props) {
         name: storeSelected.name,
         friendlyAddress: storeSelected.friendly_address
       });
-    }
+    } // if user clear store selector it must remove selected store
+
 
     if (store === null) {
       setStoreObject({
@@ -669,9 +679,8 @@ function SearchBar(props) {
   var toSearch = function toSearch() {
     console.log("Vamos a buscar id: ".concat(id, " , store: ").concat(storeObject.id, ", date: ").concat(date));
     var searchId = id ? "id=".concat(id) : '';
-    var searchStore = storeObject ? "store=".concat(storeObject.id) : '';
+    var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : '';
     var searchDate = date ? "date=".concat(date) : '';
-    var searchString = '';
     var url = "/admin?".concat(searchId, "&").concat(searchStore, "&").concat(searchDate);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].visit(url);
   };
