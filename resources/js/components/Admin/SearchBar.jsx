@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Input from "../Input";
-import Stores from "../Select/Stores";
+import Stores from "../Select/SearchStores";
 import DateSelector from "../../components/DateSelector";
 import {isInclusivelyAfterDay, SingleDatePicker} from "react-dates";
 import styled from "styled-components";
@@ -17,8 +17,8 @@ const DateWrapper = styled.div`
 `;
 
 export default function SearchBar(props) {
-    const { auth: { user } } = usePage();
-    const { stores, searchValues } = props;
+    const { auth: { user }, stores } = usePage();
+    const { searchValues } = props;
     console.log('[SearchBar] searchValues =>', searchValues);
     const [id, setId] = useState(searchValues.id || '');
     const [store, setStore] = useState(searchValues.store || '');
@@ -28,20 +28,41 @@ export default function SearchBar(props) {
     const [focus, setFocus] = useState(false);
 
     useEffect(() => {
-        if(searchValues) {
+        if(searchValues && searchValues.store !== '') {
+            const searchData = stores.find(current => current.id === store * 1);
             setStoreObject({
-                id: store,
-                name: 'Bernal',
+                id: searchData.id,
+                name: searchData.name,
+                friendlyAddress: searchData.friendly_address,
             })
         }
     }, [searchValues]);
+
+    useEffect(() => {
+        if(store && stores) {
+            const storeSelected = stores.find(current => {
+                // convert string to number
+                return current.id === store * 1;
+            });
+            setStoreObject({
+                id: storeSelected.id,
+                name: storeSelected.name,
+                friendlyAddress: storeSelected.friendly_address,
+            })
+        }
+    }, [store]);
     const onChange = e => {
         setId(e.target.value);
     };
 
     const toSearch = () => {
-      console.log(`Vamos a buscar id: ${id} , store: ${store}, date: ${date}`);
-      let url = `/admin?id=${id}&store=${store}&date=${date}`;
+      console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}`);
+      const searchId = id ? `id=${id}` : '';
+      const searchStore = storeObject ? `store=${storeObject.id}` : '';
+      const searchDate = date ? `date=${date}` : '';
+      const searchString = '';
+
+      let url = `/admin?${searchId}&${searchStore}&${searchDate}`;
       Inertia.visit(url)
     };
 
@@ -62,7 +83,7 @@ export default function SearchBar(props) {
                 <div className="inline-block mx-2 w-1/4">
                 {console.log('[SearchBar] storeSelected =>', store)}
                 {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
-                <Stores setStore={setStore} stores={stores} />
+                <Stores setStore={setStore} stores={stores} storeSelected={storeObject}/>
             </div>
             )}
             <div className="inline-block mx-2 w-1/4">

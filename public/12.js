@@ -557,7 +557,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Input */ "./resources/js/components/Input.jsx");
-/* harmony import */ var _Select_Stores__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Select/Stores */ "./resources/js/components/Select/Stores.jsx");
+/* harmony import */ var _Select_SearchStores__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Select/SearchStores */ "./resources/js/components/Select/SearchStores.jsx");
 /* harmony import */ var _components_DateSelector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/DateSelector */ "./resources/js/components/DateSelector.jsx");
 /* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-dates */ "./node_modules/react-dates/index.js");
 /* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_dates__WEBPACK_IMPORTED_MODULE_4__);
@@ -597,10 +597,10 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject());
 function SearchBar(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__["usePage"])(),
-      user = _usePage.auth.user;
+      user = _usePage.auth.user,
+      stores = _usePage.stores;
 
-  var stores = props.stores,
-      searchValues = props.searchValues;
+  var searchValues = props.searchValues;
   console.log('[SearchBar] searchValues =>', searchValues);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(searchValues.id || ''),
@@ -629,21 +629,42 @@ function SearchBar(props) {
       setFocus = _useState10[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (searchValues) {
+    if (searchValues && searchValues.store !== '') {
+      var searchData = stores.find(function (current) {
+        return current.id === store * 1;
+      });
       setStoreObject({
-        id: store,
-        name: 'Bernal'
+        id: searchData.id,
+        name: searchData.name,
+        friendlyAddress: searchData.friendly_address
       });
     }
   }, [searchValues]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (store && stores) {
+      var storeSelected = stores.find(function (current) {
+        // convert string to number
+        return current.id === store * 1;
+      });
+      setStoreObject({
+        id: storeSelected.id,
+        name: storeSelected.name,
+        friendlyAddress: storeSelected.friendly_address
+      });
+    }
+  }, [store]);
 
   var onChange = function onChange(e) {
     setId(e.target.value);
   };
 
   var toSearch = function toSearch() {
-    console.log("Vamos a buscar id: ".concat(id, " , store: ").concat(store, ", date: ").concat(date));
-    var url = "/admin?id=".concat(id, "&store=").concat(store, "&date=").concat(date);
+    console.log("Vamos a buscar id: ".concat(id, " , store: ").concat(storeObject.id, ", date: ").concat(date));
+    var searchId = id ? "id=".concat(id) : '';
+    var searchStore = storeObject ? "store=".concat(storeObject.id) : '';
+    var searchDate = date ? "date=".concat(date) : '';
+    var searchString = '';
+    var url = "/admin?".concat(searchId, "&").concat(searchStore, "&").concat(searchDate);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].visit(url);
   };
 
@@ -661,9 +682,10 @@ function SearchBar(props) {
     value: id
   })), user.isAdmin && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/4"
-  }, console.log('[SearchBar] storeSelected =>', store), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Stores__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, console.log('[SearchBar] storeSelected =>', store), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStores__WEBPACK_IMPORTED_MODULE_2__["default"], {
     setStore: setStore,
-    stores: stores
+    stores: stores,
+    storeSelected: storeObject
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -992,6 +1014,124 @@ function ProductListElement(props) {
     },
     className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full"
   }) : comment || (isEditable ? 'Agregar breve comentario' : '')));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Select/SearchStores.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Select/SearchStores.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Stores; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/set */ "./node_modules/@babel/runtime/helpers/esm/set.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+
+var transformStoreList = function transformStoreList(stores) {
+  return stores.map(function (store) {
+    return {
+      value: store.id,
+      label: store.name,
+      friendlyAddress: store.friendly_address
+    };
+  });
+};
+
+var ShopOptionComponent = function ShopOptionComponent(props) {
+  var children = props.children,
+      friendlyAddress = props.data.friendlyAddress,
+      isSelected = props.isSelected; // console.log('ShopOptionComponent props =>', props);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "shop-option-name"
+  }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "shop-option-description".concat(isSelected ? ' selected' : '')
+  }, friendlyAddress));
+};
+
+function Stores(props) {
+  var setStore = props.setStore,
+      stores = props.stores,
+      _props$storeSelected = props.storeSelected,
+      storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
+  var storesToSelect = transformStoreList(stores);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (storeSelected) {
+      setStore(storeSelected.id);
+    }
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
+    className: "font-light text-gray-600 mt-4 lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "store",
+    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
+  }, "Sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    options: storesToSelect,
+    inputId: "store",
+    name: "store",
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    ,
+    classNamePrefix: "stores-selector"
+    /*
+    getOptionValue={option =>
+        option.key
+    }
+    getOptionLabel={option =>
+        option.key
+    }
+    isClearable
+     */
+    ,
+    isClearable: true,
+    placeholder: "Elige una sucursal",
+    components: {
+      Option: ShopOptionComponent
+    },
+    onChange: function onChange(selected) {
+      setStore(selected.value);
+    } // defaultValue={{label: storeSelected.name }}
+    ,
+    value: [{
+      label: storeSelected.name,
+      value: storeSelected.id
+    }]
+    /*
+    onFocus={
+        this.onShopFocus
+    }
+    value={shopSelected}
+    invalid={
+        this.state
+            .errorsState.store
+    }
+     */
+
+  }));
 }
 ;
 
