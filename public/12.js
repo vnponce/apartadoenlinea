@@ -1082,7 +1082,7 @@ function SearchStatus(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "store",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
-  }, "Sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "Estatus"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
     options: [{
       label: 'No entregados',
       value: 'no-entregados'

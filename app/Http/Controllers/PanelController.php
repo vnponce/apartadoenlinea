@@ -15,12 +15,13 @@ class PanelController extends Controller
     public function index()
     {
         Date::setLocale('es');
-        $orderAll = Order::all();
-        // $orderAll = Order::whereDate('date', Carbon::today())->get();
+//        $orderAll = Order::all();
+        $now = Carbon::today();
+        $orderAll = Order::whereDate('date', $now)->get();
         $searchValues = collect([
             'id' => '',
             'store' => '',
-            'date' => '',
+            'date' => $now,
         ]);
         if(request('id') || request('store') || request('date')) {
             $query = app(Order::class)->newQuery();
@@ -41,6 +42,8 @@ class PanelController extends Controller
 //                dd((new Carbon(request('date')))->format('d M y H:m'));
                 $searchValues['date'] = $date;
                 $query->whereDate('date', $date);
+            } else {
+                $searchValues['date'] = '';
             }
             $orderAll = $query->get();
         }
@@ -63,7 +66,15 @@ class PanelController extends Controller
                 $searchValues['store'] = $store;
                 $orderAll = $orderAll->where('store_id', $store);
             }
-//             dd($orderAll);
+            if (request()->filled('date')) {
+                // $date = request()->get('date');
+                $date = (new Carbon(request('date')));
+//                dd((new Carbon(request('date')))->format('d M y H:m'));
+                $searchValues['date'] = $date;
+                $orderAll = $orderAll->whereDate('date', $date);
+            } else {
+                $searchValues['date'] = '';
+            }//             dd($orderAll);
         }
         $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;

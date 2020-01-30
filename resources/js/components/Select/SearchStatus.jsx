@@ -22,7 +22,7 @@ export default function SearchStatus(props) {
 
     return (
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
-            <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Sucursal</label>
+            <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Estatus</label>
             <Select
                 options={[
                     {label: 'No entregados', value: 'no-entregados'},
