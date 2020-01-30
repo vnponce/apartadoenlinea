@@ -14,14 +14,16 @@ class PanelController extends Controller
 {
     public function index()
     {
+//        dd(request()->toArray());
         Date::setLocale('es');
 //        $orderAll = Order::all();
         $now = Carbon::today();
-        $orderAll = Order::whereDate('date', $now)->get();
+        $orderAll = Order::whereDate('date', $now)->where('status', '<>', 'delivered')->get();
         $searchValues = collect([
             'id' => '',
             'store' => '',
             'date' => $now,
+            'status' => $this->getStatusObject(),
         ]);
         if(request('id') || request('store') || request('date')) {
             $query = app(Order::class)->newQuery();
@@ -44,6 +46,9 @@ class PanelController extends Controller
                 $query->whereDate('date', $date);
             } else {
                 $searchValues['date'] = '';
+            }
+            if(request()->filled('status')) {
+                $this->getStatusFromRequest(request('status'), $query);
             }
             $orderAll = $query->get();
         }
@@ -125,5 +130,58 @@ class PanelController extends Controller
     {
         $products = Product::paginate(10);
         return Inertia::render('Admin/Products', compact('products'));
+    }
+
+    public function getStatusFromRequest($statusRequest, &$query)
+    {
+        // status
+        switch ($statusRequest) {
+            case 'not-delivered':
+                return $query->where('status','<>', 'delivered');
+                break;
+            case 'delivered':
+                return $query->where('status', 'delivered');
+                break;
+            case 'all':
+                return false;
+                break;
+        }
+
+    }
+
+    public function getStatusObject()
+    {
+        //[
+        //                'label' => 'No entregados',
+        //                'value' => 'no-delivered',
+        //            ]
+        if(request()->filled('status')) {
+            $status = request('status');
+//            dd($status);
+            switch ($status) {
+                case 'not-delivered':
+                    return [
+                        'label' => 'No entregados',
+                        'value' => 'no-delivered'
+                    ];
+                    break;
+                case 'delivered':
+                    return [
+                        'label' => 'Entregados',
+                        'value' => 'delivered'
+                    ];
+                    break;
+                case 'all':
+                    return [
+                        'label' => 'Todos',
+                        'value' => 'all'
+                    ];
+                    break;
+            }
+        }
+        return [
+            'label' => 'No entregados',
+            'value' => 'no-delivered'
+        ];
     }
 }

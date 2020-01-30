@@ -24,13 +24,9 @@ export default function SearchStatus(props) {
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
             <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Estatus</label>
             <Select
-                options={[
-                    {label: 'No entregados', value: 'no-entregados'},
-                    {label: 'Entregados', value: 'entregados'},
-                    {label: 'Todos', value: 'todos'},
-                ]}
-                inputId="store"
-                name="store"
+                options={statuses}
+                inputId="status"
+                name="status"
                 className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
                 // defaultMenuIsOpen
                 classNamePrefix="stores-selector"
@@ -43,19 +39,19 @@ export default function SearchStatus(props) {
                 }
                 isClearable
                  */
-                isClearable
+                // isClearable
                 placeholder="Elige estatus"
                 onChange={selected => {
                     console.log('selected =>', selected);
                     if(selected === null) {
                         console.log('selected =>', selected);
-                        setStore(null)
+                        setStatus(null)
                     } else {
-                        setStore(selected.value)
+                        setStatus(selected.value)
                     }
                 }}
                 // defaultValue={{label: storeSelected.name }}
-                value={[{label: 'No entregados'}]}
+                value={[{label: status.label}]}
                 /*
                 onFocus={
                     this.onShopFocus

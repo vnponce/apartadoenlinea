@@ -26,6 +26,7 @@ export default function SearchBar(props) {
     const [store, setStore] = useState(searchValues.store || '');
     const [storeObject, setStoreObject] = useState({});
     const [date, setDate] = useState(null);
+    const [status, setStatus] = useState(searchValues.status);
 
     const [focus, setFocus] = useState(false);
 
@@ -41,6 +42,11 @@ export default function SearchBar(props) {
         if(searchValues && searchValues.date !== '') {
             // if search values has date value, needs to be set datepicker component with date const.
             setDate(moment(searchValues.date));
+        }
+        if(searchValues && searchValues.status !== '') {
+            // if search values has date value, needs to be set datepicker component with date const.
+
+            setStatus(searchValues.status);
         }
     }, [searchValues]);
 
@@ -70,14 +76,45 @@ export default function SearchBar(props) {
     };
 
     const toSearch = () => {
-      console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}`);
+      console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
       const searchId = id ? `id=${id}` : '';
       const searchStore = storeObject && storeObject.id ? `store=${storeObject.id}` : '';
       const searchDate = date ? `date=${date}` : '';
+      const searchStatus = status ? `status=${status.value}` : '';
 
-      let url = `/admin?${searchId}&${searchStore}&${searchDate}`;
+      let url = `/admin?${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
       Inertia.visit(url)
     };
+
+    const setStatusObject = currentStatus => {
+        console.log('setStatusObject currentStatus =>', currentStatus);
+        switch (currentStatus) {
+            case 'not-delivered':
+                setStatus({
+                    label: 'No entregados',
+                    value: 'not-delivered',
+                });
+                break;
+            case 'delivered':
+                setStatus({
+                    label: 'Entregados',
+                    value: 'delivered',
+                });
+                break;
+            case 'all':
+                setStatus({
+                    label: 'Todos',
+                    value: 'all',
+                });
+                break;
+            default:
+                setStatus({
+                    label: 'No entregados',
+                    value: 'not-delivered',
+                });
+                break;
+        }
+    }
 
     return (
         <div className="flex">
@@ -131,7 +168,15 @@ export default function SearchBar(props) {
                     </div>
                 </div>
             <div className="inline-block mx-2 w-1/5">
-                <SearchStatus />
+                <SearchStatus
+                    status={status}
+                    setStatus={setStatusObject}
+                    statuses={[
+                        {label: 'No entregados', value: 'not-delivered'},
+                        {label: 'Entregados', value: 'delivered'},
+                        {label: 'Todos', value: 'all'},
+                    ]}
+                />
             </div>
             <div className="flex items-end">
                 <button

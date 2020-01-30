@@ -629,10 +629,15 @@ function SearchBar(props) {
       date = _useState8[0],
       setDate = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(searchValues.status),
       _useState10 = _slicedToArray(_useState9, 2),
-      focus = _useState10[0],
-      setFocus = _useState10[1];
+      status = _useState10[0],
+      setStatus = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      focus = _useState12[0],
+      setFocus = _useState12[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (searchValues && searchValues.store !== '') {
@@ -649,6 +654,11 @@ function SearchBar(props) {
     if (searchValues && searchValues.date !== '') {
       // if search values has date value, needs to be set datepicker component with date const.
       setDate(moment__WEBPACK_IMPORTED_MODULE_8___default()(searchValues.date));
+    }
+
+    if (searchValues && searchValues.status !== '') {
+      // if search values has date value, needs to be set datepicker component with date const.
+      setStatus(searchValues.status);
     }
   }, [searchValues]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -679,12 +689,47 @@ function SearchBar(props) {
   };
 
   var toSearch = function toSearch() {
-    console.log("Vamos a buscar id: ".concat(id, " , store: ").concat(storeObject.id, ", date: ").concat(date));
+    console.log("Vamos a buscar id: ".concat(id, " , store: ").concat(storeObject.id, ", date: ").concat(date, ", status: ").concat(status.value));
     var searchId = id ? "id=".concat(id) : '';
     var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : '';
     var searchDate = date ? "date=".concat(date) : '';
-    var url = "/admin?".concat(searchId, "&").concat(searchStore, "&").concat(searchDate);
+    var searchStatus = status ? "status=".concat(status.value) : '';
+    var url = "/admin?".concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].visit(url);
+  };
+
+  var setStatusObject = function setStatusObject(currentStatus) {
+    console.log('setStatusObject currentStatus =>', currentStatus);
+
+    switch (currentStatus) {
+      case 'not-delivered':
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered'
+        });
+        break;
+
+      case 'delivered':
+        setStatus({
+          label: 'Entregados',
+          value: 'delivered'
+        });
+        break;
+
+      case 'all':
+        setStatus({
+          label: 'Todos',
+          value: 'all'
+        });
+        break;
+
+      default:
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered'
+        });
+        break;
+    }
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -741,7 +786,20 @@ function SearchBar(props) {
     block: true
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/5"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    status: status,
+    setStatus: setStatusObject,
+    statuses: [{
+      label: 'No entregados',
+      value: 'not-delivered'
+    }, {
+      label: 'Entregados',
+      value: 'delivered'
+    }, {
+      label: 'Todos',
+      value: 'all'
+    }]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-end"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
@@ -1083,18 +1141,9 @@ function SearchStatus(props) {
     htmlFor: "store",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
   }, "Estatus"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    options: [{
-      label: 'No entregados',
-      value: 'no-entregados'
-    }, {
-      label: 'Entregados',
-      value: 'entregados'
-    }, {
-      label: 'Todos',
-      value: 'todos'
-    }],
-    inputId: "store",
-    name: "store",
+    options: statuses,
+    inputId: "status",
+    name: "status",
     className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
     ,
     classNamePrefix: "stores-selector"
@@ -1107,22 +1156,22 @@ function SearchStatus(props) {
     }
     isClearable
      */
+    // isClearable
     ,
-    isClearable: true,
     placeholder: "Elige estatus",
     onChange: function onChange(selected) {
       console.log('selected =>', selected);
 
       if (selected === null) {
         console.log('selected =>', selected);
-        setStore(null);
+        setStatus(null);
       } else {
-        setStore(selected.value);
+        setStatus(selected.value);
       }
     } // defaultValue={{label: storeSelected.name }}
     ,
     value: [{
-      label: 'No entregados'
+      label: status.label
     }]
     /*
     onFocus={
