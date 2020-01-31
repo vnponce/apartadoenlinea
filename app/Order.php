@@ -22,6 +22,7 @@ class Order extends Model
 
     protected $dates = [
         'date',
+        'hour' => 'HH:mm',
     ];
 
     public function products()

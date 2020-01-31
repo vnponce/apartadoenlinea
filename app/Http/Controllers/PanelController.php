@@ -17,7 +17,7 @@ class PanelController extends Controller
 //        dd(request()->toArray());
         Date::setLocale('es');
 //        $orderAll = Order::all();
-        $now = Carbon::today();
+        $now = Carbon::today('America/Mexico_City');
         $orderAll = Order::whereDate('date', $now)->where('status', '<>', 'delivered')->get();
         $searchValues = collect([
             'id' => '',
