@@ -38,10 +38,10 @@ class Order extends Model
 
     public function getPickUpAttribute()
     {
-        [$hour, $minute] = explode(":", $this->hour);
-        $date = $this->date->addHours($hour)->addMinutes($minute);
+        // [$hour, $minute] = explode(":", $this->hour);
+        // $date = $this->date->addHours($hour)->addMinutes($minute);
         // dd($date);
-        return new Date($date);
+        return new Date($this->date);
     }
 
     public function getFullNameAttribute()

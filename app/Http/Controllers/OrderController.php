@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\OrderDetails;
 use App\Order;
+use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -55,6 +56,11 @@ class OrderController extends Controller
         // -- Cart::remove($detailsRowId);
 //         dd($detailsData);
         $date = substr($detailsData->date, 0, strpos($detailsData->date, "T"));
+//        dd($date);
+        [$year, $month, $day] = explode('-', $date);
+//        dd('day =>', $day, 'month =>', $month, 'year =>', $year);
+        [$hour, $minute] = explode(':', $detailsData->hour);
+        $date = Carbon::now()->year($year)->day($day)->month($month)->hour($hour)->minute($minute)->second('0');
 //         dd($date);
         $order = Order::create([
             'store_id' => $detailsData->store,

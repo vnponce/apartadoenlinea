@@ -18,7 +18,8 @@ class PanelController extends Controller
         Date::setLocale('es');
 //        $orderAll = Order::all();
         $now = Carbon::today('America/Mexico_City');
-        $orderAll = Order::whereDate('date', $now)->where('status', '<>', 'delivered')->get();
+        $orderAll = Order::whereDate('date', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
+        // dd($orderAll->toArray());
         $searchValues = collect([
             'id' => '',
             'store' => '',
@@ -50,13 +51,15 @@ class PanelController extends Controller
             if(request()->filled('status')) {
                 $this->getStatusFromRequest(request('status'), $query);
             }
-            $orderAll = $query->get();
+            $orderAll = $query->orderBy('date')->get();
         }
         if(auth()->user()->isManager) {
             // @todo: revisar porque con ID = 2 falla.
-            $orderAll = auth()->user()->stores->map(function($store) {
-                return $store->orders;
-            })->flatten();
+//            $orderAll = auth()->user()->stores->map(function($store) {
+//                return $store->orders;
+//            })->flatten();
+            $orderAll = auth()->user()->stores()->first()->orders();
+            // dd($orderAll->toArray());
 
             // dd($orderAll->where('id', $id));
             if (request()->filled('id')) {
@@ -78,8 +81,12 @@ class PanelController extends Controller
                 $searchValues['date'] = $date;
                 $orderAll = $orderAll->whereDate('date', $date);
             } else {
-                $searchValues['date'] = '';
+                $searchValues['date'] = request()->filled('id') ? '' : $now;
             }//             dd($orderAll);
+            if(request()->filled('status')) {
+                $this->getStatusFromRequest(request('status'), $orderAll);
+            }
+            $orderAll = $orderAll->orderBy('date')->get();
         }
         $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;

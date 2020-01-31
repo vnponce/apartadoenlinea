@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('hour');
-            $table->date('date');
+            $table->dateTime('date');
             $table->integer('total');
             $table->string('employeeName');
             $table->boolean('payed')->default(false);
