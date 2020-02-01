@@ -60,7 +60,7 @@ class OrderController extends Controller
         [$year, $month, $day] = explode('-', $date);
 //        dd('day =>', $day, 'month =>', $month, 'year =>', $year);
         [$hour, $minute] = explode(':', $detailsData->hour);
-        $date = Carbon::now()->year($year)->day($day)->month($month)->hour($hour)->minute($minute)->second('0');
+        $date = Carbon::now('America/Mexico_City')->year($year)->day($day)->month($month)->hour($hour)->minute($minute)->second('0');
 //         dd($date);
         $order = Order::create([
             'store_id' => $detailsData->store,
