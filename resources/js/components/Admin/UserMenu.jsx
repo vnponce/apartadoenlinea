@@ -4,9 +4,8 @@ import {Inertia} from "@inertiajs/inertia";
 
 export default function UserMenu(props) {
     const { user } = props;
-    console.log('user =>', user);
     const logout = () => {
-      Inertia.post('logout');
+      Inertia.post('/logout');
     };
     return (
         <div className="flex relative inline-block pr-6">

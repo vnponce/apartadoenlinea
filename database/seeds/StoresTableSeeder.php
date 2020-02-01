@@ -44,6 +44,7 @@ class StoresTableSeeder extends Seeder
             "lon" =>"-96.1371938",
             "monday_saturday" =>"Lunes a sábado",
             "sunday" =>"24 horas",
+            "isMatrix" => true,
             "created_at" =>"2020-01-24 18:09:53",
             "updated_at" =>"2020-01-28 19:44:51"
           ],
@@ -418,6 +419,7 @@ class StoresTableSeeder extends Seeder
                'lon' => $store->get('lon'),
                'monday_saturday' => $store->get('monday_saturday'),
                'sunday' => $store->get('sunday'),
+               'isMatrix' => $store->get('isMatrix') ?? false,
            ]);
         });
     }

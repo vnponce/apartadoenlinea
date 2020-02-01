@@ -20,7 +20,8 @@ export default function InfoBoxes(props) {
     useEffect(() => {
         console.log('useEffect =>', data);
         if(data) {
-            const { status, store: { name } } = data;
+            const { status, store } = data;
+            console.log('store =>', store);
             switch (status.original) {
                 case 'created':
                 case 'opened':
@@ -34,14 +35,14 @@ export default function InfoBoxes(props) {
                     setNextStatus({
                         original: 'placed',
                         step: 'En sucursal',
-                        allowed: user.role === 'manager' || (user.isAdmin && name === 'Miguel Alemán'),
+                        allowed: user.role === 'manager' || (user.isAdmin && store.isMatrix),
                     });
                     break;
                 case 'placed':
                     setNextStatus({
                         original: 'delivered',
                         step: 'Entregado',
-                        allowed: user.role === 'manager' || (user.isAdmin && name === 'Miguel Alemán'),
+                        allowed: user.role === 'manager' || (user.isAdmin && store.isMatrix),
                     });
                     break;
                 case 'delivered':

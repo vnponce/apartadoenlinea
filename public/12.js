@@ -18,6 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
 /* harmony import */ var _components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Admin/SearchBar */ "./resources/js/components/Admin/SearchBar.jsx");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -34,7 +36,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Dashboard(props) {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__["usePage"])(),
+      auth = _usePage.auth; // console.log('Dashboard => auth =>', auth);
+
+
   var orders = props.orders,
       success_message = props.success_message,
       order = props.order,
@@ -170,15 +177,17 @@ function Dashboard(props) {
   var openedAndShow = function openedAndShow(index) {
     var data = orders[index];
     setDataSelected(data);
-    console.log('openedAndShow =>', data);
+    console.log('openedAndShow =>', data.status.original);
+    console.log('openedAndShow =>', auth.user);
 
-    if (data.status.original !== 'created') {
-      return false;
-    }
+    if (auth.user.isMatrix && data.status.original === 'created') {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/admin/orders/".concat(data.id), {
+        status: 'opened'
+      });
+    } // if(data.status.original !== 'created') {
+    //     return false;
+    // }
 
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/admin/orders/".concat(data.id), {
-      status: 'opened'
-    });
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -284,7 +293,8 @@ function InfoBoxes(props) {
 
     if (data) {
       var status = data.status,
-          name = data.store.name;
+          store = data.store;
+      console.log('store =>', store);
 
       switch (status.original) {
         case 'created':
@@ -300,7 +310,7 @@ function InfoBoxes(props) {
           setNextStatus({
             original: 'placed',
             step: 'En sucursal',
-            allowed: user.role === 'manager' || user.isAdmin && name === 'Miguel Alemán'
+            allowed: user.role === 'manager' || user.isAdmin && store.isMatrix
           });
           break;
 
@@ -308,7 +318,7 @@ function InfoBoxes(props) {
           setNextStatus({
             original: 'delivered',
             step: 'Entregado',
-            allowed: user.role === 'manager' || user.isAdmin && name === 'Miguel Alemán'
+            allowed: user.role === 'manager' || user.isAdmin && store.isMatrix
           });
           break;
 

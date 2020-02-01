@@ -55,6 +55,7 @@ class AppServiceProvider extends ServiceProvider
                         'role' => Auth::user()->role,
                         'isGod' => Auth::user()->isGod,
                         'isAdmin' => Auth::user()->isAdmin,
+                        'isMatrix' => Auth::user()->isMatrix,
                     ] : null
                 ];
             },

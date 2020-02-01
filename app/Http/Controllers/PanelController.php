@@ -104,6 +104,7 @@ class PanelController extends Controller
                 'store' => [
                     'friendlyAddress' => $order->store->friendly_address,
                     'name' => $order->store->name,
+                    'isMatrix' => $order->store->isMatrix,
                 ],
                 'products' =>
                     $order->products->map(function($product){
@@ -147,7 +148,7 @@ class PanelController extends Controller
                 return $query->where('status','<>', 'delivered');
                 break;
             case 'delivered':
-                return $query->where('status', 'delivered');
+                return $query->where('tatus', 'delivered');
                 break;
             case 'all':
                 return false;

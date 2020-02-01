@@ -5,8 +5,11 @@ import { useTable } from 'react-table';
 import {Inertia} from "@inertiajs/inertia";
 import Table from "../../components/Table";
 import SearchBar from "../../components/Admin/SearchBar";
+import {usePage} from "@inertiajs/inertia-react";
 
 function Dashboard(props) {
+    const { auth } = usePage();
+    // console.log('Dashboard => auth =>', auth);
     const { orders, success_message, order, stores, searchValues } = props;
     console.log('orders =>', orders);
     console.log('[Dashboard] searchValues =>', searchValues);
@@ -88,13 +91,16 @@ function Dashboard(props) {
     const openedAndShow = index => {
         const data = orders[index];
         setDataSelected(data);
-        console.log('openedAndShow =>', data);
-        if(data.status.original !== 'created') {
-            return false;
+        console.log('openedAndShow =>', data.status.original);
+        console.log('openedAndShow =>', auth.user);
+        if(auth.user.isMatrix && data.status.original === 'created') {
+            Inertia.put(`/admin/orders/${data.id}`, {
+                status: 'opened',
+            });
         }
-        Inertia.put(`/admin/orders/${data.id}`, {
-            status: 'opened',
-        });
+        // if(data.status.original !== 'created') {
+        //     return false;
+        // }
     };
 
     useEffect(() => {

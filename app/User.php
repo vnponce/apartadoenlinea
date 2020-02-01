@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use function Complex\theta;
 
 class User extends Authenticatable
 {
@@ -30,7 +31,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $appends = ['avatar_path', 'isGod', 'isAdmin', 'isManager'];
+    protected $appends = ['avatar_path', 'isGod', 'isAdmin', 'isManager', 'isMatrix'];
 
     protected $with = ['stores'];
 
@@ -46,6 +47,14 @@ class User extends Authenticatable
     public function getIsAdminAttribute()
     {
         return ($this->isGod || $this->role === 'admin');
+    }
+
+    public function getIsMatrixAttribute()
+    {
+        if($this->isGod || $this->isManager) {
+            return false;
+        }
+        return auth()->user()->stores()->count() > 0 && auth()->user()->stores()->first()->isMatrix;
     }
 
     public function getIsGodAttribute()

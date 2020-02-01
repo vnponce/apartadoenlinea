@@ -24,6 +24,7 @@ class CreateStoresTable extends Migration
             $table->string('lon')->nullable();
             $table->string('monday_saturday');
             $table->string('sunday');
+            $table->boolean('isMatrix')->default(false);
 
             $table->timestamps();
         });

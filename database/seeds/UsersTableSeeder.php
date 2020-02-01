@@ -26,5 +26,11 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('secret'),
             'avatar' => 'http://mouse.latercera.com/wp-content/uploads/2018/01/ssj3.png'
         ]);
+        User::create([
+            'name' => 'Matriz',
+            'email' => 'matriz@panaderialaespecial.mx',
+            'role' => 'admin',
+            'password' => bcrypt('secret'),
+        ]);
     }
 }
