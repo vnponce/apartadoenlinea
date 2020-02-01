@@ -91,6 +91,7 @@ export default function CreateProduct(props) {
         return formData;
     };
     const createProduct = () => {
+        console.log('createProduct =>', editing);
         if(editing){
             if(avatar) {
                 const updateFormData = getFormData();

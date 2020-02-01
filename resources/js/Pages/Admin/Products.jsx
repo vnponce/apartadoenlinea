@@ -58,6 +58,9 @@ function Products(props) {
     );
 
     const openedAndShow = index => {
+        console.log('openedAndShow editing =>', editing);
+        console.log('openedAndShow createProduct =>', createProduct);
+        console.log('openedAndShow dataSelected =>', dataSelected);
         const data = products.data[index];
         setDataSelected(data);
     };

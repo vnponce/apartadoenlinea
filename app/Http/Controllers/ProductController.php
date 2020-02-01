@@ -45,12 +45,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->toArray());
+        dd($request->toArray());
         $request->validate([
             'name' => 'required|string|max:255',
             'file' => 'image',
             'ingredients' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'string|max:255',
             'category_id' => 'required|exists:categories,id',
             'available' => 'required',
             'favorite' => 'required',
@@ -100,12 +100,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-//        dd($request->toArray(), $product->toArray());
+        dd($request->toArray(), $product->toArray());
         $request->validate([
             'name' => 'required|string|max:255',
             'file' => 'image',
             'ingredients' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'max:255',
             'category_id' => 'required|exists:categories,id',
             'available' => 'required',
             'favorite' => 'required',

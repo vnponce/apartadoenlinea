@@ -58,6 +58,11 @@ class Product extends Model implements Buyable
         return $this->category->name === 'Bocadillos';
     }
 
+    public function getDescriptionAttribute($value)
+    {
+        return is_null($value) ? '' : $value;
+    }
+
 
     public function getFormatPriceAttribute()
     {

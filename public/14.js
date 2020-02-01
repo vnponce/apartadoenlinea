@@ -95,6 +95,9 @@ function Products(props) {
   }, []);
 
   var openedAndShow = function openedAndShow(index) {
+    console.log('openedAndShow editing =>', editing);
+    console.log('openedAndShow createProduct =>', createProduct);
+    console.log('openedAndShow dataSelected =>', dataSelected);
     var data = products.data[index];
     setDataSelected(data);
   };
@@ -461,6 +464,8 @@ function CreateProduct(props) {
   };
 
   var createProduct = function createProduct() {
+    console.log('createProduct =>', editing);
+
     if (editing) {
       if (avatar) {
         var updateFormData = getFormData();
