@@ -22,6 +22,7 @@
     <title>Panadería la especial</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
+    <link rel="icon" type="image/png" href="/favicon/Favicon01.svg" />
 
 </head>
 <body class="flex flex-col font-body relative min-h-screen text-regularText">
