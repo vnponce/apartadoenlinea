@@ -62,6 +62,7 @@ class CartController extends Controller
                     'lastname' => $item->options->lastname,
                     'phone' => $item->options->phone,
                     'email' => $item->options->email,
+                    'employeeName' => $item->options->employeeName,
                 ]);
             } else {
                 Cart::add($item->id, $item->name, $item->qty, $item->price, ['comment' => $item->options->comment])->associate(Product::class);

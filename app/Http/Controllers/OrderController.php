@@ -115,7 +115,7 @@ class OrderController extends Controller
             'name' => 'required',
             'lastname' => 'required',
             'phone' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'employeeName' => 'required',
         ]);
 //        dd($request->toArray());
