@@ -413,7 +413,9 @@ function CreateProduct(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (data) {
       setEditing(true);
-      setProductData(_objectSpread({}, data));
+      setProductData(_objectSpread({}, data, {
+        price: data.price / 100
+      }));
     }
   }, [data]);
 

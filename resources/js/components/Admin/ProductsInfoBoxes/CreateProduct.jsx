@@ -56,7 +56,7 @@ export default function CreateProduct(props) {
     useEffect(() => {
         if(data) {
             setEditing(true);
-            setProductData({...data});
+            setProductData({...data, price: data.price/100});
         }
     }, [data]);
 
