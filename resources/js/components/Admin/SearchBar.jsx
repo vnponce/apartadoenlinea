@@ -21,7 +21,6 @@ const DateWrapper = styled.div`
 export default function SearchBar(props) {
     const { auth: { user }, stores } = usePage();
     const { searchValues } = props;
-    console.log('[SearchBar] searchValues =>', searchValues);
     const [id, setId] = useState(searchValues.id || '');
     const [store, setStore] = useState(searchValues.store || '');
     const [storeObject, setStoreObject] = useState({});
@@ -76,7 +75,7 @@ export default function SearchBar(props) {
     };
 
     const toSearch = () => {
-      console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
+      // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
       const searchId = id ? `id=${id}` : '';
       const searchStore = storeObject && storeObject.id ? `store=${storeObject.id}` : '';
       const searchDate = date ? `date=${date}` : '';
@@ -87,7 +86,6 @@ export default function SearchBar(props) {
     };
 
     const setStatusObject = currentStatus => {
-        console.log('setStatusObject currentStatus =>', currentStatus);
         switch (currentStatus) {
             case 'not-delivered':
                 setStatus({
@@ -131,7 +129,6 @@ export default function SearchBar(props) {
             </div>
             { user.isAdmin && (
                 <div className="inline-block mx-2 w-1/5">
-                    {console.log('[SearchBar] storeSelected =>', store)}
                     {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
                     <Stores setStore={setStore} stores={stores} storeSelected={storeObject}/>
                 </div>

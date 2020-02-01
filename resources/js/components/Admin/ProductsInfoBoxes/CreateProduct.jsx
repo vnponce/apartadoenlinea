@@ -22,8 +22,6 @@ export default function CreateProduct(props) {
     const { data, setCreateProduct, editing = false, setEditing = () => {}, setDataSelected} = props;
     const { errors, stores, categories, flash } = usePage();
     const [successMessageCount, setSuccessMessageCount] = useState(0);
-    console.log('errors =>', errors);
-    console.log('flash =>', flash);
     const [productData, setProductData] = useState({
         name: '',
         description: '',
@@ -44,7 +42,6 @@ export default function CreateProduct(props) {
     };
 
     useEffect(() => {
-        console.log('flash =>', flash);
         if(flash.success){
             setEditing(false);
             setCreateProduct(false);
@@ -57,7 +54,6 @@ export default function CreateProduct(props) {
     }, [flash]);
 
     useEffect(() => {
-        console.log('mounting Create Product data =>', data);
         if(data) {
             setEditing(true);
             setProductData({...data});
@@ -79,7 +75,6 @@ export default function CreateProduct(props) {
         Inertia.visit(path);
     };
     const getFormData = () => {
-        console.log('[getFormData] productData =>', productData);
         const formData = new FormData();
         formData.append("file", avatar, avatar.name);
         formData.set("name", productData.name || '');
@@ -89,21 +84,15 @@ export default function CreateProduct(props) {
         formData.set("category_id", productData.category_id || '');
         formData.set("available", productData.available);
         formData.set("favorite", productData.favorite);
-        console.log('[getFormData] formData =>', formData);
         // Display the key/value pairs
-        for (var pair of formData.entries()) {
-            console.log('[getFormData] =>' + pair[0]+ ', ' + pair[1]);
-        }
+        // for (var pair of formData.entries()) {
+            // console.log('[getFormData] =>' + pair[0]+ ', ' + pair[1]);
+        // }
         return formData;
     };
     const createProduct = () => {
-        console.log('createProduct isEditing =>', editing);
         if(editing){
-            console.log('editing true');
-            console.log('editing productData =>', productData);
-            // console.log('editing storeSelected =>', storeSelected);
             if(avatar) {
-                console.log('Exist avatar =>', avatar);
                 const updateFormData = getFormData();
                 /*
                 const updateFormData = new FormData();
@@ -118,11 +107,8 @@ export default function CreateProduct(props) {
                 updateFormData.set("favorite", productData.favorite);
 
                  */
-                console.log('editing else con put');
-                console.log('editing else con formData =>', updateFormData);
                 Inertia.post(`products/${productData.id}`, updateFormData);
             } else {
-                console.log('editing sin imagen');
                 Inertia.put(`products/${productData.id}`, {
                     ...productData,
                     // store: storeSelected,
@@ -130,7 +116,6 @@ export default function CreateProduct(props) {
             }
         } else {
             const formData = getFormData();
-            console.log('editing else con post');
             Inertia.post("products", formData);
             // Inertia.post("products", {
             //     ...productData,
@@ -141,7 +126,6 @@ export default function CreateProduct(props) {
     return (
         <>
             <FilePond onupdatefiles={fileItems => {
-                console.log('onupdatefiles =>', fileItems);
                 // setAvatar(fileItems.map(fileItem => fileItem.file));
                 setAvatar(fileItems[0].file);
             }}/>

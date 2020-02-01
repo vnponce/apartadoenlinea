@@ -12,7 +12,6 @@ import Map from "../components/Map";
 function Order() {
     const { stores, errors } = usePage();
     // const { stores } = props;
-    console.log('errors =>', errors);
     const [wantInvoice, setWantInvoice] = useState(false);
     const [store, setStore] = useState('');
     const [date, setDate] = useState(null);

@@ -26,7 +26,6 @@ const ShopOptionComponent = props => {
         isSelected,
     } = props;
 
-    // console.log('ShopOptionComponent props =>', props);
     return (
         <components.Option {...props}>
             <span className="shop-option-name">{children}</span>
@@ -41,8 +40,6 @@ const ShopOptionComponent = props => {
 
 export default function Stores(props) {
     const { setStore, stores, storeSelected = false } = props;
-    console.log('storeSelected =>', storeSelected);
-    console.log('stores =>', stores);
     const storesToSelect = transformStoreList(stores);
 
     useEffect(() => {

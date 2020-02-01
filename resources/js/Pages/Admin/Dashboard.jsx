@@ -9,13 +9,9 @@ import {usePage} from "@inertiajs/inertia-react";
 
 function Dashboard(props) {
     const { auth } = usePage();
-    // console.log('Dashboard => auth =>', auth);
     const { orders, success_message, order, stores, searchValues } = props;
-    console.log('orders =>', orders);
-    console.log('[Dashboard] searchValues =>', searchValues);
     const [dataSelected, setDataSelected] = useState(null);
     const updateStatus = id => evt => {
-        console.log('id =>', id);
         Inertia.put( `/pedido/${id}`, {
             status: evt.target.value,
         });
@@ -91,8 +87,6 @@ function Dashboard(props) {
     const openedAndShow = index => {
         const data = orders[index];
         setDataSelected(data);
-        console.log('openedAndShow =>', data.status.original);
-        console.log('openedAndShow =>', auth.user);
         if(auth.user.isMatrix && data.status.original === 'created') {
             Inertia.put(`/admin/orders/${data.id}`, {
                 status: 'opened',
@@ -106,8 +100,6 @@ function Dashboard(props) {
     useEffect(() => {
         // openedAndShow(0);
         if(orders && dataSelected) {
-            console.log('component update orders =>', orders);
-            console.log('component update dataSelected =>', dataSelected);
             const orderUpdated = orders.find(order => order.id === dataSelected.id);
             setDataSelected(orderUpdated);
         }

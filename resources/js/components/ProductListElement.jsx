@@ -4,7 +4,6 @@ import Input from "./Input";
 
 export default function ProductListElement(props) {
     const { product, isEditable = true } = props;
-    console.log('ProductListElement product =>', product);
     const [showInput, setShowInput] = useState(false);
     const [comment, setComment] = useState('');
     useEffect(() => {
@@ -22,7 +21,6 @@ export default function ProductListElement(props) {
         Inertia.delete(`/cart/product/${product.rowId}`);
     };
     const addOneItem = () => {
-        console.log('Addint one item');
         Inertia.post('/cart', {
             product_id: product.id,
             comment: product.options.comment,

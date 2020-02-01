@@ -13,15 +13,11 @@ import 'sweetalert2/src/sweetalert2.scss'
 export default function InfoBoxes(props) {
     const { auth: { user } } = usePage();
     const [nextStatus, setNextStatus] = useState(false);
-    console.log('InfoBoxes user =>', user);
     const { data } = props;
-    console.log('infoboxes data =>', data);
 
     useEffect(() => {
-        console.log('useEffect =>', data);
         if(data) {
             const { status, store } = data;
-            console.log('store =>', store);
             switch (status.original) {
                 case 'created':
                 case 'opened':
@@ -64,9 +60,6 @@ export default function InfoBoxes(props) {
     }, [data]);
 
     const updateToNextStatus = () => {
-        console.log(`Vamos a pasar de ${data.status.original} a ${nextStatus.original}`);
-        console.log(`nextStatus => ${nextStatus}`);
-        console.log(`${nextStatus}`);
         if(nextStatus.allowed || user.isGod) {
             Swal.fire({
                 title: '¿Seguro?',

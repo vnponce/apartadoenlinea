@@ -148,7 +148,7 @@ class PanelController extends Controller
                 return $query->where('status','<>', 'delivered');
                 break;
             case 'delivered':
-                return $query->where('tatus', 'delivered');
+                return $query->where('status', 'delivered');
                 break;
             case 'all':
                 return false;
@@ -159,13 +159,8 @@ class PanelController extends Controller
 
     public function getStatusObject()
     {
-        //[
-        //                'label' => 'No entregados',
-        //                'value' => 'no-delivered',
-        //            ]
         if(request()->filled('status')) {
             $status = request('status');
-//            dd($status);
             switch ($status) {
                 case 'not-delivered':
                     return [

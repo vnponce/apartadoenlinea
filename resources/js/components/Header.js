@@ -10,8 +10,6 @@ export default function Header() {
     const [showSearch, setShowSearch] = useState(false);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const { categories, cart: { content }, auth } = usePage();
-    console.log('props =>');
-    console.log('content =>', content);
 
     const removeItems = () => {
         Swal.fire({

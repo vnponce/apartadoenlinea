@@ -325,7 +325,6 @@ function Layout(_ref) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     document.title = title;
-    console.log('flash =>', flash);
   }, [title]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_toastify__WEBPACK_IMPORTED_MODULE_5__["ToastContainer"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
     id: "content-wrapper",
@@ -429,14 +428,12 @@ function Autocomplete() {
         return response.json();
       }).then(function (json) {
         var options = [];
-        console.log('segundo then json =>', json);
         options = json.map(function (item) {
           return {
             value: item.id,
             label: item.name
           };
         });
-        console.log('segundo then options =>', options);
         return options;
       })["catch"](function (error) {
         return console.log('error =>', error);
@@ -550,9 +547,6 @@ function Header() {
       categories = _usePage.categories,
       content = _usePage.cart.content,
       auth = _usePage.auth;
-
-  console.log('props =>');
-  console.log('content =>', content);
 
   var removeItems = function removeItems() {
     sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_4___default.a.fire({

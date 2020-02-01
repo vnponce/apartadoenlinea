@@ -33,8 +33,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Users(props) {
   var users = props.users,
       success_message = props.success_message;
-  console.log('users =>', users);
-  console.log('success_message =>', success_message);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -48,7 +46,6 @@ function Users(props) {
 
   var updateStatus = function updateStatus(id) {
     return function (evt) {
-      console.log('id =>', id);
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("/users/".concat(id), {
         status: evt.target.value
       });
@@ -79,7 +76,6 @@ function Users(props) {
       Header: 'Tienda',
       accessor: 'stores',
       Cell: function Cell(data) {
-        console.log('data =>', data);
         var user = data.row.original;
 
         if (user.isAdmin) {
@@ -102,17 +98,11 @@ function Users(props) {
   };
 
   var showCreateUser = function showCreateUser() {
-    console.log('crear usuario');
     setCreateUser(true);
     setDataSelected(false);
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {// console.log('ALGO');
-    // openedAndShow(0);
-  }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('success_message =>', success_message);
-
     if (success_message) {
       setCreateUser(false);
     }
@@ -179,11 +169,6 @@ function InfoBoxes(props) {
       _props$createUser = props.createUser,
       createUser = _props$createUser === void 0 ? false : _props$createUser,
       setCreateUser = props.setCreateUser;
-  console.log('UserInfoboxes data =>', data);
-  console.log('UserInfoboxes createUser =>', createUser);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('mounting');
-  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
@@ -338,8 +323,6 @@ function CreateUser(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('mounting Create User data =>', data);
-
     if (data) {
       setEditing(true);
       setUserData(_objectSpread({}, data));
@@ -347,7 +330,6 @@ function CreateUser(props) {
   }, [data]);
 
   var createUser = function createUser() {
-    console.log('createUSer isEditing =>', editing);
     /*
     const formData = new FormData();
     formData.append("file", avatar, avatar.name);
@@ -357,16 +339,11 @@ function CreateUser(props) {
     formData.set("role", userData.role ? userData.role : '');
     formData.set("store", storeSelected ? storeSelected : '');
      */
-
     if (editing) {
-      console.log('editing true');
-      console.log('editing userData =>', userData);
-      console.log('editing storeSelected =>', storeSelected);
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("users/".concat(userData.id), _objectSpread({}, userData, {
         store: storeSelected
       }));
     } else {
-      console.log('editing else con post');
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("users", _objectSpread({}, userData, {
         store: storeSelected
       }));
@@ -494,8 +471,7 @@ var transformStoreList = function transformStoreList(stores) {
 var ShopOptionComponent = function ShopOptionComponent(props) {
   var children = props.children,
       friendlyAddress = props.data.friendlyAddress,
-      isSelected = props.isSelected; // console.log('ShopOptionComponent props =>', props);
-
+      isSelected = props.isSelected;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "shop-option-name"
   }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -508,8 +484,6 @@ function Stores(props) {
       stores = props.stores,
       _props$storeSelected = props.storeSelected,
       storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
-  console.log('storeSelected =>', storeSelected);
-  console.log('stores =>', stores);
   var storesToSelect = transformStoreList(stores);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (storeSelected) {

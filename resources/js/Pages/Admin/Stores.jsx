@@ -8,7 +8,6 @@ import StoresInfoBoxes from "../../components/Admin/StoresInfoBoxes";
 
 function Stores(props) {
     const { stores, success_message } = props;
-    console.log('stores =>', stores);
     const [storeId, setStoreId] = useState(false);
     const columns = React.useMemo(
         () => [

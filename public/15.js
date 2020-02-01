@@ -299,15 +299,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Checkout(props) {
-  console.log('props => ', props);
-
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__["usePage"])(),
       content = _usePage.cart.content,
       subtotal = _usePage.subtotal,
       auth = _usePage.auth;
-
-  console.log('content =>', content);
-  console.log('props =>', props);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -315,7 +310,6 @@ function Checkout(props) {
       setAgreeTerms = _useState2[1];
 
   var createOrder = function createOrder() {
-    console.log('create order');
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"].post('/pedido');
   };
 
@@ -493,7 +487,6 @@ function ProductListElement(props) {
   var product = props.product,
       _props$isEditable = props.isEditable,
       isEditable = _props$isEditable === void 0 ? true : _props$isEditable;
-  console.log('ProductListElement product =>', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -523,7 +516,6 @@ function ProductListElement(props) {
   };
 
   var addOneItem = function addOneItem() {
-    console.log('Addint one item');
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
       product_id: product.id,
       comment: product.options.comment,

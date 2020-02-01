@@ -54,10 +54,8 @@ export default function Layout({ title, children }) {
     const [userMenu, setUserMenu] = useState(null);
 
     const { flash, auth: { user } } = usePage();
-    console.log('auth =>', user);
     useEffect(() => {
         document.title = title;
-        console.log('flash =>', flash);
     }, [title]);
     useEffect(() => {
         setUserMenuDiv(document.getElementById("userMenu"));

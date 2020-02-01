@@ -7,12 +7,9 @@ import Table from "../../components/Table";
 
 function Users(props) {
     const { users, success_message } = props;
-    console.log('users =>', users);
-    console.log('success_message =>', success_message);
     const [dataSelected, setDataSelected] = useState(null);
     const [createUser, setCreateUser] = useState(null);
     const updateStatus = id => evt => {
-        console.log('id =>', id);
         Inertia.put( `/users/${id}`, {
             status: evt.target.value,
         });
@@ -45,7 +42,6 @@ function Users(props) {
                 Header: 'Tienda',
                 accessor: 'stores',
                 Cell: data => {
-                    console.log('data =>', data);
                     const { original: user } = data.row;
                     if(user.isAdmin) {
                         return <span className="">Todas</span>
@@ -64,18 +60,11 @@ function Users(props) {
     };
 
     const showCreateUser = () => {
-        console.log('crear usuario');
         setCreateUser(true);
         setDataSelected(false);
     };
 
     useEffect(() => {
-        // console.log('ALGO');
-        // openedAndShow(0);
-    }, []);
-
-    useEffect(() => {
-        console.log('success_message =>', success_message);
         if(success_message) {
             setCreateUser(false);
         }

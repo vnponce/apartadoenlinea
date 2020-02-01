@@ -31,7 +31,6 @@ export default function CreateUser(props) {
     };
 
     useEffect(() => {
-        console.log('mounting Create User data =>', data);
         if(data) {
             setEditing(true);
             setUserData({...data});
@@ -39,7 +38,6 @@ export default function CreateUser(props) {
     }, [data]);
 
     const createUser = () => {
-        console.log('createUSer isEditing =>', editing);
         /*
         const formData = new FormData();
         formData.append("file", avatar, avatar.name);
@@ -50,15 +48,11 @@ export default function CreateUser(props) {
         formData.set("store", storeSelected ? storeSelected : '');
          */
         if(editing){
-            console.log('editing true');
-            console.log('editing userData =>', userData);
-            console.log('editing storeSelected =>', storeSelected);
             Inertia.put(`users/${userData.id}`, {
                 ...userData,
                 store: storeSelected,
             });
         } else {
-            console.log('editing else con post');
             Inertia.post("users", {
                 ...userData,
                 store: storeSelected,

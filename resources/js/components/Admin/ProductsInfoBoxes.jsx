@@ -6,12 +6,6 @@ import {create} from "filepond";
 export default function InfoBoxes(props) {
     const { data, createProduct = false, setCreateProduct, editing, setEditing, setDataSelected } = props;
     // const [isEditing, setIsEditing] = useState(false);
-    console.log('ProductInfoboxes data =>', data);
-    console.log('ProductInfoboxes editing =>', editing);
-    console.log('ProductInfoboxes createProduct =>', createProduct);
-    useEffect(() => {
-       console.log('mounting');
-    });
     return (
     <div id="dash-content"
          className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">

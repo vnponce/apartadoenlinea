@@ -74,9 +74,7 @@ export default function Stores(props) {
                     Option: ShopOptionComponent,
                 }}
                 onChange={selected => {
-                    console.log('selected =>', selected);
                     if(selected === null) {
-                        console.log('selected =>', selected);
                         setStore(null)
                     } else {
                         setStore(selected.value)

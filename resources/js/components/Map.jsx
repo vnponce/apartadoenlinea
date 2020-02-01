@@ -2,10 +2,7 @@ import React  from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 
 export default function Map(props) {
-    console.log('map props =>', props);
     const { store: { lat = "19.1707806", lon: lng = "-96.1270615"} } = props;
-    console.log('lat =>', lat);
-    console.log('lng =>', lng);
     return (
         <LoadScript
             id="script-loader"

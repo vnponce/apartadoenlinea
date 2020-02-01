@@ -62,12 +62,10 @@ export default function Autocomplete() {
                 })
                 .then(json => {
                     let options = [];
-                    console.log('segundo then json =>', json);
                     options = json.map(item => ({
                         value: item.id,
                         label: item.name,
                     }));
-                    console.log('segundo then options =>', options);
                     return options;
                 })
                 .catch(error => console.log('error =>', error))

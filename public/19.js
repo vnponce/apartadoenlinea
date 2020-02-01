@@ -315,8 +315,6 @@ function triggerEvtInput(target, value) {
 }
 
 function Login(props) {
-  console.log('props =>', props);
-
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState2 = _slicedToArray(_useState, 2),
       data = _useState2[0],
@@ -325,22 +323,15 @@ function Login(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__["usePage"])(),
       errors = _usePage.errors;
 
-  console.log('errors =>', errors);
-  console.log('errors.length =>', length);
-
   var login = function login(e) {
-    console.log('login con data =>', data);
     e.preventDefault();
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].post('/login', data);
   };
 
   var handleInput = function handleInput(e) {
-    console.log('e.target =>', e.target);
     var _e$target = e.target,
         name = _e$target.name,
         value = _e$target.value;
-    console.log('e.target.name =>', e.target.name);
-    console.log('e.target.value =>', e.target.value);
     setData(_objectSpread({}, data, _defineProperty({}, name, value)));
   };
   /**
@@ -352,9 +343,7 @@ function Login(props) {
     var _props$app = props.app,
         env = _props$app.env,
         mock = _props$app.mock;
-    console.log('LOGIN_MOCK_DEV_ONU env =>', env);
     var target = evt.currentTarget;
-    console.log('target =>', target);
 
     if (env === 'local') {
       if (mock && mock.username && mock.password && evt.key === 'Tab') {
@@ -365,8 +354,7 @@ function Login(props) {
           document.querySelector('#password').focus();
         } else {
           triggerEvtInput(target, mock.password);
-          var form = document.querySelector('#login-form'); // console.log('form =>', form);
-
+          var form = document.querySelector('#login-form');
           setTimeout(function () {
             return form.dispatchEvent(new Event('submit', {
               bubbles: true
@@ -384,7 +372,7 @@ function Login(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     title: "Log in",
     className: "container-fluid"
-  }, console.log('data =>', data), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "max-w-sm mx-auto mt-24 mb-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "/Logo-Short.svg",

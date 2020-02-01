@@ -18,21 +18,14 @@ export function triggerEvtInput(target, value) {
 
 
 function Login(props) {
-    console.log('props =>', props);
     const [data, setData] = useState({});
     const { errors } = usePage();
-    console.log('errors =>', errors);
-    console.log('errors.length =>', length);
     const login = e => {
-        console.log('login con data =>', data);
         e.preventDefault();
         Inertia.post('/login', data);
     };
     const handleInput = e => {
-        console.log('e.target =>', e.target);
         const { name, value } = e.target;
-        console.log('e.target.name =>', e.target.name);
-        console.log('e.target.value =>', e.target.value);
         setData({
             ...data,
             [name]: value,
@@ -43,9 +36,7 @@ function Login(props) {
      */
     function LOGIN_MOCK_DEV_ONLY(evt) {
         const { app: { env, mock } } = props;
-        console.log('LOGIN_MOCK_DEV_ONU env =>', env);
         const target = evt.currentTarget;
-        console.log('target =>', target);
         if (env === 'local') {
             if (
                 mock &&
@@ -60,7 +51,6 @@ function Login(props) {
                 } else {
                     triggerEvtInput(target, mock.password);
                     const form = document.querySelector('#login-form');
-                    // console.log('form =>', form);
                     setTimeout(() => form.dispatchEvent(new Event('submit', { bubbles: true })), 600);
                 }
                 return false;
@@ -72,7 +62,6 @@ function Login(props) {
 
     return (
         <div title="Log in" className="container-fluid">
-            {console.log('data =>', data)}
             <div className="max-w-sm mx-auto mt-24 mb-8">
                 {/*
                 <svg className="w-24 mb-8 mx-auto" viewBox="0 0 114 114" xmlns="http://www.w3.org/2000/svg">

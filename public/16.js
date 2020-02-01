@@ -436,7 +436,6 @@ function MenuIcons() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
       categories = _usePage.categories;
 
-  console.log('categories =>', categories);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "flex m-auto container pt-12"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

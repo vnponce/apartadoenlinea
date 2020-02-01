@@ -35,7 +35,6 @@ export default function CreateStore(props) {
                 ...storeData,
             });
         } else {
-            console.log('editing else con post');
             Inertia.post("stores", {
                 ...storeData,
             });

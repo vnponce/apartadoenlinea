@@ -16,9 +16,6 @@ const SelectWrapper = styled.div`
 
 export default function SearchStatus(props) {
     const { status, statuses, setStatus } = props;
-    console.log('status =>', status);
-    console.log('statuses =>', statuses);
-    console.log('setStatus =>', setStatus);
 
     return (
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
@@ -42,9 +39,7 @@ export default function SearchStatus(props) {
                 // isClearable
                 placeholder="Elige estatus"
                 onChange={selected => {
-                    console.log('selected =>', selected);
                     if(selected === null) {
-                        console.log('selected =>', selected);
                         setStatus(null)
                     } else {
                         setStatus(selected.value)

@@ -4,11 +4,6 @@ import CreateUser from "./UsersInfoBoxes/CreateUser";
 
 export default function InfoBoxes(props) {
     const { data, editUser = false, createUser = false, setCreateUser } = props;
-    console.log('UserInfoboxes data =>', data);
-    console.log('UserInfoboxes createUser =>', createUser);
-    useEffect(() => {
-       console.log('mounting');
-    });
     return (
     <div id="dash-content"
          className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">

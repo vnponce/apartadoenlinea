@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CreateStore from "./StoresInfoBoxes/CreateStore";
 
 export default function InfoBoxes(props) {
     const { id, editStore = false, createStore = false, setCreateStore } = props;
-    console.log('StoreInfoBoxes data =>', id);
-    console.log('StoreInfoBoxes createStore =>', createStore);
-    useEffect(() => {
-       console.log('StoreInfoBoxes mounting');
-    });
     return (
     <div id="dash-content"
          className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">

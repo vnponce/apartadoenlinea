@@ -10,9 +10,6 @@ export default function Layout({ title, children }) {
     useEffect(() => {
         document.title = title;
     }, [title]);
-    useEffect(() => {
-        console.log('flash =>', flash);
-    }, []);
 
     return (
         <>

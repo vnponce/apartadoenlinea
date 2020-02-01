@@ -357,10 +357,8 @@ function Layout(_ref) {
       flash = _usePage.flash,
       user = _usePage.auth.user;
 
-  console.log('auth =>', user);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     document.title = title;
-    console.log('flash =>', flash);
   }, [title]);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     setUserMenuDiv(document.getElementById("userMenu"));
@@ -465,7 +463,6 @@ function SiteBar(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
       user = _usePage.auth.user;
 
-  console.log('user =>', user);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "sidebar",
     className: "h-screen w-16 menu bg-white text-white px-4 flex items-center nunito static fixed shadow"

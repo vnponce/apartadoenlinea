@@ -3,7 +3,6 @@ import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 
 export default function SiteBar(props) {
     const { auth: { user } } = usePage();
-    console.log('user =>', user);
     return (
         <div id="sidebar"
              className="h-screen w-16 menu bg-white text-white px-4 flex items-center nunito static fixed shadow">

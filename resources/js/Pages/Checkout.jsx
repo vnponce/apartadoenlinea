@@ -7,13 +7,9 @@ import {Inertia} from "@inertiajs/inertia";
 
 
 function Checkout(props) {
-    console.log('props => ', props);
     const { cart: { content }, subtotal, auth } = usePage();
-    console.log('content =>', content);
-    console.log('props =>', props);
     const [agreeTerms, setAgreeTerms] = useState(false);
     const createOrder = () => {
-        console.log('create order');
       Inertia.post('/pedido', )
     };
     return (

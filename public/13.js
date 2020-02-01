@@ -468,14 +468,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Map(props) {
-  console.log('map props =>', props);
   var _props$store = props.store,
       _props$store$lat = _props$store.lat,
       lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
       _props$store$lon = _props$store.lon,
       lng = _props$store$lon === void 0 ? "-96.1270615" : _props$store$lon;
-  console.log('lat =>', lat);
-  console.log('lng =>', lng);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["LoadScript"], {
     id: "script-loader",
     googleMapsApiKey: "AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs"
@@ -537,7 +534,6 @@ function ProductListElement(props) {
   var product = props.product,
       _props$isEditable = props.isEditable,
       isEditable = _props$isEditable === void 0 ? true : _props$isEditable;
-  console.log('ProductListElement product =>', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -567,7 +563,6 @@ function ProductListElement(props) {
   };
 
   var addOneItem = function addOneItem() {
-    console.log('Addint one item');
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
       product_id: product.id,
       comment: product.options.comment,

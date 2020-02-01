@@ -8,13 +8,11 @@ import {Pagination} from "react-laravel-paginex";
 
 function Products(props) {
     const { products } = props;
-    console.log('products =>', products);
     const [dataSelected, setDataSelected] = useState(null);
     const [createProduct, setCreateProduct] = useState(null);
     const [editing, setEditing] = useState(false);
 
     const showCreateProduct = () => {
-        console.log('crear product');
         setCreateProduct(true);
         setDataSelected(false);
         setEditing(false);

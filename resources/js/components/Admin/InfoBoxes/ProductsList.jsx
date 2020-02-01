@@ -3,7 +3,6 @@ import ProductListElement from "../../ProductListElement";
 
 export default function ProductsList(props) {
     const { data } = props;
-    console.log('data products =>', data);
     return (
         <div
             className="m-2 md:mx-6 md:my-6">

@@ -35,7 +35,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Products(props) {
   var products = props.products;
-  console.log('products =>', products);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -53,7 +52,6 @@ function Products(props) {
       setEditing = _useState6[1];
 
   var showCreateProduct = function showCreateProduct() {
-    console.log('crear product');
     setCreateProduct(true);
     setDataSelected(false);
     setEditing(false);
@@ -190,12 +188,6 @@ function InfoBoxes(props) {
       setEditing = props.setEditing,
       setDataSelected = props.setDataSelected; // const [isEditing, setIsEditing] = useState(false);
 
-  console.log('ProductInfoboxes data =>', data);
-  console.log('ProductInfoboxes editing =>', editing);
-  console.log('ProductInfoboxes createProduct =>', createProduct);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('mounting');
-  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
@@ -378,9 +370,6 @@ function CreateProduct(props) {
       successMessageCount = _useState2[0],
       setSuccessMessageCount = _useState2[1];
 
-  console.log('errors =>', errors);
-  console.log('flash =>', flash);
-
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     name: '',
     description: '',
@@ -410,8 +399,6 @@ function CreateProduct(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('flash =>', flash);
-
     if (flash.success) {
       setEditing(false);
       setCreateProduct(false);
@@ -424,8 +411,6 @@ function CreateProduct(props) {
     }
   }, [flash]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('mounting Create Product data =>', data);
-
     if (data) {
       setEditing(true);
       setProductData(_objectSpread({}, data));
@@ -457,7 +442,6 @@ function CreateProduct(props) {
   };
 
   var getFormData = function getFormData() {
-    console.log('[getFormData] productData =>', productData);
     var formData = new FormData();
     formData.append("file", avatar, avatar.name);
     formData.set("name", productData.name || '');
@@ -466,45 +450,17 @@ function CreateProduct(props) {
     formData.set("price", productData.price || '');
     formData.set("category_id", productData.category_id || '');
     formData.set("available", productData.available);
-    formData.set("favorite", productData.favorite);
-    console.log('[getFormData] formData =>', formData); // Display the key/value pairs
-
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = formData.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var pair = _step.value;
-        console.log('[getFormData] =>' + pair[0] + ', ' + pair[1]);
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-          _iterator["return"]();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
+    formData.set("favorite", productData.favorite); // Display the key/value pairs
+    // for (var pair of formData.entries()) {
+    // console.log('[getFormData] =>' + pair[0]+ ', ' + pair[1]);
+    // }
 
     return formData;
   };
 
   var createProduct = function createProduct() {
-    console.log('createProduct isEditing =>', editing);
-
     if (editing) {
-      console.log('editing true');
-      console.log('editing productData =>', productData); // console.log('editing storeSelected =>', storeSelected);
-
       if (avatar) {
-        console.log('Exist avatar =>', avatar);
         var updateFormData = getFormData();
         /*
         const updateFormData = new FormData();
@@ -519,16 +475,12 @@ function CreateProduct(props) {
         updateFormData.set("favorite", productData.favorite);
           */
 
-        console.log('editing else con put');
-        console.log('editing else con formData =>', updateFormData);
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products/".concat(productData.id), updateFormData);
       } else {
-        console.log('editing sin imagen');
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("products/".concat(productData.id), _objectSpread({}, productData));
       }
     } else {
       var formData = getFormData();
-      console.log('editing else con post');
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("products", formData); // Inertia.post("products", {
       //     ...productData,
       //     // store: storeSelected,
@@ -538,8 +490,7 @@ function CreateProduct(props) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_filepond__WEBPACK_IMPORTED_MODULE_4__["FilePond"], {
     onupdatefiles: function onupdatefiles(fileItems) {
-      console.log('onupdatefiles =>', fileItems); // setAvatar(fileItems.map(fileItem => fileItem.file));
-
+      // setAvatar(fileItems.map(fileItem => fileItem.file));
       setAvatar(fileItems[0].file);
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -740,8 +691,7 @@ var transformStoreList = function transformStoreList(stores) {
 var ShopOptionComponent = function ShopOptionComponent(props) {
   var children = props.children,
       friendlyAddress = props.data.friendlyAddress,
-      isSelected = props.isSelected; // console.log('ShopOptionComponent props =>', props);
-
+      isSelected = props.isSelected;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "shop-option-name"
   }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -754,8 +704,6 @@ function Stores(props) {
       stores = props.stores,
       _props$storeSelected = props.storeSelected,
       storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
-  console.log('storeSelected =>', storeSelected);
-  console.log('stores =>', stores);
   var storesToSelect = transformStoreList(stores);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (storeSelected) {

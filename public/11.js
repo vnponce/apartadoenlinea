@@ -259,8 +259,6 @@ function Order() {
       errors = _usePage.errors; // const { stores } = props;
 
 
-  console.log('errors =>', errors);
-
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       wantInvoice = _useState2[0],
@@ -685,14 +683,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Map(props) {
-  console.log('map props =>', props);
   var _props$store = props.store,
       _props$store$lat = _props$store.lat,
       lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
       _props$store$lon = _props$store.lon,
       lng = _props$store$lon === void 0 ? "-96.1270615" : _props$store$lon;
-  console.log('lat =>', lat);
-  console.log('lng =>', lng);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["LoadScript"], {
     id: "script-loader",
     googleMapsApiKey: "AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs"
@@ -884,8 +879,7 @@ var transformStoreList = function transformStoreList(stores) {
 var ShopOptionComponent = function ShopOptionComponent(props) {
   var children = props.children,
       friendlyAddress = props.data.friendlyAddress,
-      isSelected = props.isSelected; // console.log('ShopOptionComponent props =>', props);
-
+      isSelected = props.isSelected;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "shop-option-name"
   }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -898,8 +892,6 @@ function Stores(props) {
       stores = props.stores,
       _props$storeSelected = props.storeSelected,
       storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
-  console.log('storeSelected =>', storeSelected);
-  console.log('stores =>', stores);
   var storesToSelect = transformStoreList(stores);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (storeSelected) {

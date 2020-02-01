@@ -39,16 +39,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Dashboard(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__["usePage"])(),
-      auth = _usePage.auth; // console.log('Dashboard => auth =>', auth);
-
+      auth = _usePage.auth;
 
   var orders = props.orders,
       success_message = props.success_message,
       order = props.order,
       stores = props.stores,
       searchValues = props.searchValues;
-  console.log('orders =>', orders);
-  console.log('[Dashboard] searchValues =>', searchValues);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -57,7 +54,6 @@ function Dashboard(props) {
 
   var updateStatus = function updateStatus(id) {
     return function (evt) {
-      console.log('id =>', id);
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/pedido/".concat(id), {
         status: evt.target.value
       });
@@ -177,8 +173,6 @@ function Dashboard(props) {
   var openedAndShow = function openedAndShow(index) {
     var data = orders[index];
     setDataSelected(data);
-    console.log('openedAndShow =>', data.status.original);
-    console.log('openedAndShow =>', auth.user);
 
     if (auth.user.isMatrix && data.status.original === 'created') {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/admin/orders/".concat(data.id), {
@@ -193,8 +187,6 @@ function Dashboard(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     // openedAndShow(0);
     if (orders && dataSelected) {
-      console.log('component update orders =>', orders);
-      console.log('component update dataSelected =>', dataSelected);
       var orderUpdated = orders.find(function (order) {
         return order.id === dataSelected.id;
       });
@@ -285,16 +277,11 @@ function InfoBoxes(props) {
       nextStatus = _useState2[0],
       setNextStatus = _useState2[1];
 
-  console.log('InfoBoxes user =>', user);
   var data = props.data;
-  console.log('infoboxes data =>', data);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('useEffect =>', data);
-
     if (data) {
       var status = data.status,
           store = data.store;
-      console.log('store =>', store);
 
       switch (status.original) {
         case 'created':
@@ -342,10 +329,6 @@ function InfoBoxes(props) {
   }, [data]);
 
   var updateToNextStatus = function updateToNextStatus() {
-    console.log("Vamos a pasar de ".concat(data.status.original, " a ").concat(nextStatus.original));
-    console.log("nextStatus => ".concat(nextStatus));
-    console.log("".concat(nextStatus));
-
     if (nextStatus.allowed || user.isGod) {
       sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
         title: '¿Seguro?',
@@ -448,7 +431,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function ProductsList(props) {
   var data = props.data;
-  console.log('data products =>', data);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -617,7 +599,6 @@ function SearchBar(props) {
       stores = _usePage.stores;
 
   var searchValues = props.searchValues;
-  console.log('[SearchBar] searchValues =>', searchValues);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(searchValues.id || ''),
       _useState2 = _slicedToArray(_useState, 2),
@@ -699,7 +680,7 @@ function SearchBar(props) {
   };
 
   var toSearch = function toSearch() {
-    console.log("Vamos a buscar id: ".concat(id, " , store: ").concat(storeObject.id, ", date: ").concat(date, ", status: ").concat(status.value));
+    // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
     var searchId = id ? "id=".concat(id) : '';
     var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : '';
     var searchDate = date ? "date=".concat(date) : '';
@@ -709,8 +690,6 @@ function SearchBar(props) {
   };
 
   var setStatusObject = function setStatusObject(currentStatus) {
-    console.log('setStatusObject currentStatus =>', currentStatus);
-
     switch (currentStatus) {
       case 'not-delivered':
         setStatus({
@@ -756,7 +735,7 @@ function SearchBar(props) {
     value: id
   })), user.isAdmin && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/5"
-  }, console.log('[SearchBar] storeSelected =>', store), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStores__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStores__WEBPACK_IMPORTED_MODULE_2__["default"], {
     setStore: setStore,
     stores: stores,
     storeSelected: storeObject
@@ -987,7 +966,6 @@ function ProductListElement(props) {
   var product = props.product,
       _props$isEditable = props.isEditable,
       isEditable = _props$isEditable === void 0 ? true : _props$isEditable;
-  console.log('ProductListElement product =>', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -1017,7 +995,6 @@ function ProductListElement(props) {
   };
 
   var addOneItem = function addOneItem() {
-    console.log('Addint one item');
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
       product_id: product.id,
       comment: product.options.comment,
@@ -1142,9 +1119,6 @@ function SearchStatus(props) {
   var status = props.status,
       statuses = props.statuses,
       setStatus = props.setStatus;
-  console.log('status =>', status);
-  console.log('statuses =>', statuses);
-  console.log('setStatus =>', setStatus);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -1170,10 +1144,7 @@ function SearchStatus(props) {
     ,
     placeholder: "Elige estatus",
     onChange: function onChange(selected) {
-      console.log('selected =>', selected);
-
       if (selected === null) {
-        console.log('selected =>', selected);
         setStatus(null);
       } else {
         setStatus(selected.value);
@@ -1294,10 +1265,7 @@ function Stores(props) {
       Option: ShopOptionComponent
     },
     onChange: function onChange(selected) {
-      console.log('selected =>', selected);
-
       if (selected === null) {
-        console.log('selected =>', selected);
         setStore(null);
       } else {
         setStore(selected.value);

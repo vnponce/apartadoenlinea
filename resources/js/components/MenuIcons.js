@@ -3,7 +3,6 @@ import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 
 export default function MenuIcons() {
     const { categories } = usePage();
-    console.log('categories =>', categories);
     return (
         <section className="flex m-auto container pt-12">
             <div className="w-full icons p-4">
