@@ -1,5 +1,6 @@
 import React from 'react';
-import AsyncSelect from 'react-select/async';
+// import AsyncSelect from 'react-select/async';
+import AsyncCreatableSelect from 'react-select/async-creatable';
 import {Inertia} from "@inertiajs/inertia";
 export default function Autocomplete() {
     const customStylesBK = {
@@ -76,8 +77,12 @@ export default function Autocomplete() {
         Inertia.visit(`/pan/${selectedOption.value}`)
     };
 
+    const onCreateOption = selectedOption => {
+        Inertia.visit(`/?search=${selectedOption}`);
+    };
+
     return (
-        <AsyncSelect
+        <AsyncCreatableSelect
             // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
             className="mr-3 w-1/3 bg-brand-orange"
             options={options}
@@ -86,6 +91,7 @@ export default function Autocomplete() {
             placeholder="Buscar"
             loadOptions={promiseOptions}
             onChange={handleChange}
+            onCreateOption={onCreateOption}
             autoFocus
             // components={{ DropdownIndicator, IndicatorSeparator: null }}
         />

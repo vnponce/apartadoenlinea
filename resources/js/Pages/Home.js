@@ -8,7 +8,7 @@ import HeaderDescription from "../components/HeaderDescription";
 
 
 function Home(props) {
-    const { products, success_message, category = null } = props;
+    const { products, success_message, category = null, search } = props;
     console.log('succes_message =>', success_message);
     const getData = data => Inertia.visit(`?page=${data.page}`);
     return (
@@ -19,8 +19,12 @@ function Home(props) {
                     {/* <div className="mb-16 w-full"></div> */}
                 </>
             }
-            {!category && <MenuIcons />}
-            <hr className="w-1/2 mb-5" />
+            {!(category || search) && <MenuIcons />}
+            {search &&
+            <>
+                <HeaderDescription title={`Buscando por '${search}'`} description=""/>
+            </>
+            }            <hr className="w-1/2 mb-5" />
             <main className="flex flex-wrap w-full p-0 pb-16 sm:px-2">
                 {products.data.map(product => {
                     return <BreadCard product={product}/>

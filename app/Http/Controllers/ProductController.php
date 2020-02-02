@@ -16,8 +16,16 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('favorite', true)->where('available', true)->paginate();
-        return Inertia::render('Home', compact('products'));
+        $search = false;
+        $products = Product::where('favorite', true)->where('available', true);
+
+        if (request()->filled('search')) {
+            $search = request()->get('search');
+            $products->where('name', 'like', "%{$search}%");
+        }
+
+        $products = $products->paginate();
+        return Inertia::render('Home', compact('products', 'search'));
     }
 
     public function search(Request $request)
