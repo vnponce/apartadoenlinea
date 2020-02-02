@@ -43,6 +43,7 @@ export default function CreateProduct(props) {
 
     useEffect(() => {
         if(flash.success){
+            console.log('openedAndShow CreateProduct useEffect flash');
             setEditing(false);
             setCreateProduct(false);
             setDataSelected(false);
@@ -93,6 +94,7 @@ export default function CreateProduct(props) {
     const createProduct = () => {
         console.log('createProduct =>', editing);
         if(editing){
+            console.log('openedAndShow editing true');
             if(avatar) {
                 const updateFormData = getFormData();
                 /*

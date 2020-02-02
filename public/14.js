@@ -99,6 +99,7 @@ function Products(props) {
     console.log('openedAndShow createProduct =>', createProduct);
     console.log('openedAndShow dataSelected =>', dataSelected);
     var data = products.data[index];
+    console.log('openedAndShow data =>', data);
     setDataSelected(data);
   };
 
@@ -108,7 +109,7 @@ function Products(props) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, console.log('rendering Products'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: dataSelected,
     setDataSelected: setDataSelected,
     createProduct: createProduct,
@@ -189,7 +190,13 @@ function InfoBoxes(props) {
       setCreateProduct = props.setCreateProduct,
       editing = props.editing,
       setEditing = props.setEditing,
-      setDataSelected = props.setDataSelected; // const [isEditing, setIsEditing] = useState(false);
+      setDataSelected = props.setDataSelected; // console.log('InfoBoxes data =>', data);
+  // console.log('InfoBoxes createProduct =>', createProduct);
+  // useEffect(() => {
+  //     if(data){
+  //         setDataSelected(data);
+  //     }
+  // }, [data]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
@@ -403,6 +410,7 @@ function CreateProduct(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (flash.success) {
+      console.log('openedAndShow CreateProduct useEffect flash');
       setEditing(false);
       setCreateProduct(false);
       setDataSelected(false);
@@ -467,6 +475,8 @@ function CreateProduct(props) {
     console.log('createProduct =>', editing);
 
     if (editing) {
+      console.log('openedAndShow editing true');
+
       if (avatar) {
         var updateFormData = getFormData();
         /*

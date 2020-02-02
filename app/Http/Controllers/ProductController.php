@@ -100,7 +100,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        dd($request->toArray(), $product->toArray());
         $request->validate([
             'name' => 'required|string|max:255',
             'file' => 'image',

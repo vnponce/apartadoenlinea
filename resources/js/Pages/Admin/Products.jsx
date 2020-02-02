@@ -62,6 +62,7 @@ function Products(props) {
         console.log('openedAndShow createProduct =>', createProduct);
         console.log('openedAndShow dataSelected =>', dataSelected);
         const data = products.data[index];
+        console.log('openedAndShow data =>', data);
         setDataSelected(data);
     };
 
@@ -69,6 +70,7 @@ function Products(props) {
 
     return (
         <Admin title="Panel">
+            {console.log('rendering Products')}
             <ProductsInfoBoxes data={dataSelected} setDataSelected={setDataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
             {/*Graph Content */}
             <div id="main-content" className="w-full flex-1">
