@@ -28,8 +28,8 @@ class ProductsImport implements ToModel
             'image' => '/breads/Cuernito.png',
             'ingredients' => $row[4] ?? '',
             'available_time' => $row[5],
-            'available' => false,
-            'price' => $row[6] ? $row[6] * 100 : 0,
+            'available' => true,
+            'price' => $row[6] ?? 0,
         ]);
     }
 }
