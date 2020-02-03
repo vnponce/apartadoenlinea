@@ -25,7 +25,7 @@ class ProductsImport implements ToModel
             // subcategory not now. Must be later
             'name' => $name,
             'description' => $row[3] ?? '',
-            'image' => '/breads/Cuernito.png',
+            'image' => 'products/Cuernito.png',
             'ingredients' => $row[4] ?? '',
             'available_time' => $row[5],
             'available' => true,
