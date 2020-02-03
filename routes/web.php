@@ -88,7 +88,7 @@ Route::get('email', function() {
     return view('email.order-details-html');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
