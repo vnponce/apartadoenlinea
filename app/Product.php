@@ -63,6 +63,11 @@ class Product extends Model implements Buyable
         return is_null($value) ? '' : $value;
     }
 
+    public function getIngredientsAttribute($value)
+    {
+        return is_null($value) ? '' : $value;
+    }
+
 
     public function getFormatPriceAttribute()
     {

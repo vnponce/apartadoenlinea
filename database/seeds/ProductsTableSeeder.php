@@ -3693,6 +3693,12 @@ class ProductsTableSeeder extends Seeder
         "updated_at" => "2020-02-02 00:58:46"
     ]
 ];
+
+    public function getImagePath()
+    {
+        return env('APP_ENV') === 'local' ? 'breads/Cuernito.png' : 'products/NV852pSEUbASYKr8QImvAkxqKJIyC6TXOsdA1VrS.png';
+    }
+
     /**
      * Run the database seeds.
      *
@@ -3709,7 +3715,8 @@ class ProductsTableSeeder extends Seeder
                 "name" => $product->get('name'),
                 "description" => $product->get('description'),
                 "ingredients" => $product->get('ingredients'),
-                "image" => $product->get('image'),
+                // "image" => $product->get('image'),
+                "image" => $this->getImagePath(),
                 "price" => $product->get('price') / 100,
                 "available" => $product->get('available'),
                 "available_time" => $product->get('available_time'),

@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
 
             $table->string('name');
             $table->string('description')->nullable()->default('');
-            $table->string('ingredients');
+            $table->string('ingredients')->nullable()->default('');
             $table->string('image')->default('');
             $table->integer('price');
             $table->boolean('available')->default(false);
