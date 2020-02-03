@@ -62,7 +62,7 @@ export default function Header() {
                         {auth && auth.user && (
                             <li className="md:ml-5">
                                 <InertiaLink className="block md:inline"
-                                             href={`/admin/`}>Panel</InertiaLink>
+                                             href={`/admin`}>Panel</InertiaLink>
                             </li>
                         )}
                     </ul>
@@ -145,7 +145,7 @@ export default function Header() {
             {auth && auth.user && (
                 <li className="md:ml-5">
                     <InertiaLink className="block md:inline"
-                                 href={`/admin/`}>Panel</InertiaLink>
+                                 href={`/admin`}>Panel</InertiaLink>
                 </li>
             )}
         </ul>

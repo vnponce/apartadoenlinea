@@ -637,7 +637,7 @@ function Header() {
     className: "md:ml-5"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     className: "block md:inline",
-    href: "/admin/"
+    href: "/admin"
   }, "Panel")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     href: "/"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -717,7 +717,7 @@ function Header() {
     className: "md:ml-5"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
     className: "block md:inline",
-    href: "/admin/"
+    href: "/admin"
   }, "Panel"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "header-lines"
   }));
