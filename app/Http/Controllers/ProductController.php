@@ -17,11 +17,13 @@ class ProductController extends Controller
     public function index()
     {
         $search = false;
-        $products = Product::where('favorite', true)->where('available', true);
+        $products = Product::where('available', true);
 
         if (request()->filled('search')) {
             $search = request()->get('search');
             $products->where('name', 'like', "%{$search}%");
+        } else {
+            $products->where('favorite', true);
         }
 
         $products = $products->paginate();
