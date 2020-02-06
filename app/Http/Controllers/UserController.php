@@ -33,19 +33,22 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-//         dd($request->toArray());
         if(!auth()->user()->isGod) {
             return back();
         }
 //        dd($request->toArray());
-        $request->validate([
+        $rules = [
             'name' => 'required|string|max:255',
             'file' => 'image',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
             'role' => 'required',
             'store' => 'required',
-        ]);
+        ];
+        if($request->role === 'manager') {
+            $rules['store'] = 'required|exists:stores,id';
+        }
+        $request->validate($rules);
         // dd($request->toArray());
         // $avatar = $request->file('file')->store('public/avatars');
         // dd($avatar);
@@ -63,15 +66,18 @@ class UserController extends Controller
     public function update(User $user, Request $request)
     {
 //        dd($user, $request->toArray());
-        $this->validate($request,[
+        $rules = [
             'name' => 'required|string|max:255',
             // 'file' => 'image',
             // 'email' => 'required|string|email|max:255|unique:users',
             'password' => 'string|min:6',
             'role' => 'required',
-            'store' => 'required|exists:stores,id',
-        ]);
+        ];
+        $this->validate($request,$rules);
 
+        if($request->password) {
+            $request->merge(['password' => bcrypt($request->password)]);
+        }
         $user->update($request->only('name', 'password', 'role'));
         if($request->role === 'manager'){
             $user->stores()->detach();
