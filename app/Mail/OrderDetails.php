@@ -35,8 +35,6 @@ class OrderDetails extends Mailable
         Carbon::setLocale('es');
         $store = $this->order->store->name;
         $date = $this->order->date->translatedFormat('l d, F Y');
-//        dd($date);
-        // return $this->markdown('email.order-details', compact('store', 'date'));
-        return $this->markdown('email.order-details-custom', compact('store', 'date'));
+        return $this->subject('Detalles de su pedido, gracias.')->markdown('email.order-details-custom', compact('store', 'date'));
     }
 }
