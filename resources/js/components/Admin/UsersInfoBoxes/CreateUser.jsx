@@ -15,7 +15,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 export default function CreateUser(props) {
     const { data } = props;
-    const { errors, stores, success_message } = usePage();
+    const { errors, stores, flash: { success_message } } = usePage();
     const [userData, setUserData] = useState({
         // store: 1,
         role: 'god',

@@ -34563,7 +34563,7 @@ var map = {
 		1,
 		2,
 		6,
-		8,
+		7,
 		5,
 		13
 	],
@@ -34573,7 +34573,7 @@ var map = {
 		1,
 		2,
 		6,
-		8,
+		7,
 		5,
 		13
 	],
@@ -34582,45 +34582,45 @@ var map = {
 		0,
 		2,
 		6,
-		7,
+		9,
 		10,
 		5,
-		15
+		14
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		2,
 		6,
-		7,
+		9,
 		10,
 		5,
-		15
+		14
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		2,
 		6,
-		7,
+		9,
 		5,
-		16
+		15
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		2,
 		6,
-		7,
+		9,
 		5,
-		16
+		15
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		2,
 		6,
-		7,
+		9,
 		5,
 		17
 	],
@@ -34629,7 +34629,7 @@ var map = {
 		0,
 		2,
 		6,
-		7,
+		9,
 		5,
 		17
 	],
@@ -34638,16 +34638,16 @@ var map = {
 		0,
 		1,
 		4,
-		3,
-		18
+		25,
+		16
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		1,
 		4,
-		3,
-		18
+		25,
+		16
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34663,7 +34663,7 @@ var map = {
 		1,
 		4,
 		10,
-		3,
+		25,
 		19
 	],
 	"./Home.js": [
@@ -34672,7 +34672,7 @@ var map = {
 		1,
 		4,
 		10,
-		3,
+		25,
 		19
 	],
 	"./Login": [
@@ -34680,7 +34680,7 @@ var map = {
 		0,
 		1,
 		4,
-		3,
+		25,
 		20
 	],
 	"./Login.jsx": [
@@ -34688,7 +34688,7 @@ var map = {
 		0,
 		1,
 		4,
-		3,
+		25,
 		20
 	],
 	"./Order": [
@@ -34697,10 +34697,10 @@ var map = {
 		1,
 		2,
 		4,
-		8,
-		9,
-		3,
-		12
+		7,
+		11,
+		25,
+		18
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
@@ -34708,18 +34708,18 @@ var map = {
 		1,
 		2,
 		4,
-		8,
-		9,
-		3,
-		12
+		7,
+		11,
+		25,
+		18
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
 		1,
 		4,
-		11,
-		3,
+		8,
+		25,
 		22
 	],
 	"./Product.jsx": [
@@ -34727,8 +34727,8 @@ var map = {
 		0,
 		1,
 		4,
-		11,
-		3,
+		8,
+		25,
 		22
 	],
 	"./Success": [
@@ -34737,9 +34737,9 @@ var map = {
 		1,
 		2,
 		4,
-		9,
-		3,
-		14
+		11,
+		25,
+		12
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
@@ -34747,9 +34747,9 @@ var map = {
 		1,
 		2,
 		4,
-		9,
-		3,
-		14
+		11,
+		25,
+		12
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
@@ -34757,7 +34757,7 @@ var map = {
 		1,
 		2,
 		4,
-		3,
+		25,
 		23
 	],
 	"./TermsConditions.jsx": [
@@ -34766,7 +34766,7 @@ var map = {
 		1,
 		2,
 		4,
-		3,
+		25,
 		23
 	]
 };

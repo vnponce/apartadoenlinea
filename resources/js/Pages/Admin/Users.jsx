@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Admin from "../../Shared/Admin";
 import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 import {Inertia} from "@inertiajs/inertia";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Table from "../../components/Table";
 
 
 function Users(props) {
-    const { users, success_message } = props;
+    const { users, flash: { success_message } } = props;
     const [dataSelected, setDataSelected] = useState(null);
     const [createUser, setCreateUser] = useState(null);
     const updateStatus = id => evt => {
@@ -67,6 +69,8 @@ function Users(props) {
     useEffect(() => {
         if(success_message) {
             setCreateUser(false);
+            setDataSelected(false);
+            toast(success_message);
         }
     }, [success_message]);
 
