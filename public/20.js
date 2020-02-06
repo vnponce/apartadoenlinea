@@ -142,17 +142,8 @@ function Login(props) {
     onKeyDown: LOGIN_MOCK_DEV_ONLY
   }), errors.password && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error hour"
-  }, errors.password[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    className: "mt-6 select-none flex items-center",
-    htmlFor: "remember"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "remember",
-    className: "mr-1",
-    type: "checkbox"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-sm"
-  }, "Remember Me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex justify-end"
+  }, errors.password[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex justify-end pt-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "button",

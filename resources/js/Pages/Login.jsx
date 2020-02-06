@@ -112,11 +112,11 @@ function Login(props) {
                             onKeyDown={LOGIN_MOCK_DEV_ONLY}
                         />
                         {errors.password && <p className="text-sm m-auto text-red-500 error hour">{errors.password[0]}</p>}
-                        <label className="mt-6 select-none flex items-center" htmlFor="remember">
+                        {/* <label className="mt-6 select-none flex items-center" htmlFor="remember">
                             <input id="remember" className="mr-1" type="checkbox" />
                             <span className="text-sm">Remember Me</span>
-                        </label>
-                        <div className="flex justify-end">
+                        </label>*/}
+                        <div className="flex justify-end pt-4">
                             <button type="submit" className="button" onClick={login}>
                                 Log in
                             </button>
