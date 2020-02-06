@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[17],{
 
-/***/ "./resources/js/Pages/Admin/Stores.jsx":
-/*!*********************************************!*\
-  !*** ./resources/js/Pages/Admin/Stores.jsx ***!
-  \*********************************************/
+/***/ "./resources/js/Pages/Admin/Users.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Admin/Users.jsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12,10 +12,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
-/* harmony import */ var _components_Admin_StoresInfoBoxes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Admin/StoresInfoBoxes */ "./resources/js/components/Admin/StoresInfoBoxes.jsx");
+/* harmony import */ var _components_Admin_UsersInfoBoxes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Admin/UsersInfoBoxes */ "./resources/js/components/Admin/UsersInfoBoxes.jsx");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -25,69 +25,94 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
- // import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 
 
 
 
 
-function Stores(props) {
-  var stores = props.stores,
+function Users(props) {
+  var users = props.users,
       success_message = props.success_message;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
-      storeId = _useState2[0],
-      setStoreId = _useState2[1];
+      dataSelected = _useState2[0],
+      setDataSelected = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      createUser = _useState4[0],
+      setCreateUser = _useState4[1];
+
+  var updateStatus = function updateStatus(id) {
+    return function (evt) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("/users/".concat(id), {
+        status: evt.target.value
+      });
+    };
+  };
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     return [{
       Header: 'Nombre',
       accessor: 'name'
     }, {
-      Header: 'Dirección',
-      accessor: 'address'
+      Header: 'email',
+      accessor: 'email'
     }, {
-      Header: 'Dirección amigable',
-      accessor: 'friendly_address'
-    }, {
-      Header: 'Horas de entrega',
-      accessor: 'delivery_time' // Cell: data => (
-      //     <span className="">Change Password</span>
-      // ),
+      Header: 'role',
+      accessor: 'role'
+    },
+    /*
+    {
+        Header: 'password',
+        accessor: 'password',
+        Cell: data => (
+            <span className="">Change Password</span>
+        ),
+    },
+    */
+    {
+      Header: 'Tienda',
+      accessor: 'stores',
+      Cell: function Cell(data) {
+        var user = data.row.original;
 
-    }, {
-      Header: 'Lunes a Sábado',
-      accessor: 'monday_saturday' // Cell: data => (
-      //     <span className="">Change Password</span>
-      // ),
+        if (user.isAdmin) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: ""
+          }, "Todas");
+        }
 
-    }, {
-      Header: 'Domingo',
-      accessor: 'sunday' // Cell: data => {
-      //     console.log('data =>', data);
-      //     const { original: user } = data.row;
-      //     if(user.isAdmin) {
-      //         return <span className="">Todas</span>
-      //     }
-      //     return <span className="">{user.stores[0].name}</span>;
-      // },
-
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, user.stores[0].name);
+      }
     }];
   }, []);
 
   var openedAndShow = function openedAndShow(index) {
-    var data = stores[index];
-    setStoreId(data.id);
-    setStoreId(data.id);
+    var data = users[index];
+    setCreateUser(false);
+    setDataSelected(data);
   };
 
+  var showCreateUser = function showCreateUser() {
+    setCreateUser(true);
+    setDataSelected(false);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (success_message) {
+      setCreateUser(false);
+    }
+  }, [success_message]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_StoresInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    id: storeId,
-    createStore: false,
-    setCreateStore: function setCreateStore() {}
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_UsersInfoBoxes__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: dataSelected,
+    createUser: createUser,
+    setCreateUser: setCreateUser
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "main-content",
     className: "w-full flex-1"
@@ -101,31 +126,29 @@ function Stores(props) {
     className: "border-b p-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black inline-block"
-  }, "Tiendas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Usuarios"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
-    onClick: function onClick() {
-      return console.log('tienda');
-    }
+    onClick: showCreateUser
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-store fa-fw"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "inline fa fa-user-plus fa-fw"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
     columns: columns,
-    data: stores,
+    data: users,
     onClick: function onClick(row) {
       return openedAndShow(row.index);
     },
-    selected: false
+    selected: dataSelected
   })))))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Stores);
+/* harmony default export */ __webpack_exports__["default"] = (Users);
 
 /***/ }),
 
-/***/ "./resources/js/components/Admin/StoresInfoBoxes.jsx":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/Admin/StoresInfoBoxes.jsx ***!
-  \***********************************************************/
+/***/ "./resources/js/components/Admin/UsersInfoBoxes.jsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Admin/UsersInfoBoxes.jsx ***!
+  \**********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -134,26 +157,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return InfoBoxes; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _StoresInfoBoxes_CreateStore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StoresInfoBoxes/CreateStore */ "./resources/js/components/Admin/StoresInfoBoxes/CreateStore.jsx");
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Input */ "./resources/js/components/Input.jsx");
+/* harmony import */ var _UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UsersInfoBoxes/CreateUser */ "./resources/js/components/Admin/UsersInfoBoxes/CreateUser.jsx");
+
 
 
 function InfoBoxes(props) {
-  var id = props.id,
-      _props$editStore = props.editStore,
-      editStore = _props$editStore === void 0 ? false : _props$editStore,
-      _props$createStore = props.createStore,
-      createStore = _props$createStore === void 0 ? false : _props$createStore,
-      setCreateStore = props.setCreateStore;
+  var data = props.data,
+      _props$editUser = props.editUser,
+      editUser = _props$editUser === void 0 ? false : _props$editUser,
+      _props$createUser = props.createUser,
+      createUser = _props$createUser === void 0 ? false : _props$createUser,
+      setCreateUser = props.setCreateUser;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
-  }, id && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, (data || createUser) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-6"
-  }, id && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_StoresInfoBoxes_CreateStore__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    id: id
-  }))), !id && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, createUser && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__["default"], null), data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: data
+  }), data && false && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex justify-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: data.name,
+    className: "w-24 h-24 rounded-full mr-4",
+    src: data.avatar_path
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-1 flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-lg my-6"
+  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-user-shield fa-fw text-brand-icons text-lg"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, " ", data.role)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-at fa-fw text-brand-icons text-lg"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, " ", data.email)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-store fa-fw text-brand-icons text-lg"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, data.isAdmin ? 'Todas' : data.stores[0].name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Cambiar Contrase\xF1a"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Editar"))))), !(data || createUser) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"
@@ -167,22 +224,25 @@ function InfoBoxes(props) {
     className: "fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-3"
-  }, "No hay sucursal seleccionada para editar la informaci\xF3n.")))));
+  }, "No hay ningun usuario seleccionado para editar la informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    onClick: setCreateUser,
+    className: "flex-1 mt-3 text-brand-orange cursor-pointer"
+  }, "Haz click para crear usuario.")))));
 }
 ;
 
 /***/ }),
 
-/***/ "./resources/js/components/Admin/StoresInfoBoxes/CreateStore.jsx":
-/*!***********************************************************************!*\
-  !*** ./resources/js/components/Admin/StoresInfoBoxes/CreateStore.jsx ***!
-  \***********************************************************************/
+/***/ "./resources/js/components/Admin/UsersInfoBoxes/CreateUser.jsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/Admin/UsersInfoBoxes/CreateUser.jsx ***!
+  \*********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CreateStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CreateUser; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Input */ "./resources/js/components/Input.jsx");
@@ -224,82 +284,142 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+ // Register the plugins
 
-function CreateStore(props) {
-  var id = props.id;
+Object(react_filepond__WEBPACK_IMPORTED_MODULE_4__["registerPlugin"])(filepond_plugin_image_exif_orientation__WEBPACK_IMPORTED_MODULE_6___default.a, filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_7___default.a);
+function CreateUser(props) {
+  var data = props.data;
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
       errors = _usePage.errors,
       stores = _usePage.stores,
       success_message = _usePage.success_message;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(stores.filter(function (store) {
-    return store.id === id;
-  })[0]),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    // store: 1,
+    role: 'god'
+  }),
       _useState2 = _slicedToArray(_useState, 2),
-      storeData = _useState2[0],
-      setStoreData = _useState2[1];
+      userData = _useState2[0],
+      setUserData = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      editing = _useState4[0],
-      setEditing = _useState4[1];
+      storeSelected = _useState4[0],
+      setStoreSelected = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      editing = _useState6[0],
+      setEditing = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      avatar = _useState8[0],
+      setAvatar = _useState8[1];
 
   var onChange = function onChange(e) {
-    setStoreData(_objectSpread({}, storeData, _defineProperty({}, e.target.name, e.target.value)));
+    setUserData(_objectSpread({}, userData, _defineProperty({}, e.target.name, e.target.value)));
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (id) {
+    if (data) {
       setEditing(true);
-      setStoreData(stores.filter(function (store) {
-        return store.id === id;
-      })[0]);
+      setUserData(_objectSpread({}, data));
     }
-  }, [id]);
+  }, [data]);
 
-  var createStore = function createStore() {
+  var createUser = function createUser() {
+    /*
+    const formData = new FormData();
+    formData.append("file", avatar, avatar.name);
+    formData.set("name", userData.name ? userData.name : '');
+    formData.set("email", userData.email ? userData.email : '');
+    formData.set("password", userData.password ? userData.password : '');
+    formData.set("role", userData.role ? userData.role : '');
+    formData.set("store", storeSelected ? storeSelected : '');
+     */
     if (editing) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("stores/".concat(id), _objectSpread({}, storeData));
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("users/".concat(userData.id), _objectSpread({}, userData, {
+        store: storeSelected
+      }));
     } else {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("stores", _objectSpread({}, storeData));
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("users", _objectSpread({}, userData, {
+        store: storeSelected
+      }));
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, storeData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
-    value: storeData.address,
-    id: "address",
-    label: "Direcci\xF3n",
+    value: userData.name,
+    id: "name",
+    label: "Nombre de usuario",
+    placeholder: "Nombre",
+    error: errors.name
+  }), !editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    onChange: onChange,
+    value: userData.email,
+    id: "email",
+    label: "Correo Electr\xF3nico",
     placeholder: "email",
-    error: errors.address
+    error: errors.email
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
-    value: storeData.friendly_address,
-    id: "friendly_address",
-    label: "Direcci\xF3n amigable",
-    placeholder: "Direcci\xF3n amigable",
-    error: errors.friendly_address
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    onChange: onChange,
-    value: storeData.lat,
-    id: "lat",
-    label: "Latitud",
-    placeholder: "Latitud",
-    error: errors.lat
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    onChange: onChange,
-    value: storeData.lon,
-    id: "lon",
-    label: "Longitud",
-    placeholder: "Longitud",
-    error: errors.lon
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+    value: userData.password,
+    id: "password",
+    label: "Contrase\xF1a",
+    placeholder: "Contrase\xF1a",
+    type: "password",
+    error: errors.password
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "role",
+    className: "hover:border-grey-900 italic sm:block"
+  }, "Role"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    id: "role",
+    name: "role",
+    className: "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
+    onChange: onChange
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "god",
+    selected: userData.role !== 'god'
+  }, "Dios"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "admin",
+    selected: userData.role === 'admmin'
+  }, "Administrador/Matriz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "manager",
+    selected: userData.role === 'manager'
+  }, "Manager/Sucursal"))), errors.role && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm m-auto text-red-500 error role"
+  }, errors.role[0]), userData.role === 'manager' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, !editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Stores__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    setStore: setStoreSelected,
+    stores: stores
+  }), editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Stores__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    storeSelected: userData.stores[0],
+    setStore: setStoreSelected,
+    stores: stores
+  }), errors.store && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm m-auto text-red-500 error store"
+  }, errors.store[0])), userData.role !== 'manager' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "role",
+    className: "hover:border-grey-900 italic sm:block"
+  }, "Sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-base"
+  }, "Visualiza todas las sucursales"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    id: "role",
+    name: "role",
+    type: "hidden",
+    value: "1"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     className: "my-6"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
-    onClick: createStore
-  }, editing ? 'Editar sucursal' : 'Crear sucursal'));
+    onClick: createUser
+  }, editing ? 'Editar usuario' : 'Crear usuario'));
 }
 ;
 

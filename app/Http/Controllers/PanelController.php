@@ -32,7 +32,7 @@ class PanelController extends Controller
             if (request()->filled('id')) {
                 $id = request()->get('id');
                 $searchValues['id'] = $id;
-                $query->where('id', $id);
+                $query->where('uuid', 'LIKE', "%{$id}%");
             }
             if (request()->filled('store')) {
                 $store = request()->get('store');
@@ -92,6 +92,7 @@ class PanelController extends Controller
             $date = $order->pick_up;
             return [
                 'id' => $order->id,
+                'uuid' => $order->uuid,
                 'date' =>  [
                     'original' => $date,
                     'formatted' => $date->format('D d M, H:ia'),

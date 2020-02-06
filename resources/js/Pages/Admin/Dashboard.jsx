@@ -21,7 +21,7 @@ function Dashboard(props) {
         () => [
             {
                 Header: '-',
-                accessor: 'id',
+                accessor: 'uuid',
             },
             {
                 Header: 'Cliente',

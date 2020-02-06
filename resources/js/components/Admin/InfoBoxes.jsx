@@ -100,7 +100,7 @@ export default function InfoBoxes(props) {
                 <div
                     className="md:mx-6 md:my-3">
                     <div>
-                        Pedido No: <strong>{data.id}</strong>
+                        Pedido No: <strong>{data.uuid}</strong>
                     </div>
                     <div>
                         <i

@@ -6,7 +6,7 @@
 ## RESUMEN DE COMPRA:
 
 - Nombre: {{ $order->name }} {{ $order->lastname }}
-- No. Pedido: {{ $order->id }}
+- No. Pedido: {{ $order->uuid }}
 - Recoger en: {{ $store }}
 - Día: {{ $date }}
 - Hora: {{ $order->hour }} hrs.

@@ -34562,92 +34562,92 @@ var map = {
 		0,
 		1,
 		2,
+		6,
+		8,
 		5,
-		7,
-		4,
-		12
+		13
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
 		1,
 		2,
+		6,
+		8,
 		5,
-		7,
-		4,
-		12
+		13
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		2,
-		5,
 		6,
-		24,
-		4,
-		14
+		7,
+		10,
+		5,
+		15
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		2,
-		5,
 		6,
-		24,
-		4,
-		14
+		7,
+		10,
+		5,
+		15
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		2,
-		5,
 		6,
-		4,
-		17
+		7,
+		5,
+		16
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		2,
-		5,
 		6,
-		4,
-		17
+		7,
+		5,
+		16
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		2,
-		5,
 		6,
-		4,
-		18
+		7,
+		5,
+		17
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		2,
-		5,
 		6,
-		4,
-		18
+		7,
+		5,
+		17
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		1,
-		9,
-		15,
-		27
+		4,
+		3,
+		18
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		1,
-		9,
-		15,
-		27
+		4,
+		3,
+		18
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34661,113 +34661,113 @@ var map = {
 		"./resources/js/Pages/Home.js",
 		0,
 		1,
-		9,
-		24,
-		15,
-		28
+		4,
+		10,
+		3,
+		19
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
 		1,
-		9,
-		24,
-		15,
-		28
+		4,
+		10,
+		3,
+		19
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		1,
-		9,
-		15,
-		29
+		4,
+		3,
+		20
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		1,
-		9,
-		15,
-		29
+		4,
+		3,
+		20
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
 		2,
+		4,
+		8,
 		9,
-		7,
-		23,
-		15,
-		25
+		3,
+		12
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
 		2,
+		4,
+		8,
 		9,
-		7,
-		23,
-		15,
-		25
+		3,
+		12
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
 		1,
-		9,
+		4,
+		11,
 		3,
-		15,
-		30
+		22
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
 		1,
-		9,
+		4,
+		11,
 		3,
-		15,
-		30
+		22
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
 		2,
+		4,
 		9,
-		23,
-		15,
-		26
+		3,
+		14
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
 		2,
+		4,
 		9,
-		23,
-		15,
-		26
+		3,
+		14
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
 		2,
-		9,
-		15,
-		31
+		4,
+		3,
+		23
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
 		2,
-		9,
-		15,
-		31
+		4,
+		3,
+		23
 	]
 };
 function webpackAsyncContext(req) {

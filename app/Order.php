@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Jenssegers\Date\Date;
 
 class Order extends Model
@@ -18,7 +19,17 @@ class Order extends Model
       'total',
       'status',
       'employeeName',
+      'uuid',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($order) {
+            $order->uuid = (string) Str::uuid();
+        });
+    }
 
     protected $dates = [
         'date',
