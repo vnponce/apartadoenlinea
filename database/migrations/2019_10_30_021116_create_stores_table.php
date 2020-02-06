@@ -17,6 +17,7 @@ class CreateStoresTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('name');
+            $table->string('slug');
             $table->string('address');
             $table->string('friendly_address');
             $table->string('delivery_time');

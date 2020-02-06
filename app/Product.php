@@ -2,12 +2,15 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Product extends Model implements Buyable
 {
+    use Sluggable;
+
     protected $fillable = [
       'name',
       'description',
@@ -36,6 +39,20 @@ class Product extends Model implements Buyable
     {
         return $this->belongsToMany(Order::class)
             ->withPivot(['price', 'quantity', 'comment']);
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
     }
 
     public function setPriceAttribute($value)
