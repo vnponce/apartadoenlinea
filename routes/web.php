@@ -43,54 +43,57 @@ Route::get('compra', function() {
 });
 */
 // Inertia
-Route::get('inertia', function() {
-    return Inertia::render('Example', [
-        'foo' => 'bar',
-    ]);
-});
-Route::get('mySuccess', function() {
-    return Inertia::render('Success', [
-        'foo' => 'bar',
-    ]);
-});
-Route::get('/', 'ProductController@index');
-Route::get('/category/{category}', 'CategoryController@index');
+//Route::get('inertia', function() {
+//    return Inertia::render('Example', [
+//        'foo' => 'bar',
+//    ]);
+//});
+//Route::get('mySuccess', function() {
+//    return Inertia::render('Success', [
+//        'foo' => 'bar',
+//    ]);
+//});
 
-Route::get('pan/{product}', 'ProductController@show');
+Auth::routes(['register' => false]);
 
-Route::get('pedido', function() {
-    $stores = \App\Store::all();
-    return Inertia::render('Order', compact('stores'));
-});
-Route::post('pedido/detalles', 'OrderController@setDetails');
-Route::post('pedido', 'OrderController@store');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', 'ProductController@index');
+    Route::get('/category/{category}', 'CategoryController@index');
 
-Route::get('charola', 'CartController@index');
+    Route::get('pan/{product}', 'ProductController@show');
+
+    Route::get('pedido', function() {
+        return Inertia::render('Order');
+    });
+    Route::post('pedido/detalles', 'OrderController@setDetails');
+    Route::post('pedido', 'OrderController@store');
+
+    Route::get('charola', 'CartController@index');
 
 // Route::get('listo', 'OrderController@store');
 
 // Card
-Route::post('/cart', 'CartController@store');
-Route::get('/empty', 'CartController@empty');
-/*Route::delete('/cart', function(\Illuminate\Http\Request $request) {
-    dd($request->toArray());
-});*/
-Route::post('/cart/product/{product}/update/comment', 'CartController@updateComment');
-Route::delete('/cart/product/{id}', 'CartController@remove');
+    Route::post('/cart', 'CartController@store');
+    Route::get('/empty', 'CartController@empty');
+    /*Route::delete('/cart', function(\Illuminate\Http\Request $request) {
+        dd($request->toArray());
+    });*/
+    Route::post('/cart/product/{product}/update/comment', 'CartController@updateComment');
+    Route::delete('/cart/product/{id}', 'CartController@remove');
 // Route::post('/cart', 'CartController@remove');
 
-Route::get('product/search', 'ProductController@search');
+    Route::get('product/search', 'ProductController@search');
 
-Route::get('tyc', 'TyCController@tyc');
-Route::get('politicas', 'TyCController@tyc');
+    Route::get('tyc', 'TyCController@tyc');
+    Route::get('politicas', 'TyCController@tyc');
 // testing email view
-Route::get('email', function() {
-    return view('email.order-details-html');
+//Route::get('email', function() {
+//    return view('email.order-details-html');
+//});
 });
 
-Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 // Panel
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
