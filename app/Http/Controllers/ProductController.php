@@ -26,7 +26,7 @@ class ProductController extends Controller
             $products->where('favorite', true);
         }
 
-        $products = $products->paginate();
+        $products = $products->orderBy('name')->paginate();
         return Inertia::render('Home', compact('products', 'search'));
     }
 
@@ -135,10 +135,10 @@ class ProductController extends Controller
 //        dd($request->toArray(), $only->toArray());
         $product->update($request->only($only->toArray()));
 //        dd($product);
-        $products = Product::where('favorite', true)->where('available', true)->paginate();
+//        $products = Product::where('favorite', true)->where('available', true)->paginate();
 //         return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'Usuario actualizado correctamente!');
-         return redirect()->back()->with('success', 'Producto actualizado correctamente!');
-
+         // return redirect()->back()->with('success_message', 'Producto actualizado correctamente!');
+         return redirect()->back()->with('success_message', 'Producto actualizado correctamente!');
     }
 
     /**

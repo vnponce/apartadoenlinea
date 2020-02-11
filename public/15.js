@@ -12,10 +12,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
-/* harmony import */ var _components_Admin_StoresInfoBoxes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Admin/StoresInfoBoxes */ "./resources/js/components/Admin/StoresInfoBoxes.jsx");
+/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
+/* harmony import */ var _components_Admin_StoresInfoBoxes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Admin/StoresInfoBoxes */ "./resources/js/components/Admin/StoresInfoBoxes.jsx");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var sweetalert2_src_sweetalert2_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2/src/sweetalert2.scss */ "./node_modules/sweetalert2/src/sweetalert2.scss");
+/* harmony import */ var sweetalert2_src_sweetalert2_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_src_sweetalert2_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -26,6 +28,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
  // import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
+// import {Inertia} from "@inertiajs/inertia";
+
 
 
 
@@ -33,7 +37,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Stores(props) {
   var stores = props.stores,
-      success_message = props.success_message;
+      success_message = props.flash.success_message;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -75,6 +79,21 @@ function Stores(props) {
 
     }];
   }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (success_message) {
+      // setCreateUser(false);
+      // setDataSelected(false);
+      sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: success_message,
+        showConfirmButton: false,
+        timer: 1500
+      }).then(function () {
+        location.reload();
+      });
+    }
+  }, [success_message]);
 
   var openedAndShow = function openedAndShow(index) {
     var data = stores[index];
@@ -84,7 +103,7 @@ function Stores(props) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_StoresInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_StoresInfoBoxes__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: storeId,
     createStore: false,
     setCreateStore: function setCreateStore() {}
@@ -101,14 +120,7 @@ function Stores(props) {
     className: "border-b p-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black inline-block"
-  }, "Tiendas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
-    onClick: function onClick() {
-      return console.log('tienda');
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-store fa-fw"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "Tiendas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
     columns: columns,
     data: stores,
     onClick: function onClick(row) {
@@ -230,8 +242,7 @@ function CreateStore(props) {
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
       errors = _usePage.errors,
-      stores = _usePage.stores,
-      success_message = _usePage.success_message;
+      stores = _usePage.stores;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(stores.filter(function (store) {
     return store.id === id;
@@ -264,6 +275,18 @@ function CreateStore(props) {
     } else {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].post("stores", _objectSpread({}, storeData));
     }
+  };
+
+  var cancelStore = function cancelStore() {
+    var hostname = window.location.hostname;
+    var url = window.location.href;
+
+    var _url$split = url.split(hostname),
+        _url$split2 = _slicedToArray(_url$split, 2),
+        port = _url$split2[0],
+        path = _url$split2[1];
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(path);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, storeData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -299,7 +322,10 @@ function CreateStore(props) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: createStore
-  }, editing ? 'Editar sucursal' : 'Crear sucursal'));
+  }, editing ? 'Editar sucursal' : 'Crear sucursal'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
+    onClick: cancelStore
+  }, "Cancelar"));
 }
 ;
 

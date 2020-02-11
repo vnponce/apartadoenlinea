@@ -12,7 +12,7 @@ import Stores from "../../Select/Stores";
 
 export default function CreateStore(props) {
     const { id } = props;
-    const { errors, stores, success_message } = usePage();
+    const { errors, stores } = usePage();
     const [storeData, setStoreData] = useState(stores.filter(store => store.id === id)[0]);
     const [editing, setEditing] = useState(false);
     const onChange = e => {
@@ -39,6 +39,13 @@ export default function CreateStore(props) {
                 ...storeData,
             });
         }
+    };
+
+    const cancelStore = () => {
+        const hostname = window.location.hostname;
+        const url = window.location.href;
+        const [port, path] = url.split(hostname);
+        Inertia.visit(path)
     };
     return (
         <>
@@ -90,6 +97,11 @@ export default function CreateStore(props) {
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
                 onClick={createStore}>
                 {editing ? 'Editar sucursal' : 'Crear sucursal' }
+            </button>
+            <button
+                className="inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                onClick={cancelStore}>
+                Cancelar
             </button>
         </>
     )

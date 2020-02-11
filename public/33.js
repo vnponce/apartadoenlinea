@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[33],{
 
-/***/ "./resources/js/Pages/Admin/Users.jsx":
-/*!********************************************!*\
-  !*** ./resources/js/Pages/Admin/Users.jsx ***!
-  \********************************************/
+/***/ "./resources/js/Pages/Product.jsx":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Product.jsx ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,11 +11,10 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
-/* harmony import */ var _components_Admin_UsersInfoBoxes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Admin/UsersInfoBoxes */ "./resources/js/components/Admin/UsersInfoBoxes.jsx");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_pose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-pose */ "./node_modules/react-pose/dist/react-pose.es.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -28,219 +27,216 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var Box = react_pose__WEBPACK_IMPORTED_MODULE_3__["default"].div({
+  visible: {
+    opacity: 1,
+    transform: 'scale(1)'
+  },
+  hidden: {
+    opacity: 0,
+    transform: 'scale(0.5)'
+  }
+});
 
+function Product(props) {
+  var product = props.product;
+  console.log(product);
 
-function Users(props) {
-  var users = props.users,
-      success_message = props.success_message;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('visible'),
       _useState2 = _slicedToArray(_useState, 2),
-      dataSelected = _useState2[0],
-      setDataSelected = _useState2[1];
+      animate = _useState2[0],
+      setAnimate = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      createUser = _useState4[0],
-      setCreateUser = _useState4[1];
+      disabled = _useState4[0],
+      setDisabled = _useState4[1];
 
-  var updateStatus = function updateStatus(id) {
-    return function (evt) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("/users/".concat(id), {
-        status: evt.target.value
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(product.id),
+      _useState6 = _slicedToArray(_useState5, 1),
+      productId = _useState6[0];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      comment = _useState8[0],
+      setComment = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState10 = _slicedToArray(_useState9, 2),
+      quantity = _useState10[0],
+      setQuantity = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      error = _useState12[0],
+      setError = _useState12[1];
+
+  var addToCart = function addToCart(event) {
+    // event.preventDefault();
+    addToCardAnimation();
+    setAnimate('hidden');
+    setDisabled(true); // made animation
+    // setTimeout(() => Inertia.visit('/'), 2000);
+
+    setTimeout(function () {
+      setAnimate('visible');
+      setDisabled(false);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post('/cart', {
+        product_id: productId,
+        comment: comment,
+        quantity: quantity
       });
-    };
+    }, 2000);
   };
 
-  var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    return [{
-      Header: 'Nombre',
-      accessor: 'name'
-    }, {
-      Header: 'email',
-      accessor: 'email'
-    }, {
-      Header: 'role',
-      accessor: 'role'
-    },
-    /*
-    {
-        Header: 'password',
-        accessor: 'password',
-        Cell: data => (
-            <span className="">Change Password</span>
-        ),
-    },
-    */
-    {
-      Header: 'Tienda',
-      accessor: 'stores',
-      Cell: function Cell(data) {
-        var user = data.row.original;
+  var addToCardAnimation = function addToCardAnimation(cb) {
+    var cart = $('#charola');
+    var imgtodrag = $('#main-image');
 
-        if (user.isAdmin) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-            className: ""
-          }, "Todas");
-        }
-
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, user.stores[0].name);
-      }
-    }];
-  }, []);
-
-  var openedAndShow = function openedAndShow(index) {
-    var data = users[index];
-    setCreateUser(false);
-    setDataSelected(data);
-  };
-
-  var showCreateUser = function showCreateUser() {
-    setCreateUser(true);
-    setDataSelected(false);
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (success_message) {
-      setCreateUser(false);
+    if (imgtodrag) {
+      var imgclone = imgtodrag.clone().offset({
+        top: imgtodrag.offset().top,
+        left: imgtodrag.offset().left
+      }).css({
+        opacity: '0.7',
+        position: 'absolute',
+        height: 'initial',
+        // height: '150px',
+        // width: '150px',
+        width: 'initial',
+        'z-index': '100'
+      }).appendTo($('body')).animate({
+        top: cart.offset().top + 10,
+        left: cart.offset().left + 15,
+        width: 75,
+        height: 75
+      }, 1000, // 1000000,
+      'easeInOutExpo');
+      setTimeout(function () {
+        cart.effect('bounce', {
+          times: 2
+        }, 600);
+      }, 1500);
+      imgclone.animate({
+        width: 0,
+        height: 0
+      }, function () {
+        $(this).detach();
+        /*
+        cb().then(() => {
+            Router.back();
+        });
+        */
+      });
     }
-  }, [success_message]);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_UsersInfoBoxes__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    data: dataSelected,
-    createUser: createUser,
-    setCreateUser: setCreateUser
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "main-content",
-    className: "w-full flex-1"
+  };
+
+  var validateLength = function validateLength(e) {
+    var value = e.target.value;
+    console.log('value.length =>', value.length);
+
+    if (value.length < 120) {
+      setComment(e.target.value);
+      setError('');
+      setDisabled(false);
+    } else {
+      console.log('mayor a 120');
+      setDisabled(true);
+      setError('Máximo 120 caracteres');
+    }
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    title: product.name
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 flex-wrap"
+    className: "flex flex-col mt-12 sm:mt-16 sm:flex-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full py-6 xl:max-w-6xl"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "max-w-full lg:max-w-3xl xl:max-w-5xl"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "border-b p-3"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "font-bold text-black inline-block"
-  }, "Usuarios"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
-    onClick: showCreateUser
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-user-plus fa-fw"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    columns: columns,
-    data: users,
-    onClick: function onClick(row) {
-      return openedAndShow(row.index);
+    className: "flex flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    onClick: function onClick() {
+      return window.history.back();
     },
-    selected: dataSelected
-  })))))));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Users);
-
-/***/ }),
-
-/***/ "./resources/js/components/Admin/UsersInfoBoxes.jsx":
-/*!**********************************************************!*\
-  !*** ./resources/js/components/Admin/UsersInfoBoxes.jsx ***!
-  \**********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return InfoBoxes; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Input */ "./resources/js/components/Input.jsx");
-/* harmony import */ var _UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UsersInfoBoxes/CreateUser */ "./resources/js/components/Admin/UsersInfoBoxes/CreateUser.jsx");
-
-
-
-function InfoBoxes(props) {
-  var data = props.data,
-      _props$editUser = props.editUser,
-      editUser = _props$editUser === void 0 ? false : _props$editUser,
-      _props$createUser = props.createUser,
-      createUser = _props$createUser === void 0 ? false : _props$createUser,
-      setCreateUser = props.setCreateUser;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "dash-content",
-    className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
-  }, (data || createUser) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-1/2 lg:w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "m-2 md:mx-6 md:my-6"
-  }, createUser && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__["default"], null), data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UsersInfoBoxes_CreateUser__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    data: data
-  }), data && false && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex justify-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    alt: data.name,
-    className: "w-24 h-24 rounded-full mr-4",
-    src: data.avatar_path
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 flex-col"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-lg my-6"
-  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-user-shield fa-fw text-brand-icons text-lg"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "inline"
-  }, " ", data.role)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-at fa-fw text-brand-icons text-lg"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "inline"
-  }, " ", data.email)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-store fa-fw text-brand-icons text-lg"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "inline"
-  }, data.isAdmin ? 'Todas' : data.stores[0].name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Cambiar Contrase\xF1a"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Editar"))))), !(data || createUser) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-1/2 lg:w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-col items-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-shrink pr-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rounded-full p-3 bg-gray-400"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"
+    className: "w-8 h-8 mb-4 ml-4 text-lg sm:w-16 cursor-pointer",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    x1: "19",
+    y1: "12",
+    x2: "5",
+    y2: "12"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polyline", {
+    points: "12 19 5 12 12 5"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-1 mt-3"
-  }, "No hay ningun usuario seleccionado para editar la informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    onClick: setCreateUser,
-    className: "flex-1 mt-3 text-brand-orange cursor-pointer"
-  }, "Haz click para crear usuario.")))));
+    className: "flex flex-col pb-16 md:flex-row md:w-11/12 md:m-0 md:mb-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Box, {
+    pose: animate,
+    className: "bg-brand-gray sm:w-2/3 sm:m-auto md:m-0 md:4/6 md:flex-1 md:h-64 lg:h-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full",
+    src: product.image_path,
+    alt: product.name,
+    id: "main-image"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col m-5 md:flex-1 lg:ml-24 lg:mt-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 sm:text-center text-gray-700 font-medium uppercase lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "first-letter-bigger text-center lg:text-justify"
+  }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-2 text-lg"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.formatPrice), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-xs align-top"
+  }, "p/p"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-4 flex-1 text-gray-600 font-light sm:text-center lg:text-justify"
+  }, product.description), product.ingredients && product.allow_ingredients && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-4 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "uppercase font-medium text-sm first-letter-bigger text-orange-600"
+  }, "ingredientes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "font-light text-gray-600 font-light"
+  }, product.ingredients.split(',').map(function (ingredient) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "- ", ingredient);
+  }))), product.allow_instructions && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "hover:border-grey-900 italic"
+  }, "Si no deseas alg\xFAn ingrediente, especif\xEDcalo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: comment,
+    type: "text",
+    placeholder: "Ej. sin picante",
+    onChange: validateLength,
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"
+  }), error && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm text-red-500 error hour"
+  }, error)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "hover:border-grey-900 italic"
+  }, "Cantidad:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    name: "quantity",
+    type: "number",
+    min: "1",
+    placeholder: "Cantidad",
+    value: quantity,
+    onChange: function onChange(e) {
+      return setQuantity(e.target.value);
+    },
+    className: "border border-transparent rounded w-1/2 mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: addToCart,
+    className: "w-full bg-orange-500 hover:bg-brand-orange focus:outline-none focus:shadow-outline text-white font-bold py-2 px-4 rounded sm:w-1/3 sm:m-auto lg:m-0 md:w-1/2",
+    disabled: disabled
+  }, "Poner en la charola"))))));
 }
-;
 
-/***/ }),
-
-/***/ "./resources/js/components/Admin/UsersInfoBoxes/CreateUser.jsx":
-/*!*********************************************************************!*\
-  !*** ./resources/js/components/Admin/UsersInfoBoxes/CreateUser.jsx ***!
-  \*********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/vnponce/Projects/laespecial/resources/js/components/Admin/UsersInfoBoxes/CreateUser.jsx: Unexpected token, expected \",\" (18:34)\n\n\u001b[0m \u001b[90m 16 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mCreateUser\u001b[39m(props) {\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m    \u001b[36mconst\u001b[39m { data } \u001b[33m=\u001b[39m props\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 | \u001b[39m    \u001b[36mconst\u001b[39m { errors\u001b[33m,\u001b[39m stores\u001b[33m,\u001b[39m flash { success_message } } \u001b[33m=\u001b[39m usePage()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m    \u001b[36mconst\u001b[39m [userData\u001b[33m,\u001b[39m setUserData] \u001b[33m=\u001b[39m useState({\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m        \u001b[90m// store: 1,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m        role\u001b[33m:\u001b[39m \u001b[32m'god'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n    at Object.raise (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.unexpected (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:7642:16)\n    at Object.expect (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:7628:28)\n    at Object.parseObj (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9150:14)\n    at Object.parseBindingAtom (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:7928:21)\n    at Object.parseVarId (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10501:20)\n    at Object.parseVar (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10477:12)\n    at Object.parseVarStatement (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10299:10)\n    at Object.parseStatementContent (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9896:21)\n    at Object.parseStatement (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Object.parseBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Object.parseBlock (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10376:10)\n    at Object.parseFunctionBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9424:24)\n    at Object.parseFunctionBodyAndFinish (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9394:10)\n    at /Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10535:12\n    at Object.withTopicForbiddingContext (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9702:14)\n    at Object.parseFunction (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10534:10)\n    at Object.parseExportDefaultExpression (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10997:19)\n    at Object.parseExport (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10905:31)\n    at Object.parseStatementContent (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9933:27)\n    at Object.parseStatement (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Object.parseBlockBody (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Object.parseTopLevel (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:9758:10)\n    at Object.parse (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:11270:17)\n    at parse (/Users/vnponce/Projects/laespecial/node_modules/@babel/parser/lib/index.js:11306:38)\n    at parser (/Users/vnponce/Projects/laespecial/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/Users/vnponce/Projects/laespecial/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/Users/vnponce/Projects/laespecial/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/vnponce/Projects/laespecial/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at /Users/vnponce/Projects/laespecial/node_modules/@babel/core/lib/transform.js:34:34\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
+/* harmony default export */ __webpack_exports__["default"] = (Product);
 
 /***/ })
 

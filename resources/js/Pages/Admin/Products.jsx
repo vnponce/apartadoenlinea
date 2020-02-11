@@ -4,13 +4,29 @@ import {Inertia} from "@inertiajs/inertia";
 import Table from "../../components/Table";
 import ProductsInfoBoxes from "../../components/Admin/ProductsInfoBoxes";
 import {Pagination} from "react-laravel-paginex";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 
 
 function Products(props) {
-    const { products } = props;
+    const { products, flash: { success_message } } = props;
     const [dataSelected, setDataSelected] = useState(null);
     const [createProduct, setCreateProduct] = useState(null);
     const [editing, setEditing] = useState(false);
+
+    useEffect(() => {
+        if(success_message) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: success_message,
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                location.reload();
+            })
+        }
+    }, [success_message]);
 
     const showCreateProduct = () => {
         setCreateProduct(true);
@@ -58,11 +74,8 @@ function Products(props) {
     );
 
     const openedAndShow = index => {
-        console.log('openedAndShow editing =>', editing);
-        console.log('openedAndShow createProduct =>', createProduct);
-        console.log('openedAndShow dataSelected =>', dataSelected);
         const data = products.data[index];
-        console.log('openedAndShow data =>', data);
+        setEditing(false);
         setDataSelected(data);
     };
 

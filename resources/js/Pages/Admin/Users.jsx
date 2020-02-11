@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Admin from "../../Shared/Admin";
 import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 import {Inertia} from "@inertiajs/inertia";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import 'sweetalert2/src/sweetalert2.scss';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Table from "../../components/Table";
 
 
@@ -70,7 +70,15 @@ function Users(props) {
         if(success_message) {
             setCreateUser(false);
             setDataSelected(false);
-            toast(success_message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: success_message,
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                location.reload();
+            });
         }
     }, [success_message]);
 

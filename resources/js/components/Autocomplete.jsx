@@ -93,6 +93,8 @@ export default function Autocomplete() {
             onChange={handleChange}
             onCreateOption={onCreateOption}
             autoFocus
+            createOptionPosition="first"
+            formatCreateLabel={userInput => `Buscar por ${userInput}`}
             // components={{ DropdownIndicator, IndicatorSeparator: null }}
         />
     )
