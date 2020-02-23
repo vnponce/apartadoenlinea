@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!-- Filepond to upload files -->
+<link rel='stylesheet' href='https://unpkg.com/filepond@4.11.0/dist/filepond.min.css' />
+<link rel='stylesheet' href='https://unpkg.com/filepond-plugin-image-preview@4.6.1/dist/filepond-plugin-image-preview.css' />
+<!-- Sweet Alert 2 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css" integrity="sha256-2bAj1LMT7CXUYUwuEnqqooPb1W0Sw0uKMsqNH0HwMa4=" crossorigin="anonymous" />
+<!-- React dates picker Airbnb -->
+<link rel='stylesheet' href='https://unpkg.com/react-dates@21.8.0/lib/css/_datepicker.css' />
 <!--
 <script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>
 <link rel='stylesheet' href='https://unpkg.com/nprogress@0.2.0/nprogress.css'/>

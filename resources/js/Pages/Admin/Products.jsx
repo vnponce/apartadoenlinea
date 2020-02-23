@@ -5,7 +5,7 @@ import Table from "../../components/Table";
 import ProductsInfoBoxes from "../../components/Admin/ProductsInfoBoxes";
 import {Pagination} from "react-laravel-paginex";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'
+// import 'sweetalert2/src/sweetalert2.scss'
 
 
 function Products(props) {

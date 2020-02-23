@@ -3,7 +3,7 @@ import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 import Autocomplete from "./Autocomplete";
 import {Inertia} from "@inertiajs/inertia";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'
+// import 'sweetalert2/src/sweetalert2.scss'
 
 
 export default function Header() {

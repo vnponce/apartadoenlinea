@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'react-dates/initialize'
-import 'react-dates/lib/css/_datepicker.css';
+// import 'react-dates/lib/css/_datepicker.css';
 import { SingleDatePicker, isInclusivelyAfterDay } from 'react-dates';
 import styled from "styled-components";
 import moment from 'moment';

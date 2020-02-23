@@ -3,10 +3,10 @@ import Input from "../../Input";
 import {usePage} from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
 import { FilePond, registerPlugin } from 'react-filepond';
-import 'filepond/dist/filepond.min.css';
+// import 'filepond/dist/filepond.min.css';
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
-import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+// import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import Stores from "../../Select/Stores";
 
 

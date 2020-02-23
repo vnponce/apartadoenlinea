@@ -5,8 +5,6 @@ import moment from "moment";
 import styled from "styled-components";
 import SideBar from '../components/Admin/SiteBar';
 import UserMenu from "../components/Admin/UserMenu";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 const Wrapper = styled.div`
@@ -97,7 +95,6 @@ export default function Layout({ title, children }) {
     }
     return (
         <Wrapper>
-            <ToastContainer />
             {/* Custom styles for this template*/}
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
                   integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossOrigin="anonymous"/>

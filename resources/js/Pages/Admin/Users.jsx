@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Admin from "../../Shared/Admin";
 import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 import {Inertia} from "@inertiajs/inertia";
-import 'sweetalert2/src/sweetalert2.scss';
+// import 'sweetalert2/src/sweetalert2.scss';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Table from "../../components/Table";
 
