@@ -74,7 +74,7 @@ function Stores(props) {
     const openedAndShow = index => {
         const data = stores[index];
         setStoreId(data.id);
-        setStoreId(data.id);
+        // setStoreId(data.id);
     };
 
     return (
@@ -93,12 +93,12 @@ function Stores(props) {
                             {/*Table orders*/}
                             <div className="border-b p-3">
                                 <h5 className="font-bold text-black inline-block">Tiendas</h5>
-                                <button
-                                    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
-                                    onClick={() => console.log('tienda')}>
-                                    <i
-                                        className="inline fa fa-store fa-fw"/>
-                                </button>
+                                {/*<button*/}
+                                {/*    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"*/}
+                                {/*    onClick={() => console.log('tienda')}>*/}
+                                {/*    <i*/}
+                                {/*        className="inline fa fa-store fa-fw"/>*/}
+                                {/*</button>*/}
                                 <Table columns={columns} data={stores} onClick={row => openedAndShow(row.index)} selected={false}/>
                             </div>
                             {/*/Table orders*/}

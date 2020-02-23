@@ -26,7 +26,7 @@ export default function InfoBoxes(props) {
                                 className="fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"/></div>
                         </div>
                         <div className="flex-1 mt-3">
-                            No hay sucursal seleccionada para editar la información.
+                            No hay sucursal seleccionada para ver su información.
                         </div>
                     </div>
                 </div>

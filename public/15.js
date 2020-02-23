@@ -94,8 +94,7 @@ function Stores(props) {
 
   var openedAndShow = function openedAndShow(index) {
     var data = stores[index];
-    setStoreId(data.id);
-    setStoreId(data.id);
+    setStoreId(data.id); // setStoreId(data.id);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -117,14 +116,7 @@ function Stores(props) {
     className: "border-b p-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black inline-block"
-  }, "Tiendas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
-    onClick: function onClick() {
-      return console.log('tienda');
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-store fa-fw"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Tiendas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
     columns: columns,
     data: stores,
     onClick: function onClick(row) {
@@ -183,7 +175,7 @@ function InfoBoxes(props) {
     className: "fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-3"
-  }, "No hay sucursal seleccionada para editar la informaci\xF3n.")))));
+  }, "No hay sucursal seleccionada para ver su informaci\xF3n.")))));
 }
 ;
 
