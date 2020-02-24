@@ -76,17 +76,19 @@ export default function ProductListElement(props) {
                 </div>
                 <div className="flex flex-1 items-center flex-row-reverse">${ product.price.toFixed(2) }</div>
             </div>
-            <div onClick={() => setShowInput(true)} className="text-sm italic text-brand-orange">
-                {showInput && isEditable ?
-                    /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
-                    <input name="comment" type="text" placeholder="Ej. sin chile"
-                        value={comment}
-                        onBlur={updateComment}
-                        onChange={e => setComment(e.target.value)}
-                        className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
-                 : comment || ( isEditable ? 'Agregar breve comentario' : '')
-                }
-            </div>
+            {product.options.allow_instructions && (
+                <div onClick={() => setShowInput(true)} className="text-sm italic text-brand-orange">
+                    {showInput && isEditable ?
+                        /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
+                        <input name="comment" type="text" placeholder="Ej. sin chile"
+                               value={comment}
+                               onBlur={updateComment}
+                               onChange={e => setComment(e.target.value)}
+                               className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
+                        : comment || ( isEditable ? 'Agregar breve comentario' : '')
+                    }
+                </div>
+            )}
         </div>
     );
 };

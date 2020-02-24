@@ -13,10 +13,11 @@ class CartController extends Controller
     {
         $cart = Cart::content();
         // dd($cart);
-        $sorted = $cart->sortBy(function ($product, $key) {
-            //dd($product, $key);
-           return $product->name;
-        });
+//        $sorted = $cart->sortBy(function ($product, $key) {
+//            //dd($product, $key);
+//           return $product->name;
+//        });
+        $sorted = $cart->sortBy('name');
 //         dd($sorted);
         return Inertia::render('Checkout', compact('sorted'));
     }
@@ -25,9 +26,9 @@ class CartController extends Controller
     {
         $product = Product::find($request->product_id);
         // dd($product->toArray(), $request->toArray());
-        $current = Cart::add($product, $request->quantity, ['comment' => $request->comment])->associate(Product::class);
+        $current = Cart::add($product, $request->quantity, ['comment' => $request->comment, 'allow_instructions' => $product->allow_instructions])->associate(Product::class);
         // dd($current->rowId);
-        if($current->qty === 0) {
+        if($current->qty <= 0) {
             Cart::remove($current->rowId);
         }
         if($request->redirect === 'product' ) {
@@ -49,8 +50,10 @@ class CartController extends Controller
             return $item->rowId !== $request->remove_rowId;
         });
         Cart::remove($request->remove_rowId);
-        Cart::add($product, $request->quantity, ['comment' => $request->comment])->associate(Product::class);
-        $notUpdatedItems->map(function($item){
+        Cart::add($product, $request->quantity,
+            ['comment' => $request->comment, 'allow_instructions' => $product->allow_instructions])
+            ->associate(Product::class);
+        $notUpdatedItems->map(function($item) {
             Cart::remove($item->rowId);
             // si es el que tiene los datos debemos poner los datos completos de nuevo
             if($item->id === 'orderDetailsId') {
@@ -65,7 +68,9 @@ class CartController extends Controller
                     'employeeName' => $item->options->employeeName,
                 ]);
             } else {
-                Cart::add($item->id, $item->name, $item->qty, $item->price, ['comment' => $item->options->comment])->associate(Product::class);
+                Cart::add($item->id, $item->name, $item->qty, $item->price,
+                    ['comment' => $item->options->comment, 'allow_instructions' => $item->options->allow_instructions])
+                    ->associate(Product::class);
             }
         });
         $cart = Cart::content();
