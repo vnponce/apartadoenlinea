@@ -149,4 +149,40 @@ class OrderTest extends TestCase
             });
         // dd($response);
     }
+
+    /** @test */
+    function it_can_update_the_status()
+    {
+        $user = factory(User::class)->create();
+        factory(Order::class)->create()->each(function ($currentOrder) {
+            $currentOrder->products()->save(factory(Product::class)->make());
+        });
+
+        $order = Order::first();
+        $this->assertEquals('created', $order->status);
+
+        $response = $this->actingAs($user)->put("/admin/orders/{$order->id}", [
+            'status' => 'opened'
+        ]);
+        $response->assertStatus(302);
+        $this->assertDatabaseHas('orders', [
+            'status' => 'opened',
+        ]);
+    }
+
+    /** @test */
+    function it_can_be_canceled()
+    {
+        factory(Order::class)->create()->each(function ($currentOrder) {
+            $currentOrder->products()->save(factory(Product::class)->make());
+        });
+
+        $order = Order::first();
+        $this->put("admin/pedido/{$order->id}", [
+            'cancel' => true
+        ]);
+        $this->assertDatabaseHas('orders', [
+            'cancel' => true,
+        ]);
+    }
 }
