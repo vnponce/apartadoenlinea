@@ -3,6 +3,7 @@
 namespace Tests\Features;
 
 use App\Category;
+use App\Mail\OrderDetails;
 use App\Order;
 use App\Product;
 use App\Store;
@@ -23,10 +24,13 @@ class OrderTest extends TestCase
     function it_send_email_to_user_with_data()
     {
         // before test clear cart
+        $this->withoutExceptionHandling();
         Cart::destroy();
         Mail::fake();
-        $product = Product::first();
-        $store = Store::first();
+        $user = factory(User::class)->create();
+        $this->actingAs($user);
+        $product = factory(Product::class)->create();
+        $store = factory(Store::class)->create();
 
         // Create Cart
         Cart::add($product, 1, ['comment' => 'test'])->associate(Product::class);
@@ -38,14 +42,22 @@ class OrderTest extends TestCase
             'lastname' => 'Ponce',
             'phone' => '2299017147',
             'email' => 'vnpoce8@gmail.com',
+            'employeeName' => 'employeeNameName',
         ]);
+        // Assert that no mailables were sent...
+        Mail::assertNothingSent();
         $response = $this->post("pedido");
-
         $response->assertStatus(200);
+        $order = Order::first();
 
-        Mail::assertSentTo('vnponce8@gmail.com', );
+        Mail::assertSent(OrderDetails::class, function ($mail) use ($order) {
+            return $mail->order->id === $order->id;
+        });
 
-        dd(Cart::content());
+        // Assert a message was sent to the given users...
+        Mail::assertSent(OrderDetails::class, function ($mail) use ($user) {
+            return $mail->hasTo($mail->order->email);
+        });
     }
     /** @test */
     function it_show_orders()
