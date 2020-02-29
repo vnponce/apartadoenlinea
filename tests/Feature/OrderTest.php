@@ -50,40 +50,11 @@ class OrderTest extends TestCase
     /** @test */
     function it_show_orders()
     {
-        Cart::destroy();
-        $category = factory(Category::class)->create([
-            'name' => 'Pan de Dulce',
-        ]);
-        $product = factory(Product::class)->create([
-            "name" => "Hojaldra de jamón y queso",
-            "description" => "1 pieza",
-            "ingredients" => "jamón",
-            "image" => "public/products/plZXSjboICXf9sUaR888t4kK8ln7dWwZmYOXr9N8.jpeg",
-            "price" => 70000,
-            "available" => 1,
-            "available_time" => null,
-            "favorite" => 1,
-            "category_id" => $category->id,
-        ]);
-        $user = User::create([
-            'name' => 'Super Sayayin Dios',
-            'email' => 'god@panaderialaespecial.mx',
-            'role' => 'god',
-            'password' => bcrypt('secret'),
-            'avatar' => 'https://areajugones.sport.es/wp-content/uploads/2015/10/super_saiyan_god_super_saiyan__ssgss__goku_by_mikkkiwarrior3-d8wv7hx.jpg'
-        ]);
+        $product = factory(Product::class)->create();
+        $user = factory(User::class)->create();
         $this->actingAs($user);
         // before test clear cartç
-        $store = factory(Store::class)->create([
-            "name" =>"Bernal",
-            "address" =>"Bernal Díaz del Castillo #630 entre Martí e Isabel la Católica, Reforma, 91919 Veracruz, Ver.",
-            "friendly_address" =>"Bernal Díaz del Castillo entre Isabel La Católica y Martí, Fracc. Reforma",
-            "delivery_time" =>"7:00 a 21:00",
-            "lat" =>"19.1689372",
-            "lon" =>"-96.1237504",
-            "monday_saturday" =>"Lunes a sábado",
-            "sunday" =>"Cierra",
-        ]);
+        $store = factory(Store::class)->create();
 //        $date = Carbon::now();
         $date = new Date();  // Para tener la fecha en español
         $order = Order::create([
