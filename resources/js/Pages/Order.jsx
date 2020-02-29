@@ -51,13 +51,6 @@ function Order() {
     };
 
     const onSubmit = () => {
-        console.log('store =>', store);
-        console.log('date =>', date);
-        console.log('hour =>', hour);
-        console.log('customer =>', customer);
-        console.log('invoice =>', invoice);
-        console.log('wantInvoice =>', wantInvoice);
-
         Inertia.post('/pedido/detalles', {
             store,
             date,

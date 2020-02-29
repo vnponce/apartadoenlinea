@@ -17,16 +17,17 @@ class PanelController extends Controller
 //        dd(request()->toArray());
         Date::setLocale('es');
 //        $orderAll = Order::all();
-        $now = Carbon::today('America/Mexico_City');
-        $orderAll = Order::whereDate('date', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
+        $now = Carbon::today();
+        $orderAll = Order::whereDate('date', '>=', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
         // dd($orderAll->toArray());
         $searchValues = collect([
             'id' => '',
             'store' => '',
-            'date' => $now,
+            // 'date' => $now,
+            'date' => '',
             'status' => $this->getStatusObject(),
         ]);
-        if(request('id') || request('store') || request('date')) {
+        if(request('id') || request('store') || request('date') || request('status')) {
             $query = app(Order::class)->newQuery();
 //             dd((new Carbon(request('date')))->format('d M y H:m'));
             if (request()->filled('id')) {
@@ -47,6 +48,7 @@ class PanelController extends Controller
                 $query->whereDate('date', $date);
             } else {
                 $searchValues['date'] = '';
+                $query->whereDate('date', '>=', Carbon::today());
             }
             if(request()->filled('status')) {
                 $this->getStatusFromRequest(request('status'), $query);
@@ -81,7 +83,10 @@ class PanelController extends Controller
                 $searchValues['date'] = $date;
                 $orderAll = $orderAll->whereDate('date', $date);
             } else {
-                $searchValues['date'] = request()->filled('id') ? '' : $now;
+                // @todo: test this I dont remember why I set now always
+                // $searchValues['date'] = request()->filled('id') ? '' : $now;
+                $searchValues['date'] = '';
+                $query->whereDate('date', '>=', Carbon::today());
             }//             dd($orderAll);
             if(request()->filled('status')) {
                 $this->getStatusFromRequest(request('status'), $orderAll);
@@ -96,6 +101,8 @@ class PanelController extends Controller
                 'date' =>  [
                     'original' => $date,
                     'formatted' => $date->format('D d M, H:ia'),
+                    'forToday' => $date->isToday(),
+                    'forTomorrow' => $date->isTomorrow(),
                 ],
                 'customer' => [
                     'name' => $order->full_name,

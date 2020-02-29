@@ -669,6 +669,14 @@ function Table(_ref) {
       'bg-gray-200': i % 2
     }, {
       'text-brand-orange': selected && row.original.id === selected.id
+    }, {
+      'text-red-500': row.original.date.forToday
+    }, {
+      'bg-red-100': row.original.date.forToday
+    }, {
+      'text-yellow-500': row.original.date.forTomorrow
+    }, {
+      'bg-yellow-100': row.original.date.forTomorrow
     });
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tr", _extends({
       id: row.original.id,
