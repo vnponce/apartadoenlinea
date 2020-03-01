@@ -21,5 +21,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'total' => 2000,
         // @todo: hacer status
         'status' => 'created',
+        'state' => 'active',
     ];
 });

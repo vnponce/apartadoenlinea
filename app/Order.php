@@ -9,17 +9,19 @@ use Jenssegers\Date\Date;
 class Order extends Model
 {
     protected $fillable = [
-      'name',
-      'lastname',
-      'email',
-      'phone',
-      'date',
-      'hour',
-      'store_id',
-      'total',
-      'status',
-      'employeeName',
-      'uuid',
+        'name',
+        'lastname',
+        'email',
+        'phone',
+        'date',
+        'hour',
+        'store_id',
+        'total',
+        'status',
+        'employeeName',
+        'uuid',
+        'state',
+        'payed',
     ];
 
     protected static function boot()

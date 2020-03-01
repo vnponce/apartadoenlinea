@@ -171,18 +171,36 @@ class OrderTest extends TestCase
     }
 
     /** @test */
-    function it_can_be_canceled()
+    function it_can_change_to_canceled_state()
     {
+        $this->withoutExceptionHandling();
         factory(Order::class)->create()->each(function ($currentOrder) {
             $currentOrder->products()->save(factory(Product::class)->make());
         });
 
         $order = Order::first();
-        $this->put("admin/pedido/{$order->id}", [
-            'cancel' => true
+        $this->actingAs(factory(User::class)->create())->put("/admin/orders/{$order->id}", [
+            'state' => 'canceled'
         ]);
         $this->assertDatabaseHas('orders', [
-            'cancel' => true,
+            'state' => 'canceled',
+        ]);
+    }
+
+    /** @test */
+    function it_can_change_to_payed_true()
+    {
+        $this->withoutExceptionHandling();
+        factory(Order::class)->create()->each(function ($currentOrder) {
+            $currentOrder->products()->save(factory(Product::class)->make());
+        });
+
+        $order = Order::first();
+        $this->actingAs(factory(User::class)->create())->put("/admin/orders/{$order->id}", [
+            'payed' => true,
+        ]);
+        $this->assertDatabaseHas('orders', [
+            'payed' => true,
         ]);
     }
 }
