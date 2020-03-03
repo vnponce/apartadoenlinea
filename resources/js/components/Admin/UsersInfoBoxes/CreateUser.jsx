@@ -59,6 +59,12 @@ export default function CreateUser(props) {
             });
         }
     };
+    const cancel = () => {
+        const hostname = window.location.hostname;
+        const url = window.location.href;
+        const [port, path] = url.split(hostname);
+        Inertia.visit(path)
+    };
     return (
         <>
             {/*
@@ -72,20 +78,20 @@ export default function CreateUser(props) {
                 onChange={onChange}
                 value={userData.name}
                 id="name"
-                label="Nombre de usuario"
+                label="Nombre"
                 placeholder="Nombre"
                 error={errors.name}
             />
-            {!editing &&
+            {/*{!editing &&*/}
             <Input
                 onChange={onChange}
-                value={userData.email}
-                id="email"
-                label="Correo Electrónico"
-                placeholder="email"
-                error={errors.email}
+                value={userData.username}
+                id="username"
+                label="Usuario"
+                placeholder="Bernal"
+                error={errors.username}
             />
-            }
+            {/*}*/}
             <Input
                 onChange={onChange}
                 value={userData.password}
@@ -136,6 +142,11 @@ export default function CreateUser(props) {
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
                 onClick={createUser}>
                 {editing ? 'Editar usuario' : 'Crear usuario' }
+            </button>
+            <button
+                className="inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                onClick={cancel}>
+                Cancelar
             </button>
         </>
     )

@@ -24,8 +24,8 @@ function Users(props) {
                 accessor: 'name',
             },
             {
-                Header: 'email',
-                accessor: 'email',
+                Header: 'username',
+                accessor: 'username',
             },
             {
                 Header: 'role',
@@ -67,7 +67,9 @@ function Users(props) {
     };
 
     useEffect(() => {
+        console.log('befor if success =>', success_message);
         if(success_message) {
+            console.log('success =>', success_message);
             setCreateUser(false);
             setDataSelected(false);
             Swal.fire({

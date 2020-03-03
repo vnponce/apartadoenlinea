@@ -45,7 +45,7 @@ function Login(props) {
                 evt.key === 'Tab'
             ) {
                 evt.preventDefault();
-                if (target.id === 'email') {
+                if (target.id === 'username') {
                     triggerEvtInput(target, mock.username);
                     document.querySelector('#password').focus();
                 } else {
@@ -88,11 +88,11 @@ function Login(props) {
                 <div className="bg-white shadow px-8 py-12">
                     <form id="login-form">
                         <Input
-                            value={data.email}
-                            label="Email"
-                            id="email"
-                            type="email"
-                            placeholder="billy@example.com"
+                            value={data.username}
+                            label="Usuario"
+                            id="username"
+                            type="text"
+                            placeholder="bernal"
                             className="mb-4"
                             // errors="$page.errors.email"
                             onChange={handleInput}

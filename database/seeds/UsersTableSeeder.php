@@ -14,21 +14,24 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'Super Sayayin Dios',
-            'email' => 'god@panaderialaespecial.mx',
+            'username' => 'god',
+//            'email' => 'god@panaderialaespecial.mx',
             'role' => 'god',
             'password' => bcrypt('secret'),
             'avatar' => 'https://areajugones.sport.es/wp-content/uploads/2015/10/super_saiyan_god_super_saiyan__ssgss__goku_by_mikkkiwarrior3-d8wv7hx.jpg'
         ]);
         User::create([
             'name' => 'Super Sayayin',
-            'email' => 'admin@panaderialaespecial.mx',
+            'username' => 'admin',
+//            'email' => 'admin@panaderialaespecial.mx',
             'role' => 'admin',
             'password' => bcrypt('secret'),
             'avatar' => 'http://mouse.latercera.com/wp-content/uploads/2018/01/ssj3.png'
         ]);
         User::create([
             'name' => 'Matriz',
-            'email' => 'matriz@panaderialaespecial.mx',
+            'username' => 'matriz',
+//            'email' => 'matriz@panaderialaespecial.mx',
             'role' => 'admin',
             'password' => bcrypt('secret'),
         ]);

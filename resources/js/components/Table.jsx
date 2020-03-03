@@ -36,10 +36,10 @@ function Table({ columns, data, onClick, selected }) {
                         'cursor-pointer',
                         { 'bg-gray-200': (i % 2) },
                         { 'text-brand-orange': selected && row.original.id === selected.id },
-                        { 'text-red-500': row.original.date.forToday },
-                        { 'bg-red-100': row.original.date.forToday },
-                        { 'text-yellow-500': row.original.date.forTomorrow },
-                        { 'bg-yellow-100': row.original.date.forTomorrow },
+                        { 'text-red-500': row.original.date && row.original.date.forToday },
+                        { 'bg-red-100': row.original.date && row.original.date.forToday },
+                        { 'text-yellow-500': row.original.date && row.original.date.forTomorrow },
+                        { 'bg-yellow-100': row.original.date && row.original.date.forTomorrow },
                         { 'line-through': row.original.canceled },
                     );
                     return (

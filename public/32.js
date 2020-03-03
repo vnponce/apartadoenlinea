@@ -84,7 +84,7 @@ function Login(props) {
       if (mock && mock.username && mock.password && evt.key === 'Tab') {
         evt.preventDefault();
 
-        if (target.id === 'email') {
+        if (target.id === 'username') {
           triggerEvtInput(target, mock.username);
           document.querySelector('#password').focus();
         } else {
@@ -118,11 +118,11 @@ function Login(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     id: "login-form"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    value: data.email,
-    label: "Email",
-    id: "email",
-    type: "email",
-    placeholder: "billy@example.com",
+    value: data.username,
+    label: "Usuario",
+    id: "username",
+    type: "text",
+    placeholder: "bernal",
     className: "mb-4" // errors="$page.errors.email"
     ,
     onChange: handleInput,

@@ -61,8 +61,8 @@ function Users(props) {
       Header: 'Nombre',
       accessor: 'name'
     }, {
-      Header: 'email',
-      accessor: 'email'
+      Header: 'username',
+      accessor: 'username'
     }, {
       Header: 'role',
       accessor: 'role'
@@ -107,7 +107,10 @@ function Users(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('befor if success =>', success_message);
+
     if (success_message) {
+      console.log('success =>', success_message);
       setCreateUser(false);
       setDataSelected(false);
       sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
@@ -360,20 +363,32 @@ function CreateUser(props) {
     }
   };
 
+  var cancel = function cancel() {
+    var hostname = window.location.hostname;
+    var url = window.location.href;
+
+    var _url$split = url.split(hostname),
+        _url$split2 = _slicedToArray(_url$split, 2),
+        port = _url$split2[0],
+        path = _url$split2[1];
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(path);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
     value: userData.name,
     id: "name",
-    label: "Nombre de usuario",
+    label: "Nombre",
     placeholder: "Nombre",
     error: errors.name
-  }), !editing && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
-    value: userData.email,
-    id: "email",
-    label: "Correo Electr\xF3nico",
-    placeholder: "email",
-    error: errors.email
+    value: userData.username,
+    id: "username",
+    label: "Usuario",
+    placeholder: "Bernal",
+    error: errors.username
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onChange: onChange,
     value: userData.password,
@@ -429,7 +444,10 @@ function CreateUser(props) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: createUser
-  }, editing ? 'Editar usuario' : 'Crear usuario'));
+  }, editing ? 'Editar usuario' : 'Crear usuario'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
+    onClick: cancel
+  }, "Cancelar"));
 }
 ;
 

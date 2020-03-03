@@ -21,7 +21,7 @@ class UserController extends Controller
            return [
                'id' => $user->id,
                'name' => $user->name,
-               'email' => $user->email,
+               'username' => $user->username,
                'role' => $user->role,
                'stores' => $store,
                'avatar' => $user->avatar,
@@ -40,7 +40,7 @@ class UserController extends Controller
         $rules = [
             'name' => 'required|string|max:255',
             'file' => 'image',
-            'email' => 'required|string|email|max:255|unique:users',
+            'username' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6',
             'role' => 'required',
             'store' => 'required',
@@ -59,8 +59,7 @@ class UserController extends Controller
             $user->stores()->attach($request->store);
         }
         $users = User::all();
-        // dd($users);
-        return Inertia::render('Admin/Users', compact('users'))->with('success_message', 'TODO COOOL!');
+        return back()->with('success_message', 'Usuario creado correctamente!');
     }
 
     public function update(User $user, Request $request)
@@ -68,6 +67,7 @@ class UserController extends Controller
 //        dd($user, $request->toArray());
         $rules = [
             'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users',
             // 'file' => 'image',
             // 'email' => 'required|string|email|max:255|unique:users',
             'password' => 'string|min:6',
@@ -78,7 +78,7 @@ class UserController extends Controller
         if($request->password) {
             $request->merge(['password' => bcrypt($request->password)]);
         }
-        $user->update($request->only('name', 'password', 'role'));
+        $user->update($request->only('name', 'password', 'role', 'username'));
         if($request->role === 'manager'){
             $user->stores()->detach();
             $user->stores()->attach($request->store);

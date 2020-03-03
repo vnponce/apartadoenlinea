@@ -47,4 +47,9 @@ class LoginController extends Controller
     {
         return Inertia::render('Login');
     }
+
+    public function username()
+    {
+        return 'username';
+    }
 }

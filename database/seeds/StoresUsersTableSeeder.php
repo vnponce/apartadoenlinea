@@ -13,7 +13,7 @@ class StoresUsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $userMatrix = User::where('email', 'matriz@panaderialaespecial.mx')->first();
+        $userMatrix = User::where('username', 'matriz')->first();
         $storeMatrix = Store::where('isMatrix', true)->first()->id;
 
         $userMatrix->stores()->attach($storeMatrix);
