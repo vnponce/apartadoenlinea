@@ -48,7 +48,9 @@ function Dashboard(props) {
                 Header: 'Estatus',
                 accessor: 'status',
                 Cell: data => (
-                    <span className="">{data.cell.value.step}</span>
+                    <span className="">
+                        {data.cell.row.original.canceled ? 'Cancelado' : data.cell.value.step}
+                    </span>
                 ),
             },
             {

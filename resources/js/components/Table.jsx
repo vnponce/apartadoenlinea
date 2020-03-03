@@ -40,6 +40,7 @@ function Table({ columns, data, onClick, selected }) {
                         { 'bg-red-100': row.original.date.forToday },
                         { 'text-yellow-500': row.original.date.forTomorrow },
                         { 'bg-yellow-100': row.original.date.forTomorrow },
+                        { 'line-through': row.original.canceled },
                     );
                     return (
                         <tr

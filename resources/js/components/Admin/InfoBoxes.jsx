@@ -13,11 +13,13 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 export default function InfoBoxes(props) {
     const { auth: { user } } = usePage();
     const [nextStatus, setNextStatus] = useState(false);
+    const [isCancel, setIsCancel] = useState(false);
     const { data } = props;
 
     useEffect(() => {
         if(data) {
-            const { status, store } = data;
+            const { status, store, canceled } = data;
+            setIsCancel(canceled);
             switch (status.original) {
                 case 'created':
                 case 'opened':
@@ -132,11 +134,14 @@ export default function InfoBoxes(props) {
         });
     };
     const allowedToModify = () => {
-      if(user.isGod) {
+        if(isCancel) return false;
+        if(user.isGod) {
           return true;
-      }
-      return nextStatus.allowed;
+        }
+        return nextStatus.allowed;
     };
+
+    const buttonClass = 'w-full inline-block text-white hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6';
 
     return (
     <div id="dash-content"
@@ -166,8 +171,8 @@ export default function InfoBoxes(props) {
                 <div className="flex flex-row">
                     <button
                         className={allowedToModify() ?
-                            "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6" :
-                            "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6 cursor-not-allowed"
+                            `${buttonClass} bg-orange-400 hover:bg-brand-orange` :
+                            `${buttonClass} bg-orange-400 cursor-not-allowed`
                         }
                         onClick={() => updateToNextStatus(data.status)}
                         disabled={!allowedToModify()}
@@ -175,18 +180,26 @@ export default function InfoBoxes(props) {
                 </div>
                 <div className="flex">
                     <button
-                        className="w-full inline-block text-white bg-green-500 hover:bg-brand-green hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6"
+                        className={allowedToModify() ?
+                            `${buttonClass} bg-green-500 hover:bg-brand-green` :
+                            `${buttonClass} bg-green-500 cursor-not-allowed`
+                        }
                         onClick={() => updateToPayed(data.id)}
+                        disabled={!allowedToModify()}
                     >
                         Pagar
                     </button>
                 </div>
                 <div className="flex">
                     <button
-                        className="w-full inline-block text-white bg-red-500 hover:bg-red-600 hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6"
+                        className={allowedToModify() ?
+                            `${buttonClass} bg-red-500 hover:bg-red-600` :
+                            `${buttonClass} bg-red-500 cursor-not-allowed`
+                        }
                         onClick={() => updateToCancel(data.id)}
+                        disabled={!allowedToModify()}
                     >
-                        Cancelar pedido
+                        { isCancel ? 'Cancelado' : 'Cancelar pedido' }
                     </button>
                 </div>
             </div>

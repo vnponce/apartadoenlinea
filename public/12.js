@@ -94,7 +94,7 @@ function Dashboard(props) {
       Cell: function Cell(data) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: ""
-        }, data.cell.value.step);
+        }, data.cell.row.original.canceled ? 'Cancelado' : data.cell.value.step);
       }
     }, {
       Header: 'Pagado',
@@ -275,11 +275,18 @@ function InfoBoxes(props) {
       nextStatus = _useState2[0],
       setNextStatus = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isCancel = _useState4[0],
+      setIsCancel = _useState4[1];
+
   var data = props.data;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (data) {
       var status = data.status,
-          store = data.store;
+          store = data.store,
+          canceled = data.canceled;
+      setIsCancel(canceled);
 
       switch (status.original) {
         case 'created':
@@ -398,6 +405,8 @@ function InfoBoxes(props) {
   };
 
   var allowedToModify = function allowedToModify() {
+    if (isCancel) return false;
+
     if (user.isGod) {
       return true;
     }
@@ -405,6 +414,7 @@ function InfoBoxes(props) {
     return nextStatus.allowed;
   };
 
+  var buttonClass = 'w-full inline-block text-white hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6';
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
@@ -431,7 +441,7 @@ function InfoBoxes(props) {
   }, data.employee.name), " levant\xF3 este pedido."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: allowedToModify() ? "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6" : "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6 cursor-not-allowed",
+    className: allowedToModify() ? "".concat(buttonClass, " bg-orange-400 hover:bg-brand-orange") : "".concat(buttonClass, " bg-orange-400 cursor-not-allowed"),
     onClick: function onClick() {
       return updateToNextStatus(data.status);
     },
@@ -439,18 +449,20 @@ function InfoBoxes(props) {
   }, nextStatus.step)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "w-full inline-block text-white bg-green-500 hover:bg-brand-green hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6",
+    className: allowedToModify() ? "".concat(buttonClass, " bg-green-500 hover:bg-brand-green") : "".concat(buttonClass, " bg-green-500 cursor-not-allowed"),
     onClick: function onClick() {
       return updateToPayed(data.id);
-    }
+    },
+    disabled: !allowedToModify()
   }, "Pagar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "w-full inline-block text-white bg-red-500 hover:bg-red-600 hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6",
+    className: allowedToModify() ? "".concat(buttonClass, " bg-red-500 hover:bg-red-600") : "".concat(buttonClass, " bg-red-500 cursor-not-allowed"),
     onClick: function onClick() {
       return updateToCancel(data.id);
-    }
-  }, "Cancelar pedido"))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    },
+    disabled: !allowedToModify()
+  }, isCancel ? 'Cancelado' : 'Cancelar pedido'))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"

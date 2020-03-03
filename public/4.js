@@ -677,6 +677,8 @@ function Table(_ref) {
       'text-yellow-500': row.original.date.forTomorrow
     }, {
       'bg-yellow-100': row.original.date.forTomorrow
+    }, {
+      'line-through': row.original.canceled
     });
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tr", _extends({
       id: row.original.id,
