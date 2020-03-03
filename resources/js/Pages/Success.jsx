@@ -64,7 +64,7 @@ function Success(props) {
                             {/* order number */}
                             <div>
                                 <span className="text-sm font-thin">Número de pedido:</span>
-                                <span className="text-sm font-bold ml-1">{ order.id }</span>
+                                <span className="text-sm font-bold ml-1">{ order.uuid }</span>
                             </div>
                         </div>
                         {/* Container right */}
