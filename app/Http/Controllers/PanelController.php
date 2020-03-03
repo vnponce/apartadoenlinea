@@ -129,6 +129,7 @@ class PanelController extends Controller
                     'original' => $order->status,
                     'step' => $order->statusStep,
                 ],
+                'canceled' => $order->canceled,
                 'payed' => [
                     'original' => $order->payed,
                     'label' => $order->payed ? 'Liquidado' : 'Pendiente',

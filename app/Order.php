@@ -20,7 +20,7 @@ class Order extends Model
         'status',
         'employeeName',
         'uuid',
-        'state',
+        'canceled',
         'payed',
     ];
 

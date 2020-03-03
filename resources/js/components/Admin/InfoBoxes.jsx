@@ -85,6 +85,52 @@ export default function InfoBoxes(props) {
         }
     };
 
+    const updateToPayed = () => {
+        Swal.fire({
+            title: '¿Seguro?',
+            text: `La orden se considerará como pagada`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí ha sido pagada',
+            cancelButtonText: 'No ha sido pagada',
+        }).then((result) => {
+            if (result.value) {
+                Inertia.put( `/admin/orders/${data.id}`, {
+                    payed: true,
+                });
+                //     Swal.fire(
+                //         'Deleted!',
+                //         'Your file has been deleted.',
+                //         'success'
+                //     )
+            }
+        });
+    };
+    const updateToCancel = () => {
+        Swal.fire({
+            title: '¿Seguro?',
+            text: `La orden se considerará como cancelada`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí esta cancelada',
+            cancelButtonText: 'No, no esta cancelada',
+        }).then((result) => {
+            if (result.value) {
+                Inertia.put( `/admin/orders/${data.id}`, {
+                    canceled: true,
+                });
+                //     Swal.fire(
+                //         'Deleted!',
+                //         'Your file has been deleted.',
+                //         'success'
+                //     )
+            }
+        });
+    };
     const allowedToModify = () => {
       if(user.isGod) {
           return true;
@@ -127,6 +173,22 @@ export default function InfoBoxes(props) {
                         disabled={!allowedToModify()}
                     >{nextStatus.step}</button>
                 </div>
+                <div className="flex">
+                    <button
+                        className="w-full inline-block text-white bg-green-500 hover:bg-brand-green hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6"
+                        onClick={() => updateToPayed(data.id)}
+                    >
+                        Pagar
+                    </button>
+                </div>
+                <div className="flex">
+                    <button
+                        className="w-full inline-block text-white bg-red-500 hover:bg-red-600 hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6"
+                        onClick={() => updateToCancel(data.id)}
+                    >
+                        Cancelar pedido
+                    </button>
+                </div>
             </div>
         )}
         { !data && (
@@ -148,74 +210,6 @@ export default function InfoBoxes(props) {
                 </div>
             </div>
         )}
-        {/*
-        <div className="w-1/2 lg:w-full">
-            <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
-                <div className="flex flex-col items-center">
-                    <div className="flex-shrink pr-4">
-                        <div className="rounded-full p-3 bg-gray-300"><i
-                            className="fa fa-wallet fa-fw fa-inverse text-indigo-500"/></div>
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="font-bold text-3xl">$3249 <span className="text-green-500"><i
-                            className="fas fa-caret-up"/></span></h3>
-                        <h5 className="font-bold text-gray-500">Total Revenue</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="w-1/2 lg:w-full">
-            <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
-                <div className="flex flex-col items-center">
-                    <div className="flex-shrink pr-4">
-                        <div className="rounded-full p-3 bg-gray-300"><i
-                            className="fas fa-users fa-fw fa-inverse text-indigo-500"/></div>
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="font-bold text-3xl">249 <span className="text-orange-500"><i
-                            className="fas fa-exchange-alt"/></span></h3>
-                        <h5 className="font-bold text-gray-500">Total Users</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="w-1/2 lg:w-full">
-            <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
-                <div className="flex flex-col items-center">
-                    <div className="flex-shrink pr-4">
-                        <div className="rounded-full p-3 bg-gray-300"><i
-                            className="fas fa-user-plus fa-fw fa-inverse text-indigo-500"/></div>
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="font-bold text-3xl">2 <span className="text-yellow-600"><i
-                            className="fas fa-caret-up"/></span></h3>
-                        <h5 className="font-bold text-gray-500">New Users</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="w-1/2 lg:w-full">
-            <div
-                className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
-                <div className="flex flex-col items-center">
-                    <div className="flex-shrink pr-4">
-                        <div className="rounded-full p-3 bg-gray-300"><i
-                            className="fas fa-server fa-fw fa-inverse text-indigo-500"/></div>
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="font-bold text-3xl">152 days</h3>
-                        <h5 className="font-bold text-gray-500">Server Uptime</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        */}
     </div>
     )
 };

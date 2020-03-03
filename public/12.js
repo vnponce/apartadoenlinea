@@ -351,6 +351,52 @@ function InfoBoxes(props) {
     }
   };
 
+  var updateToPayed = function updateToPayed() {
+    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+      title: '¿Seguro?',
+      text: "La orden se considerar\xE1 como pagada",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí ha sido pagada',
+      cancelButtonText: 'No ha sido pagada'
+    }).then(function (result) {
+      if (result.value) {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
+          payed: true
+        }); //     Swal.fire(
+        //         'Deleted!',
+        //         'Your file has been deleted.',
+        //         'success'
+        //     )
+      }
+    });
+  };
+
+  var updateToCancel = function updateToCancel() {
+    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+      title: '¿Seguro?',
+      text: "La orden se considerar\xE1 como cancelada",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí esta cancelada',
+      cancelButtonText: 'No, no esta cancelada'
+    }).then(function (result) {
+      if (result.value) {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
+          canceled: true
+        }); //     Swal.fire(
+        //         'Deleted!',
+        //         'Your file has been deleted.',
+        //         'success'
+        //     )
+      }
+    });
+  };
+
   var allowedToModify = function allowedToModify() {
     if (user.isGod) {
       return true;
@@ -390,7 +436,21 @@ function InfoBoxes(props) {
       return updateToNextStatus(data.status);
     },
     disabled: !allowedToModify()
-  }, nextStatus.step))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, nextStatus.step)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "w-full inline-block text-white bg-green-500 hover:bg-brand-green hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6",
+    onClick: function onClick() {
+      return updateToPayed(data.id);
+    }
+  }, "Pagar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "w-full inline-block text-white bg-red-500 hover:bg-red-600 hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6",
+    onClick: function onClick() {
+      return updateToCancel(data.id);
+    }
+  }, "Cancelar pedido"))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"

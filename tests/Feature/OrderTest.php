@@ -137,6 +137,7 @@ class OrderTest extends TestCase
                         'original' => $order->status,
                         'step' => $order->statusStep,
                     ],
+                    'canceled' => false,
                     'payed' => [
                         'original' => false,
                         'label' => 'Pendiente',
@@ -180,10 +181,10 @@ class OrderTest extends TestCase
 
         $order = Order::first();
         $this->actingAs(factory(User::class)->create())->put("/admin/orders/{$order->id}", [
-            'state' => 'canceled'
+            'canceled' => true
         ]);
         $this->assertDatabaseHas('orders', [
-            'state' => 'canceled',
+            'canceled' => true,
         ]);
     }
 
