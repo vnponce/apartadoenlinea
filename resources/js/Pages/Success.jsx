@@ -5,6 +5,7 @@ import moment from 'moment';
 import ProductListElement from "../components/ProductListElement";
 import Confetti from "react-dom-confetti";
 import Map from "../components/Map";
+import {Inertia} from "@inertiajs/inertia";
 
 const SuccessImage = Styled.div`
     background-image:
@@ -28,7 +29,6 @@ const config = {
 
 function Success(props) {
     const [triggerConfetti, setTriggerConfeti] = useState(false);
-    console.log('props =>', props);
     const { order, successTotalCart: subtotal, successCart: content, stores } = props;
     const store = stores.find(store => store.id === order.store_id);
 
@@ -36,6 +36,10 @@ function Success(props) {
     useEffect(() => {
         setTimeout(toggleTriggerConfeti, 500);
         //eslint-disable-next-line
+        return () => {
+            // to avoid return to charola when is success page.
+            Inertia.visit('/');
+        }
     }, []);
     return (
         <Layout title="Gracias">

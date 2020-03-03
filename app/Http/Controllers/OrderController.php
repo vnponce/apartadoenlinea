@@ -47,7 +47,11 @@ class OrderController extends Controller
         $total = Cart::subtotal(2, '', '') * 1; // Casting to int
         $cart = Cart::content();
 //        dd($total);
-//        dd($cart);
+        // Avoid set order with no products
+        if($cart->isEmpty()) {
+            return redirect('/');
+        }
+
         $detailsRowId = $cart->search(function ( $cartItem, $rowId) {
             return $cartItem->id ===  'orderDetailsId';
         });

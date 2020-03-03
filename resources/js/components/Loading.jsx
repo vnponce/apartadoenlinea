@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 const Loading = () => (
     <Wrapper>
         <div>
-            <img src="/static/loading.gif" alt="cargando" />
+            <img src="/loading.gif" alt="cargando" />
         </div>
     </Wrapper>
 );

@@ -1,19 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../Shared/Layout';
 import HeaderDescription from "../components/HeaderDescription";
 import ProductListElement from "../components/ProductListElement";
 import { usePage } from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
-
+import Loading from '../components/Loading';
 
 function Checkout(props) {
     const { cart: { content }, subtotal, auth } = usePage();
     const [agreeTerms, setAgreeTerms] = useState(false);
+    const [loading, setLoading] = useState(false);
     const createOrder = () => {
-      Inertia.post('/pedido', )
+        setLoading(true);
+        Inertia.post('/pedido', )
     };
+    useEffect(() => {
+        if(content.length <= 0) {
+            Inertia.visit('/');
+        }
+    });
     return (
         <Layout title="Mi charola">
+            { loading && <Loading /> }
             <HeaderDescription title="MI CHAROLA" description="Esto tiene tu charola" />
             <div className="flex justify-center w-full pb-24 px-8 content-center">
                 <div className="md:w-1/2">
