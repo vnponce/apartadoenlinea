@@ -67,7 +67,7 @@ class UserController extends Controller
 //        dd($user, $request->toArray());
         $rules = [
             'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:users',
+            'username' => 'required|string|max:255|unique:users,username,' . $user->id,
             // 'file' => 'image',
             // 'email' => 'required|string|email|max:255|unique:users',
             'password' => 'string|min:6',
