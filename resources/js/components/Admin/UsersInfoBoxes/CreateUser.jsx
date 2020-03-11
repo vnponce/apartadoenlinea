@@ -8,6 +8,15 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 // import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import Stores from "../../Select/Stores";
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    select:disabled{
+       opacity: 0.6;
+       cursor: not-allowed;
+    }
+`;
+
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -66,7 +75,7 @@ export default function CreateUser(props) {
         Inertia.visit(path)
     };
     return (
-        <>
+        <Wrapper>
             {/*
             <FilePond onupdatefiles={fileItems => {
                 console.log('onupdatefiles =>', fileItems);
@@ -103,14 +112,16 @@ export default function CreateUser(props) {
             />
             <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
                 <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Role</label>
+                {console.log('userData.stores[0] =>', userData)}
                 <select
                     id="role"
                     name="role"
                     className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                     onChange={onChange}
+                    disabled={userData.stores && userData.stores.length > 0 && userData.stores[0].isMatrix}
                 >
                     <option value="god" selected={userData.role !== 'god'}>Dios</option>
-                    <option value="admin" selected={userData.role === 'admmin'}>Administrador/Matriz</option>
+                    <option value="admin" selected={userData.role === 'admin'}>Administrador/Matriz</option>
                     <option value="manager" selected={userData.role === 'manager'}>Manager/Sucursal</option>
                 </select>
             </div>
@@ -148,6 +159,6 @@ export default function CreateUser(props) {
                 onClick={cancel}>
                 Cancelar
             </button>
-        </>
+        </Wrapper>
     )
 };
