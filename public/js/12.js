@@ -446,7 +446,7 @@ function InfoBoxes(props) {
       return updateToNextStatus(data.status);
     },
     disabled: !allowedToModify()
-  }, nextStatus.step), "abel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, nextStatus.step)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: allowedToModify() ? "".concat(buttonClass, " bg-green-500 hover:bg-brand-green") : "".concat(buttonClass, " bg-green-500 cursor-not-allowed"),
@@ -1034,7 +1034,6 @@ function ProductListElement(props) {
   var product = props.product,
       _props$isEditable = props.isEditable,
       isEditable = _props$isEditable === void 0 ? true : _props$isEditable;
-  console.log('product =>', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),

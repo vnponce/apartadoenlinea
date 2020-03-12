@@ -19,3 +19,9 @@ mix.react('resources/js/app.js', 'public/js')
         postCss: [ tailwindcss('./tailwind.config.js') ],
     })
     .version();
+
+mix.webpackConfig({
+    output: {
+        chunkFilename: 'js/[name].js?id=[chunkhash]',
+    }
+});
