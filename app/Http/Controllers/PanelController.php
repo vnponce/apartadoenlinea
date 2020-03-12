@@ -122,6 +122,7 @@ class PanelController extends Controller
                            'price' => $product->pivot->price / 100,
                            'options' => [
                                'comment' => $product->pivot->comment,
+                               'allow_instructions' => $product->allow_instructions,
                            ],
                        ];
                     }),
