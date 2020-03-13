@@ -86,7 +86,7 @@ class PanelController extends Controller
                 // @todo: test this I dont remember why I set now always
                 // $searchValues['date'] = request()->filled('id') ? '' : $now;
                 $searchValues['date'] = '';
-                $query->whereDate('date', '>=', Carbon::today());
+                $orderAll->whereDate('date', '>=', Carbon::today());
             }//             dd($orderAll);
             if(request()->filled('status')) {
                 $this->getStatusFromRequest(request('status'), $orderAll);
