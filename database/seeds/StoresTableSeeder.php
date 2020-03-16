@@ -385,7 +385,7 @@ class StoresTableSeeder extends Seeder
             "sunday" =>"8:00 a 21:00",
             "created_at" =>"2020-01-24 18:09:53",
             "updated_at" =>"2020-01-28 20:20:42"
-          ],
+        ],
         [
             "id" =>31,
             "name" =>"Boca del Río",
@@ -398,7 +398,67 @@ class StoresTableSeeder extends Seeder
             "sunday" =>"8:00 a 21:00",
             "created_at" =>"2020-01-24 18:09:53",
             "updated_at" =>"2020-01-28 20:24:58"
-          ]
+        ],
+        [
+            "name" =>"Catedral",
+            "address" =>"Independencia No. 1195  Entre Mario Molina y  Gutierrez Zamora Col. Centro C.P. 91700 Veracruz,   Ver.",
+            "friendly_address" =>"Independencia No. 1195  Entre Mario Molina Y  Gutierrez Zamora Col. Centro C.P. 91700 Veracruz,   Ver.",
+            "delivery_time" =>"7:00 a 22:00",
+            "lat" =>"19.1996184",
+            "lon" =>"-96.1383731",
+            "monday_saturday" =>"Lunes a sábado",
+            "sunday" =>"8:00 a 23:00",
+        ],
+        [
+            "name" =>"Lagos",
+            "address" =>"Calle Paseo Las Joyas Esquina Zafiro Manzana 424 Los Locales Comerciales 12, 13, Y 14 De Plaza Las Joyas 2, Fraccionamiento Lagos De Puente Moreno En Medellin De Bravo, Veracruz, Cp 94274,",
+            "friendly_address" =>"Calle Paseo Las Joyas Esquina Zafiro Manzana",
+            "delivery_time" =>"7:00 a 23:00",
+            "lat" =>"19.0923612",
+            "lon" =>"-96.1668035",
+            "monday_saturday" =>"Lunes a sábado",
+            "sunday" =>"8:00 a 23:00",
+        ],
+        [
+            "name" =>"Pasteleria",
+            "address" =>"Hernan Cortes # 268 Entre Bravo e Hidalgo  Col: Centro Cp:91700 Veracruz, Ver.",
+            "friendly_address" =>"Hernan Cortes entre Bravo e Hidalgo  Col: Centro",
+            "delivery_time" =>"7:00 a 21:00",
+            "lat" =>"19.1934464",
+            "lon" =>"-96.1382402",
+            "monday_saturday" =>"Lunes a sábado",
+            "sunday" =>"8:00 a 21:00",
+        ],
+        [
+            "name" =>"Rio Medio",
+            "address" =>"Av. Rio Medio N°116 esquina Calle Rio Tehuantepec, Colonia Lomas De Rio Medio II",
+            "friendly_address" =>"Av. Rio Medio esquina Calle Rio Tehuantepec, Colonia Lomas De Rio Medio II",
+            "delivery_time" =>"7:00 a 23:00",
+            "lat" =>"19.2134655",
+            "lon" =>"-96.2001992",
+            "monday_saturday" =>"Lunes a sábado",
+            "sunday" =>"8:00 a 23:00",
+        ],
+        [
+            "name" =>"González Pagés",
+            "address" =>"G PAGES No 320 COLONIA CENTRO 91700 VERACRUZ, VER",
+            "friendly_address" =>"G PAGES No 320 COLONIA CENTRO 91700 VERACRUZ, VER",
+            "delivery_time" =>"7:00 a 20:00",
+            "lat" =>"19.1916536",
+            "lon" =>"-96.1366559",
+            "monday_saturday" =>"Lunes a sábado",
+            "sunday" =>"8:00 a 15:00",
+        ],
+        [
+            "name" =>"Puente Moreno",
+            "address" =>"Paseo Del Mar N°173 entre Circuito Delfin y Cto Arenque Fracc. Puente Moreno Municipio De Medellin De Bravo Estado De Veracruz Cp 94274",
+            "friendly_address" =>"Paseo Del Mar entre Circuito Delfin y Cto Arenque Fracc. Puente Moreno",
+            "delivery_time" =>"7:00 a 23:00",
+            "lat" =>"19.1063989",
+            "lon" =>"-96.1564994",
+            "monday_saturday" =>"Lunes a sábado",
+            "sunday" =>"8:00 a 22:00",
+        ],
     ];
     /**
      * Run the database seeds.
