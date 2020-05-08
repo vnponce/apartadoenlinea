@@ -5,6 +5,7 @@ import {Inertia} from "@inertiajs/inertia";
 // import 'sweetalert2/src/sweetalert2.scss';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Table from "../../components/Table";
+import Content from "../../components/Admin/Content";
 
 
 function Users(props) {
@@ -87,34 +88,16 @@ function Users(props) {
     return (
         <Admin title="Panel">
             <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
-            {/*Graph Content */}
-            <div id="main-content" className="w-full flex-1">
-
-                <div className="flex flex-1 flex-wrap">
-
-                    <div className="w-full py-6 xl:max-w-6xl">
-
-                        {/*"Container" for the graphs"*/}
-                        <div className="max-w-full lg:max-w-3xl xl:max-w-5xl">
-
-                            {/*Table orders*/}
-                            <div className="border-b p-3">
-                                <h5 className="font-bold text-black inline-block">Usuarios</h5>
-                                <button
-                                    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
-                                    onClick={showCreateUser}>
-                                    <i
-                                        className="inline fa fa-user-plus fa-fw"/>
-                                </button>
-                                <Table columns={columns} data={users} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
-                            </div>
-                            {/*/Table orders*/}
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <Content>
+                <h5 className="font-bold text-black inline-block">Usuarios</h5>
+                <button
+                    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                    onClick={showCreateUser}>
+                    <i
+                        className="inline fa fa-user-plus fa-fw"/>
+                </button>
+                <Table columns={columns} data={users} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+            </Content>
         </Admin>
     );
 }

@@ -6,6 +6,7 @@ import {Inertia} from "@inertiajs/inertia";
 import Table from "../../components/Table";
 import SearchBar from "../../components/Admin/SearchBar";
 import {usePage} from "@inertiajs/inertia-react";
+import Content from "../../components/Admin/Content";
 
 function Dashboard(props) {
     const { auth } = usePage();
@@ -111,28 +112,11 @@ function Dashboard(props) {
         <Admin title="Panel">
             <InfoBoxes data={dataSelected}/>
             {/*Graph Content */}
-            <div id="main-content" className="w-full flex-1">
-
-                <div className="flex flex-1 flex-wrap">
-
-                    <div className="w-full py-6 xl:max-w-6xl">
-
-                        {/*"Container" for the graphs"*/}
-                        <div className="max-w-full lg:max-w-3xl xl:max-w-5xl">
-
-                            {/*Table orders*/}
-                            <div className="border-b p-3">
-                                <SearchBar stores={stores} searchValues={searchValues}/>
-                                <h5 className="font-bold text-black">Pedidos</h5>
-                                <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
-                            </div>
-                            {/*/Table orders*/}
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <Content>
+                <SearchBar stores={stores} searchValues={searchValues}/>
+                <h5 className="font-bold text-black">Psedidos</h5>
+                <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+            </Content>
         </Admin>
     );
 }
