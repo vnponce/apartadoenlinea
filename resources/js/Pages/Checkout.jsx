@@ -50,8 +50,8 @@ function Checkout(props) {
                     <div>
                         {/* 'Proceder' Next step */}
                         <div className="flex justify-center">
-                            <input id="checkout-agree" className="mr-2 mt-1" type="checkbox" value={agreeTerms} onChange={() => setAgreeTerms(!agreeTerms)}/>
-                                <label for="checkout-agree" className="text-center text-gray-500 text-base italic">
+                            <input id="checkout-agree" className="w-10 h-10 cursor-pointer mr-2 mt-1" type="checkbox" value={agreeTerms} onChange={() => setAgreeTerms(!agreeTerms)}/>
+                                <label htmlFor="checkout-agree" className="cursor-pointer text-center text-gray-500 text-base italic">
                                     ¿El contenido de tu compra es el correcto?, recuerda que no hay cambios, devoluciones ni modificaciones.
                                 </label>
                         </div>

@@ -109,7 +109,7 @@ function BreadCard(props) {
     src: product.image_path,
     alt: "Banderilla mini"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "/product",
+    href: "/pan/".concat(product.id),
     className: "flex-1 flex flex-col h-32 overflow-hidden cursor-pointer sm:mt-4 sm:h-24"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 sm:text-center text-gray-600 font-medium uppercase"

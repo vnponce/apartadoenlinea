@@ -18,7 +18,7 @@ const config = {
     angle: "50",
     spread: "107",
     startVelocity: "93",
-    elementCount: "111",
+    elementCount: "10",
     dragFriction: 0.1,
     duration: "6060",
     stagger: "0",

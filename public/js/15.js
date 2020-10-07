@@ -102,15 +102,15 @@ function Checkout(props) {
     className: "flex justify-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     id: "checkout-agree",
-    className: "mr-2 mt-1",
+    className: "w-10 h-10 cursor-pointer mr-2 mt-1",
     type: "checkbox",
     value: agreeTerms,
     onChange: function onChange() {
       return setAgreeTerms(!agreeTerms);
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    "for": "checkout-agree",
-    className: "text-center text-gray-500 text-base italic"
+    htmlFor: "checkout-agree",
+    className: "cursor-pointer text-center text-gray-500 text-base italic"
   }, "\xBFEl contenido de tu compra es el correcto?, recuerda que no hay cambios, devoluciones ni modificaciones.")), auth && auth.user && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     disabled: !agreeTerms,
     onClick: createOrder,

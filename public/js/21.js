@@ -226,7 +226,7 @@ function Product(props) {
     onChange: function onChange(e) {
       return setQuantity(e.target.value);
     },
-    className: "border border-transparent rounded w-1/2 mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1"
+    className: "border border-transparent rounded mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
