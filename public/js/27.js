@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[13],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[27],{
 
 /***/ "./resources/js/Pages/Admin/Products.jsx":
 /*!***********************************************!*\

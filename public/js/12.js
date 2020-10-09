@@ -689,24 +689,22 @@ function SearchBar(props) {
   var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState12 = _slicedToArray(_useState11, 2),
       focus = _useState12[0],
-      setFocus = _useState12[1];
+      setFocus = _useState12[1]; // function pressEnterToSearch(event) {
+  //     if (event.defaultPrevented) {
+  //         return; // Should do nothing if the default action has been cancelled
+  //     }
+  //
+  //     if (event.key === 'Enter') {
+  //         toSearch();
+  //     }
+  // }
+  // useEffect(() => {
+  //     document.addEventListener('keyup', pressEnterToSearch);
+  //     return () => document.removeEventListener('keyup', pressEnterToSearch);
+  // })
+  //
 
-  function pressEnterToSearch(event) {
-    if (event.defaultPrevented) {
-      return; // Should do nothing if the default action has been cancelled
-    }
 
-    if (event.key === 'Enter') {
-      toSearch();
-    }
-  }
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    document.addEventListener('keyup', pressEnterToSearch);
-    return function () {
-      return document.removeEventListener('keyup', pressEnterToSearch);
-    };
-  });
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (searchValues && searchValues.store !== '') {
       var searchData = stores.find(function (current) {
@@ -753,6 +751,10 @@ function SearchBar(props) {
   }, [store]);
 
   var onChange = function onChange(e) {
+    if (e.key === 'Enter') {
+      toSearch(); // return false;
+    }
+
     setId(e.target.value);
   };
 

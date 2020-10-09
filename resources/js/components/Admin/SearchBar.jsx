@@ -29,21 +29,21 @@ export default function SearchBar(props) {
 
     const [focus, setFocus] = useState(false);
 
-    function pressEnterToSearch(event) {
-        if (event.defaultPrevented) {
-            return; // Should do nothing if the default action has been cancelled
-        }
+    // function pressEnterToSearch(event) {
+    //     if (event.defaultPrevented) {
+    //         return; // Should do nothing if the default action has been cancelled
+    //     }
+    //
+    //     if (event.key === 'Enter') {
+    //         toSearch();
+    //     }
+    // }
 
-        if (event.key === 'Enter') {
-            toSearch();
-        }
-    }
-
-    useEffect(() => {
-        document.addEventListener('keyup', pressEnterToSearch);
-        return () => document.removeEventListener('keyup', pressEnterToSearch);
-    })
-
+    // useEffect(() => {
+    //     document.addEventListener('keyup', pressEnterToSearch);
+    //     return () => document.removeEventListener('keyup', pressEnterToSearch);
+    // })
+    //
     useEffect(() => {
         if(searchValues && searchValues.store !== '') {
             const searchData = stores.find(current => current.id === store * 1);
@@ -86,6 +86,10 @@ export default function SearchBar(props) {
         }
     }, [store]);
     const onChange = e => {
+        if (e.key === 'Enter') {
+            toSearch();
+            // return false;
+        }
         setId(e.target.value);
     };
 
