@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[14],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[25],{
 
 /***/ "./node_modules/dom-confetti/lib/main.js":
 /*!***********************************************!*\
@@ -464,51 +464,9 @@ function Input(_ref) {
   !*** ./resources/js/components/Map.jsx ***!
   \*****************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Map; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @react-google-maps/api */ "./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js");
-
-
-function Map(props) {
-  console.log('store map => ', props);
-  var _props$store = props.store,
-      _props$store$lat = _props$store.lat,
-      lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
-      _props$store$lon = _props$store.lon,
-      lng = _props$store$lon === void 0 ? "-96.1270615" : _props$store$lon;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["LoadScript"], {
-    id: "script-loader",
-    googleMapsApiKey: "AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["GoogleMap"], {
-    id: "example-map",
-    mapContainerStyle: {
-      height: "225px" // width: "800px"
-
-    },
-    zoom: 15,
-    center: {
-      lat: parseFloat(lat),
-      lng: parseFloat(lng) // lat: 19.1707806,
-      // lng: -96.1270615,
-
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
-    onLoad: function onLoad(marker) {
-      console.log('marker: ', marker);
-    },
-    position: {
-      lat: parseFloat(lat),
-      lng: parseFloat(lng)
-    } // draggable
-    // onDragEnd={ (a, b, c) => console.log('e onDrag =>', a.latLng.lat(), a.latLng.lng())}
-
-  })));
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/vnpone/projects/panaderialaespecial/resources/js/components/Map.jsx: Unexpected token, expected \";\" (6:13)\n\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mMap\u001b[39m(props) {\u001b[0m\n\u001b[0m \u001b[90m 5 | \u001b[39m    \u001b[36mconst\u001b[39m { store\u001b[33m:\u001b[39m { lat \u001b[33m=\u001b[39m \u001b[32m\"19.1707806\"\u001b[39m\u001b[33m,\u001b[39m lon\u001b[33m:\u001b[39m lng \u001b[33m=\u001b[39m \u001b[32m\"-96.1270615\"\u001b[39m} } \u001b[33m=\u001b[39m props\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m    store    \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mLoadScript\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m            id\u001b[33m=\u001b[39m\u001b[32m\"script-loader\"\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 9 | \u001b[39m            googleMapsApiKey\u001b[33m=\u001b[39m\u001b[32m\"AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs\"\u001b[39m\u001b[0m\n    at Object.raise (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.unexpected (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:7642:16)\n    at Object.semicolon (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:7624:40)\n    at Object.parseExpressionStatement (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10364:10)\n    at Object.parseStatementContent (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9963:19)\n    at Object.parseStatement (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Object.parseBlockBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Object.parseBlock (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10376:10)\n    at Object.parseFunctionBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9424:24)\n    at Object.parseFunctionBodyAndFinish (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9394:10)\n    at /Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10535:12\n    at Object.withTopicForbiddingContext (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9702:14)\n    at Object.parseFunction (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10534:10)\n    at Object.parseExportDefaultExpression (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10997:19)\n    at Object.parseExport (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10905:31)\n    at Object.parseStatementContent (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9933:27)\n    at Object.parseStatement (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Object.parseBlockBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Object.parseTopLevel (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9758:10)\n    at Object.parse (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:11270:17)\n    at parse (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:11306:38)\n    at parser (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at /Users/vnpone/projects/panaderialaespecial/node_modules/@babel/core/lib/transform.js:34:34\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
 
 /***/ }),
 

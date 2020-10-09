@@ -40,6 +40,7 @@ const ShopOptionComponent = props => {
 
 export default function Stores(props) {
     const { setStore, stores, storeSelected = false } = props;
+    console.log('Stores storeSelected => ', storeSelected);
     const storesToSelect = transformStoreList(stores);
 
     useEffect(() => {
@@ -75,6 +76,7 @@ export default function Stores(props) {
                     setStore(selected.value)
                 }}
                 defaultValue={{label: storeSelected.name, value: storeSelected.id}}
+                // inputValue={'Bernal'}  muestra bernal pero la unica opcin
                 /*
                 onFocus={
                     this.onShopFocus

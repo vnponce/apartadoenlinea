@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"dfc561aac1bdc895d9ff","1":"602ba81ef787489e06c5","2":"32afc7533fcfe9c8b9de","3":"cf0c78cb160e31e7ae2b","4":"168945dd9ca0fb043192","5":"3dd36616c4c3494a90a3","6":"f7e67aa657892a6d08a2","7":"cf6dc12b424891012bd6","8":"f318c919ea8b5b37b7a4","9":"876f7f2088d8a7e6fac2","10":"427b9df441d12685e7ae","11":"55a0af2feb9aeb71501a","12":"285d38d0f85f2d69ff5a","13":"d635b032d4837394316e","14":"84f30bbe2783e25287d1","15":"3158db11a2b88afe38f6","16":"3370339c7bd295908ad0","17":"58eabb7c5dae49e31a3e","18":"7c45f9f25cb7e7fe9ce0","19":"2935d58ed44005ce713d","20":"80133528f7c605ac17a2","21":"2089d426d884069a1fd4","22":"b5877f155ee6018f4e2d"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"dfc561aac1bdc895d9ff","1":"602ba81ef787489e06c5","2":"32afc7533fcfe9c8b9de","3":"cf0c78cb160e31e7ae2b","4":"168945dd9ca0fb043192","5":"3dd36616c4c3494a90a3","6":"8520bd2aa5a4a8ec41df","7":"6175d404b5d9435b6979","8":"54b71a374034d1c1774d","9":"876f7f2088d8a7e6fac2","10":"427b9df441d12685e7ae","11":"77bc4ca8780172fe9b9b","12":"285d38d0f85f2d69ff5a","13":"5cf8f391ccf9e528dea6","14":"1692668b1fd1be42c632","15":"85d8c073558b7ec54a5f","16":"d2ba773ffe58b9e01b00","17":"0b223e7432cee2203ab5","18":"88bb3bd78b983bbcd1d4","19":"a70b20d537780179bd16","20":"147d3c9b7bda8fef117a","21":"c4d2a8eee4f4aedeef3d","22":"d3b03632488c5cd20cea","23":"ad6cec6139c7ad6f5a7d"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34562,7 +34562,7 @@ var map = {
 		0,
 		1,
 		5,
-		7,
+		8,
 		4,
 		12
 	],
@@ -34571,7 +34571,7 @@ var map = {
 		0,
 		1,
 		5,
-		7,
+		8,
 		4,
 		12
 	],
@@ -34580,56 +34580,56 @@ var map = {
 		0,
 		1,
 		5,
-		6,
+		7,
 		9,
 		4,
-		14
+		15
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		1,
 		5,
-		6,
+		7,
 		9,
 		4,
-		14
+		15
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		1,
 		5,
-		6,
+		7,
 		4,
-		16
+		17
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		1,
 		5,
-		6,
+		7,
 		4,
-		16
+		17
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		1,
 		5,
-		6,
+		7,
 		4,
-		17
+		18
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		1,
 		5,
-		6,
+		7,
 		4,
-		17
+		18
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
@@ -34637,7 +34637,7 @@ var map = {
 		1,
 		3,
 		2,
-		15
+		16
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
@@ -34645,15 +34645,15 @@ var map = {
 		1,
 		3,
 		2,
-		15
+		16
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
-		20
+		21
 	],
 	"./Example.js": [
 		"./resources/js/Pages/Example.js",
-		20
+		21
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
@@ -34661,7 +34661,7 @@ var map = {
 		3,
 		9,
 		2,
-		18
+		19
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
@@ -34669,28 +34669,46 @@ var map = {
 		3,
 		9,
 		2,
-		18
+		19
+	],
+	"./Landing": [
+		"./resources/js/Pages/Landing.jsx",
+		0,
+		1,
+		3,
+		6,
+		2,
+		13
+	],
+	"./Landing.jsx": [
+		"./resources/js/Pages/Landing.jsx",
+		0,
+		1,
+		3,
+		6,
+		2,
+		13
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		3,
 		2,
-		19
+		20
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		3,
 		2,
-		19
+		20
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
 		3,
-		7,
+		6,
 		8,
 		2,
 		11
@@ -34700,7 +34718,7 @@ var map = {
 		0,
 		1,
 		3,
-		7,
+		6,
 		8,
 		2,
 		11
@@ -34711,7 +34729,7 @@ var map = {
 		3,
 		10,
 		2,
-		21
+		22
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
@@ -34719,39 +34737,39 @@ var map = {
 		3,
 		10,
 		2,
-		21
+		22
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
 		3,
-		8,
+		6,
 		2,
-		13
+		14
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
 		3,
-		8,
+		6,
 		2,
-		13
+		14
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		3,
 		2,
-		22
+		23
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		3,
 		2,
-		22
+		23
 	]
 };
 function webpackAsyncContext(req) {
@@ -34825,8 +34843,8 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])(react__WEBPACK_IMPORTED
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/vnponce/Projects/laespecial/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/vnponce/Projects/laespecial/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/vnpone/projects/panaderialaespecial/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/vnpone/projects/panaderialaespecial/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

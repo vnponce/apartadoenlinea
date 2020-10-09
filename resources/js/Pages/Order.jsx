@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../Shared/Layout';
 import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
@@ -8,11 +8,15 @@ import Stores from "../components/Select/Stores";
 import DateSelector from "../components/DateSelector";
 import Hour from "../components/Select/Hour";
 import Map from "../components/Map";
+import ProductListElement from "../components/ProductListElement";
+import set from "@babel/runtime/helpers/esm/set";
 
 function Order() {
-    const { stores, errors } = usePage();
+    const { stores, errors, cart: { content } } = usePage();
+    console.log('content =>', content);
     // const { stores } = props;
     const [wantInvoice, setWantInvoice] = useState(false);
+    const [currentStore, setCurrentStore] = useState(false);
     const [store, setStore] = useState('');
     const [date, setDate] = useState(null);
     const [hour, setHour] = useState(null);
@@ -23,6 +27,24 @@ function Order() {
 
     // invoice info
     const [invoice, setInvoice] = useState({});
+
+
+    useEffect(() => {
+        console.log('content...', content)
+        if(content && Object.values(content).length > 0) {
+            const existedOrder = Object.keys(content).find(product => content[product].id === 'orderDetailsId');
+            console.log(content[existedOrder]);
+            const currentStoreId = content[existedOrder].options.store;
+            const currentStoreObject = stores.find(store => store.id === currentStoreId);
+            console.log('currentStoreObject =>', currentStoreObject);
+            setCurrentStore({
+                id: currentStoreObject.id,
+                name: currentStoreObject.name,
+            })
+        }
+    }, [content]);
+
+
 
     const wantInvoiceOnChange = () => {
         setWantInvoice(!wantInvoice);
@@ -80,6 +102,9 @@ function Order() {
                         {/* Sucursal */}
                         {/* <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/> */}
                         <Stores setStore={setStore} stores={stores} />
+                        {/*<Stores setStore={setStore} stores={stores} storeSelected={{ id: 2, name: 'Zaragoza'}}/>*/}
+                        {/*<Stores setStore={setStore} stores={stores} storeSelected={{id: 2, name: "Bravo"}}/>*/}
+                        {/*<Stores setStore={setStore} stores={stores} storeSelected={currentStore}/>*/}
                         {errors && errors.store && <span className="text-sm text-red-500 error store">{errors.store[0]}</span>}
                         {/* Día */}
                         {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
