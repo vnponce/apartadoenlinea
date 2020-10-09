@@ -27,6 +27,9 @@ function Users(props) {
             {
                 Header: 'username',
                 accessor: 'username',
+                Cell: ({ cell }) => {
+                    return cell.value === 'god' ? 'Gerencia' : cell.value;
+                }
             },
             {
                 Header: 'role',

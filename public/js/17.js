@@ -64,7 +64,11 @@ function Users(props) {
       accessor: 'name'
     }, {
       Header: 'username',
-      accessor: 'username'
+      accessor: 'username',
+      Cell: function Cell(_ref) {
+        var cell = _ref.cell;
+        return cell.value === 'god' ? 'Gerencia' : cell.value;
+      }
     }, {
       Header: 'role',
       accessor: 'role'

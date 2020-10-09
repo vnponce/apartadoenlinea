@@ -691,6 +691,22 @@ function SearchBar(props) {
       focus = _useState12[0],
       setFocus = _useState12[1];
 
+  function pressEnterToSearch(event) {
+    if (event.defaultPrevented) {
+      return; // Should do nothing if the default action has been cancelled
+    }
+
+    if (event.key === 'Enter') {
+      toSearch();
+    }
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    document.addEventListener('keyup', pressEnterToSearch);
+    return function () {
+      return document.removeEventListener('keyup', pressEnterToSearch);
+    };
+  });
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (searchValues && searchValues.store !== '') {
       var searchData = stores.find(function (current) {
