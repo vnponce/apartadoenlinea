@@ -54,6 +54,10 @@ Route::get('compra', function() {
 //    ]);
 //});
 
+Route::get('pan-de-muerto', function() {
+    return Inertia::render('Landing');
+});
+
 Auth::routes(['register' => false]);
 
 Route::group(['middleware' => 'auth'], function() {

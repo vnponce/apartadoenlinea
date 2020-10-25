@@ -1,9 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[25],{
 
+<<<<<<< HEAD
 /***/ "./resources/js/Pages/Order.jsx":
 /*!**************************************!*\
   !*** ./resources/js/Pages/Order.jsx ***!
   \**************************************/
+=======
+/***/ "./resources/js/Pages/Landing.jsx":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Landing.jsx ***!
+  \****************************************/
+>>>>>>> landing-setStore
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,6 +18,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+<<<<<<< HEAD
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
@@ -28,6 +36,14 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+=======
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Map */ "./resources/js/components/Map.jsx");
+/* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
+/* harmony import */ var _components_Geolocalated__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Geolocalated */ "./resources/js/components/Geolocalated.jsx");
+>>>>>>> landing-setStore
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -36,11 +52,16 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+<<<<<<< HEAD
+=======
+ // import ReactDOM from 'react-dom';
+>>>>>>> landing-setStore
 
 
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -242,12 +263,67 @@ function Order() {
 /***/ "./resources/js/components/DateSelector.jsx":
 /*!**************************************************!*\
   !*** ./resources/js/components/DateSelector.jsx ***!
+=======
+ // import styled from "styled-components";
+// const TwoColumns = styled.div `
+//     column-count: 2;
+// `
+
+function Landing(props) {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      stores = _usePage.stores;
+
+  var _useRememberedState = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["useRememberedState"])(1),
+      _useRememberedState2 = _slicedToArray(_useRememberedState, 2),
+      store = _useRememberedState2[0],
+      setStore = _useRememberedState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if ('geolocation' in navigator) {
+      console.log('Available');
+      navigator.geolocation.getCurrentPosition(function (position) {
+        console.log('Latitude is :', position.coords.latitude);
+        console.log('Longitude is :', position.coords.longitude);
+      });
+      console.log('navigator?');
+    } else {
+      console.log('Not Available');
+    }
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Pan de muerto"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full flex items-center flex-col mt-12 sm:mt-16 px-8"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full",
+    src: "/breads/Cuernito.png",
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-center m-8 flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Peque\xF1a"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Mediana"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Grande"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full text-justify pb-16"
+  }, console.log('stores =>', stores), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Geolocalated__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    store: store && stores.filter(function (s) {
+      return s.id === store;
+    })[0]
+  }))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Landing);
+
+/***/ }),
+
+/***/ "./resources/js/components/Geolocalated.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Geolocalated.jsx ***!
+>>>>>>> landing-setStore
   \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DateSelector; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -280,10 +356,34 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
  // import 'react-dates/lib/css/_datepicker.css';
+=======
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-geolocated */ "./node_modules/react-geolocated/dist-modules/index.js");
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_geolocated__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+>>>>>>> landing-setStore
 
 
 
 
+<<<<<<< HEAD
 var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject());
 function DateSelector(props) {
   // moment.locale('es');
@@ -450,6 +550,35 @@ function Input(_ref) {
   }, error[0]));
 }
 ;
+=======
+var Geolocalated =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Geolocalated, _React$Component);
+
+  function Geolocalated() {
+    _classCallCheck(this, Geolocalated);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Geolocalated).apply(this, arguments));
+  }
+
+  _createClass(Geolocalated, [{
+    key: "render",
+    value: function render() {
+      return !this.props.isGeolocationAvailable ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Your browser does not support Geolocation") : !this.props.isGeolocationEnabled ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Geolocation is not enabled") : this.props.coords ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "latitude"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.coords.latitude)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "longitude"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.coords.longitude)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "altitude"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.coords.altitude)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.coords.heading)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "speed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.coords.speed)))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Getting the location data\u2026 ");
+    }
+  }]);
+
+  return Geolocalated;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_geolocated__WEBPACK_IMPORTED_MODULE_1__["geolocated"])({
+  positionOptions: {
+    enableHighAccuracy: false
+  },
+  userDecisionTimeout: 5000
+})(Geolocalated));
+>>>>>>> landing-setStore
 
 /***/ }),
 
@@ -469,6 +598,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Map(props) {
+<<<<<<< HEAD
+=======
+  console.log('store map => ', props);
+>>>>>>> landing-setStore
   var _props$store = props.store,
       _props$store$lat = _props$store.lat,
       lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
@@ -505,6 +638,7 @@ function Map(props) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./resources/js/components/Select/Hour.jsx":
 /*!*************************************************!*\
   !*** ./resources/js/components/Select/Hour.jsx ***!
@@ -619,6 +753,8 @@ function Hour(props) {
 
 /***/ }),
 
+=======
+>>>>>>> landing-setStore
 /***/ "./resources/js/components/Select/Stores.jsx":
 /*!***************************************************!*\
   !*** ./resources/js/components/Select/Stores.jsx ***!
@@ -678,6 +814,10 @@ function Stores(props) {
       stores = props.stores,
       _props$storeSelected = props.storeSelected,
       storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
+<<<<<<< HEAD
+=======
+  console.log('Stores storeSelected => ', storeSelected);
+>>>>>>> landing-setStore
   var storesToSelect = transformStoreList(stores);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (storeSelected) {
@@ -716,7 +856,12 @@ function Stores(props) {
     defaultValue: {
       label: storeSelected.name,
       value: storeSelected.id
+<<<<<<< HEAD
     }
+=======
+    } // inputValue={'Bernal'}  muestra bernal pero la unica opcin
+
+>>>>>>> landing-setStore
     /*
     onFocus={
         this.onShopFocus
@@ -732,6 +877,7 @@ function Stores(props) {
 }
 ;
 
+<<<<<<< HEAD
 /***/ }),
 
 /***/ 1:
@@ -743,6 +889,8 @@ function Stores(props) {
 
 /* (ignored) */
 
+=======
+>>>>>>> landing-setStore
 /***/ })
 
 }]);
