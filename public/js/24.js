@@ -219,9 +219,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Map */ "./resources/js/components/Map.jsx");
-/* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Map */ "./resources/js/components/Map.jsx");
+/* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -230,16 +231,49 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    margin-bottom: 2rem;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    // transform: rotate(180deg);\n    transform: scaleX(-1);\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    @media (min-width: 960px) {\n        img {\n            max-width: 1024px;\n        }\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
  // import ReactDOM from 'react-dom';
 
 
 
 
+
  // import Geolocalated from "../components/Geolocalated";
-// import styled from "styled-components";
-// const TwoColumns = styled.div `
-//     column-count: 2;
-// `
+
+var MainWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var RotateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
 
 function Landing(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
@@ -250,85 +284,69 @@ function Landing(props) {
       store = _useRememberedState2[0],
       setStore = _useRememberedState2[1];
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(store && stores.filter(function (s) {
+    return s.id === store;
+  })[0]),
       _useState2 = _slicedToArray(_useState, 2),
-      closestStore = _useState2[0],
-      setClosestStore = _useState2[1];
-
-  function deg2rad(deg) {
-    return deg * (Math.PI / 180);
-  }
-
-  function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-    var R = 6371; // Radius of the earth in km
-
-    var dLat = deg2rad(lat2 - lat1); // deg2rad below
-
-    var dLon = deg2rad(lon2 - lon1);
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
-
-    return d;
-  }
+      storeObject = _useState2[0],
+      setStoreObject = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        var _position$coords = position.coords,
-            latitude = _position$coords.latitude,
-            longitude = _position$coords.longitude;
-        var closestDistance = Number.MAX_VALUE;
-        var closestStoreId = store;
-        stores.forEach(function (_ref) {
-          var lat = _ref.lat,
-              lon = _ref.lon,
-              id = _ref.id;
-          var result = getDistanceFromLatLonInKm(latitude, longitude, lat, lon); // console.log('result =>', result);
-
-          if (result < closestDistance) {
-            // eslint-disable-next-line no-console
-            // console.log('IN result < closestStore');
-            closestDistance = result;
-            closestStoreId = id;
-          }
-        }); // console.log('closestDistance =>', closestDistance);
-
-        console.log('closestStoreId =>', closestStoreId);
-        setStore(closestStoreId);
-      });
-    } else {
-      console.log('Not Available');
-    }
-  }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    setStoreObject(store && stores.filter(function (s) {
+      return s.id === store;
+    })[0]);
+  }, [store]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: "Pan de muerto"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainWrapper, {
+    className: "min-h-full bg-indigo-900 w-full flex items-center flex-col px-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full flex items-center flex-col mt-12 sm:mt-16 px-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-56 m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover md:h-64 lg:h-full",
-    src: "/breads/Cuernito.png",
+    className: "pt-20 text-4xl text-center md:text-6xl",
+    style: {
+      fontFamily: 'Rye'
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RotateWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "h-10 md:h-16",
+    src: "/images/decorator-pan-muerto.svg",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-orange-200"
+  }, "PAN DE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "h-10 md:h-16",
+    src: "/images/decorator-pan-muerto.svg",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-orange-200 -mt-4 md:-mt-8"
+  }, "MUERTO")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-4/5 text-orange-200 text-center mt-6 flex justify-around md:text-3xl"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-brand-orange"
+  }, "Peque\xF1o"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-brand-orange"
+  }, "Mediano"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-brand-orange"
+  }, "Grande"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "h-56 -mt-20 md:m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 md:-mt-32 lg:h-full",
+    src: "/images/pan-de-muerto.png",
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-center m-8 flex"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Peque\xF1a"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Mediana"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Grande"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full text-justify pb-16"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "w-full text-justify pb-20"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__["default"], {
     setStore: setStore,
     stores: stores,
     storeSelected: store && stores.filter(function (s) {
       return s.id === store;
     })[0]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    store: store && stores.filter(function (s) {
-      return s.id === store;
-    })[0]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "inline-block w-full text-center float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    store: storeObject
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "mb-5 pb-3 inline-block w-full text-center float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     target: "_blank",
     rel: "noopener noreferrer",
-    href: "https://maps.google.com/?q=".concat(store.lat, ",").concat(store.lon, "&z=8")
-  }, "ir a mapa"))));
+    href: "https://maps.google.com/?q=".concat(storeObject.lat, ",").concat(storeObject.lon, "&z=8")
+  }, "ir a mapa")))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Landing);
@@ -449,6 +467,52 @@ function Stores(props) {
       storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
   console.log('Stores storeSelected => ', storeSelected);
   var storesToSelect = transformStoreList(stores);
+
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+
+  function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    var R = 6371; // Radius of the earth in km
+
+    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+
+    var dLon = deg2rad(lon2 - lon1);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+
+    return d;
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var _position$coords = position.coords,
+            latitude = _position$coords.latitude,
+            longitude = _position$coords.longitude;
+        var closestDistance = Number.MAX_VALUE;
+        var closestStoreId = storeSelected;
+        stores.forEach(function (_ref) {
+          var lat = _ref.lat,
+              lon = _ref.lon,
+              id = _ref.id;
+          var result = getDistanceFromLatLonInKm(latitude, longitude, lat, lon); // console.log('result =>', result);
+
+          if (result < closestDistance) {
+            // eslint-disable-next-line no-console
+            closestDistance = result;
+            closestStoreId = id;
+          }
+        }); // console.log('closestDistance =>', closestDistance);
+
+        console.log('closestStoreId =>', closestStoreId);
+        setStore(closestStoreId);
+      });
+    } else {
+      console.log('Not Available');
+    }
+  }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (storeSelected) {
       setStore(storeSelected.id);
@@ -486,6 +550,10 @@ function Stores(props) {
     defaultValue: {
       label: storeSelected.name,
       value: storeSelected.id
+    },
+    value: {
+      label: storeSelected.name,
+      value: storeSelected.id
     } // inputValue={'Bernal'}  muestra bernal pero la unica opcin
 
     /*
@@ -501,7 +569,6 @@ function Stores(props) {
 
   }));
 }
-;
 
 /***/ })
 

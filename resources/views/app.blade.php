@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!--Rye font -->
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 <!-- Filepond to upload files -->
 <link rel='stylesheet' href='https://unpkg.com/filepond@4.11.0/dist/filepond.min.css' />
 <link rel='stylesheet' href='https://unpkg.com/filepond-plugin-image-preview@4.6.1/dist/filepond-plugin-image-preview.css' />

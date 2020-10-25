@@ -720,6 +720,52 @@ function Stores(props) {
       storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
   console.log('Stores storeSelected => ', storeSelected);
   var storesToSelect = transformStoreList(stores);
+
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+
+  function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    var R = 6371; // Radius of the earth in km
+
+    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+
+    var dLon = deg2rad(lon2 - lon1);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+
+    return d;
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var _position$coords = position.coords,
+            latitude = _position$coords.latitude,
+            longitude = _position$coords.longitude;
+        var closestDistance = Number.MAX_VALUE;
+        var closestStoreId = storeSelected;
+        stores.forEach(function (_ref) {
+          var lat = _ref.lat,
+              lon = _ref.lon,
+              id = _ref.id;
+          var result = getDistanceFromLatLonInKm(latitude, longitude, lat, lon); // console.log('result =>', result);
+
+          if (result < closestDistance) {
+            // eslint-disable-next-line no-console
+            closestDistance = result;
+            closestStoreId = id;
+          }
+        }); // console.log('closestDistance =>', closestDistance);
+
+        console.log('closestStoreId =>', closestStoreId);
+        setStore(closestStoreId);
+      });
+    } else {
+      console.log('Not Available');
+    }
+  }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (storeSelected) {
       setStore(storeSelected.id);
@@ -757,6 +803,10 @@ function Stores(props) {
     defaultValue: {
       label: storeSelected.name,
       value: storeSelected.id
+    },
+    value: {
+      label: storeSelected.name,
+      value: storeSelected.id
     } // inputValue={'Bernal'}  muestra bernal pero la unica opcin
 
     /*
@@ -772,7 +822,6 @@ function Stores(props) {
 
   }));
 }
-;
 
 /***/ })
 
