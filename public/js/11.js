@@ -346,7 +346,10 @@ function Order() {
     className: "lg:w-3/4 lg:float-right"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_6__["default"], {
     setStore: setStore,
-    stores: stores
+    stores: stores,
+    storeSelected: store && stores.filter(function (s) {
+      return s.id === store;
+    })[0]
   }), errors && errors.store && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm text-red-500 error store"
   }, errors.store[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DateSelector__WEBPACK_IMPORTED_MODULE_7__["default"], {

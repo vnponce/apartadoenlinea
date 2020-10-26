@@ -79,7 +79,7 @@ function Order() {
                         {/* Order place and hour data */}
                         {/* Sucursal */}
                         {/* <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/> */}
-                        <Stores setStore={setStore} stores={stores} />
+                        <Stores setStore={setStore} stores={stores} storeSelected={store && stores.filter(s => s.id === store)[0]}/>
                         {errors && errors.store && <span className="text-sm text-red-500 error store">{errors.store[0]}</span>}
                         {/* Día */}
                         {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
