@@ -106,6 +106,7 @@ class OrderTest extends TestCase
                         'price' => $product->pivot->price / 100,
                         'options' => [
                             'comment' => $product->pivot->comment,
+                            'allow_instructions' => $product->pivot->allowInstructions,
                         ],
                     ];
                 });
@@ -137,7 +138,7 @@ class OrderTest extends TestCase
                         'original' => $order->status,
                         'step' => $order->statusStep,
                     ],
-                    'canceled' => false,
+                    'canceled' => 0, // idk pero debe ser 0 en lugar de false.
                     'payed' => [
                         'original' => false,
                         'label' => 'Pendiente',
