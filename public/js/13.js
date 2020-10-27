@@ -252,7 +252,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    @media (min-width: 960px) {\n        img {\n            max-width: 1024px;\n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    & > div {\n        max-width: 1024px;\n    }\n    img {\n        max-width: 1024px;\n    }\n    label[for=\"store\"] {\n        color: #feebc8;\n\n    }\n    @keyframes do-levitation {\n      0% {\n        transform: translate(0, 0);\n      }\n      100% {\n        transform: translate(0px, 5px);\n      }\n    }\n    @keyframes do-levitation-reverted {\n      0% {\n        transform: translate(0px, 5px);\n      }\n      100% {\n        transform: translate(0px, 0px);\n      }\n    }\n\n    .levitate {\n      animation: do-levitation 3s alternate ease-in-out infinite;\n    }\n    .levitate-delayed {\n      animation: do-levitation-reverted 3.3s alternate ease-in-out infinite;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -299,7 +299,7 @@ function Landing(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: "Pan de muerto"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainWrapper, {
-    className: "min-h-full bg-indigo-900 w-full flex items-center flex-col px-8"
+    className: "h-full bg-indigo-900 w-full flex items-center flex-col px-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pt-20 text-4xl text-center md:text-6xl",
     style: {
@@ -308,13 +308,13 @@ function Landing(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RotateWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-10 md:h-16",
+    className: "levitate h-10 md:h-16",
     src: "/images/decorator-pan-muerto.svg",
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-orange-200"
   }, "PAN DE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-10 md:h-16",
+    className: "levitate-delayed h-10 md:h-16",
     src: "/images/decorator-pan-muerto.svg",
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -323,17 +323,21 @@ function Landing(props) {
     className: "w-4/5 text-orange-200 text-center mt-6 flex justify-around md:text-3xl"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-brand-orange"
-  }, "Peque\xF1o"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Peque\xF1o"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$25.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-brand-orange"
-  }, "Mediano"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Mediano"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$45.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-brand-orange"
-  }, "Grande"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$30.00"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-56 -mt-20 md:m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 md:-mt-32 lg:h-full",
+  }, "Grande"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$75.00"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "drop-shadow h-56 -mt-20 md:m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 md:-mt-32 lg:h-full",
     src: "/images/pan-de-muerto.png",
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-brand-orange mt-8 font-bold italic text-lg  md:text-3xl"
+  }, "Encuentra tu sucursal m\xE1s cercana"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-justify pb-20"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
+    className: "md:w-3/5 m-auto"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__["default"], {
     setStore: setStore,
     stores: stores,
     storeSelected: store && stores.filter(function (s) {
@@ -341,12 +345,24 @@ function Landing(props) {
     })[0]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_4__["default"], {
     store: storeObject
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "mb-5 pb-3 inline-block w-full text-center float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
+    className: "flex justify-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "mb-5 pb-3 inline-block w-full text-center float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0 sm:w-3/5",
     target: "_blank",
     rel: "noopener noreferrer",
     href: "https://maps.google.com/?q=".concat(storeObject.lat, ",").concat(storeObject.lon, "&z=8")
-  }, "ir a mapa")))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex justify-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    version: "1.1",
+    className: "stroke-current fill-current w-6",
+    id: "Location_pin",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M10,2.009c-2.762,0-5,2.229-5,4.99c0,4.774,5,11,5,11s5-6.227,5-11C15,4.239,12.762,2.009,10,2.009zM10,9.76c-1.492,0-2.7-1.209-2.7-2.7s1.208-2.7,2.7-2.7c1.49,0,2.699,1.209,2.699,2.7S11.49,9.76,10,9.76z"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Ir a mapa")))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Landing);
