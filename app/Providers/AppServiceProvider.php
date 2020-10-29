@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
         Inertia::share([
             // Synchronously
             'app' => [
-                'name' => Config::get('app.name'),
+//                'name' => Config::get('app.name'),
                 'env' => Config::get('app.env'),
                 'mock' => Config::get('app.env') === 'local' ? [
                     'username' => env('APP_MOCK_USERNAME', null),

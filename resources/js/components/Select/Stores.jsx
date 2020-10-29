@@ -40,7 +40,6 @@ const ShopOptionComponent = (props) => {
 
 export default function Stores(props) {
   const { setStore, stores, storeSelected = false } = props;
-  console.log('Stores storeSelected => ', storeSelected);
   const storesToSelect = transformStoreList(stores);
 
   function deg2rad(deg) {

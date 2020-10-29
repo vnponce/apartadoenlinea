@@ -373,7 +373,6 @@ function Stores(props) {
       stores = props.stores,
       _props$storeSelected = props.storeSelected,
       storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
-  console.log('Stores storeSelected => ', storeSelected);
   var storesToSelect = transformStoreList(stores);
 
   function deg2rad(deg) {
