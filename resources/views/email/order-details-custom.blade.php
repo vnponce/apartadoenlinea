@@ -29,8 +29,8 @@
             <table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; margin: 0; padding: 0; width: 100%; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%;">
                 <tr>
                     <td class="header" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; padding: 25px 0; text-align: center;">
-                        <img src="http://laespecial.test/svg/logo-short.svg" width="50px" alt="">
-                        <a href="http://laespecial.test" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #ef7d07; font-size: 19px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">
+                        <img src={{ url('/') . "/svg/Logo-Short.svg"}} width="50px" alt="">
+                        <a href={{ url('/') }} style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #ef7d07; font-size: 19px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">
                             Panadería la Especial
                         </a>
                     </td>
@@ -106,7 +106,7 @@
                                     </p>
                                     <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3d4852; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left; width: 50%; float: left">Muchas gracias,<br>
                                         Panadería la Especial</p>
-                                    <img src="http://laespecial.test/svg/logo-full.svg" width="200px" alt="" style="float: right" >
+                                    <img src={{ url('/') . "/svg/Logo-Full.svg" }} width="200px" alt="" style="float: right" >
 
                                 </td>
                             </tr>
@@ -119,7 +119,7 @@
                         <table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; margin: 0 auto; padding: 0; text-align: center; width: 570px; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px;">
                             <tr>
                                 <td class="content-cell" align="center" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; padding: 35px;">
-                                    <p style="display: flex; align-items: center; justify-content: space-around; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; line-height: 1.5em; margin-top: 0; color: #aeaeae; font-size: 12px; text-align: center;">© 2019 Panadería la Especial. <img src="http://laespecial.test/images/ConchaJuez.png" width="100px" alt="" style="float: right" > <a style="text-decoration: none; color: inherit" href="http://laespecial.test/tyc">Terminos y Condiciones</a></p>
+                                    <p style="display: flex; align-items: center; justify-content: space-around; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; line-height: 1.5em; margin-top: 0; color: #aeaeae; font-size: 12px; text-align: center;">© {{ now()->year }} Panadería la Especial. <img src={{ url('/') . "/images/ConchaJuez.png" }} width="100px" alt="" style="float: right" > <a style="text-decoration: none; color: inherit" href={{ url('/') . "/tyc" }}>Terminos y Condiciones</a></p>
                                 </td>
                             </tr>
                         </table>
