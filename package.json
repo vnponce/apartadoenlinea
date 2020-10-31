@@ -11,9 +11,11 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.6.3",
+        "@testing-library/cypress": "^7.0.1",
         "axios": "^0.18",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
+        "cypress": "^5.5.0",
         "eslint": "^6.3.0",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-plugin-import": "^2.18.2",

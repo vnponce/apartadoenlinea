@@ -806,7 +806,9 @@ function Stores(props) {
     value: {
       label: storeSelected.name,
       value: storeSelected.id
-    } // inputValue={'Bernal'}  muestra bernal pero la unica opcin
+    } // defaultMenuIsOpen
+    // menuIsOpen
+    // inputValue={'Bernal'}  muestra bernal pero la unica opcin
 
     /*
     onFocus={

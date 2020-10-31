@@ -128,7 +128,7 @@ function Order() {
                         <Input label="Correo electrónico" id="email" placeholder="" value={customer.email} type="email" onChange={customerInfoOnChange}/>
                         {errors && errors.email && <span className="text-sm text-red-500 error email">{errors.email[0]}</span>}
                         {/* Employee name */}
-                        <Input label="¿Quién levantó el pedido?" id="email" placeholder="" value={employeeName} type="email" onChange={e => setEmployeeName(e.target.value)}/>
+                        <Input label="¿Quién levantó el pedido?" id="employee" placeholder="" value={employeeName} onChange={e => setEmployeeName(e.target.value)}/>
                         {errors && errors.employeeName && <span className="text-sm text-red-500 error email">{errors.employeeName[0]}</span>}
                     </div>
                     {/* Invoice */}
