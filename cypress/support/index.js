@@ -14,7 +14,17 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import './laravel-commands';
+import './assertions';
+
+before(() => {
+  cy.task('activateCypressEnvFile', {}, { log: false });
+});
+
+after(() => {
+  cy.task('activateLocalEnvFile', {}, { log: false });
+});

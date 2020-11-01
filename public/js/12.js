@@ -943,7 +943,13 @@ function DateSelector(props) {
 
     if (shopSelected.sunday !== 'Cierra') {
       return false;
-    } // if sunday return true to block day
+    } // console.log({ isSame: dayDate.isSame('2020-11-01'), dayDate});
+    // if (dayDate.isSame('Sun Nov 01 2020 12:00:00 GMT-0600')) {
+    //     console.log('mismo dia =>', dayDate);
+    //     return false;
+    // }
+    // console.log({ dayDate });
+    // if sunday return true to block day
 
 
     return dayDate.isoWeekday() === 7;

@@ -23,3 +23,33 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import '@testing-library/cypress/add-commands';
+
+/**
+ * Create an order with product.
+ *
+ * @param {Object} options
+ *
+ * @example cy.refreshDatabase();
+ *          cy.refreshDatabase({ '--drop-views': true });
+ */
+Cypress.Commands.add('createOrder', (options = {}) => {
+  const { orderId, productId, productPrice } = options;
+  return cy.php(`
+        DB::table('order_product')->insert(
+        [
+            'order_id' => ${orderId || 'factory(App\\Order::class)->create()->id'},
+            'product_id' => ${productId || 'factory(App\\Product::class)->create()->id'},
+            'price' => ${productPrice || 20000},
+            'comment' => 'no glutten',
+            'quantity' => 2,
+        ]
+    );
+    `);
+  // Este no funciono, decia que el precio no tenia valor por defacto.
+  // cy.php(`
+  //     factory(App\\Order::class)->create()->each(function ($currentOrder) {
+  //         $currentOrder->products()->save(factory(App\\Product::class)->make());
+  //     });
+  // `);
+});

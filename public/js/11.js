@@ -429,10 +429,9 @@ function Order() {
     className: "text-sm text-red-500 error email"
   }, errors.email[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "\xBFQui\xE9n levant\xF3 el pedido?",
-    id: "email",
+    id: "employee",
     placeholder: "",
     value: employeeName,
-    type: "email",
     onChange: function onChange(e) {
       return setEmployeeName(e.target.value);
     }
@@ -513,7 +512,13 @@ function DateSelector(props) {
 
     if (shopSelected.sunday !== 'Cierra') {
       return false;
-    } // if sunday return true to block day
+    } // console.log({ isSame: dayDate.isSame('2020-11-01'), dayDate});
+    // if (dayDate.isSame('Sun Nov 01 2020 12:00:00 GMT-0600')) {
+    //     console.log('mismo dia =>', dayDate);
+    //     return false;
+    // }
+    // console.log({ dayDate });
+    // if sunday return true to block day
 
 
     return dayDate.isoWeekday() === 7;
@@ -773,7 +778,7 @@ var getHoursFromStore = function getHoursFromStore(store, date, gapTimeInMinutes
     return false;
   }
 
-  var hourPropertyName = 'delivery_time';
+  var hourPropertyName = 'delivery_time'; // if(date && date.isoWeekday() === 7 && !date.isSame('Sun Nov 01 2020 12:00:00 GMT-0600')) {
 
   if (date && date.isoWeekday() === 7) {
     hourPropertyName = 'sunday';
@@ -976,7 +981,9 @@ function Stores(props) {
     value: {
       label: storeSelected.name,
       value: storeSelected.id
-    } // inputValue={'Bernal'}  muestra bernal pero la unica opcin
+    } // defaultMenuIsOpen
+    // menuIsOpen
+    // inputValue={'Bernal'}  muestra bernal pero la unica opcin
 
     /*
     onFocus={

@@ -116,6 +116,8 @@ export default function Stores(props) {
                 }}
                 defaultValue={{ label: storeSelected.name, value: storeSelected.id }}
                 value={{ label: storeSelected.name, value: storeSelected.id }}
+                // defaultMenuIsOpen
+                // menuIsOpen
                 // inputValue={'Bernal'}  muestra bernal pero la unica opcin
                 /*
                 onFocus={

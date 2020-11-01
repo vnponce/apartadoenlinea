@@ -26,6 +26,7 @@ const getHoursFromStore = (store, date, gapTimeInMinutes) => {
         return false;
     }
     let hourPropertyName = 'delivery_time';
+    // if(date && date.isoWeekday() === 7 && !date.isSame('Sun Nov 01 2020 12:00:00 GMT-0600')) {
     if(date && date.isoWeekday() === 7) {
         hourPropertyName = 'sunday';
     }
