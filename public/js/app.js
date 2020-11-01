@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"dfc561aac1bdc895d9ff","1":"602ba81ef787489e06c5","3":"cf0c78cb160e31e7ae2b","4":"168945dd9ca0fb043192","5":"3dd36616c4c3494a90a3","6":"8520bd2aa5a4a8ec41df","7":"6175d404b5d9435b6979","8":"54b71a374034d1c1774d","9":"876f7f2088d8a7e6fac2","10":"427b9df441d12685e7ae","11":"ca496eed33af45a126ae","12":"cf6dc654a47c9341399f","13":"6649ad4c9834e203defc","14":"1692668b1fd1be42c632","15":"2d7400e097803779d88b","16":"d2ba773ffe58b9e01b00","17":"dd2ccefaf7b82f099e1c","18":"144d147056a34f951ebd","19":"a70b20d537780179bd16","20":"147d3c9b7bda8fef117a","21":"c4d2a8eee4f4aedeef3d","22":"d3b03632488c5cd20cea","23":"ad6cec6139c7ad6f5a7d","24":"263ff79b6f78055aa581"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"dfc561aac1bdc895d9ff","1":"602ba81ef787489e06c5","2":"1b569a19f7249873d0ac","3":"cf0c78cb160e31e7ae2b","4":"168945dd9ca0fb043192","5":"3dd36616c4c3494a90a3","6":"8520bd2aa5a4a8ec41df","7":"6175d404b5d9435b6979","8":"54b71a374034d1c1774d","9":"876f7f2088d8a7e6fac2","10":"427b9df441d12685e7ae","11":"ca496eed33af45a126ae","12":"cf6dc654a47c9341399f","13":"6649ad4c9834e203defc","14":"1692668b1fd1be42c632","15":"2d7400e097803779d88b","16":"d2ba773ffe58b9e01b00","17":"dd2ccefaf7b82f099e1c","18":"144d147056a34f951ebd","19":"a70b20d537780179bd16","20":"147d3c9b7bda8fef117a","21":"c4d2a8eee4f4aedeef3d","22":"d3b03632488c5cd20cea","23":"ad6cec6139c7ad6f5a7d"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34636,7 +34636,7 @@ var map = {
 		0,
 		1,
 		3,
-		24,
+		2,
 		16
 	],
 	"./Checkout.jsx": [
@@ -34644,7 +34644,7 @@ var map = {
 		0,
 		1,
 		3,
-		24,
+		2,
 		16
 	],
 	"./Example": [
@@ -34660,7 +34660,7 @@ var map = {
 		0,
 		3,
 		9,
-		24,
+		2,
 		19
 	],
 	"./Home.js": [
@@ -34668,7 +34668,7 @@ var map = {
 		0,
 		3,
 		9,
-		24,
+		2,
 		19
 	],
 	"./Landing": [
@@ -34677,7 +34677,7 @@ var map = {
 		1,
 		3,
 		6,
-		24,
+		2,
 		13
 	],
 	"./Landing.jsx": [
@@ -34686,21 +34686,21 @@ var map = {
 		1,
 		3,
 		6,
-		24,
+		2,
 		13
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		3,
-		24,
+		2,
 		20
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		3,
-		24,
+		2,
 		20
 	],
 	"./Order": [
@@ -34710,7 +34710,7 @@ var map = {
 		3,
 		6,
 		8,
-		24,
+		2,
 		11
 	],
 	"./Order.jsx": [
@@ -34720,7 +34720,7 @@ var map = {
 		3,
 		6,
 		8,
-		24,
+		2,
 		11
 	],
 	"./Product": [
@@ -34728,7 +34728,7 @@ var map = {
 		0,
 		3,
 		10,
-		24,
+		2,
 		22
 	],
 	"./Product.jsx": [
@@ -34736,7 +34736,7 @@ var map = {
 		0,
 		3,
 		10,
-		24,
+		2,
 		22
 	],
 	"./Success": [
@@ -34745,7 +34745,7 @@ var map = {
 		1,
 		3,
 		6,
-		24,
+		2,
 		14
 	],
 	"./Success.jsx": [
@@ -34754,21 +34754,21 @@ var map = {
 		1,
 		3,
 		6,
-		24,
+		2,
 		14
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		3,
-		24,
+		2,
 		23
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		3,
-		24,
+		2,
 		23
 	]
 };
