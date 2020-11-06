@@ -46,13 +46,13 @@ export default function ProductListElement(props) {
                 <div className="flex items-center flex-1 inline-block">
                     {isEditable &&
                     <svg onClick={removeItem}
-                         className="cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500 w-3"
+                         className="w-1/12 cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500"
                          viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <polygon
                             points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"/>
                     </svg>
                     }
-                    <span className="ml-0 text-lg">{ product.name }</span>
+                    <span className="w-11/12 ml-0 text-lg">{ product.name }</span>
                 </div>
                 <div className="flex flex-1 text-center items-center">
                     {isEditable &&

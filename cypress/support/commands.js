@@ -53,3 +53,42 @@ Cypress.Commands.add('createOrder', (options = {}) => {
   //     });
   // `);
 });
+
+
+Cypress.Commands.add('createOrderWithProducts', (options = {}) => {
+  const { products = [] } = options;
+  let order;
+
+  // crear order
+  cy.create('App\\Order').then((orderCreated) => {
+    console.log('orderCreated =>', orderCreated);
+    cy.log('orderCreated =>', orderCreated);
+    order = orderCreated;
+
+    // agregar los productos a la orden
+    // si existen products debe hacer el foreach
+    if (products.length) {
+      products.forEach((product) => {
+        cy.create('App\\Product', {
+          name: product.name,
+          price: product.price,
+        }).then((productCreated) => {
+          cy.createOrder({
+            orderId: order.id,
+            productId: productCreated.id,
+            productPrice: productCreated.price,
+          });
+        });
+      });
+    } else {
+      // si no existe products property pues que agreue solo uno a esa orden.
+      cy.createOrder({
+        orderId,
+      });
+    }
+  });
+  // console.log('order =>', order);
+  // cy.log('order =>', order);
+  // // return order
+  // return order;
+});

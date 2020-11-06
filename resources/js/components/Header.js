@@ -6,7 +6,7 @@ import Autocomplete from './Autocomplete';
 // import 'sweetalert2/src/sweetalert2.scss'
 
 
-export default function Header() {
+export default function Header({ setShowPanel, showPanel }) {
   const [showSearch, setShowSearch] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { categories, cart: { content }, auth } = usePage();
@@ -87,9 +87,11 @@ export default function Header() {
                           </svg>
                           }
                           {/* Charola icon */}
-                          <span href="/pedido" id="charola">
+                          <span className="cursor-pointer" onClick={() => {
+                            window.location.pathname !== '/charola' ? setShowPanel(true) : false;
+                          }} id="charola">
                         {content && (content.length === 0 || Object.keys(content).filter((product) => content[product].id !== 'orderDetailsId').length === 0)
-                        && <svg className="h-4 fill-current stroke-current text-white cursor-not-allowed"
+                        && <svg className="h-4 fill-current stroke-current text-white"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 44.83">
                             <g id="Empty_Tray">
                                 <polygon id="Tray" points="0 34.83 100 34.83 89.37 44.83 10.59 44.83 0 34.83"/>
@@ -105,14 +107,12 @@ export default function Header() {
                         </svg>
                         }
                               {content && Object.keys(content).filter((product) => content[product].id !== 'orderDetailsId').length > 0
-                              && <InertiaLink href="/pedido" id="charola">
-                                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 fill-current stroke-current text-white"
-                                       viewBox="0 0 100 34.83">
-                                      <title>Con Pan</title>
-                                      <path
-                                          d="M0 24.83h100l-10.63 10H10.59L0 24.83zM74.48 12a10.47 10.47 0 0 0-.7-.85A37 37 0 0 0 62.5 2.71v4.62a2.5 2.5 0 0 1-5 0V.82a29.39 29.39 0 0 0-5-.82v7.33a2.5 2.5 0 0 1-5 0V0a29.32 29.32 0 0 0-5 .82v6.51a2.5 2.5 0 0 1-5 0V2.71a37.12 37.12 0 0 0-11.3 8.47 10.47 10.47 0 0 0-.7.85 4.88 4.88 0 0 0-.85 2.8 5 5 0 0 0 5 5h40.7a5 5 0 0 0 5-5 4.88 4.88 0 0 0-.87-2.83z"/>
-                                  </svg>
-                              </InertiaLink>
+                              && <svg xmlns="http://www.w3.org/2000/svg" className="h-4 fill-current stroke-current text-white"
+                                      viewBox="0 0 100 34.83">
+                                  <title>Con Pan</title>
+                                  <path
+                                      d="M0 24.83h100l-10.63 10H10.59L0 24.83zM74.48 12a10.47 10.47 0 0 0-.7-.85A37 37 0 0 0 62.5 2.71v4.62a2.5 2.5 0 0 1-5 0V.82a29.39 29.39 0 0 0-5-.82v7.33a2.5 2.5 0 0 1-5 0V0a29.32 29.32 0 0 0-5 .82v6.51a2.5 2.5 0 0 1-5 0V2.71a37.12 37.12 0 0 0-11.3 8.47 10.47 10.47 0 0 0-.7.85 4.88 4.88 0 0 0-.85 2.8 5 5 0 0 0 5 5h40.7a5 5 0 0 0 5-5 4.88 4.88 0 0 0-.87-2.83z"/>
+                              </svg>
                               }
                     </span>
                           {/* trash */}

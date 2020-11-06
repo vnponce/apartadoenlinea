@@ -40,7 +40,8 @@ class CartController extends Controller
     public function remove(Request $request, $id)
     {
         Cart::remove($id);
-        return back()->with('success_message', 'Pan fuera de la charola');
+//        return back()->with('success_message', 'Pan fuera de la charola');
+        return back()->with(['success_message' => 'Pan fuera de la charola', 'show_panel' => true]);
     }
 
     public function updateComment(Request $request, Product $product)
@@ -77,8 +78,10 @@ class CartController extends Controller
         $sorted = $cart->sortBy(function ($product, $key) {
             return $product->name;
         });
-        return redirect('/charola');
-        // return Inertia::render('Checkout', compact('sorted'));
+        return back()->with('show_panel', 'Actualizado');
+
+//        return redirect('/charola');
+        // return Inertia::render('Checkout', compactap('sorted'));
     }
 
     public function empty()

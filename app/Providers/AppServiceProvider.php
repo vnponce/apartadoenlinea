@@ -68,6 +68,7 @@ class AppServiceProvider extends ServiceProvider
                     'success' => Session::get('success'),
                     'success_message' => Session::get('success_message'),
                     'message' => Session::get('message'),
+                    'show_panel' => Session::get('show_panel'),
                 ];
             },
             'cart' => function () {
