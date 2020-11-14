@@ -43,7 +43,8 @@ class StoresTableSeeder extends Seeder
             "lat" =>"19.1865953",
             "lon" =>"-96.1371938",
             "monday_saturday" =>"Lunes a sábado",
-            "sunday" =>"24 horas",
+//            "sunday" =>"24 horas",
+            "sunday" =>"00:00 a 23:30",
             "isMatrix" => true,
             "created_at" =>"2020-01-24 18:09:53",
             "updated_at" =>"2020-01-28 19:44:51"
