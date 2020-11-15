@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"43347d68e9f69b35d2ee","3":"00006501a6903ff4495f","4":"0d84f8f0cb3c31529241","5":"85803e87156a75dd5eb5","6":"419536cab0613fe57f24","7":"cf6dc12b424891012bd6","8":"977dc91e126490c0d16a","9":"5261df6c3540c420b324","10":"5dd2218f61180370296c","11":"8c826c798972fbad8b75","12":"7ee5f9be37cd5dc0a052","13":"5b5b906e298ee6bc01b4","14":"b360de1e4d958b689f39","15":"358fca1ef82272e16b4b","16":"e4055c8b2922e5ee1077","17":"163c1af889646e097fd0","18":"dae0dc0a6cfd81fd7abe","19":"ca40e7d6cb115144eb59","20":"a09fb84534a188f116dd","21":"2089d426d884069a1fd4","22":"b5877f155ee6018f4e2d","23":"1b20beb6dacad26cc31c","32":"93748da39bf86a0dd15c"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"43347d68e9f69b35d2ee","2":"21f14247cce872d08cb3","3":"f8b765d2cd0efd5381cd","4":"0d84f8f0cb3c31529241","5":"f56f3a031dde15fd87f4","6":"f7e67aa657892a6d08a2","7":"cf6dc12b424891012bd6","8":"977dc91e126490c0d16a","9":"5261df6c3540c420b324","10":"ba5f148df3bc7650dc0f","13":"a4af183ab05d6d0bf22c","14":"445b53c1e455c98cf588","15":"e1124a595443f6d8bc1d","18":"1c87934be3d3d2c5dac2","19":"ca40e7d6cb115144eb59","23":"0a87edce41d5892c70c6","24":"0f92020ec3b5fb8b5381","25":"1c63292622f3cd0a5cea","26":"258643967de2a00a8274","27":"b983dd3775f60a853e12","28":"3ea0670f3f92276ae94e","29":"3600cd21f9dd57fe902a","30":"18f60ef90beb18b9eb0a","31":"10df16675e4b8dee0407"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34563,7 +34563,8 @@ var map = {
 		4,
 		7,
 		3,
-		10
+		10,
+		24
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
@@ -34571,71 +34572,74 @@ var map = {
 		4,
 		7,
 		3,
-		10
+		10,
+		24
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		4,
-		12,
+		6,
 		8,
-		3,
-		14
+		10,
+		13
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		4,
-		12,
+		6,
 		8,
-		3,
-		14
+		10,
+		13
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		4,
-		12,
-		3,
-		15
+		6,
+		10,
+		14
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		4,
-		12,
-		3,
-		15
+		6,
+		10,
+		14
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		4,
-		12,
-		3,
-		17
+		6,
+		10,
+		15
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		4,
-		12,
-		3,
-		17
+		6,
+		10,
+		15
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		6,
-		5,
-		23
+		2,
+		3,
+		18,
+		28
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
-		6,
-		5,
-		23
+		2,
+		3,
+		18,
+		28
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34648,112 +34652,126 @@ var map = {
 	"./Home": [
 		"./resources/js/Pages/Home.js",
 		0,
-		6,
+		2,
 		8,
-		5,
-		16
+		3,
+		18,
+		26
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
-		6,
+		2,
 		8,
-		5,
-		16
+		3,
+		18,
+		26
 	],
 	"./Landing": [
 		"./resources/js/Pages/Landing.jsx",
 		0,
-		6,
-		11,
+		2,
 		5,
-		13
+		3,
+		18,
+		25
 	],
 	"./Landing.jsx": [
 		"./resources/js/Pages/Landing.jsx",
 		0,
-		6,
-		11,
+		2,
 		5,
-		13
+		3,
+		18,
+		25
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		6,
-		5,
-		20
+		2,
+		3,
+		18,
+		29
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
-		6,
-		5,
-		20
+		2,
+		3,
+		18,
+		29
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		6,
-		11,
-		7,
+		2,
 		5,
-		32
+		7,
+		3,
+		18,
+		23
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
-		6,
-		11,
-		7,
+		2,
 		5,
-		32
+		7,
+		3,
+		18,
+		23
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		6,
+		2,
 		9,
-		5,
-		21
+		3,
+		18,
+		30
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
-		6,
+		2,
 		9,
-		5,
-		21
+		3,
+		18,
+		30
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		6,
-		11,
+		2,
 		5,
-		18
+		3,
+		18,
+		27
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
-		6,
-		11,
+		2,
 		5,
-		18
+		3,
+		18,
+		27
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
-		6,
-		5,
-		22
+		2,
+		3,
+		18,
+		31
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
-		6,
-		5,
-		22
+		2,
+		3,
+		18,
+		31
 	]
 };
 function webpackAsyncContext(req) {

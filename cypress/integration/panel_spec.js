@@ -33,9 +33,14 @@ describe('test right panel', () => {
     cy.wait(300);
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
     cy.get('.product-side-panel .panel').should('be.visible');
+    cy.findAllByTestId('list-item-1').within(() => {
+        // probar que sean los productos en lisatados.
+        cy.get('.name').contains('nice product');
+        cy.get('.quantity').contains('1');
+        cy.get('.price').contains('$13.00');
+    })
   });
 
-  // probar que sean los productos en lisatados.
 
   // probar que el button este hasta abajo con el total siempre visible aun exista scroll dentro del listdo
 });

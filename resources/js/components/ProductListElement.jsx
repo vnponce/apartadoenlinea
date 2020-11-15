@@ -41,32 +41,33 @@ export default function ProductListElement(props) {
         });
     };
     return (
-        <div className="mb-8 w-full">
+        <div data-testid={`list-item-${product.id}`} className="mb-8 w-full">
             <div className="flex">
                 <div className="flex items-center flex-1 inline-block">
                     {isEditable &&
                     <svg onClick={removeItem}
-                         className="w-1/12 cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500"
+                         // className="w-1/12 cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500"
+                         className="remove-all-item w-1/12 cursor-pointer mr-2 stroke-current fill-current  text-gray-500"
                          viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <polygon
                             points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644"/>
                     </svg>
                     }
-                    <span className="w-11/12 ml-0 text-lg">{ product.name }</span>
+                    <span className="name w-11/12 ml-0 text-lg">{ product.name }</span>
                 </div>
                 <div className="flex flex-1 text-center items-center">
                     {isEditable &&
 
-                    <svg onClick={removeOneItem} className="w-5 cursor-pointer fill-current text-brand-orange"
+                    <svg onClick={removeOneItem} className="remove-item w-5 cursor-pointer fill-current text-brand-orange"
                          xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 20 20"
                          enable-background="new 0 0 20 20">
                         <path
                             d="M16,10c0,0.553-0.048,1-0.601,1H4.601C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H15.4  C15.952,9,16,9.447,16,10z"/>
                     </svg>
                     }
-                    <span className="flex-1 cursor-pointer ">{ product.qty }</span>
+                    <span className="quantity flex-1 cursor-pointer ">{ product.qty }</span>
                     {isEditable &&
-                    <svg onClick={addOneItem} className="w-5 cursor-pointer fill-current text-brand-orange"
+                    <svg onClick={addOneItem} className="add-item w-5 cursor-pointer fill-current text-brand-orange"
                          xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 20 20"
                          enable-background="new 0 0 20 20">
                         <path
@@ -74,13 +75,14 @@ export default function ProductListElement(props) {
                     </svg>
                     }
                 </div>
-                <div className="flex flex-1 items-center flex-row-reverse">${ product.price.toFixed(2) }</div>
+                <div className="price flex flex-1 items-center flex-row-reverse">${ product.price.toFixed(2) }</div>
             </div>
             {product.options.allow_instructions && (
                 <div onClick={() => setShowInput(true)} className="text-sm italic text-brand-orange">
                     {showInput && isEditable ?
                         /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
                         <input name="comment" type="text" placeholder="Ej. sin chile"
+                               autoFocus
                                value={comment}
                                onBlur={updateComment}
                                onChange={e => setComment(e.target.value)}
