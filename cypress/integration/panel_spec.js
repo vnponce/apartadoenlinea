@@ -40,7 +40,14 @@ describe('test right panel', () => {
         cy.get('.price').contains('$13.00');
     })
   });
+    it.only('should not show allowed button and total if is empty and show empty charola', function () {
+        cy.login();
 
-
-  // probar que el button este hasta abajo con el total siempre visible aun exista scroll dentro del listdo
+        cy.visit('/');
+        cy.get('#charola').click();
+        cy.get('.product-side-panel .panel').within(() => {
+            cy.findByText('No hay pan en la charola');
+            cy.findByRole('button', { name: /proceder/i}).should('not.exist');
+        });
+    });
 });

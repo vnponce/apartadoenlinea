@@ -47,7 +47,7 @@ export default function Panel(props) {
   const { show, setShowPanel } = props;
   console.log('show =>', show);
   { /* <PanelWrapper show={showPanel}> */ }
-  const cartIsEmpty = products && (products.length === 0 || Object.keys(products).filter((product) => products[product].id !== 'orderDetailsId').length === 0);
+  const cartIsEmpty = products && (products.length === 0 || Object.keys(products).filter(product => products[product].id !== 'orderDetailsId').length === 0);
 
   useEffect(() => {
     // this is a hack, because we need to keep open panel when go to remove or update *ep* and return the page
@@ -68,7 +68,7 @@ export default function Panel(props) {
                         <div id="header-lines"></div>
                         <div className="list-wrapper mt-16 overflow-auto">
                             {console.log('products =>', products)}
-                            {products && (products.length === 0 || Object.keys(products).filter(product => products[product].id !== 'orderDetailsId').length === 0 ) &&
+                            {cartIsEmpty &&
                             <div className="flex flex-col justify-end h-64 text-center text-brand-orange m-auto">
                                 <div className="text-regularText">No hay pan en la charola</div>
                                 <svg className="mx-auto w-24 h-24 fill-current stroke-current cursor-not-allowed"
@@ -99,15 +99,18 @@ export default function Panel(props) {
                             }).filter((product) => products[product].id !== 'orderDetailsId').map((product) => <ProductListElement key={products[product].id} product={products[product]} isEditable={true}/>)}
                         </div>
                     </div>
-                    <div>
-                        <div className="w-full text-center text-regularText text-normal">Total:</div>
-                        <div className="w-full text-center text-regularText text-2xl">${subtotal}</div>
-                        <InertiaLink
-                            href="/pedido"
-                            className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
-                            <span>Proceder</span>
-                        </InertiaLink>
-                    </div>
+                    {!cartIsEmpty && (
+                        <div>
+                            <div className="w-full text-center text-regularText text-normal">Total:</div>
+                            <div className="w-full text-center text-regularText text-2xl">${subtotal}</div>
+                            <InertiaLink
+                                href="/pedido"
+                                role='button'
+                                className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
+                                <span>Proceder</span>
+                            </InertiaLink>
+                        </div>
+                    )}
                 </div>
             </div>
         </PanelWrapper>

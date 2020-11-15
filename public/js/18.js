@@ -613,9 +613,7 @@ function Panel(props) {
     id: "header-lines"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-wrapper mt-16 overflow-auto"
-  }, console.log('products =>', products), products && (products.length === 0 || Object.keys(products).filter(function (product) {
-    return products[product].id !== 'orderDetailsId';
-  }).length === 0) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, console.log('products =>', products), cartIsEmpty && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-col justify-end h-64 text-center text-brand-orange m-auto"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-regularText"
@@ -655,12 +653,13 @@ function Panel(props) {
       product: products[product],
       isEditable: true
     });
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }))), !cartIsEmpty && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-center text-regularText text-normal"
   }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-center text-regularText text-2xl"
   }, "$", subtotal), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
     href: "/pedido",
+    role: "button",
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Proceder"))))));
 }
