@@ -40,7 +40,7 @@ describe('test right panel', () => {
         cy.get('.price').contains('$13.00');
     })
   });
-    it.only('should not show allowed button and total if is empty and show empty charola', function () {
+    it('should not show allowed button and total if is empty and show empty charola', function () {
         cy.login();
 
         cy.visit('/');

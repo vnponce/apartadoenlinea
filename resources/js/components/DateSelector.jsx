@@ -57,7 +57,10 @@ export default function DateSelector(props) {
                     id="date"
                     name="date"
                     date={date}
-                    onDateChange={date => setDate(date)}
+                    onDateChange={date => {
+                        console.log('date format =>', date);
+                        return setDate(date)
+                    }}
                     focused={focus}
                     onFocusChange={props => setFocus(props.focused)}
                     disabled={!store}

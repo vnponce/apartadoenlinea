@@ -974,6 +974,7 @@ function DateSelector(props) {
     name: "date",
     date: date,
     onDateChange: function onDateChange(date) {
+      console.log('date format =>', date);
       return setDate(date);
     },
     focused: focus,

@@ -1,73 +1,101 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { InertiaLink, usePage } from '@inertiajs/inertia-react';
+import { Inertia } from '@inertiajs/inertia';
+import moment from "moment";
 import Layout from '../Shared/Layout';
-import {InertiaLink, usePage} from "@inertiajs/inertia-react";
-import {Inertia} from "@inertiajs/inertia";
-import HeaderDescription from "../components/HeaderDescription";
-import Input from "../components/Input";
-import Stores from "../components/Select/Stores";
-import DateSelector from "../components/DateSelector";
-import Hour from "../components/Select/Hour";
-import Map from "../components/Map";
+import HeaderDescription from '../components/HeaderDescription';
+import Input from '../components/Input';
+import Stores from '../components/Select/Stores';
+import DateSelector from '../components/DateSelector';
+import Hour from '../components/Select/Hour';
+import Map from '../components/Map';
 
 function Order() {
-    const { stores, errors } = usePage();
-    // const { stores } = props;
-    const [wantInvoice, setWantInvoice] = useState(false);
-    const [store, setStore] = useState('');
-    const [date, setDate] = useState(null);
-    const [hour, setHour] = useState(null);
-    const [employeeName, setEmployeeName] = useState('');
+  const { stores, errors, cart: { content } } = usePage();
+  // const { stores } = props;
+  const [wantInvoice, setWantInvoice] = useState(false);
+  const [store, setStore] = useState('');
+  const [date, setDate] = useState(null);
+  const [hour, setHour] = useState(null);
+  const [employeeName, setEmployeeName] = useState('');
 
-    // customer info
-    const [customer, setCustomer] = useState({});
+  // customer info
+  const [customer, setCustomer] = useState({});
 
-    // invoice info
-    const [invoice, setInvoice] = useState({});
+  // invoice info
+  const [invoice, setInvoice] = useState({});
 
-    const wantInvoiceOnChange = () => {
-        setWantInvoice(!wantInvoice);
-        if (!invoice.name) {
-            const fullName = (customer.name && customer.lastname) ? customer.name + ' ' + customer.lastname : '';
-            setInvoice({
-                name: fullName,
-                phone: customer.phone || '',
-                email: customer.email || '',
-            })
-        }
-    };
-
-    const customerInfoOnChange = e => {
+  useEffect(() => {
+    console.log('[Order] content =>', content);
+    console.log('[Order] Object.keys(content).length =>', Object.keys(content).length);
+    if (Object.keys(content).length) {
+      // const orderDetails = Object.keys(content).find((product) => content[product].id === 'orderDetailsId');
+      const orderDetails = Object.values(content).find(({ id }) => id === 'orderDetailsId');
+      if (orderDetails) {
+        console.log('[Order] orderDetails =>', orderDetails);
+        const {
+          options: {
+              name, date, email, employeeName, hour, lastname, phone, store
+          },
+        } = orderDetails;
+        setStore(store);
+        setDate(moment(date));
+        // setHour(hour);
+        setEmployeeName(employeeName);
         setCustomer({
-            ...customer,
-            [e.target.name]: e.target.value,
-        })
-    };
+          name,
+          lastname,
+          phone,
+          email,
+        });
+      }
+    }
+  }, []);
 
-    const invoiceInfoOnChange = e => {
-        setInvoice({
-            ...invoice,
-            [e.target.name]: e.target.value,
-        })
-    };
+  const wantInvoiceOnChange = () => {
+    setWantInvoice(!wantInvoice);
+    if (!invoice.name) {
+      const fullName = (customer.name && customer.lastname) ? `${customer.name} ${customer.lastname}` : '';
+      setInvoice({
+        name: fullName,
+        phone: customer.phone || '',
+        email: customer.email || '',
+      });
+    }
+  };
 
-    const onSubmit = () => {
-        Inertia.post('/pedido/detalles', {
-            store,
-            date,
-            hour,
-            name: customer.name,
-            lastname: customer.lastname,
-            phone: customer.phone,
-            email:  customer.email,
-            employeeName,
-            // date y hour en un solo string ej. '28/05/2020 7:30'
-            // pickUp,
-            // mandar invoice info solo si es 'wantInvoice' true
-        })
-    };
+  const customerInfoOnChange = (e) => {
+    setCustomer({
+      ...customer,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const invoiceInfoOnChange = (e) => {
+    setInvoice({
+      ...invoice,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmit = () => {
+    Inertia.post('/pedido/detalles', {
+      store,
+      date,
+      hour,
+      name: customer.name,
+      lastname: customer.lastname,
+      phone: customer.phone,
+      email: customer.email,
+      employeeName,
+      // date y hour en un solo string ej. '28/05/2020 7:30'
+      // pickUp,
+      // mandar invoice info solo si es 'wantInvoice' true
+    });
+  };
 
 
-    return (
+  return (
         <Layout title="Producto seleccionado">
             <HeaderDescription title="PEDIDOS"
                                description="Por favor recuerda llenar el formulario para indicarnos en dónde recogeras tu pedido."/>
@@ -79,21 +107,21 @@ function Order() {
                         {/* Order place and hour data */}
                         {/* Sucursal */}
                         {/* <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/> */}
-                        <Stores setStore={setStore} stores={stores} storeSelected={store && stores.filter(s => s.id === store)[0]}/>
+                        <Stores setStore={setStore} stores={stores} storeSelected={store && stores.filter((s) => s.id === store)[0]}/>
                         {errors && errors.store && <span className="text-sm text-red-500 error store">{errors.store[0]}</span>}
                         {/* Día */}
                         {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
-                        <DateSelector date={date} setDate={setDate} store={store && stores.filter(s => s.id === store)[0]} />
+                        <DateSelector date={date} setDate={setDate} store={store && stores.filter((s) => s.id === store)[0]} />
                         {errors && errors.date && <span className="text-sm text-red-500 error date">{errors.date[0]}</span>}
 
-                        {/* Hora*/}
-                        <Hour hour={hour} setHour={setHour} store={store && stores.filter(s => s.id === store)[0]} date={date} />
+                        {/* Hora */}
+                        <Hour hour={hour} setHour={setHour} store={store && stores.filter((s) => s.id === store)[0]} date={date} />
                         {errors && errors.hour && <span className="text-sm text-red-500 error hour">{errors.hour[0]}</span>}
                         {/* <Input label="Hora" id="hour" placeholder="9:30" value="9:30pm"/> */}
                         {/* Map */}
                         {/* Mapa */}
                         <div className="hidden border h-56 mt-4 bg-brand-gray sm:block">
-                            <Map store={store && stores.filter(s => s.id === store)[0]} />
+                            <Map store={store && stores.filter((s) => s.id === store)[0]} />
                         </div>
                         {/* Ver mapa */}
                         <button
@@ -128,35 +156,35 @@ function Order() {
                         <Input label="Correo electrónico" id="email" placeholder="" value={customer.email} type="email" onChange={customerInfoOnChange}/>
                         {errors && errors.email && <span className="text-sm text-red-500 error email">{errors.email[0]}</span>}
                         {/* Employee name */}
-                        <Input label="¿Quién levantó el pedido?" id="employee" placeholder="" value={employeeName} onChange={e => setEmployeeName(e.target.value)}/>
+                        <Input label="¿Quién levantó el pedido?" id="employee" placeholder="" value={employeeName} onChange={(e) => setEmployeeName(e.target.value)}/>
                         {errors && errors.employeeName && <span className="text-sm text-red-500 error email">{errors.employeeName[0]}</span>}
                     </div>
                     {/* Invoice */}
-                    {/*<div className="w-full bg-brand-gray mt-8 p-4">*/}
-                    {/*    <div className="flex items-center">*/}
-                    {/*        <input id="want-invoice" className="mr-2" type="checkbox"*/}
-                    {/*               onClick={wantInvoiceOnChange}/>*/}
-                    {/*        <label htmlFor="want-invoice" className="text-brand-orange text-lg italic font-thin">*/}
-                    {/*            ¿Quieres factura?*/}
-                    {/*        </label>*/}
-                    {/*    </div>*/}
-                    {/*    {wantInvoice &&*/}
-                    {/*        <>*/}
-                    {/*            /!* RFC *!/*/}
-                    {/*            <Input label="RFC" id="rfc" value={invoice.rfc} onChange={invoiceInfoOnChange}/>*/}
-                    {/*            /!* Type of... is a selector *!/*/}
-                    {/*            <Input label="Selector" id="type" value={invoice.type} onChange={invoiceInfoOnChange}/>*/}
-                    {/*            /!* Address *!/*/}
-                    {/*            <Input label="Dirección" id="address" value={invoice.address} onChange={invoiceInfoOnChange}/>*/}
-                    {/*            /!* Full name *!/*/}
-                    {/*            <Input label="Nombre completo" id="name" value={invoice.name} onChange={invoiceInfoOnChange}/>*/}
-                    {/*            /!* Phone *!/*/}
-                    {/*            <Input label="Teléfono" id="phone" type="tel" value={invoice.phone} onChange={invoiceInfoOnChange}/>*/}
-                    {/*            /!* email *!/*/}
-                    {/*            <Input label="Correo electrónico" id="email" type="email" value={invoice.email} onChange={invoiceInfoOnChange}/>*/}
-                    {/*        </>*/}
-                    {/*    }*/}
-                    {/*</div>*/}
+                    {/* <div className="w-full bg-brand-gray mt-8 p-4"> */}
+                    {/*    <div className="flex items-center"> */}
+                    {/*        <input id="want-invoice" className="mr-2" type="checkbox" */}
+                    {/*               onClick={wantInvoiceOnChange}/> */}
+                    {/*        <label htmlFor="want-invoice" className="text-brand-orange text-lg italic font-thin"> */}
+                    {/*            ¿Quieres factura? */}
+                    {/*        </label> */}
+                    {/*    </div> */}
+                    {/*    {wantInvoice && */}
+                    {/*        <> */}
+                    {/*            /!* RFC *!/ */}
+                    {/*            <Input label="RFC" id="rfc" value={invoice.rfc} onChange={invoiceInfoOnChange}/> */}
+                    {/*            /!* Type of... is a selector *!/ */}
+                    {/*            <Input label="Selector" id="type" value={invoice.type} onChange={invoiceInfoOnChange}/> */}
+                    {/*            /!* Address *!/ */}
+                    {/*            <Input label="Dirección" id="address" value={invoice.address} onChange={invoiceInfoOnChange}/> */}
+                    {/*            /!* Full name *!/ */}
+                    {/*            <Input label="Nombre completo" id="name" value={invoice.name} onChange={invoiceInfoOnChange}/> */}
+                    {/*            /!* Phone *!/ */}
+                    {/*            <Input label="Teléfono" id="phone" type="tel" value={invoice.phone} onChange={invoiceInfoOnChange}/> */}
+                    {/*            /!* email *!/ */}
+                    {/*            <Input label="Correo electrónico" id="email" type="email" value={invoice.email} onChange={invoiceInfoOnChange}/> */}
+                    {/*        </> */}
+                    {/*    } */}
+                    {/* </div> */}
                     {/* 'Proceder' Next step
                     <InertiaLink href="/charola"
                                  className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
@@ -166,12 +194,12 @@ function Order() {
                     <button
                         onClick={onSubmit}
                         className="next flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
-                        <span>Proceder</span>
+                        <span>Proceder abel</span>
                     </button>
                 </div>
             </div>
         </Layout>
-    );
+  );
 }
 
 export default Order;
