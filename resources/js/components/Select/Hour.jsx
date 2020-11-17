@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Select from "react-select";
 import styled from "styled-components";
-import moment from "moment";
 
 const SelectWrapper = styled.div`
   .shop-option-description {
@@ -63,6 +62,8 @@ export default function Hour(props) {
                 }
                 isDisabled={!date}
                 // defaultValue={defaultValue}
+                defaultValue={{ label: hour, value: hour }}
+                value={{ label: hour, value: hour }}
             />
         </SelectWrapper>
     )

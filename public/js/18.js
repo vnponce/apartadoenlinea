@@ -661,7 +661,7 @@ function Panel(props) {
     href: "/pedido",
     role: "button",
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Proceder"))))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Agregar datos"))))));
 }
 
 /***/ })

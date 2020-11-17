@@ -107,7 +107,7 @@ export default function Panel(props) {
                                 href="/pedido"
                                 role='button'
                                 className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
-                                <span>Proceder</span>
+                                <span>Agregar datos</span>
                             </InertiaLink>
                         </div>
                     )}

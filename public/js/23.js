@@ -323,8 +323,8 @@ function Order() {
             phone = _orderDetails$options.phone,
             _store = _orderDetails$options.store;
         setStore(_store);
-        setDate(moment__WEBPACK_IMPORTED_MODULE_3___default()(_date)); // setHour(hour);
-
+        setDate(moment__WEBPACK_IMPORTED_MODULE_3___default()(_date));
+        setHour(_hour);
         setEmployeeName(_employeeName);
         setCustomer({
           name: name,
@@ -480,7 +480,7 @@ function Order() {
   }, errors.employeeName[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: onSubmit,
     className: "next flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Proceder abel")))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Proceder")))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Order);
@@ -724,8 +724,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -745,7 +743,6 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
 
 
 
@@ -817,7 +814,15 @@ function Hour(props) {
       return setHour(hour.value);
     },
     isDisabled: !date // defaultValue={defaultValue}
-
+    ,
+    defaultValue: {
+      label: hour,
+      value: hour
+    },
+    value: {
+      label: hour,
+      value: hour
+    }
   }));
 }
 ;

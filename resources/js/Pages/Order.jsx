@@ -40,7 +40,7 @@ function Order() {
         } = orderDetails;
         setStore(store);
         setDate(moment(date));
-        // setHour(hour);
+        setHour(hour);
         setEmployeeName(employeeName);
         setCustomer({
           name,
@@ -194,7 +194,7 @@ function Order() {
                     <button
                         onClick={onSubmit}
                         className="next flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white">
-                        <span>Proceder abel</span>
+                        <span>Proceder</span>
                     </button>
                 </div>
             </div>
