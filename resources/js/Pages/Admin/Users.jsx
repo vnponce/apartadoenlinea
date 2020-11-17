@@ -71,9 +71,7 @@ function Users(props) {
     };
 
     useEffect(() => {
-        console.log('befor if success =>', success_message);
         if(success_message) {
-            console.log('success =>', success_message);
             setCreateUser(false);
             setDataSelected(false);
             Swal.fire({

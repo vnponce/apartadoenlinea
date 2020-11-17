@@ -399,10 +399,7 @@ function Users(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('befor if success =>', success_message);
-
     if (success_message) {
-      console.log('success =>', success_message);
       setCreateUser(false);
       setDataSelected(false);
       sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
@@ -698,7 +695,7 @@ function CreateUser(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "role",
     className: "hover:border-grey-900 italic sm:block"
-  }, "Role"), console.log('userData.stores[0] =>', userData), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }, "Role"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     id: "role",
     name: "role",
     className: "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
@@ -900,7 +897,6 @@ function Stores(props) {
           }
         }); // console.log('closestDistance =>', closestDistance);
 
-        console.log('closestStoreId =>', closestStoreId);
         setStore(closestStoreId);
       });
     } else {

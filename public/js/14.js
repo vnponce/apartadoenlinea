@@ -750,7 +750,6 @@ function Stores(props) {
           }
         }); // console.log('closestDistance =>', closestDistance);
 
-        console.log('closestStoreId =>', closestStoreId);
         setStore(closestStoreId);
       });
     } else {

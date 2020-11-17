@@ -84,7 +84,6 @@ function Products(props) {
 
     return (
         <Admin title="Panel">
-            {console.log('rendering Products')}
             <ProductsInfoBoxes data={dataSelected} setDataSelected={setDataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
             {/*Graph Content */}
             <Content>

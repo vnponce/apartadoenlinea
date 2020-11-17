@@ -412,7 +412,7 @@ function Products(props) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
-  }, console.log('rendering Products'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: dataSelected,
     setDataSelected: setDataSelected,
     createProduct: createProduct,
@@ -693,7 +693,6 @@ function CreateProduct(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (flash.success) {
-      console.log('openedAndShow CreateProduct useEffect flash');
       setEditing(false);
       setCreateProduct(false);
       setDataSelected(false);
@@ -755,11 +754,7 @@ function CreateProduct(props) {
   };
 
   var createProduct = function createProduct() {
-    console.log('createProduct =>', editing);
-
     if (editing) {
-      console.log('openedAndShow editing true');
-
       if (avatar) {
         var updateFormData = getFormData();
         /*
@@ -1095,7 +1090,6 @@ function Stores(props) {
           }
         }); // console.log('closestDistance =>', closestDistance);
 
-        console.log('closestStoreId =>', closestStoreId);
         setStore(closestStoreId);
       });
     } else {

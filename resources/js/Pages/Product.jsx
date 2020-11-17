@@ -11,7 +11,6 @@ const Box = posed.div({
 
 function Product(props) {
     const { product } = props;
-    console.log(product);
     const [animate, setAnimate] = useState('visible');
     const [disabled, setDisabled] = useState(false);
     const [productId] = useState(product.id);
@@ -97,13 +96,11 @@ function Product(props) {
 
     const validateLength = e => {
         const { value } = e.target;
-        console.log('value.length =>', value.length);
         if(value.length < 120) {
             setComment(e.target.value)
             setError('');
             setDisabled(false);
         } else {
-            console.log('mayor a 120');
             setDisabled(true);
             setError('Máximo 120 caracteres')
         }

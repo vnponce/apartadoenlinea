@@ -26,13 +26,10 @@ function Order() {
   const [invoice, setInvoice] = useState({});
 
   useEffect(() => {
-    console.log('[Order] content =>', content);
-    console.log('[Order] Object.keys(content).length =>', Object.keys(content).length);
     if (Object.keys(content).length) {
       // const orderDetails = Object.keys(content).find((product) => content[product].id === 'orderDetailsId');
       const orderDetails = Object.values(content).find(({ id }) => id === 'orderDetailsId');
       if (orderDetails) {
-        console.log('[Order] orderDetails =>', orderDetails);
         const {
           options: {
               name, date, email, employeeName, hour, lastname, phone, store

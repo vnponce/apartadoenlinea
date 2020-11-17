@@ -301,9 +301,6 @@ function Order() {
       setInvoice = _useState14[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log('[Order] content =>', content);
-    console.log('[Order] Object.keys(content).length =>', Object.keys(content).length);
-
     if (Object.keys(content).length) {
       // const orderDetails = Object.keys(content).find((product) => content[product].id === 'orderDetailsId');
       var orderDetails = Object.values(content).find(function (_ref) {
@@ -312,7 +309,6 @@ function Order() {
       });
 
       if (orderDetails) {
-        console.log('[Order] orderDetails =>', orderDetails);
         var _orderDetails$options = orderDetails.options,
             name = _orderDetails$options.name,
             _date = _orderDetails$options.date,
@@ -583,7 +579,6 @@ function DateSelector(props) {
     name: "date",
     date: date,
     onDateChange: function onDateChange(date) {
-      console.log('date format =>', date);
       return setDate(date);
     },
     focused: focus,
@@ -673,7 +668,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Map(props) {
-  console.log('store map => ', props);
   var _props$store = props.store,
       _props$store$lat = _props$store.lat,
       lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
@@ -928,7 +922,6 @@ function Stores(props) {
           }
         }); // console.log('closestDistance =>', closestDistance);
 
-        console.log('closestStoreId =>', closestStoreId);
         setStore(closestStoreId);
       });
     } else {

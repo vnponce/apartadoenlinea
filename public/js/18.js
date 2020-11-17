@@ -580,7 +580,6 @@ function Panel(props) {
 
   var show = props.show,
       setShowPanel = props.setShowPanel;
-  console.log('show =>', show);
   {
     /* <PanelWrapper show={showPanel}> */
   }
@@ -613,7 +612,7 @@ function Panel(props) {
     id: "header-lines"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-wrapper mt-16 overflow-auto"
-  }, console.log('products =>', products), cartIsEmpty && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, cartIsEmpty && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-col justify-end h-64 text-center text-brand-orange m-auto"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-regularText"

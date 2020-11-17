@@ -40,7 +40,6 @@ var Box = react_pose__WEBPACK_IMPORTED_MODULE_3__["default"].div({
 
 function Product(props) {
   var product = props.product;
-  console.log(product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('visible'),
       _useState2 = _slicedToArray(_useState, 2),
@@ -133,14 +132,12 @@ function Product(props) {
 
   var validateLength = function validateLength(e) {
     var value = e.target.value;
-    console.log('value.length =>', value.length);
 
     if (value.length < 120) {
       setComment(e.target.value);
       setError('');
       setDisabled(false);
     } else {
-      console.log('mayor a 120');
       setDisabled(true);
       setError('Máximo 120 caracteres');
     }

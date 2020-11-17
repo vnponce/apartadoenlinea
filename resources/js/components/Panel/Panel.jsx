@@ -45,7 +45,6 @@ export default function Panel(props) {
   const { flash: { show_panel = false }, cart: { content: products }, subtotal } = usePage();
   const [localShow, setLocalShow] = useRememberedState(show_panel);
   const { show, setShowPanel } = props;
-  console.log('show =>', show);
   { /* <PanelWrapper show={showPanel}> */ }
   const cartIsEmpty = products && (products.length === 0 || Object.keys(products).filter(product => products[product].id !== 'orderDetailsId').length === 0);
 
@@ -67,7 +66,6 @@ export default function Panel(props) {
                         <Header setShowPanel={setShowPanel} />
                         <div id="header-lines"></div>
                         <div className="list-wrapper mt-16 overflow-auto">
-                            {console.log('products =>', products)}
                             {cartIsEmpty &&
                             <div className="flex flex-col justify-end h-64 text-center text-brand-orange m-auto">
                                 <div className="text-regularText">No hay pan en la charola</div>

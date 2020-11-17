@@ -424,7 +424,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Map(props) {
-  console.log('store map => ', props);
   var _props$store = props.store,
       _props$store$lat = _props$store.lat,
       lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,

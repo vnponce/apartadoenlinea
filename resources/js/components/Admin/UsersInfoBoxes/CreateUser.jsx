@@ -112,7 +112,6 @@ export default function CreateUser(props) {
             />
             <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
                 <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Role</label>
-                {console.log('userData.stores[0] =>', userData)}
                 <select
                     id="role"
                     name="role"
