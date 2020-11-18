@@ -20,10 +20,10 @@ function Dashboard(props) {
 
     const columns = React.useMemo(
         () => [
-            {
-                Header: '-',
-                accessor: 'uuid',
-            },
+            // {
+            //     Header: '-',
+            //     accessor: 'uuid',
+            // },
             {
                 Header: 'Cliente',
                 accessor: 'customer',
@@ -114,7 +114,7 @@ function Dashboard(props) {
             {/*Graph Content */}
             <Content>
                 <SearchBar stores={stores} searchValues={searchValues}/>
-                <h5 className="font-bold text-black">Psedidos</h5>
+                <h5 className="font-bold text-black">Pedidos</h5>
                 <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
             </Content>
         </Admin>

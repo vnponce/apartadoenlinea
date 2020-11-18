@@ -63,10 +63,11 @@ function Dashboard(props) {
   };
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    return [{
-      Header: '-',
-      accessor: 'uuid'
-    }, {
+    return [// {
+    //     Header: '-',
+    //     accessor: 'uuid',
+    // },
+    {
       Header: 'Cliente',
       accessor: 'customer',
       Cell: function Cell(data) {
@@ -204,7 +205,7 @@ function Dashboard(props) {
     searchValues: searchValues
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black"
-  }, "Psedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
     columns: columns,
     data: orders,
     onClick: function onClick(row) {
