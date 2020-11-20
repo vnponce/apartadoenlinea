@@ -55,7 +55,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->toArray());
         $request->validate([
             'name' => 'required|string|max:255',
             'file' => 'image',
@@ -64,6 +63,7 @@ class ProductController extends Controller
             'category_id' => 'required|exists:categories,id',
             'available' => 'required',
             'favorite' => 'required',
+            'customizable' => 'required',
             'price' => 'required|regex:/^\d+(\.\d{1,2})?$/'
         ]);
 

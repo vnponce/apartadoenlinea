@@ -37,6 +37,7 @@ class ProductsTest extends TestCase
             "available" => 1,
             "available_time" => null,
             "favorite" => 1,
+            "customizable" => 1,
             "category_id" => $category->id,
         ]);
 
@@ -48,6 +49,7 @@ class ProductsTest extends TestCase
             "price" => 800,
             "available" => 1,
             "available_time" => null,
+            "customizable" => 1,
             "favorite" => 1,
         ]);
     }

@@ -13,6 +13,7 @@ class Product extends Model implements Buyable
 
     protected $fillable = [
       'name',
+      'customizable',
       'description',
       'ingredients',
       'category_id',
@@ -28,6 +29,7 @@ class Product extends Model implements Buyable
     protected $casts = [
         'available' => 'boolean',
         'favorite' => 'boolean',
+        'customizable' => 'boolean',
     ];
 
     public function category()
