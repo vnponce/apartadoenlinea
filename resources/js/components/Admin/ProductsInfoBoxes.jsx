@@ -60,6 +60,11 @@ export default function InfoBoxes(props) {
                                             className="inline fa fa-star fa-fw text-brand-icons text-lg"/>
                                         <span className="inline">{ data.favorite ? 'Favorito' : 'No es favorito'}</span>
                                     </div>
+                                    <div className="my-3">
+                                        <i
+                                            className="inline fa fa-pencil-square-o fa-fw text-brand-icons text-lg"/>
+                                        <span className="inline">{ data.customizable ? 'Personalizable' : 'No es personalizable'}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-row">

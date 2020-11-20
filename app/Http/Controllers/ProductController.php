@@ -118,10 +118,11 @@ class ProductController extends Controller
             'category_id' => 'required|exists:categories,id',
             'available' => 'required',
             'favorite' => 'required',
+            'customizable' => 'required',
             'price' => 'required|regex:/^\d+(\.\d{1,2})?$/'
         ]);
 
-        $only = collect(['name', 'ingredients', 'description', 'category_id', 'available', 'favorite', 'price']);
+        $only = collect(['name', 'ingredients', 'description', 'category_id', 'available', 'favorite', 'price', 'customizable']);
 
 //        dd($request->toArray());
         if($request->hasFile('file')) {

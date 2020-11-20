@@ -556,7 +556,13 @@ function InfoBoxes(props) {
     className: "inline fa fa-star fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, data.favorite ? 'Favorito' : 'No es favorito')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data.favorite ? 'Favorito' : 'No es favorito')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "my-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-pencil-square-o fa-fw text-brand-icons text-lg"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, data.customizable ? 'Personalizable' : 'No es personalizable')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",

@@ -39,4 +39,27 @@ describe('Dashboard/Products', () => {
       expect(customizable).to.be.eq(true);
     });
   });
+  it('should edit product', () => {
+    cy.contains('nice product').click();
+    cy.get('#dash-content').within(() => {
+      cy.contains('nice product');
+      cy.contains('$13.00');
+      cy.contains('Disponible');
+      cy.contains('Favorito');
+      cy.contains('Personalizable');
+
+      cy.findByRole('button', { name: /editar/i }).click();
+      cy.findByLabelText(/personalizable/i).click({ force: true });
+      cy.findByRole('button', { name: /editar/i }).click();
+    });
+
+    // cy.wait(3000);
+    cy.php(`
+        App\\Product::first()
+    `).then(({
+      customizable,
+    }) => {
+      expect(customizable).to.be.eq(false);
+    });
+  });
 });

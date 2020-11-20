@@ -15,6 +15,7 @@ $factory->define(Product::class, function (Faker $faker) {
         "available" => true,
         "available_time" => null,
         "favorite" => true,
+        "customizable" => true,
         "category_id" => function() {
             return factory(\App\Category::class);
         },

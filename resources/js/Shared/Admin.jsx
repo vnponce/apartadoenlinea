@@ -11,36 +11,36 @@ const Wrapper = styled.div`
     .nunito {
         font-family: 'nunito', font-sans;
     }
-    
+
     .border-b-1 {
         border-bottom-width: 1px;
     }
-    
+
     .border-l-1 {
         border-left-width: 1px;
     }
-    
+
     hover\\:border-none:hover {
         border-style: none;
     }
-    
+
     #sidebar {
         transition: ease-in-out all .3s;
         z-index: 9999;
     }
-    
+
     #sidebar span {
         opacity: 0;
         position: absolute;
         transition: ease-in-out all .1s;
     }
-    
+
     #sidebar:hover {
         width: 150px;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         /*shadow-2xl*/
     }
-    
+
     #sidebar:hover span {
         opacity: 1;
     }
@@ -99,7 +99,7 @@ export default function Layout({ title, children }) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
                   integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossOrigin="anonymous"/>
             <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet" />
-            <body className="flex h-screen bg-gray-100 font-sans">
+            <div className="flex h-screen bg-gray-100 font-sans">
 
             {/* Side bar*/}
             <SideBar />
@@ -160,7 +160,7 @@ export default function Layout({ title, children }) {
 
                 { children }
             </div>
-            </body>
+            </div>
         </Wrapper>
     );
 }
