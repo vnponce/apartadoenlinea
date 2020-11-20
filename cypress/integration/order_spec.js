@@ -1,42 +1,27 @@
-import moment from "moment";
+import moment from 'moment';
 
 describe('Create orders', () => {
-  beforeEach(() => {
-    cy.refreshDatabase();
-  });
-
-  const curday = function (sp) {
-    const today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth() + 1; // As January is 0.
-    const yyyy = today.getFullYear();
-
-    if (dd < 10) dd = `0${dd}`;
-    if (mm < 10) mm = `0${mm}`;
-    return (mm + sp + dd + sp + yyyy);
+  const bread = {
+    name: 'great bread',
+    price: 2000,
+  };
+  const customer = {
+    name: 'Abel',
+    lastname: 'Ponce',
+    phone: '2299001122',
+    email: 'abel@ponce.com',
   };
 
-  it('should create an order successfully', () => {
-    const bread = {
-      name: 'great bread',
-      price: 2000,
-    };
-    const customer = {
-      name: 'Abel',
-      lastname: 'Ponce',
-      phone: '2299001122',
-      email: 'abel@ponce.com',
-    };
-    const {
-      name, lastname, phone, email,
-    } = customer;
-
+  beforeEach(() => {
+    cy.refreshDatabase();
     cy.create('App\\Product', bread);
     cy.create('App\\Store', {
       name: 'FirstStore',
       sunday: '7:00 a 21:00',
     });
+  });
 
+  it('should create an order successfully', () => {
     // cy.login({ name: 'John Doe' });
     cy.login();
 
@@ -49,31 +34,17 @@ describe('Create orders', () => {
     cy.findByRole('button', { name: /agregar datos/i }).click();
     cy.findByText(/pedidos/i);
 
-    // select store
-    cy.get('.stores-selector__value-container').click();
-    cy.get('#react-select-2-option-0').click();
+    cy.selectStore();
+    cy.selectDate();
+    cy.selectHour();
 
-    // date
-    // cy.findByLabelText(/día/i).click();
-    cy.get('#date').click();
-    cy.get('.CalendarDay__today').click();
-
-    // hour
-    cy.findByLabelText(/hora/i).click({ force: true });
-    cy.get('#react-select-3-option-0').click();
-
-    // datos de usuario
-    cy.findByLabelText(/nombre/i).type(name);
-    cy.findByLabelText(/apellido/i).type(lastname);
-    cy.findByLabelText(/tel.fono/i).type(phone);
-    cy.findByLabelText(/correo/i).type(email);
-    cy.findByLabelText(/Qui.n levant. el pedido/i).type('Antonio');
-
+    cy.typeUserData(customer);
     // click button
     cy.findByRole('button', { name: /proceder/i }).click();
 
     // seguro?
-    cy.findAllByText(/mi charola/i); // quesque' son muchos por eso debo usar findAllByText
+    cy.findAllByText(/mi charola/i);
+
     cy.get('#content-wrapper').within(() => {
       // arreglar como limitar esto a la tabla o celda especifica
       cy.findByText(bread.name);
@@ -101,28 +72,6 @@ describe('Create orders', () => {
     });
   });
   it('should create an order successfully ordering to matriz store on sunday', () => {
-    const bread = {
-      name: 'great bread',
-      price: 2000,
-    };
-    const customer = {
-      name: 'Abel',
-      lastname: 'Ponce',
-      phone: '2299001122',
-      email: 'abel@ponce.com',
-    };
-    const {
-      name, lastname, phone, email,
-    } = customer;
-
-    cy.create('App\\Product', bread);
-    cy.create('App\\Store', {
-      name: 'Matriz',
-      sunday: '8:00 a 21:00',
-    });
-
-    // cy.login({ name: 'John Doe' });
-    // cy.login({ role: 'matrix '});
     cy.login();
 
     cy.visit('/').contains('great bread')
@@ -134,26 +83,11 @@ describe('Create orders', () => {
     cy.findByRole('button', { name: /agregar datos/i }).click();
     cy.findByText(/pedidos/i);
 
-    // select store
-    cy.get('.stores-selector__value-container').click();
-    cy.get('#react-select-2-option-0').click();
+    cy.selectStore();
+    cy.selectDate();
+    cy.selectHour();
 
-    // date
-    // cy.findByLabelText(/día/i).click();
-    cy.get('#date').click();
-    cy.get('.CalendarDay__today').click();
-
-    // hour
-    cy.findByLabelText(/hora/i).click({ force: true });
-    cy.get('#react-select-3-option-0').click();
-
-    // datos de usuario
-    cy.findByLabelText(/nombre/i).type(name);
-    cy.findByLabelText(/apellido/i).type(lastname);
-    cy.findByLabelText(/tel.fono/i).type(phone);
-    cy.findByLabelText(/correo/i).type(email);
-    cy.findByLabelText(/Qui.n levant. el pedido/i).type('Antonio');
-
+    cy.typeUserData(customer);
     // click button
     cy.findByRole('button', { name: /proceder/i }).click();
 
@@ -185,26 +119,10 @@ describe('Create orders', () => {
       expect(store_id).to.be.eq(1); // validar este dato trayendo las store
     });
   });
-  it('should show user data info in charola again when was already add it', () => {
-    const bread = {
-      name: 'great bread',
-      price: 2000,
-    };
-    const customer = {
-      name: 'Abel',
-      lastname: 'Ponce',
-      phone: '2299001122',
-      email: 'abel@ponce.com',
-    };
+  it.only('should show user data info in charola again when was already add it', () => {
     const {
       name, lastname, phone, email,
     } = customer;
-
-    cy.create('App\\Product', bread);
-    cy.create('App\\Store', {
-      name: 'FirstStore',
-      sunday: '7:00 a 21:00',
-    });
 
     // cy.login({ name: 'John Doe' });
     cy.login();
@@ -218,25 +136,11 @@ describe('Create orders', () => {
     cy.findByRole('button', { name: /agregar datos/i }).click();
     cy.findByText(/pedidos/i);
 
-    // select store
-    cy.get('.stores-selector__value-container').click();
-    cy.get('#react-select-2-option-0').click();
+    cy.selectStore();
+    cy.selectDate();
+    cy.selectHour();
 
-    // date
-    // cy.findByLabelText(/día/i).click();
-    cy.get('#date').click();
-    cy.get('.CalendarDay__today').click();
-
-    // hour
-    cy.findByLabelText(/hora/i).click({ force: true });
-    cy.get('#react-select-3-option-0').click();
-
-    // datos de usuario
-    cy.findByLabelText(/nombre/i).type(name);
-    cy.findByLabelText(/apellido/i).type(lastname);
-    cy.findByLabelText(/tel.fono/i).type(phone);
-    cy.findByLabelText(/correo/i).type(email);
-    cy.findByLabelText(/Qui.n levant. el pedido/i).type('Antonio');
+    cy.typeUserData(customer);
 
     // click button
     cy.get('#content-wrapper').within(() => {
@@ -256,7 +160,6 @@ describe('Create orders', () => {
     moment.locale('es');
     const currentDate = moment().format('D MMMM YYYY');
     cy.get('#date').should('have.value', currentDate);
-    cy.log('curday =>', curday());
     // de hora
     cy.get('.hour-selector__value-container').should('contain', '7:00');
 
@@ -295,5 +198,8 @@ describe('Create orders', () => {
     }) => {
       expect(employeeName).to.have.string('Antonio2');
     });
+  });
+  it('should handle product instructions, custom message and quantity', () => {
+
   });
 });

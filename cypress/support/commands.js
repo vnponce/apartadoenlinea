@@ -92,3 +92,40 @@ Cypress.Commands.add('createOrderWithProducts', (options = {}) => {
   // // return order
   // return order;
 });
+
+// inputs
+/* Store */
+Cypress.Commands.add('selectStore', ({ optionPosition = 1 } = {}) => {
+  // select store
+  // las posiciones inician en 0 pero por si en el futuro quieres la 3 y se te va, pues ya que pongas 3 y se le resta una.
+  const optionSelected = optionPosition - 1;
+  cy.get('.stores-selector__value-container').click();
+  cy.get(`#react-select-2-option-${optionSelected}`).click();
+});
+
+/* Date */
+Cypress.Commands.add('selectDate', () => {
+  // date
+  cy.get('#date').click();
+  cy.get('.CalendarDay__today').click();
+});
+
+/* Hour */
+Cypress.Commands.add('selectHour', ({ optionPosition = 1 } = {}) => {
+  // hour
+  // las posiciones inician en 0 pero por si en el futuro quieres la 3 y se te va, pues ya que pongas 3 y se le resta una.
+  const optionSelected = optionPosition - 1;
+  cy.findByLabelText(/hora/i).click({ force: true });
+  cy.get(`#react-select-3-option-${optionSelected}`).click();
+});
+
+/* ACTION */
+/* fill user data with employee */
+Cypress.Commands.add('typeUserData', ({ name, lastname, phone, email } = {}) => {
+  // datos de usuario
+  cy.findByLabelText(/nombre/i).type(name);
+  cy.findByLabelText(/apellido/i).type(lastname);
+  cy.findByLabelText(/tel.fono/i).type(phone);
+  cy.findByLabelText(/correo/i).type(email);
+  cy.findByLabelText(/Qui.n levant. el pedido/i).type('Antonio');
+});
