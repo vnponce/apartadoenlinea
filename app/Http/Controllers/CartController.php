@@ -25,8 +25,15 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $product = Product::find($request->product_id);
-        // dd($product->toArray(), $request->toArray());
-        $current = Cart::add($product, $request->quantity, ['comment' => $request->comment, 'allow_instructions' => $product->allow_instructions])->associate(Product::class);
+        $current = Cart::add(
+            $product,
+            $request->quantity,
+            [
+                'comment' => $request->comment,
+                'allow_instructions' => $product->allow_instructions,
+                'custom_message' => $request->custom_message,
+            ]
+        )->associate(Product::class);
         // dd($current->rowId);
         if($current->qty <= 0) {
             Cart::remove($current->rowId);

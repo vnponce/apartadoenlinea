@@ -212,11 +212,11 @@ describe('Create orders', () => {
 
     cy.php(`
         App\\Order::first()->products()->first();
-    `).then(({ pivot: { comment, quantity, customized }}) => {
-      cy.log('pivot =>', { comment, quantity, customized });
+    `).then(({ pivot: { comment, quantity, custom_message: customMessage }}) => {
+      cy.log('pivot =>', { comment, quantity, customMessage });
       expect(comment).to.have.string('sin pan');
       expect(quantity).to.be.eq(6);
-      expect(customized).to.have.string('Gracias Nedy');
+      expect(customMessage).to.have.string('Gracias Nedy');
     });
   });
 });

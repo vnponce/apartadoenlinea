@@ -14,7 +14,7 @@ class AddCustomizedFieldToOrderProductTable extends Migration
     public function up()
     {
         Schema::table('order_product', function (Blueprint $table) {
-            $table->string('custom_message')->nullable();
+            $table->string('custom_message')->nullable()->after('comment');
         });
     }
 
