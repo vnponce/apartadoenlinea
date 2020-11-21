@@ -89,6 +89,7 @@ class OrderController extends Controller
                'price' => $item->price * 100,
                'quantity' => $item->qty,
                'comment' => $item->options->comment ?? '',
+               'custom_message' => $item->options->custom_message ?? '',
            ]);
         });
 

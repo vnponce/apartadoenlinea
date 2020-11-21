@@ -121,11 +121,29 @@ Cypress.Commands.add('selectHour', ({ optionPosition = 1 } = {}) => {
 
 /* ACTION */
 /* fill user data with employee */
-Cypress.Commands.add('typeUserData', ({ name, lastname, phone, email } = {}) => {
+Cypress.Commands.add('typeUserData', ({ name = 'Abel', lastname = 'Ponce', phone = '12345678', email = 'me@abelponce.com'} = {}) => {
   // datos de usuario
   cy.findByLabelText(/nombre/i).type(name);
   cy.findByLabelText(/apellido/i).type(lastname);
   cy.findByLabelText(/tel.fono/i).type(phone);
   cy.findByLabelText(/correo/i).type(email);
   cy.findByLabelText(/Qui.n levant. el pedido/i).type('Antonio');
+});
+
+/* go to add user data */
+Cypress.Commands.add('goToUserData', () => {
+    //
+    cy.get('#charola').click();
+    cy.findByRole('button', { name: /agregar datos/i }).click();
+    cy.findByText(/pedidos/i);
+});
+
+/* typeUserData */
+Cypress.Commands.add('setOrderData', () => {
+    cy.selectStore();
+    cy.selectDate();
+    cy.selectHour();
+
+    cy.typeUserData();
+    cy.findByRole('button', { name: /proceder/i }).click();
 });

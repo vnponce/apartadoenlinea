@@ -1,111 +1,144 @@
 import React, { useState } from 'react';
-import Layout from '../Shared/Layout';
-import {Inertia} from "@inertiajs/inertia";
+import { Inertia } from '@inertiajs/inertia';
 import posed from 'react-pose';
+import Layout from '../Shared/Layout';
+import Input from '../components/Input';
 
 
 const Box = posed.div({
-    visible: { opacity: 1, transform: 'scale(1)', },
-    hidden: { opacity: 0, transform: 'scale(0.5)', }
+  visible: { opacity: 1, transform: 'scale(1)' },
+  hidden: { opacity: 0, transform: 'scale(0.5)' },
 });
 
 function Product(props) {
-    const { product } = props;
-    const [animate, setAnimate] = useState('visible');
-    const [disabled, setDisabled] = useState(false);
-    const [productId] = useState(product.id);
-    const [comment, setComment] = useState('');
-    const [quantity, setQuantity] = useState(1);
-    const [error, setError] = useState('');
+  const { product } = props;
+  console.log('product =>', product);
+  const [animate, setAnimate] = useState('visible');
+  const [disabled, setDisabled] = useState(false);
+  const [productId] = useState(product.id);
+  const [comment, setComment] = useState('');
+  const [customMessage, setCustomMessage] = useState('');
+  const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState({
+    comment: false,
+    customizable: false,
+  });
 
-    const addToCart = event => {
-        // event.preventDefault();
-        addToCardAnimation();
-        setAnimate('hidden');
-        setDisabled(true);
-        // made animation
-        // setTimeout(() => Inertia.visit('/'), 2000);
-        setTimeout(() => {
-            setAnimate('visible');
-            setDisabled(false);
-            Inertia.post('/cart', {
-                product_id: productId,
-                comment,
-                quantity,
-            })
-        }, 2000);
-    }
-    const addToCardAnimation = cb => {
-        const cart = $('#charola');
-        const imgtodrag = $('#main-image');
-        if (imgtodrag) {
-            const imgclone = imgtodrag
-                .clone()
-                .offset({
-                    top: imgtodrag.offset().top,
-                    left: imgtodrag.offset().left,
-                })
-                .css({
-                    opacity: '0.7',
-                    position: 'absolute',
-                    height: 'initial',
-                    // height: '150px',
-                    // width: '150px',
-                    width: 'initial',
-                    'z-index': '100',
-                })
-                .appendTo($('body'))
-                .animate(
-                    {
-                        top: cart.offset().top + 10,
-                        left: cart.offset().left + 15,
-                        width: 75,
-                        height: 75,
-                    },
-                    1000,
-                    // 1000000,
-                    'easeInOutExpo'
-                );
+  const addToCart = (event) => {
+    // event.preventDefault();
+    addToCardAnimation();
+    setAnimate('hidden');
+    setDisabled(true);
+    // made animation
+    // setTimeout(() => Inertia.visit('/'), 2000);
+    setTimeout(() => {
+      setAnimate('visible');
+      setDisabled(false);
+      Inertia.post('/cart', {
+        product_id: productId,
+        comment,
+        quantity,
+      });
+    }, 2000);
+  };
+  const addToCardAnimation = (cb) => {
+    const cart = $('#charola');
+    const imgtodrag = $('#main-image');
+    if (imgtodrag) {
+      const imgclone = imgtodrag
+        .clone()
+        .offset({
+          top: imgtodrag.offset().top,
+          left: imgtodrag.offset().left,
+        })
+        .css({
+          opacity: '0.7',
+          position: 'absolute',
+          height: 'initial',
+          // height: '150px',
+          // width: '150px',
+          width: 'initial',
+          'z-index': '100',
+        })
+        .appendTo($('body'))
+        .animate(
+          {
+            top: cart.offset().top + 10,
+            left: cart.offset().left + 15,
+            width: 75,
+            height: 75,
+          },
+          1000,
+          // 1000000,
+          'easeInOutExpo',
+        );
 
-            setTimeout(() => {
-                cart.effect(
-                    'bounce',
-                    {
-                        times: 2,
-                    },
-                    600
-                );
-            }, 1500);
+      setTimeout(() => {
+        cart.effect(
+          'bounce',
+          {
+            times: 2,
+          },
+          600,
+        );
+      }, 1500);
 
-            imgclone.animate(
-                {
-                    width: 0,
-                    height: 0,
-                },
-                function() {
-                    $(this).detach();
-                    /*
+      imgclone.animate(
+        {
+          width: 0,
+          height: 0,
+        },
+        function () {
+          $(this).detach();
+          /*
                     cb().then(() => {
                         Router.back();
                     });
                     */
-                }
-            );
-        }
-    };
-
-    const validateLength = e => {
-        const { value } = e.target;
-        if(value.length < 120) {
-            setComment(e.target.value)
-            setError('');
-            setDisabled(false);
-        } else {
-            setDisabled(true);
-            setError('Máximo 120 caracteres')
-        }
+        },
+      );
     }
-    return (
+  };
+
+  const validateLength = (e) => {
+    const { value } = e.target;
+    if (value.length < 120) {
+      setComment(e.target.value);
+      setError({
+        ...error,
+        comment: false,
+      });
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+      setError({
+        ...error,
+        comment: [
+          'Máximo 120 caracteres',
+        ],
+      });
+    }
+  };
+  const handleCustomizable = (e) => {
+    const { value } = e.target;
+    if (value.length < 25) {
+      setCustomMessage(e.target.value);
+      setError({
+        ...error,
+        customizable: false,
+      });
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+      setError({
+        ...error,
+        customizable: [
+          'Máximo 25 caracteres',
+        ],
+      });
+    }
+  };
+  return (
         <Layout title={product.name}>
             <div className="flex flex-col mt-12 sm:mt-16 sm:flex-row">
                 {/* Back button */}
@@ -140,33 +173,57 @@ function Product(props) {
                         {/* Description */}
                         <div className="mt-4 flex-1 text-gray-600 font-light sm:text-center lg:text-justify">{product.description}</div>
                         {/* Ingredients */}
-                        {product.ingredients && product.allow_ingredients &&
-                            <div className="flex-1 mt-4 sm:text-center lg:text-justify">
+                        {product.ingredients && product.allow_ingredients
+                            && <div className="flex-1 mt-4 sm:text-center lg:text-justify">
                                 <p className="uppercase font-medium text-sm first-letter-bigger text-orange-600">ingredientes</p>
                                 <ul className="font-light text-gray-600 font-light">
-                                    {product.ingredients.split(',').map(ingredient => {
-                                        return <li>- {ingredient}</li>
-                                    })}
+                                    {product.ingredients.split(',').map((ingredient) => <li>- {ingredient}</li>)}
                                 </ul>
                             </div>
                         }
                         {/* Specifications */}
-                        {product.allow_instructions &&
-                            <div className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify">
-                                <p className="hover:border-grey-900 italic">Si no deseas algún ingrediente,
-                                    especifícalo:</p>
-                                <input value={comment} type="text" placeholder="Ej. sin picante" onChange={validateLength}
-                                       className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"/>
-                                {error && <p className="text-sm text-red-500 error hour">{error}</p>}
+                        {product.allow_instructions
+                            && <div className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center lg:text-justify">
+                                {/* <p className="hover:border-grey-900 italic">Si no deseas algún ingrediente, */}
+                                {/*    especifícalo:</p> */}
+                                {/* <input value={comment} type="text" placeholder="Ej. sin picante" onChange={validateLength} */}
+                                {/*       className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto"/> */}
+                                {/* {error && <p className="text-sm text-red-500 error hour">{error}</p>} */}
+                                <Input
+                                    onChange={validateLength}
+                                    value={comment}
+                                    id="comment"
+                                    label="Si no deseas algún ingrediente, especifícalo:"
+                                    placeholder="Ej. sin picante"
+                                    error={error.comment}
+                                />
                             </div>
                         }
+                        {/* Customizable */}
+                        {product.customizable
+                                && <Input
+                                    onChange={handleCustomizable}
+                                    value={customMessage}
+                                    id="custom-message"
+                                    label="Deseas personalizar tu pastel? De la forma lo envíes será escrito"
+                                    placeholder="Felicidades Pedro"
+                                    error={error.customizable}
+                                />
+                        }
                         {/* Qty. */}
-                        <div
-                            className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0">
-                            <p className="hover:border-grey-900 italic">Cantidad:</p>
-                            <input name="quantity" type="number" min="1" placeholder="Cantidad" value={quantity} onChange={e => setQuantity(e.target.value)}
-                                   className="border border-transparent rounded mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1" />
-                        </div>
+                        {/*<div*/}
+                        {/*    className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:w-1/3 sm:m-auto lg:text-justify lg:m-0">*/}
+                        {/*    <p className="hover:border-grey-900 italic">Cantidad:</p>*/}
+                        {/*    <input name="quantity" type="number" min="1" placeholder="Cantidad" value={quantity} onChange={(e) => setQuantity(e.target.value)}*/}
+                        {/*           className="border border-transparent rounded mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1" />*/}
+                        {/*</div>*/}
+                        <Input
+                            onChange={(e) => setQuantity(e.target.value)}
+                            value={quantity}
+                            id="quantity"
+                            label="Cantidad:"
+                        />
+
                         {/* Button (Poner en la charola). */}
                         <div
                             className="flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify">
@@ -182,7 +239,7 @@ function Product(props) {
                 </div>
             </div>
         </Layout>
-    );
+  );
 }
 
 export default Product;

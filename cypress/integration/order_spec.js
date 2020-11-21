@@ -19,12 +19,11 @@ describe('Create orders', () => {
       name: 'FirstStore',
       sunday: '7:00 a 21:00',
     });
+    // cy.login({ name: 'John Doe' });
+    cy.login();
   });
 
   it('should create an order successfully', () => {
-    // cy.login({ name: 'John Doe' });
-    cy.login();
-
     cy.visit('/').contains('great bread')
       .click().contains('great bread');
 
@@ -72,8 +71,6 @@ describe('Create orders', () => {
     });
   });
   it('should create an order successfully ordering to matriz store on sunday', () => {
-    cy.login();
-
     cy.visit('/').contains('great bread')
       .click().contains('great bread');
 
@@ -119,13 +116,10 @@ describe('Create orders', () => {
       expect(store_id).to.be.eq(1); // validar este dato trayendo las store
     });
   });
-  it.only('should show user data info in charola again when was already add it', () => {
+  it('should show user data info in charola again when was already add it', () => {
     const {
       name, lastname, phone, email,
     } = customer;
-
-    // cy.login({ name: 'John Doe' });
-    cy.login();
 
     cy.visit('/').contains('great bread')
       .click().contains('great bread');
@@ -199,7 +193,30 @@ describe('Create orders', () => {
       expect(employeeName).to.have.string('Antonio2');
     });
   });
-  it('should handle product instructions, custom message and quantity', () => {
+  it.only('should handle product instructions, custom message and quantity', () => {
+    cy.create('App\\Category', { name: 'Bocadillos' });
+    cy.create('App\\Product', { name: 'Great Bocadillo', category_id: 2 });
+    cy.visit('/').contains('Great Bocadillo')
+      .click().contains('Great Bocadillo');
+    cy.findByLabelText(/si no deseas alg.n ingrediente, especif.calo:/i).type('sin pan');
+    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias Nedy');
+    cy.findByLabelText(/cantidad/i).type('{selectall}{backspace}6');
+    cy.findByRole('button', { name: /poner en la charola/i }).click();
+    cy.url().should('eq', `${Cypress.config().baseUrl}/`);
 
+    cy.goToUserData();
+    cy.setOrderData();
+
+    cy.findByLabelText(/contenido de tu compra es el correcto/i).click();
+    cy.findByRole('button', { name: /crear pedido/i }).click();
+
+    cy.php(`
+        App\\Order::first()->products()->first();
+    `).then(({ pivot: { comment, quantity, customized }}) => {
+      cy.log('pivot =>', { comment, quantity, customized });
+      expect(comment).to.have.string('sin pan');
+      expect(quantity).to.be.eq(6);
+      expect(customized).to.have.string('Gracias Nedy');
+    });
   });
 });
