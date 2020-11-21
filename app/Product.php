@@ -40,7 +40,7 @@ class Product extends Model implements Buyable
     public function orders()
     {
         return $this->belongsToMany(Order::class)
-            ->withPivot(['price', 'quantity', 'comment']);
+            ->withPivot(['price', 'quantity', 'comment', 'custom_message']);
     }
 
     /**

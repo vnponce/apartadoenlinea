@@ -48,7 +48,6 @@ var Box = react_pose__WEBPACK_IMPORTED_MODULE_2__["default"].div({
 
 function Product(props) {
   var product = props.product;
-  console.log('product =>', product);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('visible'),
       _useState2 = _slicedToArray(_useState, 2),
@@ -100,7 +99,8 @@ function Product(props) {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
         product_id: productId,
         comment: comment,
-        quantity: quantity
+        quantity: quantity,
+        custom_message: customMessage
       });
     }, 2000);
   };

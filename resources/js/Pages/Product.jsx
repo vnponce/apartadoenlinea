@@ -12,7 +12,6 @@ const Box = posed.div({
 
 function Product(props) {
   const { product } = props;
-  console.log('product =>', product);
   const [animate, setAnimate] = useState('visible');
   const [disabled, setDisabled] = useState(false);
   const [productId] = useState(product.id);
@@ -38,6 +37,7 @@ function Product(props) {
         product_id: productId,
         comment,
         quantity,
+        custom_message: customMessage,
       });
     }, 2000);
   };

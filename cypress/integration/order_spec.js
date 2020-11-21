@@ -193,7 +193,7 @@ describe('Create orders', () => {
       expect(employeeName).to.have.string('Antonio2');
     });
   });
-  it.only('should handle product instructions, custom message and quantity', () => {
+  it('should save product instructions, custom message and quantity', () => {
     cy.create('App\\Category', { name: 'Bocadillos' });
     cy.create('App\\Product', { name: 'Great Bocadillo', category_id: 2 });
     cy.visit('/').contains('Great Bocadillo')
@@ -212,7 +212,7 @@ describe('Create orders', () => {
 
     cy.php(`
         App\\Order::first()->products()->first();
-    `).then(({ pivot: { comment, quantity, custom_message: customMessage }}) => {
+    `).then(({ pivot: { comment, quantity, custom_message: customMessage } }) => {
       cy.log('pivot =>', { comment, quantity, customMessage });
       expect(comment).to.have.string('sin pan');
       expect(quantity).to.be.eq(6);
