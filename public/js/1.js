@@ -432,6 +432,21 @@ function ProductListElement(props) {
     });
   };
 
+  var updateCustomMessage = function updateCustomMessage() {
+    console.log('updateCustomMessage =>', customMessage);
+    setShowCustomizableInput(false);
+    console.log('setShowCustomizableInput =>', showCustomizableInput);
+
+    if (customMessage === product.options.custom_message) {
+      return false;
+    }
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post("/cart/product/".concat(product.id, "/update/custom-message"), {
+      custom_message: customMessage,
+      remove_rowId: product.rowId
+    });
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "data-testid": "list-item-".concat(product.id),
     className: "mb-8 w-full"
@@ -512,7 +527,7 @@ function ProductListElement(props) {
     placeholder: "Ej. sin chile",
     autoFocus: true,
     value: customMessage,
-    onBlur: updateComment,
+    onBlur: updateCustomMessage,
     onChange: function onChange(e) {
       return setCustomMessage(e.target.value);
     },

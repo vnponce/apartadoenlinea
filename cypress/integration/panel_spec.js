@@ -55,7 +55,7 @@ describe('test right panel', () => {
     cy.login();
     cy.visit('/');
     cy.get('.bread-card').click();
-    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias Nedy');
+    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias');
     cy.findByRole('button', { name: /poner en la charola/i }).click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
@@ -63,15 +63,15 @@ describe('test right panel', () => {
 
     cy.get('#charola').click();
     cy.get('.product-side-panel .panel').within(() => {
-      cy.findByText('Gracias Nedy');
+      cy.findByText('Gracias');
     });
   });
-  it.only('should show edit input custom message when user click on it', () => {
+  it('should show edit input custom message when user click on it', () => {
     cy.create('App\\Product');
     cy.login();
     cy.visit('/');
     cy.get('.bread-card').click();
-    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias Nedy');
+    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias');
     cy.findByRole('button', { name: /poner en la charola/i }).click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
@@ -79,9 +79,24 @@ describe('test right panel', () => {
 
     cy.get('#charola').click();
     cy.get('.product-side-panel .panel').within(() => {
-      cy.findByText('Gracias Nedy').click();
+      cy.findByText('Gracias').click();
       cy.get('input[name=custom-message]')
-        .should('have.value', 'Gracias Nedy');
+        .should('have.value', 'Gracias')
+        .type('{selectall}{backspace}Dummy text')
+        .blur();
     });
+
+    // Gloudemans\Shoppingcart\Facades\Cart
+    cy.php(`
+        Gloudemans\\Shoppingcart\\Facades\\Cart::content()
+    `).then((response) => {
+      cy.log('response =>', Object.values(response)[0]);
+      const { options: { custom_message: customMessage } } = Object.values(response)[0];
+      expect(customMessage).to.have.string('Dummy text');
+    });
+    cy.get('.product-side-panel .panel').within(() => {
+      cy.findByText('Dummy text');
+    });
+    //
   });
 });

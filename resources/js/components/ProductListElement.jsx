@@ -45,6 +45,18 @@ export default function ProductListElement(props) {
       remove_rowId: product.rowId,
     });
   };
+  const updateCustomMessage = () => {
+      console.log('updateCustomMessage =>', customMessage);
+    setShowCustomizableInput(false);
+      console.log('setShowCustomizableInput =>', showCustomizableInput);
+      if (customMessage === product.options.custom_message) {
+      return false;
+    }
+    Inertia.post(`/cart/product/${product.id}/update/custom-message`, {
+      custom_message: customMessage,
+      remove_rowId: product.rowId,
+    });
+  };
   return (
         <div data-testid={`list-item-${product.id}`} className="mb-8 w-full">
             <div className="flex">
@@ -107,7 +119,7 @@ export default function ProductListElement(props) {
                       ? <input name="custom-message" type="text" placeholder="Ej. sin chile"
                                autoFocus
                                value={customMessage}
-                               onBlur={updateComment}
+                               onBlur={updateCustomMessage}
                                onChange={(e) => setCustomMessage(e.target.value)}
                                className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
                       : <span>
