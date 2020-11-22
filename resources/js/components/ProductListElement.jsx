@@ -1,56 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import {Inertia} from "@inertiajs/inertia";
-import Input from "./Input";
+import { Inertia } from '@inertiajs/inertia';
+import Input from './Input';
 
 export default function ProductListElement(props) {
-    const { product, isEditable = true } = props;
-    console.log('product =>', product);
-    const [showInput, setShowInput] = useState(false);
-    const [comment, setComment] = useState('');
-    const [showCustomizableInput, setShowCustomizableInput] = useState(false);
-    const [customMessage, setCustomMessage] = useState('');
-    useEffect(() => {
-        setComment(product.options.comment);
-        console.log('custom_message =>', product.options.custom_message);
-        setCustomMessage(product.options.custom_message);
-    }, [product]);
-    const removeOneItem = () => {
-        Inertia.post('/cart', {
-            product_id: product.id,
-            comment: product.options.comment,
-            quantity: -1,
-            redirect: 'product',
-        });
-    };
-    const removeItem = () => {
-        Inertia.delete(`/cart/product/${product.rowId}`);
-    };
-    const addOneItem = () => {
-        Inertia.post('/cart', {
-            product_id: product.id,
-            comment: product.options.comment,
-            quantity: 1,
-            redirect: 'product',
-        });
-    };
-    const updateComment = () => {
-        setShowInput(false);
-        if(comment === product.options.comment) {
-            return false;
-        }
-        Inertia.post(`/cart/product/${product.id}/update/comment`, {
-            product_id: product.id,
-            comment,
-            quantity: product.qty,
-            remove_rowId: product.rowId,
-        });
-    };
-    return (
+  const { product, isEditable = true } = props;
+  console.log('product =>', product);
+  const [showInput, setShowInput] = useState(false);
+  const [comment, setComment] = useState('');
+  const [showCustomizableInput, setShowCustomizableInput] = useState(false);
+  const [customMessage, setCustomMessage] = useState('');
+  useEffect(() => {
+    setComment(product.options.comment);
+    console.log('custom_message =>', product.options.custom_message);
+    setCustomMessage(product.options.custom_message);
+  }, [product]);
+  const removeOneItem = () => {
+    Inertia.post('/cart', {
+      product_id: product.id,
+      comment: product.options.comment,
+      quantity: -1,
+      redirect: 'product',
+    });
+  };
+  const removeItem = () => {
+    Inertia.delete(`/cart/product/${product.rowId}`);
+  };
+  const addOneItem = () => {
+    Inertia.post('/cart', {
+      product_id: product.id,
+      comment: product.options.comment,
+      quantity: 1,
+      redirect: 'product',
+    });
+  };
+  const updateComment = () => {
+    setShowInput(false);
+    if (comment === product.options.comment) {
+      return false;
+    }
+    Inertia.post(`/cart/product/${product.id}/update/comment`, {
+      product_id: product.id,
+      comment,
+      quantity: product.qty,
+      remove_rowId: product.rowId,
+    });
+  };
+  return (
         <div data-testid={`list-item-${product.id}`} className="mb-8 w-full">
             <div className="flex">
                 <div className="flex items-center flex-1 inline-block">
-                    {isEditable &&
-                    <svg onClick={removeItem}
+                    {isEditable
+                    && <svg onClick={removeItem}
                          // className="w-1/12 cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500"
                          className="remove-all-item w-1/12 cursor-pointer mr-2 stroke-current fill-current  text-gray-500"
                          viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -61,9 +61,9 @@ export default function ProductListElement(props) {
                     <span className="name w-11/12 ml-0 text-lg">{ product.name }</span>
                 </div>
                 <div className="flex flex-1 text-center items-center">
-                    {isEditable &&
+                    {isEditable
 
-                    <svg onClick={removeOneItem} className="remove-item w-5 cursor-pointer fill-current text-brand-orange"
+                    && <svg onClick={removeOneItem} className="remove-item w-5 cursor-pointer fill-current text-brand-orange"
                          xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 20 20"
                          enable-background="new 0 0 20 20">
                         <path
@@ -71,8 +71,8 @@ export default function ProductListElement(props) {
                     </svg>
                     }
                     <span className="quantity flex-1 cursor-pointer ">{ product.qty }</span>
-                    {isEditable &&
-                    <svg onClick={addOneItem} className="add-item w-5 cursor-pointer fill-current text-brand-orange"
+                    {isEditable
+                    && <svg onClick={addOneItem} className="add-item w-5 cursor-pointer fill-current text-brand-orange"
                          xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 20 20"
                          enable-background="new 0 0 20 20">
                         <path
@@ -84,33 +84,39 @@ export default function ProductListElement(props) {
             </div>
             {product.options.allow_instructions && (
                 <div onClick={() => setShowInput(true)} className="text-sm italic text-brand-orange">
-                    {showInput && isEditable ?
-                        /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
-                        <input name="comment" type="text" placeholder="Ej. sin chile"
+                    {showInput && isEditable
+                    /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
+                      ? <input name="comment" type="text" placeholder="Ej. sin chile"
                                autoFocus
                                value={comment}
                                onBlur={updateComment}
-                               onChange={e => setComment(e.target.value)}
+                               onChange={(e) => setComment(e.target.value)}
                                className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
-                        : comment || ( isEditable ? 'Agregar breve comentario' : '')
+                      : <span>
+                            <i className="fa fa-commenting-o mr-1" aria-hidden="true"></i>
+                            {comment || ( isEditable ? 'Agregar breve comentario' : '')}
+                      </span>
                     }
                 </div>
             )}
-            {/*custtomizable*/}
+            {/* custtomizable */}
             {product.options.customizable && (
                 <div onClick={() => setShowCustomizableInput(true)} className="text-sm italic text-brand-green">
-                    {showCustomizableInput && isEditable ?
-                        /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
-                        <input name="custom-message" type="text" placeholder="Ej. sin chile"
+                    {showCustomizableInput && isEditable
+                    /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
+                      ? <input name="custom-message" type="text" placeholder="Ej. sin chile"
                                autoFocus
                                value={customMessage}
                                onBlur={updateComment}
-                               onChange={e => setCustomMessage(e.target.value)}
+                               onChange={(e) => setCustomMessage(e.target.value)}
                                className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
-                        : customMessage || ( isEditable ? 'Personalizar pastel (de la forma lo envíes será escrito)' : '')
+                      : <span>
+                            <i className="fa fa-pencil mr-1" aria-hidden="true"></i>
+                            {customMessage || (isEditable ? 'Personalizar pastel (de la forma lo envíes será escrito)' : '')}
+                        </span>
                     }
                 </div>
             )}
         </div>
-    );
-};
+  );
+}

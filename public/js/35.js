@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[19],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[35],{
 
 /***/ "./resources/js/Pages/Login.jsx":
 /*!**************************************!*\

@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[31],{
 
-/***/ "./resources/js/Pages/TermsConditions.jsx":
-/*!************************************************!*\
-  !*** ./resources/js/Pages/TermsConditions.jsx ***!
-  \************************************************/
+/***/ "./resources/js/Pages/Home.js":
+/*!************************************!*\
+  !*** ./resources/js/Pages/Home.js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12,30 +12,272 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
- // import ReactDOM from 'react-dom';
+/* harmony import */ var _components_MenuIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MenuIcons */ "./resources/js/components/MenuIcons.js");
+/* harmony import */ var _components_BreadCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BreadCard */ "./resources/js/components/BreadCard.jsx");
+/* harmony import */ var react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-laravel-paginex */ "./node_modules/react-laravel-paginex/dist/index.js");
+/* harmony import */ var react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_HeaderDescription__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/HeaderDescription */ "./resources/js/components/HeaderDescription.js");
 
- // import styled from "styled-components";
-// const TwoColumns = styled.div `
-//     column-count: 2;
-// `
 
-function TermsConditions(props) {
+
+
+
+
+
+
+function Home(props) {
+  var products = props.products,
+      success_message = props.success_message,
+      _props$category = props.category,
+      category = _props$category === void 0 ? null : _props$category,
+      search = props.search;
+  console.log('succes_message =>', success_message);
+
+  var getData = function getData(data) {
+    return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"].visit("?page=".concat(data.page));
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Terminos y Condiciones"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center flex-col mt-12 sm:mt-16 px-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-64 mb-10",
-    src: "/images/ConchaJuez.png",
-    alt: ""
+    title: "Panadr\xEDa La Especial"
+  }, category && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: category.name,
+    description: ""
+  })), !(category || search) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MenuIcons__WEBPACK_IMPORTED_MODULE_2__["default"], null), search && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: "Buscando por '".concat(search, "'"),
+    description: ""
+  })), "            ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+    className: "w-1/2 mb-5"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+    className: "flex flex-wrap w-full p-0 pb-16 sm:px-2"
+  }, products.data.map(function (product) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BreadCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      product: product
+    });
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-center m-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Aviso de Privacidad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Pagina web panader\xEDa la especial")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-justify pb-16"
-  }, "Ultima actualizaci\xF3n 1 de septiembre de 2020.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Los datos personales que usted nos ha proporcionado directamente o a trav\xE9s de medios electr\xF3nicos han sido recabados y ser\xE1n tratados, bajo los principios de licitud, consentimiento, informaci\xF3n, calidad, finalidad, lealtad, proporcionalidad y responsabilidad, de conformidad con lo dispuesto por la Ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xBFPara qu\xE9 fines recabamos y utilizamos sus datos personales?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Proveer los servicios y productos requeridos por usted; Dar cumplimiento a obligaciones contra\xEDdas con nuestros clientes; Evaluar la calidad de nuestros productos y servicios; Elaborar facturas y/o documentos legales que aparan los productos o servicios contratados; Env\xEDo de correo electr\xF3nico con informaci\xF3n y publicidad propia y de terceros; Notificarle nuestras promociones y otra informaci\xF3n relacionada con nuestros productos y servicios. Tambi\xE9n utilizamos esta informaci\xF3n personal para darle a usted informaci\xF3n relacionada con productos y servicios que usted haya adquirido, para entender mejor sus necesidades e intereses, para mejorar nuestro servicio y para personalizar comunicaciones y su experiencia en la red.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Adicionalmente, sus datos personales pueden ser utilizados para las siguientes finalidades:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Dar seguimiento a solicitudes de informaci\xF3n sobre los servicios y/o productos que nuestra empresa oferta.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Realizar cotizaciones y enviarle propuestas de trabajo en base a la informaci\xF3n que nos proporciona mediante los formularios del sitio web.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Dar avisos urgentes o importantes sobre alg\xFAn tema relacionado con nuestro sitio web, servicios y/o productos contratados con nuestra empresa.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Proveer informaci\xF3n varia.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Realizar los servicios y/o entregar los productos que usted contrat\xF3 con nuestra empresa.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Informar sobre cambios y nuevos productos y/o servicios que est\xE9n relacionados con el/los contratado(s) o adquirido(s) por el cliente.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Dar cumplimiento a obligaciones contra\xEDdas con nuestros clientes.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Evaluar la calidad del servicio y, realizar estudios internos sobre h\xE1bitos de consumo.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Env\xEDo de promociones por correo electr\xF3nico en diferentes periodos.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Sus datos personales se mantendr\xE1n en nuestros registros durante 5 a\xF1os a partir de la fecha en que nos proporcion\xF3, despu\xE9s procederemos a eliminar su informaci\xF3n si no se llega a ninguna transacci\xF3n comercial o v\xEDnculo laboral.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xBFQu\xE9 datos personales obtenemos y de d\xF3nde?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Para las finalidades se\xF1aladas en el presente aviso de privacidad, podemos recabar sus datos personales de distintas formas: cuando usted nos los proporciona directamente, cuando visita nuestro sitio de Internet o utiliza nuestros servicios en l\xEDnea, y cuando obtenemos informaci\xF3n a trav\xE9s de otras fuentes que est\xE1n permitidas por la ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Datos que recabamos de forma directa", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Recabamos sus datos personales de forma directa cuando usted mismo nos los proporciona por diversos medios, como cuando participa en nuestras promociones o nos da informaci\xF3n con objeto de que le prestemos un producto y/o servicio. Los datos y/o informaci\xF3n que obtenemos por este medio pueden ser, entre otros:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Nombre completo, direcci\xF3n completa, tel\xE9fono fijo (Casa u Oficina), tel\xE9fono celular, correo electr\xF3nico, datos destinados para realizar facturas, entre otros.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Sus datos personales ser\xE1n recopilaos en nuestra p\xE1gina web, en nuestras sucursales f\xEDsicas, matriz, oficina, por correo electr\xF3nico y/o v\xEDa telef\xF3nica.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Compartir Datos con Terceros.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Si usted es nuestro cliente, puede dejar de recibir mensajes promocionales, comunic\xE1rnoslo ya sea por tel\xE9fono fijo o celular, correo directo y/o electr\xF3nico a panaderialaespecial.veracruz@gmail.com o directamente en cualquiera de nuestras sucursales por medio de una solicitud por escrito, o al tel\xE9fono 2299 34 1880.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xBFPanader\xEDa La Especial comparte su Informaci\xF3n? Nos comprometemos a no transferir su informaci\xF3n personal a terceros sin su consentimiento, salvo solicitud expresa de alguna autoridad competente o las excepciones previstas en el art\xEDculo 37 de la LFPDPPP, as\xED como realizar esta transferencia en los t\xE9rminos que fija esa Ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Transferencia de datos personales.- En caso de que Panader\xEDa La Especial llegare a transferir tus datos personales a alguno de sus proveedores con el fin de llevar a cabo las finalidades del tratamiento establecidas en el presente aviso de privacidad, lo har\xE1 previa celebraci\xF3n de convenios de confidencialidad y, siempre y cuando,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(1) El proveedor o persona a quien se le transmitan acepte someter el tratamiento de los datos personales al presente aviso de privacidad, y,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(2) No se trate de alguno de los supuestos establecidos en el art\xEDculo 37 de la Ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Modificaciones al aviso de privacidad", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Nos reservamos el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad, para la atenci\xF3n de novedades legislativas, pol\xEDticas internas o nuevos requerimientos para la presentaci\xF3n u ofrecimiento de nuestros servicios o productos. Las modificaciones estar\xE1n disponibles al p\xFAblico mediante:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(i) Anuncios visibles en nuestras sucursales,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(ii) Tr\xEDpticos o folletos disponibles en nuestras sucursales,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(iii) En nuestra p\xE1gina de internet  en la secci\xF3n de aviso de privacidad; o", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(iv) Se las haremos llegar al \xFAltimo correo electr\xF3nico que nos haya proporcionado.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Derechos  ARCO", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Conforme a la Ley Federal de Protecci\xF3n de Datos Personales en Posesi\xF3n de Particulares, son los derechos que toda persona puede ejercer en relaci\xF3n con el tratamiento de sus datos personales. Casa sigla representa un derecho diferente y son Acceso, Rectificaci\xF3n, Cancelaci\xF3n y Oposici\xF3n.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Usted puede dejar de recibir mensajes promocionales por tel\xE9fono fijo o celular, as\xED mismo, puede dejar de recibir correo postal publicitario, tambi\xE9n puede dejar de recibir correos electr\xF3nicos con promocionales.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Usted tiene derecho a acceder a sus datos personales que poseemos y a los detalles del tratamiento de los mismos, as\xED como rectificar en caso de ser inexactos o incompletos; cancelarlos cuando considere que no se requieren para alguna de las finalidades se\xF1aladas en el presente aviso de privacidad, est\xE9n siendo utilizados para finalidades no consentidas o haya finalizado la relaci\xF3n contractual  o de servicio, o bien, oponerse al tratamiento de los mismos para fines espec\xEDficos.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Usted podr\xE1 en cualquier momento revocar el consentimiento que ha otorgado a Panader\xEDa La Especial SA de CV, para el tratamiento de sus datos personales, limitar el uso o divulgaci\xF3n de los mismos y ejercer sus Derechos ARCO previstos en la Ley, para ellos, es necesario que realice su petici\xF3n en la direcci\xF3n electr\xF3nica que proporcionamos y en un plazo m\xE1ximo de 20 d\xEDas atenderemos su petici\xF3n y le informaremos sobre la procedencia de la misma a trav\xE9s de un mensaje de correo electr\xF3nico o el medio que nos indique.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Si tiene alguna pregunta respecto al manejo de sus datos personales, puede comunicarse al 2299 341880 en un horario de 10:00 AM a 3:00 PM de lunes a s\xE1bado.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Al hacer uso de nuestro servicio en l\xEDnea, usted acepta de conformidad este aviso de privacidad.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
+    className: "py-10 block w-full flex justify-center"
+  }, products && products.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__["Pagination"], {
+    containerClass: "flex flex-wrap h-12",
+    numberButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+    ,
+    activeClass: "border-brand-orange bg-orange-400 text-white hover:text-gray-600",
+    changePage: getData,
+    nextButtonText: "Siguiente",
+    buttonIcons: true,
+    prevButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo",
+    nextButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // prevButtonText="Anterior"
+    // prevButtonIcon="fa fa-chevron-left"
+    ,
+    data: products
+  }))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (TermsConditions);
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/components/BreadCard.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/components/BreadCard.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BreadCard; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function BreadCard(props) {
+  if (!props.product) {
+    return false;
+  }
+
+  var product = props.product;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container bread-card"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/pan/".concat(product.id),
+    className: "flex-1 flex cursor-pointer sm:bg-brand-gray"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "m-auto w-full h-40 object-cover align-middle md:h-64",
+    src: product.image_path,
+    alt: "Banderilla mini"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/pan/".concat(product.id),
+    className: "flex-1 flex flex-col h-32 overflow-hidden cursor-pointer sm:mt-4 sm:h-24"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 sm:text-center text-gray-600 font-medium uppercase"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "first-letter-bigger"
+  }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-lg"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.formatPrice), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-xs align-top"
+  }, "p/p"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 truncate text-gray-500 text-base"
+  }, product.description)));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/HeaderDescription.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/HeaderDescription.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HeaderDescription; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function HeaderDescription(props) {
+  var title = props.title,
+      description = props.description;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "mt-24 w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "block text-4xl text-center font-title font-semibold"
+  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "block p-2 text-gray-500 text-base text-center max-w-xl m-auto"
+  }, description));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/MenuIcons.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/MenuIcons.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MenuIcons; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function MenuIcons() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      categories = _usePage.categories;
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "flex m-auto container pt-12"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full icons p-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/category/1",
+    className: "text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "fill-current stroke-current h-20 m-auto",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 100 100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Pan-dulce"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_2",
+    "data-name": "Layer 2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_1-2",
+    "data-name": "Layer 1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M50,0A50,50,0,0,0,5.56,27.07a5.41,5.41,0,0,0,2.77.71c3.49,0,5.34-2.67,8.06-7s6-9.64,12.76-9.64,10.1,5.35,12.78,9.64,4.57,7,8.06,7,5.34-2.67,8.07-7,6-9.64,12.76-9.64,10.1,5.35,12.78,9.64,4.57,7,8.07,7a5.41,5.41,0,0,0,2.77-.71A50,50,0,0,0,50,0ZM96.72,32.15a10.88,10.88,0,0,1-5,1.18c-6.75,0-10.1-5.34-12.78-9.64s-4.57-7-8.07-7-5.33,2.66-8.06,7-6,9.64-12.77,9.64S39.9,28,37.22,23.69s-4.57-7-8.07-7-5.33,2.66-8,7-6,9.64-12.77,9.64a10.88,10.88,0,0,1-5.05-1.18,50,50,0,1,0,93.44,0ZM50,68.06a12.5,12.5,0,1,1,12.5-12.5A12.5,12.5,0,0,1,50,68.06Z"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-menu-category-text first-letter-bigger"
+  }, "Pan de Dulce")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/category/2",
+    className: "text-brand-icons inline-block p-4 h-40 w-1/2 float-right md:w-1/4 md:float-left opacity-75 hover:opacity-100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "fill-current stroke-current h-20 m-auto",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 133.53 100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Pan-sal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_2",
+    "data-name": "Layer 2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_1-2",
+    "data-name": "Layer 1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "Bread",
+    className: "cls-1",
+    d: "M131.29,79.46a27.89,27.89,0,0,0-1.84-2.24,97.75,97.75,0,0,0-29.71-22.3V67.08a6.59,6.59,0,0,1-13.17,0V49.94a76.65,76.65,0,0,0-13.22-2.17V67.08a6.59,6.59,0,0,1-13.17,0V47.77A76.23,76.23,0,0,0,47,49.93V67.08a6.59,6.59,0,0,1-13.17,0V54.89A97.81,97.81,0,0,0,4.08,77.22a27.89,27.89,0,0,0-1.84,2.24A12.81,12.81,0,0,0,0,86.83,13.21,13.21,0,0,0,13.17,100H120.36a13.21,13.21,0,0,0,13.17-13.17A12.81,12.81,0,0,0,131.29,79.46Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    className: "cls-1",
+    cx: "66.86",
+    cy: "29.17",
+    r: "4.17"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    className: "cls-1",
+    cx: "58.53",
+    cy: "16.67",
+    r: "4.17"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    className: "cls-1",
+    cx: "66.86",
+    cy: "4.17",
+    r: "4.17"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-menu-category-text"
+  }, "Pan de sal")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/category/3",
+    className: "text-brand-icons inline-block p-4 h-40 w-1/2 float-left md:w-1/4 md:float-left opacity-75 hover:opacity-100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "fill-current stroke-current h-20 m-auto",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 94.55 103.35"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Bocadillos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_2",
+    "data-name": "Layer 2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_1-2",
+    "data-name": "Layer 1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M0,101.35a2,2,0,0,0,2,2H74.84A2,2,0,0,0,76.3,100L3.46,22.2A2,2,0,0,0,0,23.56Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M83,99.64a2,2,0,0,1-1.45.54,2,2,0,0,1-1.41-.66A65.84,65.84,0,0,1,69.63,84.35a60.12,60.12,0,0,0-10.8-15.18A60.18,60.18,0,0,0,44.39,57.4,67.22,67.22,0,0,1,28.52,44.46,67.12,67.12,0,0,1,16.66,27.79,58.78,58.78,0,0,0,7.18,14.05a2,2,0,0,1,.12-2.8l2.18-2a2,2,0,0,1,2.85.13A65.74,65.74,0,0,1,22.82,24.51a60.12,60.12,0,0,0,10.8,15.18A60.18,60.18,0,0,0,48.06,51.46,67.22,67.22,0,0,1,63.93,64.4,67.31,67.31,0,0,1,75.79,81.07a59,59,0,0,0,9.47,13.74,2,2,0,0,1-.12,2.8Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M94.07,86.08a2,2,0,0,1-.15,2.76l-2.23,2.08a2,2,0,0,1-2.85-.12A66,66,0,0,1,78.35,75.63a60.12,60.12,0,0,0-10.8-15.18A60.08,60.08,0,0,0,53.11,48.67,66.85,66.85,0,0,1,37.25,35.74,67.23,67.23,0,0,1,25.38,19.06,59.41,59.41,0,0,0,15.91,5.32,2,2,0,0,1,16,2.53l2.12-2A2,2,0,0,1,19.63,0,2,2,0,0,1,21,.7Z"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-menu-category-text"
+  }, "Bocadillos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/category/4",
+    className: "text-brand-icons inline-block p-4 h-40 w-1/2 float-right md:w-1/4 md:float-left opacity-75 hover:opacity-100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "fill-current stroke-current h-20 m-auto",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 89.99 100"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Reposter\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_2",
+    "data-name": "Layer 2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    id: "Layer_1-2",
+    "data-name": "Layer 1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M45,57.46c-7.82,0-14.9-3.73-18.06-9.52l-2.57-4.72-4.93,2.14a16,16,0,0,1-6.4,1.31c-4.54,0-7.95-1.13-10.14-3.35C.51,40.86,0,37.43,0,35,0,20.68,16,0,45,0S90,20.6,90,34.84c0,2.48-.51,6-3,8.46-2.18,2.23-5.56,3.37-10,3.37a15.9,15.9,0,0,1-6.4-1.31l-4.94-2.14-2.57,4.72C59.94,53.73,52.85,57.46,45,57.46Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M77,52.36a22.13,22.13,0,0,1-8.75-1.79C64.21,58,55.35,63.16,45,63.16S25.86,58,21.82,50.57a22.08,22.08,0,0,1-8.74,1.79,22.86,22.86,0,0,1-10-2,1.46,1.46,0,0,0-2,1.88L18.76,96.3a5.87,5.87,0,0,0,5.46,3.7H65.85a5.87,5.87,0,0,0,5.46-3.7L89,52.15a1.46,1.46,0,0,0-2-1.87A22.42,22.42,0,0,1,77,52.36Z"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-menu-category-text"
+  }, "Reposter\xEDa"))));
+}
+;
 
 /***/ })
 

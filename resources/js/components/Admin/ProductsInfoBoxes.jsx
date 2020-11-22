@@ -62,7 +62,7 @@ export default function InfoBoxes(props) {
                                     </div>
                                     <div className="my-3">
                                         <i
-                                            className="inline fa fa-pencil-square-o fa-fw text-brand-icons text-lg"/>
+                                            className="inline fa fa-pencil-alt fa-fw text-brand-icons text-lg"/>
                                         <span className="inline">{ data.customizable ? 'Personalizable' : 'No es personalizable'}</span>
                                     </div>
                                 </div>

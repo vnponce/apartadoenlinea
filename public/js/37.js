@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[22],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[37],{
 
 /***/ "./resources/js/Pages/TermsConditions.jsx":
 /*!************************************************!*\

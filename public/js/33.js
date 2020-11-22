@@ -1,41 +1,410 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[33],{
 
-/***/ "./resources/js/Pages/TermsConditions.jsx":
-/*!************************************************!*\
-  !*** ./resources/js/Pages/TermsConditions.jsx ***!
-  \************************************************/
+/***/ "./resources/js/Shared/Admin.jsx":
+/*!***************************************!*\
+  !*** ./resources/js/Shared/Admin.jsx ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
- // import ReactDOM from 'react-dom';
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Layout; });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_Admin_SiteBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Admin/SiteBar */ "./resources/js/components/Admin/SiteBar.jsx");
+/* harmony import */ var _components_Admin_UserMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Admin/UserMenu */ "./resources/js/components/Admin/UserMenu.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
- // import styled from "styled-components";
-// const TwoColumns = styled.div `
-//     column-count: 2;
-// `
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function TermsConditions(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Terminos y Condiciones"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center flex-col mt-12 sm:mt-16 px-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-64 mb-10",
-    src: "/images/ConchaJuez.png",
-    alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-center m-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Aviso de Privacidad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Pagina web panader\xEDa la especial")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-justify pb-16"
-  }, "Ultima actualizaci\xF3n 1 de septiembre de 2020.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Los datos personales que usted nos ha proporcionado directamente o a trav\xE9s de medios electr\xF3nicos han sido recabados y ser\xE1n tratados, bajo los principios de licitud, consentimiento, informaci\xF3n, calidad, finalidad, lealtad, proporcionalidad y responsabilidad, de conformidad con lo dispuesto por la Ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xBFPara qu\xE9 fines recabamos y utilizamos sus datos personales?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Proveer los servicios y productos requeridos por usted; Dar cumplimiento a obligaciones contra\xEDdas con nuestros clientes; Evaluar la calidad de nuestros productos y servicios; Elaborar facturas y/o documentos legales que aparan los productos o servicios contratados; Env\xEDo de correo electr\xF3nico con informaci\xF3n y publicidad propia y de terceros; Notificarle nuestras promociones y otra informaci\xF3n relacionada con nuestros productos y servicios. Tambi\xE9n utilizamos esta informaci\xF3n personal para darle a usted informaci\xF3n relacionada con productos y servicios que usted haya adquirido, para entender mejor sus necesidades e intereses, para mejorar nuestro servicio y para personalizar comunicaciones y su experiencia en la red.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Adicionalmente, sus datos personales pueden ser utilizados para las siguientes finalidades:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Dar seguimiento a solicitudes de informaci\xF3n sobre los servicios y/o productos que nuestra empresa oferta.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Realizar cotizaciones y enviarle propuestas de trabajo en base a la informaci\xF3n que nos proporciona mediante los formularios del sitio web.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Dar avisos urgentes o importantes sobre alg\xFAn tema relacionado con nuestro sitio web, servicios y/o productos contratados con nuestra empresa.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Proveer informaci\xF3n varia.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Realizar los servicios y/o entregar los productos que usted contrat\xF3 con nuestra empresa.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Informar sobre cambios y nuevos productos y/o servicios que est\xE9n relacionados con el/los contratado(s) o adquirido(s) por el cliente.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Dar cumplimiento a obligaciones contra\xEDdas con nuestros clientes.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Evaluar la calidad del servicio y, realizar estudios internos sobre h\xE1bitos de consumo.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Env\xEDo de promociones por correo electr\xF3nico en diferentes periodos.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Sus datos personales se mantendr\xE1n en nuestros registros durante 5 a\xF1os a partir de la fecha en que nos proporcion\xF3, despu\xE9s procederemos a eliminar su informaci\xF3n si no se llega a ninguna transacci\xF3n comercial o v\xEDnculo laboral.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xBFQu\xE9 datos personales obtenemos y de d\xF3nde?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Para las finalidades se\xF1aladas en el presente aviso de privacidad, podemos recabar sus datos personales de distintas formas: cuando usted nos los proporciona directamente, cuando visita nuestro sitio de Internet o utiliza nuestros servicios en l\xEDnea, y cuando obtenemos informaci\xF3n a trav\xE9s de otras fuentes que est\xE1n permitidas por la ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Datos que recabamos de forma directa", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Recabamos sus datos personales de forma directa cuando usted mismo nos los proporciona por diversos medios, como cuando participa en nuestras promociones o nos da informaci\xF3n con objeto de que le prestemos un producto y/o servicio. Los datos y/o informaci\xF3n que obtenemos por este medio pueden ser, entre otros:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u2022 Nombre completo, direcci\xF3n completa, tel\xE9fono fijo (Casa u Oficina), tel\xE9fono celular, correo electr\xF3nico, datos destinados para realizar facturas, entre otros.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Sus datos personales ser\xE1n recopilaos en nuestra p\xE1gina web, en nuestras sucursales f\xEDsicas, matriz, oficina, por correo electr\xF3nico y/o v\xEDa telef\xF3nica.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Compartir Datos con Terceros.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Si usted es nuestro cliente, puede dejar de recibir mensajes promocionales, comunic\xE1rnoslo ya sea por tel\xE9fono fijo o celular, correo directo y/o electr\xF3nico a panaderialaespecial.veracruz@gmail.com o directamente en cualquiera de nuestras sucursales por medio de una solicitud por escrito, o al tel\xE9fono 2299 34 1880.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xBFPanader\xEDa La Especial comparte su Informaci\xF3n? Nos comprometemos a no transferir su informaci\xF3n personal a terceros sin su consentimiento, salvo solicitud expresa de alguna autoridad competente o las excepciones previstas en el art\xEDculo 37 de la LFPDPPP, as\xED como realizar esta transferencia en los t\xE9rminos que fija esa Ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Transferencia de datos personales.- En caso de que Panader\xEDa La Especial llegare a transferir tus datos personales a alguno de sus proveedores con el fin de llevar a cabo las finalidades del tratamiento establecidas en el presente aviso de privacidad, lo har\xE1 previa celebraci\xF3n de convenios de confidencialidad y, siempre y cuando,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(1) El proveedor o persona a quien se le transmitan acepte someter el tratamiento de los datos personales al presente aviso de privacidad, y,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(2) No se trate de alguno de los supuestos establecidos en el art\xEDculo 37 de la Ley.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Modificaciones al aviso de privacidad", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Nos reservamos el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad, para la atenci\xF3n de novedades legislativas, pol\xEDticas internas o nuevos requerimientos para la presentaci\xF3n u ofrecimiento de nuestros servicios o productos. Las modificaciones estar\xE1n disponibles al p\xFAblico mediante:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(i) Anuncios visibles en nuestras sucursales,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(ii) Tr\xEDpticos o folletos disponibles en nuestras sucursales,", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(iii) En nuestra p\xE1gina de internet  en la secci\xF3n de aviso de privacidad; o", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "(iv) Se las haremos llegar al \xFAltimo correo electr\xF3nico que nos haya proporcionado.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Derechos  ARCO", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Conforme a la Ley Federal de Protecci\xF3n de Datos Personales en Posesi\xF3n de Particulares, son los derechos que toda persona puede ejercer en relaci\xF3n con el tratamiento de sus datos personales. Casa sigla representa un derecho diferente y son Acceso, Rectificaci\xF3n, Cancelaci\xF3n y Oposici\xF3n.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Usted puede dejar de recibir mensajes promocionales por tel\xE9fono fijo o celular, as\xED mismo, puede dejar de recibir correo postal publicitario, tambi\xE9n puede dejar de recibir correos electr\xF3nicos con promocionales.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Usted tiene derecho a acceder a sus datos personales que poseemos y a los detalles del tratamiento de los mismos, as\xED como rectificar en caso de ser inexactos o incompletos; cancelarlos cuando considere que no se requieren para alguna de las finalidades se\xF1aladas en el presente aviso de privacidad, est\xE9n siendo utilizados para finalidades no consentidas o haya finalizado la relaci\xF3n contractual  o de servicio, o bien, oponerse al tratamiento de los mismos para fines espec\xEDficos.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Usted podr\xE1 en cualquier momento revocar el consentimiento que ha otorgado a Panader\xEDa La Especial SA de CV, para el tratamiento de sus datos personales, limitar el uso o divulgaci\xF3n de los mismos y ejercer sus Derechos ARCO previstos en la Ley, para ellos, es necesario que realice su petici\xF3n en la direcci\xF3n electr\xF3nica que proporcionamos y en un plazo m\xE1ximo de 20 d\xEDas atenderemos su petici\xF3n y le informaremos sobre la procedencia de la misma a trav\xE9s de un mensaje de correo electr\xF3nico o el medio que nos indique.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Si tiene alguna pregunta respecto al manejo de sus datos personales, puede comunicarse al 2299 341880 en un horario de 10:00 AM a 3:00 PM de lunes a s\xE1bado.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Al hacer uso de nuestro servicio en l\xEDnea, usted acepta de conformidad este aviso de privacidad.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    .nunito {\n        font-family: 'nunito', font-sans;\n    }\n\n    .border-b-1 {\n        border-bottom-width: 1px;\n    }\n\n    .border-l-1 {\n        border-left-width: 1px;\n    }\n\n    hover\\:border-none:hover {\n        border-style: none;\n    }\n\n    #sidebar {\n        transition: ease-in-out all .3s;\n        z-index: 9999;\n    }\n\n    #sidebar span {\n        opacity: 0;\n        position: absolute;\n        transition: ease-in-out all .1s;\n    }\n\n    #sidebar:hover {\n        width: 150px;\n        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n        /*shadow-2xl*/\n    }\n\n    #sidebar:hover span {\n        opacity: 1;\n    }\n"], ["\n    .nunito {\n        font-family: 'nunito', font-sans;\n    }\n\n    .border-b-1 {\n        border-bottom-width: 1px;\n    }\n\n    .border-l-1 {\n        border-left-width: 1px;\n    }\n\n    hover\\\\:border-none:hover {\n        border-style: none;\n    }\n\n    #sidebar {\n        transition: ease-in-out all .3s;\n        z-index: 9999;\n    }\n\n    #sidebar span {\n        opacity: 0;\n        position: absolute;\n        transition: ease-in-out all .1s;\n    }\n\n    #sidebar:hover {\n        width: 150px;\n        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n        /*shadow-2xl*/\n    }\n\n    #sidebar:hover span {\n        opacity: 1;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (TermsConditions);
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject());
+function Layout(_ref) {
+  var title = _ref.title,
+      children = _ref.children;
+  moment__WEBPACK_IMPORTED_MODULE_2___default.a.locale('es');
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      userMenuDiv = _useState2[0],
+      setUserMenuDiv = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      userMenu = _useState4[0],
+      setUserMenu = _useState4[1];
+
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      flash = _usePage.flash,
+      user = _usePage.auth.user;
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    document.title = title;
+  }, [title]);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    setUserMenuDiv(document.getElementById("userMenu"));
+    setUserMenu(document.getElementById("userButton"));
+  }, []);
+  /**
+   * JS
+   * */
+
+  /*Toggle dropdown list*/
+
+  /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+  document.onclick = check;
+
+  function check(e) {
+    var target = e && e.target || event && event.srcElement; //User Menu
+
+    if (!checkParent(target, userMenuDiv)) {
+      // click NOT on the menu
+      if (checkParent(target, userMenu)) {
+        // click on the link
+        if (userMenuDiv.classList.contains("invisible")) {
+          userMenuDiv.classList.remove("invisible");
+        } else {
+          userMenuDiv.classList.add("invisible");
+        }
+      } else {
+        // click both outside link and outside menu, hide menu
+        userMenuDiv.classList.add("invisible");
+      }
+    }
+  }
+
+  function checkParent(t, elm) {
+    while (t.parentNode) {
+      if (t === elm) {
+        return true;
+      }
+
+      t = t.parentNode;
+    }
+
+    return false;
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css",
+    integrity: "sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=",
+    crossOrigin: "anonymous"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+    href: "https://fonts.googleapis.com/css?family=Nunito:400,700,800",
+    rel: "stylesheet"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "flex h-screen bg-gray-100 font-sans"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Admin_SiteBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "flex flex-row flex-wrap flex-1 flex-grow content-start pl-16"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "h-40 lg:h-20 w-full flex flex-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+    id: "logo",
+    className: "bg-gray-200 w-full lg:max-w-sm flex items-center border-b-1 border-gray-300 order-2 lg:order-1"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: "/",
+    className: "flex-2 m-auto h-16 hidden lg:block"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: "/svg/Logo-Full.svg",
+    className: "my-auto h-full",
+    alt: ""
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+    id: "header1",
+    className: "bg-gray-100 w-auto flex-1 border-b-1 border-gray-300 order-1 lg:order-2"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "flex h-full justify-between items-center"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "relative w-full max-w-3xl px-6"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Admin_UserMenu__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    user: user
+  })))), children)));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Content.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Admin/Content.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Content; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  min-height: calc(100% - 5rem);\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var Section = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject());
+function Content(_ref) {
+  var children = _ref.children;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "main-contents",
+    className: "w-1/2 flex-1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Section, {
+    className: "flex flex-1 flex-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full xl:max-w-6xl"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "h-full max-w-full lg:max-w-3xl xl:max-w-5xl"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "h-full border-b overflow-auto p-3"
+  }, children)))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/SiteBar.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Admin/SiteBar.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SiteBar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function SiteBar(props) {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      user = _usePage.auth.user;
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "sidebar",
+    className: "h-screen w-16 menu bg-white text-white px-4 flex items-center nunito static fixed shadow"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "list-reset "
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-home fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Panel"))), user.isGod && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0 "
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin/products",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-bread-slice fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Pan"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin/stores",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-store fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Sucursales"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "my-2 md:my-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+    href: "/admin/users",
+    className: "block py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-users fa-fw mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "w-full inline-block pb-1 md:pb-0 text-sm"
+  }, "Usuarios"))))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/UserMenu.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Admin/UserMenu.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserMenu; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function UserMenu(props) {
+  var user = props.user;
+
+  var logout = function logout() {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post('/logout');
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex relative inline-block pr-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "relative text-sm"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    id: "userButton",
+    className: "flex items-center focus:outline-none mr-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "w-8 h-8 rounded-full mr-4",
+    src: user.avatar || 'https://cdn2.iconfinder.com/data/icons/office-and-business-19/65/61-512.png',
+    alt: "Avatar of User"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "hidden md:inline-block"
+  }, "Hola, ", user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "pl-2 h-2",
+    version: "1.1",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 129 129",
+    enableBackground: "new 0 0 129 129"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "userMenu",
+    className: "bg-white nunito rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "list-reset"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    onClick: logout,
+    className: "px-4 py-2 block text-gray-900 hover:bg-indigo-400 hover:text-white no-underline hover:no-underline"
+  }, "Logout"))))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Table.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Table.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-table */ "./node_modules/react-table/dist/index.es.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
+function Table(_ref) {
+  var columns = _ref.columns,
+      data = _ref.data,
+      _onClick = _ref.onClick,
+      selected = _ref.selected;
+
+  // Use the state and functions returned from useTable to build your UI
+  var _useTable = Object(react_table__WEBPACK_IMPORTED_MODULE_0__["useTable"])({
+    columns: columns,
+    data: data
+  }),
+      getTableProps = _useTable.getTableProps,
+      getTableBodyProps = _useTable.getTableBodyProps,
+      headerGroups = _useTable.headerGroups,
+      rows = _useTable.rows,
+      prepareRow = _useTable.prepareRow; // Render the UI for your table
+
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("table", _extends({
+    className: "table-auto w-full"
+  }, getTableProps()), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("thead", null, headerGroups.map(function (headerGroup) {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tr", headerGroup.getHeaderGroupProps(), headerGroup.headers.map(function (column) {
+      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("th", _extends({
+        className: "px-4 py-2 py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
+      }, column.getHeaderProps()), column.render('Header'));
+    }));
+  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tbody", getTableBodyProps(), rows.map(function (row, i) {
+    prepareRow(row);
+    var cx = classnames__WEBPACK_IMPORTED_MODULE_1___default()('hover:bg-gray-300', 'cursor-pointer', {
+      'bg-gray-200': i % 2
+    }, {
+      'text-brand-orange': selected && row.original.id === selected.id
+    }, {
+      'text-red-500': row.original.date && row.original.date.forToday
+    }, {
+      'bg-red-100': row.original.date && row.original.date.forToday
+    }, {
+      'text-yellow-500': row.original.date && row.original.date.forTomorrow
+    }, {
+      'bg-yellow-100': row.original.date && row.original.date.forTomorrow
+    }, {
+      'line-through': row.original.canceled
+    });
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("tr", _extends({
+      id: row.original.id,
+      onClick: function onClick() {
+        return _onClick(row);
+      },
+      className: cx
+    }, row.getRowProps()), row.cells.map(function (cell) {
+      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("td", _extends({
+        className: "py-4 px-2 border-b border-grey-light"
+      }, cell.getCellProps()), cell.render('Cell'));
+    }));
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Table);
 
 /***/ })
 

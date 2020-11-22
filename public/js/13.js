@@ -559,7 +559,7 @@ function InfoBoxes(props) {
   }, data.favorite ? 'Favorito' : 'No es favorito')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "my-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-pencil-square-o fa-fw text-brand-icons text-lg"
+    className: "inline fa fa-pencil-alt fa-fw text-brand-icons text-lg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
   }, data.customizable ? 'Personalizable' : 'No es personalizable')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
