@@ -33,4 +33,32 @@ class CartTest extends TestCase
             'allow_instructions' => false,
         ], Cart::content()->first()->options->toArray());
     }
+
+    /** @test */
+    function it_should_update_custom_message()
+    {
+        Cart::destroy();
+        $product = factory(Product::class)->create();
+        $user = factory(User::class)->create();
+        $this->actingAs($user)
+            ->post('/cart', [
+                'product_id' => $product->id,
+                'quantity' => 1,
+                'custom_message' => 'dummy custom text'
+            ]);
+
+//        Route::post('/cart/product/{product}/update/comment', 'CartController@updateComment');
+//        dd(Cart::content());
+        $this->post("/cart/product/$product->id/update/custom-message", [
+            'remove_rowId' => Cart::content()->first()->rowId,
+            'custom_message' => 'new custom message',
+        ]);
+
+        $this->assertEquals([
+            'customizable' => true,
+            'custom_message' => 'new custom message',
+            'comment' => null,
+            'allow_instructions' => false,
+        ], Cart::content()->first()->options->toArray());
+    }
 }

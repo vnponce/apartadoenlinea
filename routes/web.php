@@ -83,6 +83,7 @@ Route::group(['middleware' => 'auth'], function() {
         dd($request->toArray());
     });*/
     Route::post('/cart/product/{product}/update/comment', 'CartController@updateComment');
+    Route::post('/cart/product/{product}/update/custom-message', 'CartController@updateCustomMessage');
     Route::delete('/cart/product/{id}', 'CartController@remove');
 // Route::post('/cart', 'CartController@remove');
 

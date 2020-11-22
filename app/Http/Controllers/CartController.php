@@ -92,6 +92,21 @@ class CartController extends Controller
         // return Inertia::render('Checkout', compactap('sorted'));
     }
 
+    public function updateCustomMessage(Request $request, Product $product)
+    {
+//        $content = Cart::content();
+        Cart::remove($request->remove_rowId);
+        Cart::add($product, $request->quantity,
+            [
+                'comment' => $request->comment,
+                'allow_instructions' => $product->allow_instructions,
+                'customizable' => $product->customizable,
+                'custom_message' => $request->custom_message,
+            ])
+            ->associate(Product::class);
+
+        return back()->with('show_panel', 'Actualizado');
+    }
     public function empty()
     {
         Cart::destroy();
