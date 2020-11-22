@@ -34,17 +34,18 @@ import '@testing-library/cypress/add-commands';
  *          cy.refreshDatabase({ '--drop-views': true });
  */
 Cypress.Commands.add('createOrder', (options = {}) => {
-  const { orderId, productId, productPrice } = options;
+  const { orderId, productId, productPrice, quantity = 1, comment = '', customMessage = '' } = options;
   return cy.php(`
         DB::table('order_product')->insert(
         [
             'order_id' => ${orderId || 'factory(App\\Order::class)->create()->id'},
             'product_id' => ${productId || 'factory(App\\Product::class)->create()->id'},
             'price' => ${productPrice || 20000},
-            'comment' => 'no glutten',
-            'quantity' => 2,
+            'comment' => '${comment}',
+            'quantity' => ${quantity},
+            'custom_message' => '${customMessage}',
         ]
-    );
+        );
     `);
   // Este no funciono, decia que el precio no tenia valor por defacto.
   // cy.php(`

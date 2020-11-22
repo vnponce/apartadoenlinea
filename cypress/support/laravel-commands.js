@@ -165,7 +165,8 @@ Cypress.Commands.add('php', command => {
                 method: 'POST',
                 url: '/__cypress__/run-php',
                 body: { command: command, _token: token },
-                log: false
+                log: false,
+                // failOnStatusCode: false,
             });
         })
         .then(response => {

@@ -123,6 +123,8 @@ class PanelController extends Controller
                            'options' => [
                                'comment' => $product->pivot->comment,
                                'allow_instructions' => $product->allow_instructions,
+                               'customizable' => $product->customizable,
+                               'custom_message' => $product->pivot->custom_message,
                            ],
                        ];
                     }),
