@@ -29,6 +29,7 @@ class CartController extends Controller
             $product,
             $request->quantity,
             [
+                'customizable' => $product->customizable,
                 'comment' => $request->comment,
                 'allow_instructions' => $product->allow_instructions,
                 'custom_message' => $request->custom_message,

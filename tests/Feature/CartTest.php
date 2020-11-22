@@ -27,6 +27,7 @@ class CartTest extends TestCase
             ]);
 
         $this->assertEquals([
+            'customizable' => true,
             'custom_message' => 'dummy custom text',
             'comment' => null,
             'allow_instructions' => false,

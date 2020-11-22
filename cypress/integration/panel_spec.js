@@ -34,20 +34,54 @@ describe('test right panel', () => {
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
     cy.get('.product-side-panel .panel').should('be.visible');
     cy.findAllByTestId('list-item-1').within(() => {
-        // probar que sean los productos en lisatados.
-        cy.get('.name').contains('nice product');
-        cy.get('.quantity').contains('1');
-        cy.get('.price').contains('$13.00');
-    })
-  });
-    it('should not show allowed button and total if is empty and show empty charola', function () {
-        cy.login();
-
-        cy.visit('/');
-        cy.get('#charola').click();
-        cy.get('.product-side-panel .panel').within(() => {
-            cy.findByText('No hay pan en la charola');
-            cy.findByRole('button', { name: /proceder/i}).should('not.exist');
-        });
+      // probar que sean los productos en lisatados.
+      cy.get('.name').contains('nice product');
+      cy.get('.quantity').contains('1');
+      cy.get('.price').contains('$13.00');
     });
+  });
+  it('should not show allowed button and total if is empty and show empty charola', () => {
+    cy.login();
+
+    cy.visit('/');
+    cy.get('#charola').click();
+    cy.get('.product-side-panel .panel').within(() => {
+      cy.findByText('No hay pan en la charola');
+      cy.findByRole('button', { name: /proceder/i }).should('not.exist');
+    });
+  });
+  it('should show customize message', () => {
+    cy.create('App\\Product');
+    cy.login();
+    cy.visit('/');
+    cy.get('.bread-card').click();
+    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias Nedy');
+    cy.findByRole('button', { name: /poner en la charola/i }).click();
+
+    cy.url().should('eq', `${Cypress.config().baseUrl}/`);
+    cy.get('#charola').click();
+
+    cy.get('#charola').click();
+    cy.get('.product-side-panel .panel').within(() => {
+      cy.findByText('Gracias Nedy');
+    });
+  });
+  it.only('should show edit input custom message when user click on it', () => {
+    cy.create('App\\Product');
+    cy.login();
+    cy.visit('/');
+    cy.get('.bread-card').click();
+    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias Nedy');
+    cy.findByRole('button', { name: /poner en la charola/i }).click();
+
+    cy.url().should('eq', `${Cypress.config().baseUrl}/`);
+    cy.get('#charola').click();
+
+    cy.get('#charola').click();
+    cy.get('.product-side-panel .panel').within(() => {
+      cy.findByText('Gracias Nedy').click();
+      cy.get('input[name=custom-message]')
+        .should('have.value', 'Gracias Nedy');
+    });
+  });
 });

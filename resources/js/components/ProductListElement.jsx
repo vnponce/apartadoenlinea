@@ -4,10 +4,15 @@ import Input from "./Input";
 
 export default function ProductListElement(props) {
     const { product, isEditable = true } = props;
+    console.log('product =>', product);
     const [showInput, setShowInput] = useState(false);
     const [comment, setComment] = useState('');
+    const [showCustomizableInput, setShowCustomizableInput] = useState(false);
+    const [customMessage, setCustomMessage] = useState('');
     useEffect(() => {
         setComment(product.options.comment);
+        console.log('custom_message =>', product.options.custom_message);
+        setCustomMessage(product.options.custom_message);
     }, [product]);
     const removeOneItem = () => {
         Inertia.post('/cart', {
@@ -88,6 +93,21 @@ export default function ProductListElement(props) {
                                onChange={e => setComment(e.target.value)}
                                className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
                         : comment || ( isEditable ? 'Agregar breve comentario' : '')
+                    }
+                </div>
+            )}
+            {/*custtomizable*/}
+            {product.options.customizable && (
+                <div onClick={() => setShowCustomizableInput(true)} className="text-sm italic text-brand-green">
+                    {showCustomizableInput && isEditable ?
+                        /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
+                        <input name="custom-message" type="text" placeholder="Ej. sin chile"
+                               autoFocus
+                               value={customMessage}
+                               onBlur={updateComment}
+                               onChange={e => setCustomMessage(e.target.value)}
+                               className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
+                        : customMessage || ( isEditable ? 'Personalizar pastel (de la forma lo envíes será escrito)' : '')
                     }
                 </div>
             )}

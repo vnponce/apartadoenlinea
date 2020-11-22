@@ -15,7 +15,7 @@ class AddCustomFieldToProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             Schema::table('products', function (Blueprint $table) {
-                $table->boolean('customizable')->default(false);
+                $table->boolean('customizable')->default(false)->after('favorite');;
             });
         });
     }
