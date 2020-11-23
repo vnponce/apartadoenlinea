@@ -58,10 +58,22 @@ class CartController extends Controller
         $notUpdatedItems = $content->filter(function ($item) use ($request){
             return $item->rowId !== $request->remove_rowId;
         });
+        $currentItem = $content->filter(function ($item) use ($request){
+            return $item->rowId === $request->remove_rowId;
+        });
         Cart::remove($request->remove_rowId);
+//        dd($currentItem->first()->options);
+//        dd($request->toArray());
         Cart::add($product, $request->quantity,
-            ['comment' => $request->comment, 'allow_instructions' => $product->allow_instructions])
+            [
+                'comment' => $request->comment,
+                'allow_instructions' => $product->allow_instructions,
+                'custom_message' => $currentItem->first()->options->custom_message,
+                'customizable' => $product->customizable
+            ])
             ->associate(Product::class);
+//        dd(Cart::content());
+
         $notUpdatedItems->map(function($item) {
             Cart::remove($item->rowId);
             // si es el que tiene los datos debemos poner los datos completos de nuevo
@@ -78,11 +90,17 @@ class CartController extends Controller
                 ]);
             } else {
                 Cart::add($item->id, $item->name, $item->qty, $item->price,
-                    ['comment' => $item->options->comment, 'allow_instructions' => $item->options->allow_instructions])
+                    [
+                        'comment' => $item->options->comment,
+                        'allow_instructions' => $item->options->allow_instructions,
+                        'custom_message' => $item->options->custom_message,
+                        'customizable' => $item->options->customizable
+                    ])
                     ->associate(Product::class);
             }
         });
         $cart = Cart::content();
+//        dd($cart);
         $sorted = $cart->sortBy(function ($product, $key) {
             return $product->name;
         });

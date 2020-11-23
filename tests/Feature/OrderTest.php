@@ -107,6 +107,8 @@ class OrderTest extends TestCase
                         'options' => [
                             'comment' => $product->pivot->comment,
                             'allow_instructions' => $product->pivot->allowInstructions,
+                            'customizable' => $product->customizable,
+                            'custom_message' => $product->pivot->customizable,
                         ],
                     ];
                 });

@@ -426,6 +426,7 @@ function ProductListElement(props) {
 
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post("/cart/product/".concat(product.id, "/update/comment"), {
       product_id: product.id,
+      // not used?
       comment: comment,
       quantity: product.qty,
       remove_rowId: product.rowId

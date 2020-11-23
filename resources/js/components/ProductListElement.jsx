@@ -39,7 +39,7 @@ export default function ProductListElement(props) {
       return false;
     }
     Inertia.post(`/cart/product/${product.id}/update/comment`, {
-      product_id: product.id,
+      product_id: product.id, // not used?
       comment,
       quantity: product.qty,
       remove_rowId: product.rowId,
