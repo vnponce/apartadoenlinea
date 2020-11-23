@@ -66,12 +66,13 @@ describe('test right panel', () => {
       cy.findByText('Gracias');
     });
   });
-  it('should show edit input custom message when user click on it', () => {
+  it.only('should edit custom message', () => {
     cy.create('App\\Product');
     cy.login();
     cy.visit('/');
     cy.get('.bread-card').click();
     cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias');
+    cy.findByLabelText(/cantidad/i).type('{selectall}{backspace}3');
     cy.findByRole('button', { name: /poner en la charola/i }).click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
@@ -91,11 +92,13 @@ describe('test right panel', () => {
         Gloudemans\\Shoppingcart\\Facades\\Cart::content()
     `).then((response) => {
       cy.log('response =>', Object.values(response)[0]);
-      const { options: { custom_message: customMessage } } = Object.values(response)[0];
+      const { qty, options: { custom_message: customMessage } } = Object.values(response)[0];
       expect(customMessage).to.have.string('Dummy text');
+      expect(qty * 1).to.be.eq(3);
     });
     cy.get('.product-side-panel .panel').within(() => {
       cy.findByText('Dummy text');
+      cy.get('.quantity').contains('3');
     });
     //
   });

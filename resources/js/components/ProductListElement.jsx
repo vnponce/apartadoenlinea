@@ -46,15 +46,16 @@ export default function ProductListElement(props) {
     });
   };
   const updateCustomMessage = () => {
-      console.log('updateCustomMessage =>', customMessage);
+    console.log('updateCustomMessage =>', customMessage);
     setShowCustomizableInput(false);
-      console.log('setShowCustomizableInput =>', showCustomizableInput);
-      if (customMessage === product.options.custom_message) {
+    console.log('setShowCustomizableInput =>', showCustomizableInput);
+    if (customMessage === product.options.custom_message) {
       return false;
     }
     Inertia.post(`/cart/product/${product.id}/update/custom-message`, {
       custom_message: customMessage,
       remove_rowId: product.rowId,
+      quantity: product.qty,
     });
   };
   return (
@@ -106,7 +107,7 @@ export default function ProductListElement(props) {
                                className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
                       : <span>
                             <i className="fa fa-commenting-o mr-1" aria-hidden="true"></i>
-                            {comment || ( isEditable ? 'Agregar breve comentario' : '')}
+                            {comment || (isEditable ? 'Agregar breve comentario' : '')}
                       </span>
                     }
                 </div>

@@ -444,7 +444,8 @@ function ProductListElement(props) {
 
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post("/cart/product/".concat(product.id, "/update/custom-message"), {
       custom_message: customMessage,
-      remove_rowId: product.rowId
+      remove_rowId: product.rowId,
+      quantity: product.qty
     });
   };
 
