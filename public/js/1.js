@@ -399,6 +399,7 @@ function ProductListElement(props) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
       product_id: product.id,
       comment: product.options.comment,
+      custom_message: product.options.custom_message,
       quantity: -1,
       redirect: 'product'
     });
@@ -412,6 +413,7 @@ function ProductListElement(props) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/cart', {
       product_id: product.id,
       comment: product.options.comment,
+      custom_message: product.options.custom_message,
       quantity: 1,
       redirect: 'product'
     });

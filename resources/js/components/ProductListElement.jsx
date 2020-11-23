@@ -18,6 +18,7 @@ export default function ProductListElement(props) {
     Inertia.post('/cart', {
       product_id: product.id,
       comment: product.options.comment,
+      custom_message: product.options.custom_message,
       quantity: -1,
       redirect: 'product',
     });
@@ -29,6 +30,7 @@ export default function ProductListElement(props) {
     Inertia.post('/cart', {
       product_id: product.id,
       comment: product.options.comment,
+      custom_message: product.options.custom_message,
       quantity: 1,
       redirect: 'product',
     });
