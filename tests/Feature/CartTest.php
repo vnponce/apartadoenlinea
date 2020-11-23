@@ -120,4 +120,69 @@ class CartTest extends TestCase
             'allow_instructions' => true,
         ], Cart::content()->reverse()->first()->options->toArray());
     }
+
+    /** @test */
+    function it_can_update_quantity_by_item()
+    {
+        Cart::destroy();
+        $category = factory(Category::class)->create([
+            'name' => 'Bocadillos'
+        ]);
+        $product = factory(Product::class)->create([
+            'name' => 'First item',
+            'category_id' => $category->id,
+        ]);
+        $product2 = factory(Product::class)->create([
+            'name' => 'Second item',
+            'category_id' => $category->id,
+        ]);
+        $user = factory(User::class)->create();
+        $this->actingAs($user)
+            ->post('/cart', [
+                'product_id' => $product->id,
+                'quantity' => 1,
+                'comment' => 'first product comment',
+                'custom_message' => 'first custom message',
+            ]);
+        $this->actingAs($user)
+            ->post('/cart', [
+                'product_id' => $product2->id,
+                'quantity' => 2,
+                'comment' => 'second product comment',
+                'custom_message' => 'second custom message',
+            ]);
+
+//        Route::post('/cart/product/{product}/update/comment', 'CartController@updateComment');
+//        dd(Cart::content());
+        $this->actingAs($user)
+            ->post('/cart', [
+                'product_id' => $product2->id,
+                'quantity' => 1,
+                'comment' => 'second product comment',
+                'custom_message' => 'second custom message',
+            ]);
+
+        $this->assertEquals(2, Cart::content()->count());
+
+        $firstProduct = Cart::content()->first();
+        $secondProduct = Cart::content()->reverse()->first();
+        $this->assertEquals(1, $firstProduct->qty);
+        $this->assertEquals(3, $secondProduct->qty);
+
+        // fist product
+        $this->assertEquals([
+            'customizable' => true,
+            'custom_message' => 'first custom message',
+            'comment' => 'first product comment',
+            'allow_instructions' => true,
+        ], $firstProduct->options->toArray());
+
+        // second product
+        $this->assertEquals([
+            'customizable' => true,
+            'custom_message' => 'second custom message',
+            'comment' => 'second product comment',
+            'allow_instructions' => true,
+        ], Cart::content()->reverse()->first()->options->toArray());
+    }
 }
