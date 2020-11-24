@@ -566,7 +566,7 @@ function ProductListElement(props) {
   }), error.comment && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: 'text-sm m-auto text-red-500 error'
   }, error.comment)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-commenting-o mr-1",
+    className: "far fa-comment-dots mr-1",
     "aria-hidden": "true"
   }), comment || (isEditable ? 'Agregar breve comentario' : ''))), product.options.customizable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     onClick: function onClick() {
@@ -596,7 +596,7 @@ function ProductListElement(props) {
   }), error.customizable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: 'text-sm m-auto text-red-500 error'
   }, error.customizable)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-pencil mr-1",
+    className: "fa fa-pencil-alt mr-1",
     "aria-hidden": "true"
   }), customMessage || (isEditable ? 'Personalizar pastel (de la forma lo envíes será escrito)' : ''))));
 }

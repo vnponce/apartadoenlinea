@@ -211,7 +211,7 @@ export default function InfoBoxes(props) {
                     <div className="flex flex-col items-center">
                         <div className="flex-shrink pr-4">
                             <div className="rounded-full p-3 bg-gray-400"><i
-                                className="fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"/></div>
+                                className="fa fa-hand-pointer fa-fw fa-inverse text-3xl"/></div>
                         </div>
                         <div className="flex-1 mt-3">
                             No hay ningun pedido seleccionado para mostrar información.

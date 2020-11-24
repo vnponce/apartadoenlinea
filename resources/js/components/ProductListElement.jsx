@@ -157,7 +157,7 @@ export default function ProductListElement(props) {
                             {error.comment && <p className={'text-sm m-auto text-red-500 error'}>{error.comment}</p>}
                         </>
                       : <span>
-                            <i className="fa fa-commenting-o mr-1" aria-hidden="true"></i>
+                            <i className="far fa-comment-dots mr-1" aria-hidden="true"></i>
                             {comment || (isEditable ? 'Agregar breve comentario' : '')}
                       </span>
                     }
@@ -189,7 +189,7 @@ export default function ProductListElement(props) {
                         </>
                       )
                       : <span>
-                            <i className="fa fa-pencil mr-1" aria-hidden="true"></i>
+                            <i className="fa fa-pencil-alt mr-1" aria-hidden="true"></i>
                             {customMessage || (isEditable ? 'Personalizar pastel (de la forma lo envíes será escrito)' : '')}
                         </span>
                     }

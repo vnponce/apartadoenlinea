@@ -465,7 +465,7 @@ function InfoBoxes(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "rounded-full p-3 bg-gray-400"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-hand-pointer fa-fw fa-inverse text-indigo-500 text-3xl"
+    className: "fa fa-hand-pointer fa-fw fa-inverse text-3xl"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-3"
   }, "No hay ningun pedido seleccionado para mostrar informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
@@ -540,7 +540,7 @@ function StoreDetails(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "rounded-full p-3 bg-gray-400"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-store fa-fw fa-inverse text-indigo-500 text-xl"
+    className: "fa fa-store fa-fw fa-inverse text-xl"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-1 flex-col"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -579,7 +579,7 @@ function UserDetails(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "rounded-full p-3 bg-gray-400"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-user fa-fw fa-inverse text-indigo-500 text-xl"
+    className: "fa fa-user fa-fw fa-inverse text-xl"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-1 flex-col"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

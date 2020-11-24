@@ -115,11 +115,6 @@ function Layout(_ref) {
   }
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
-    rel: "stylesheet",
-    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css",
-    integrity: "sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=",
-    crossOrigin: "anonymous"
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     href: "https://fonts.googleapis.com/css?family=Nunito:400,700,800",
     rel: "stylesheet"
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {

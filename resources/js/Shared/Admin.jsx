@@ -96,8 +96,8 @@ export default function Layout({ title, children }) {
     return (
         <Wrapper>
             {/* Custom styles for this template*/}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-                  integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossOrigin="anonymous"/>
+            {/*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"*/}
+            {/*      integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossOrigin="anonymous"/>*/}
             <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet" />
             <div className="flex h-screen bg-gray-100 font-sans">
 

@@ -8,7 +8,7 @@ export default function StoreDetails(props) {
             <div className="flex flex-row">
                 <div className="flex-shrink pr-4">
                     <div className="rounded-full p-3 bg-gray-400"><i
-                        className="fa fa-store fa-fw fa-inverse text-indigo-500 text-xl"/></div>
+                        className="fa fa-store fa-fw fa-inverse text-xl"/></div>
                 </div>
                 <div className="flex flex-1 flex-col">
                     <span className="text-lg">{data.name}</span>
