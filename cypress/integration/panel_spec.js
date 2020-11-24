@@ -202,4 +202,49 @@ describe('test right panel', () => {
     });
     //
   });
+  it('should show error when custom message reach 25 chars', () => {
+    const maxChar = '1234567890123456789012345';
+    cy.create('App\\Product');
+    cy.login();
+    cy.visit('/');
+    cy.get('.bread-card').click();
+    // cy.findByLabelText(/Si no deseas/i).type('sin nada');
+    // cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias');
+    // cy.findByLabelText(/cantidad/i).type('{selectall}{backspace}3');
+    cy.findByRole('button', { name: /poner en la charola/i }).click();
+
+    cy.url().should('eq', `${Cypress.config().baseUrl}/`);
+    cy.get('#charola').click();
+
+    cy.get('#charola').click();
+    cy.get('.product-side-panel .panel').within(() => {
+      cy.findByText(/personalizar/i).click();
+      cy.get('input[name=custom-message]')
+        .type(maxChar);
+      cy.get('.error').should('contain', 'Máximo 25 caracteres');
+    });
+  });
+  it.only('should show error when custom message reach 25 chars', () => {
+    const maxChar = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901';
+    cy.create('App\\Category', { name: 'Bocadillos' });
+    cy.create('App\\Product', { name: 'Great Bocadillo', category_id: 1 });
+    cy.login();
+    cy.visit('/');
+    cy.get('.bread-card').click();
+    // cy.findByLabelText(/Si no deseas/i).type('sin nada');
+    // cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias');
+    // cy.findByLabelText(/cantidad/i).type('{selectall}{backspace}3');
+    cy.findByRole('button', { name: /poner en la charola/i }).click();
+
+    cy.url().should('eq', `${Cypress.config().baseUrl}/`);
+    cy.get('#charola').click();
+
+    cy.get('#charola').click();
+    cy.get('.product-side-panel .panel').within(() => {
+      cy.findByText(/agregar breve comentario/i).click();
+      cy.get('input[name=comment]')
+        .type(maxChar);
+      cy.get('.error').should('contain', 'Máximo 124 caracteres');
+    });
+  });
 });

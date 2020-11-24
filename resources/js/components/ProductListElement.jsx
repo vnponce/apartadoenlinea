@@ -9,6 +9,11 @@ export default function ProductListElement(props) {
   const [comment, setComment] = useState('');
   const [showCustomizableInput, setShowCustomizableInput] = useState(false);
   const [customMessage, setCustomMessage] = useState('');
+  const [error, setError] = useState({
+    comment: false,
+    customizable: false,
+  });
+
   useEffect(() => {
     setComment(product.options.comment);
     console.log('custom_message =>', product.options.custom_message);
@@ -60,6 +65,27 @@ export default function ProductListElement(props) {
       quantity: product.qty,
     });
   };
+
+  const handleCustomizable = (e) => {
+    const { value } = e.target;
+    if (value.length < 25) {
+      setCustomMessage(e.target.value);
+      setError({
+        ...error,
+        customizable: false,
+      });
+      // setDisabled(false);
+    } else {
+      // setDisabled(true);
+      setError({
+        ...error,
+        customizable: [
+          'Máximo 25 caracteres',
+        ],
+      });
+    }
+  };
+
   return (
         <div data-testid={`list-item-${product.id}`} className="mb-8 w-full">
             <div className="flex">
@@ -119,12 +145,26 @@ export default function ProductListElement(props) {
                 <div onClick={() => setShowCustomizableInput(true)} className="text-sm italic text-brand-green">
                     {showCustomizableInput && isEditable
                     /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
-                      ? <input name="custom-message" type="text" placeholder="Ej. sin chile"
+                      // ? <Input
+                      //       onChange={handleCustomizable}
+                      //       value={customMessage}
+                      //       id="custom-message"
+                      //       label="Deseas personalizar tu pastel? De la forma lo envíes será escrito"
+                      //       placeholder="Felicidades Pedro"
+                      //       error={error.customizable}
+                      //       />
+                      ? (
+                          <>
+                          <input name="custom-message" type="text" placeholder="Felicidades Pedro"
                                autoFocus
                                value={customMessage}
                                onBlur={updateCustomMessage}
-                               onChange={(e) => setCustomMessage(e.target.value)}
+                               // onChange={(e) => setCustomMessage(e.target.value)}
+                               onChange={handleCustomizable}
                                className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full" />
+                                {error.customizable && <p className={'text-sm m-auto text-red-500 error'}>{error.customizable}</p>}
+                          </>
+                      )
                       : <span>
                             <i className="fa fa-pencil mr-1" aria-hidden="true"></i>
                             {customMessage || (isEditable ? 'Personalizar pastel (de la forma lo envíes será escrito)' : '')}

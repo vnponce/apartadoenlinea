@@ -356,6 +356,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input */ "./resources/js/components/Input.jsx");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -392,6 +398,14 @@ function ProductListElement(props) {
       _useState8 = _slicedToArray(_useState7, 2),
       customMessage = _useState8[0],
       setCustomMessage = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    comment: false,
+    customizable: false
+  }),
+      _useState10 = _slicedToArray(_useState9, 2),
+      error = _useState10[0],
+      setError = _useState10[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     setComment(product.options.comment);
@@ -453,6 +467,22 @@ function ProductListElement(props) {
       remove_rowId: product.rowId,
       quantity: product.qty
     });
+  };
+
+  var handleCustomizable = function handleCustomizable(e) {
+    var value = e.target.value;
+
+    if (value.length < 25) {
+      setCustomMessage(e.target.value);
+      setError(_objectSpread({}, error, {
+        customizable: false
+      })); // setDisabled(false);
+    } else {
+      // setDisabled(true);
+      setError(_objectSpread({}, error, {
+        customizable: ['Máximo 25 caracteres']
+      }));
+    }
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -529,18 +559,27 @@ function ProductListElement(props) {
     className: "text-sm italic text-brand-green"
   }, showCustomizableInput && isEditable
   /* <Input id="comment" value={product.options.comment} placeholder="Ej. sin chile" type="text" onChange={() => console.log('hola')} /> */
-  ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  // ? <Input
+  //       onChange={handleCustomizable}
+  //       value={customMessage}
+  //       id="custom-message"
+  //       label="Deseas personalizar tu pastel? De la forma lo envíes será escrito"
+  //       placeholder="Felicidades Pedro"
+  //       error={error.customizable}
+  //       />
+  ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     name: "custom-message",
     type: "text",
-    placeholder: "Ej. sin chile",
+    placeholder: "Felicidades Pedro",
     autoFocus: true,
     value: customMessage,
-    onBlur: updateCustomMessage,
-    onChange: function onChange(e) {
-      return setCustomMessage(e.target.value);
-    },
+    onBlur: updateCustomMessage // onChange={(e) => setCustomMessage(e.target.value)}
+    ,
+    onChange: handleCustomizable,
     className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full"
-  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+  }), error.customizable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: 'text-sm m-auto text-red-500 error'
+  }, error.customizable)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-pencil mr-1",
     "aria-hidden": "true"
   }), customMessage || (isEditable ? 'Personalizar pastel (de la forma lo envíes será escrito)' : ''))));
