@@ -224,7 +224,7 @@ describe('test right panel', () => {
       cy.get('.error').should('contain', 'Máximo 25 caracteres');
     });
   });
-  it.only('should show error when custom message reach 25 chars', () => {
+  it('should show error when custom message reach 25 chars', () => {
     const maxChar = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901';
     cy.create('App\\Category', { name: 'Bocadillos' });
     cy.create('App\\Product', { name: 'Great Bocadillo', category_id: 1 });
@@ -244,7 +244,7 @@ describe('test right panel', () => {
       cy.findByText(/agregar breve comentario/i).click();
       cy.get('input[name=comment]')
         .type(maxChar);
-      cy.get('.error').should('contain', 'Máximo 124 caracteres');
+      cy.get('.error').should('contain', 'Máximo 120 caracteres');
     });
   });
 });
