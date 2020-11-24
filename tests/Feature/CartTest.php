@@ -185,6 +185,7 @@ class CartTest extends TestCase
             'allow_instructions' => true,
         ], Cart::content()->reverse()->first()->options->toArray());
     }
+
     /** @test */
     function it_can_update_quantity_by_item_removing_it()
     {
@@ -235,6 +236,48 @@ class CartTest extends TestCase
         $this->assertEquals([
             'customizable' => true,
             'custom_message' => 'first custom message',
+            'comment' => 'first product comment',
+            'allow_instructions' => true,
+        ], $firstProduct->options->toArray());
+    }
+
+    /** @test */
+    function it_can_update_custom_message_with_comment_in_product()
+    {
+        Cart::destroy();
+        $category = factory(Category::class)->create([
+            'name' => 'Bocadillos'
+        ]);
+        $product = factory(Product::class)->create([
+            'name' => 'First item',
+            'category_id' => $category->id,
+        ]);
+        $user = factory(User::class)->create();
+        $this->actingAs($user)
+            ->post('/cart', [
+                'product_id' => $product->id,
+                'quantity' => 3,
+                'comment' => 'first product comment',
+                'custom_message' => 'first custom message',
+            ]);
+
+//        dd(Cart::content());
+        $firstProduct = Cart::content()->first();
+        $this->actingAs($user)
+            ->post("/cart/product/$product->id/update/custom-message", [
+                'custom_message' => 'new custom message',
+                'remove_rowId' => $firstProduct->rowId,
+            ]);
+
+        $firstProduct = Cart::content()->first();
+        $this->assertEquals(1, Cart::content()->count());
+
+        $this->assertEquals(3, $firstProduct->qty);
+
+        // fist product
+        $this->assertEquals([
+            'customizable' => true,
+            'custom_message' => 'new custom message',
             'comment' => 'first product comment',
             'allow_instructions' => true,
         ], $firstProduct->options->toArray());

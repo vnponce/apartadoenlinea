@@ -258,7 +258,11 @@ function Product(props) {
     },
     value: quantity,
     id: "quantity",
-    label: "Cantidad:"
+    type: "number",
+    label: "Cantidad:",
+    extraProps: {
+      min: '1'
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-5 font-light text-sm text-gray-600 sm:text-center sm:text-base lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

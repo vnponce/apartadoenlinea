@@ -112,11 +112,11 @@ class CartController extends Controller
 
     public function updateCustomMessage(Request $request, Product $product)
     {
-//        $content = Cart::content();
+        $currentProduct = Cart::get($request->remove_rowId);
         Cart::remove($request->remove_rowId);
-        Cart::add($product, $request->quantity,
+        Cart::add($product, $currentProduct->qty,
             [
-                'comment' => $request->comment,
+                'comment' => $currentProduct->options->comment,
                 'allow_instructions' => $product->allow_instructions,
                 'customizable' => $product->customizable,
                 'custom_message' => $request->custom_message,
