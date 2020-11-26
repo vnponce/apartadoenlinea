@@ -38,7 +38,8 @@ const PanelWrapper = styled.aside`
   }
 
   .list-wrapper {
-    height: calc(100vh - 300px);
+    // 100vh creates an issue in iOs
+    height: calc(96vh - 300px);
   }
 `;
 export default function Panel(props) {
