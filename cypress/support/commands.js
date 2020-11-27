@@ -120,6 +120,16 @@ Cypress.Commands.add('selectHour', ({ optionPosition = 1 } = {}) => {
   cy.get(`#react-select-3-option-${optionSelected}`).click();
 });
 
+/* Store */
+Cypress.Commands.add('selectStatus', ({ optionPosition = 1 } = {}) => {
+    // select status
+    // las posiciones inician en 0 pero por si en el futuro quieres la 3 y se te va, pues ya que pongas 3 y se le resta una.
+    const optionSelected = optionPosition - 1;
+    cy.get('.status-selector__value-container').click();
+    cy.get(`#react-select-3-option-${optionSelected}`).click();
+});
+
+
 /* ACTION */
 /* fill user data with employee */
 Cypress.Commands.add('typeUserData', ({ name = 'Abel', lastname = 'Ponce', phone = '12345678', email = 'me@abelponce.com'} = {}) => {

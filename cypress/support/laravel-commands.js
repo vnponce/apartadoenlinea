@@ -84,7 +84,8 @@ Cypress.Commands.add('create', (model, times = null, attributes = {}) => {
                 method: 'POST',
                 url: '/__cypress__/factory',
                 body: { attributes, model, times, _token: token },
-                log: false
+                log: false,
+                // failOnStatusCode: false,
             })
         })
         .then(response => {

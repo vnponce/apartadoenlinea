@@ -26,7 +26,7 @@ export default function SearchStatus(props) {
                 name="status"
                 className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
                 // defaultMenuIsOpen
-                classNamePrefix="stores-selector"
+                classNamePrefix="status-selector"
                 /*
                 getOptionValue={option =>
                     option.key
