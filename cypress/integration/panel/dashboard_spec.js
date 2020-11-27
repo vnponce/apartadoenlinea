@@ -139,6 +139,7 @@ describe('Dashboard', () => {
       cy.findByRole('button', { name: /buscar/i }).click();
       cy.get(tableRowSelector).should('have.length', 1);
       cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
+      cy.get('.status-selector__value-container').contains('Entregados');
     });
   });
   it('should filter by part of uuid', () => {

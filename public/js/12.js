@@ -655,18 +655,15 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-function SearchBar(props) {
+function SearchBar() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__["usePage"])(),
       user = _usePage.auth.user,
       stores = _usePage.stores;
 
-  var searchValues = props.searchValues; // const [id, setId] = useState(searchValues.id || '');
-
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
       id = _useState2[0],
-      setId = _useState2[1]; // const [store, setStore] = useState(searchValues.store || '');
-
+      setId = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -683,7 +680,11 @@ function SearchBar(props) {
       date = _useState8[0],
       setDate = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(searchValues.status),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    label: 'No entregados',
+    value: 'not-delivered' // @todo: not-delivered
+
+  }),
       _useState10 = _slicedToArray(_useState9, 2),
       status = _useState10[0],
       setStatus = _useState10[1];
@@ -707,38 +708,53 @@ function SearchBar(props) {
   //
 
 
+  var setStatusObject = function setStatusObject(currentStatus) {
+    switch (currentStatus) {
+      case 'not-delivered':
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered'
+        });
+        break;
+
+      case 'delivered':
+        setStatus({
+          label: 'Entregados',
+          value: 'delivered'
+        });
+        break;
+
+      case 'all':
+        setStatus({
+          label: 'Todos',
+          value: 'all'
+        });
+        break;
+
+      default:
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered'
+        });
+        break;
+    }
+  };
+
   function getParameterByName(name) {
     var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
   }
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log(getParameterByName('id'));
     var queryId = getParameterByName('id');
     setId(queryId || '');
     var queryStore = getParameterByName('store');
     setStore(queryStore || '');
     var queryDate = getParameterByName('date');
     setDate(queryDate ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
+    var queryStatus = getParameterByName('status');
+    setStatusObject(queryStatus);
   }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    // if (searchValues && searchValues.store !== '' && searchValues.store) {
-    //   const searchData = stores.find((current) => current.id === store * 1);
-    //   setStoreObject({
-    //     id: searchData.id,
-    //     name: searchData.name,
-    //     friendlyAddress: searchData.friendly_address,
-    //   });
-    // }
-    // if (searchValues && searchValues.date !== '') {
-    //   // if search values has date value, needs to be set datepicker component with date const.
-    //   setDate(moment(searchValues.date));
-    // }
-    if (searchValues && searchValues.status !== '') {
-      // if search values has date value, needs to be set datepicker component with date const.
-      setStatus(searchValues.status);
-    }
-  }, [searchValues]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (store && stores) {
       // convert string to number
@@ -778,38 +794,6 @@ function SearchBar(props) {
     var searchStatus = status ? "status=".concat(status.value) : '';
     var url = "/admin?".concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(url);
-  };
-
-  var setStatusObject = function setStatusObject(currentStatus) {
-    switch (currentStatus) {
-      case 'not-delivered':
-        setStatus({
-          label: 'No entregados',
-          value: 'not-delivered'
-        });
-        break;
-
-      case 'delivered':
-        setStatus({
-          label: 'Entregados',
-          value: 'delivered'
-        });
-        break;
-
-      case 'all':
-        setStatus({
-          label: 'Todos',
-          value: 'all'
-        });
-        break;
-
-      default:
-        setStatus({
-          label: 'No entregados',
-          value: 'not-delivered'
-        });
-        break;
-    }
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

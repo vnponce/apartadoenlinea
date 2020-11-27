@@ -21,7 +21,7 @@ class PanelController extends Controller
 //            'id' => '',
 //            'store' => '',
 //            'date' => '',
-            'status' => $this->getStatusObject(),
+//            'status' => $this->getStatusObject(),
         ]);
         if(request('id') || request('store') || request('date') || request('status')) {
             $query = app(Order::class)->newQuery();

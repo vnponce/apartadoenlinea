@@ -18,16 +18,16 @@ const DateWrapper = styled.div`
     }
 `;
 
-export default function SearchBar(props) {
+export default function SearchBar() {
   const { auth: { user }, stores } = usePage();
-  const { searchValues } = props;
-  // const [id, setId] = useState(searchValues.id || '');
   const [id, setId] = useState('');
-  // const [store, setStore] = useState(searchValues.store || '');
   const [store, setStore] = useState('');
   const [storeObject, setStoreObject] = useState({});
   const [date, setDate] = useState(null);
-  const [status, setStatus] = useState(searchValues.status);
+  const [status, setStatus] = useState({
+    label: 'No entregados',
+    value: 'not-delivered', // @todo: not-delivered
+  });
 
   const [focus, setFocus] = useState(false);
 
@@ -46,40 +46,52 @@ export default function SearchBar(props) {
   //     return () => document.removeEventListener('keyup', pressEnterToSearch);
   // })
   //
+
+
+  const setStatusObject = (currentStatus) => {
+    switch (currentStatus) {
+      case 'not-delivered':
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered',
+        });
+        break;
+      case 'delivered':
+        setStatus({
+          label: 'Entregados',
+          value: 'delivered',
+        });
+        break;
+      case 'all':
+        setStatus({
+          label: 'Todos',
+          value: 'all',
+        });
+        break;
+      default:
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered',
+        });
+        break;
+    }
+  };
+
   function getParameterByName(name) {
     const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
   }
 
   useEffect(() => {
-    console.log(getParameterByName('id'));
     const queryId = getParameterByName('id');
     setId(queryId || '');
     const queryStore = getParameterByName('store');
     setStore(queryStore || '');
     const queryDate = getParameterByName('date');
     setDate(queryDate ? moment(queryDate) : null);
+    const queryStatus = getParameterByName('status');
+    setStatusObject(queryStatus);
   }, []);
-
-  useEffect(() => {
-    // if (searchValues && searchValues.store !== '' && searchValues.store) {
-    //   const searchData = stores.find((current) => current.id === store * 1);
-    //   setStoreObject({
-    //     id: searchData.id,
-    //     name: searchData.name,
-    //     friendlyAddress: searchData.friendly_address,
-    //   });
-    // }
-    // if (searchValues && searchValues.date !== '') {
-    //   // if search values has date value, needs to be set datepicker component with date const.
-    //   setDate(moment(searchValues.date));
-    // }
-    if (searchValues && searchValues.status !== '') {
-      // if search values has date value, needs to be set datepicker component with date const.
-
-      setStatus(searchValues.status);
-    }
-  }, [searchValues]);
 
   useEffect(() => {
     if (store && stores) {
@@ -117,35 +129,6 @@ export default function SearchBar(props) {
 
     const url = `/admin?${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
     Inertia.visit(url);
-  };
-
-  const setStatusObject = (currentStatus) => {
-    switch (currentStatus) {
-      case 'not-delivered':
-        setStatus({
-          label: 'No entregados',
-          value: 'not-delivered',
-        });
-        break;
-      case 'delivered':
-        setStatus({
-          label: 'Entregados',
-          value: 'delivered',
-        });
-        break;
-      case 'all':
-        setStatus({
-          label: 'Todos',
-          value: 'all',
-        });
-        break;
-      default:
-        setStatus({
-          label: 'No entregados',
-          value: 'not-delivered',
-        });
-        break;
-    }
   };
 
   return (
