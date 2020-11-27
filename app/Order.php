@@ -88,18 +88,27 @@ class Order extends Model
     // scopes
     public function scopeSearch($query, $value)
     {
-        $query->where('uuid', 'LIKE', "%{$value}%");
+        if($value) {
+            $query->where('uuid', 'LIKE', "%{$value}%");
+        }
     }
 
     public function scopeStore($query, $value)
     {
-        $query->where('store_id', $value);
+        if($value) {
+            $query->where('store_id', $value);
+        }
     }
 
     public function scopeDate($query, $value)
     {
-        $date = (new Carbon(request('date')));
-        $query->whereDate('date', $date);
+        Date::setLocale('es');
+        if($value) {
+            $date = (new Carbon(request('date')));
+            $query->whereDate('date', $date);
+        } else {
+            $query->whereDate('date', '>=', Carbon::today());
+        }
     }
 
     public function scopeStatus($query, $value)
@@ -113,7 +122,6 @@ class Order extends Model
                 return $query->where('status', 'delivered');
                 break;
             case 'all':
-                return false;
                 break;
             default:
                 return $query->where('status','<>', 'delivered');

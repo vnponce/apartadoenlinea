@@ -14,29 +14,13 @@ class PanelController extends Controller
 {
     public function index()
     {
-        Date::setLocale('es');
-        $now = Carbon::today();
-        $orderAll = Order::whereDate('date', '>=', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
-        if(request('id') || request('store') || request('date') || request('status')) {
-            $query = app(Order::class)->newQuery();
-            if (request()->filled('id')) {
-                $id = request()->get('id');
-                $query->search(request('id'));
-            }
-            if (request()->filled('store')) {
-                $store = request()->get('store');
-                $query->store($store);
-            }
-            if (request()->filled('date')) {
-                $date = (new Carbon(request('date')));
-                $query->date($date);
-            } else {
-                // @todo: ver que hacer con este
-                $query->whereDate('date', '>=', Carbon::today());
-            }
-            $query->status(request('status'));
-            $orderAll = $query->orderBy('date')->get();
-        }
+            $orderAll = Order::query()
+                ->search(request('id'))
+                ->store(request('store'))
+                ->date(request('date'))
+                ->status(request('status'))
+                ->orderBy('date')
+                ->get();
         if(auth()->user()->isManager) {
             // @todo: revisar porque con ID = 2 falla.
             $orderAll = auth()->user()->stores()->first()->orders();
