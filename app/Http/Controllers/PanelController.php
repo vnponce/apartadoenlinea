@@ -65,15 +65,9 @@ class PanelController extends Controller
             if (request()->filled('id')) {
                 $id = request()->get('id');
                 $searchValues['id'] = $id;
-                $orderAll= $orderAll->where('uuid', $id);
+                $orderAll= $orderAll->where('uuid', 'LIKE', "%{$id}%");
 //                 dd($orderAll->get()->toArray());
             }
-//            if (request()->filled('store')) {
-//                dd($orderAll);
-//                $store = request()->get('store');
-//                $searchValues['store'] = $store;
-//                $orderAll = $orderAll->where('store_id', $store);
-//            }
             if (request()->filled('date')) {
                 // $date = request()->get('date');
                 $date = (new Carbon(request('date')));

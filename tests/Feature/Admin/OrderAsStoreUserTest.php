@@ -3,10 +3,12 @@
 namespace Tests\Feature\Admin;
 
 use App\Order;
+use App\Product;
 use App\Store;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class OrderAsStoreUserTest extends TestCase
@@ -191,4 +193,187 @@ class OrderAsStoreUserTest extends TestCase
                 }));
             });
     }
+
+    /** @test */
+    function it_search_by_all_status()
+    {
+        $expectedByCreatedStatus = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'status' => 'created',
+        ]);
+        $expectedByOpenedStatus = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'status' => 'opened',
+        ]);
+        $expectedByJourneyStatus = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'status' => 'journey',
+        ]);
+        $expectedByPlacedStatus = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'status' => 'placed',
+        ]);
+        $notExpectedByStatus = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'status' => 'delivered',
+        ]);
+        $response = $this->actingAs($this->user)->get("/admin?status=all");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 5);
+    }
+
+    /** @test */
+    function it_search_by_mixed_filters_without_uuid()
+    {
+        $today = now();
+
+        $expectedOrder = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'date' => now(),
+            'status' => 'delivered',
+        ]);
+
+        $notDate = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'date' => now()->addDay(),
+            'status' => 'delivered',
+        ]);
+        $notStatus = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+            'date' => now(),
+            'status' => 'created',
+        ]);
+
+        $response = $this->actingAs($this->user)->get("/admin?date=$today&status=delivered");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedOrder){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedOrder->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
+    function it_search_by_mixed_date_with_default_no_delivered()
+    {
+        $today = now();
+
+        $expectedOrder = factory(Order::class)->create([
+            'date' => now(),
+            'store_id' => $this->storeOwned->id,
+            'status' => 'created',
+        ]);
+
+        $notExpected = factory(Order::class)->create([
+            'date' => now(),
+            'store_id' => $this->storeOwned->id,
+            'status' => 'delivered',
+        ]);
+
+        $response = $this->actingAs($this->user)->get("/admin?date=$today");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedOrder){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedOrder->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
+    function it_search_by_like_uuid()
+    {
+        $expectedOrder = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+        ]);
+
+        $uuid =  Str::limit(Order::first()->uuid, 8, '');
+
+        factory(Order::class, 10)->create();
+
+        $response = $this->actingAs($this->user)->get("/admin?id=$uuid");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedOrder){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedOrder->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
+    function it_should_ignore_store_parameter_if_exist()
+    {
+        $expectedOrder = factory(Order::class)->create([
+            'store_id' => $this->storeOwned->id,
+        ]);
+
+        $notExpected = factory(Order::class)->create([
+            'date' => now(),
+            'status' => 'delivered',
+        ]);
+
+        $notExpectedStore = $notExpected->store_id;
+
+        $response = $this->actingAs($this->user)->get("/admin?store=$notExpectedStore");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedOrder){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedOrder->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    // estos de acciones  y pensar en si no es su sucursal no se puede hacer esa peticion
+//    /** @test */
+//    function it_can_update_the_status()
+//    {
+//        $user = factory(User::class)->create();
+//        factory(Order::class)->create()->each(function ($currentOrder) {
+//            $currentOrder->products()->save(factory(Product::class)->make());
+//        });
+//
+//        $order = Order::first();
+//        $this->assertEquals('created', $order->status);
+//
+//        $response = $this->actingAs($user)->put("/admin/orders/{$order->id}", [
+//            'status' => 'opened'
+//        ]);
+//        $response->assertStatus(302);
+//        $this->assertDatabaseHas('orders', [
+//            'status' => 'opened',
+//        ]);
+//    }
+//
+//    /** @test */
+//    function it_can_change_to_canceled_state()
+//    {
+//        $this->withoutExceptionHandling();
+//        factory(Order::class)->create()->each(function ($currentOrder) {
+//            $currentOrder->products()->save(factory(Product::class)->make());
+//        });
+//
+//        $order = Order::first();
+//        $this->actingAs(factory(User::class)->create())->put("/admin/orders/{$order->id}", [
+//            'canceled' => true
+//        ]);
+//        $this->assertDatabaseHas('orders', [
+//            'canceled' => true,
+//        ]);
+//    }
+//
+//    /** @test */
+//    function it_can_change_to_payed_true()
+//    {
+//        $this->withoutExceptionHandling();
+//        factory(Order::class)->create()->each(function ($currentOrder) {
+//            $currentOrder->products()->save(factory(Product::class)->make());
+//        });
+//
+//        $order = Order::first();
+//        $this->actingAs(factory(User::class)->create())->put("/admin/orders/{$order->id}", [
+//            'payed' => true,
+//        ]);
+//        $this->assertDatabaseHas('orders', [
+//            'payed' => true,
+//        ]);
+//    }
 }
