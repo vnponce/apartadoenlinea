@@ -111,6 +111,188 @@ class OrderTest extends TestCase
     }
 
     /** @test */
+    function it_show_only_next_order_and_not_show_old_orders()
+    {
+        $orderToDeliverTomorrow = factory(Order::class)->create([
+            'date' => now()->addDay(),
+        ]);
+        $orderToDeliverYesterday = factory(Order::class)->create([
+            'date' => now()->subDay(),
+        ]);
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($orderToDeliverTomorrow){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($orderToDeliverTomorrow->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
+    function it_show_only_next_order_not_delivered_status_by_default()
+    {
+        $orderNotDeliveredYet = factory(Order::class)->create([
+            'status' => 'created',
+        ]);
+        $orderDelivered = factory(Order::class)->create([
+            'status' => 'delivered',
+        ]);
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($orderNotDeliveredYet){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($orderNotDeliveredYet->uuid, collect($filteredOrder)->get('uuid'));
+            });
+        }
+
+    /** @test */
+    function it_search_by_id()
+    {
+        $expectedById = factory(Order::class)->create();
+        $notExpectedById = factory(Order::class)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin?id={$expectedById->uuid}");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedById){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedById->uuid, collect($filteredOrder)->get('uuid'));
+            });
+        }
+
+    /** @test */
+    function it_search_by_exact_date()
+    {
+        $today = now();
+        $expectedByDate = factory(Order::class)->create([
+            'date' => $today,
+        ]);
+        $notExpectedByDate = factory(Order::class)->create([
+            'date' => now()->addDay()
+        ]);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin?date=$today");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedByDate){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedByDate->uuid, collect($filteredOrder)->get('uuid'));
+            });
+        }
+
+    /** @test */
+    function it_search_by_store()
+    {
+        $store = factory(Store::class)->create();
+        $expectedByStore = factory(Order::class)->create([
+            'store_id' => $store->id,
+        ]);
+        $notExpectedByStore = factory(Order::class)->create();
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin?store=$store->id");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedByStore){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedByStore->uuid, collect($filteredOrder)->get('uuid'));
+            });
+        }
+
+    /** @test */
+    function it_search_by_delivered_status()
+    {
+        $expectedByStatus = factory(Order::class)->create([
+            'status' => 'delivered',
+        ]);
+        $notExpectedByStatus = factory(Order::class)->create([
+            'status' => 'created',
+        ]);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin?status=delivered");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedByStatus){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedByStatus->uuid, collect($filteredOrder)->get('uuid'));
+            });
+        }
+
+    /** @test */
+    function it_search_by_not_delivered_status()
+    {
+        $expectedByCreatedStatus = factory(Order::class)->create([
+            'status' => 'created',
+        ]);
+        $expectedByOpenedStatus = factory(Order::class)->create([
+            'status' => 'opened',
+        ]);
+        $expectedByJourneyStatus = factory(Order::class)->create([
+            'status' => 'journey',
+        ]);
+        $expectedByPlacedStatus = factory(Order::class)->create([
+            'status' => 'placed',
+        ]);
+        $notExpectedByStatus = factory(Order::class)->create([
+            'status' => 'delivered',
+        ]);
+//        dd($notExpectedByStatus->uuid);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+//        $response = $this->actingAs($user)->get("/admin?status=no-delivered");
+        $response = $this->actingAs($user)->get("/admin?status=not-delivered");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 4)
+            ->assertPropValue('orders', function($orders) use ($notExpectedByStatus){
+                $collectOrders = collect($orders);
+                $this->assertFalse($collectOrders->search(function($order) use ($notExpectedByStatus) {
+                    return collect($order)->get('uuid') === $notExpectedByStatus->uuid;
+                }));
+//                $this->assertEquals($expectedByStatus->uuid, collect($filteredOrder)->get('uuid'));
+            });
+        }
+
+    /** @test */
+    function it_search_by_all_status()
+    {
+        $expectedByCreatedStatus = factory(Order::class)->create([
+            'status' => 'created',
+        ]);
+        $expectedByOpenedStatus = factory(Order::class)->create([
+            'status' => 'opened',
+        ]);
+        $expectedByJourneyStatus = factory(Order::class)->create([
+            'status' => 'journey',
+        ]);
+        $expectedByPlacedStatus = factory(Order::class)->create([
+            'status' => 'placed',
+        ]);
+        $notExpectedByStatus = factory(Order::class)->create([
+            'status' => 'delivered',
+        ]);
+//        dd($notExpectedByStatus->uuid);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+//        $response = $this->actingAs($user)->get("/admin?status=no-delivered");
+        $response = $this->actingAs($user)->get("/admin?status=all");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 5);
+    }
+
+    /** @test */
     function it_can_update_the_status()
     {
         $user = factory(User::class)->create();
