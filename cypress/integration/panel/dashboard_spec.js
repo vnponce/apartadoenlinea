@@ -131,10 +131,75 @@ describe('Dashboard', () => {
 
       cy.visit('/admin');
       cy.get(tableRowSelector).should('have.length', 10);
-      cy.selectStatus({ optionPosition: 2});
+      cy.selectStatus({ optionPosition: 2 });
       cy.findByRole('button', { name: /buscar/i }).click();
       cy.get(tableRowSelector).should('have.length', 1);
       cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
+    });
+  });
+  it('should filter by part of uuid', () => {
+    cy.create('App\\Order', {
+      name: 'Abel',
+    }).then((order) => {
+      // cy.log('date =>', moment().add(1, 'd').format('Y-MM-DD H:mm:ss'));
+      cy.create('App\\Order', 10);
+      const { id, uuid } = order;
+      cy.login();
+
+      const uuidPart = uuid.substr(1, 6);
+
+      cy.visit('/admin');
+      cy.get(tableRowSelector).should('have.length', 11);
+      cy.findByLabelText(/id/i).type(`${uuidPart}{enter}`);
+      cy.findByRole('button', { name: /buscar/i }).click();
+      cy.get(tableRowSelector).should('have.length', 1);
+      cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
+    });
+  });
+  it('should filter by mixed, store, date and status', () => {
+    cy.create('App\\Store', {
+      name: 'First Store',
+    }).then((store) => {
+      cy.create('App\\Order', {
+        name: 'No store id',
+        date: moment().format('Y-MM-DD H:mm:ss'),
+        status: 'delivered',
+      });
+      cy.create('App\\Order', {
+        name: 'No date',
+        store_id: store.id,
+        date: moment().add(1, 'd').format('Y-MM-DD H:mm:ss'),
+        status: 'delivered',
+      });
+      cy.create('App\\Order', {
+        name: 'No status',
+        store_id: store.id,
+        date: moment().format('Y-MM-DD H:mm:ss'),
+        status: 'placed',
+      });
+      cy.create('App\\Order', {
+        name: 'Abel',
+        store_id: store.id,
+        date: moment().format('Y-MM-DD H:mm:ss'),
+        status: 'delivered',
+      }).then((order) => {
+        cy.log('order =>', order);
+        const { id } = order;
+        // const storeId = order.store_id;
+        cy.login();
+
+        cy.visit('/admin');
+        // cy.findByLabelText(/sucursal/i).type(`${uuid}{enter}`);
+        cy.get(tableRowSelector).should('have.length', 1);
+
+        cy.selectStore();
+        cy.selectDate();
+        cy.selectStatus({ optionPosition: 2 });
+        cy.findByRole('button', { name: /buscar/i }).click();
+        cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
+        cy.get(`${tableRowSelector}[id=${id}]`).contains('First Store');
+        cy.get(tableRowSelector).should('have.length', 1);
+      });
     });
   });
 });
