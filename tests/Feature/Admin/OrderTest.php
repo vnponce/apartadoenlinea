@@ -339,6 +339,34 @@ class OrderTest extends TestCase
     }
 
     /** @test */
+    function it_search_by_mixed_store_date_with_default_no_delivered()
+    {
+        $user = factory(User::class)->create();
+        $store = factory(Store::class)->create();
+        $today = now();
+
+        $expectedOrder = factory(Order::class)->create([
+            'date' => now(),
+            'store_id' => $store->id,
+            'status' => 'created',
+        ]);
+
+        $notExpected = factory(Order::class)->create([
+            'date' => now(),
+            'store_id' => $store->id,
+            'status' => 'delivered',
+        ]);
+
+        $response = $this->actingAs($user)->get("/admin?store={$store->id}&date=$today");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedOrder){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedOrder->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
     function it_search_by_like_uuid()
     {
         $user = factory(User::class)->create();

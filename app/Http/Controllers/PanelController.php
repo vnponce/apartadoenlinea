@@ -50,9 +50,7 @@ class PanelController extends Controller
                 $searchValues['date'] = '';
                 $query->whereDate('date', '>=', Carbon::today());
             }
-            if(request()->filled('status')) {
-                $this->getStatusFromRequest(request('status'), $query);
-            }
+            $this->getStatusFromRequest(request('status'), $query);
             $orderAll = $query->orderBy('date')->get();
         }
         if(auth()->user()->isManager) {
@@ -88,9 +86,7 @@ class PanelController extends Controller
                 $searchValues['date'] = '';
                 $orderAll->whereDate('date', '>=', Carbon::today());
             }//             dd($orderAll);
-            if(request()->filled('status')) {
-                $this->getStatusFromRequest(request('status'), $orderAll);
-            }
+            $this->getStatusFromRequest(request('status'), $orderAll);
             $orderAll = $orderAll->orderBy('date')->get();
         }
         $orders = $orderAll->map(function($order) {
@@ -165,6 +161,8 @@ class PanelController extends Controller
             case 'all':
                 return false;
                 break;
+            default:
+                return $query->where('status','<>', 'delivered');
         }
 
     }

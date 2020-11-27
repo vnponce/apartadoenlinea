@@ -28,3 +28,9 @@ $factory->define(User::class, function (Faker $faker) {
         'avatar' => 'https://areajugones.sport.es/wp-content/uploads/2015/10/super_saiyan_god_super_saiyan__ssgss__goku_by_mikkkiwarrior3-d8wv7hx.jpg'
     ];
 });
+
+$factory->state(User::class, 'manager', function ($faker) {
+    return [
+        'role' => 'manager',
+    ];
+});
