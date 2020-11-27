@@ -95,6 +95,9 @@ class Order extends Model
 
     public function scopeStore($query, $value)
     {
+        if(auth()->user()->isManager) {
+            $value = auth()->user()->stores()->first()->id;
+        }
         if($value) {
             $query->where('store_id', $value);
         }

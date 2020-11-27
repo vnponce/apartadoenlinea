@@ -14,30 +14,13 @@ class PanelController extends Controller
 {
     public function index()
     {
-            $orderAll = Order::query()
-                ->search(request('id'))
-                ->store(request('store'))
-                ->date(request('date'))
-                ->status(request('status'))
-                ->orderBy('date')
-                ->get();
-        if(auth()->user()->isManager) {
-            // @todo: revisar porque con ID = 2 falla.
-            $orderAll = auth()->user()->stores()->first()->orders();
-
-            if (request()->filled('id')) {
-                $id = request()->get('id');
-                $orderAll->search(request('id'));
-            }
-            if (request()->filled('date')) {
-                $date = (new Carbon(request('date')));
-                $orderAll->date($date);
-            } else {
-                $orderAll->whereDate('date', '>=', Carbon::today());
-            }//             dd($orderAll);
-            $orderAll->status(request('status'));
-            $orderAll = $orderAll->orderBy('date')->get();
-        }
+        $orderAll = Order::query()
+            ->search(request('id'))
+            ->store(request('store'))
+            ->date(request('date'))
+            ->status(request('status'))
+            ->orderBy('date')
+            ->get();
         $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;
             return [
@@ -95,36 +78,5 @@ class PanelController extends Controller
     {
         $products = Product::orderBy('name')->paginate(10);
         return Inertia::render('Admin/Products', compact('products'));
-    }
-
-    public function getStatusObject()
-    {
-        if(request()->filled('status')) {
-            $status = request('status');
-            switch ($status) {
-                case 'not-delivered':
-                    return [
-                        'label' => 'No entregados',
-                        'value' => 'no-delivered'
-                    ];
-                    break;
-                case 'delivered':
-                    return [
-                        'label' => 'Entregados',
-                        'value' => 'delivered'
-                    ];
-                    break;
-                case 'all':
-                    return [
-                        'label' => 'Todos',
-                        'value' => 'all'
-                    ];
-                    break;
-            }
-        }
-        return [
-            'label' => 'No entregados',
-            'value' => 'no-delivered'
-        ];
     }
 }
