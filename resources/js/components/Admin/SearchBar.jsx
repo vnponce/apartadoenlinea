@@ -23,7 +23,8 @@ export default function SearchBar(props) {
   const { searchValues } = props;
   // const [id, setId] = useState(searchValues.id || '');
   const [id, setId] = useState('');
-  const [store, setStore] = useState(searchValues.store || '');
+  // const [store, setStore] = useState(searchValues.store || '');
+  const [store, setStore] = useState('');
   const [storeObject, setStoreObject] = useState({});
   const [date, setDate] = useState(null);
   const [status, setStatus] = useState(searchValues.status);
@@ -54,17 +55,19 @@ export default function SearchBar(props) {
     console.log(getParameterByName('id'));
     const queryId = getParameterByName('id');
     setId(queryId || '');
+    const queryStore = getParameterByName('store');
+    setStore(queryStore || '');
   }, []);
 
   useEffect(() => {
-    if (searchValues && searchValues.store !== '') {
-      const searchData = stores.find((current) => current.id === store * 1);
-      setStoreObject({
-        id: searchData.id,
-        name: searchData.name,
-        friendlyAddress: searchData.friendly_address,
-      });
-    }
+    // if (searchValues && searchValues.store !== '' && searchValues.store) {
+    //   const searchData = stores.find((current) => current.id === store * 1);
+    //   setStoreObject({
+    //     id: searchData.id,
+    //     name: searchData.name,
+    //     friendlyAddress: searchData.friendly_address,
+    //   });
+    // }
     if (searchValues && searchValues.date !== '') {
       // if search values has date value, needs to be set datepicker component with date const.
       setDate(moment(searchValues.date));
@@ -78,8 +81,8 @@ export default function SearchBar(props) {
 
   useEffect(() => {
     if (store && stores) {
-        // convert string to number
-        const storeSelected = stores.find((current) => current.id === store * 1);
+      // convert string to number
+      const storeSelected = stores.find((current) => current.id === store * 1);
       setStoreObject({
         id: storeSelected.id,
         name: storeSelected.name,

@@ -95,7 +95,7 @@ describe('Dashboard', () => {
         cy.get(tableRowSelector).should('have.length', 1);
         cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
         cy.get(`${tableRowSelector}[id=${id}]`).contains('First Store');
-        // cy.get('.stores-selector__value-container').should('contain', 'First Store');
+        cy.get('.stores-selector__value-container').should('contain', 'First Store');
       });
     });
   });

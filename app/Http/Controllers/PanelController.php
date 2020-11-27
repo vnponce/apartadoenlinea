@@ -19,7 +19,7 @@ class PanelController extends Controller
         $orderAll = Order::whereDate('date', '>=', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
         $searchValues = collect([
 //            'id' => '',
-            'store' => '',
+//            'store' => '',
             'date' => '',
             'status' => $this->getStatusObject(),
         ]);
@@ -32,7 +32,7 @@ class PanelController extends Controller
             }
             if (request()->filled('store')) {
                 $store = request()->get('store');
-                $searchValues['store'] = $store;
+//                $searchValues['store'] = $store;
                 $query->store($store);
             }
             if (request()->filled('date')) {
