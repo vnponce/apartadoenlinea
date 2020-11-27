@@ -14,73 +14,57 @@ class PanelController extends Controller
 {
     public function index()
     {
-//        dd(request()->toArray());
         Date::setLocale('es');
-//        $orderAll = Order::all();
         $now = Carbon::today();
         $orderAll = Order::whereDate('date', '>=', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
-        // dd($orderAll->toArray());
         $searchValues = collect([
             'id' => '',
             'store' => '',
-            // 'date' => $now,
             'date' => '',
             'status' => $this->getStatusObject(),
         ]);
         if(request('id') || request('store') || request('date') || request('status')) {
             $query = app(Order::class)->newQuery();
-//             dd((new Carbon(request('date')))->format('d M y H:m'));
             if (request()->filled('id')) {
                 $id = request()->get('id');
                 $searchValues['id'] = $id;
-                $query->where('uuid', 'LIKE', "%{$id}%");
+                $query->search(request('id'));
             }
             if (request()->filled('store')) {
                 $store = request()->get('store');
                 $searchValues['store'] = $store;
-                $query->where('store_id', $store);
+                $query->store($store);
             }
             if (request()->filled('date')) {
-                // $date = request()->get('date');
                 $date = (new Carbon(request('date')));
-//                dd((new Carbon(request('date')))->format('d M y H:m'));
                 $searchValues['date'] = $date;
-                $query->whereDate('date', $date);
+                $query->date($date);
             } else {
                 $searchValues['date'] = '';
+                // @todo: ver que hacer con este
                 $query->whereDate('date', '>=', Carbon::today());
             }
-            $this->getStatusFromRequest(request('status'), $query);
+            $query->status(request('status'));
             $orderAll = $query->orderBy('date')->get();
         }
         if(auth()->user()->isManager) {
             // @todo: revisar porque con ID = 2 falla.
-//            $orderAll = auth()->user()->stores->map(function($store) {
-//                return $store->orders;
-//            })->flatten();
             $orderAll = auth()->user()->stores()->first()->orders();
-            // dd($orderAll->toArray());
 
-            // dd($orderAll->where('id', $id));
             if (request()->filled('id')) {
                 $id = request()->get('id');
                 $searchValues['id'] = $id;
-                $orderAll= $orderAll->where('uuid', 'LIKE', "%{$id}%");
-//                 dd($orderAll->get()->toArray());
+                $orderAll->search(request('id'));
             }
             if (request()->filled('date')) {
-                // $date = request()->get('date');
                 $date = (new Carbon(request('date')));
-//                dd((new Carbon(request('date')))->format('d M y H:m'));
                 $searchValues['date'] = $date;
-                $orderAll = $orderAll->whereDate('date', $date);
+                $orderAll->date($date);
             } else {
-                // @todo: test this I dont remember why I set now always
-                // $searchValues['date'] = request()->filled('id') ? '' : $now;
                 $searchValues['date'] = '';
                 $orderAll->whereDate('date', '>=', Carbon::today());
             }//             dd($orderAll);
-            $this->getStatusFromRequest(request('status'), $orderAll);
+            $orderAll->status(request('status'));
             $orderAll = $orderAll->orderBy('date')->get();
         }
         $orders = $orderAll->map(function($order) {
@@ -140,25 +124,6 @@ class PanelController extends Controller
     {
         $products = Product::orderBy('name')->paginate(10);
         return Inertia::render('Admin/Products', compact('products'));
-    }
-
-    public function getStatusFromRequest($statusRequest, &$query)
-    {
-        // status
-        switch ($statusRequest) {
-            case 'not-delivered':
-                return $query->where('status','<>', 'delivered');
-                break;
-            case 'delivered':
-                return $query->where('status', 'delivered');
-                break;
-            case 'all':
-                return false;
-                break;
-            default:
-                return $query->where('status','<>', 'delivered');
-        }
-
     }
 
     public function getStatusObject()

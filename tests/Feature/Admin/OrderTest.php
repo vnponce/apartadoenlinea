@@ -132,6 +132,29 @@ class OrderTest extends TestCase
     }
 
     /** @test */
+    function it_show_only_next_order_and_not_show_old_orders_when_set_store_filter()
+    {
+        $store = factory(Store::class)->create();
+        $orderToDeliverTomorrow = factory(Order::class)->create([
+            'date' => now()->addDay(),
+            'store_id' => $store->id,
+        ]);
+        $orderToDeliverYesterday = factory(Order::class)->create([
+            'date' => now()->subDay(),
+            'store_id' => $store->id,
+        ]);
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin?store={$store->id}");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($orderToDeliverTomorrow){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($orderToDeliverTomorrow->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
     function it_show_only_next_order_not_delivered_status_by_default()
     {
         $orderNotDeliveredYet = factory(Order::class)->create([

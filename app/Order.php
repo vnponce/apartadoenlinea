@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Jenssegers\Date\Date;
@@ -81,6 +82,41 @@ class Order extends Model
                 return 'Entregado';
             default:
                 return 'N/A';
+        }
+    }
+
+    // scopes
+    public function scopeSearch($query, $value)
+    {
+        $query->where('uuid', 'LIKE', "%{$value}%");
+    }
+
+    public function scopeStore($query, $value)
+    {
+        $query->where('store_id', $value);
+    }
+
+    public function scopeDate($query, $value)
+    {
+        $date = (new Carbon(request('date')));
+        $query->whereDate('date', $date);
+    }
+
+    public function scopeStatus($query, $value)
+    {
+        // status
+        switch ($value) {
+            case 'not-delivered':
+                return $query->where('status','<>', 'delivered');
+                break;
+            case 'delivered':
+                return $query->where('status', 'delivered');
+                break;
+            case 'all':
+                return false;
+                break;
+            default:
+                return $query->where('status','<>', 'delivered');
         }
     }
 }
