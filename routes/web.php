@@ -121,5 +121,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('/', 'StoreController@index');
         Route::put('/{store}', 'StoreController@update')->name('store.update');
     });
-
 });
+if(env('APP_CYPRESS')) {
+    Route::post('/__cypress_abel__/login', 'CypressAbelController@login');
+}

@@ -25,6 +25,34 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 import '@testing-library/cypress/add-commands';
 
+
+/**
+ * Special to find or create a new user and log them in.
+ *
+ * @param {Object} attributes
+ *
+ * @example cy.login();
+ *          cy.login({ name: 'JohnDoe' });
+ */
+Cypress.Commands.add('specialLogin', (attributes = {}) => {
+    return cy.csrfToken()
+        .then(token => {
+            return cy.request({
+                method: 'POST',
+                url: '/__cypress_abel__/login',
+                body: { attributes, _token: token },
+                log: false
+            })
+        })
+        .then(({body}) => {
+            Cypress.log({
+                name: 'login',
+                message: attributes,
+                consoleProps: () => ({ user: body })
+            });
+        }).its('body', {log: false});
+});
+
 /**
  * Create an order with product.
  *
@@ -94,6 +122,32 @@ Cypress.Commands.add('createOrderWithProducts', (options = {}) => {
   // return order;
 });
 
+/**
+ * Create an user with store.
+ *
+ * @param {Object} options
+ *
+ * @example cy.refreshDatabase();
+ *          cy.refreshDatabase({ '--drop-views': true });
+ */
+Cypress.Commands.add('bindUserStore', (options = {}) => {
+    const { userId, storeId } = options;
+    return cy.php(`
+        DB::table('store_user')->insert(
+        [
+            'store_id' => ${storeId || 'factory(App\\Order::class)->create()->id'},
+            'user_id' => ${userId || 'factory(App\\Product::class)->create()->id'},
+        ]
+        );
+    `);
+    // Este no funciono, decia que el precio no tenia valor por defacto.
+    // cy.php(`
+    //     factory(App\\Order::class)->create()->each(function ($currentOrder) {
+    //         $currentOrder->products()->save(factory(App\\Product::class)->make());
+    //     });
+    // `);
+});
+
 // inputs
 /* Store */
 Cypress.Commands.add('selectStore', ({ optionPosition = 1 } = {}) => {
@@ -121,12 +175,12 @@ Cypress.Commands.add('selectHour', ({ optionPosition = 1 } = {}) => {
 });
 
 /* Store */
-Cypress.Commands.add('selectStatus', ({ optionPosition = 1 } = {}) => {
+Cypress.Commands.add('selectStatus', ({ optionPosition = 1, selectorNumber = 3 } = {}) => {
     // select status
     // las posiciones inician en 0 pero por si en el futuro quieres la 3 y se te va, pues ya que pongas 3 y se le resta una.
     const optionSelected = optionPosition - 1;
     cy.get('.status-selector__value-container').click();
-    cy.get(`#react-select-3-option-${optionSelected}`).click();
+    cy.get(`#react-select-${selectorNumber}-option-${optionSelected}`).click();
 });
 
 
