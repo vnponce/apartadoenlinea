@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Input from "../Input";
-import Stores from "../Select/SearchStores";
-import DateSelector from "../../components/DateSelector";  // jajaja if I remove this line, i get white page jajajaja
-import {isInclusivelyAfterDay, SingleDatePicker} from "react-dates";
-import styled from "styled-components";
-import {Inertia} from "@inertiajs/inertia";
-import {usePage} from "@inertiajs/inertia-react";
-import moment from "moment";
-import SearchStatus from "../Select/SearchStatus";
+import { isInclusivelyAfterDay, SingleDatePicker } from 'react-dates';
+import styled from 'styled-components';
+import { Inertia } from '@inertiajs/inertia';
+import { usePage } from '@inertiajs/inertia-react';
+import moment from 'moment';
+import DateSelector from '../../components/DateSelector'; // jajaja if I remove this line, i get white page jajajaja
+import Stores from '../Select/SearchStores';
+import Input from '../Input';
+import SearchStatus from '../Select/SearchStatus';
 
 const DateWrapper = styled.div`
     .DateInput_input {
@@ -19,121 +19,131 @@ const DateWrapper = styled.div`
 `;
 
 export default function SearchBar(props) {
-    const { auth: { user }, stores } = usePage();
-    const { searchValues } = props;
-    const [id, setId] = useState(searchValues.id || '');
-    const [store, setStore] = useState(searchValues.store || '');
-    const [storeObject, setStoreObject] = useState({});
-    const [date, setDate] = useState(null);
-    const [status, setStatus] = useState(searchValues.status);
+  const { auth: { user }, stores } = usePage();
+  const { searchValues } = props;
+  // const [id, setId] = useState(searchValues.id || '');
+  const [id, setId] = useState('');
+  const [store, setStore] = useState(searchValues.store || '');
+  const [storeObject, setStoreObject] = useState({});
+  const [date, setDate] = useState(null);
+  const [status, setStatus] = useState(searchValues.status);
 
-    const [focus, setFocus] = useState(false);
+  const [focus, setFocus] = useState(false);
 
-    // function pressEnterToSearch(event) {
-    //     if (event.defaultPrevented) {
-    //         return; // Should do nothing if the default action has been cancelled
-    //     }
-    //
-    //     if (event.key === 'Enter') {
-    //         toSearch();
-    //     }
-    // }
+  // function pressEnterToSearch(event) {
+  //     if (event.defaultPrevented) {
+  //         return; // Should do nothing if the default action has been cancelled
+  //     }
+  //
+  //     if (event.key === 'Enter') {
+  //         toSearch();
+  //     }
+  // }
 
-    // useEffect(() => {
-    //     document.addEventListener('keyup', pressEnterToSearch);
-    //     return () => document.removeEventListener('keyup', pressEnterToSearch);
-    // })
-    //
-    useEffect(() => {
-        if(searchValues && searchValues.store !== '') {
-            const searchData = stores.find(current => current.id === store * 1);
-            setStoreObject({
-                id: searchData.id,
-                name: searchData.name,
-                friendlyAddress: searchData.friendly_address,
-            })
-        }
-        if(searchValues && searchValues.date !== '') {
-            // if search values has date value, needs to be set datepicker component with date const.
-            setDate(moment(searchValues.date));
-        }
-        if(searchValues && searchValues.status !== '') {
-            // if search values has date value, needs to be set datepicker component with date const.
+  // useEffect(() => {
+  //     document.addEventListener('keyup', pressEnterToSearch);
+  //     return () => document.removeEventListener('keyup', pressEnterToSearch);
+  // })
+  //
+  function getParameterByName(name) {
+    const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+  }
 
-            setStatus(searchValues.status);
-        }
-    }, [searchValues]);
+  useEffect(() => {
+    console.log(getParameterByName('id'));
+    const queryId = getParameterByName('id');
+    setId(queryId || '');
+  }, []);
 
-    useEffect(() => {
-        if(store && stores) {
-            const storeSelected = stores.find(current => {
-                // convert string to number
-                return current.id === store * 1;
-            });
-            setStoreObject({
-                id: storeSelected.id,
-                name: storeSelected.name,
-                friendlyAddress: storeSelected.friendly_address,
-            })
-        }
-        // if user clear store selector it must remove selected store
-        if (store === null) {
-            setStoreObject({
-                id: '',
-                name: '',
-                friendlyAddress: '',
-            })
-        }
-    }, [store]);
-    const onChange = e => {
-        if (e.key === 'Enter') {
-            toSearch();
-            // return false;
-        }
-        setId(e.target.value);
-    };
-
-    const toSearch = () => {
-      // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
-      const searchId = id ? `id=${id}` : '';
-      const searchStore = storeObject && storeObject.id ? `store=${storeObject.id}` : '';
-      const searchDate = date ? `date=${date}` : '';
-      const searchStatus = status ? `status=${status.value}` : '';
-
-      let url = `/admin?${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
-      Inertia.visit(url)
-    };
-
-    const setStatusObject = currentStatus => {
-        switch (currentStatus) {
-            case 'not-delivered':
-                setStatus({
-                    label: 'No entregados',
-                    value: 'not-delivered',
-                });
-                break;
-            case 'delivered':
-                setStatus({
-                    label: 'Entregados',
-                    value: 'delivered',
-                });
-                break;
-            case 'all':
-                setStatus({
-                    label: 'Todos',
-                    value: 'all',
-                });
-                break;
-            default:
-                setStatus({
-                    label: 'No entregados',
-                    value: 'not-delivered',
-                });
-                break;
-        }
+  useEffect(() => {
+    if (searchValues && searchValues.store !== '') {
+      const searchData = stores.find((current) => current.id === store * 1);
+      setStoreObject({
+        id: searchData.id,
+        name: searchData.name,
+        friendlyAddress: searchData.friendly_address,
+      });
     }
+    if (searchValues && searchValues.date !== '') {
+      // if search values has date value, needs to be set datepicker component with date const.
+      setDate(moment(searchValues.date));
+    }
+    if (searchValues && searchValues.status !== '') {
+      // if search values has date value, needs to be set datepicker component with date const.
 
-    return (
+      setStatus(searchValues.status);
+    }
+  }, [searchValues]);
+
+  useEffect(() => {
+    if (store && stores) {
+        // convert string to number
+        const storeSelected = stores.find((current) => current.id === store * 1);
+      setStoreObject({
+        id: storeSelected.id,
+        name: storeSelected.name,
+        friendlyAddress: storeSelected.friendly_address,
+      });
+    }
+    // if user clear store selector it must remove selected store
+    if (store === null) {
+      setStoreObject({
+        id: '',
+        name: '',
+        friendlyAddress: '',
+      });
+    }
+  }, [store]);
+  const onChange = (e) => {
+    if (e.key === 'Enter') {
+      toSearch();
+      // return false;
+    }
+    setId(e.target.value);
+  };
+
+  const toSearch = () => {
+    // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
+    const searchId = id ? `id=${id}` : '';
+    const searchStore = storeObject && storeObject.id ? `store=${storeObject.id}` : '';
+    const searchDate = date ? `date=${date}` : '';
+    const searchStatus = status ? `status=${status.value}` : '';
+
+    const url = `/admin?${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
+    Inertia.visit(url);
+  };
+
+  const setStatusObject = (currentStatus) => {
+    switch (currentStatus) {
+      case 'not-delivered':
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered',
+        });
+        break;
+      case 'delivered':
+        setStatus({
+          label: 'Entregados',
+          value: 'delivered',
+        });
+        break;
+      case 'all':
+        setStatus({
+          label: 'Todos',
+          value: 'all',
+        });
+        break;
+      default:
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered',
+        });
+        break;
+    }
+  };
+
+  return (
         <div className="flex">
             <div className="inline-block mx-2 w-1/5">
                 <Input
@@ -163,9 +173,9 @@ export default function SearchBar(props) {
                                 id="date"
                                 name="date"
                                 date={date}
-                                onDateChange={date => setDate(date)}
+                                onDateChange={(date) => setDate(date)}
                                 focused={focus}
-                                onFocusChange={props => setFocus(props.focused)}
+                                onFocusChange={(props) => setFocus(props.focused)}
                                 // disabled={!store}
                                 className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
                                 displayFormat="D MMMM YYYY"
@@ -173,9 +183,9 @@ export default function SearchBar(props) {
                                 placeholder="Elige una fecha"
                                 isOutsideRange={() => false}
                                 phrases={{
-                                    closeDatePicker:
+                                  closeDatePicker:
                                         'Cerrar',
-                                    clearDates: 'Limpiar',
+                                  clearDates: 'Limpiar',
                                 }}
                                 showClearDate
                                 block
@@ -188,9 +198,9 @@ export default function SearchBar(props) {
                     status={status}
                     setStatus={setStatusObject}
                     statuses={[
-                        {label: 'No entregados', value: 'not-delivered'},
-                        {label: 'Entregados', value: 'delivered'},
-                        {label: 'Todos', value: 'all'},
+                      { label: 'No entregados', value: 'not-delivered' },
+                      { label: 'Entregados', value: 'delivered' },
+                      { label: 'Todos', value: 'all' },
                     ]}
                 />
             </div>
@@ -201,5 +211,5 @@ export default function SearchBar(props) {
                 >Buscar</button>
             </div>
         </div>
-    )
-};
+  );
+}

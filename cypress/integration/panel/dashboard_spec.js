@@ -69,6 +69,7 @@ describe('Dashboard', () => {
       cy.findByLabelText(/id/i).type(`${uuid}{enter}`);
       cy.get(tableRowSelector).should('have.length', 1);
       cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
+      cy.findByLabelText(/id/i).should('have.value', `${uuid}`);
     });
   });
   it('should filter by store', () => {
@@ -94,6 +95,7 @@ describe('Dashboard', () => {
         cy.get(tableRowSelector).should('have.length', 1);
         cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
         cy.get(`${tableRowSelector}[id=${id}]`).contains('First Store');
+        // cy.get('.stores-selector__value-container').should('contain', 'First Store');
       });
     });
   });

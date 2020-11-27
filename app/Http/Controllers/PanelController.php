@@ -18,7 +18,7 @@ class PanelController extends Controller
         $now = Carbon::today();
         $orderAll = Order::whereDate('date', '>=', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
         $searchValues = collect([
-            'id' => '',
+//            'id' => '',
             'store' => '',
             'date' => '',
             'status' => $this->getStatusObject(),
@@ -27,7 +27,7 @@ class PanelController extends Controller
             $query = app(Order::class)->newQuery();
             if (request()->filled('id')) {
                 $id = request()->get('id');
-                $searchValues['id'] = $id;
+//                $searchValues['id'] = $id;
                 $query->search(request('id'));
             }
             if (request()->filled('store')) {
