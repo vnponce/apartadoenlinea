@@ -8,6 +8,7 @@ use App\Store;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Str;
 use Jenssegers\Date\Date;
 use Tests\TestCase;
 
@@ -290,6 +291,71 @@ class OrderTest extends TestCase
         $response = $this->actingAs($user)->get("/admin?status=all");
         $response->assertStatus(200)
             ->assertPropCount('orders', 5);
+    }
+
+    /** @test */
+    function it_search_by_mixed_filters_without_uuid()
+    {
+        $user = factory(User::class)->create();
+        $store = factory(Store::class)->create();
+        $today = now();
+
+        $expectedOrder = factory(Order::class)->create([
+            'date' => now(),
+            'store_id' => $store->id,
+            'status' => 'delivered',
+        ]);
+
+//        $uuid = Order::first()->uuid;
+
+        $notDate = factory(Order::class)->create([
+            'date' => now()->addDay(),
+            'store_id' => $store->id,
+            'status' => 'delivered',
+        ]);
+        $notStore = factory(Order::class)->create([
+            'date' => now(),
+            'store_id' => factory(Store::class)->create()->id,
+            'status' => 'delivered',
+        ]);
+        $notStatus = factory(Order::class)->create([
+            'date' => now(),
+            'store_id' => $store->id,
+            'status' => 'created',
+        ]);
+
+//        $response = $this->actingAs($user)->get("/admin?store=1&date=$today&status=delivered");
+        $response = $this->actingAs($user)->get("/admin?store={$store->id}&date=$today&status=delivered");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedOrder){
+//                dd(collect($orders)->toArray());
+                $filteredOrder = collect($orders)->first();
+//                $this->assertFalse($collectOrders->search(function($order) use ($notExpectedByStatus) {
+//                    return collect($order)->get('uuid') === $notExpectedByStatus->uuid;
+//                }));
+                $this->assertEquals($expectedOrder->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
+    function it_search_by_like_uuid()
+    {
+        $user = factory(User::class)->create();
+
+        $expectedOrder = factory(Order::class)->create();
+
+        $uuid =  Str::limit(Order::first()->uuid, 8, '');
+
+        factory(Order::class, 10)->create();
+
+        $response = $this->actingAs($user)->get("/admin?id=$uuid");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedOrder){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedOrder->uuid, collect($filteredOrder)->get('uuid'));
+            });
     }
 
     /** @test */
