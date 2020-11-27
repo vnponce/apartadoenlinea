@@ -17,30 +17,20 @@ class PanelController extends Controller
         Date::setLocale('es');
         $now = Carbon::today();
         $orderAll = Order::whereDate('date', '>=', $now)->where('status', '<>', 'delivered')->orderBy('date')->get();
-        $searchValues = collect([
-//            'id' => '',
-//            'store' => '',
-//            'date' => '',
-//            'status' => $this->getStatusObject(),
-        ]);
         if(request('id') || request('store') || request('date') || request('status')) {
             $query = app(Order::class)->newQuery();
             if (request()->filled('id')) {
                 $id = request()->get('id');
-//                $searchValues['id'] = $id;
                 $query->search(request('id'));
             }
             if (request()->filled('store')) {
                 $store = request()->get('store');
-//                $searchValues['store'] = $store;
                 $query->store($store);
             }
             if (request()->filled('date')) {
                 $date = (new Carbon(request('date')));
-//                $searchValues['date'] = $date;
                 $query->date($date);
             } else {
-                $searchValues['date'] = '';
                 // @todo: ver que hacer con este
                 $query->whereDate('date', '>=', Carbon::today());
             }
@@ -53,15 +43,12 @@ class PanelController extends Controller
 
             if (request()->filled('id')) {
                 $id = request()->get('id');
-                $searchValues['id'] = $id;
                 $orderAll->search(request('id'));
             }
             if (request()->filled('date')) {
                 $date = (new Carbon(request('date')));
-                $searchValues['date'] = $date;
                 $orderAll->date($date);
             } else {
-                $searchValues['date'] = '';
                 $orderAll->whereDate('date', '>=', Carbon::today());
             }//             dd($orderAll);
             $orderAll->status(request('status'));
@@ -117,7 +104,7 @@ class PanelController extends Controller
                 'total' => toFormat($order->total),
             ];
         });
-        return Inertia::render('Admin/Dashboard', compact('orders', 'searchValues'));
+        return Inertia::render('Admin/Dashboard', compact('orders'));
     }
 
     public function products()

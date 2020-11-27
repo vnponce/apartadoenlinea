@@ -31,6 +31,7 @@ class OrderAsStoreUserTest extends TestCase
     /** @test */
     function it_show_only_orders_from_user_store_owned()
     {
+        $this->withoutExceptionHandling();
         // osea solo puede ver las ordenes de su sucursal a la que esta vinculado
         $orderA = factory(Order::class)->create([
             'store_id' => $this->storeOwned->id,
