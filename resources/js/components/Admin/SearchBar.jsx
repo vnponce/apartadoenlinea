@@ -57,6 +57,8 @@ export default function SearchBar(props) {
     setId(queryId || '');
     const queryStore = getParameterByName('store');
     setStore(queryStore || '');
+    const queryDate = getParameterByName('date');
+    setDate(queryDate ? moment(queryDate) : null);
   }, []);
 
   useEffect(() => {
@@ -68,10 +70,10 @@ export default function SearchBar(props) {
     //     friendlyAddress: searchData.friendly_address,
     //   });
     // }
-    if (searchValues && searchValues.date !== '') {
-      // if search values has date value, needs to be set datepicker component with date const.
-      setDate(moment(searchValues.date));
-    }
+    // if (searchValues && searchValues.date !== '') {
+    //   // if search values has date value, needs to be set datepicker component with date const.
+    //   setDate(moment(searchValues.date));
+    // }
     if (searchValues && searchValues.status !== '') {
       // if search values has date value, needs to be set datepicker component with date const.
 

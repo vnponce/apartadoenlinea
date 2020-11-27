@@ -20,7 +20,7 @@ class PanelController extends Controller
         $searchValues = collect([
 //            'id' => '',
 //            'store' => '',
-            'date' => '',
+//            'date' => '',
             'status' => $this->getStatusObject(),
         ]);
         if(request('id') || request('store') || request('date') || request('status')) {
@@ -37,7 +37,7 @@ class PanelController extends Controller
             }
             if (request()->filled('date')) {
                 $date = (new Carbon(request('date')));
-                $searchValues['date'] = $date;
+//                $searchValues['date'] = $date;
                 $query->date($date);
             } else {
                 $searchValues['date'] = '';

@@ -718,6 +718,8 @@ function SearchBar(props) {
     setId(queryId || '');
     var queryStore = getParameterByName('store');
     setStore(queryStore || '');
+    var queryDate = getParameterByName('date');
+    setDate(queryDate ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     // if (searchValues && searchValues.store !== '' && searchValues.store) {
@@ -728,11 +730,10 @@ function SearchBar(props) {
     //     friendlyAddress: searchData.friendly_address,
     //   });
     // }
-    if (searchValues && searchValues.date !== '') {
-      // if search values has date value, needs to be set datepicker component with date const.
-      setDate(moment__WEBPACK_IMPORTED_MODULE_5___default()(searchValues.date));
-    }
-
+    // if (searchValues && searchValues.date !== '') {
+    //   // if search values has date value, needs to be set datepicker component with date const.
+    //   setDate(moment(searchValues.date));
+    // }
     if (searchValues && searchValues.status !== '') {
       // if search values has date value, needs to be set datepicker component with date const.
       setStatus(searchValues.status);

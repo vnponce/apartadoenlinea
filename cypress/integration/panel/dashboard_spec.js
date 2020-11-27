@@ -110,7 +110,7 @@ describe('Dashboard', () => {
       cy.create('App\\Order', 10, {
         date: moment().add(1, 'd').format('Y-MM-DD H:mm:ss'),
       });
-      const { id, date } = order;
+      const { id } = order;
       cy.login();
 
       cy.visit('/admin');
@@ -119,6 +119,8 @@ describe('Dashboard', () => {
       cy.findByRole('button', { name: /buscar/i }).click();
       cy.get(tableRowSelector).should('have.length', 1);
       cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
+      moment.locale('es');
+      cy.get('#date').should('have.value', moment().format('D MMMM YYYY'));
     });
   });
   it('should filter by status', () => {
