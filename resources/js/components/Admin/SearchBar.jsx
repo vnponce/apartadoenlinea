@@ -88,7 +88,8 @@ export default function SearchBar() {
     const queryStore = getParameterByName('store');
     setStore(queryStore || '');
     const queryDate = getParameterByName('date');
-    setDate(queryDate ? moment(queryDate) : null);
+    // @todo: think if we going to have more special status
+    setDate((queryDate && queryDate !== 'historic') ? moment(queryDate) : null);
     const queryStatus = getParameterByName('status');
     setStatusObject(queryStatus);
   }, []);

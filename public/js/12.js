@@ -753,8 +753,9 @@ function SearchBar() {
     setId(queryId || '');
     var queryStore = getParameterByName('store');
     setStore(queryStore || '');
-    var queryDate = getParameterByName('date');
-    setDate(queryDate ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
+    var queryDate = getParameterByName('date'); // @todo: think if we going to have more special status
+
+    setDate(queryDate && queryDate !== 'historic' ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
     var queryStatus = getParameterByName('status');
     setStatusObject(queryStatus);
   }, []);

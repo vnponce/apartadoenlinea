@@ -236,11 +236,12 @@ describe('Dashboard', () => {
     cy.visit('/admin');
     cy.get(tableRowSelector).should('have.length', 2);
     cy.findByRole('link', { name: /anteriores/i }).click();
-    cy.findByText(/pedidos anteriores/i);
+    // cy.findByText(/pedidos anteriores/i);
 
-    cy.get('.status-selector__value-container').contains('Todos');
-    cy.get('#date').should('contains', '');
     cy.get(tableRowSelector).should('have.length', 4);
+    // por alguna razon de renderizado esta validaciond ebe ir despues de ver algo en el contenido.
+    cy.get('.status-selector__value-container').contains('Todos');
+    cy.get('#date').should('have.value', '');
     cy.php(`
         App\\Order::all()
     `).then((orders) => {
