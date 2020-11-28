@@ -210,7 +210,7 @@ class OrderTest extends TestCase
                 $filteredOrder = collect($orders)->first();
                 $this->assertEquals($expectedByDate->uuid, collect($filteredOrder)->get('uuid'));
             });
-        }
+    }
 
     /** @test */
     function it_search_by_store()
@@ -463,4 +463,69 @@ class OrderTest extends TestCase
         ]);
     }
 
+    /** @test */
+    function it_can_access_to_see_all_historic_from_today_to_older_orders()
+    {
+        $this->withoutExceptionHandling();
+
+        $today = now();
+        $todayOrderExpected = factory(Order::class)->create([
+            'date' => $today,
+        ]);
+        $yesterdayOrderExpected = factory(Order::class)->create([
+            'date' => now()->subDay()
+        ]);
+        $tomorrowOrderNotExpected = factory(Order::class)->create([
+            'date' => now()->addDay()
+        ]);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin?date=historic");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 2)
+            ->assertPropValue('orders', function($orders) use ($todayOrderExpected, $yesterdayOrderExpected, $tomorrowOrderNotExpected){
+                $collectOrders = collect($orders);
+                $this->assertFalse($collectOrders->search(function($order) use ($tomorrowOrderNotExpected) {
+                    return collect($order)->get('uuid') === $tomorrowOrderNotExpected->uuid;
+                }));
+                $this->assertTrue($collectOrders->contains(function($order) use ($todayOrderExpected) {
+                    return collect($order)->get('id') === $todayOrderExpected->id;
+                }));
+                $this->assertTrue($collectOrders->contains(function($order) use ($yesterdayOrderExpected) {
+                    return collect($order)->get('id') === $yesterdayOrderExpected->id;
+                }));
+//                $this->assertEquals($expectedByDate->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
+    function it_can_sort_by_parameter_send_by_request()
+    {
+        $this->withoutExceptionHandling();
+
+        $today = now();
+        $todayOrderExpected = factory(Order::class)->create([
+            'date' => $today,
+        ]);
+        $tomorrowOrder = factory(Order::class)->create([
+            'date' => now()->addDay()
+        ]);
+        $afterTomorrowOrder = factory(Order::class)->create([
+            'date' => now()->addDays(2)
+        ]);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin?sort=desc");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 3)
+            ->assertPropValue('orders', function($orders) use ($todayOrderExpected, $tomorrowOrder, $afterTomorrowOrder){
+                $collectOrders = collect($orders);
+//                dd($collectOrders);
+                $this->assertEquals($afterTomorrowOrder->uuid, $collectOrders->get(0)['uuid']);
+                $this->assertEquals($tomorrowOrder->uuid, $collectOrders->get(1)['uuid']);
+                $this->assertEquals($todayOrderExpected->uuid, $collectOrders->get(2)['uuid']);
+            });
+    }
 }

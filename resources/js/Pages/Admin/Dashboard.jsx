@@ -5,7 +5,7 @@ import { useTable } from 'react-table';
 import {Inertia} from "@inertiajs/inertia";
 import Table from "../../components/Table";
 import SearchBar from "../../components/Admin/SearchBar";
-import {usePage} from "@inertiajs/inertia-react";
+import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 import Content from "../../components/Admin/Content";
 
 function Dashboard(props) {
@@ -114,7 +114,14 @@ function Dashboard(props) {
             {/*Graph Content */}
             <Content>
                 <SearchBar stores={stores} searchValues={searchValues}/>
-                <h5 className="font-bold text-black">Pedidos</h5>
+                <div>
+                    <h5 className="font-bold text-black">Pedidos</h5>
+                    <InertiaLink
+                        href="/admin?date=historic&status=all&sort=desc"
+                        className="flex-2 m-auto h-20 hidden lg:block">
+                        Pedidos anteriores
+                    </InertiaLink>
+                </div>
                 <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
             </Content>
         </Admin>

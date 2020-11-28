@@ -323,6 +323,45 @@ class OrderAsStoreUserTest extends TestCase
             });
     }
 
+    /** @test */
+    function it_can_access_to_see_all_historic_from_today_to_older_orders()
+    {
+        $this->withoutExceptionHandling();
+
+        $today = now();
+        $todayOrderExpected = factory(Order::class)->create([
+            'date' => $today,
+            'store_id' => $this->storeOwned->id,
+        ]);
+        $yesterdayOrderExpected = factory(Order::class)->create([
+            'date' => now()->subDay(),
+            'store_id' => $this->storeOwned->id,
+        ]);
+        $tomorrowOrderNotExpected = factory(Order::class)->create([
+            'date' => now()->addDay(),
+            'store_id' => $this->storeOwned->id,
+        ]);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin?date=historic");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 2)
+            ->assertPropValue('orders', function($orders) use ($todayOrderExpected, $yesterdayOrderExpected, $tomorrowOrderNotExpected){
+                $collectOrders = collect($orders);
+                $this->assertFalse($collectOrders->search(function($order) use ($tomorrowOrderNotExpected) {
+                    return collect($order)->get('uuid') === $tomorrowOrderNotExpected->uuid;
+                }));
+                $this->assertTrue($collectOrders->contains(function($order) use ($todayOrderExpected) {
+                    return collect($order)->get('id') === $todayOrderExpected->id;
+                }));
+                $this->assertTrue($collectOrders->contains(function($order) use ($yesterdayOrderExpected) {
+                    return collect($order)->get('id') === $yesterdayOrderExpected->id;
+                }));
+//                $this->assertEquals($expectedByDate->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
     // estos de acciones  y pensar en si no es su sucursal no se puede hacer esa peticion
 //    /** @test */
 //    function it_can_update_the_status()

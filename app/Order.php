@@ -106,6 +106,10 @@ class Order extends Model
     public function scopeDate($query, $value)
     {
         Date::setLocale('es');
+//        dd($value);
+        if($value === 'historic') {
+            return $query->whereDate('date', '<=', Carbon::today());
+        }
         if($value) {
             $date = (new Carbon(request('date')));
             $query->whereDate('date', $date);

@@ -19,7 +19,7 @@ class PanelController extends Controller
             ->store(request('store'))
             ->date(request('date'))
             ->status(request('status'))
-            ->orderBy('date')
+            ->orderBy('date', request('sort') ? request('sort') : 'asc')
             ->get();
         $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;

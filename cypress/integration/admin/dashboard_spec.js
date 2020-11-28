@@ -207,4 +207,55 @@ describe('Dashboard', () => {
       });
     });
   });
+  it.only('should filter by historic date value and show only from today to older orders', () => {
+    cy.create('App\\Order', {
+      name: 'Today expected',
+      date: moment().format('Y-MM-DD H:mm:ss'),
+    });
+    cy.create('App\\Order', {
+      name: 'Tomorrow not expected',
+      date: moment().add(1, 'd').format('Y-MM-DD H:mm:ss'),
+    });
+    cy.create('App\\Order', {
+      name: 'Yesterday expected',
+      date: moment().subtract(1, 'd').format('Y-MM-DD H:mm:ss'),
+    });
+    cy.create('App\\Order', {
+      name: 'Yesterday delivered expected',
+      date: moment().subtract(1, 'd').format('Y-MM-DD H:mm:ss'),
+      status: 'delivered',
+    });
+    cy.create('App\\Order', {
+      name: 'Before yesterday placed expected',
+      date: moment().subtract(2, 'd').format('Y-MM-DD H:mm:ss'),
+      status: 'placed',
+    });
+
+    cy.login();
+
+    cy.visit('/admin');
+    cy.get(tableRowSelector).should('have.length', 2);
+    cy.findByRole('link', { name: /anteriores/i }).click();
+    cy.findByText(/pedidos anteriores/i);
+
+    cy.get('.status-selector__value-container').contains('Todos');
+    cy.get('#date').should('contains', '');
+    cy.get(tableRowSelector).should('have.length', 4);
+    cy.php(`
+        App\\Order::all()
+    `).then((orders) => {
+      orders.filter((order) => order.name === 'Tomorrow not expected')
+        .map((order) => {
+          cy.get(`${tableRowSelector}[id=${order.id}]`).should('not.exist');
+        });
+      orders.filter((order) => order.name !== 'Tomorrow not expected')
+        .map((order) => {
+          cy.get(`${tableRowSelector}[id=${order.id}]`).contains(order.name);
+        });
+    });
+
+    // Veryfie order
+    cy.get(`${tableRowSelector}:first`).contains('Today expected');
+    cy.get(`${tableRowSelector}:last`).contains('Before yesterday placed expected');
+  });
 });

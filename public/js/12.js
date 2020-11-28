@@ -203,9 +203,12 @@ function Dashboard(props) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_8__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
     stores: stores,
     searchValues: searchValues
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black"
-  }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__["InertiaLink"], {
+    href: "/admin?date=historic&status=all&sort=desc",
+    className: "flex-2 m-auto h-20 hidden lg:block"
+  }, "Pedidos anteriores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
     columns: columns,
     data: orders,
     onClick: function onClick(row) {
