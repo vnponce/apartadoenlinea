@@ -21,6 +21,7 @@ class PanelController extends Controller
             ->status(request('status'))
             ->orderBy('date', request('sort') ? request('sort') : 'asc')
             ->allOrPaginate(request('get'));
+
         $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;
             return [
@@ -71,7 +72,7 @@ class PanelController extends Controller
                 'total' => toFormat($order->total),
             ];
         });
-        return Inertia::render('Admin/Dashboard', compact('orders'));
+        return Inertia::render('Admin/Dashboard', compact('orders', 'orderAll'));
     }
 
     public function products()

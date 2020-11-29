@@ -8,6 +8,7 @@ import DateSelector from '../../components/DateSelector'; // jajaja if I remove 
 import Stores from '../Select/SearchStores';
 import Input from '../Input';
 import SearchStatus from '../Select/SearchStatus';
+import { getParameterByName } from '../../Shared/utils';
 
 const DateWrapper = styled.div`
     .DateInput_input {
@@ -76,11 +77,6 @@ export default function SearchBar() {
         break;
     }
   };
-
-  function getParameterByName(name) {
-    const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-  }
 
   useEffect(() => {
     const queryId = getParameterByName('id');

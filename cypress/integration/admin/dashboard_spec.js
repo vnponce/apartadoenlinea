@@ -259,4 +259,11 @@ describe('Dashboard', () => {
     cy.get(`${tableRowSelector}:first`).contains('Today expected');
     cy.get(`${tableRowSelector}:last`).contains('Before yesterday placed expected');
   });
+  it('should show pagination if parameter get=pagination exist', () => {
+    cy.create('App\\Order', 16);
+    cy.login();
+
+    cy.visit('/admin?get=paginate');
+    cy.get('.pagination');
+  });
 });

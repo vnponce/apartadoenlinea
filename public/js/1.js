@@ -11,18 +11,19 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
-/* harmony import */ var _components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Admin/InfoBoxes */ "./resources/js/components/Admin/InfoBoxes.jsx");
-/* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-table */ "./node_modules/react-table/dist/index.es.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
-/* harmony import */ var _components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Admin/SearchBar */ "./resources/js/components/Admin/SearchBar.jsx");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_Admin_Content__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Admin/Content */ "./resources/js/components/Admin/Content.jsx");
-/* harmony import */ var react_laravel_paginex__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-laravel-paginex */ "./node_modules/react-laravel-paginex/dist/index.js");
-/* harmony import */ var react_laravel_paginex__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-table */ "./node_modules/react-table/dist/index.es.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-laravel-paginex */ "./node_modules/react-laravel-paginex/dist/index.js");
+/* harmony import */ var react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
+/* harmony import */ var _components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Admin/InfoBoxes */ "./resources/js/components/Admin/InfoBoxes.jsx");
+/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
+/* harmony import */ var _components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Admin/SearchBar */ "./resources/js/components/Admin/SearchBar.jsx");
+/* harmony import */ var _components_Admin_Content__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Admin/Content */ "./resources/js/components/Admin/Content.jsx");
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -42,11 +43,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Dashboard(props) {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__["usePage"])(),
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])(),
       auth = _usePage.auth;
 
   var orders = props.orders,
+      orderAll = props.orderAll,
       success_message = props.success_message,
       order = props.order,
       stores = props.stores,
@@ -57,9 +60,14 @@ function Dashboard(props) {
       dataSelected = _useState2[0],
       setDataSelected = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isPaginateActive = _useState4[0],
+      setIsPaginateActive = _useState4[1];
+
   var updateStatus = function updateStatus(id) {
     return function (evt) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/pedido/".concat(id), {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].put("/pedido/".concat(id), {
         status: evt.target.value
       });
     };
@@ -113,67 +121,67 @@ function Dashboard(props) {
     }];
   }, []);
   {
-    /*<>*/
+    /* <> */
   }
   {
-    /*    /!* start select *!/*/
+    /*    /!* start select *!/ */
   }
   {
-    /*    <div className="inline-block relative w-full">*/
+    /*    <div className="inline-block relative w-full"> */
   }
   {
-    /*        <select*/
+    /*        <select */
   }
   {
-    /*            className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"*/
+    /*            className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" */
   }
   {
-    /*            onChange={updateStatus(data.cell.row.original.id)}*/
+    /*            onChange={updateStatus(data.cell.row.original.id)} */
   }
   {
-    /*        >*/
+    /*        > */
   }
   {
-    /*            <option value="opened" selected={data.cell.value.original !== 'opened'}>Visto</option>*/
+    /*            <option value="opened" selected={data.cell.value.original !== 'opened'}>Visto</option> */
   }
   {
-    /*            <option value="placed" selected={data.cell.value.original === 'placed'}>En ruta/sucursal</option>*/
+    /*            <option value="placed" selected={data.cell.value.original === 'placed'}>En ruta/sucursal</option> */
   }
   {
-    /*            <option value="delivered" selected={data.cell.value.original === 'delivered'}>Entregada</option>*/
+    /*            <option value="delivered" selected={data.cell.value.original === 'delivered'}>Entregada</option> */
   }
   {
-    /*            <option value="-" selected={data.cell.value.original === '-'}>Pendiente</option>*/
+    /*            <option value="-" selected={data.cell.value.original === '-'}>Pendiente</option> */
   }
   {
-    /*        </select>*/
+    /*        </select> */
   }
   {
-    /*        <div*/
+    /*        <div */
   }
   {
-    /*            className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">*/
+    /*            className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"> */
   }
   {
-    /*            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">*/
+    /*            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"> */
   }
   {
-    /*                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>*/
+    /*                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> */
   }
   {
-    /*            </svg>*/
+    /*            </svg> */
   }
   {
-    /*        </div>*/
+    /*        </div> */
   }
   {
-    /*    </div>*/
+    /*    </div> */
   }
   {
-    /*    /!* end select *!/*/
+    /*    /!* end select *!/ */
   }
   {
-    /*</>*/
+    /* </> */
   }
 
   var openedAndShow = function openedAndShow(index) {
@@ -181,7 +189,7 @@ function Dashboard(props) {
     setDataSelected(data);
 
     if (auth.user.isMatrix && data.status.original === 'created') {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].put("/admin/orders/".concat(data.id), {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].put("/admin/orders/".concat(data.id), {
         status: 'opened'
       });
     } // if(data.status.original !== 'created') {
@@ -191,6 +199,10 @@ function Dashboard(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var requestGetPagiante = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate';
+    setIsPaginateActive(requestGetPagiante);
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     // openedAndShow(0);
     if (orders && dataSelected) {
       var orderUpdated = orders.find(function (order) {
@@ -199,29 +211,70 @@ function Dashboard(props) {
       setDataSelected(orderUpdated);
     }
   }, [orders]);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_5__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: dataSelected
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_8__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_9__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_8__["default"], {
     stores: stores,
     searchValues: searchValues
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black"
-  }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__["InertiaLink"], {
+  }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
     href: "/admin?date=historic&status=all&sort=desc&get=paginate",
     className: "flex-2 m-auto h-20 hidden lg:block"
-  }, "Pedidos anteriores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "Pedidos anteriores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_7__["default"], {
     columns: columns,
     data: orders,
     onClick: function onClick(row) {
       return openedAndShow(row.index);
     },
     selected: dataSelected
-  })));
+  }), isPaginateActive && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "py-10 block w-full flex justify-center"
+  }, orderAll && orderAll.data && orderAll.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__["Pagination"], {
+    containerClass: "flex flex-wrap h-12 pagination",
+    numberButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+    ,
+    activeClass: "border-brand-orange bg-orange-400 text-white hover:text-gray-600",
+    changePage: function changePage() {
+      return console.log('....');
+    },
+    nextButtonText: "Siguiente",
+    buttonIcons: true,
+    prevButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo",
+    nextButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // prevButtonText="Anterior"
+    // prevButtonIcon="fa fa-chevron-left"
+    ,
+    data: orderAll
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/utils.js":
+/*!**************************************!*\
+  !*** ./resources/js/Shared/utils.js ***!
+  \**************************************/
+/*! exports provided: getParameterByName, encodeData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeData", function() { return encodeData; });
+// eslint-disable-next-line import/prefer-default-export
+function getParameterByName(name) {
+  var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
+  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+function encodeData(data) {
+  return Object.keys(data).map(function (key) {
+    return [key, data[key]].map(encodeURIComponent).join('=');
+  }).join('&');
+}
 
 /***/ }),
 
@@ -629,6 +682,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Select_SearchStores__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Select/SearchStores */ "./resources/js/components/Select/SearchStores.jsx");
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Input */ "./resources/js/components/Input.jsx");
 /* harmony import */ var _Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Select/SearchStatus */ "./resources/js/components/Select/SearchStatus.jsx");
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -656,6 +710,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
  // jajaja if I remove this line, i get white page jajajaja
+
 
 
 
@@ -746,20 +801,15 @@ function SearchBar() {
     }
   };
 
-  function getParameterByName(name) {
-    var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-  }
-
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    var queryId = getParameterByName('id');
+    var queryId = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('id');
     setId(queryId || '');
-    var queryStore = getParameterByName('store');
+    var queryStore = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('store');
     setStore(queryStore || '');
-    var queryDate = getParameterByName('date'); // @todo: think if we going to have more special status
+    var queryDate = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date'); // @todo: think if we going to have more special status
 
     setDate(queryDate && queryDate !== 'historic' ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
-    var queryStatus = getParameterByName('status');
+    var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('status');
     setStatusObject(queryStatus);
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
