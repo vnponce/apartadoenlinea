@@ -117,14 +117,26 @@ export default function SearchBar() {
     setId(e.target.value);
   };
 
+  const setDateParam = () => {
+    if (getParameterByName('date')) {
+      if (getParameterByName('date') === 'historic') {
+        return 'date=historic';
+      }
+      return `date=${date}`;
+    }
+    return '';
+  };
   const toSearch = () => {
     // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
     const searchId = id ? `id=${id}` : '';
     const searchStore = storeObject && storeObject.id ? `store=${storeObject.id}` : '';
-    const searchDate = date ? `date=${date}` : '';
-    const searchStatus = status ? `status=${status.value}` : '';
+      // const searchDate = setDateParam();
 
-    const url = `/admin?${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
+      const searchDate = date ? `date=${date}` : '';
+    const searchStatus = status ? `status=${status.value}` : '';
+    const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
+
+    const url = `/admin?${paginateQuery}&${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
     Inertia.visit(url);
   };
 

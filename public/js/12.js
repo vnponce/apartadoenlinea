@@ -855,13 +855,27 @@ function SearchBar() {
     setId(e.target.value);
   };
 
+  var setDateParam = function setDateParam() {
+    if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date')) {
+      if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date') === 'historic') {
+        return 'date=historic';
+      }
+
+      return "date=".concat(date);
+    }
+
+    return '';
+  };
+
   var toSearch = function toSearch() {
     // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
     var searchId = id ? "id=".concat(id) : '';
-    var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : '';
+    var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : ''; // const searchDate = setDateParam();
+
     var searchDate = date ? "date=".concat(date) : '';
     var searchStatus = status ? "status=".concat(status.value) : '';
-    var url = "/admin?".concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus);
+    var paginateQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate' ? 'get=paginate' : '';
+    var url = "/admin?".concat(paginateQuery, "&").concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(url);
   };
 
