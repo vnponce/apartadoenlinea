@@ -72,6 +72,11 @@ class PanelController extends Controller
                 'total' => toFormat($order->total),
             ];
         });
+//        dd($orderAll->links());
+//        $ordersLinksPagination = $orderAll->links();
+//        $ordersLinksPagination = $orderAll->links();
+//        $ordersLinksPagination = $orderAll->linkgetContents();
+//        dd($ordersLinksPagination->render());
         return Inertia::render('Admin/Dashboard', compact('orders', 'orderAll'));
     }
 

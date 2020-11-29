@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useTable } from 'react-table';
+// import { useTable } from 'react-table';
 import { Inertia } from '@inertiajs/inertia';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
-import { Pagination } from 'react-laravel-paginex';
+// import { Pagination } from 'react-laravel-paginex';
 import Admin from '../../Shared/Admin';
 import InfoBoxes from '../../components/Admin/InfoBoxes';
 import Table from '../../components/Table';
@@ -108,6 +108,7 @@ function Dashboard(props) {
   };
 
   useEffect(() => {
+    // console.log('orderAll =>', orderAll);
     const requestGetPagiante = getParameterByName('get') === 'paginate';
     setIsPaginateActive(requestGetPagiante);
   }, []);
@@ -137,19 +138,40 @@ function Dashboard(props) {
                 {isPaginateActive && (
                     <div className="py-10 block w-full flex justify-center">
                         {orderAll && orderAll.data && orderAll.data.length > 0 && (
-                            <Pagination
-                                containerClass="flex flex-wrap h-12 pagination"
-                                numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                                // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                                activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
-                                changePage={() => console.log('....')}
-                                nextButtonText="Siguiente"
-                                buttonIcons
-                                prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                                nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                                // prevButtonText="Anterior"
-                                // prevButtonIcon="fa fa-chevron-left"
-                                data={orderAll}/>
+                        // <Pagination
+                        //     containerClass="flex flex-wrap h-12 pagination"
+                        //     numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                        //     // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                        //     activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
+                        //     changePage={(e, a) => console.log(e, a)}
+                        //     nextButtonText="Siguiente"
+                        //     buttonIcons
+                        //     prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                        //     nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+                        //     // prevButtonText="Anterior"
+                        //     // prevButtonIcon="fa fa-chevron-left"
+                        //     data={orderAll}/>
+
+                            <div class="pagination mt-6 -mb-1 flex flex-wrap">
+                            {orderAll.links && orderAll.links.map((link, key) => {
+                              if (link.url === null) {
+                                return <div key={key} className={`page-link mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400 ${link.label === 'Next' ? 'ml-auto' : ''}`}>{ link.label }</div>;
+                              }
+                              return <InertiaLink
+                                    key={key}
+                                    class={`page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ${link.active ? 'bg-white' : ''} ${link.label === 'Next' ? 'ml-auto' : ''}`}
+                                    // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+                                    href={link.url}>
+                                        { link.label }
+                                </InertiaLink>;
+                            })}
+                                {/*
+                            <template v-for="(link, key) in links">
+                            <div v-if="link.url === null" :key="key" class="mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400" :class="{ 'ml-auto': link.label === 'Next' }">{{ link.label }}</div>
+                            <inertia-link v-else :key="key" class="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500" :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }" :href="link.url">{{ link.label }}</inertia-link>
+                            </template>
+                            */}
+                            </div>
                         )}
                     </div>
                 )}

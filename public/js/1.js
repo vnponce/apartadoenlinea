@@ -199,6 +199,7 @@ function Dashboard(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('orderAll =>', orderAll);
     var requestGetPagiante = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate';
     setIsPaginateActive(requestGetPagiante);
   }, []);
@@ -232,22 +233,36 @@ function Dashboard(props) {
     selected: dataSelected
   }), isPaginateActive && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "py-10 block w-full flex justify-center"
-  }, orderAll && orderAll.data && orderAll.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__["Pagination"], {
-    containerClass: "flex flex-wrap h-12 pagination",
-    numberButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-    ,
-    activeClass: "border-brand-orange bg-orange-400 text-white hover:text-gray-600",
-    changePage: function changePage() {
-      return console.log('....');
-    },
-    nextButtonText: "Siguiente",
-    buttonIcons: true,
-    prevButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo",
-    nextButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // prevButtonText="Anterior"
-    // prevButtonIcon="fa fa-chevron-left"
-    ,
-    data: orderAll
-  }))));
+  }, orderAll && orderAll.data && orderAll.data.length > 0 && // <Pagination
+  //     containerClass="flex flex-wrap h-12 pagination"
+  //     numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+  //     // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+  //     activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
+  //     changePage={(e, a) => console.log(e, a)}
+  //     nextButtonText="Siguiente"
+  //     buttonIcons
+  //     prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+  //     nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
+  //     // prevButtonText="Anterior"
+  //     // prevButtonIcon="fa fa-chevron-left"
+  //     data={orderAll}/>
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "mt-6 -mb-1 flex flex-wrap"
+  }, orderAll.links && orderAll.links.map(function (link, key) {
+    if (link.url === null) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: key,
+        className: "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400 ".concat(link.label === 'Next' ? 'ml-auto' : '')
+      }, link.label);
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
+      key: key,
+      "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'bg-white' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+      ,
+      href: link.url
+    }, link.label);
+  })))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);

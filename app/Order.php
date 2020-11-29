@@ -140,7 +140,7 @@ class Order extends Model
         // status
         switch ($value) {
             case 'paginate':
-                return $query->paginate();
+                return $query->paginate()->appends(request()->query());
                 break;
             default:
                 return $query->get();

@@ -266,4 +266,17 @@ describe('Dashboard', () => {
     cy.visit('/admin?get=paginate');
     cy.get('.pagination');
   });
+
+  // pagination add page=2 in next item
+  it('should show pagination if parameter get=pagination exist', () => {
+    cy.create('App\\Order', 16);
+    cy.login();
+
+    cy.visit('/admin?get=paginate');
+    cy.get('.page-link:nth(2)').click();
+    cy.url().should('eq', `${Cypress.config().baseUrl}/admin?get=paginate&page=2`);
+
+  });
+
+  // ver que que funcione con los demas fltros de search bar
 });
