@@ -20,7 +20,7 @@ class PanelController extends Controller
             ->date(request('date'))
             ->status(request('status'))
             ->orderBy('date', request('sort') ? request('sort') : 'asc')
-            ->get();
+            ->allOrPaginate(request('get'));
         $orders = $orderAll->map(function($order) {
             $date = $order->pick_up;
             return [

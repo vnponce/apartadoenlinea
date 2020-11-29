@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"43347d68e9f69b35d2ee","2":"00fe4ac0cbc0ae8f7a93","3":"cc4f655f8104d8a66c79","4":"ed351820e3b66ee63436","5":"140ecb46ec717bff926c","6":"20ad22048afbd5c32d7f","7":"1a2a90ab24d88a05699b","9":"876f7f2088d8a7e6fac2","10":"6513c78c09b08dc09af5","11":"493ac172aac32d531f14","12":"e8ca9fc93a6e320d1cdd","13":"6d995c602d1c40b07f15","14":"420dde73731702ba3361","15":"935cdbb34ad0476a6f10","16":"5af2e18709a5eb41b951","17":"80a85435a905c77c5192","18":"c01d5992c6ae6ea77edd","19":"f269c6014bf13043030c","20":"80133528f7c605ac17a2","21":"45109b0638e20843a51a","22":"4bfec87c8ae5fd9ada00","23":"d9eb3844b0bb7dc8dbbd","24":"ef5ef2c913b119a27922","37":"7834d4ce5ada848a0a62"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"43347d68e9f69b35d2ee","1":"ee3b4d40938ee7c29cb3","2":"dea6040aa1601f84e2e2","3":"cc4f655f8104d8a66c79","4":"ed351820e3b66ee63436","5":"1d97b12160217cdb3afe","6":"20ad22048afbd5c32d7f","7":"1a2a90ab24d88a05699b","10":"6513c78c09b08dc09af5","11":"493ac172aac32d531f14","12":"ce9cbb35564a63d5eff4","13":"6d995c602d1c40b07f15","14":"420dde73731702ba3361","15":"935cdbb34ad0476a6f10","16":"5af2e18709a5eb41b951","17":"80a85435a905c77c5192","18":"c01d5992c6ae6ea77edd","19":"f269c6014bf13043030c","20":"80133528f7c605ac17a2","21":"45109b0638e20843a51a","22":"4bfec87c8ae5fd9ada00","23":"d9eb3844b0bb7dc8dbbd","24":"0c4f95b122ef9c91540a","37":"7834d4ce5ada848a0a62"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34564,7 +34564,8 @@ var map = {
 		2,
 		24,
 		5,
-		12
+		12,
+		1
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
@@ -34573,15 +34574,16 @@ var map = {
 		2,
 		24,
 		5,
-		12
+		12,
+		1
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		7,
 		11,
-		9,
-		5,
+		2,
+		12,
 		13
 	],
 	"./Admin/Products.jsx": [
@@ -34589,8 +34591,8 @@ var map = {
 		0,
 		7,
 		11,
-		9,
-		5,
+		2,
+		12,
 		13
 	],
 	"./Admin/Stores": [
@@ -34598,7 +34600,7 @@ var map = {
 		0,
 		7,
 		11,
-		5,
+		12,
 		15
 	],
 	"./Admin/Stores.jsx": [
@@ -34606,7 +34608,7 @@ var map = {
 		0,
 		7,
 		11,
-		5,
+		12,
 		15
 	],
 	"./Admin/Users": [
@@ -34614,7 +34616,7 @@ var map = {
 		0,
 		7,
 		11,
-		5,
+		12,
 		16
 	],
 	"./Admin/Users.jsx": [
@@ -34622,14 +34624,14 @@ var map = {
 		0,
 		7,
 		11,
-		5,
+		12,
 		16
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		4,
-		24,
+		5,
 		3,
 		21
 	],
@@ -34637,7 +34639,7 @@ var map = {
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		4,
-		24,
+		5,
 		3,
 		21
 	],
@@ -34653,8 +34655,8 @@ var map = {
 		"./resources/js/Pages/Home.js",
 		0,
 		4,
-		9,
-		24,
+		2,
+		5,
 		3,
 		17
 	],
@@ -34662,8 +34664,8 @@ var map = {
 		"./resources/js/Pages/Home.js",
 		0,
 		4,
-		9,
-		24,
+		2,
+		5,
 		3,
 		17
 	],
@@ -34672,7 +34674,7 @@ var map = {
 		0,
 		4,
 		10,
-		24,
+		5,
 		3,
 		14
 	],
@@ -34681,7 +34683,7 @@ var map = {
 		0,
 		4,
 		10,
-		24,
+		5,
 		3,
 		14
 	],
@@ -34689,7 +34691,7 @@ var map = {
 		"./resources/js/Pages/Login.jsx",
 		0,
 		4,
-		24,
+		5,
 		3,
 		22
 	],
@@ -34697,7 +34699,7 @@ var map = {
 		"./resources/js/Pages/Login.jsx",
 		0,
 		4,
-		24,
+		5,
 		3,
 		22
 	],
@@ -34706,8 +34708,8 @@ var map = {
 		0,
 		4,
 		10,
-		2,
 		24,
+		5,
 		3,
 		19
 	],
@@ -34716,8 +34718,8 @@ var map = {
 		0,
 		4,
 		10,
-		2,
 		24,
+		5,
 		3,
 		19
 	],
@@ -34726,7 +34728,7 @@ var map = {
 		0,
 		4,
 		6,
-		24,
+		5,
 		3,
 		23
 	],
@@ -34735,7 +34737,7 @@ var map = {
 		0,
 		4,
 		6,
-		24,
+		5,
 		3,
 		23
 	],
@@ -34744,7 +34746,7 @@ var map = {
 		0,
 		4,
 		10,
-		24,
+		5,
 		3,
 		18
 	],
@@ -34753,7 +34755,7 @@ var map = {
 		0,
 		4,
 		10,
-		24,
+		5,
 		3,
 		18
 	],
@@ -34761,7 +34763,7 @@ var map = {
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		4,
-		24,
+		5,
 		3,
 		37
 	],
@@ -34769,7 +34771,7 @@ var map = {
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		4,
-		24,
+		5,
 		3,
 		37
 	]

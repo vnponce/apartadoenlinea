@@ -207,7 +207,7 @@ describe('Dashboard', () => {
       });
     });
   });
-  it.only('should filter by historic date value and show only from today to older orders', () => {
+  it('should filter by historic date value and show only from today to older orders', () => {
     cy.create('App\\Order', {
       name: 'Today expected',
       date: moment().format('Y-MM-DD H:mm:ss'),

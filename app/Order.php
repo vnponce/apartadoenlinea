@@ -134,4 +134,16 @@ class Order extends Model
                 return $query->where('status','<>', 'delivered');
         }
     }
+
+    public function scopeAllOrPaginate($query, $value)
+    {
+        // status
+        switch ($value) {
+            case 'paginate':
+                return $query->paginate();
+                break;
+            default:
+                return $query->get();
+        }
+    }
 }

@@ -528,4 +528,27 @@ class OrderTest extends TestCase
                 $this->assertEquals($todayOrderExpected->uuid, $collectOrders->get(2)['uuid']);
             });
     }
+
+    /** @test */
+    function it_can_paginate_by_parameter_send_by_request()
+    {
+        $this->withoutExceptionHandling();
+
+        factory(Order::class, 15)->create([
+            'date' => now(),
+        ]);
+        $orderFromPage2 = factory(Order::class)->create([
+            'date' => now()->addDay(),
+        ]);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin?get=paginate&page=2");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($orderFromPage2){
+                $orderName = collect($orders)->first()['uuid'];
+                $this->assertEquals($orderFromPage2->uuid, $orderName);
+            });
+    }
 }

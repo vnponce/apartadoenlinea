@@ -7,6 +7,7 @@ import Table from "../../components/Table";
 import SearchBar from "../../components/Admin/SearchBar";
 import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 import Content from "../../components/Admin/Content";
+import {Pagination} from "react-laravel-paginex";
 
 function Dashboard(props) {
     const { auth } = usePage();
@@ -117,12 +118,31 @@ function Dashboard(props) {
                 <div>
                     <h5 className="font-bold text-black">Pedidos</h5>
                     <InertiaLink
-                        href="/admin?date=historic&status=all&sort=desc"
+                        href="/admin?date=historic&status=all&sort=desc&get=paginate"
                         className="flex-2 m-auto h-20 hidden lg:block">
                         Pedidos anteriores
                     </InertiaLink>
                 </div>
                 <Table columns={columns} data={orders} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                {/*{isPaginateActive && (*/}
+                {/*    <div className="py-10 block w-full flex justify-center">*/}
+                {/*        {products && products.data.length > 0 && (*/}
+                {/*            <Pagination*/}
+                {/*                containerClass="flex flex-wrap h-12"*/}
+                {/*                numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"*/}
+                {/*                // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"*/}
+                {/*                activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"*/}
+                {/*                changePage={getData}*/}
+                {/*                nextButtonText="Siguiente"*/}
+                {/*                buttonIcons*/}
+                {/*                prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"*/}
+                {/*                nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"*/}
+                {/*                // prevButtonText="Anterior"*/}
+                {/*                // prevButtonIcon="fa fa-chevron-left"*/}
+                {/*                data={products}/>*/}
+                {/*        )}*/}
+                {/*    </div>*/}
+                {/*)}*/}
             </Content>
         </Admin>
     );
