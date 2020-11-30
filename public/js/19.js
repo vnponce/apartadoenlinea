@@ -34,6 +34,7 @@ function Home(props) {
       category = _props$category === void 0 ? null : _props$category,
       search = props.search;
   console.log('succes_message =>', success_message);
+  console.log('products =>', products);
 
   var getData = function getData(data) {
     return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"].visit("?page=".concat(data.page));
@@ -55,22 +56,9 @@ function Home(props) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BreadCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
       product: product
     });
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "py-10 block w-full flex justify-center"
-  }, products && products.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__["Pagination"], {
-    containerClass: "flex flex-wrap h-12",
-    numberButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-    ,
-    activeClass: "border-brand-orange bg-orange-400 text-white hover:text-gray-600",
-    changePage: getData,
-    nextButtonText: "Siguiente",
-    buttonIcons: true,
-    prevButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo",
-    nextButtonClass: "mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo" // prevButtonText="Anterior"
-    // prevButtonIcon="fa fa-chevron-left"
-    ,
-    data: products
-  }))));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_laravel_paginex__WEBPACK_IMPORTED_MODULE_4__["Pagination"], {
+    items: products
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);

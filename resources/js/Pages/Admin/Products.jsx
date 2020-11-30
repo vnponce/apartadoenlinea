@@ -3,9 +3,9 @@ import Admin from "../../Shared/Admin";
 import {Inertia} from "@inertiajs/inertia";
 import Table from "../../components/Table";
 import ProductsInfoBoxes from "../../components/Admin/ProductsInfoBoxes";
-import {Pagination} from "react-laravel-paginex";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import Content from "../../components/Admin/Content";
+import Pagination from "../../components/Pagination";
 // import 'sweetalert2/src/sweetalert2.scss'
 
 
@@ -95,24 +95,7 @@ function Products(props) {
                         className="inline fa fa-bread-slice fa-fw"/>+
                 </button>
                 <Table columns={columns} data={products.data} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
-                {/*/Table orders*/}
-                <div className="py-10 block w-full flex justify-center">
-                    {products && products.data.length > 0 && (
-                        <Pagination
-                            containerClass="flex flex-wrap h-12"
-                            numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                            // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                            activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
-                            changePage={getData}
-                            nextButtonText="Siguiente"
-                            buttonIcons
-                            prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                            nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                            // prevButtonText="Anterior"
-                            // prevButtonIcon="fa fa-chevron-left"
-                            data={products}/>
-                    )}
-                </div>
+                <Pagination items={products} />
             </Content>
         </Admin>
     );

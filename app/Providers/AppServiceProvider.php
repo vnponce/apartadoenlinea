@@ -118,7 +118,7 @@ class AppServiceProvider extends ServiceProvider
                 {
                     return [
                         'data' => $this->items->toArray(),
-                        'links' => $this->links(),
+                        'links' => $this->onEachSide(1)->links(),
                     ];
                 }
 

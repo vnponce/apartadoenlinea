@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-// import { useTable } from 'react-table';
 import { Inertia } from '@inertiajs/inertia';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
-// import { Pagination } from 'react-laravel-paginex';
 import Admin from '../../Shared/Admin';
 import InfoBoxes from '../../components/Admin/InfoBoxes';
 import Table from '../../components/Table';
 import SearchBar from '../../components/Admin/SearchBar';
 import Content from '../../components/Admin/Content';
 import { getParameterByName } from '../../Shared/utils';
+import Pagination from "../../components/Pagination";
 
 function Dashboard(props) {
   const { auth } = usePage();
@@ -139,24 +138,7 @@ function Dashboard(props) {
                 </div>
                 <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
                 {isPaginateActive && (
-                    <div className="py-10 block w-full flex justify-center">
-                        {orderAll && orderAll.data && orderAll.data.length > 0 && (
-                            <div class="pagination mt-6 -mb-1 flex flex-wrap">
-                            {orderAll.links && orderAll.links.map((link, key) => {
-                              if (link.url === null) {
-                                return <div key={key} className={`page-link mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400 ${link.label === 'Next' ? 'ml-auto' : ''}`}>{ link.label }</div>;
-                              }
-                              return <InertiaLink
-                                    key={key}
-                                    class={`page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ${link.active ? 'bg-white' : ''} ${link.label === 'Next' ? 'ml-auto' : ''}`}
-                                    // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
-                                    href={link.url}>
-                                        { link.label }
-                                </InertiaLink>;
-                            })}
-                            </div>
-                        )}
-                    </div>
+                    <Pagination items={orderAll} />
                 )}
             </Content>
         </Admin>

@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"7f3c1a10c9eaf85c0d9a","2":"02bacdda46dc19e981af","4":"ee289309dbc4c5405749","5":"140ecb46ec717bff926c","6":"20ad22048afbd5c32d7f","7":"13751b7588e6a6352be6","10":"6513c78c09b08dc09af5","11":"4915da74abeb5b912469","12":"7d2e892a69915e2a6876","13":"6d995c602d1c40b07f15","14":"93b4a0fbff0152b57e6d","15":"6ac11b60a08e22ddbcc1","16":"2777e102c7bf27d7dcf8","17":"366fa8cb564b998cf75b","18":"c8811d5e81423859094a","19":"a70b20d537780179bd16","20":"80133528f7c605ac17a2","21":"ee48386d611cb28ec770","22":"718f237433c05ebeff4d","23":"1b20beb6dacad26cc31c","24":"33416f3b445dd2d897fa","25":"a25713a3d3181e9e2b10","27":"dff1e960ec4a8dda53f8","37":"7834d4ce5ada848a0a62"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"48bbde1297e0ba88f875","1":"71d9e1714dc7c195dc38","2":"02bacdda46dc19e981af","4":"ee289309dbc4c5405749","5":"6e2b375c9cfeef11cdad","6":"20ad22048afbd5c32d7f","7":"13751b7588e6a6352be6","10":"6513c78c09b08dc09af5","11":"4915da74abeb5b912469","12":"c2ed2ce52658553e82e2","14":"93b4a0fbff0152b57e6d","15":"6ac11b60a08e22ddbcc1","16":"2777e102c7bf27d7dcf8","17":"366fa8cb564b998cf75b","18":"c8811d5e81423859094a","20":"80133528f7c605ac17a2","21":"ee48386d611cb28ec770","22":"718f237433c05ebeff4d","23":"1b20beb6dacad26cc31c","24":"33416f3b445dd2d897fa","25":"a25713a3d3181e9e2b10","27":"dff1e960ec4a8dda53f8","37":"7834d4ce5ada848a0a62"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34563,7 +34563,7 @@ var map = {
 		14,
 		4,
 		2,
-		5,
+		0,
 		12
 	],
 	"./Admin/Dashboard.jsx": [
@@ -34572,7 +34572,7 @@ var map = {
 		14,
 		4,
 		2,
-		5,
+		0,
 		12
 	],
 	"./Admin/Products": [
@@ -34581,8 +34581,7 @@ var map = {
 		14,
 		15,
 		0,
-		5,
-		13
+		5
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
@@ -34590,15 +34589,14 @@ var map = {
 		14,
 		15,
 		0,
-		5,
-		13
+		5
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		27,
 		14,
 		15,
-		5,
+		0,
 		17
 	],
 	"./Admin/Stores.jsx": [
@@ -34606,7 +34604,7 @@ var map = {
 		27,
 		14,
 		15,
-		5,
+		0,
 		17
 	],
 	"./Admin/Users": [
@@ -34614,7 +34612,7 @@ var map = {
 		27,
 		14,
 		15,
-		5,
+		0,
 		18
 	],
 	"./Admin/Users.jsx": [
@@ -34622,7 +34620,7 @@ var map = {
 		27,
 		14,
 		15,
-		5,
+		0,
 		18
 	],
 	"./Checkout": [
@@ -34653,19 +34651,17 @@ var map = {
 		"./resources/js/Pages/Home.js",
 		27,
 		11,
-		0,
 		2,
 		7,
-		19
+		1
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		27,
 		11,
-		0,
 		2,
 		7,
-		19
+		1
 	],
 	"./Landing": [
 		"./resources/js/Pages/Landing.jsx",
