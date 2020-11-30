@@ -89,7 +89,10 @@ class Order extends Model
     public function scopeSearch($query, $value)
     {
         if($value) {
-            $query->where('uuid', 'LIKE', "%{$value}%");
+            $query->where('uuid', 'LIKE', "%{$value}%")
+                ->orWhere('name', 'LIKE', "%{$value}%")
+                ->orWhere('lastname', 'LIKE', "%{$value}%");
+
         }
     }
 

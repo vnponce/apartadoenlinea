@@ -191,6 +191,44 @@ class OrderTest extends TestCase
         }
 
     /** @test */
+    function it_search_by_name()
+    {
+        $expectedById = factory(Order::class)->create([
+            'name' => 'Abel',
+            'lastname' => 'Ponce',
+        ]);
+        $notExpectedById = factory(Order::class)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin?id=Abel");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedById){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedById->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
+    function it_search_by_lastname()
+    {
+        $expectedById = factory(Order::class)->create([
+            'name' => 'Abel',
+            'lastname' => 'Ponce',
+        ]);
+        $notExpectedById = factory(Order::class)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin?id=Ponce");
+        $response->assertStatus(200)
+            ->assertPropCount('orders', 1)
+            ->assertPropValue('orders', function($orders) use ($expectedById){
+                $filteredOrder = collect($orders)->first();
+                $this->assertEquals($expectedById->uuid, collect($filteredOrder)->get('uuid'));
+            });
+    }
+
+    /** @test */
     function it_search_by_exact_date()
     {
         $today = now();

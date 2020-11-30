@@ -900,9 +900,9 @@ function SearchBar() {
     className: "inline-block mx-2 w-1/5"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "id",
-    label: "Id",
+    label: "Nombre o Id",
     onChange: onChange,
-    placeholder: "ej. 234",
+    placeholder: "ej. Juan",
     error: [],
     onKeyDown: onChange,
     value: id

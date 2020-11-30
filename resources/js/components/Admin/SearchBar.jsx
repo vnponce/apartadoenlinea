@@ -180,9 +180,9 @@ export default function SearchBar() {
             <div className="inline-block mx-2 w-1/5">
                 <Input
                     id="id"
-                    label="Id"
+                    label="Nombre o Id"
                     onChange={onChange}
-                    placeholder="ej. 234"
+                    placeholder="ej. Juan"
                     error={[]}
                     onKeyDown={onChange}
                     value={id}
