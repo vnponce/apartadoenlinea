@@ -122,21 +122,55 @@ export default function SearchBar() {
       if (getParameterByName('date') === 'historic') {
         return 'date=historic';
       }
+    }
+    if (date) {
       return `date=${date}`;
     }
     return '';
   };
+
+  // const urlBuilder = queryParams => {
+  //     if(queryParams.length) {
+  //         let url;
+  //         queryParams.forEach((query, index) => {
+  //             console.log('query =>', query);
+  //             console.log('index =>', index);
+  //             if(index === 0){
+  //                 url = url + `?${Object.keys(query)[0]}=${Object.values(query)[0]}`;
+  //             } else {
+  //                 url = url + `&${Object.keys(query)[0]}=${Object.values(query)[0]}`;
+  //             }
+  //             console.log('url =>', url);
+  //             // url = url + '&'
+  //         });
+  //     }
+  //     return '';
+  // }
   const toSearch = () => {
+    // const queries = [
+    //   'id',
+    //   'store',
+    //   'date',
+    //   'status',
+    //   'get',
+    // ];
+    // const queriesWithValue = queries.filter(query => getParameterByName(query) && getParameterByName(query) !== '').map((query) => {
+    //   const value = getParameterByName(query);
+    //     console.log('[query] =>,', [query]);
+    //   return { [query]: value };
+    // });
+    // console.log('queriesWithValue', queriesWithValue);
     // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
     const searchId = id ? `id=${id}` : '';
     const searchStore = storeObject && storeObject.id ? `store=${storeObject.id}` : '';
-      // const searchDate = setDateParam();
-
-      const searchDate = date ? `date=${date}` : '';
+    const searchDate = setDateParam();
+    // const searchDate = date ? `date=${date}` : '';
     const searchStatus = status ? `status=${status.value}` : '';
     const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
 
+    // console.log('url builder', urlBuilder(queriesWithValue))
     const url = `/admin?${paginateQuery}&${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
+    // Inertia.visit(urlBuilder(queriesWithValue));
     Inertia.visit(url);
   };
 

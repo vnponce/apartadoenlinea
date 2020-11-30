@@ -282,9 +282,20 @@ describe('Dashboard', () => {
 
     cy.visit('/admin?get=paginate');
     // cy.get('.page-link:nth(2)').click();
-    cy.findByLabelText(/id/i).type(`123{enter}`);
+    cy.findByLabelText(/id/i).type('123{enter}');
     cy.url().should('contains', `${Cypress.config().baseUrl}/admin?get=paginate&id=123`);
   });
 
-  // ver que que funcione con los demas fltros de search bar
+  it('should date=paginate must continue send when add a filter', () => {
+    cy.create('App\\Order', 16);
+    cy.create('App\\Order', {
+      name: 'First name',
+    }).then(({ uuid, id }) => {
+      cy.login();
+
+      cy.visit('/admin?date=historic');
+      cy.findByLabelText(/id/i).type(`${uuid}{enter}`);
+      cy.get(`${tableRowSelector}[id=${id}]`).contains('First name');
+    });
+  });
 });

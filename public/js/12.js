@@ -860,22 +860,56 @@ function SearchBar() {
       if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date') === 'historic') {
         return 'date=historic';
       }
+    }
 
+    if (date) {
       return "date=".concat(date);
     }
 
     return '';
-  };
+  }; // const urlBuilder = queryParams => {
+  //     if(queryParams.length) {
+  //         let url;
+  //         queryParams.forEach((query, index) => {
+  //             console.log('query =>', query);
+  //             console.log('index =>', index);
+  //             if(index === 0){
+  //                 url = url + `?${Object.keys(query)[0]}=${Object.values(query)[0]}`;
+  //             } else {
+  //                 url = url + `&${Object.keys(query)[0]}=${Object.values(query)[0]}`;
+  //             }
+  //             console.log('url =>', url);
+  //             // url = url + '&'
+  //         });
+  //     }
+  //     return '';
+  // }
+
 
   var toSearch = function toSearch() {
+    // const queries = [
+    //   'id',
+    //   'store',
+    //   'date',
+    //   'status',
+    //   'get',
+    // ];
+    // const queriesWithValue = queries.filter(query => getParameterByName(query) && getParameterByName(query) !== '').map((query) => {
+    //   const value = getParameterByName(query);
+    //     console.log('[query] =>,', [query]);
+    //   return { [query]: value };
+    // });
+    // console.log('queriesWithValue', queriesWithValue);
     // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
     var searchId = id ? "id=".concat(id) : '';
-    var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : ''; // const searchDate = setDateParam();
+    var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : '';
+    var searchDate = setDateParam(); // const searchDate = date ? `date=${date}` : '';
 
-    var searchDate = date ? "date=".concat(date) : '';
     var searchStatus = status ? "status=".concat(status.value) : '';
-    var paginateQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate' ? 'get=paginate' : '';
-    var url = "/admin?".concat(paginateQuery, "&").concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus);
+    var paginateQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate' ? 'get=paginate' : ''; // console.log('url builder', urlBuilder(queriesWithValue))
+
+    var url = "/admin?".concat(paginateQuery, "&").concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus); // Inertia.visit(urlBuilder(queriesWithValue));
+
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(url);
   };
 

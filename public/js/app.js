@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"7f3c1a10c9eaf85c0d9a","2":"00fe4ac0cbc0ae8f7a93","4":"ed351820e3b66ee63436","5":"140ecb46ec717bff926c","6":"20ad22048afbd5c32d7f","7":"1a2a90ab24d88a05699b","10":"6513c78c09b08dc09af5","11":"493ac172aac32d531f14","12":"40164eb2a22f712af02a","13":"6d995c602d1c40b07f15","14":"420dde73731702ba3361","15":"935cdbb34ad0476a6f10","16":"5af2e18709a5eb41b951","17":"80a85435a905c77c5192","18":"c01d5992c6ae6ea77edd","19":"f269c6014bf13043030c","20":"80133528f7c605ac17a2","21":"45109b0638e20843a51a","22":"4bfec87c8ae5fd9ada00","23":"d9eb3844b0bb7dc8dbbd","24":"ef5ef2c913b119a27922","26":"77c7236aeb611deae90e","27":"dff1e960ec4a8dda53f8","37":"7834d4ce5ada848a0a62"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"7f3c1a10c9eaf85c0d9a","2":"02bacdda46dc19e981af","4":"ee289309dbc4c5405749","5":"140ecb46ec717bff926c","6":"20ad22048afbd5c32d7f","7":"13751b7588e6a6352be6","10":"6513c78c09b08dc09af5","11":"4915da74abeb5b912469","12":"0589b80c22a0a6cbe290","13":"6d995c602d1c40b07f15","14":"93b4a0fbff0152b57e6d","15":"6ac11b60a08e22ddbcc1","16":"2777e102c7bf27d7dcf8","17":"366fa8cb564b998cf75b","18":"c8811d5e81423859094a","19":"a70b20d537780179bd16","20":"80133528f7c605ac17a2","21":"ee48386d611cb28ec770","22":"718f237433c05ebeff4d","23":"1b20beb6dacad26cc31c","24":"33416f3b445dd2d897fa","25":"a25713a3d3181e9e2b10","27":"dff1e960ec4a8dda53f8","37":"7834d4ce5ada848a0a62"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34560,26 +34560,26 @@ var map = {
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		27,
-		7,
+		14,
+		4,
 		2,
-		24,
 		5,
 		12
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		27,
-		7,
+		14,
+		4,
 		2,
-		24,
 		5,
 		12
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		27,
-		7,
-		11,
+		14,
+		15,
 		0,
 		5,
 		13
@@ -34587,8 +34587,8 @@ var map = {
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		27,
-		7,
-		11,
+		14,
+		15,
 		0,
 		5,
 		13
@@ -34596,50 +34596,50 @@ var map = {
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		27,
-		7,
-		11,
+		14,
+		15,
 		5,
-		15
+		17
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		27,
-		7,
-		11,
+		14,
+		15,
 		5,
-		15
+		17
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		27,
-		7,
-		11,
+		14,
+		15,
 		5,
-		16
+		18
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		27,
-		7,
-		11,
+		14,
+		15,
 		5,
-		16
+		18
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		27,
-		4,
-		24,
-		26,
-		21
+		11,
+		2,
+		7,
+		23
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		27,
-		4,
-		24,
-		26,
-		21
+		11,
+		2,
+		7,
+		23
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34652,125 +34652,125 @@ var map = {
 	"./Home": [
 		"./resources/js/Pages/Home.js",
 		27,
-		4,
+		11,
 		0,
-		24,
-		26,
-		17
+		2,
+		7,
+		19
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		27,
-		4,
+		11,
 		0,
-		24,
-		26,
-		17
+		2,
+		7,
+		19
 	],
 	"./Landing": [
 		"./resources/js/Pages/Landing.jsx",
 		27,
-		4,
+		11,
 		10,
-		24,
-		26,
-		14
+		2,
+		7,
+		16
 	],
 	"./Landing.jsx": [
 		"./resources/js/Pages/Landing.jsx",
 		27,
-		4,
+		11,
 		10,
-		24,
-		26,
-		14
+		2,
+		7,
+		16
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		27,
-		4,
-		24,
-		26,
-		22
+		11,
+		2,
+		7,
+		24
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		27,
-		4,
-		24,
-		26,
-		22
+		11,
+		2,
+		7,
+		24
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		27,
-		4,
+		11,
 		10,
+		4,
 		2,
-		24,
-		26,
-		19
+		7,
+		22
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		27,
-		4,
+		11,
 		10,
+		4,
 		2,
-		24,
-		26,
-		19
+		7,
+		22
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		27,
-		4,
+		11,
 		6,
-		24,
-		26,
-		23
+		2,
+		7,
+		25
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		27,
-		4,
+		11,
 		6,
-		24,
-		26,
-		23
+		2,
+		7,
+		25
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		27,
-		4,
+		11,
 		10,
-		24,
-		26,
-		18
+		2,
+		7,
+		21
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		27,
-		4,
+		11,
 		10,
-		24,
-		26,
-		18
+		2,
+		7,
+		21
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		27,
-		4,
-		24,
-		26,
+		11,
+		2,
+		7,
 		37
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		27,
-		4,
-		24,
-		26,
+		11,
+		2,
+		7,
 		37
 	]
 };
