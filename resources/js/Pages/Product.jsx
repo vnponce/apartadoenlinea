@@ -205,7 +205,7 @@ function Product(props) {
                                     onChange={handleCustomizable}
                                     value={customMessage}
                                     id="custom-message"
-                                    label="Deseas personalizar tu pastel? De la forma lo envíes será escrito"
+                                    label="¿Deseas personalizar tu pastel? De la forma lo envíes será escrito"
                                     placeholder="Felicidades Pedro"
                                     error={error.customizable}
                                 />

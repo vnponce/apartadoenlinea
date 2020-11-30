@@ -249,7 +249,7 @@ function Product(props) {
     onChange: handleCustomizable,
     value: customMessage,
     id: "custom-message",
-    label: "Deseas personalizar tu pastel? De la forma lo env\xEDes ser\xE1 escrito",
+    label: "\xBFDeseas personalizar tu pastel? De la forma lo env\xEDes ser\xE1 escrito",
     placeholder: "Felicidades Pedro",
     error: error.customizable
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {

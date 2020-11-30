@@ -128,11 +128,12 @@ function Dashboard(props) {
             {/* Graph Content */}
             <Content>
                 <SearchBar stores={stores} searchValues={searchValues}/>
-                <div>
-                    <h5 className="font-bold text-black">{isHistoric ? 'Pedidos anteriores' : 'Pedidos'}</h5>
+                <div className="flex">
+                    <h5 className="font-bold text-black w-3/12">{isHistoric ? 'Pedidos anteriores' : 'Pedidos'}</h5>
+                    |
                     <InertiaLink
                         href={isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate' }
-                        className="flex-2 m-auto">
+                        className="ml-3">
                         {isHistoric ? 'Pedidos' : 'Pedidos anteriores'}
                     </InertiaLink>
                 </div>
