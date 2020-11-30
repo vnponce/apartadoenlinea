@@ -62,6 +62,11 @@ function Dashboard(props) {
       isPaginateActive = _useState4[0],
       setIsPaginateActive = _useState4[1];
 
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      isHistoric = _useState6[0],
+      setIsHistoric = _useState6[1];
+
   var updateStatus = function updateStatus(id) {
     return function (evt) {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].put("/pedido/".concat(id), {
@@ -199,6 +204,8 @@ function Dashboard(props) {
     // console.log('orderAll =>', orderAll);
     var requestGetPagiante = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_8__["getParameterByName"])('get') === 'paginate';
     setIsPaginateActive(requestGetPagiante);
+    var requestHistorict = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_8__["getParameterByName"])('date') === 'historic';
+    setIsHistoric(requestHistorict);
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     // openedAndShow(0);
@@ -218,10 +225,10 @@ function Dashboard(props) {
     searchValues: searchValues
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black"
-  }, "Pedidos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
-    href: "/admin?date=historic&status=all&sort=desc&get=paginate",
-    className: "flex-2 m-auto h-20 hidden lg:block"
-  }, "Pedidos anteriores")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, isHistoric ? 'Pedidos anteriores' : 'Pedidos'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+    href: isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate',
+    className: "flex-2 m-auto"
+  }, isHistoric ? 'Pedidos' : 'Pedidos anteriores')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
     columns: columns,
     data: orders,
     onClick: function onClick(row) {
@@ -230,20 +237,7 @@ function Dashboard(props) {
     selected: dataSelected
   }), isPaginateActive && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "py-10 block w-full flex justify-center"
-  }, orderAll && orderAll.data && orderAll.data.length > 0 && // <Pagination
-  //     containerClass="flex flex-wrap h-12 pagination"
-  //     numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-  //     // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-  //     activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
-  //     changePage={(e, a) => console.log(e, a)}
-  //     nextButtonText="Siguiente"
-  //     buttonIcons
-  //     prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-  //     nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-  //     // prevButtonText="Anterior"
-  //     // prevButtonIcon="fa fa-chevron-left"
-  //     data={orderAll}/>
-  react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, orderAll && orderAll.data && orderAll.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     "class": "pagination mt-6 -mb-1 flex flex-wrap"
   }, orderAll.links && orderAll.links.map(function (link, key) {
     if (link.url === null) {
@@ -856,14 +850,14 @@ function SearchBar() {
   };
 
   var setDateParam = function setDateParam() {
+    if (date) {
+      return "date=".concat(date);
+    }
+
     if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date')) {
       if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date') === 'historic') {
         return 'date=historic';
       }
-    }
-
-    if (date) {
-      return "date=".concat(date);
     }
 
     return '';
@@ -906,9 +900,10 @@ function SearchBar() {
     var searchDate = setDateParam(); // const searchDate = date ? `date=${date}` : '';
 
     var searchStatus = status ? "status=".concat(status.value) : '';
-    var paginateQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate' ? 'get=paginate' : ''; // console.log('url builder', urlBuilder(queriesWithValue))
+    var paginateQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate' ? 'get=paginate' : '';
+    var sortQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('sort') === 'desc' ? 'sort=desc' : ''; // console.log('url builder', urlBuilder(queriesWithValue))
 
-    var url = "/admin?".concat(paginateQuery, "&").concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus); // Inertia.visit(urlBuilder(queriesWithValue));
+    var url = "/admin?".concat(paginateQuery, "&").concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus, "&").concat(sortQuery); // Inertia.visit(urlBuilder(queriesWithValue));
 
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(url);
   };

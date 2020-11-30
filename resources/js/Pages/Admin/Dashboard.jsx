@@ -17,6 +17,7 @@ function Dashboard(props) {
   } = props;
   const [dataSelected, setDataSelected] = useState(null);
   const [isPaginateActive, setIsPaginateActive] = useState(false);
+  const [isHistoric, setIsHistoric] = useState(false);
   const updateStatus = (id) => (evt) => {
     Inertia.put(`/pedido/${id}`, {
       status: evt.target.value,
@@ -111,6 +112,8 @@ function Dashboard(props) {
     // console.log('orderAll =>', orderAll);
     const requestGetPagiante = getParameterByName('get') === 'paginate';
     setIsPaginateActive(requestGetPagiante);
+    const requestHistorict = getParameterByName('date') === 'historic';
+    setIsHistoric(requestHistorict);
   }, []);
   useEffect(() => {
     // openedAndShow(0);
@@ -127,31 +130,17 @@ function Dashboard(props) {
             <Content>
                 <SearchBar stores={stores} searchValues={searchValues}/>
                 <div>
-                    <h5 className="font-bold text-black">Pedidos</h5>
+                    <h5 className="font-bold text-black">{isHistoric ? 'Pedidos anteriores' : 'Pedidos'}</h5>
                     <InertiaLink
-                        href="/admin?date=historic&status=all&sort=desc&get=paginate"
-                        className="flex-2 m-auto h-20 hidden lg:block">
-                        Pedidos anteriores
+                        href={isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate' }
+                        className="flex-2 m-auto">
+                        {isHistoric ? 'Pedidos' : 'Pedidos anteriores'}
                     </InertiaLink>
                 </div>
                 <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
                 {isPaginateActive && (
                     <div className="py-10 block w-full flex justify-center">
                         {orderAll && orderAll.data && orderAll.data.length > 0 && (
-                        // <Pagination
-                        //     containerClass="flex flex-wrap h-12 pagination"
-                        //     numberButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        //     // numberClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        //     activeClass="border-brand-orange bg-orange-400 text-white hover:text-gray-600"
-                        //     changePage={(e, a) => console.log(e, a)}
-                        //     nextButtonText="Siguiente"
-                        //     buttonIcons
-                        //     prevButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        //     nextButtonClass="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo focus:text-indigo"
-                        //     // prevButtonText="Anterior"
-                        //     // prevButtonIcon="fa fa-chevron-left"
-                        //     data={orderAll}/>
-
                             <div class="pagination mt-6 -mb-1 flex flex-wrap">
                             {orderAll.links && orderAll.links.map((link, key) => {
                               if (link.url === null) {
@@ -165,12 +154,6 @@ function Dashboard(props) {
                                         { link.label }
                                 </InertiaLink>;
                             })}
-                                {/*
-                            <template v-for="(link, key) in links">
-                            <div v-if="link.url === null" :key="key" class="mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400" :class="{ 'ml-auto': link.label === 'Next' }">{{ link.label }}</div>
-                            <inertia-link v-else :key="key" class="mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500" :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }" :href="link.url">{{ link.label }}</inertia-link>
-                            </template>
-                            */}
                             </div>
                         )}
                     </div>

@@ -235,7 +235,7 @@ describe('Dashboard', () => {
 
     cy.visit('/admin');
     cy.get(tableRowSelector).should('have.length', 2);
-    cy.findByRole('link', { name: /anteriores/i }).click();
+    cy.findByRole('link', { name: /pedidos anteriores/i }).click();
     // cy.findByText(/pedidos anteriores/i);
 
     cy.get(tableRowSelector).should('have.length', 4);
@@ -267,7 +267,7 @@ describe('Dashboard', () => {
     cy.get('.pagination');
   });
 
-  it('should show pagination if parameter get=pagination exist', () => {
+  it('should show go to page 2', () => {
     cy.create('App\\Order', 16);
     cy.login();
 
@@ -297,5 +297,17 @@ describe('Dashboard', () => {
       cy.findByLabelText(/id/i).type(`${uuid}{enter}`);
       cy.get(`${tableRowSelector}[id=${id}]`).contains('First name');
     });
+  });
+
+  it('should show pedidos anteriores as title and pedidos as link to return to pedidos', () => {
+    cy.login();
+
+    cy.visit('/admin');
+    cy.findByRole('link', { name: /pedidos anteriores/i }).click();
+    cy.url().should('contains', `${Cypress.config().baseUrl}/admin?date=historic`);
+    // cy.visit('/admin?date=historic');
+    cy.findByText(/pedidos anteriores/i);
+    cy.findByRole('link', { name: /pedidos/i }).click();
+    cy.url().should('eq', `${Cypress.config().baseUrl}/admin`);
   });
 });

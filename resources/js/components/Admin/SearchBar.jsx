@@ -118,13 +118,13 @@ export default function SearchBar() {
   };
 
   const setDateParam = () => {
+    if (date) {
+      return `date=${date}`;
+    }
     if (getParameterByName('date')) {
       if (getParameterByName('date') === 'historic') {
         return 'date=historic';
       }
-    }
-    if (date) {
-      return `date=${date}`;
     }
     return '';
   };
@@ -167,9 +167,10 @@ export default function SearchBar() {
     // const searchDate = date ? `date=${date}` : '';
     const searchStatus = status ? `status=${status.value}` : '';
     const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
+    const sortQuery = getParameterByName('sort') === 'desc' ? 'sort=desc' : '';
 
     // console.log('url builder', urlBuilder(queriesWithValue))
-    const url = `/admin?${paginateQuery}&${searchId}&${searchStore}&${searchDate}&${searchStatus}`;
+    const url = `/admin?${paginateQuery}&${searchId}&${searchStore}&${searchDate}&${searchStatus}&${sortQuery}`;
     // Inertia.visit(urlBuilder(queriesWithValue));
     Inertia.visit(url);
   };
