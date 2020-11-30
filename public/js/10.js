@@ -1,5099 +1,1392 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[10],{
 
-/***/ "./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js ***!
-  \****************************************************************************/
-/*! exports provided: Autocomplete, BicyclingLayer, Circle, Data, DirectionsRenderer, DirectionsService, DistanceMatrixService, DrawingManager, GoogleMap, GroundOverlay, HeatmapLayer, InfoBox, InfoWindow, KmlLayer, LoadScript, LoadScriptNext, Marker, MarkerClusterer, OverlayView, Polygon, Polyline, Rectangle, StandaloneSearchBox, StreetViewPanorama, StreetViewService, TrafficLayer, TransitLayer, useGoogleMap, useLoadScript */
+/***/ "./resources/js/Pages/Admin/Dashboard.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Admin/Dashboard.jsx ***!
+  \************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Autocomplete", function() { return Autocomplete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BicyclingLayer", function() { return BicyclingLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Circle", function() { return Circle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Data", function() { return Data; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectionsRenderer", function() { return DirectionsRenderer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectionsService", function() { return DirectionsService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DistanceMatrixService", function() { return DistanceMatrixService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawingManager", function() { return DrawingManager; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleMap", function() { return GoogleMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroundOverlay", function() { return GroundOverlay; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeatmapLayer", function() { return HeatmapLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoBox", function() { return InfoBoxComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoWindow", function() { return InfoWindow; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KmlLayer", function() { return KmlLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadScript", function() { return LoadScript; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadScriptNext", function() { return LoadScriptNext$1; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Marker", function() { return Marker; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarkerClusterer", function() { return ClustererComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OverlayView", function() { return OverlayView; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Polygon", function() { return Polygon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Polyline", function() { return Polyline; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rectangle", function() { return Rectangle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StandaloneSearchBox", function() { return StandaloneSearchBox; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreetViewPanorama", function() { return StreetViewPanorama; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreetViewService", function() { return StreetViewService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrafficLayer", function() { return TrafficLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransitLayer", function() { return TransitLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGoogleMap", function() { return useGoogleMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLoadScript", function() { return useLoadScript; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
-/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _react_google_maps_marker_clusterer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @react-google-maps/marker-clusterer */ "./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _react_google_maps_infobox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @react-google-maps/infobox */ "./node_modules/@react-google-maps/infobox/dist/infobox.esm.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
+/* harmony import */ var _components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Admin/InfoBoxes */ "./resources/js/components/Admin/InfoBoxes.jsx");
+/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
+/* harmony import */ var _components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Admin/SearchBar */ "./resources/js/components/Admin/SearchBar.jsx");
+/* harmony import */ var _components_Admin_Content__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Admin/Content */ "./resources/js/components/Admin/Content.jsx");
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
+/* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Pagination */ "./resources/js/components/Pagination.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
 
-    return target;
-  };
 
-  return _extends.apply(this, arguments);
-}
 
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
 
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
 
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
 
-  return target;
-}
 
-var MapContext =
-/*#__PURE__*/
-Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
-function useGoogleMap() {
-  !!!react__WEBPACK_IMPORTED_MODULE_0__["useContext"] ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useGoogleMap is React hook and requires React version 16.8+") : undefined : void 0;
-  var map = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(MapContext);
-  !!!map ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useGoogleMap needs a GoogleMap available up in the tree") : undefined : void 0;
-  return map;
-}
 
-var reduce = function reduce(obj, fn, acc) {
-  return Object.keys(obj).reduce(function reducer(newAcc, key) {
-    return fn(newAcc, obj[key], key);
-  }, acc);
-};
+function Dashboard(props) {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
+      auth = _usePage.auth;
 
-function forEach(obj, fn) {
-  Object.keys(obj).forEach(function iterator(key) {
-    return fn(obj[key], key);
-  });
-}
+  var orders = props.orders,
+      orderAll = props.orderAll,
+      success_message = props.success_message,
+      order = props.order,
+      stores = props.stores,
+      searchValues = props.searchValues;
 
-/* eslint-disable filenames/match-regex */
-var applyUpdaterToNextProps = function applyUpdaterToNextProps(updaterMap, prevProps, nextProps, instance) {
-  var map = {};
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      dataSelected = _useState2[0],
+      setDataSelected = _useState2[1];
 
-  var iter = function iter(fn, key) {
-    var nextValue = nextProps[key];
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isPaginateActive = _useState4[0],
+      setIsPaginateActive = _useState4[1];
 
-    if (nextValue !== prevProps[key]) {
-      map[key] = nextValue;
-      fn(instance, nextValue);
-    }
-  };
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      isHistoric = _useState6[0],
+      setIsHistoric = _useState6[1];
 
-  forEach(updaterMap, iter);
-  return map;
-};
-function registerEvents(props, instance, eventMap) {
-  var registeredList = reduce(eventMap, function reducer(acc, googleEventName, onEventName) {
-    if (typeof props[onEventName] === 'function') {
-      acc.push(google.maps.event.addListener(instance, googleEventName, props[onEventName]));
-    }
-
-    return acc;
-  }, []);
-  return registeredList;
-}
-
-function unregisterEvent(registered) {
-  google.maps.event.removeListener(registered);
-}
-
-function unregisterEvents(events) {
-  if (events === void 0) {
-    events = [];
-  }
-
-  events.map(unregisterEvent);
-}
-function applyUpdatersToPropsAndRegisterEvents(_ref) {
-  var updaterMap = _ref.updaterMap,
-      eventMap = _ref.eventMap,
-      prevProps = _ref.prevProps,
-      nextProps = _ref.nextProps,
-      instance = _ref.instance;
-  var registeredEvents = registerEvents(nextProps, instance, eventMap);
-  applyUpdaterToNextProps(updaterMap, prevProps, nextProps, instance);
-  return registeredEvents;
-}
-
-var eventMap = {
-  onDblClick: "dblclick",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMapTypeIdChanged: "maptypeid_changed",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseDown: "mousedown",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick",
-  onTilesLoaded: "tilesloaded",
-  onBoundsChanged: "bounds_changed",
-  onCenterChanged: "center_changed",
-  onClick: "click",
-  onDrag: "drag",
-  onHeadingChanged: "heading_changed",
-  onIdle: "idle",
-  onProjectionChanged: "projection_changed",
-  onResize: "resize",
-  onTiltChanged: "tilt_changed",
-  onZoomChanged: "zoom_changed"
-};
-var updaterMap = {
-  extraMapTypes: function extraMapTypes(map, extra) {
-    extra.forEach(function forEachExtra(it, i) {
-      map.mapTypes.set(String(i), it);
-    });
-  },
-  center: function center(map, _center) {
-    map.setCenter(_center);
-  },
-  clickableIcons: function clickableIcons(map, clickable) {
-    map.setClickableIcons(clickable);
-  },
-  heading: function heading(map, _heading) {
-    map.setHeading(_heading);
-  },
-  mapTypeId: function mapTypeId(map, _mapTypeId) {
-    map.setMapTypeId(_mapTypeId);
-  },
-  options: function options(map, _options) {
-    map.setOptions(_options);
-  },
-  streetView: function streetView(map, _streetView) {
-    map.setStreetView(_streetView);
-  },
-  tilt: function tilt(map, _tilt) {
-    map.setTilt(_tilt);
-  },
-  zoom: function zoom(map, _zoom) {
-    map.setZoom(_zoom);
-  }
-};
-var GoogleMap =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(GoogleMap, _React$PureComponent);
-
-  function GoogleMap() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      map: null
-    };
-    _this.registeredEvents = [];
-    _this.mapRef = null; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.getInstance = function () {
-      return new google.maps.Map(_this.mapRef, _this.props.options);
-    };
-
-    _this.panTo = function (latLng) {
-      var map = _this.getInstance();
-
-      if (map) {
-        map.panTo(latLng);
-      }
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.setMapCallback = function () {
-      if (_this.state.map !== null) {
-        if (_this.props.onLoad) {
-          _this.props.onLoad(_this.state.map);
-        }
-      }
-    };
-    /* eslint-disable @getify/proper-arrows/name */
-
-    /* eslint-disable @getify/proper-arrows/this */
-
-
-    _this.getRef = function (ref) {
-      _this.mapRef = ref;
-    };
-
-    return _this;
-  }
-
-  var _proto = GoogleMap.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var map = this.getInstance();
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap,
-      eventMap: eventMap,
-      prevProps: {},
-      nextProps: this.props,
-      instance: map
-    });
-
-    function setMap() {
-      return {
-        map: map
-      };
-    }
-
-    this.setState(setMap, this.setMapCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.map !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap,
-        eventMap: eventMap,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.map
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.map !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.map);
-      }
-
-      unregisterEvents(this.registeredEvents);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      id: this.props.id,
-      ref: this.getRef,
-      style: this.props.mapContainerStyle,
-      className: this.props.mapContainerClassName
-    }, Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MapContext.Provider, {
-      value: this.state.map
-    }, this.state.map !== null ? this.props.children : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null)));
-  };
-
-  return GoogleMap;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-var isBrowser = typeof document !== 'undefined';
-
-var injectScript = function injectScript(_ref) {
-  var url = _ref.url,
-      id = _ref.id;
-
-  if (!isBrowser) {
-    return Promise.reject(new Error('document is undefined'));
-  }
-
-  return new Promise(function injectScriptCallback(resolve, reject) {
-    var existingScript = document.getElementById(id);
-    var windowWithGoogleMap = window;
-
-    if (existingScript) {
-      // Same script id/url: keep same script
-      if (existingScript.src === url) {
-        if (existingScript.getAttribute('data-state') === 'ready') {
-          return resolve(id);
-        } else {
-          var originalInitMap = windowWithGoogleMap.initMap;
-
-          windowWithGoogleMap.initMap = function initMap() {
-            if (originalInitMap) {
-              originalInitMap();
-            }
-
-            resolve(id);
-          };
-
-          return;
-        }
-      } // Same script id but url changed: recreate the script
-      else {
-          existingScript.remove();
-        }
-    }
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-    script.id = id;
-    script.async = true;
-    script.onerror = reject;
-
-    windowWithGoogleMap.initMap = function onload() {
-      script.setAttribute('data-state', 'ready');
-      resolve(id);
-    };
-
-    document.head.appendChild(script);
-  })["catch"](function (err) {
-    console.error('injectScript error: ', err);
-  });
-};
-
-var isRobotoStyle = function isRobotoStyle(element) {
-  // roboto font download
-  if (element.href && element.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
-    return true;
-  } // roboto style elements
-
-
-  if (element.tagName.toLowerCase() === 'style' && // @ts-ignore
-  element.styleSheet && // @ts-ignore
-  element.styleSheet.cssText && // @ts-ignore
-  element.styleSheet.cssText.replace('\r\n', '').indexOf('.gm-style') === 0) {
-    // @ts-ignore
-    element.styleSheet.cssText = '';
-    return true;
-  } // roboto style elements for other browsers
-
-
-  if (element.tagName.toLowerCase() === 'style' && element.innerHTML && element.innerHTML.replace('\r\n', '').indexOf('.gm-style') === 0) {
-    element.innerHTML = '';
-    return true;
-  } // when google tries to add empty style
-
-
-  if (element.tagName.toLowerCase() === 'style' && // @ts-ignore
-  !element.styleSheet && !element.innerHTML) {
-    return true;
-  }
-
-  return false;
-}; // Preventing the Google Maps libary from downloading an extra font
-
-
-var preventGoogleFonts = function preventGoogleFonts() {
-  // we override these methods only for one particular head element
-  // default methods for other elements are not affected
-  var head = document.getElementsByTagName('head')[0];
-  var trueInsertBefore = head.insertBefore.bind(head); // TODO: adding return before reflect solves the TS issue
-  //@ts-ignore
-
-  head.insertBefore = function insertBefore(newElement, referenceElement) {
-    if (!isRobotoStyle(newElement)) {
-      Reflect.apply(trueInsertBefore, head, [newElement, referenceElement]);
-    }
-  };
-
-  var trueAppend = head.appendChild.bind(head); // TODO: adding return before reflect solves the TS issue
-  //@ts-ignore
-
-  head.appendChild = function appendChild(textNode) {
-    if (!isRobotoStyle(textNode)) {
-      Reflect.apply(trueAppend, head, [textNode]);
-    }
-  };
-};
-
-function makeLoadScriptUrl(_ref) {
-  var googleMapsApiKey = _ref.googleMapsApiKey,
-      googleMapsClientId = _ref.googleMapsClientId,
-      _ref$version = _ref.version,
-      version = _ref$version === void 0 ? 'weekly' : _ref$version,
-      language = _ref.language,
-      region = _ref.region,
-      libraries = _ref.libraries,
-      channel = _ref.channel;
-  var params = [];
-  !(googleMapsApiKey && googleMapsClientId || !(googleMapsApiKey && googleMapsClientId)) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to specify either googleMapsApiKey or googleMapsClientId for @react-google-maps/api load script to work. You cannot use both at the same time.') : undefined : void 0;
-
-  if (googleMapsApiKey) {
-    params.push("key=" + googleMapsApiKey);
-  } else if (googleMapsClientId) {
-    params.push("client=" + googleMapsClientId);
-  }
-
-  if (version) {
-    params.push("v=" + version);
-  }
-
-  if (language) {
-    params.push("language=" + language);
-  }
-
-  if (region) {
-    params.push("region=" + region);
-  }
-
-  if (libraries && libraries.length) {
-    params.push("libraries=" + libraries.sort().join(','));
-  }
-
-  if (channel) {
-    params.push("channel=" + channel);
-  }
-
-  params.push('callback=initMap');
-  return "https://maps.googleapis.com/maps/api/js?" + params.join('&');
-}
-
-var cleaningUp = false;
-function DefaultLoadingElement() {
-  return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Loading...");
-}
-var defaultLoadScriptProps = {
-  id: 'script-loader',
-  version: 'weekly'
-};
-
-var LoadScript =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(LoadScript, _React$PureComponent);
-
-  function LoadScript() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.check = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
-    _this.state = {
-      loaded: false
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.cleanupCallback = function () {
-      //@ts-ignore
-      delete window.google;
-
-      _this.injectScript();
-    }; // eslint-disable-next-line @getify/proper-arrows/name
-
-
-    _this.isCleaningUp = function () {
-      try {
-        var promiseCallback = function promiseCallback(resolve) {
-          if (!cleaningUp) {
-            resolve();
-          } else {
-            if (isBrowser) {
-              var timer = window.setInterval(function interval() {
-                if (!cleaningUp) {
-                  window.clearInterval(timer);
-                  resolve();
-                }
-              }, 1);
-            }
-          }
-        };
-
-        return Promise.resolve(new Promise(promiseCallback));
-      } catch (e) {
-        return Promise.reject(e);
-      }
-    };
-
-    _this.cleanup = function () {
-      cleaningUp = true;
-      var script = document.getElementById(_this.props.id);
-
-      if (script && script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-
-      Array.prototype.slice.call(document.getElementsByTagName("script")).filter(function filter(script) {
-        return script.src.includes("maps.googleapis");
-      }).forEach(function forEach(script) {
-        if (script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
-      });
-      Array.prototype.slice.call(document.getElementsByTagName("link")).filter(function filter(link) {
-        return link.href === "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans";
-      }).forEach(function forEach(link) {
-        if (link.parentNode) {
-          link.parentNode.removeChild(link);
-        }
-      });
-      Array.prototype.slice.call(document.getElementsByTagName("style")).filter(function filter(style) {
-        return style.innerText !== undefined && style.innerText.length > 0 && style.innerText.includes(".gm-");
-      }).forEach(function forEach(style) {
-        if (style.parentNode) {
-          style.parentNode.removeChild(style);
-        }
-      });
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.injectScript = function () {
-      if (_this.props.preventGoogleFontsLoading) {
-        preventGoogleFonts();
-      }
-
-      !!!_this.props.id ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'LoadScript requires "id" prop to be a string: %s', _this.props.id) : undefined : void 0;
-      var injectScriptOptions = {
-        id: _this.props.id,
-        url: makeLoadScriptUrl(_this.props)
-      };
-      injectScript(injectScriptOptions) // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-      .then(function () {
-        if (_this.props.onLoad) {
-          _this.props.onLoad();
-        }
-
-        _this.setState(function setLoaded() {
-          return {
-            loaded: true
-          };
-        });
-      }) // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-      ["catch"](function (err) {
-        if (_this.props.onError) {
-          _this.props.onError(err);
-        }
-
-        console.error("\n          There has been an Error with loading Google Maps API script, please check that you provided correct google API key (" + (_this.props.googleMapsApiKey || '-') + ") or Client ID (" + (_this.props.googleMapsClientId || '-') + ") to <LoadScript />\n          Otherwise it is a Network issue.\n        ");
+  var updateStatus = function updateStatus(id) {
+    return function (evt) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].put("/pedido/".concat(id), {
+        status: evt.target.value
       });
     };
+  };
 
-    return _this;
-  }
-
-  var _proto = LoadScript.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (isBrowser) {
-      // @ts-ignore
-      if (window.google && !cleaningUp) {
-        console.error("google api is already presented");
-        return;
+  var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
+    return [// {
+    //     Header: '-',
+    //     accessor: 'uuid',
+    // },
+    {
+      Header: 'Cliente',
+      accessor: 'customer',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.name);
       }
-
-      this.isCleaningUp().then(this.injectScript)["catch"](function err(err) {
-        console.error("Error at injecting script after cleaning up: ", err);
-      });
-    }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.props.libraries !== prevProps.libraries) {
-      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable ounside of component, or somwhere in config files or ENV variables');
-    }
-
-    if (isBrowser && prevProps.language !== this.props.language) {
-      this.cleanup(); // TODO: refactor to use gDSFP maybe... wait for hooks refactoring.
-      // eslint-disable-next-line react/no-did-update-set-state
-
-      this.setState(function setLoaded() {
-        return {
-          loaded: false
-        };
-      }, this.cleanupCallback);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    var _this2 = this;
-
-    if (isBrowser) {
-      this.cleanup(); // eslint-disable-next-line @getify/proper-arrows/this
-
-      var timeoutCallback = function timeoutCallback() {
-        if (!_this2.check.current) {
-          //@ts-ignore
-          delete window.google;
-          cleaningUp = false;
-        }
-      };
-
-      window.setTimeout(timeoutCallback, 1);
-
-      if (this.props.onUnmount) {
-        this.props.onUnmount();
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      ref: this.check
-    }), this.state.loaded ? this.props.children : this.props.loadingElement || Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DefaultLoadingElement, null));
-  };
-
-  return LoadScript;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-LoadScript.defaultProps = defaultLoadScriptProps;
-
-/* eslint-disable filenames/match-regex */
-var previouslyLoadedUrl;
-function useLoadScript(_ref) {
-  var _ref$id = _ref.id,
-      id = _ref$id === void 0 ? defaultLoadScriptProps.id : _ref$id,
-      _ref$version = _ref.version,
-      version = _ref$version === void 0 ? defaultLoadScriptProps.version : _ref$version,
-      googleMapsApiKey = _ref.googleMapsApiKey,
-      googleMapsClientId = _ref.googleMapsClientId,
-      language = _ref.language,
-      region = _ref.region,
-      libraries = _ref.libraries,
-      preventGoogleFontsLoading = _ref.preventGoogleFontsLoading,
-      channel = _ref.channel;
-  var isMounted = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
-
-  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      isLoaded = _React$useState[0],
-      setLoaded = _React$useState[1];
-
-  var _React$useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(undefined),
-      loadError = _React$useState2[0],
-      setLoadError = _React$useState2[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function trackMountedState() {
-    isMounted.current = true;
-    return function () {
-      isMounted.current = false;
-    };
-  }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function applyPreventGoogleFonts() {
-    if (isBrowser && preventGoogleFontsLoading) {
-      preventGoogleFonts();
-    }
-  }, [preventGoogleFontsLoading]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function validateLoadedState() {
-    if (isLoaded) {
-      ! // @ts-ignore
-      !!window.google ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useLoadScript was marked as loaded, but window.google is not present. Something went wrong.") : undefined : void 0;
-    }
-  }, [isLoaded]);
-  var url = makeLoadScriptUrl({
-    version: version,
-    googleMapsApiKey: googleMapsApiKey,
-    googleMapsClientId: googleMapsClientId,
-    language: language,
-    region: region,
-    libraries: libraries,
-    channel: channel
-  });
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function loadScriptAndModifyLoadedState() {
-    if (!isBrowser) {
-      return;
-    }
-
-    function setLoadedIfMounted() {
-      if (isMounted.current) {
-        setLoaded(true);
-        previouslyLoadedUrl = url;
-      }
-    }
-
-    if (window.google && previouslyLoadedUrl === url) {
-      setLoadedIfMounted();
-      return;
-    }
-
-    injectScript({
-      id: id,
-      url: url
-    }).then(setLoadedIfMounted)["catch"](function handleInjectError(err) {
-      if (isMounted.current) {
-        setLoadError(err);
-      }
-
-      console.warn("\n        There has been an Error with loading Google Maps API script, please check that you provided correct google API key (" + (googleMapsApiKey || '-') + ") or Client ID (" + (googleMapsClientId || '-') + ")\n        Otherwise it is a Network issue.\n      ");
-      console.error(err);
-    });
-  }, [id, url]);
-  var prevLibraries = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function checkPerformance() {
-    if (prevLibraries.current && libraries !== prevLibraries.current) {
-      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
-    }
-
-    prevLibraries.current = libraries;
-  }, [libraries]);
-  return {
-    isLoaded: isLoaded,
-    loadError: loadError,
-    url: url
-  };
-}
-
-var defaultLoadingElement =
-/*#__PURE__*/
-Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DefaultLoadingElement, null);
-
-function LoadScriptNext(_ref) {
-  var loadingElement = _ref.loadingElement,
-      onLoad = _ref.onLoad,
-      onError = _ref.onError,
-      onUnmount = _ref.onUnmount,
-      children = _ref.children,
-      hookOptions = _objectWithoutPropertiesLoose(_ref, ["loadingElement", "onLoad", "onError", "onUnmount", "children"]);
-
-  var _useLoadScript = useLoadScript(hookOptions),
-      isLoaded = _useLoadScript.isLoaded,
-      loadError = _useLoadScript.loadError;
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnLoad() {
-    if (isLoaded && typeof onLoad === "function") {
-      onLoad();
-    }
-  }, [isLoaded, onLoad]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnError() {
-    if (loadError && typeof onError === "function") {
-      onError(loadError);
-    }
-  }, [loadError, onError]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnUnmount() {
-    return function () {
-      if (onUnmount) {
-        onUnmount();
-      }
-    };
-  }, [onUnmount]);
-  return isLoaded ? children : loadingElement || defaultLoadingElement;
-}
-
-var LoadScriptNext$1 = /*#__PURE__*/
-Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(LoadScriptNext);
-
-var eventMap$1 = {};
-var updaterMap$1 = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  }
-};
-var TrafficLayer =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inheritsLoose(TrafficLayer, _PureComponent);
-
-  function TrafficLayer() {
-    var _this;
-
-    _this = _PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      trafficLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setTrafficLayerCallback = function () {
-      if (_this.state.trafficLayer !== null) {
-        if (_this.props.onLoad) {
-          // @ts-ignore
-          _this.props.onLoad(_this.state.trafficLayer);
-        }
-      }
-    };
-
-    _this.registeredEvents = [];
-    return _this;
-  }
-
-  var _proto = TrafficLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var trafficLayer = new google.maps.TrafficLayer(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$1,
-      eventMap: eventMap$1,
-      prevProps: {},
-      nextProps: this.props,
-      instance: trafficLayer
-    });
-
-    function setTrafficlayer() {
-      return {
-        trafficLayer: trafficLayer
-      };
-    }
-
-    this.setState(setTrafficlayer, this.setTrafficLayerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.trafficLayer !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$1,
-        eventMap: eventMap$1,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.trafficLayer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.trafficLayer !== null) {
-      if (this.props.onUnmount) {
-        // @ts-ignore
-        this.props.onUnmount(this.state.trafficLayer);
-      }
-
-      unregisterEvents(this.registeredEvents); // @ts-ignore
-
-      this.state.trafficLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return TrafficLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-TrafficLayer.contextType = MapContext;
-
-var BicyclingLayer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(BicyclingLayer, _React$PureComponent);
-
-  function BicyclingLayer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      bicyclingLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setBicyclingLayerCallback = function () {
-      if (_this.state.bicyclingLayer !== null) {
-        // TODO: how is this possibly null if we're doing a null check
-        // @ts-ignore
-        _this.state.bicyclingLayer.setMap(_this.context);
-
-        if (_this.props.onLoad) {
-          //@ts-ignore
-          _this.props.onLoad(_this.state.bicyclingLayer);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = BicyclingLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var bicyclingLayer = new google.maps.BicyclingLayer();
-
-    function setBicyclingLayer() {
-      return {
-        bicyclingLayer: bicyclingLayer
-      };
-    }
-
-    this.setState(setBicyclingLayer, this.setBicyclingLayerCallback);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.bicyclingLayer !== null) {
-      if (this.props.onUnmount) {
-        // @ts-ignore
-        this.props.onUnmount(this.state.bicyclingLayer);
-      } // @ts-ignore
-
-
-      this.state.bicyclingLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return BicyclingLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-BicyclingLayer.contextType = MapContext;
-
-var TransitLayer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(TransitLayer, _React$PureComponent);
-
-  function TransitLayer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      transitLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setTransitLayerCallback = function () {
-      if (_this.state.transitLayer !== null) {
-        // TODO: how is this possibly null if we're doing a null check
-        // @ts-ignore
-        _this.state.transitLayer.setMap(_this.context);
-
-        if (_this.props.onLoad) {
-          //@ts-ignore
-          _this.props.onLoad(_this.state.transitLayer);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = TransitLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var transitLayer = new google.maps.TransitLayer();
-
-    function setTransitLayer() {
-      return {
-        transitLayer: transitLayer
-      };
-    }
-
-    this.setState(setTransitLayer, this.setTransitLayerCallback);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.transitLayer !== null) {
-      if (this.props.onUnmount) {
-        // @ts-ignore
-        this.props.onUnmount(this.state.transitLayer);
-      } // @ts-ignore
-
-
-      this.state.transitLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return TransitLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-TransitLayer.contextType = MapContext;
-
-var eventMap$2 = {
-  onCircleComplete: "circlecomplete",
-  onMarkerComplete: "markercomplete",
-  onOverlayComplete: "overlaycomplete",
-  onPolygonComplete: "polygoncomplete",
-  onPolylineComplete: "polylinecomplete",
-  onRectangleComplete: "rectanglecomplete"
-};
-var updaterMap$2 = {
-  drawingMode: function drawingMode(instance, _drawingMode) {
-    instance.setDrawingMode(_drawingMode);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  }
-};
-var DrawingManager =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DrawingManager, _React$PureComponent);
-
-  function DrawingManager(props) {
-    var _this;
-
-    _this = _React$PureComponent.call(this, props) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      drawingManager: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDrawingManagerCallback = function () {
-      if (_this.state.drawingManager !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.drawingManager);
-      }
-    };
-
-    !!!google.maps.drawing ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "Did you include prop libraries={['drawing']} in the URL? %s", google.maps.drawing) : undefined : void 0;
-    return _this;
-  }
-
-  var _proto = DrawingManager.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var drawingManager = new google.maps.drawing.DrawingManager(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$2,
-      eventMap: eventMap$2,
-      prevProps: {},
-      nextProps: this.props,
-      instance: drawingManager
-    });
-
-    function setDrawingManager() {
-      return {
-        drawingManager: drawingManager
-      };
-    }
-
-    this.setState(setDrawingManager, this.setDrawingManagerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.drawingManager !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$2,
-        eventMap: eventMap$2,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.drawingManager
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.drawingManager !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.drawingManager);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.drawingManager.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DrawingManager;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-DrawingManager.contextType = MapContext;
-
-var eventMap$3 = {
-  onAnimationChanged: "animation_changed",
-  onClick: "click",
-  onClickableChanged: "clickable_changed",
-  onCursorChanged: "cursor_changed",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDraggableChanged: "draggable_changed",
-  onDragStart: "dragstart",
-  onFlatChanged: "flat_changed",
-  onIconChanged: "icon_changed",
-  onMouseDown: "mousedown",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onPositionChanged: "position_changed",
-  onRightClick: "rightclick",
-  onShapeChanged: "shape_changed",
-  onTitleChanged: "title_changed",
-  onVisibleChanged: "visible_changed",
-  onZindexChanged: "zindex_changed"
-};
-var updaterMap$3 = {
-  animation: function animation(instance, _animation) {
-    instance.setAnimation(_animation);
-  },
-  clickable: function clickable(instance, _clickable) {
-    instance.setClickable(_clickable);
-  },
-  cursor: function cursor(instance, _cursor) {
-    instance.setCursor(_cursor);
-  },
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  icon: function icon(instance, _icon) {
-    instance.setIcon(_icon);
-  },
-  label: function label(instance, _label) {
-    instance.setLabel(_label);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  opacity: function opacity(instance, _opacity) {
-    instance.setOpacity(_opacity);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  position: function position(instance, _position) {
-    instance.setPosition(_position);
-  },
-  shape: function shape(instance, _shape) {
-    instance.setShape(_shape);
-  },
-  title: function title(instance, _title) {
-    instance.setTitle(_title);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var Marker =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Marker, _React$PureComponent);
-
-  function Marker() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      marker: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setMarkerCallback = function () {
-      if (_this.state.marker !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.marker);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Marker.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var markerOptions = _extends({}, this.props.options || {}, {}, this.props.clusterer ? {} : {
-      map: this.context
     }, {
-      position: this.props.position
-    });
+      Header: 'Sucrusal',
+      accessor: 'store',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.name);
+      }
+    }, {
+      Header: 'Fecha',
+      accessor: 'date',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.formatted);
+      }
+    }, {
+      Header: 'Estatus',
+      accessor: 'status',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.row.original.canceled ? 'Cancelado' : data.cell.value.step);
+      }
+    }, {
+      Header: 'Pagado',
+      accessor: 'payed',
+      Cell: function Cell(data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: ""
+        }, data.cell.value.label);
+      }
+    }];
+  }, []);
+  {
+    /* <> */
+  }
+  {
+    /*    /!* start select *!/ */
+  }
+  {
+    /*    <div className="inline-block relative w-full"> */
+  }
+  {
+    /*        <select */
+  }
+  {
+    /*            className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" */
+  }
+  {
+    /*            onChange={updateStatus(data.cell.row.original.id)} */
+  }
+  {
+    /*        > */
+  }
+  {
+    /*            <option value="opened" selected={data.cell.value.original !== 'opened'}>Visto</option> */
+  }
+  {
+    /*            <option value="placed" selected={data.cell.value.original === 'placed'}>En ruta/sucursal</option> */
+  }
+  {
+    /*            <option value="delivered" selected={data.cell.value.original === 'delivered'}>Entregada</option> */
+  }
+  {
+    /*            <option value="-" selected={data.cell.value.original === '-'}>Pendiente</option> */
+  }
+  {
+    /*        </select> */
+  }
+  {
+    /*        <div */
+  }
+  {
+    /*            className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"> */
+  }
+  {
+    /*            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"> */
+  }
+  {
+    /*                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> */
+  }
+  {
+    /*            </svg> */
+  }
+  {
+    /*        </div> */
+  }
+  {
+    /*    </div> */
+  }
+  {
+    /*    /!* end select *!/ */
+  }
+  {
+    /* </> */
+  }
 
-    var marker = new google.maps.Marker(markerOptions);
+  var openedAndShow = function openedAndShow(index) {
+    var data = orders[index];
+    setDataSelected(data);
 
-    if (this.props.clusterer) {
-      this.props.clusterer.addMarker( // @ts-ignore
-      marker, !!this.props.noClustererRedraw);
-    } else {
-      marker.setMap(this.context);
-    }
-
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$3,
-      eventMap: eventMap$3,
-      prevProps: {},
-      nextProps: this.props,
-      instance: marker
-    });
-
-    function setMarker() {
-      return {
-        marker: marker
-      };
-    }
-
-    this.setState(setMarker, this.setMarkerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.marker !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$3,
-        eventMap: eventMap$3,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.marker
+    if (auth.user.isMatrix && data.status.original === 'created') {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].put("/admin/orders/".concat(data.id), {
+        status: 'opened'
       });
-    }
+    } // if(data.status.original !== 'created') {
+    //     return false;
+    // }
+
   };
 
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.marker !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.marker);
-      }
-
-      unregisterEvents(this.registeredEvents);
-
-      if (this.props.clusterer) {
-        this.props.clusterer.removeMarker( // @ts-ignore
-        this.state.marker, !!this.props.noClustererRedraw);
-      } else {
-        this.state.marker && this.state.marker.setMap(null);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return this.props.children || null;
-  };
-
-  return Marker;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Marker.contextType = MapContext;
-
-var eventMap$4 = {
-  onClick: "click",
-  onClusteringBegin: "clusteringbegin",
-  onClusteringEnd: "clusteringend",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover"
-};
-var updaterMap$4 = {
-  averageCenter: function averageCenter(instance, _averageCenter) {
-    instance.setAverageCenter(_averageCenter);
-  },
-  batchSizeIE: function batchSizeIE(instance, _batchSizeIE) {
-    instance.setBatchSizeIE(_batchSizeIE);
-  },
-  calculator: function calculator(instance, _calculator) {
-    instance.setCalculator(_calculator);
-  },
-  clusterClass: function clusterClass(instance, _clusterClass) {
-    instance.setClusterClass(_clusterClass);
-  },
-  enableRetinaIcons: function enableRetinaIcons(instance, _enableRetinaIcons) {
-    instance.setEnableRetinaIcons(_enableRetinaIcons);
-  },
-  gridSize: function gridSize(instance, _gridSize) {
-    instance.setGridSize(_gridSize);
-  },
-  ignoreHidden: function ignoreHidden(instance, _ignoreHidden) {
-    instance.setIgnoreHidden(_ignoreHidden);
-  },
-  imageExtension: function imageExtension(instance, _imageExtension) {
-    instance.setImageExtension(_imageExtension);
-  },
-  imagePath: function imagePath(instance, _imagePath) {
-    instance.setImagePath(_imagePath);
-  },
-  imageSizes: function imageSizes(instance, _imageSizes) {
-    instance.setImageSizes(_imageSizes);
-  },
-  maxZoom: function maxZoom(instance, _maxZoom) {
-    instance.setMaxZoom(_maxZoom);
-  },
-  minimumClusterSize: function minimumClusterSize(instance, _minimumClusterSize) {
-    instance.setMinimumClusterSize(_minimumClusterSize);
-  },
-  styles: function styles(instance, _styles) {
-    instance.setStyles(_styles);
-  },
-  title: function title(instance, _title) {
-    instance.setTitle(_title);
-  },
-  zoomOnClick: function zoomOnClick(instance, _zoomOnClick) {
-    instance.setZoomOnClick(_zoomOnClick);
-  }
-};
-var ClustererComponent =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(ClustererComponent, _React$PureComponent);
-
-  function ClustererComponent() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      markerClusterer: null
-    };
-
-    _this.setClustererCallback = function () {
-      if (_this.state.markerClusterer !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.markerClusterer);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = ClustererComponent.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (this.context) {
-      var markerClusterer = new _react_google_maps_marker_clusterer__WEBPACK_IMPORTED_MODULE_2__["Clusterer"](this.context, [], this.props.options);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$4,
-        eventMap: eventMap$4,
-        prevProps: {},
-        nextProps: this.props,
-        instance: markerClusterer
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // console.log('orderAll =>', orderAll);
+    var requestGetPagiante = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_8__["getParameterByName"])('get') === 'paginate';
+    setIsPaginateActive(requestGetPagiante);
+    var requestHistorict = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_8__["getParameterByName"])('date') === 'historic';
+    setIsHistoric(requestHistorict);
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // openedAndShow(0);
+    if (orders && dataSelected) {
+      var orderUpdated = orders.find(function (order) {
+        return order.id === dataSelected.id;
       });
-      this.setState(function setClusterer() {
-        return {
-          markerClusterer: markerClusterer
-        };
-      }, this.setClustererCallback);
+      setDataSelected(orderUpdated);
     }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.markerClusterer) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$4,
-        eventMap: eventMap$4,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.markerClusterer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.markerClusterer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.markerClusterer);
-      }
-
-      unregisterEvents(this.registeredEvents); //@ts-ignore
-
-      this.state.markerClusterer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return this.state.markerClusterer !== null ? this.props.children(this.state.markerClusterer) : null;
-  };
-
-  return ClustererComponent;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-ClustererComponent.contextType = MapContext;
-
-var eventMap$5 = {
-  onCloseClick: "closeclick",
-  onContentChanged: "content_changed",
-  onDomReady: "domready",
-  onPositionChanged: "position_changed",
-  onZindexChanged: "zindex_changed"
-};
-var updaterMap$5 = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  position: function position(instance, _position) {
-    if (_position instanceof google.maps.LatLng) {
-      instance.setPosition(_position);
-    } else {
-      instance.setPosition(new google.maps.LatLng(_position.lat, _position.lng));
-    }
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var InfoBoxComponent =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(InfoBoxComponent, _React$PureComponent);
-
-  function InfoBoxComponent() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = null;
-    _this.state = {
-      infoBox: null
-    };
-
-    _this.open = function (infoBox, anchor) {
-      if (anchor) {
-        infoBox.open(_this.context, anchor);
-      } else if (infoBox.getPosition()) {
-        infoBox.open(_this.context);
-      } else {
-          true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "You must provide either an anchor or a position prop for <InfoBox>.") : undefined ;
-      }
-    };
-
-    _this.setInfoBoxCallback = function () {
-      var _this$props = _this.props,
-          anchor = _this$props.anchor,
-          onLoad = _this$props.onLoad;
-      var infoBox = _this.state.infoBox;
-
-      if (infoBox !== null && _this.containerElement !== null) {
-        infoBox.setContent(_this.containerElement);
-
-        _this.open(infoBox, anchor);
-
-        if (onLoad) {
-          onLoad(infoBox);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = InfoBoxComponent.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var options = this.props.options;
-
-    var _ref = options || {},
-        position = _ref.position,
-        infoBoxOptions = _objectWithoutPropertiesLoose(_ref, ["position"]);
-
-    var positionLatLng;
-
-    if (position && !(position instanceof google.maps.LatLng)) {
-      positionLatLng = new google.maps.LatLng(position.lat, position.lng);
-    }
-
-    var infoBox = new _react_google_maps_infobox__WEBPACK_IMPORTED_MODULE_4__["InfoBox"](_extends({}, infoBoxOptions, {}, positionLatLng ? {
-      position: positionLatLng
-    } : {}));
-    this.containerElement = document.createElement('div');
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$5,
-      eventMap: eventMap$5,
-      prevProps: {},
-      nextProps: this.props,
-      instance: infoBox
-    });
-    this.setState({
-      infoBox: infoBox
-    }, this.setInfoBoxCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    var infoBox = this.state.infoBox;
-
-    if (infoBox !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$5,
-        eventMap: eventMap$5,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: infoBox
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    var onUnmount = this.props.onUnmount;
-    var infoBox = this.state.infoBox;
-
-    if (infoBox !== null) {
-      if (onUnmount) {
-        onUnmount(infoBox);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      infoBox.close();
-    }
-  };
-
-  _proto.render = function render() {
-    if (!this.containerElement) {
-      return null;
-    }
-
-    return Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children), this.containerElement);
-  };
-
-  return InfoBoxComponent;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-InfoBoxComponent.contextType = MapContext;
-
-var eventMap$6 = {
-  onCloseClick: "closeclick",
-  onContentChanged: "content_changed",
-  onDomReady: "domready",
-  onPositionChanged: "position_changed",
-  onZindexChanged: "zindex_changed"
-};
-var updaterMap$6 = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  position: function position(instance, _position) {
-    instance.setPosition(_position);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var InfoWindow =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(InfoWindow, _React$PureComponent);
-
-  function InfoWindow() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = null;
-    _this.state = {
-      infoWindow: null
-    };
-
-    _this.open = function (infoWindow, anchor) {
-      if (anchor) {
-        infoWindow.open(_this.context, anchor);
-      } else if (infoWindow.getPosition()) {
-        infoWindow.open(_this.context);
-      } else {
-          true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "You must provide either an anchor (typically render it inside a <Marker>) or a position props for <InfoWindow>.") : undefined ;
-      }
-    };
-
-    _this.setInfowindowCallback = function () {
-      if (_this.state.infoWindow !== null && _this.containerElement !== null) {
-        _this.state.infoWindow.setContent(_this.containerElement);
-
-        _this.open(_this.state.infoWindow, _this.props.anchor);
-
-        if (_this.props.onLoad) {
-          _this.props.onLoad(_this.state.infoWindow);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = InfoWindow.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var infoWindow = new google.maps.InfoWindow(_extends({}, this.props.options || {}));
-    this.containerElement = document.createElement("div");
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$6,
-      eventMap: eventMap$6,
-      prevProps: {},
-      nextProps: this.props,
-      instance: infoWindow
-    });
-
-    function setInfoWindow() {
-      return {
-        infoWindow: infoWindow
-      };
-    }
-
-    this.setState(setInfoWindow, this.setInfowindowCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.infoWindow !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$6,
-        eventMap: eventMap$6,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.infoWindow
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.infoWindow !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.state.infoWindow.close();
-    }
-  };
-
-  _proto.render = function render() {
-    return this.containerElement ? Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children), this.containerElement) : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return InfoWindow;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-InfoWindow.contextType = MapContext;
-
-var eventMap$7 = {
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick"
-};
-var updaterMap$7 = {
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  path: function path(instance, _path) {
-    instance.setPath(_path);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Polyline =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Polyline, _React$PureComponent);
-
-  function Polyline() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      polyline: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setPolylineCallback = function () {
-      if (_this.state.polyline !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.polyline);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Polyline.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var polyline = new google.maps.Polyline(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$7,
-      eventMap: eventMap$7,
-      prevProps: {},
-      nextProps: this.props,
-      instance: polyline
-    });
-
-    function setPolyline() {
-      return {
-        polyline: polyline
-      };
-    }
-
-    this.setState(setPolyline, this.setPolylineCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.polyline !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$7,
-        eventMap: eventMap$7,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.polyline
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.polyline !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.polyline);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.polyline.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return Polyline;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Polyline.contextType = MapContext;
-
-var eventMap$8 = {
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick"
-};
-var updaterMap$8 = {
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  path: function path(instance, _path) {
-    instance.setPath(_path);
-  },
-  paths: function paths(instance, _paths) {
-    instance.setPaths(_paths);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Polygon =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Polygon, _React$PureComponent);
-
-  function Polygon() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      polygon: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setPolygonCallback = function () {
-      if (_this.state.polygon !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.polygon);
-      }
-    };
-
-    _this.render = function () {
-      return null;
-    };
-
-    return _this;
-  }
-
-  var _proto = Polygon.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var polygon = new google.maps.Polygon(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$8,
-      eventMap: eventMap$8,
-      prevProps: {},
-      nextProps: this.props,
-      instance: polygon
-    });
-
-    function setPolygon() {
-      return {
-        polygon: polygon
-      };
-    }
-
-    this.setState(setPolygon, this.setPolygonCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.polygon !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$8,
-        eventMap: eventMap$8,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.polygon
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.polygon !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.polygon);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.polygon && this.state.polygon.setMap(null);
-    }
-  };
-
-  return Polygon;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Polygon.contextType = MapContext;
-
-var eventMap$9 = {
-  onBoundsChanged: "bounds_changed",
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick"
-};
-var updaterMap$9 = {
-  bounds: function bounds(instance, _bounds) {
-    instance.setBounds(_bounds);
-  },
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Rectangle =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Rectangle, _React$PureComponent);
-
-  function Rectangle() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      rectangle: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setRectangleCallback = function () {
-      if (_this.state.rectangle !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.rectangle);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Rectangle.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var rectangle = new google.maps.Rectangle(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$9,
-      eventMap: eventMap$9,
-      prevProps: {},
-      nextProps: this.props,
-      instance: rectangle
-    });
-
-    function setRectangle() {
-      return {
-        rectangle: rectangle
-      };
-    }
-
-    this.setState(setRectangle, this.setRectangleCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.rectangle !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$9,
-        eventMap: eventMap$9,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.rectangle
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.rectangle !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.rectangle);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.rectangle.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return Rectangle;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Rectangle.contextType = MapContext;
-
-var eventMap$a = {
-  onCenterChanged: "center_changed",
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRadiusChanged: "radius_changed",
-  onRightClick: "rightclick"
-};
-var updaterMap$a = {
-  center: function center(instance, _center) {
-    instance.setCenter(_center);
-  },
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  radius: function radius(instance, _radius) {
-    instance.setRadius(_radius);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Circle =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Circle, _React$PureComponent);
-
-  function Circle() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      circle: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setCircleCallback = function () {
-      if (_this.state.circle !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.circle);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Circle.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var circle = new google.maps.Circle(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$a,
-      eventMap: eventMap$a,
-      prevProps: {},
-      nextProps: this.props,
-      instance: circle
-    });
-
-    function setCircle() {
-      return {
-        circle: circle
-      };
-    }
-
-    this.setState(setCircle, this.setCircleCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.circle !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$a,
-        eventMap: eventMap$a,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.circle
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.circle !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.circle);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.circle && this.state.circle.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return Circle;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Circle.contextType = MapContext;
-
-var eventMap$b = {
-  onAddFeature: "addfeature",
-  onClick: "click",
-  onDblClick: "dblclick",
-  onMouseDown: "mousedown",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRemoveFeature: "removefeature",
-  onRemoveProperty: "removeproperty",
-  onRightClick: "rightclick",
-  onSetGeometry: "setgeometry",
-  onSetProperty: "setproperty"
-};
-var updaterMap$b = {
-  add: function add(instance, features) {
-    instance.add(features);
-  },
-  addgeojson: function addgeojson(instance, geojson, options) {
-    instance.addGeoJson(geojson, options);
-  },
-  contains: function contains(instance, feature) {
-    instance.contains(feature);
-  },
-  foreach: function foreach(instance, callback) {
-    instance.forEach(callback);
-  },
-  loadgeojson: function loadgeojson(instance, url, options, callback) {
-    instance.loadGeoJson(url, options, callback);
-  },
-  overridestyle: function overridestyle(instance, feature, style) {
-    instance.overrideStyle(feature, style);
-  },
-  remove: function remove(instance, feature) {
-    instance.remove(feature);
-  },
-  revertstyle: function revertstyle(instance, feature) {
-    instance.revertStyle(feature);
-  },
-  controlposition: function controlposition(instance, controlPosition // TODO: ???
-  ) {
-    instance.setControlPosition(controlPosition);
-  },
-  controls: function controls(instance, _controls) {
-    instance.setControls(_controls);
-  },
-  drawingmode: function drawingmode(instance, mode) {
-    instance.setDrawingMode(mode);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  style: function style(instance, _style) {
-    instance.setStyle(_style);
-  },
-  togeojson: function togeojson(instance, callback) {
-    instance.toGeoJson(callback);
-  }
-};
-var Data =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Data, _React$PureComponent);
-
-  function Data() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      data: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDataCallback = function () {
-      if (_this.state.data !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.data);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Data.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var data = new google.maps.Data(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$b,
-      eventMap: eventMap$b,
-      prevProps: {},
-      nextProps: this.props,
-      instance: data
-    });
-
-    function setData() {
-      return {
-        data: data
-      };
-    }
-
-    this.setState(setData, this.setDataCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.data !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$b,
-        eventMap: eventMap$b,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.data
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.data !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.data);
-      }
-
-      unregisterEvents(this.registeredEvents);
-
-      if (this.state.data) {
-        this.state.data.setMap(null);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return Data;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Data.contextType = MapContext;
-
-var eventMap$c = {
-  onClick: "click",
-  onDefaultViewportChanged: "defaultviewport_changed",
-  onStatusChanged: "status_changed"
-};
-var updaterMap$c = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  url: function url(instance, _url) {
-    instance.setUrl(_url);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var KmlLayer =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inheritsLoose(KmlLayer, _PureComponent);
-
-  function KmlLayer() {
-    var _this;
-
-    _this = _PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      kmlLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setKmlLayerCallback = function () {
-      if (_this.state.kmlLayer !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.kmlLayer);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = KmlLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var kmlLayer = new google.maps.KmlLayer(_extends({}, this.props.options, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$c,
-      eventMap: eventMap$c,
-      prevProps: {},
-      nextProps: this.props,
-      instance: kmlLayer
-    });
-
-    function setLmlLayer() {
-      return {
-        kmlLayer: kmlLayer
-      };
-    }
-
-    this.setState(setLmlLayer, this.setKmlLayerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.kmlLayer !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$c,
-        eventMap: eventMap$c,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.kmlLayer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.kmlLayer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.kmlLayer);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.kmlLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return KmlLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-KmlLayer.contextType = MapContext;
-
-/* eslint-disable filenames/match-regex */
-function getOffsetOverride(containerElement, getPixelPositionOffset) {
-  return typeof getPixelPositionOffset === "function" ? getPixelPositionOffset(containerElement.offsetWidth, containerElement.offsetHeight) : {};
+  }, [orders]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: "Panel"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    data: dataSelected
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_7__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    stores: stores,
+    searchValues: searchValues
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    className: "font-bold text-black w-3/12"
+  }, isHistoric ? 'Pedidos anteriores' : 'Pedidos'), "|", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+    href: isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate',
+    className: "ml-3"
+  }, isHistoric ? 'Pedidos' : 'Pedidos anteriores')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    columns: columns,
+    data: orders,
+    onClick: function onClick(row) {
+      return openedAndShow(row.index);
+    },
+    selected: dataSelected
+  }), isPaginateActive && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    items: orderAll
+  })));
 }
 
-var createLatLng = function createLatLng(inst, Type) {
-  return new Type(inst.lat, inst.lng);
-};
-
-var createLatLngBounds = function createLatLngBounds(inst, Type) {
-  return new Type(new google.maps.LatLng(inst.ne.lat, inst.ne.lng), new google.maps.LatLng(inst.sw.lat, inst.sw.lng));
-};
-
-var ensureOfType = function ensureOfType(inst, type, factory) {
-  return inst instanceof type ? inst : factory(inst, type);
-};
-
-var getLayoutStylesByBounds = function getLayoutStylesByBounds(mapCanvasProjection, offset, bounds) {
-  var ne = mapCanvasProjection.fromLatLngToDivPixel(bounds.getNorthEast());
-  var sw = mapCanvasProjection.fromLatLngToDivPixel(bounds.getSouthWest());
-
-  if (ne && sw) {
-    return {
-      left: sw.x + offset.x + "px",
-      top: ne.y + offset.y + "px",
-      width: ne.x - sw.x - offset.x + "px",
-      height: sw.y - ne.y - offset.y + "px"
-    };
-  }
-
-  return {
-    left: "-9999px",
-    top: "-9999px"
-  };
-};
-
-var getLayoutStylesByPosition = function getLayoutStylesByPosition(mapCanvasProjection, offset, position) {
-  var point = mapCanvasProjection.fromLatLngToDivPixel(position);
-
-  if (point) {
-    var x = point.x,
-        y = point.y;
-    return {
-      left: x + offset.x + "px",
-      top: y + offset.y + "px"
-    };
-  }
-
-  return {
-    left: "-9999px",
-    top: "-9999px"
-  };
-};
-
-var getLayoutStyles = function getLayoutStyles(mapCanvasProjection, offset, bounds, // eslint-disable-next-line @getify/proper-arrows/params
-position) {
-  return bounds !== undefined ? getLayoutStylesByBounds(mapCanvasProjection, offset, ensureOfType(bounds, google.maps.LatLngBounds, createLatLngBounds)) : getLayoutStylesByPosition(mapCanvasProjection, offset, ensureOfType(position, google.maps.LatLng, createLatLng));
-};
-
-var ContentMountHandler =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(ContentMountHandler, _React$Component);
-
-  function ContentMountHandler() {
-    return _React$Component.apply(this, arguments) || this;
-  }
-
-  var _proto = ContentMountHandler.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (this.props.onLoad) this.props.onLoad();
-  };
-
-  _proto.render = function render() {
-    return this.props.children;
-  };
-
-  return ContentMountHandler;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-var OverlayView =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(OverlayView, _React$PureComponent);
-
-  function OverlayView() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      overlayView: null
-    };
-    _this.containerElement = null; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setOverlayViewCallback = function () {
-      if (_this.state.overlayView !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.overlayView);
-      }
-
-      _this.onPositionElement();
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.onAdd = function () {
-      _this.containerElement = document.createElement("div");
-      _this.containerElement.style.position = "absolute";
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.onPositionElement = function () {
-      if (_this.state.overlayView !== null && _this.containerElement !== null) {
-        var mapCanvasProjection = _this.state.overlayView.getProjection();
-
-        var offset = _extends({
-          x: 0,
-          y: 0
-        }, getOffsetOverride(_this.containerElement, _this.props.getPixelPositionOffset));
-
-        var layoutStyles = getLayoutStyles(mapCanvasProjection, offset, _this.props.bounds, _this.props.position);
-        Object.assign(_this.containerElement.style, layoutStyles);
-      }
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.draw = function () {
-      !!!_this.props.mapPaneName ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "OverlayView requires props.mapPaneName but got %s", _this.props.mapPaneName) : undefined : void 0;
-      var overlayView = _this.state.overlayView;
-
-      if (overlayView === null) {
-        return;
-      } // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapPanes
-
-
-      var mapPanes = overlayView.getPanes();
-
-      if (!mapPanes) {
-        return;
-      }
-
-      if (_this.containerElement) {
-        mapPanes[_this.props.mapPaneName].appendChild(_this.containerElement);
-      }
-
-      _this.onPositionElement();
-
-      _this.forceUpdate();
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.onRemove = function () {
-      if (_this.containerElement !== null && _this.containerElement.parentNode) {
-        _this.containerElement.parentNode.removeChild(_this.containerElement);
-
-        delete _this.containerElement;
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto2 = OverlayView.prototype;
-
-  _proto2.componentDidMount = function componentDidMount() {
-    var overlayView = new google.maps.OverlayView(); // You must implement three methods: onAdd(), draw(), and onRemove().
-
-    overlayView.onAdd = this.onAdd;
-    overlayView.draw = this.draw;
-    overlayView.onRemove = this.onRemove;
-    overlayView.setMap(this.context); // You must call setMap() with a valid Map object to trigger the call to
-    // the onAdd() method and setMap(null) in order to trigger the onRemove() method.
-
-    function setOverlayView() {
-      return {
-        overlayView: overlayView
-      };
-    }
-
-    this.setState(setOverlayView);
-  };
-
-  _proto2.componentDidUpdate = function componentDidUpdate(prevProps) {
-    var _this2 = this;
-
-    if (prevProps.position !== this.props.position || prevProps.bounds !== this.props.bounds) {
-      setTimeout(function () {
-        _this2.state.overlayView !== null && _this2.state.overlayView.draw();
-      }, 0);
-    }
-  };
-
-  _proto2.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.overlayView !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.overlayView);
-      }
-
-      this.state.overlayView.setMap(null);
-    }
-  };
-
-  _proto2.render = function render() {
-    return this.containerElement !== null ? Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ContentMountHandler, {
-      onLoad: this.setOverlayViewCallback
-    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children)), this.containerElement) : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return OverlayView;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-OverlayView.FLOAT_PANE = "floatPane";
-OverlayView.MAP_PANE = "mapPane";
-OverlayView.MARKER_LAYER = "markerLayer";
-OverlayView.OVERLAY_LAYER = "overlayLayer";
-OverlayView.OVERLAY_MOUSE_TARGET = "overlayMouseTarget";
-OverlayView.contextType = MapContext;
-
-var eventMap$d = {
-  onDblClick: "dblclick",
-  onClick: "click"
-};
-var updaterMap$d = {
-  opacity: function opacity(instance, _opacity) {
-    instance.setOpacity(_opacity);
-  }
-};
-var GroundOverlay =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(GroundOverlay, _React$PureComponent);
-
-  function GroundOverlay() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      groundOverlay: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setGroundOverlayCallback = function () {
-      if (_this.state.groundOverlay !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.groundOverlay);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = GroundOverlay.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !(!!this.props.url || !!this.props.bounds) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "For GroundOveray, url and bounds are passed in to constructor and are immutable after instantiated. This is the behavior of Google Maps JavaScript API v3 ( See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay) Hence, use the corresponding two props provided by `react-google-maps-api`, url and bounds. In some cases, you'll need the GroundOverlay component to reflect the changes of url and bounds. You can leverage the React's key property to remount the component. Typically, just `key={url}` would serve your need. See https://github.com/tomchentw/react-google-maps/issues/655") : undefined : void 0;
-    var groundOverlay = new google.maps.GroundOverlay(this.props.url, this.props.bounds, _extends({}, this.props.options, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$d,
-      eventMap: eventMap$d,
-      prevProps: {},
-      nextProps: this.props,
-      instance: groundOverlay
-    });
-
-    function setGroundOverlay() {
-      return {
-        groundOverlay: groundOverlay
-      };
-    }
-
-    this.setState(setGroundOverlay, this.setGroundOverlayCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.groundOverlay !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$d,
-        eventMap: eventMap$d,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.groundOverlay
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.groundOverlay) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.groundOverlay);
-      }
-
-      this.state.groundOverlay.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return GroundOverlay;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-GroundOverlay.defaultProps = {
-  onLoad: function onLoad() {}
-};
-GroundOverlay.contextType = MapContext;
-
-var eventMap$e = {};
-var updaterMap$e = {
-  data: function data(instance, _data) {
-    instance.setData(_data);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  }
-};
-var HeatmapLayer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(HeatmapLayer, _React$PureComponent);
-
-  function HeatmapLayer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      heatmapLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setHeatmapLayerCallback = function () {
-      if (_this.state.heatmapLayer !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.heatmapLayer);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = HeatmapLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!google.maps.visualization ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'Did you include prop libraries={["visualization"]} to <LoadScript />? %s', google.maps.visualization) : undefined : void 0;
-    !!!this.props.data ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "data property is required in HeatmapLayer %s", this.props.data) : undefined : void 0;
-    var heatmapLayer = new google.maps.visualization.HeatmapLayer(_extends({
-      data: this.props.data
-    }, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$e,
-      eventMap: eventMap$e,
-      prevProps: {},
-      nextProps: this.props,
-      instance: heatmapLayer
-    });
-
-    function setHeatmapLayer() {
-      return {
-        heatmapLayer: heatmapLayer
-      };
-    }
-
-    this.setState(setHeatmapLayer, this.setHeatmapLayerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    unregisterEvents(this.registeredEvents);
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$e,
-      eventMap: eventMap$e,
-      prevProps: prevProps,
-      nextProps: this.props,
-      instance: this.state.heatmapLayer
-    });
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.heatmapLayer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.heatmapLayer);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.heatmapLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return HeatmapLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-HeatmapLayer.contextType = MapContext;
-
-var eventMap$f = {
-  onCloseClick: "closeclick",
-  onPanoChanged: "pano_changed",
-  onPositionChanged: "position_changed",
-  onPovChanged: "pov_changed",
-  onResize: "resize",
-  onStatusChanged: "status_changed",
-  onVisibleChanged: "visible_changed",
-  onZoomChanged: "zoom_changed"
-};
-var updaterMap$f = {
-  register: function register(instance, provider, options) {
-    instance.registerPanoProvider(provider, options);
-  },
-  links: function links(instance, _links) {
-    instance.setLinks(_links);
-  },
-  motionTracking: function motionTracking(instance, _motionTracking) {
-    instance.setMotionTracking(_motionTracking);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  pano: function pano(instance, _pano) {
-    instance.setPano(_pano);
-  },
-  position: function position(instance, _position) {
-    instance.setPosition(_position);
-  },
-  pov: function pov(instance, _pov) {
-    instance.setPov(_pov);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  },
-  zoom: function zoom(instance, _zoom) {
-    instance.setZoom(_zoom);
-  }
-};
-var StreetViewPanorama =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(StreetViewPanorama, _React$PureComponent);
-
-  function StreetViewPanorama() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      streetViewPanorama: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setStreetViewPanoramaCallback = function () {
-      if (_this.state.streetViewPanorama !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.streetViewPanorama);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = StreetViewPanorama.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var streetViewPanorama = this.context.getStreetView();
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$f,
-      eventMap: eventMap$f,
-      prevProps: {},
-      nextProps: this.props,
-      instance: streetViewPanorama
-    });
-
-    function setStreetViewPanorama() {
-      return {
-        streetViewPanorama: streetViewPanorama
-      };
-    }
-
-    this.setState(setStreetViewPanorama, this.setStreetViewPanoramaCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.streetViewPanorama !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$f,
-        eventMap: eventMap$f,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.streetViewPanorama
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.streetViewPanorama !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.streetViewPanorama);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.streetViewPanorama.setVisible(false);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return StreetViewPanorama;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-StreetViewPanorama.contextType = MapContext;
-
-var StreetViewService =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(StreetViewService, _React$PureComponent);
-
-  function StreetViewService() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      streetViewService: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setStreetViewServiceCallback = function () {
-      if (_this.state.streetViewService !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.streetViewService);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = StreetViewService.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var streetViewService = new google.maps.StreetViewService();
-
-    function setStreetViewService() {
-      return {
-        streetViewService: streetViewService
-      };
-    }
-
-    this.setState(setStreetViewService);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.streetViewService !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.streetViewService);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return StreetViewService;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-StreetViewService.contextType = MapContext;
-
-var DirectionsService =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DirectionsService, _React$PureComponent);
-
-  function DirectionsService() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      directionsService: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDirectionsServiceCallback = function () {
-      if (_this.state.directionsService !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.directionsService);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = DirectionsService.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!this.props.options ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "DirectionsService expected options object as parameter, but got %s", this.props.options) : undefined : void 0;
-    var directionsService = new google.maps.DirectionsService();
-
-    function setDirectionsService() {
-      return {
-        directionsService: directionsService
-      };
-    }
-
-    this.setState(setDirectionsService, this.setDirectionsServiceCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate() {
-    if (this.state.directionsService !== null) {
-      this.state.directionsService.route(this.props.options, this.props.callback);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.directionsService !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.directionsService);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DirectionsService;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-var eventMap$g = {
-  onDirectionsChanged: "directions_changed"
-};
-var updaterMap$g = {
-  directions: function directions(instance, _directions) {
-    instance.setDirections(_directions);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  panel: function panel(instance, _panel) {
-    instance.setPanel(_panel);
-  },
-  routeIndex: function routeIndex(instance, _routeIndex) {
-    instance.setRouteIndex(_routeIndex);
-  }
-};
-var DirectionsRenderer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DirectionsRenderer, _React$PureComponent);
-
-  function DirectionsRenderer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      directionsRenderer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDirectionsRendererCallback = function () {
-      if (_this.state.directionsRenderer !== null) {
-        _this.state.directionsRenderer.setMap(_this.context);
-
-        if (_this.props.onLoad) {
-          _this.props.onLoad(_this.state.directionsRenderer);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = DirectionsRenderer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var directionsRenderer = new google.maps.DirectionsRenderer(this.props.options);
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$g,
-      eventMap: eventMap$g,
-      prevProps: {},
-      nextProps: this.props,
-      instance: directionsRenderer
-    });
-    this.setState(function setDirectionsRenderer() {
-      return {
-        directionsRenderer: directionsRenderer
-      };
-    }, this.setDirectionsRendererCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.directionsRenderer !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$g,
-        eventMap: eventMap$g,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.directionsRenderer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.directionsRenderer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.directionsRenderer);
-      }
-
-      unregisterEvents(this.registeredEvents);
-
-      if (this.state.directionsRenderer) {
-        this.state.directionsRenderer.setMap(null);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DirectionsRenderer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-DirectionsRenderer.contextType = MapContext;
-
-var DistanceMatrixService =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DistanceMatrixService, _React$PureComponent);
-
-  function DistanceMatrixService() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      distanceMatrixService: null
-    };
-
-    _this.setDistanceMatrixServiceCallbak = function () {
-      if (_this.state.distanceMatrixService !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.distanceMatrixService);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = DistanceMatrixService.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!this.props.options ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'DistanceMatrixService expected options object as parameter, but go %s', this.props.options) : undefined : void 0;
-    var distanceMatrixService = new google.maps.DistanceMatrixService();
-
-    function setDistanceMatrixService() {
-      return {
-        distanceMatrixService: distanceMatrixService
-      };
-    }
-
-    this.setState(setDistanceMatrixService, this.setDistanceMatrixServiceCallbak);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate() {
-    if (this.state.distanceMatrixService !== null) {
-      this.state.distanceMatrixService.getDistanceMatrix(this.props.options, this.props.callback);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.distanceMatrixService !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.distanceMatrixService);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DistanceMatrixService;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-var eventMap$h = {
-  onPlacesChanged: "places_changed"
-};
-var updaterMap$h = {
-  bounds: function bounds(instance, _bounds) {
-    instance.setBounds(_bounds);
-  }
-};
-
-var StandaloneSearchBox =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(StandaloneSearchBox, _React$PureComponent);
-
-  function StandaloneSearchBox() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
-    _this.state = {
-      searchBox: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setSearchBoxCallback = function () {
-      if (_this.state.searchBox !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.searchBox);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = StandaloneSearchBox.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!google.maps.places ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places) : undefined : void 0;
-
-    if (this.containerElement !== null && this.containerElement.current !== null) {
-      var input = this.containerElement.current.querySelector("input");
-
-      if (input) {
-        var searchBox = new google.maps.places.SearchBox( // @ts-ignore
-        input, this.props.options);
-        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-          updaterMap: updaterMap$h,
-          eventMap: eventMap$h,
-          prevProps: {},
-          nextProps: this.props,
-          instance: searchBox
-        });
-        this.setState(function setSearchBox() {
-          return {
-            searchBox: searchBox
-          };
-        }, this.setSearchBoxCallback);
-      }
-    }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.searchBox !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$h,
-        eventMap: eventMap$h,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.searchBox
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.searchBox !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.searchBox);
-      }
-
-      unregisterEvents(this.registeredEvents);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      ref: this.containerElement
-    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children));
-  };
-
-  return StandaloneSearchBox;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-StandaloneSearchBox.contextType = MapContext;
-
-var eventMap$i = {
-  onPlaceChanged: "place_changed"
-};
-var updaterMap$i = {
-  bounds: function bounds(instance, _bounds) {
-    instance.setBounds(_bounds);
-  },
-  restrictions: function restrictions(instance, _restrictions) {
-    instance.setComponentRestrictions(_restrictions);
-  },
-  fields: function fields(instance, _fields) {
-    instance.setFields(_fields);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  types: function types(instance, _types) {
-    instance.setTypes(_types);
-  }
-};
-var Autocomplete =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Autocomplete, _React$PureComponent);
-
-  function Autocomplete() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
-    _this.state = {
-      autocomplete: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setAutocompleteCallback = function () {
-      if (_this.state.autocomplete !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.autocomplete);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Autocomplete.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!google.maps.places ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places) : undefined : void 0; // TODO: why is this possibly null
-    // @ts-ignore
-
-    var input = this.containerElement.current.querySelector("input");
-
-    if (input) {
-      var autocomplete = new google.maps.places.Autocomplete(input, this.props.options);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$i,
-        eventMap: eventMap$i,
-        prevProps: {},
-        nextProps: this.props,
-        instance: autocomplete
-      });
-      this.setState(function setAutocomplete() {
-        return {
-          autocomplete: autocomplete
-        };
-      }, this.setAutocompleteCallback);
-    }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    unregisterEvents(this.registeredEvents);
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$i,
-      eventMap: eventMap$i,
-      prevProps: prevProps,
-      nextProps: this.props,
-      instance: this.state.autocomplete
-    });
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.autocomplete !== null) {
-      unregisterEvents(this.registeredEvents);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      ref: this.containerElement
-    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children));
-  };
-
-  return Autocomplete;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Autocomplete.contextType = MapContext;
-
-
-//# sourceMappingURL=reactgooglemapsapi.esm.js.map
-
+/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 
 /***/ }),
 
-/***/ "./node_modules/@react-google-maps/infobox/dist/infobox.esm.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@react-google-maps/infobox/dist/infobox.esm.js ***!
-  \*********************************************************************/
-/*! exports provided: InfoBox */
+/***/ "./resources/js/Shared/utils.js":
+/*!**************************************!*\
+  !*** ./resources/js/Shared/utils.js ***!
+  \**************************************/
+/*! exports provided: getParameterByName, encodeData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoBox", function() { return InfoBox; });
-var InfoBox =
-/*#__PURE__*/
-function () {
-  function InfoBox(options) {
-    if (options === void 0) {
-      options = {};
-    }
-
-    this.extend(InfoBox, google.maps.OverlayView); // Standard options (in common with google.maps.InfoWindow):
-
-    this.content = options.content || '';
-    this.disableAutoPan = options.disableAutoPan || false;
-    this.maxWidth = options.maxWidth || 0;
-    this.pixelOffset = options.pixelOffset || new google.maps.Size(0, 0);
-    this.position = options.position || new google.maps.LatLng(0, 0);
-    this.zIndex = options.zIndex || null; // Additional options (unique to InfoBox):
-
-    this.boxClass = options.boxClass || 'infoBox';
-    this.boxStyle = options.boxStyle || {};
-    this.closeBoxMargin = options.closeBoxMargin || '2px';
-    this.closeBoxURL = options.closeBoxURL || 'http://www.google.com/intl/en_us/mapfiles/close.gif';
-
-    if (options.closeBoxURL === '') {
-      this.closeBoxURL = '';
-    }
-
-    this.infoBoxClearance = options.infoBoxClearance || new google.maps.Size(1, 1);
-
-    if (typeof options.visible === 'undefined') {
-      if (typeof options.isHidden === 'undefined') {
-        options.visible = true;
-      } else {
-        options.visible = !options.isHidden;
-      }
-    }
-
-    this.isHidden = !options.visible;
-    this.alignBottom = options.alignBottom || false;
-    this.pane = options.pane || 'floatPane';
-    this.enableEventPropagation = options.enableEventPropagation || false;
-    this.div = null;
-    this.closeListener = null;
-    this.moveListener = null;
-    this.mapListener = null;
-    this.contextListener = null;
-    this.eventListeners = null;
-    this.fixedWidthSet = null;
-  }
-
-  var _proto = InfoBox.prototype;
-
-  _proto.createInfoBoxDiv = function createInfoBoxDiv() {
-    var _this = this;
-
-    // This handler prevents an event in the InfoBox from being passed on to the map.
-    function cancelHandler(event) {
-      event.cancelBubble = true;
-
-      if (event.stopPropagation) {
-        event.stopPropagation();
-      }
-    } // This handler ignores the current event in the InfoBox and conditionally prevents
-    // the event from being passed on to the map. It is used for the contextmenu event.
-    // eslint-disable-next-line  @getify/proper-arrows/this
-
-
-    var ignoreHandler = function ignoreHandler(event) {
-      event.returnValue = false;
-
-      if (event.preventDefault) {
-        event.preventDefault();
-      }
-
-      if (!_this.enableEventPropagation) {
-        cancelHandler(event);
-      }
-    };
-
-    if (!this.div) {
-      this.div = document.createElement('div');
-      this.setBoxStyle();
-
-      if (typeof this.content === 'string') {
-        this.div.innerHTML = this.getCloseBoxImg() + this.content;
-      } else {
-        this.div.innerHTML = this.getCloseBoxImg();
-        this.div.appendChild(this.content);
-      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-
-
-      var panes = this.getPanes();
-      panes[this.pane].appendChild(this.div); // Add the InfoBox div to the DOM
-
-      this.addClickHandler();
-
-      if (this.div.style.width) {
-        this.fixedWidthSet = true;
-      } else {
-        if (this.maxWidth !== 0 && this.div.offsetWidth > this.maxWidth) {
-          this.div.style.width = this.maxWidth + 'px';
-          this.fixedWidthSet = true;
-        } else {
-          // The following code is needed to overcome problems with MSIE
-          var bw = this.getBoxWidths();
-          this.div.style.width = this.div.offsetWidth - bw.left - bw.right + 'px';
-          this.fixedWidthSet = false;
-        }
-      }
-
-      this.panBox(this.disableAutoPan);
-
-      if (!this.enableEventPropagation) {
-        this.eventListeners = []; // Cancel event propagation.
-        // Note: mousemove not included (to resolve Issue 152)
-
-        var events = ['mousedown', 'mouseover', 'mouseout', 'mouseup', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'];
-
-        for (var i = 0; i < events.length; i++) {
-          this.eventListeners.push(google.maps.event.addDomListener(this.div, events[i], cancelHandler));
-        } // Workaround for Google bug that causes the cursor to change to a pointer
-        // when the mouse moves over a marker underneath InfoBox.
-
-
-        this.eventListeners.push(google.maps.event.addDomListener(this.div, 'mouseover', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-        function () {
-          if (_this.div) {
-            _this.div.style.cursor = 'default';
-          }
-        }));
-      }
-
-      this.contextListener = google.maps.event.addDomListener(this.div, 'contextmenu', ignoreHandler);
-      /**
-       * This event is fired when the DIV containing the InfoBox's content is attached to the DOM.
-       * @name InfoBox#domready
-       * @event
-       */
-
-      google.maps.event.trigger(this, 'domready');
-    }
-  };
-
-  _proto.getCloseBoxImg = function getCloseBoxImg() {
-    var img = '';
-
-    if (this.closeBoxURL !== '') {
-      img = '<img';
-      img += " src='" + this.closeBoxURL + "'";
-      img += ' align=right'; // Do this because Opera chokes on style='float: right;'
-
-      img += " style='";
-      img += ' position: relative;'; // Required by MSIE
-
-      img += ' cursor: pointer;';
-      img += ' margin: ' + this.closeBoxMargin + ';';
-      img += "'>";
-    }
-
-    return img;
-  };
-
-  _proto.addClickHandler = function addClickHandler() {
-    if (this.div && this.div.firstChild && this.closeBoxURL !== '') {
-      var closeBox = this.div.firstChild;
-      this.closeListener = google.maps.event.addDomListener(closeBox, 'click', this.getCloseClickHandler());
-    } else {
-      this.closeListener = null;
-    }
-  };
-
-  _proto.getCloseClickHandler = function getCloseClickHandler() {
-    var _this2 = this;
-
-    // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    return function (event) {
-      // 1.0.3 fix: Always prevent propagation of a close box click to the map:
-      event.cancelBubble = true;
-
-      if (event.stopPropagation) {
-        event.stopPropagation();
-      }
-      /**
-       * This event is fired when the InfoBox's close box is clicked.
-       * @name InfoBox#closeclick
-       * @event
-       */
-
-
-      google.maps.event.trigger(_this2, 'closeclick');
-
-      _this2.close();
-    };
-  };
-
-  _proto.panBox = function panBox(disablePan) {
-    if (this.div && !disablePan) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      var map = this.getMap(); // Only pan if attached to map, not panorama
-
-      if (map instanceof google.maps.Map) {
-        var xOffset = 0;
-        var yOffset = 0;
-        var bounds = map.getBounds();
-
-        if (bounds && !bounds.contains(this.position)) {
-          // Marker not in visible area of map, so set center
-          // of map to the marker position first.
-          map.setCenter(this.position);
-        }
-
-        var mapDiv = map.getDiv(); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        var mapWidth = mapDiv.offsetWidth; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        var mapHeight = mapDiv.offsetHeight;
-        var iwOffsetX = this.pixelOffset.width;
-        var iwOffsetY = this.pixelOffset.height;
-        var iwWidth = this.div.offsetWidth;
-        var iwHeight = this.div.offsetHeight;
-        var padX = this.infoBoxClearance.width;
-        var padY = this.infoBoxClearance.height; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        var projection = this.getProjection();
-        var pixPosition = projection.fromLatLngToContainerPixel(this.position);
-
-        if (pixPosition.x < -iwOffsetX + padX) {
-          xOffset = pixPosition.x + iwOffsetX - padX;
-        } else if (pixPosition.x + iwWidth + iwOffsetX + padX > mapWidth) {
-          xOffset = pixPosition.x + iwWidth + iwOffsetX + padX - mapWidth;
-        }
-
-        if (this.alignBottom) {
-          if (pixPosition.y < -iwOffsetY + padY + iwHeight) {
-            yOffset = pixPosition.y + iwOffsetY - padY - iwHeight;
-          } else if (pixPosition.y + iwOffsetY + padY > mapHeight) {
-            yOffset = pixPosition.y + iwOffsetY + padY - mapHeight;
-          }
-        } else {
-          if (pixPosition.y < -iwOffsetY + padY) {
-            yOffset = pixPosition.y + iwOffsetY - padY;
-          } else if (pixPosition.y + iwHeight + iwOffsetY + padY > mapHeight) {
-            yOffset = pixPosition.y + iwHeight + iwOffsetY + padY - mapHeight;
-          }
-        }
-
-        if (!(xOffset === 0 && yOffset === 0)) {
-          // Move the map to the shifted center.
-          map.panBy(xOffset, yOffset);
-        }
-      }
-    }
-  };
-
-  _proto.setBoxStyle = function setBoxStyle() {
-    if (this.div) {
-      // Apply style values from the style sheet defined in the boxClass parameter:
-      this.div.className = this.boxClass; // Clear existing inline style values:
-
-      this.div.style.cssText = ''; // Apply style values defined in the boxStyle parameter:
-
-      var boxStyle = this.boxStyle;
-
-      for (var i in boxStyle) {
-        if (boxStyle.hasOwnProperty(i)) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-          // @ts-ignore
-          this.div.style[i] = boxStyle[i];
-        }
-      } // Fix for iOS disappearing InfoBox problem
-      // See http://stackoverflow.com/questions/9229535/google-maps-markers-disappear-at-certain-zoom-level-only-on-iphone-ipad
-
-
-      this.div.style.webkitTransform = 'translateZ(0)'; // Fix up opacity style for benefit of MSIE
-
-      if (typeof this.div.style.opacity !== 'undefined' && this.div.style.opacity !== '') {
-        // See http://www.quirksmode.org/css/opacity.html
-        var opacity = parseFloat(this.div.style.opacity || ''); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        this.div.style.msFilter = '"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"';
-        this.div.style.filter = 'alpha(opacity=' + opacity * 100 + ')';
-      } // Apply required styles
-
-
-      this.div.style.position = 'absolute';
-      this.div.style.visibility = 'hidden';
-
-      if (this.zIndex !== null) {
-        this.div.style.zIndex = this.zIndex + '';
-      }
-
-      if (!this.div.style.overflow) {
-        this.div.style.overflow = 'auto';
-      }
-    }
-  };
-
-  _proto.getBoxWidths = function getBoxWidths() {
-    var bw = {
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
-    };
-
-    if (!this.div) {
-      return bw;
-    }
-
-    if (document.defaultView && document.defaultView.getComputedStyle) {
-      var ownerDocument = this.div.ownerDocument;
-      var computedStyle = ownerDocument && ownerDocument.defaultView ? ownerDocument.defaultView.getComputedStyle(this.div, '') : null;
-
-      if (computedStyle) {
-        // The computed styles are always in pixel units (good!)
-        bw.top = parseInt(computedStyle.borderTopWidth || '', 10) || 0;
-        bw.bottom = parseInt(computedStyle.borderBottomWidth || '', 10) || 0;
-        bw.left = parseInt(computedStyle.borderLeftWidth || '', 10) || 0;
-        bw.right = parseInt(computedStyle.borderRightWidth || '', 10) || 0;
-      }
-    } else if ( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    document.documentElement.currentStyle // MSIE
-    ) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        var currentStyle = this.div.currentStyle;
-
-        if (currentStyle) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-          // The current styles may not be in pixel units, but assume they are (bad!)
-          bw.top = parseInt(currentStyle.borderTopWidth || '', 10) || 0;
-          bw.bottom = parseInt(currentStyle.borderBottomWidth || '', 10) || 0;
-          bw.left = parseInt(currentStyle.borderLeftWidth || '', 10) || 0;
-          bw.right = parseInt(currentStyle.borderRightWidth || '', 10) || 0;
-        }
-      }
-
-    return bw;
-  };
-
-  _proto.onRemove = function onRemove() {
-    if (this.div && this.div.parentNode) {
-      this.div.parentNode.removeChild(this.div);
-      this.div = null;
-    }
-  };
-
-  _proto.draw = function draw() {
-    this.createInfoBoxDiv();
-
-    if (this.div) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      var projection = this.getProjection();
-      var pixPosition = projection.fromLatLngToDivPixel(this.position);
-      this.div.style.left = pixPosition.x + this.pixelOffset.width + 'px';
-
-      if (this.alignBottom) {
-        this.div.style.bottom = -(pixPosition.y + this.pixelOffset.height) + 'px';
-      } else {
-        this.div.style.top = pixPosition.y + this.pixelOffset.height + 'px';
-      }
-
-      if (this.isHidden) {
-        this.div.style.visibility = 'hidden';
-      } else {
-        this.div.style.visibility = 'visible';
-      }
-    }
-  };
-
-  _proto.setOptions = function setOptions(options) {
-    if (options === void 0) {
-      options = {};
-    }
-
-    if (typeof options.boxClass !== 'undefined') {
-      // Must be first
-      this.boxClass = options.boxClass;
-      this.setBoxStyle();
-    }
-
-    if (typeof options.boxStyle !== 'undefined') {
-      // Must be second
-      this.boxStyle = options.boxStyle;
-      this.setBoxStyle();
-    }
-
-    if (typeof options.content !== 'undefined') {
-      this.setContent(options.content);
-    }
-
-    if (typeof options.disableAutoPan !== 'undefined') {
-      this.disableAutoPan = options.disableAutoPan;
-    }
-
-    if (typeof options.maxWidth !== 'undefined') {
-      this.maxWidth = options.maxWidth;
-    }
-
-    if (typeof options.pixelOffset !== 'undefined') {
-      this.pixelOffset = options.pixelOffset;
-    }
-
-    if (typeof options.alignBottom !== 'undefined') {
-      this.alignBottom = options.alignBottom;
-    }
-
-    if (typeof options.position !== 'undefined') {
-      this.setPosition(options.position);
-    }
-
-    if (typeof options.zIndex !== 'undefined') {
-      this.setZIndex(options.zIndex);
-    }
-
-    if (typeof options.closeBoxMargin !== 'undefined') {
-      this.closeBoxMargin = options.closeBoxMargin;
-    }
-
-    if (typeof options.closeBoxURL !== 'undefined') {
-      this.closeBoxURL = options.closeBoxURL;
-    }
-
-    if (typeof options.infoBoxClearance !== 'undefined') {
-      this.infoBoxClearance = options.infoBoxClearance;
-    }
-
-    if (typeof options.isHidden !== 'undefined') {
-      this.isHidden = options.isHidden;
-    }
-
-    if (typeof options.visible !== 'undefined') {
-      this.isHidden = !options.visible;
-    }
-
-    if (typeof options.enableEventPropagation !== 'undefined') {
-      this.enableEventPropagation = options.enableEventPropagation;
-    }
-
-    if (this.div) {
-      this.draw();
-    }
-  };
-
-  _proto.setContent = function setContent(content) {
-    this.content = content;
-
-    if (this.div) {
-      if (this.closeListener) {
-        google.maps.event.removeListener(this.closeListener);
-        this.closeListener = null;
-      } // Odd code required to make things work with MSIE.
-
-
-      if (!this.fixedWidthSet) {
-        this.div.style.width = '';
-      }
-
-      if (typeof content === 'string') {
-        this.div.innerHTML = this.getCloseBoxImg() + content;
-      } else {
-        this.div.innerHTML = this.getCloseBoxImg();
-        this.div.appendChild(content);
-      } // Perverse code required to make things work with MSIE.
-      // (Ensures the close box does, in fact, float to the right.)
-
-
-      if (!this.fixedWidthSet) {
-        this.div.style.width = this.div.offsetWidth + 'px';
-
-        if (typeof content === 'string') {
-          this.div.innerHTML = this.getCloseBoxImg() + content;
-        } else {
-          this.div.innerHTML = this.getCloseBoxImg();
-          this.div.appendChild(content);
-        }
-      }
-
-      this.addClickHandler();
-    }
-    /**
-     * This event is fired when the content of the InfoBox changes.
-     * @name InfoBox#content_changed
-     * @event
-     */
-
-
-    google.maps.event.trigger(this, 'content_changed');
-  };
-
-  _proto.setPosition = function setPosition(latLng) {
-    this.position = latLng;
-
-    if (this.div) {
-      this.draw();
-    }
-    /**
-     * This event is fired when the position of the InfoBox changes.
-     * @name InfoBox#position_changed
-     * @event
-     */
-
-
-    google.maps.event.trigger(this, 'position_changed');
-  };
-
-  _proto.setVisible = function setVisible(isVisible) {
-    this.isHidden = !isVisible;
-
-    if (this.div) {
-      this.div.style.visibility = this.isHidden ? 'hidden' : 'visible';
-    }
-  };
-
-  _proto.setZIndex = function setZIndex(index) {
-    this.zIndex = index;
-
-    if (this.div) {
-      this.div.style.zIndex = index + '';
-    }
-    /**
-     * This event is fired when the zIndex of the InfoBox changes.
-     * @name InfoBox#zindex_changed
-     * @event
-     */
-
-
-    google.maps.event.trigger(this, 'zindex_changed');
-  };
-
-  _proto.getContent = function getContent() {
-    return this.content;
-  };
-
-  _proto.getPosition = function getPosition() {
-    return this.position;
-  };
-
-  _proto.getZIndex = function getZIndex() {
-    return this.zIndex;
-  };
-
-  _proto.getVisible = function getVisible() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    var map = this.getMap();
-    var isVisible;
-
-    if (typeof map === 'undefined' || map === null) {
-      isVisible = false;
-    } else {
-      isVisible = !this.isHidden;
-    }
-
-    return isVisible;
-  };
-
-  _proto.show = function show() {
-    this.isHidden = false;
-
-    if (this.div) {
-      this.div.style.visibility = 'visible';
-    }
-  };
-
-  _proto.hide = function hide() {
-    this.isHidden = true;
-
-    if (this.div) {
-      this.div.style.visibility = 'hidden';
-    }
-  };
-
-  _proto.open = function open(map, anchor) {
-    var _this3 = this;
-
-    if (anchor) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      this.position = anchor.getPosition();
-      this.moveListener = google.maps.event.addListener(anchor, 'position_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-      function () {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        var position = anchor.getPosition();
-
-        _this3.setPosition(position);
-      });
-      this.mapListener = google.maps.event.addListener(anchor, 'map_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-      function () {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        _this3.setMap(anchor.map);
-      });
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-
-    this.setMap(map);
-
-    if (this.div) {
-      this.panBox();
-    }
-  };
-
-  _proto.close = function close() {
-    if (this.closeListener) {
-      google.maps.event.removeListener(this.closeListener);
-      this.closeListener = null;
-    }
-
-    if (this.eventListeners) {
-      for (var i = 0; i < this.eventListeners.length; i++) {
-        google.maps.event.removeListener(this.eventListeners[i]);
-      }
-
-      this.eventListeners = null;
-    }
-
-    if (this.moveListener) {
-      google.maps.event.removeListener(this.moveListener);
-      this.moveListener = null;
-    }
-
-    if (this.mapListener) {
-      google.maps.event.removeListener(this.mapListener);
-      this.mapListener = null;
-    }
-
-    if (this.contextListener) {
-      google.maps.event.removeListener(this.contextListener);
-      this.contextListener = null;
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-
-    this.setMap(null);
-  };
-
-  _proto.extend = function extend(obj1, obj2) {
-    return function applyExtend(object) {
-      // eslint-disable-next-line guard-for-in
-      for (var property in object.prototype) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        this.prototype[property] = object.prototype[property];
-      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-
-
-      return this;
-    }.apply(obj1, [obj2]);
-  };
-
-  return InfoBox;
-}();
-
-
-//# sourceMappingURL=infobox.esm.js.map
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeData", function() { return encodeData; });
+// eslint-disable-next-line import/prefer-default-export
+function getParameterByName(name) {
+  var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
+  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+function encodeData(data) {
+  return Object.keys(data).map(function (key) {
+    return [key, data[key]].map(encodeURIComponent).join('=');
+  }).join('&');
+}
 
 /***/ }),
 
-/***/ "./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js ***!
-  \**************************************************************************************/
-/*! exports provided: Cluster, ClusterIcon, Clusterer */
+/***/ "./resources/js/components/Admin/InfoBoxes.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Admin/InfoBoxes.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cluster", function() { return Cluster; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClusterIcon", function() { return ClusterIcon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Clusterer", function() { return Clusterer; });
-var ClusterIcon =
-/*#__PURE__*/
-function () {
-  function ClusterIcon(cluster, styles) {
-    cluster.getClusterer().extend(ClusterIcon, google.maps.OverlayView);
-    this.cluster = cluster;
-    this.className = this.cluster.getClusterer().getClusterClass();
-    this.styles = styles;
-    this.center = undefined;
-    this.div = null;
-    this.sums = null;
-    this.visible = false;
-    this.boundsChangedListener = null;
-    this.url = '';
-    this.height = 0;
-    this.width = 0;
-    this.anchorText = [0, 0];
-    this.anchorIcon = [0, 0];
-    this.textColor = 'black';
-    this.textSize = 11;
-    this.textDecoration = 'none';
-    this.fontWeight = 'bold';
-    this.fontStyle = 'normal';
-    this.fontFamily = 'Arial,sans-serif';
-    this.backgroundPosition = '0 0'; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return InfoBoxes; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
+/* harmony import */ var _InfoBoxes_UserDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InfoBoxes/UserDetails */ "./resources/js/components/Admin/InfoBoxes/UserDetails.jsx");
+/* harmony import */ var _InfoBoxes_StoreDetails__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InfoBoxes/StoreDetails */ "./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx");
+/* harmony import */ var _InfoBoxes_ProductsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./InfoBoxes/ProductsList */ "./resources/js/components/Admin/InfoBoxes/ProductsList.jsx");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-    this.setMap(cluster.getMap()); // Note: this causes onAdd to be called
-  }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-  var _proto = ClusterIcon.prototype;
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-  _proto.onAdd = function onAdd() {
-    var _this = this;
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-    var cMouseDownInCluster;
-    var cDraggingMapByCluster;
-    this.div = document.createElement('div');
-    this.div.className = this.className;
 
-    if (this.visible) {
-      this.show();
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
 
 
-    this.getPanes().overlayMouseTarget.appendChild(this.div); // Fix for Issue 157
 
-    this.boundsChangedListener = google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap(), 'boundschanged', function boundsChabged() {
-      cDraggingMapByCluster = cMouseDownInCluster;
-    });
-    google.maps.event.addDomListener(this.div, 'mousedown', function onMouseDown() {
-      cMouseDownInCluster = true;
-      cDraggingMapByCluster = false;
-    }); // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
 
-    google.maps.event.addDomListener(this.div, 'click', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function (event) {
-      cMouseDownInCluster = false;
 
-      if (!cDraggingMapByCluster) {
-        var markerClusterer = _this.cluster.getClusterer();
-        /**
-         * This event is fired when a cluster marker is clicked.
-         * @name MarkerClusterer#click
-         * @param {Cluster} c The cluster that was clicked.
-         * @event
-         */
 
+ // import 'sweetalert2/src/sweetalert2.scss'
 
-        google.maps.event.trigger(markerClusterer, 'click', _this.cluster);
-        google.maps.event.trigger(markerClusterer, 'clusterclick', _this.cluster); // deprecated name
-        // The default click handler follows. Disable it by setting
-        // the zoomOnClick property to false.
+function InfoBoxes(props) {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      user = _usePage.auth.user;
 
-        if (markerClusterer.getZoomOnClick()) {
-          // Zoom into the cluster.
-          var maxZoom = markerClusterer.getMaxZoom();
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      nextStatus = _useState2[0],
+      setNextStatus = _useState2[1];
 
-          var bounds = _this.cluster.getBounds(); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-          // @ts-ignore
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isCancel = _useState4[0],
+      setIsCancel = _useState4[1];
 
+  var data = props.data;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (data) {
+      var status = data.status,
+          store = data.store,
+          canceled = data.canceled;
+      setIsCancel(canceled);
 
-          markerClusterer.getMap().fitBounds(bounds); // There is a fix for Issue 170 here:
-
-          setTimeout(function timeout() {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-            // @ts-ignore
-            markerClusterer.getMap().fitBounds(bounds); // Don't zoom beyond the max zoom level
-            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-            // @ts-ignore
-
-            if (maxZoom !== null && markerClusterer.getMap().getZoom() > maxZoom) {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-              // @ts-ignore
-              markerClusterer.getMap().setZoom(maxZoom + 1);
-            }
-          }, 100);
-        } // Prevent event propagation to the map:
-
-
-        event.cancelBubble = true;
-
-        if (event.stopPropagation) {
-          event.stopPropagation();
-        }
-      }
-    });
-    google.maps.event.addDomListener(this.div, 'mouseover', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      /**
-       * This event is fired when the mouse moves over a cluster marker.
-       * @name MarkerClusterer#mouseover
-       * @param {Cluster} c The cluster that the mouse moved over.
-       * @event
-       */
-      google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseover', _this.cluster);
-    }); // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    google.maps.event.addDomListener(this.div, 'mouseout', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      /**
-       * This event is fired when the mouse moves out of a cluster marker.
-       * @name MarkerClusterer#mouseout
-       * @param {Cluster} c The cluster that the mouse moved out of.
-       * @event
-       */
-      google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseout', _this.cluster);
-    });
-  };
-
-  _proto.onRemove = function onRemove() {
-    if (this.div && this.div.parentNode) {
-      this.hide();
-
-      if (this.boundsChangedListener !== null) {
-        google.maps.event.removeListener(this.boundsChangedListener);
-      }
-
-      google.maps.event.clearInstanceListeners(this.div);
-      this.div.parentNode.removeChild(this.div);
-      this.div = null;
-    }
-  };
-
-  _proto.draw = function draw() {
-    if (this.visible && this.div !== null && this.center) {
-      var _this$getPosFromLatLn = this.getPosFromLatLng(this.center),
-          x = _this$getPosFromLatLn.x,
-          y = _this$getPosFromLatLn.y;
-
-      this.div.style.top = y + 'px';
-      this.div.style.left = x + 'px';
-    }
-  };
-
-  _proto.hide = function hide() {
-    if (this.div) {
-      this.div.style.display = 'none';
-    }
-
-    this.visible = false;
-  };
-
-  _proto.show = function show() {
-    if (this.div && this.center) {
-      var img = '',
-          divTitle = ''; // NOTE: values must be specified in px units
-
-      var bp = this.backgroundPosition.split(' ');
-      var spriteH = parseInt(bp[0].replace(/^\s+|\s+$/g, ''), 10);
-      var spriteV = parseInt(bp[1].replace(/^\s+|\s+$/g, ''), 10);
-      var pos = this.getPosFromLatLng(this.center);
-
-      if (this.sums === null || typeof this.sums.title === 'undefined' || this.sums.title === '') {
-        divTitle = this.cluster.getClusterer().getTitle();
-      } else {
-        divTitle = this.sums.title;
-      }
-
-      this.div.style.cssText = this.createCss(pos);
-      img = "<img alt='" + divTitle + "' src='" + this.url + "' style='position: absolute; top: " + spriteV + 'px; left: ' + spriteH + 'px; '; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      //@ts-ignore
-
-      if (!this.cluster.getClusterer().enableRetinaIcons) {
-        img += 'clip: rect(' + -1 * spriteV + 'px, ' + (-1 * spriteH + this.width) + 'px, ' + (-1 * spriteV + this.height) + 'px, ' + -1 * spriteH + 'px);';
-      }
-
-      img += "'>";
-      this.div.innerHTML = img + "<div style='" + 'position: absolute;' + 'top: ' + this.anchorText[0] + 'px;' + 'left: ' + this.anchorText[1] + 'px;' + 'color: ' + this.textColor + ';' + 'font-size: ' + this.textSize + 'px;' + 'font-family: ' + this.fontFamily + ';' + 'font-weight: ' + this.fontWeight + ';' + 'font-style: ' + this.fontStyle + ';' + 'text-decoration: ' + this.textDecoration + ';' + 'text-align: center;' + 'width: ' + this.width + 'px;' + 'line-height:' + this.height + 'px;' + "'>" + // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      this.sums.text + '</div>';
-      this.div.title = divTitle;
-      this.div.style.display = '';
-    }
-
-    this.visible = true;
-  };
-
-  _proto.useStyle = function useStyle(sums) {
-    this.sums = sums;
-    var style = this.styles[Math.min(this.styles.length - 1, Math.max(0, sums.index - 1))];
-    this.url = style.url;
-    this.height = style.height;
-    this.width = style.width;
-    this.anchorText = style.anchorText || [0, 0];
-    this.anchorIcon = style.anchorIcon || [this.height / 2, this.width / 2];
-    this.textColor = style.textColor || 'black';
-    this.textSize = style.textSize || 11;
-    this.textDecoration = style.textDecoration || 'none';
-    this.fontWeight = style.fontWeight || 'bold';
-    this.fontStyle = style.fontStyle || 'normal';
-    this.fontFamily = style.fontFamily || 'Arial,sans-serif';
-    this.backgroundPosition = style.backgroundPosition || '0 0';
-  };
-
-  _proto.setCenter = function setCenter(center) {
-    this.center = center;
-  };
-
-  _proto.createCss = function createCss(pos) {
-    var style = [];
-    style.push('cursor: pointer;');
-    style.push('position: absolute; top: ' + pos.y + 'px; left: ' + pos.x + 'px;');
-    style.push('width: ' + this.width + 'px; height: ' + this.height + 'px;');
-    return style.join('');
-  };
-
-  _proto.getPosFromLatLng = function getPosFromLatLng(latlng) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    var pos = this.getProjection().fromLatLngToDivPixel(latlng);
-    pos.x -= this.anchorIcon[1];
-    pos.y -= this.anchorIcon[0];
-    pos.x = pos.x;
-    pos.y = pos.y;
-    return pos;
-  };
-
-  return ClusterIcon;
-}();
-
-var Cluster =
-/*#__PURE__*/
-function () {
-  function Cluster(markerClusterer) {
-    this.markerClusterer = markerClusterer; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-    this.map = this.markerClusterer.getMap();
-    this.gridSize = this.markerClusterer.getGridSize();
-    this.minClusterSize = this.markerClusterer.getMinimumClusterSize();
-    this.averageCenter = this.markerClusterer.getAverageCenter();
-    this.markers = [];
-    this.center = undefined;
-    this.bounds = null;
-    this.clusterIcon = new ClusterIcon(this, this.markerClusterer.getStyles());
-  }
-
-  var _proto = Cluster.prototype;
-
-  _proto.getSize = function getSize() {
-    return this.markers.length;
-  };
-
-  _proto.getMarkers = function getMarkers() {
-    return this.markers;
-  };
-
-  _proto.getCenter = function getCenter() {
-    return this.center;
-  };
-
-  _proto.getMap = function getMap() {
-    return this.map;
-  };
-
-  _proto.getClusterer = function getClusterer() {
-    return this.markerClusterer;
-  };
-
-  _proto.getBounds = function getBounds() {
-    var bounds = new google.maps.LatLngBounds(this.center, this.center);
-    var markers = this.getMarkers();
-
-    for (var i = 0; i < markers.length; i++) {
-      var position = markers[i].getPosition();
-
-      if (position) {
-        bounds.extend(position);
-      }
-    }
-
-    return bounds;
-  };
-
-  _proto.remove = function remove() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.clusterIcon.setMap(null);
-    this.markers = [];
-    delete this.markers;
-  };
-
-  _proto.addMarker = function addMarker(marker) {
-    if (this.isMarkerAlreadyAdded(marker)) {
-      return false;
-    }
-
-    if (!this.center) {
-      var position = marker.getPosition();
-
-      if (position) {
-        this.center = position;
-        this.calculateBounds();
-      }
-    } else {
-      if (this.averageCenter) {
-        var _position = marker.getPosition();
-
-        if (_position) {
-          var length = this.markers.length + 1;
-          this.center = new google.maps.LatLng((this.center.lat() * (length - 1) + _position.lat()) / length, (this.center.lng() * (length - 1) + _position.lng()) / length);
-          this.calculateBounds();
-        }
-      }
-    }
-
-    marker.isAdded = true;
-    this.markers.push(marker);
-    var mCount = this.markers.length;
-    var maxZoom = this.markerClusterer.getMaxZoom();
-
-    if (maxZoom !== null && this.map.getZoom() > maxZoom) {
-      // Zoomed in past max zoom, so show the marker.
-      if (marker.getMap() !== this.map) {
-        marker.setMap(this.map);
-      }
-    } else if (mCount < this.minClusterSize) {
-      // Min cluster size not reached so show the marker.
-      if (marker.getMap() !== this.map) {
-        marker.setMap(this.map);
-      }
-    } else if (mCount === this.minClusterSize) {
-      // Hide the markers that were showing.
-      for (var i = 0; i < mCount; i++) {
-        this.markers[i].setMap(null);
-      }
-    } else {
-      marker.setMap(null);
-    }
-
-    this.updateIcon();
-    return true;
-  };
-
-  _proto.isMarkerInClusterBounds = function isMarkerInClusterBounds(marker) {
-    if (this.bounds !== null) {
-      var position = marker.getPosition();
-
-      if (position) {
-        return this.bounds.contains(position);
-      }
-    }
-
-    return false;
-  };
-
-  _proto.calculateBounds = function calculateBounds() {
-    this.bounds = this.markerClusterer.getExtendedBounds(new google.maps.LatLngBounds(this.center, this.center));
-  };
-
-  _proto.updateIcon = function updateIcon() {
-    var mCount = this.markers.length;
-    var maxZoom = this.markerClusterer.getMaxZoom();
-
-    if (maxZoom !== null && this.map.getZoom() > maxZoom) {
-      this.clusterIcon.hide();
-      return;
-    }
-
-    if (mCount < this.minClusterSize) {
-      // Min cluster size not yet reached.
-      this.clusterIcon.hide();
-      return;
-    }
-
-    if (this.center) {
-      this.clusterIcon.setCenter(this.center);
-    }
-
-    this.clusterIcon.useStyle(this.markerClusterer.getCalculator()(this.markers, this.markerClusterer.getStyles().length));
-    this.clusterIcon.show();
-  };
-
-  _proto.isMarkerAlreadyAdded = function isMarkerAlreadyAdded(marker) {
-    if (this.markers.indexOf) {
-      return this.markers.includes(marker);
-    } else {
-      for (var i = 0; i < this.markers.length; i++) {
-        if (marker === this.markers[i]) {
-          return true;
-        }
-      }
-    }
-
-    return false;
-  };
-
-  return Cluster;
-}();
-
-/* eslint-disable filenames/match-regex */
-
-var CALCULATOR = function CALCULATOR(markers, numStyles) {
-  var index = 0;
-  var title = '';
-  var count = markers.length.toString();
-  var dv = count;
-
-  while (dv !== 0) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    dv = parseInt(dv, 10) / 10;
-    index++;
-  }
-
-  index = Math.min(index, numStyles);
-  return {
-    text: count,
-    index: index,
-    title: title
-  };
-};
-
-var BATCH_SIZE = 2000;
-var BATCH_SIZE_IE = 500;
-var IMAGE_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
-var IMAGE_EXTENSION = 'png';
-var IMAGE_SIZES = [53, 56, 66, 78, 90];
-var CLUSTERER_CLASS = 'cluster';
-var Clusterer =
-/*#__PURE__*/
-function () {
-  function Clusterer(map, optMarkers, optOptions) {
-    if (optMarkers === void 0) {
-      optMarkers = [];
-    }
-
-    if (optOptions === void 0) {
-      optOptions = {};
-    }
-
-    this.extend(Clusterer, google.maps.OverlayView);
-    this.markers = [];
-    this.clusters = [];
-    this.listeners = [];
-    this.activeMap = null;
-    this.ready = false;
-    this.gridSize = optOptions.gridSize || 60;
-    this.minClusterSize = optOptions.minimumClusterSize || 2;
-    this.maxZoom = optOptions.maxZoom || null;
-    this.styles = optOptions.styles || [];
-    this.title = optOptions.title || '';
-    this.zoomOnClick = true;
-
-    if (optOptions.zoomOnClick !== undefined) {
-      this.zoomOnClick = optOptions.zoomOnClick;
-    }
-
-    this.averageCenter = false;
-
-    if (optOptions.averageCenter !== undefined) {
-      this.averageCenter = optOptions.averageCenter;
-    }
-
-    this.ignoreHidden = false;
-
-    if (optOptions.ignoreHidden !== undefined) {
-      this.ignoreHidden = optOptions.ignoreHidden;
-    }
-
-    this.enableRetinaIcons = false;
-
-    if (optOptions.enableRetinaIcons !== undefined) {
-      this.enableRetinaIcons = optOptions.enableRetinaIcons;
-    }
-
-    this.imagePath = optOptions.imagePath || IMAGE_PATH;
-    this.imageExtension = optOptions.imageExtension || IMAGE_EXTENSION;
-    this.imageSizes = optOptions.imageSizes || IMAGE_SIZES;
-    this.calculator = optOptions.calculator || CALCULATOR;
-    this.batchSize = optOptions.batchSize || BATCH_SIZE;
-    this.batchSizeIE = optOptions.batchSizeIE || BATCH_SIZE_IE;
-    this.clusterClass = optOptions.clusterClass || CLUSTERER_CLASS;
-
-    if (navigator.userAgent.toLowerCase().indexOf('msie') !== -1) {
-      // Try to avoid IE timeout when processing a huge number of markers:
-      this.batchSize = this.batchSizeIE;
-    }
-
-    this.timerRefStatic = null;
-    this.setupStyles();
-    this.addMarkers(optMarkers, true); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-    this.setMap(map); // Note: this causes onAdd to be called
-  }
-
-  var _proto = Clusterer.prototype;
-
-  _proto.onAdd = function onAdd() {
-    var _this = this;
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.activeMap = this.getMap();
-    this.ready = true;
-    this.repaint(); // Add the map event listeners
-
-    this.listeners = [google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap(), 'zoom_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      _this.resetViewport(false); // Workaround for this Google bug: when map is at level 0 and "-" of
-      // zoom slider is clicked, a "zoom_changed" event is fired even though
-      // the map doesn't zoom out any further. In this situation, no "idle"
-      // event is triggered so the cluster markers that have been removed
-      // do not get redrawn. Same goes for a zoom in at maxZoom.
-
-
-      if ( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      _this.getMap().getZoom() === (_this.get('minZoom') || 0) || // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      _this.getMap().getZoom() === _this.get('maxZoom')) {
-        google.maps.event.trigger(_this, 'idle');
-      }
-    }), google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap(), 'idle', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      _this.redraw();
-    })];
-  } // eslint-disable-next-line @getify/proper-arrows/this
-  ;
-
-  _proto.onRemove = function onRemove() {
-    // Put all the managed markers back on the map:
-    for (var i = 0; i < this.markers.length; i++) {
-      if (this.markers[i].getMap() !== this.activeMap) {
-        this.markers[i].setMap(this.activeMap);
-      }
-    } // Remove all clusters:
-
-
-    for (var _i = 0; _i < this.clusters.length; _i++) {
-      this.clusters[_i].remove();
-    }
-
-    this.clusters = []; // Remove map event listeners:
-
-    for (var _i2 = 0; _i2 < this.listeners.length; _i2++) {
-      google.maps.event.removeListener(this.listeners[_i2]);
-    }
-
-    this.listeners = [];
-    this.activeMap = null;
-    this.ready = false;
-  } // eslint-disable-next-line @typescript-eslint/no-empty-function
-  ;
-
-  _proto.draw = function draw() {};
-
-  _proto.setupStyles = function setupStyles() {
-    if (this.styles.length > 0) {
-      return;
-    }
-
-    for (var i = 0; i < this.imageSizes.length; i++) {
-      this.styles.push({
-        url: this.imagePath + (i + 1) + '.' + this.imageExtension,
-        height: this.imageSizes[i],
-        width: this.imageSizes[i]
-      });
-    }
-  };
-
-  _proto.fitMapToMarkers = function fitMapToMarkers() {
-    var markers = this.getMarkers();
-    var bounds = new google.maps.LatLngBounds();
-
-    for (var i = 0; i < markers.length; i++) {
-      var position = markers[i].getPosition();
-
-      if (position) {
-        bounds.extend(position);
-      }
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-
-    this.getMap().fitBounds(bounds);
-  };
-
-  _proto.getGridSize = function getGridSize() {
-    return this.gridSize;
-  };
-
-  _proto.setGridSize = function setGridSize(gridSize) {
-    this.gridSize = gridSize;
-  };
-
-  _proto.getMinimumClusterSize = function getMinimumClusterSize() {
-    return this.minClusterSize;
-  };
-
-  _proto.setMinimumClusterSize = function setMinimumClusterSize(minimumClusterSize) {
-    this.minClusterSize = minimumClusterSize;
-  };
-
-  _proto.getMaxZoom = function getMaxZoom() {
-    return this.maxZoom;
-  };
-
-  _proto.setMaxZoom = function setMaxZoom(maxZoom) {
-    this.maxZoom = maxZoom;
-  };
-
-  _proto.getStyles = function getStyles() {
-    return this.styles;
-  };
-
-  _proto.setStyles = function setStyles(styles) {
-    this.styles = styles;
-  };
-
-  _proto.getTitle = function getTitle() {
-    return this.title;
-  };
-
-  _proto.setTitle = function setTitle(title) {
-    this.title = title;
-  };
-
-  _proto.getZoomOnClick = function getZoomOnClick() {
-    return this.zoomOnClick;
-  };
-
-  _proto.setZoomOnClick = function setZoomOnClick(zoomOnClick) {
-    this.zoomOnClick = zoomOnClick;
-  };
-
-  _proto.getAverageCenter = function getAverageCenter() {
-    return this.averageCenter;
-  };
-
-  _proto.setAverageCenter = function setAverageCenter(averageCenter) {
-    this.averageCenter = averageCenter;
-  };
-
-  _proto.getIgnoreHidden = function getIgnoreHidden() {
-    return this.ignoreHidden;
-  };
-
-  _proto.setIgnoreHidden = function setIgnoreHidden(ignoreHidden) {
-    this.ignoreHidden = ignoreHidden;
-  };
-
-  _proto.getEnableRetinaIcons = function getEnableRetinaIcons() {
-    return this.enableRetinaIcons;
-  };
-
-  _proto.setEnableRetinaIcons = function setEnableRetinaIcons(enableRetinaIcons) {
-    this.enableRetinaIcons = enableRetinaIcons;
-  };
-
-  _proto.getImageExtension = function getImageExtension() {
-    return this.imageExtension;
-  };
-
-  _proto.setImageExtension = function setImageExtension(imageExtension) {
-    this.imageExtension = imageExtension;
-  };
-
-  _proto.getImagePath = function getImagePath() {
-    return this.imagePath;
-  };
-
-  _proto.setImagePath = function setImagePath(imagePath) {
-    this.imagePath = imagePath;
-  };
-
-  _proto.getImageSizes = function getImageSizes() {
-    return this.imageSizes;
-  };
-
-  _proto.setImageSizes = function setImageSizes(imageSizes) {
-    this.imageSizes = imageSizes;
-  };
-
-  _proto.getCalculator = function getCalculator() {
-    return this.calculator;
-  };
-
-  _proto.setCalculator = function setCalculator(calculator) {
-    this.calculator = calculator;
-  };
-
-  _proto.getBatchSizeIE = function getBatchSizeIE() {
-    return this.batchSizeIE;
-  };
-
-  _proto.setBatchSizeIE = function setBatchSizeIE(batchSizeIE) {
-    this.batchSizeIE = batchSizeIE;
-  };
-
-  _proto.getClusterClass = function getClusterClass() {
-    return this.clusterClass;
-  };
-
-  _proto.setClusterClass = function setClusterClass(clusterClass) {
-    this.clusterClass = clusterClass;
-  };
-
-  _proto.getMarkers = function getMarkers() {
-    return this.markers;
-  };
-
-  _proto.getTotalMarkers = function getTotalMarkers() {
-    return this.markers.length;
-  };
-
-  _proto.getClusters = function getClusters() {
-    return this.clusters;
-  };
-
-  _proto.getTotalClusters = function getTotalClusters() {
-    return this.clusters.length;
-  };
-
-  _proto.addMarker = function addMarker(marker, optNoDraw) {
-    this.pushMarkerTo(marker);
-
-    if (!optNoDraw) {
-      this.redraw();
-    }
-  };
-
-  _proto.addMarkers = function addMarkers(markers, optNoDraw) {
-    for (var key in markers) {
-      if (markers.hasOwnProperty(key)) {
-        this.pushMarkerTo(markers[key]);
-      }
-    }
-
-    if (!optNoDraw) {
-      this.redraw();
-    }
-  };
-
-  _proto.pushMarkerTo = function pushMarkerTo(marker) {
-    var _this2 = this;
-
-    // If the marker is draggable add a listener so we can update the clusters on the dragend:
-    if (marker.getDraggable()) {
-      // eslint-disable-next-line @getify/proper-arrows/name, @getify/proper-arrows/this
-      google.maps.event.addListener(marker, 'dragend', function () {
-        if (_this2.ready) {
-          marker.isAdded = false;
-
-          _this2.repaint();
-        }
-      });
-    }
-
-    marker.isAdded = false;
-    this.markers.push(marker);
-  };
-
-  _proto.removeMarker_ = function removeMarker_(marker) {
-    var index = -1;
-
-    if (this.markers.indexOf) {
-      index = this.markers.indexOf(marker);
-    } else {
-      for (var i = 0; i < this.markers.length; i++) {
-        if (marker === this.markers[i]) {
-          index = i;
+      switch (status.original) {
+        case 'created':
+        case 'opened':
+          setNextStatus({
+            original: 'journey',
+            step: 'En ruta',
+            allowed: user.isAdmin
+          });
           break;
+
+        case 'journey':
+          setNextStatus({
+            original: 'placed',
+            step: 'En sucursal',
+            allowed: user.role === 'manager' || user.isAdmin && store.isMatrix
+          });
+          break;
+
+        case 'placed':
+          setNextStatus({
+            original: 'delivered',
+            step: 'Entregado',
+            allowed: user.role === 'manager' || user.isAdmin && store.isMatrix
+          });
+          break;
+
+        case 'delivered':
+          setNextStatus({
+            original: 'alredyDelivered',
+            step: 'Ya entregado',
+            allowed: false
+          });
+          break;
+
+        default:
+          setNextStatus({
+            original: 'default',
+            step: 'Default',
+            allowed: false
+          });
+          break;
+      }
+    }
+  }, [data]);
+
+  var updateToNextStatus = function updateToNextStatus() {
+    if (nextStatus.allowed || user.isGod) {
+      sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+        title: '¿Seguro?',
+        text: "Vamos a pasar la orden de ".concat(data.status.step, " a ").concat(nextStatus.step),
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí cambiar estatus',
+        cancelButtonText: 'No cambiar estatus'
+      }).then(function (result) {
+        if (result.value) {
+          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
+            status: nextStatus.original
+          }); //     Swal.fire(
+          //         'Deleted!',
+          //         'Your file has been deleted.',
+          //         'success'
+          //     )
         }
+      });
+    }
+  };
+
+  var updateToPayed = function updateToPayed() {
+    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+      title: '¿Seguro?',
+      text: "La orden se considerar\xE1 como pagada",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí ha sido pagada',
+      cancelButtonText: 'No ha sido pagada'
+    }).then(function (result) {
+      if (result.value) {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
+          payed: true
+        }); //     Swal.fire(
+        //         'Deleted!',
+        //         'Your file has been deleted.',
+        //         'success'
+        //     )
       }
-    }
-
-    if (index === -1) {
-      // Marker is not in our list of markers, so do nothing:
-      return false;
-    }
-
-    marker.setMap(null);
-    this.markers.splice(index, 1); // Remove the marker from the list of managed markers
-
-    return true;
+    });
   };
 
-  _proto.removeMarker = function removeMarker(marker, optNoDraw) {
-    var removed = this.removeMarker_(marker);
-
-    if (!optNoDraw && removed) {
-      this.repaint();
-    }
-
-    return removed;
-  };
-
-  _proto.removeMarkers = function removeMarkers(markers, optNoDraw) {
-    var removed = false;
-
-    for (var i = 0; i < markers.length; i++) {
-      removed = removed || this.removeMarker_(markers[i]);
-    }
-
-    if (!optNoDraw && removed) {
-      this.repaint();
-    }
-
-    return removed;
-  };
-
-  _proto.clearMarkers = function clearMarkers() {
-    this.resetViewport(true);
-    this.markers = [];
-  };
-
-  _proto.repaint = function repaint() {
-    var oldClusters = this.clusters.slice();
-    this.clusters = [];
-    this.resetViewport(false);
-    this.redraw(); // Remove the old clusters.
-    // Do it in a timeout to prevent blinking effect.
-
-    setTimeout(function timeout() {
-      for (var i = 0; i < oldClusters.length; i++) {
-        oldClusters[i].remove();
+  var updateToCancel = function updateToCancel() {
+    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+      title: '¿Seguro?',
+      text: "La orden se considerar\xE1 como cancelada",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí esta cancelada',
+      cancelButtonText: 'No, no esta cancelada'
+    }).then(function (result) {
+      if (result.value) {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
+          canceled: true
+        }); //     Swal.fire(
+        //         'Deleted!',
+        //         'Your file has been deleted.',
+        //         'success'
+        //     )
       }
-    }, 0);
+    });
   };
 
-  _proto.getExtendedBounds = function getExtendedBounds(bounds) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    var projection = this.getProjection(); // Convert the points to pixels and the extend out by the grid size.
+  var allowedToModify = function allowedToModify() {
+    if (isCancel) return false;
 
-    var trPix = projection.fromLatLngToDivPixel( // Turn the bounds into latlng.
-    new google.maps.LatLng(bounds.getNorthEast().lat(), bounds.getNorthEast().lng()));
-    trPix.x += this.gridSize;
-    trPix.y -= this.gridSize;
-    var blPix = projection.fromLatLngToDivPixel( // Turn the bounds into latlng.
-    new google.maps.LatLng(bounds.getSouthWest().lat(), bounds.getSouthWest().lng()));
-    blPix.x -= this.gridSize;
-    blPix.y += this.gridSize; // Extend the bounds to contain the new bounds.
-
-    bounds.extend( // Convert the pixel points back to LatLng nw
-    projection.fromDivPixelToLatLng(trPix));
-    bounds.extend( // Convert the pixel points back to LatLng sw
-    projection.fromDivPixelToLatLng(blPix));
-    return bounds;
-  };
-
-  _proto.redraw = function redraw() {
-    // Redraws all the clusters.
-    this.createClusters(0);
-  };
-
-  _proto.resetViewport = function resetViewport(optHide) {
-    // Remove all the clusters
-    for (var i = 0; i < this.clusters.length; i++) {
-      this.clusters[i].remove();
+    if (user.isGod) {
+      return true;
     }
 
-    this.clusters = []; // Reset the markers to not be added and to be removed from the map.
-
-    for (var _i3 = 0; _i3 < this.markers.length; _i3++) {
-      var marker = this.markers[_i3];
-      marker.isAdded = false;
-
-      if (optHide) {
-        marker.setMap(null);
-      }
-    }
+    return nextStatus.allowed;
   };
 
-  _proto.distanceBetweenPoints = function distanceBetweenPoints(p1, p2) {
-    var R = 6371; // Radius of the Earth in km
-
-    var dLat = (p2.lat() - p1.lat()) * Math.PI / 180;
-    var dLon = (p2.lng() - p1.lng()) * Math.PI / 180;
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(p1.lat() * Math.PI / 180) * Math.cos(p2.lat() * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
-  };
-
-  _proto.isMarkerInBounds = function isMarkerInBounds(marker, bounds) {
-    var position = marker.getPosition();
-
-    if (position) {
-      return bounds.contains(position);
-    }
-
-    return false;
-  };
-
-  _proto.addToClosestCluster = function addToClosestCluster(marker) {
-    var cluster;
-    var distance = 40000; // Some large number
-
-    var clusterToAddTo = null;
-
-    for (var i = 0; i < this.clusters.length; i++) {
-      cluster = this.clusters[i];
-      var center = cluster.getCenter();
-      var position = marker.getPosition();
-
-      if (center && position) {
-        var d = this.distanceBetweenPoints(center, position);
-
-        if (d < distance) {
-          distance = d;
-          clusterToAddTo = cluster;
-        }
-      }
-    }
-
-    if (clusterToAddTo && clusterToAddTo.isMarkerInClusterBounds(marker)) {
-      clusterToAddTo.addMarker(marker);
-    } else {
-      cluster = new Cluster(this);
-      cluster.addMarker(marker);
-      this.clusters.push(cluster);
-    }
-  };
-
-  _proto.createClusters = function createClusters(iFirst) {
-    var _this3 = this;
-
-    if (!this.ready) {
-      return;
-    } // Cancel previous batch processing if we're working on the first batch:
-
-
-    if (iFirst === 0) {
-      /**
-       * This event is fired when the <code>Clusterer</code> begins
-       *  clustering markers.
-       * @name Clusterer#clusteringbegin
-       * @param {Clusterer} mc The Clusterer whose markers are being clustered.
-       * @event
-       */
-      google.maps.event.trigger(this, 'clusteringbegin', this);
-
-      if (this.timerRefStatic !== null) {
-        window.clearTimeout(this.timerRefStatic);
-        delete this.timerRefStatic;
-      }
-    } // Get our current map view bounds.
-    // Create a new bounds object so we don't affect the map.
-    //
-    // See Comments 9 & 11 on Issue 3651 relating to this workaround for a Google Maps bug:
-
-
-    var mapBounds = // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap().getZoom() > 3 ? new google.maps.LatLngBounds( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap().getBounds().getSouthWest(), // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap().getBounds().getNorthEast()) : new google.maps.LatLngBounds(new google.maps.LatLng(85.02070771743472, -178.48388434375), new google.maps.LatLng(-85.08136444384544, 178.00048865625));
-    var bounds = this.getExtendedBounds(mapBounds);
-    var iLast = Math.min(iFirst + this.batchSize, this.markers.length);
-
-    for (var i = iFirst; i < iLast; i++) {
-      var marker = this.markers[i];
-
-      if (!marker.isAdded && this.isMarkerInBounds(marker, bounds)) {
-        if (!this.ignoreHidden || this.ignoreHidden && marker.getVisible()) {
-          this.addToClosestCluster(marker);
-        }
-      }
-    }
-
-    if (iLast < this.markers.length) {
-      this.timerRefStatic = window.setTimeout( // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-      function () {
-        _this3.createClusters(iLast);
-      }, 0);
-    } else {
-      this.timerRefStatic = null;
-      /**
-       * This event is fired when the <code>Clusterer</code> stops
-       *  clustering markers.
-       * @name Clusterer#clusteringend
-       * @param {Clusterer} mc The Clusterer whose markers are being clustered.
-       * @event
-       */
-
-      google.maps.event.trigger(this, 'clusteringend', this);
-    }
-  };
-
-  _proto.extend = function extend(obj1, obj2) {
-    return function applyExtend(object) {
-      // eslint-disable-next-line guard-for-in
-      for (var property in object.prototype) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        this.prototype[property] = object.prototype[property];
-      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-
-
-      return this;
-    }.apply(obj1, [obj2]);
-  };
-
-  return Clusterer;
-}();
-
-
-//# sourceMappingURL=markerclusterer.esm.js.map
-
+  var buttonClass = 'w-full inline-block text-white hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6';
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "dash-content",
+    className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
+  }, data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-1/2 lg:w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "md:mx-6 md:my-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Pedido No: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, data.uuid)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-calendar-day fa-fw text-brand-icons text-sm mr-3"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, data.date.formatted))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_UserDetails__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    data: data.customer
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_StoreDetails__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    data: data.store
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_ProductsList__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    data: data.products
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full text-center text-regularText text-normal"
+  }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full text-center text-regularText text-2xl"
+  }, "$", data.total), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-2 md:mx-6 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-lg"
+  }, data.employee.name), " levant\xF3 este pedido."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: allowedToModify() ? "".concat(buttonClass, " bg-orange-400 hover:bg-brand-orange") : "".concat(buttonClass, " bg-orange-400 cursor-not-allowed"),
+    onClick: function onClick() {
+      return updateToNextStatus(data.status);
+    },
+    disabled: !allowedToModify()
+  }, nextStatus.step)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: allowedToModify() ? "".concat(buttonClass, " bg-green-500 hover:bg-brand-green") : "".concat(buttonClass, " bg-green-500 cursor-not-allowed"),
+    onClick: function onClick() {
+      return updateToPayed(data.id);
+    },
+    disabled: !allowedToModify()
+  }, "Pagar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: allowedToModify() ? "".concat(buttonClass, " bg-red-500 hover:bg-red-600") : "".concat(buttonClass, " bg-red-500 cursor-not-allowed"),
+    onClick: function onClick() {
+      return updateToCancel(data.id);
+    },
+    disabled: !allowedToModify()
+  }, isCancel ? 'Cancelado' : 'Cancelar pedido'))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-1/2 lg:w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col items-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-shrink pr-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "rounded-full p-3 bg-gray-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-hand-pointer fa-fw fa-inverse text-3xl"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-1 mt-3"
+  }, "No hay ningun pedido seleccionado para mostrar informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "flex-1 mt-3 text-brand-orange"
+  }, "Hacer click sobre el pedido para ver los detalles.")))));
+}
+;
 
 /***/ }),
 
-/***/ "./node_modules/invariant/browser.js":
-/*!*******************************************!*\
-  !*** ./node_modules/invariant/browser.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./resources/js/components/Admin/InfoBoxes/ProductsList.jsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Admin/InfoBoxes/ProductsList.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProductsList; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ProductListElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ProductListElement */ "./resources/js/components/ProductListElement.jsx");
+
+
+function ProductsList(props) {
+  var data = props.data;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-2 md:mx-6 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full flex flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex content-between"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flex-1 text-brand-orange font-thin text-left"
+  }, "Producto"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flex-1 text-brand-orange font-thin text-center"
+  }, "Cant."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flex-1 text-brand-orange font-thin text-right"
+  }, "Prec. Unit.")), data.map(function (product) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductListElement__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      product: product,
+      isEditable: false
+    });
+  })));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return StoreDetails; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function StoreDetails(props) {
+  var data = props.data;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-2 md:mx-6 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-shrink pr-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "rounded-full p-3 bg-gray-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-store fa-fw fa-inverse text-xl"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-1 flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-lg"
+  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-map-marker-alt fa-fw text-brand-icons text-sm"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, ": ", data.friendlyAddress)))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/InfoBoxes/UserDetails.jsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/Admin/InfoBoxes/UserDetails.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserDetails; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function UserDetails(props) {
+  var data = props.data;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-2 md:mx-6 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-shrink pr-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "rounded-full p-3 bg-gray-400"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-user fa-fw fa-inverse text-xl"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-1 flex-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-lg"
+  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-mobile-alt fa-fw text-brand-icons text-sm"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, ": ", data.phone)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-at fa-fw text-brand-icons text-sm"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, ": ", data.email)))));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/SearchBar.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Admin/SearchBar.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchBar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dates */ "./node_modules/react-dates/index.js");
+/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dates__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_DateSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/DateSelector */ "./resources/js/components/DateSelector.jsx");
+/* harmony import */ var _Select_SearchStores__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Select/SearchStores */ "./resources/js/components/Select/SearchStores.jsx");
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Input */ "./resources/js/components/Input.jsx");
+/* harmony import */ var _Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Select/SearchStatus */ "./resources/js/components/Select/SearchStatus.jsx");
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    .DateInput_input {\n        padding: 7px 7px 5px;\n    }\n    .SingleDatePickerInput__withBorder {\n        border-radius: 3px;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
 
-var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (true) {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
+
+
+
+ // jajaja if I remove this line, i get white page jajajaja
+
+
+
+
+
+var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+function SearchBar() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__["usePage"])(),
+      user = _usePage.auth.user,
+      stores = _usePage.stores;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      id = _useState2[0],
+      setId = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      store = _useState4[0],
+      setStore = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState6 = _slicedToArray(_useState5, 2),
+      storeObject = _useState6[0],
+      setStoreObject = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      date = _useState8[0],
+      setDate = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    label: 'No entregados',
+    value: 'not-delivered' // @todo: not-delivered
+
+  }),
+      _useState10 = _slicedToArray(_useState9, 2),
+      status = _useState10[0],
+      setStatus = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      focus = _useState12[0],
+      setFocus = _useState12[1]; // function pressEnterToSearch(event) {
+  //     if (event.defaultPrevented) {
+  //         return; // Should do nothing if the default action has been cancelled
+  //     }
+  //
+  //     if (event.key === 'Enter') {
+  //         toSearch();
+  //     }
+  // }
+  // useEffect(() => {
+  //     document.addEventListener('keyup', pressEnterToSearch);
+  //     return () => document.removeEventListener('keyup', pressEnterToSearch);
+  // })
+  //
+
+
+  var setStatusObject = function setStatusObject(currentStatus) {
+    switch (currentStatus) {
+      case 'not-delivered':
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered'
+        });
+        break;
+
+      case 'delivered':
+        setStatus({
+          label: 'Entregados',
+          value: 'delivered'
+        });
+        break;
+
+      case 'all':
+        setStatus({
+          label: 'Todos',
+          value: 'all'
+        });
+        break;
+
+      default:
+        setStatus({
+          label: 'No entregados',
+          value: 'not-delivered'
+        });
+        break;
     }
-  }
+  };
 
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
-      error.name = 'Invariant Violation';
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var queryId = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('id');
+    setId(queryId || '');
+    var queryStore = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('store');
+    setStore(queryStore || '');
+    var queryDate = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date'); // @todo: think if we going to have more special status
+
+    setDate(queryDate && queryDate !== 'historic' ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
+    var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('status');
+    setStatusObject(queryStatus);
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (store && stores) {
+      // convert string to number
+      var storeSelected = stores.find(function (current) {
+        return current.id === store * 1;
+      });
+      setStoreObject({
+        id: storeSelected.id,
+        name: storeSelected.name,
+        friendlyAddress: storeSelected.friendly_address
+      });
+    } // if user clear store selector it must remove selected store
+
+
+    if (store === null) {
+      setStoreObject({
+        id: '',
+        name: '',
+        friendlyAddress: ''
+      });
+    }
+  }, [store]);
+
+  var onChange = function onChange(e) {
+    if (e.key === 'Enter') {
+      toSearch(); // return false;
     }
 
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
+    setId(e.target.value);
+  };
+
+  var setDateParam = function setDateParam() {
+    if (date) {
+      return "date=".concat(date);
+    }
+
+    if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date')) {
+      if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date') === 'historic') {
+        return 'date=historic';
+      }
+    }
+
+    return '';
+  }; // const urlBuilder = queryParams => {
+  //     if(queryParams.length) {
+  //         let url;
+  //         queryParams.forEach((query, index) => {
+  //             console.log('query =>', query);
+  //             console.log('index =>', index);
+  //             if(index === 0){
+  //                 url = url + `?${Object.keys(query)[0]}=${Object.values(query)[0]}`;
+  //             } else {
+  //                 url = url + `&${Object.keys(query)[0]}=${Object.values(query)[0]}`;
+  //             }
+  //             console.log('url =>', url);
+  //             // url = url + '&'
+  //         });
+  //     }
+  //     return '';
+  // }
+
+
+  var toSearch = function toSearch() {
+    // const queries = [
+    //   'id',
+    //   'store',
+    //   'date',
+    //   'status',
+    //   'get',
+    // ];
+    // const queriesWithValue = queries.filter(query => getParameterByName(query) && getParameterByName(query) !== '').map((query) => {
+    //   const value = getParameterByName(query);
+    //     console.log('[query] =>,', [query]);
+    //   return { [query]: value };
+    // });
+    // console.log('queriesWithValue', queriesWithValue);
+    // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
+    var searchId = id ? "id=".concat(id) : '';
+    var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : '';
+    var searchDate = setDateParam(); // const searchDate = date ? `date=${date}` : '';
+
+    var searchStatus = status ? "status=".concat(status.value) : '';
+    var paginateQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate' ? 'get=paginate' : '';
+    var sortQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('sort') === 'desc' ? 'sort=desc' : ''; // console.log('url builder', urlBuilder(queriesWithValue))
+
+    var url = "/admin?".concat(paginateQuery, "&").concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus, "&").concat(sortQuery); // Inertia.visit(urlBuilder(queriesWithValue));
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(url);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block mx-2 w-1/5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    id: "id",
+    label: "Id",
+    onChange: onChange,
+    placeholder: "ej. 234",
+    error: [],
+    onKeyDown: onChange,
+    value: id
+  })), user.isAdmin && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block mx-2 w-1/5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStores__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    setStore: setStore,
+    stores: stores,
+    storeSelected: storeObject
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block mx-2 w-1/5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-light text-gray-600 mt-4 lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "store",
+    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
+  }, "D\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DateWrapper, {
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_1__["SingleDatePicker"], {
+    id: "date",
+    name: "date",
+    date: date,
+    onDateChange: function onDateChange(date) {
+      return setDate(date);
+    },
+    focused: focus,
+    onFocusChange: function onFocusChange(props) {
+      return setFocus(props.focused);
+    } // disabled={!store}
+    ,
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full",
+    displayFormat: "D MMMM YYYY",
+    numberOfMonths: 1,
+    placeholder: "Elige una fecha",
+    isOutsideRange: function isOutsideRange() {
+      return false;
+    },
+    phrases: {
+      closeDatePicker: 'Cerrar',
+      clearDates: 'Limpiar'
+    },
+    showClearDate: true,
+    block: true
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block mx-2 w-1/5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    status: status,
+    setStatus: setStatusObject,
+    statuses: [{
+      label: 'No entregados',
+      value: 'not-delivered'
+    }, {
+      label: 'Entregados',
+      value: 'delivered'
+    }, {
+      label: 'Todos',
+      value: 'all'
+    }]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex items-end"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
+    onClick: toSearch
+  }, "Buscar")));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/DateSelector.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/DateSelector.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DateSelector; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dates_initialize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dates/initialize */ "./node_modules/react-dates/initialize.js");
+/* harmony import */ var react_dates_initialize__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dates_initialize__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dates */ "./node_modules/react-dates/index.js");
+/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dates__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    .DateInput_input {\n        padding: 7px 7px 5px;\n    }\n    .SingleDatePickerInput__withBorder {\n        border-radius: 3px;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+ // import 'react-dates/lib/css/_datepicker.css';
+
+
+
+
+var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject());
+function DateSelector(props) {
+  // moment.locale('es');
+  var today = moment__WEBPACK_IMPORTED_MODULE_4___default()();
+  var date = props.date,
+      setDate = props.setDate,
+      _props$store = props.store,
+      store = _props$store === void 0 ? false : _props$store;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
+
+  var pickUpAllowed = function pickUpAllowed(dayDate) {
+    // @todo: que si son despues de las 8:00pm no poder poner el siguiente día, se hiría hasta el 'pasado mañana'
+    var shopSelected = store; // if the sunday field means that the shop delivers on sundays, leave this, otherwise comment out
+
+    if (shopSelected.sunday !== 'Cierra') {
+      return false;
+    } // console.log({ isSame: dayDate.isSame('2020-11-01'), dayDate});
+    // if (dayDate.isSame('Sun Nov 01 2020 12:00:00 GMT-0600')) {
+    //     console.log('mismo dia =>', dayDate);
+    //     return false;
+    // }
+    // console.log({ dayDate });
+    // if sunday return true to block day
+
+
+    return dayDate.isoWeekday() === 7;
+    /*
+    const dayNumber = dayDate.day();
+    const today = new Date();
+    const todayDayNumber = today.getDate();
+     if (dayNumber <= todayDayNumber) return false;
+     return !shopSelected.deliver_days.includes(dayNumber);
+      */
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-light text-gray-600 mt-4 lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "store",
+    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
+  }, "D\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DateWrapper, {
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_2__["SingleDatePicker"], {
+    id: "date",
+    name: "date",
+    date: date,
+    onDateChange: function onDateChange(date) {
+      return setDate(date);
+    },
+    focused: focus,
+    onFocusChange: function onFocusChange(props) {
+      return setFocus(props.focused);
+    },
+    disabled: !store,
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // showDefaultInputIcon
+
+    /*
+    date={pickupDate}
+    focused={pickupFocused}
+    onDateChange={
+        this.onPickupDateChange
+    }
+    onFocusChange={
+        this.onPickupFocusChange
+    }
+    */
+    // Valida que no se pueda pedir el mismo día que se ingresa.
+    // Esto debe aplicar si es un usuario normal y no de panadería
+    ,
+    isOutsideRange: function isOutsideRange(day) {
+      return !Object(react_dates__WEBPACK_IMPORTED_MODULE_2__["isInclusivelyAfterDay"])(day, today) || false;
+    } // day.isSame(today, 'd')
+    ,
+    isDayBlocked: pickUpAllowed //-- orientation="vertical"
+    //-- verticalHeight={350}
+    ,
+    displayFormat: "D MMMM YYYY" // disabled={!shopSelected}
+    ,
+    numberOfMonths: 1,
+    placeholder: "Elige una fecha",
+    phrases: {
+      closeDatePicker: 'Cerrar',
+      clearDates: 'Limpiar'
+    },
+    showClearDate: true,
+    block: true
+  })));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Pagination.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/Pagination.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Pagination; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
+function _templateObject() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+/* To handle checked state this component requires a single of css */
+
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+function Pagination(_ref) {
+  var items = _ref.items;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
+    className: "py-10 block w-full flex justify-center"
+  }, items && items.data && items.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pagination mt-6 -mb-1 flex flex-wrap"
+  }, items.links && items.links.map(function (link, key) {
+    if (link.url === null) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: key,
+        className: "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400 ".concat(link.label === 'Next' ? 'ml-auto' : '')
+      }, link.label);
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+      key: key,
+      "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'border-brand-orange bg-orange-400 text-white hover:text-gray-600' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+      ,
+      href: link.url
+    }, link.label);
+  })));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Select/SearchStatus.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Select/SearchStatus.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchStatus; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+function SearchStatus(props) {
+  var status = props.status,
+      statuses = props.statuses,
+      setStatus = props.setStatus;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
+    className: "font-light text-gray-600 mt-4 lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "store",
+    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
+  }, "Estatus"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    options: statuses,
+    inputId: "status",
+    name: "status",
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    ,
+    classNamePrefix: "status-selector"
+    /*
+    getOptionValue={option =>
+        option.key
+    }
+    getOptionLabel={option =>
+        option.key
+    }
+    isClearable
+     */
+    // isClearable
+    ,
+    placeholder: "Elige estatus",
+    onChange: function onChange(selected) {
+      if (selected === null) {
+        setStatus(null);
+      } else {
+        setStatus(selected.value);
+      }
+    } // defaultValue={{label: storeSelected.name }}
+    ,
+    value: [{
+      label: status.label
+    }]
+    /*
+    onFocus={
+        this.onShopFocus
+    }
+    value={shopSelected}
+    invalid={
+        this.state
+            .errorsState.store
+    }
+     */
+
+  }));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Select/SearchStores.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Select/SearchStores.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Stores; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/set */ "./node_modules/@babel/runtime/helpers/esm/set.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+
+var transformStoreList = function transformStoreList(stores) {
+  return stores.map(function (store) {
+    return {
+      value: store.id,
+      label: store.name,
+      friendlyAddress: store.friendly_address
+    };
+  });
 };
 
-module.exports = invariant;
+var ShopOptionComponent = function ShopOptionComponent(props) {
+  var children = props.children,
+      friendlyAddress = props.data.friendlyAddress,
+      isSelected = props.isSelected; // console.log('ShopOptionComponent props =>', props);
 
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "shop-option-name"
+  }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "shop-option-description".concat(isSelected ? ' selected' : '')
+  }, friendlyAddress));
+};
+
+function Stores(props) {
+  var setStore = props.setStore,
+      stores = props.stores,
+      _props$storeSelected = props.storeSelected,
+      storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
+  var storesToSelect = transformStoreList(stores);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (storeSelected) {
+      setStore(storeSelected.id);
+    }
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
+    className: "font-light text-gray-600 mt-4 lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "store",
+    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
+  }, "Sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    options: storesToSelect,
+    inputId: "store",
+    name: "store",
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    ,
+    classNamePrefix: "stores-selector"
+    /*
+    getOptionValue={option =>
+        option.key
+    }
+    getOptionLabel={option =>
+        option.key
+    }
+    isClearable
+     */
+    ,
+    isClearable: true,
+    placeholder: "Elige una sucursal",
+    components: {
+      Option: ShopOptionComponent
+    },
+    onChange: function onChange(selected) {
+      if (selected === null) {
+        setStore(null);
+      } else {
+        setStore(selected.value);
+      }
+    } // defaultValue={{label: storeSelected.name }}
+    ,
+    value: [{
+      label: storeSelected.name,
+      value: storeSelected.id
+    }]
+    /*
+    onFocus={
+        this.onShopFocus
+    }
+    value={shopSelected}
+    invalid={
+        this.state
+            .errorsState.store
+    }
+     */
+
+  }));
+}
+;
+
+/***/ }),
+
+/***/ 1:
+/*!********************************!*\
+  !*** ./util.inspect (ignored) ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 
