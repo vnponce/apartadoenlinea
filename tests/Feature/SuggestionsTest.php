@@ -81,7 +81,7 @@ class SuggestionsTest extends TestCase
     /** @test */
     function logged_user_can_update_status_to_viewed()
     {
-        $this->withExceptionHandling();
+        $this->withoutExceptionHandling();
 
         $suggestion = factory(Suggestion::class)->create();
         $user = factory(User::class)->create();
@@ -91,6 +91,29 @@ class SuggestionsTest extends TestCase
         ]);
 
         $this->assertEquals('viewed', Suggestion::first()->status);
+    }
+
+    /** @test */
+    function it_only_accept_viewed_solved_as_status_values()
+    {
+        $this->withExceptionHandling();
+
+        $suggestion = factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
+            'status' => 'viewed',
+        ]);
+        $this->assertEquals('viewed', Suggestion::first()->status);
+
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
+            'status' => 'solved',
+        ]);
+        $this->assertEquals('solved', Suggestion::first()->status);
+
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
+            'status' => 'not-allowed-status',
+        ])->assertSessionHasErrors('status');
     }
 
     protected function suggestion($attributes = [])

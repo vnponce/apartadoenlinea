@@ -91,7 +91,10 @@ class SuggestionController extends Controller
      */
     public function updateStatus(Request $request, Suggestion $suggestion)
     {
-        $suggestion->setStatus($request->status);
+        $data = $request->validate([
+            'status' => 'in:viewed,solved',
+        ]);
+        $suggestion->setStatus($data['status']);
         $suggestion->save();
     }
 
