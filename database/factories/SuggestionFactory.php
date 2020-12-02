@@ -10,3 +10,7 @@ $factory->define(Suggestion::class, function (Faker $faker) {
         //
     ];
 });
+
+$factory->afterCreating(Suggestion::class, function ($suggestion) {
+    $suggestion->setStatus('created');
+});

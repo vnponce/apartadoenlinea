@@ -42,7 +42,10 @@ class SuggestionController extends Controller
             'email' => 'required|email',
             'suggestion' => 'required',
         ]);
-        Suggestion::create($data);
+        $suggestion = Suggestion::create($data);
+        $suggestion->setStatus('created');
+
+        $suggestion->save();
     }
 
     /**
@@ -77,6 +80,19 @@ class SuggestionController extends Controller
     public function update(Request $request, Suggestion $suggestions)
     {
         //
+    }
+
+    /**
+     * Update Status the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Suggestion  $suggestions
+     * @return \Illuminate\Http\Response
+     */
+    public function updateStatus(Request $request, Suggestion $suggestion)
+    {
+        $suggestion->setStatus($request->status);
+        $suggestion->save();
     }
 
     /**

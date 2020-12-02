@@ -129,7 +129,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::group(['prefix' => 'suggestions'], function() {
 //        Route::post('/', 'SuggestionController@store')->name('suggestion.store');
         Route::get('/', 'SuggestionController@index');
-//        Route::put('/{store}', 'StoreController@update')->name('store.update');
+        Route::put('/{suggestion}/updateStatus', 'SuggestionController@updateStatus')->name('suggestion.updateStatus');
     });
 });
 

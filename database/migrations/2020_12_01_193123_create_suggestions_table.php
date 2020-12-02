@@ -19,7 +19,7 @@ class CreateSuggestionsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('suggestion');
-            $table->string('status')->default('pending');
+//            $table->string('status')->default('pending');
 
             $table->timestamps();
         });

@@ -36,7 +36,18 @@ class SuggestionsTest extends TestCase
         $response = $this->suggestion($this->validFields());
         $response->assertStatus(200);
 
-        $this->assertDatabaseHas('suggestions', $this->validFields(['status' => 'pending']));
+        $this->assertDatabaseHas('suggestions', $this->validFields());
+    }
+
+    /** @test */
+    function it_has_created_status_when_was_created()
+    {
+        $this->withoutExceptionHandling();
+
+        $response = $this->suggestion($this->validFields());
+        $response->assertStatus(200);
+
+        $this->assertEquals('created', Suggestion::first()->status);
     }
 
     /** @test */
@@ -65,6 +76,21 @@ class SuggestionsTest extends TestCase
     {
         $this->suggestion($this->validFields(['suggestion' => '']))
             ->assertSessionHasErrors('suggestion');
+    }
+
+    /** @test */
+    function logged_user_can_update_status_to_viewed()
+    {
+        $this->withExceptionHandling();
+
+        $suggestion = factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
+            'status' => 'viewed',
+        ]);
+
+        $this->assertEquals('viewed', Suggestion::first()->status);
     }
 
     protected function suggestion($attributes = [])
