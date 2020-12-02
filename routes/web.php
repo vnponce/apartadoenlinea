@@ -60,6 +60,10 @@ Route::get('pan-de-muerto', function() {
 
 Auth::routes(['register' => false]);
 
+// Suggestions
+Route::post('/suggestions', 'SuggestionController@store');
+
+
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/', 'ProductController@index');
     Route::get('/category/{category}', 'CategoryController@index');
@@ -121,7 +125,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('/', 'StoreController@index');
         Route::put('/{store}', 'StoreController@update')->name('store.update');
     });
+
+    Route::group(['prefix' => 'suggestions'], function() {
+//        Route::post('/', 'SuggestionController@store')->name('suggestion.store');
+        Route::get('/', 'SuggestionController@index');
+//        Route::put('/{store}', 'StoreController@update')->name('store.update');
+    });
 });
+
+// CYPRESS
 if(env('APP_CYPRESS')) {
     Route::post('/__cypress_abel__/login', 'CypressAbelController@login');
 }
