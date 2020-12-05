@@ -80,13 +80,21 @@ class SuggestionController extends Controller
      */
     public function update(Request $request, Suggestion $suggestion)
     {
-//        dd($suggestion->comments);
+//        dd($request->toArray());
+        $data = $request->validate([
+            'comment' => 'required',
+            'status' => 'in:viewed,solved,not-solved'
+        ]);
         $comment = new Comment;
         $comment->commenter()->associate(auth()->user());
         $comment->commentable()->associate($suggestion);
-        $comment->comment = $request->solved_comment;
+        $comment->comment = $data['comment'];
         $comment->approved = true;
         $comment->save();
+
+        $suggestion->setStatus($data['status']);
+        $suggestion->save();
+
 //        dd($comment->toArray());
 //        $suggestion->update($request->only(['solved_comment']));
     }
@@ -101,7 +109,7 @@ class SuggestionController extends Controller
     public function updateStatus(Request $request, Suggestion $suggestion)
     {
         $data = $request->validate([
-            'status' => 'in:viewed,solved',
+            'status' => 'in:viewed,solved,not-solved',
         ]);
         $suggestion->setStatus($data['status']);
         $suggestion->save();
