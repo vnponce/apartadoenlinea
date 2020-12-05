@@ -44,6 +44,23 @@ class SuggestionsTest extends TestCase
     }
 
     /** @test */
+    function logged_user_can_comment_how_it_was_solved()
+    {
+        $this->withoutExceptionHandling();
+
+        $suggestion = factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
+            'solved_comment' => 'This was solved with a pan',
+        ]);
+
+        $this->assertDatabaseHas('suggestions', [
+            'solved_comment' => 'This was solved with a pan',
+        ]);
+    }
+
+    /** @test */
     function it_only_accept_viewed_solved_as_status_values()
     {
         $this->withExceptionHandling();
