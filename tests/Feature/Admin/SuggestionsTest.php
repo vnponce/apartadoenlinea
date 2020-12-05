@@ -49,16 +49,30 @@ class SuggestionsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $suggestion = factory(Suggestion::class)->create();
-//        dd(Suggestion::all()->toArray());
         $user = factory(User::class)->create();
 
         $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
             'solved_comment' => 'This was solved with a pan',
         ]);
+        $comment = Suggestion::first()->comments->first();
+        $this->assertEquals('This was solved with a pan', $comment->comment);
+        $this->assertEquals($user->id, $comment->commenter->id);
+    }
 
-        $this->assertDatabaseHas('suggestions', [
+    /** @test */
+    function when_logged_user_solves_suggestion_solved_comment_is_required()
+    {
+        $this->withoutExceptionHandling();
+
+        $suggestion = factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
             'solved_comment' => 'This was solved with a pan',
         ]);
+        $comment = Suggestion::first()->comments->first();
+        $this->assertEquals('This was solved with a pan', $comment->comment);
+        $this->assertEquals($user->id, $comment->commenter->id);
     }
 
     /** @test */

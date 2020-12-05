@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Suggestion;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Laravelista\Comments\Comment;
 
 class SuggestionController extends Controller
 {
@@ -79,8 +80,15 @@ class SuggestionController extends Controller
      */
     public function update(Request $request, Suggestion $suggestion)
     {
-//        dd($suggestion->toArray());
-        $suggestion->update($request->only(['solved_comment']));
+//        dd($suggestion->comments);
+        $comment = new Comment;
+        $comment->commenter()->associate(auth()->user());
+        $comment->commentable()->associate($suggestion);
+        $comment->comment = $request->solved_comment;
+        $comment->approved = true;
+        $comment->save();
+//        dd($comment->toArray());
+//        $suggestion->update($request->only(['solved_comment']));
     }
 
     /**
