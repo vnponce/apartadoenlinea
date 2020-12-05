@@ -5,6 +5,8 @@
       integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossOrigin="anonymous"/>
 <!--Rye font -->
 <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+<!--Christmas font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <!-- Filepond to upload files -->
 <link rel='stylesheet' href='https://unpkg.com/filepond@4.11.0/dist/filepond.min.css' />
 <link rel='stylesheet' href='https://unpkg.com/filepond-plugin-image-preview@4.6.1/dist/filepond-plugin-image-preview.css' />

@@ -58,6 +58,10 @@ Route::get('pan-de-muerto', function() {
     return Inertia::render('Landing');
 });
 
+Route::get('felices-fiestas', function() {
+    return Inertia::render('Landings/Christmas');
+});
+
 Auth::routes(['register' => false]);
 
 Route::group(['middleware' => 'auth'], function() {
