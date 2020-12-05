@@ -9,5 +9,5 @@ class Suggestion extends Model
 {
     use HasStatuses;
 
-    protected $fillable = ['name', 'email', 'suggestion'];
+    protected $fillable = ['name', 'email', 'suggestion', 'solved_comment'];
 }

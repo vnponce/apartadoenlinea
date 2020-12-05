@@ -49,6 +49,7 @@ class SuggestionsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $suggestion = factory(Suggestion::class)->create();
+//        dd(Suggestion::all()->toArray());
         $user = factory(User::class)->create();
 
         $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [

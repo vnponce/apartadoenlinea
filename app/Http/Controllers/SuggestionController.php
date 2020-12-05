@@ -77,9 +77,10 @@ class SuggestionController extends Controller
      * @param  \App\Suggestion  $suggestions
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Suggestion $suggestions)
+    public function update(Request $request, Suggestion $suggestion)
     {
-        //
+//        dd($suggestion->toArray());
+        $suggestion->update($request->only(['solved_comment']));
     }
 
     /**

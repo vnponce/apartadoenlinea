@@ -19,6 +19,7 @@ class CreateSuggestionsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('suggestion');
+            $table->text('solved_comment')->default('');
 //            $table->string('status')->default('pending');
 
             $table->timestamps();
