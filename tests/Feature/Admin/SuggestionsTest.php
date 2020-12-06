@@ -31,15 +31,7 @@ class SuggestionsTest extends TestCase
     /** @test */
     function logged_user_can_update_status_to_viewed()
     {
-        $this->withoutExceptionHandling();
-
-        $suggestion = factory(Suggestion::class)->create();
-        $user = factory(User::class)->create();
-
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
-            'status' => 'viewed',
-        ]);
-
+        $this->updateStatus($this->validFields(['status' => 'viewed']));
         $this->assertEquals('viewed', Suggestion::first()->status);
     }
 
@@ -51,10 +43,7 @@ class SuggestionsTest extends TestCase
         $suggestion = factory(Suggestion::class)->create();
         $user = factory(User::class)->create();
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
-            'status' => 'solved',
-            'comment' => 'This was solved with a pan',
-        ]);
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", $this->validFields(['comment' => 'This was solved with a pan']));
         $comment = Suggestion::first()->comments->first();
         $this->assertEquals('This was solved with a pan', $comment->comment);
         $this->assertEquals($user->id, $comment->commenter->id);
@@ -69,24 +58,25 @@ class SuggestionsTest extends TestCase
         $suggestion = factory(Suggestion::class)->create();
         $user = factory(User::class)->create();
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
-            'status' => 'viewed',
-        ]);
+        $this->actingAs($user)
+            ->put("/admin/suggestions/{$suggestion->id}/updateStatus",
+                $this->validFields(['status' => 'viewed'])
+            );
         $this->assertEquals('viewed', Suggestion::first()->status);
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
-            'status' => 'solved',
-        ]);
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus",
+            $this->validFields(['status' => 'solved'])
+        );
         $this->assertEquals('solved', Suggestion::first()->status);
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
-            'status' => 'not-solved',
-        ]);
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus",
+            $this->validFields(['status' => 'not-solved'])
+        );
         $this->assertEquals('not-solved', Suggestion::first()->status);
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", [
-            'status' => 'not-allowed-status',
-        ])->assertSessionHasErrors('status');
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus",
+            $this->validFields(['status' => 'not-allowed-status'])
+        )->assertSessionHasErrors('status');
     }
 
     /** @test */
@@ -97,28 +87,25 @@ class SuggestionsTest extends TestCase
         $suggestion = factory(Suggestion::class)->create();
         $user = factory(User::class)->create();
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
-            'status' => 'viewed',
-            'comment' => 'dummy test',
-        ]);
+        $this->actingAs($user)
+            ->put("/admin/suggestions/{$suggestion->id}/update",
+                $this->validFields(['status' => 'viewed'])
+            );
         $this->assertEquals('viewed', Suggestion::first()->status);
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
-            'status' => 'solved',
-            'comment' => 'dummy test',
-        ]);
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update",
+            $this->validFields(['status' => 'solved'])
+        );
         $this->assertEquals('solved', Suggestion::first()->status);
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
-            'status' => 'not-solved',
-            'comment' => 'dummy test',
-        ]);
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update",
+            $this->validFields(['status' => 'not-solved'])
+        );
         $this->assertEquals('not-solved', Suggestion::first()->status);
 
-        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", [
-            'status' => 'not-allowed-status',
-            'comment' => 'dummy test',
-        ])->assertSessionHasErrors('status');
+        $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update",
+            $this->validFields(['status' => 'not-allowed-status'])
+        )->assertSessionHasErrors('status');
     }
 
     /** @test */
@@ -144,7 +131,9 @@ class SuggestionsTest extends TestCase
     protected function updateStatus($attributes = [])
     {
         $this->withExceptionHandling();
-        return $this->post('/suggestions', $attributes);
+        $suggestion = factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+        return $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", $attributes);
     }
 
     protected function solveComment($attributes = [])
