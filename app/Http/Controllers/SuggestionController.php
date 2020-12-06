@@ -16,7 +16,10 @@ class SuggestionController extends Controller
      */
     public function index()
     {
-        $suggestions = Suggestion::all();
+        $suggestions = Suggestion::query()
+            ->search(request('name'))
+            ->date(request('date'))
+            ->paginate();
         return Inertia::render('Admin/Suggestions', compact('suggestions'));
     }
 

@@ -12,6 +12,8 @@ class SuggestionsTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected $isPaginated = true;
+
     /** @test */
     function it_can_show_suggestions_list()
     {
@@ -21,7 +23,7 @@ class SuggestionsTest extends TestCase
 
         $response = $this->actingAs($user)->get("/admin/suggestions");
         $response->assertStatus(200)
-            ->assertPropCount('suggestions', 4);
+            ->assertPropCount('suggestions', 4, $this->isPaginated);
 //            ->assertPropValue('suggestions', function($orders) use ($orderToDeliverTomorrow){
 //                $filteredOrder = collect($orders)->first();
 //                $this->assertEquals($orderToDeliverTomorrow->uuid, collect($filteredOrder)->get('uuid'));
@@ -126,6 +128,48 @@ class SuggestionsTest extends TestCase
             'status' => '',
             'comment' => 'test',
         ])->assertSessionHasErrors('status');
+    }
+
+    /** @test */
+    function it_search_suggestions_by_name()
+    {
+        $expectedById = factory(Suggestion::class)->create([
+            'name' => 'Abel Ponce',
+            'suggestion' => 'Es un gran pan',
+        ]);
+        $notExpectedById = factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin/suggestions?name=Abel");
+        $response->assertStatus(200)
+            ->assertPropCount('suggestions', 1, $this->isPaginated) // is 2 becuase suggestions is paginated so has [ data => [...suggestions]
+            ->assertPropValue('suggestions', function($suggestion) use ($expectedById){
+                $filteredSuggestion = collect($suggestion)->first();
+                $this->assertEquals($expectedById->id, collect($filteredSuggestion)->get('id'));
+            }, $this->isPaginated);
+    }
+
+    /** @test */
+    function it_search_suggestions_by_exact_date()
+    {
+        $this->withoutExceptionHandling();
+        $today = now();
+        $expectedByDate = factory(Suggestion::class)->create([
+            'created_at' => $today,
+        ]);
+        $notExpectedByDate = factory(Suggestion::class)->create([
+            'created_at' => now()->addDay()
+        ]);
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin/suggestions?date=$today");
+        $response->assertStatus(200)
+            ->assertPropCount('suggestions', 1, $this->isPaginated)
+            ->assertPropValue('suggestions', function($suggestion) use ($expectedByDate){
+                $filteredOrder = collect($suggestion)->first();
+                $this->assertEquals($expectedByDate->id, collect($filteredOrder)->get('id'));
+            }, $this->isPaginated);
     }
 
     protected function updateStatus($attributes = [])
