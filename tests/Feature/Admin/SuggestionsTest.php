@@ -33,7 +33,7 @@ class SuggestionsTest extends TestCase
     /** @test */
     function logged_user_can_update_status_to_viewed()
     {
-        $this->updateStatus($this->validFields(['status' => 'viewed']));
+        $this->updateStatus(['status' => 'viewed']);
         $this->assertEquals('viewed', Suggestion::first()->status);
     }
 
@@ -172,10 +172,53 @@ class SuggestionsTest extends TestCase
             }, $this->isPaginated);
     }
 
-    protected function updateStatus($attributes = [])
+//    /** @test */
+//    function it_search_by_user_solve_suggestion()
+//    {
+//        $solverUser = factory(User::class)->create();
+//        $expectedByStore = factory(Suggestion::class)->create([
+//            'store_id' => $store->id,
+//        ]);
+//        $notExpectedByStore = factory(Order::class)->create();
+//        $user = factory(User::class)->create();
+//
+//        //Sun Nov 01 2020 12:00:00 GMT-0600
+//        $response = $this->actingAs($user)->get("/admin?store=$store->id");
+//        $response->assertStatus(200)
+//            ->assertPropCount('orders', 1)
+//            ->assertPropValue('orders', function($orders) use ($expectedByStore){
+//                $filteredOrder = collect($orders)->first();
+//                $this->assertEquals($expectedByStore->uuid, collect($filteredOrder)->get('uuid'));
+//            });
+//    }
+//
+    /** @test */
+    function it_search_suggestions_by_solved_status()
+    {
+        $this->withoutExceptionHandling();
+        $expectedByStatus = factory(Suggestion::class)->create([
+            'name' => 'Abel Ponce',
+        ]);
+        $this->updateStatus(['status' => 'solved'], $expectedByStatus);
+
+        $notExpectedByStatus = factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin/suggestions?status=solved");
+
+        $response->assertStatus(200)
+            ->assertPropCount('suggestions', 1, $this->isPaginated)
+            ->assertPropValue('suggestions', function($suggestion) use ($expectedByStatus){
+                $filteredOrder = collect($suggestion)->first();
+                $this->assertEquals($expectedByStatus->id, collect($filteredOrder)->get('id'));
+            }, $this->isPaginated);
+    }
+
+    protected function updateStatus($attributes = [], $suggestionToUse = false)
     {
         $this->withExceptionHandling();
-        $suggestion = factory(Suggestion::class)->create();
+        $suggestion = $suggestionToUse ? $suggestionToUse : factory(Suggestion::class)->create();
         $user = factory(User::class)->create();
         return $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", $attributes);
     }

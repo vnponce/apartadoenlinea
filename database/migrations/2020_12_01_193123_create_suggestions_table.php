@@ -18,6 +18,7 @@ class CreateSuggestionsTable extends Migration
 
             $table->string('name');
             $table->string('email');
+            $table->string('status');
             $table->text('suggestion');
 
             $table->timestamps();

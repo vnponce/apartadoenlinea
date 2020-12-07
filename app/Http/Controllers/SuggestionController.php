@@ -19,6 +19,8 @@ class SuggestionController extends Controller
         $suggestions = Suggestion::query()
             ->search(request('name'))
             ->date(request('date'))
+            ->status(request('status'))
+//            ->currentStatus(request('status'))
             ->paginate();
         return Inertia::render('Admin/Suggestions', compact('suggestions'));
     }
@@ -47,7 +49,8 @@ class SuggestionController extends Controller
             'suggestion' => 'required',
         ]);
         $suggestion = Suggestion::create($data);
-        $suggestion->setStatus('created');
+//        $suggestion->setStatus('created');
+        $suggestion->status = 'created';
 
         $suggestion->save();
     }
@@ -83,7 +86,6 @@ class SuggestionController extends Controller
      */
     public function update(Request $request, Suggestion $suggestion)
     {
-//        dd($request->toArray());
         $data = $request->validate([
             'comment' => 'required',
             'status' => 'in:viewed,solved,not-solved'
@@ -95,11 +97,8 @@ class SuggestionController extends Controller
         $comment->approved = true;
         $comment->save();
 
-        $suggestion->setStatus($data['status']);
+        $suggestion->status  = $data['status'];
         $suggestion->save();
-
-//        dd($comment->toArray());
-//        $suggestion->update($request->only(['solved_comment']));
     }
 
     /**
@@ -114,7 +113,7 @@ class SuggestionController extends Controller
         $data = $request->validate([
             'status' => 'in:viewed,solved,not-solved',
         ]);
-        $suggestion->setStatus($data['status']);
+        $suggestion->update(['status' => $data['status']]);
         $suggestion->save();
     }
 

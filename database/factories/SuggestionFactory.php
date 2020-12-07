@@ -10,9 +10,10 @@ $factory->define(Suggestion::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->email,
         'suggestion' => $faker->text,
+        'status' => 'created',
     ];
 });
 
-$factory->afterCreating(Suggestion::class, function ($suggestion) {
-    $suggestion->setStatus('created');
-});
+//$factory->afterCreating(Suggestion::class, function ($suggestion) {
+//    $suggestion->setStatus('created');
+//});
