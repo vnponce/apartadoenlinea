@@ -71,4 +71,20 @@ class Suggestion extends Model
             $query->where('status', $value);
         }
     }
+
+    public function scopeSolver($query, $value)
+    {
+        if($value) {
+//            dd($query->get()->toArray());
+//            dd($query->with('comments')->get()->toArray());
+            // este no funciona por el WHERE que lo cambie a WHEREHAS
+//            dd($query->with('comments')->where('comments', function($query) use($value){
+//                $query->where('commenter_id', $value);
+//            }));
+            $query->with('comments')->whereHas('comments', function($q) use($value){
+                $q->where('comments.commenter_id', $value);
+            });
+//            dd($query->get()->toArray());
+        }
+    }
 }

@@ -172,26 +172,31 @@ class SuggestionsTest extends TestCase
             }, $this->isPaginated);
     }
 
-//    /** @test */
-//    function it_search_by_user_solve_suggestion()
-//    {
-//        $solverUser = factory(User::class)->create();
-//        $expectedByStore = factory(Suggestion::class)->create([
-//            'store_id' => $store->id,
-//        ]);
-//        $notExpectedByStore = factory(Order::class)->create();
-//        $user = factory(User::class)->create();
-//
-//        //Sun Nov 01 2020 12:00:00 GMT-0600
-//        $response = $this->actingAs($user)->get("/admin?store=$store->id");
-//        $response->assertStatus(200)
-//            ->assertPropCount('orders', 1)
-//            ->assertPropValue('orders', function($orders) use ($expectedByStore){
-//                $filteredOrder = collect($orders)->first();
-//                $this->assertEquals($expectedByStore->uuid, collect($filteredOrder)->get('uuid'));
-//            });
-//    }
-//
+    /** @test */
+    function it_search_by_user_that_solve_suggestion()
+    {
+        factory(User::class, 2)->create();
+        factory(Suggestion::class, 2)->create();
+
+        $suggestion = factory(Suggestion::class)->create();
+        $solverUser = factory(User::class)->create();
+        // solver user solved suggestion
+        $this->solveComment($this->validFields(), $suggestion, $solverUser);
+
+        $user = factory(User::class)->create();
+
+//        dd($suggestion->comments->first()->commenter->id);
+
+        //Sun Nov 01 2020 12:00:00 GMT-0600
+        $response = $this->actingAs($user)->get("/admin/suggestions?solver=$solverUser->id");
+        $response->assertStatus(200)
+            ->assertPropCount('suggestions', 1, $this->isPaginated)
+            ->assertPropValue('suggestions', function($suggestion) use ($solverUser){
+                $filteredSuggestion = collect($suggestion)->first();
+                $this->assertEquals($solverUser->id, $filteredSuggestion['comments'][0]['commenter_id']);
+            }, $this->isPaginated);
+    }
+
     /** @test */
     function it_search_suggestions_by_solved_status()
     {
@@ -223,11 +228,11 @@ class SuggestionsTest extends TestCase
         return $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", $attributes);
     }
 
-    protected function solveComment($attributes = [])
+    protected function solveComment($attributes = [], $suggestion = false, $user = false)
     {
         $this->withExceptionHandling();
-        $suggestion = factory(Suggestion::class)->create();
-        $user = factory(User::class)->create();
+        $suggestion = $suggestion ? $suggestion : factory(Suggestion::class)->create();
+        $user = $user ? $user :  factory(User::class)->create();
         return $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/update", $attributes);
     }
 

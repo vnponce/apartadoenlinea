@@ -21,6 +21,7 @@ class SuggestionController extends Controller
             ->date(request('date'))
             ->status(request('status'))
 //            ->currentStatus(request('status'))
+            ->solver(request('solver'))
             ->paginate();
         return Inertia::render('Admin/Suggestions', compact('suggestions'));
     }
