@@ -53,9 +53,6 @@ export default function InfoBoxes(props) {
                         {data.comments.length > 0 && (
                             <>
                                 <Comment comment={data.comments[0]}/>
-                                {/*<p>{data.comments[0].commenter.name}</p>*/}
-                                {/*<p>Comentario: {data.comments[0].comment}</p>*/}
-                                {/*<p>Fecha: {data.comments[0].created_at}</p>*/}
                             </>
                         )}
 
@@ -64,7 +61,7 @@ export default function InfoBoxes(props) {
                         {data.status !== 'solved' && (
                             <div className="mt-8">
                                 <Button onClick={() => {}} disabled={false}>
-                                    Se ha solucionado
+                                    Solucionar
                                 </Button>
                             </div>
                         )}

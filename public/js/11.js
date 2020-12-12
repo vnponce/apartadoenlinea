@@ -457,7 +457,7 @@ function InfoBoxes(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     onClick: function onClick() {},
     disabled: false
-  }, "Se ha solucionado")))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Solucionar")))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"

@@ -45,8 +45,10 @@ class CypressAbelController extends CypressController
         $comment->approved = true;
         $comment->save();
 
-        $suggestion->status = 'solved';
-        $suggestion->save();
+        if($request['attributes']['solved']) {
+            $suggestion->status = 'solved';
+            $suggestion->save();
+        }
 
         return $suggestion;
     }

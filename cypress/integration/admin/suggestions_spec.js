@@ -17,17 +17,20 @@ describe('Suggestions page from Panel', () => {
       suggestion,
     });
   };
-  const createSolvedSuggestion = ({ name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Que buen pan' } = {}) => {
+  const createSolvedSuggestion = ({
+    name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Que buen pan', solved = true,
+  } = {}) => {
     cy.create('App\\Suggestion', {
       name,
       email,
       suggestion,
-    }).then(res => {
+    }).then((res) => {
       cy.log(res);
       goToSuggestions();
       cy.addCommentToSuggestion({
         suggestion: res.id,
         comment: 'Hola comentario',
+        solved,
       }).then((res) => {
         cy.log('res =>', res);
         cy.visit('/admin');
@@ -50,6 +53,11 @@ describe('Suggestions page from Panel', () => {
       //   cy.log(res);
       //   goToSuggestions();
       // });
+    });
+  };
+  const createUnsolvedSuggestion = ({ name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Que buen pan' } = {}) => {
+    createSolvedSuggestion({
+      name, email, suggestion, solved: false,
     });
   };
   it('should navigate if click suggestion section', () => {
@@ -82,7 +90,7 @@ describe('Suggestions page from Panel', () => {
       // cy.findByLabelText(/Estatus/i);
     });
   });
-  it.only('should show solved suggestion details', () => {
+  it('should show solved suggestion details', () => {
     createSolvedSuggestion();
     cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
     cy.get('#dash-content').within(() => {
@@ -93,11 +101,27 @@ describe('Suggestions page from Panel', () => {
       // aqui revisar lo de comentario de seguimiento, el comentario, quien soluciono de usuario y la hora.
       cy.findByRole('button', { name: /agregar/i }).should('not.exist');
       cy.findByRole('button', { name: /cancelar/i }).should('not.exist');
-      cy.findByRole('button', { name: /se ha solucionado/i }).should('not.exist');
+      cy.findByRole('button', { name: /solucionar/i }).should('not.exist');
       // cy.findByLabelText(/Estatus/i);
       // cy.contains('Sugerencia solucionada por: ');
       cy.contains('Hola comentario');
       cy.contains('agregó comentario');
+    });
+  });
+  it.only('should show unsolved suggestion details', () => {
+    createUnsolvedSuggestion();
+    cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
+    cy.get('#dash-content').within(() => {
+      cy.findByText('Abel Ponce');
+      cy.contains('abel@ponce.com');
+      cy.contains('Que buen pan');
+      cy.findByLabelText(/comentario/i).should('not.exist');
+      // aqui revisar lo de comentario de seguimiento, el comentario, quien soluciono de usuario y la hora.
+      cy.findByRole('button', { name: /agregar/i }).should('not.exist');
+      cy.findByRole('button', { name: /cancelar/i }).should('not.exist');
+      cy.contains('Hola comentario');
+      cy.contains('agregó comentario');
+      cy.findByRole('button', { name: /solucionar/i }).should('exist');
     });
   });
 });

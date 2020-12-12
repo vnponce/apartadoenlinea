@@ -61,7 +61,7 @@ Cypress.Commands.add('specialLogin', (attributes = {}) => {
  * @example cy.login();
  *          cy.login({ name: 'JohnDoe' });
  */
-Cypress.Commands.add('addCommentToSuggestion', (attributes = {suggestion, comment}) => {
+Cypress.Commands.add('addCommentToSuggestion', (attributes = { suggestion, comment, } = {}) => {
     return cy.csrfToken()
         .then(token => {
             return cy.request({
