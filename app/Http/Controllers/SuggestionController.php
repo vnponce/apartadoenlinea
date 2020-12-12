@@ -33,7 +33,7 @@ class SuggestionController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Suggestion');
     }
 
     /**
@@ -49,11 +49,12 @@ class SuggestionController extends Controller
             'email' => 'required|email',
             'suggestion' => 'required',
         ]);
-        $suggestion = Suggestion::create($data);
+        $suggestion = Suggestion::make($data);
 //        $suggestion->setStatus('created');
         $suggestion->status = 'created';
 
         $suggestion->save();
+        return back()->with('success_message', 'Su comentario ha sido registrado con éxito');
     }
 
     /**
