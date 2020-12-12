@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0df2eaf07de8da9f399b","2":"82848471d055c0c564f5","3":"70ddf8c0c962c024662f","4":"62d24d10d396aa89a01a","5":"487917aab70eb4c10eb8","6":"419536cab0613fe57f24","7":"1a2a90ab24d88a05699b","8":"f318c919ea8b5b37b7a4","10":"f6bf1f851808b025f75a","15":"96e641707c09b72e250d","18":"20b8acbc13532856582c","20":"80133528f7c605ac17a2","24":"bd48c7ae289d26d5c43d","25":"e5d979599acc65fbc2c8","27":"80fae085fdbc2b6cecd1","28":"8a342d49afddcd6088b2","29":"2b713a4fcb1037c1a019","30":"a72c741eea26662a0dea","31":"9e0d19ad3ada4aa986a0","32":"96c779cca6159c0f197a","33":"5e78fe037be4058334ee","34":"51ca9e50c172f52cea61","35":"09e21b7a1a9aeb53bb69","37":"b0814d1d47f006e3e02d","38":"7142c26d1d39293015d3","39":"d30c99f188aa3017fa2a"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"6038d37709e609ff2e42","1":"5e0fbed7d7d3c3de6733","2":"82848471d055c0c564f5","4":"2f1567fbd17f30763287","5":"82ebd503ff1314242428","6":"419536cab0613fe57f24","7":"674919676770472cb3f9","8":"f318c919ea8b5b37b7a4","9":"f88d2fb57b9e32210b6a","10":"f6bf1f851808b025f75a","11":"bb00b0bda69da88885db","18":"20b8acbc13532856582c","20":"80133528f7c605ac17a2","24":"bd48c7ae289d26d5c43d","27":"80fae085fdbc2b6cecd1","28":"8a342d49afddcd6088b2","29":"729c8208aef5a1b8a933","30":"a72c741eea26662a0dea","31":"9e0d19ad3ada4aa986a0","32":"96c779cca6159c0f197a","33":"5e78fe037be4058334ee","34":"51ca9e50c172f52cea61","35":"09e21b7a1a9aeb53bb69","37":"b0814d1d47f006e3e02d","38":"7142c26d1d39293015d3","39":"d30c99f188aa3017fa2a"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34617,19 +34617,15 @@ var map = {
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
 		7,
-		5,
 		10,
-		15,
-		25
+		11
 	],
 	"./Admin/Suggestions.jsx": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
 		7,
-		5,
 		10,
-		15,
-		25
+		11
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
@@ -34638,8 +34634,7 @@ var map = {
 		7,
 		5,
 		10,
-		15,
-		3
+		9
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
@@ -34648,8 +34643,7 @@ var map = {
 		7,
 		5,
 		10,
-		15,
-		3
+		9
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",

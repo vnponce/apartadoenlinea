@@ -38,17 +38,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Suggestions(props) {
   var suggestions = props.suggestions,
       success_message = props.flash.success_message;
-  console.log('suggestions =>', suggestions);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
       dataSelected = _useState2[0],
       setDataSelected = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState4 = _slicedToArray(_useState3, 2),
-      createUser = _useState4[0],
-      setCreateUser = _useState4[1];
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     return [{
@@ -70,37 +64,27 @@ function Suggestions(props) {
   }, []);
 
   var openedAndShow = function openedAndShow(index) {
-    var data = users[index];
-    setCreateUser(false);
+    var data = suggestions[index];
     setDataSelected(data);
   };
 
-  var showCreateUser = function showCreateUser() {
-    setCreateUser(true);
-    setDataSelected(false);
-  };
-
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (success_message) {
-      setCreateUser(false);
-      setDataSelected(false);
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: success_message,
-        showConfirmButton: false,
-        timer: 1500
-      }).then(function () {
-        location.reload();
-      });
+    if (success_message) {// setDataSelected(false);
+      // Swal.fire({
+      //   position: 'top-end',
+      //   icon: 'success',
+      //   title: success_message,
+      //   showConfirmButton: false,
+      //   timer: 1500,
+      // }).then(() => {
+      //   location.reload();
+      // });
     }
   }, [success_message]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_UsersInfoBoxes__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    data: dataSelected,
-    createUser: createUser,
-    setCreateUser: setCreateUser
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Details, {
+    data: dataSelected
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black inline-block"
   }, "Sugerencias"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
