@@ -61,7 +61,7 @@ Route::get('pan-de-muerto', function() {
 Auth::routes(['register' => false]);
 
 // Suggestions
-Route::get('/comentario', 'SuggestionController@create');
+Route::get('/sugerencias', 'SuggestionController@create');
 Route::post('/suggestions', 'SuggestionController@store');
 
 

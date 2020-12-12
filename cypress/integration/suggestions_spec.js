@@ -1,6 +1,6 @@
 describe('Suggestions page', () => {
   const createSuggestion = ({ name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Esta panaderia me gusta mucho' }) => {
-    cy.visit('/comentario');
+    cy.visit('/sugerencias');
     cy.findByLabelText(/nombre completo/i).type(name);
     cy.findByLabelText(/correo/i).type(email);
     cy.findByLabelText(/sugerencia/i).type(suggestion);
@@ -10,7 +10,7 @@ describe('Suggestions page', () => {
     cy.refreshDatabase();
   });
   it('should send suggestion', () => {
-    cy.visit('/comentario');
+    cy.visit('/sugerencias');
     cy.findByLabelText(/nombre completo/i).type('Abel Ponce');
     cy.findByLabelText(/correo/i).type('abel@ponce.com');
     cy.findByLabelText(/sugerencia/i).type('Esta panaderia me gusta mucho');
