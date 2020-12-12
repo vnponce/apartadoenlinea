@@ -8,6 +8,7 @@ describe('Dashboard', () => {
     });
   });
 
+  // @todo: refactor con common.js
   const tableRowSelector = '#main-contents table tbody tr';
 
   it('should see listed orders', () => {

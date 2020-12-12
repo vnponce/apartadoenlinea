@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Inertia } from '@inertiajs/inertia';
 import Admin from '../../Shared/Admin';
+// import Details from '../../components/Admin/Suggestions/Details';
 import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 // import 'sweetalert2/src/sweetalert2.scss';
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -77,6 +78,7 @@ function Suggestions(props) {
 
   return (
         <Admin title="Panel">
+            {/*<Details data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>*/}
             <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
             <Content>
                 <h5 className="font-bold text-black inline-block">Sugerencias</h5>

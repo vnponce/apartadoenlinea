@@ -27,6 +27,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+ // import Details from '../../components/Admin/Suggestions/Details';
 
  // import 'sweetalert2/src/sweetalert2.scss';
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
