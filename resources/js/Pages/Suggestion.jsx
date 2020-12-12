@@ -5,6 +5,7 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import Layout from '../Shared/Layout';
 import Input from '../components/Input';
 import Textarea from '../components/Textarea';
+import Button from "../components/Button";
 
 function Suggestion() {
   const [data, setData] = useState({});
@@ -41,7 +42,7 @@ function Suggestion() {
   return (
         <Layout title="Comentario">
             <div className="flex items-center w-full flex-col mt-12 sm:mt-16 px-8">
-                <form id="comment-form" className="w-full md:w-1/2 m-auto">
+                <form id="comment-form" className="w-full m-auto lg:w-2/3">
                     <Input
                         value={data.name}
                         label="Nombre completo"
@@ -80,10 +81,10 @@ function Suggestion() {
                         }}
                     />
 
-                    <div className="flex justify-end pt-4">
-                        <button type="submit" className="button" onClick={createSuggestion} disabled={disabled}>
+                    <div className="w-full md:w-2/3 m-auto mt-8">
+                        <Button disabled={disabled} onClick={createSuggestion}>
                             Enviar
-                        </button>
+                        </Button>
                     </div>
                 </form>
             </div>
