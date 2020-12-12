@@ -1,4 +1,11 @@
 describe('Suggestions page', () => {
+  const createSuggestion = ({ name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Esta panaderia me gusta mucho' }) => {
+    cy.visit('/comentario');
+    cy.findByLabelText(/nombre completo/i).type(name);
+    cy.findByLabelText(/correo/i).type(email);
+    cy.findByLabelText(/sugerencia/i).type(suggestion);
+    cy.findByRole('button', { name: /enviar/i }).click();
+  };
   beforeEach(() => {
     cy.refreshDatabase();
   });
@@ -27,6 +34,20 @@ describe('Suggestions page', () => {
       // expect(store_id).to.be.eq(1); // validar este dato trayendo las store
     });
   });
-
-  // probar que regresa y se ve el modal de all cool y que se ponen disable los inputs.
+  it('should show error message when name is not send', () => {
+    createSuggestion({ name: ' ' });
+    cy.get('.error-name').should('exist');
+  });
+  it('should show error message when email is not send', () => {
+    createSuggestion({ email: ' ' });
+    cy.get('.error-email').should('exist');
+  });
+  it('should show error message when email is not valid', () => {
+    createSuggestion({ email: 'no-valid-email' });
+    cy.get('.error-email').should('exist');
+  });
+  it('should show error message when suggestion is not send', () => {
+    createSuggestion({ suggestion: ' ' });
+    cy.get('.error-suggestion').should('exist');
+  });
 });

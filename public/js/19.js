@@ -73,7 +73,6 @@ function Suggestion() {
 
   var createSuggestion = function createSuggestion(e) {
     e.preventDefault();
-    console.log('data =>', data);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post('/suggestions', data);
   };
 
@@ -96,43 +95,34 @@ function Suggestion() {
     label: "Nombre completo",
     id: "name",
     type: "text",
-    placeholder: "Juan P\xE9rez" // className="mb-4"
-    // errors="$page.errors.email"
-    ,
+    placeholder: "Juan P\xE9rez",
     onChange: handleInput,
     autofocus: true,
     error: errors.name,
     extraProps: {
       disabled: disabled
-    } // onKeyDown={LOGIN_MOCK_DEV_ONLY}
-
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: "Correo electr\xF3nico",
     value: data.email,
     id: "email",
     placeholder: "juan@perez.com",
-    type: "text" // errors="$page.errors.email"
-    // className="mb-6"
-    ,
+    type: "text",
     onChange: handleInput,
     error: errors.email,
     extraProps: {
       disabled: disabled
-    } // onKeyDown={LOGIN_MOCK_DEV_ONLY}
-
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Textarea__WEBPACK_IMPORTED_MODULE_6__["default"], {
     label: "Sugerencia",
     value: data.suggestion,
     id: "suggestion",
-    placeholder: "Sugerencia..." // errors="$page.errors.email"
-    // className="mb-6"
-    ,
+    placeholder: "Sugerencia...",
     onChange: handleInput,
-    error: errors.comment,
+    error: errors.suggestion,
     extraProps: {
       disabled: disabled
-    } // rows="4"
-
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex justify-end pt-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -191,7 +181,7 @@ function Textarea(_ref) {
     onKeyDown: onKeyDown,
     rows: "4"
   }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "text-sm m-auto text-red-500 error ".concat(error)
+    className: "text-sm m-auto text-red-500 error error-".concat(id)
   }, error[0]));
 }
 

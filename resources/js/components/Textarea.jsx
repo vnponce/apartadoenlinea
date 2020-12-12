@@ -19,7 +19,7 @@ export default function Textarea({
                    {...extraProps}
                 />
             </div>
-            {error && error[0] && <p className={`text-sm m-auto text-red-500 error ${error}`}>{error[0]}</p>}
+            {error && error[0] && <p className={`text-sm m-auto text-red-500 error error-${id}`}>{error[0]}</p>}
         </>
   );
 }

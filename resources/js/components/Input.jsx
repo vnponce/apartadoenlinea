@@ -17,7 +17,7 @@ export default function Input({ id, label, type: inputType, value: inputValue, p
                        {...extraProps}
                 />
             </div>
-            {error && error[0] && <p className={`text-sm m-auto text-red-500 error ${error}`}>{error[0]}</p>}
+            {error && error[0] && <p className={`text-sm m-auto text-red-500 error error-${id}`}>{error[0]}</p>}
         </>
     );
 };

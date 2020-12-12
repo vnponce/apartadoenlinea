@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
 import { usePage } from '@inertiajs/inertia-react';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from "sweetalert2/dist/sweetalert2.js";
 import Layout from '../Shared/Layout';
 import Input from '../components/Input';
 import Textarea from '../components/Textarea';
@@ -28,7 +28,6 @@ function Suggestion() {
 
   const createSuggestion = (e) => {
     e.preventDefault();
-    console.log('data =>', data);
     Inertia.post('/suggestions', data);
   };
   const handleInput = (e) => {
@@ -49,15 +48,12 @@ function Suggestion() {
                         id="name"
                         type="text"
                         placeholder="Juan Pérez"
-                        // className="mb-4"
-                        // errors="$page.errors.email"
                         onChange={handleInput}
                         autofocus
                         error={errors.name}
                         extraProps={{
                           disabled,
                         }}
-                        // onKeyDown={LOGIN_MOCK_DEV_ONLY}
                     />
                     <Input
                         label="Correo electrónico"
@@ -65,14 +61,11 @@ function Suggestion() {
                         id="email"
                         placeholder="juan@perez.com"
                         type="text"
-                        // errors="$page.errors.email"
-                        // className="mb-6"
                         onChange={handleInput}
                         error={errors.email}
                         extraProps={{
                           disabled,
                         }}
-                        // onKeyDown={LOGIN_MOCK_DEV_ONLY}
                     />
 
                     <Textarea
@@ -80,14 +73,11 @@ function Suggestion() {
                         value={data.suggestion}
                         id="suggestion"
                         placeholder="Sugerencia..."
-                    // errors="$page.errors.email"
-                    // className="mb-6"
                         onChange={handleInput}
-                        error={errors.comment}
+                        error={errors.suggestion}
                         extraProps={{
                           disabled,
                         }}
-                        // rows="4"
                     />
 
                     <div className="flex justify-end pt-4">
