@@ -21,6 +21,8 @@ class Suggestion extends Model
 
     protected $fillable = ['name', 'email', 'suggestion', 'status'];
 
+    protected $with = ['comments'];
+
     // scopes
     public function scopeSearch($query, $value)
     {

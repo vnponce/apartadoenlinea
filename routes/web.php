@@ -138,4 +138,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 // CYPRESS
 if(env('APP_CYPRESS')) {
     Route::post('/__cypress_abel__/login', 'CypressAbelController@login');
+    Route::post('/__cypress_abel__/addCommentToSuggestion', 'CypressAbelController@addCommentToSuggestion');
 }

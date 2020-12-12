@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import Textarea from "../../Textarea";
 import Button from "../../Button";
+import Comment from "../../Comment";
 
 export default function InfoBoxes(props) {
   const { data } = props;
+  console.log('data =>', data);
   return (
         <div id="dash-content"
              className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
@@ -21,34 +23,51 @@ export default function InfoBoxes(props) {
                             <i className="inline fas fa-comment-alt text-brand-icons text-sm"></i>
                             <span className="inline">: {data.suggestion}</span>
                         </div>
-                        <Textarea
-                            label="Comentario de seguimiento"
-                            value={(data.comments && data.comments.comment) || ''}
-                            id="comment"
-                            placeholder="Se solucionó de la siguiente manera..."
-                            // onChange={handleInput}
-                            // error={errors.suggestion}
-                            extraProps={{
-                                disabled: false,
-                            }}
-                        />
-                        <div className="mt-2 flex justify-end">
-                            <div className="mr-2">
+                        {data.comments.length === 0 && (
+                            <>
+                                <Textarea
+                                    label="Comentario de seguimiento"
+                                    value={(data.comments && data.comments.comment) || ''}
+                                    id="comment"
+                                    placeholder="Se solucionó de la siguiente manera..."
+                                    // onChange={handleInput}
+                                    // error={errors.suggestion}
+                                    extraProps={{
+                                        disabled: false,
+                                    }}
+                                />
+                                <div className="mt-2 flex justify-end">
+                                    <div className="mr-2">
+                                        <Button onClick={() => {}} disabled={false}>
+                                            Agregar
+                                        </Button>
+                                    </div>
+                                    <div>
+                                        <Button onClick={() => {}} disabled={false}>
+                                            Cancelar
+                                        </Button>
+                                    </div>
+                                </div>
+                            </>
+                        )}
+                        {data.comments.length > 0 && (
+                            <>
+                                <Comment comment={data.comments[0]}/>
+                                {/*<p>{data.comments[0].commenter.name}</p>*/}
+                                {/*<p>Comentario: {data.comments[0].comment}</p>*/}
+                                {/*<p>Fecha: {data.comments[0].created_at}</p>*/}
+                            </>
+                        )}
+
+                        {/*Solucionado*/}
+                        {/*isSolved? a lo mejor un metodo de esto*/}
+                        {data.status !== 'solved' && (
+                            <div className="mt-8">
                                 <Button onClick={() => {}} disabled={false}>
-                                    Agregar
+                                    Se ha solucionado
                                 </Button>
                             </div>
-                            <div>
-                                <Button onClick={() => {}} disabled={false}>
-                                    Cancelar
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="mt-8">
-                            <Button onClick={() => {}} disabled={false}>
-                                Se ha solucionado
-                            </Button>
-                        </div>
+                        )}
                     </div>
                 </div>
             )}

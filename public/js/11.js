@@ -403,11 +403,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Textarea__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Textarea */ "./resources/js/components/Textarea.jsx");
 /* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _Comment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Comment */ "./resources/js/components/Comment/index.jsx");
+
 
 
 
 function InfoBoxes(props) {
   var data = props.data;
+  console.log('data =>', data);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
@@ -427,7 +430,7 @@ function InfoBoxes(props) {
     className: "inline fas fa-comment-alt text-brand-icons text-sm"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, ": ", data.suggestion)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, ": ", data.suggestion)), data.comments.length === 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_1__["default"], {
     label: "Comentario de seguimiento",
     value: data.comments && data.comments.comment || '',
     id: "comment",
@@ -447,7 +450,9 @@ function InfoBoxes(props) {
   }, "Agregar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     onClick: function onClick() {},
     disabled: false
-  }, "Cancelar"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Cancelar")))), data.comments.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    comment: data.comments[0]
+  })), data.status !== 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     onClick: function onClick() {},
@@ -494,6 +499,40 @@ function Button(_ref) {
     className: "flex w-full cursor-pointer justify-center font-bold py-2 px-4 rounded block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75"
   }, children);
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Comment/index.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Comment/index.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Comment = function Comment(_ref) {
+  var comment = _ref.comment;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col justify-center items-center text-sm"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row justify-center mr-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: "avatar",
+    className: "rounded-full w-6 h-6 mr-2 shadow-lg mb-2",
+    src: comment.commenter.avatar
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-brand-green font-semibold text-sm mr-1"
+  }, comment.commenter.name), "- agreg\xF3 comentario ", comment.created_at)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "w-4/5 text-gray-600 text-sm text-left"
+  }, comment.comment));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Comment);
 
 /***/ }),
 
