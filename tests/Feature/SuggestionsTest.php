@@ -18,7 +18,8 @@ class SuggestionsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $response = $this->suggestion($this->validFields());
-        $response->assertStatus(200);
+        // 302 bcause inertiajs returns back.
+        $response->assertStatus(302);
 
         $this->assertDatabaseHas('suggestions', $this->validFields());
     }
@@ -29,7 +30,8 @@ class SuggestionsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $response = $this->suggestion($this->validFields());
-        $response->assertStatus(200);
+        // 302 bcause inertiajs returns page.
+        $response->assertStatus(302);
 
         $this->assertEquals('created', Suggestion::first()->status);
     }

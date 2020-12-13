@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Laravelista\Comments\Commentable;
+use Spatie\Activitylog\Traits\CausesActivity;
 
 class User extends Authenticatable
 {
-    use Notifiable, Commentable;
+    use Notifiable, Commentable, CausesActivity;
 
     /**
      * The attributes that are mass assignable.

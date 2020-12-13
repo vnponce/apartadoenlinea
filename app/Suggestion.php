@@ -5,6 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
+use Spatie\Activitylog\Models\Activity;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\ModelStatus\HasStatuses;
 use Laravelista\Comments\Commentable;
@@ -22,7 +23,15 @@ class Suggestion extends Model
 
     protected $fillable = ['name', 'email', 'suggestion', 'status'];
 
+
     protected static $logAttributes = ['status'];
+
+    //Logging only the changed attributes
+    //If you do not want to log every attribute in your $logAttributes variable, but only those that has actually changed after the update, you can use $logOnlyDirty
+    protected static $logOnlyDirty = true;
+
+    // Prevent save logs items that have no changed attribute. Only when status change
+    protected static $submitEmptyLogs = false;
 
     protected $with = ['comments'];
 

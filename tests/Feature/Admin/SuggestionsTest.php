@@ -220,11 +220,28 @@ class SuggestionsTest extends TestCase
             }, $this->isPaginated);
     }
 
-    protected function updateStatus($attributes = [], $suggestionToUse = false)
+    /** @test */
+    function it_should_add_user_that_change_status()
+    {
+        $this->withoutExceptionHandling();
+        $userCauser = factory(User::class)->create([
+            'name' => 'Abel Ponce'
+        ]);
+        $expectedByStatus = factory(Suggestion::class)->create([
+            'name' => 'Antonio Rosado',
+        ]);
+        $this->updateStatus(['status' => 'solved'], $expectedByStatus, $userCauser);
+
+//        dd($expectedByStatus->activities->last()->get()->toArray());
+//        dd($expectedByStatus->activities()->with('causer')->get()->last()->toArray());
+//        dd($expectedByStatus->activities()->with('causer', 'subject')->get()->last()->toArray());
+        $this->assertEquals('Abel Ponce', $expectedByStatus->activities()->with('causer')->get()->last()->causer->name);
+    }
+    protected function updateStatus($attributes = [], $suggestionToUse = false, $user = false)
     {
         $this->withExceptionHandling();
         $suggestion = $suggestionToUse ? $suggestionToUse : factory(Suggestion::class)->create();
-        $user = factory(User::class)->create();
+        $user = $user ? $user :  factory(User::class)->create();
         return $this->actingAs($user)->put("/admin/suggestions/{$suggestion->id}/updateStatus", $attributes);
     }
 
