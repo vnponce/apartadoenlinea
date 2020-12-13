@@ -32,6 +32,12 @@ export default function Details(props) {
     });
   };
 
+  const solveSuggestion = () => {
+    Inertia.put(`/admin/suggestions/${data.id}/updateStatus`, {
+      status: 'solved',
+    });
+  };
+
   return (
       <div className="w-1/2 lg:w-full">
           <div
@@ -83,9 +89,14 @@ export default function Details(props) {
               {/* isSolved? a lo mejor un metodo de esto */}
               {data.status !== 'solved' && (
                   <div className="mt-8">
-                      <Button onClick={() => {}} disabled={false}>
+                      <Button onClick={solveSuggestion} disabled={false}>
                           Solucionar
                       </Button>
+                  </div>
+              )}
+              {data.status === 'solved' && (
+                  <div className="mt-8">
+                      Sugerencia solucionada por: ...
                   </div>
               )}
           </div>

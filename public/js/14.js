@@ -499,6 +499,12 @@ function Details(props) {
     });
   };
 
+  var solveSuggestion = function solveSuggestion() {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("/admin/suggestions/".concat(data.id, "/updateStatus"), {
+      status: 'solved'
+    });
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -540,9 +546,11 @@ function Details(props) {
   })), data.status !== 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    onClick: function onClick() {},
+    onClick: solveSuggestion,
     disabled: false
-  }, "Solucionar"))));
+  }, "Solucionar")), data.status === 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-8"
+  }, "Sugerencia solucionada por: ...")));
 }
 
 /***/ }),

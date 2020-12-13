@@ -136,16 +136,23 @@ describe('Suggestions page from Panel', () => {
 
     // ver modal de actualizado o loading elemento
     //   cy.get('.swal2-modal').contains('Su comentario ha sido registrado con éxito');
-      // ver que no esta el input y ver el comment
+    // ver que no esta el input y ver el comment
 
-      // cy.wait(500);
-      cy.findByLabelText(/comentario/i).should('not.exist');
+    // cy.wait(500);
+    cy.findByLabelText(/comentario/i).should('not.exist');
 
-      // ver en la base de datos que se guardó
-
+    // ver en la base de datos que se guardó
+  });
+  // agregar boton de solucionar
+  it.only('should change to solved when user clicks on Solucionar button', () => {
+    createUnsolvedSuggestion();
+    cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
+    cy.findByRole('button', { name: /solucionar/i }).click();
+    cy.get('#dash-content').within(() => {
+      cy.findByText(/sugerencia solucionada por:/i);
+      // como saber que es el usuario que la soluciono?
+    });
   });
 
-  // agregar boton de solucionar
-
-    // al darle cancelar que se quite el seleccionado y que borre lo escrito
+  // al darle cancelar que se quite el seleccionado y que borre lo escrito
 });

@@ -5,6 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\ModelStatus\HasStatuses;
 use Laravelista\Comments\Commentable;
 use Illuminate\Database\Eloquent\Model;
@@ -17,13 +18,27 @@ use Spatie\ModelStatus\Exceptions\InvalidStatus;
 class Suggestion extends Model
 {
 //    use HasStatuses, Commentable;
-    use Commentable;
+    use Commentable, LogsActivity;
 
     protected $fillable = ['name', 'email', 'suggestion', 'status'];
 
+    protected static $logAttributes = ['status'];
+
     protected $with = ['comments'];
 
+
     // scopes
+    public function scopeGetAllSearched($query)
+    {
+        return $query
+            ->search(request('name'))
+            ->date(request('date'))
+            ->status(request('status'))
+//            ->currentStatus(request('status'))
+            ->solver(request('solver'))
+            ->paginate();
+    }
+
     public function scopeSearch($query, $value)
     {
         if($value) {

@@ -129,6 +129,10 @@ class SuggestionController extends Controller
         ]);
         $suggestion->update(['status' => $data['status']]);
         $suggestion->save();
+
+        $suggestions = Suggestion::getAllSearched();
+
+        return Inertia::render('Admin/Suggestions', compact('suggestions'));
     }
 
     /**
