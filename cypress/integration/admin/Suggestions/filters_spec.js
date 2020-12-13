@@ -25,7 +25,7 @@ describe('Dashboard', () => {
     cy.get('.page-link:nth(2)').click();
     cy.url().should('eq', `${Cypress.config().baseUrl}/admin/suggestions?page=2`);
   });
-  it.only('should filter by name ', () => {
+  it('should filter by name ', () => {
     cy.create('App\\Suggestion', {
       name: 'Abel',
     }).then((order) => {
@@ -43,31 +43,23 @@ describe('Dashboard', () => {
       cy.findByLabelText(/nombre/i).should('have.value', `${name}`);
     });
   });
-  it.skip('should filter by email', () => {
-    cy.create('App\\Store', {
-      name: 'First Store',
-    }).then((store) => {
-      cy.create('App\\Order', 10);
-      cy.create('App\\Order', {
-        name: 'Abel',
-        store_id: store.id,
-      }).then((order) => {
-        cy.log('order =>', order);
-        const { id } = order;
-        // const storeId = order.store_id;
-        cy.login();
+  it.only('should filter by email', () => {
+    cy.create('App\\Suggestion', {
+      name: 'Abel Ponce',
+      email: 'abel@ponce.com',
+    }).then((suggestion) => {
+      cy.create('App\\Suggestion', 10);
+      cy.log('order =>', suggestion);
+      const { id, email } = suggestion;
+      goToSuggestions();
 
-        cy.visit('/admin');
-        // cy.findByLabelText(/sucursal/i).type(`${uuid}{enter}`);
-        cy.get(tableRowSelector).should('have.length', 11);
-
-        cy.selectStore();
-        cy.findByRole('button', { name: /buscar/i }).click();
-        cy.get(tableRowSelector).should('have.length', 1);
-        cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
-        cy.get(`${tableRowSelector}[id=${id}]`).contains('First Store');
-        cy.get('.stores-selector__value-container').should('contain', 'First Store');
-      });
+      console.log(tableRowSelector);
+      cy.get(tableRowSelector).should('have.length', 11);
+      // cy.get('#main-contents table tbody tr').should('have.length', 11);
+      cy.findByLabelText(/correo/i).type(`${email}{enter}`);
+      cy.get(tableRowSelector).should('have.length', 1);
+      cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel Ponce');
+      cy.findByLabelText(/nombre/i).should('have.value', `${email}`);
     });
   });
   it.skip('should filter by status', () => {

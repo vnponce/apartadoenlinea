@@ -53,7 +53,8 @@ class Suggestion extends Model
     public function scopeSearch($query, $value)
     {
         if($value) {
-            $query->where('name', 'LIKE', "%{$value}%");
+            $query->where('name', 'LIKE', "%{$value}%")
+                ->orWhere('email', 'LIKE', "%{$value}%");
         }
     }
 
