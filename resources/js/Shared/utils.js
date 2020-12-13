@@ -4,6 +4,15 @@ export function getParameterByName(name) {
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
+export const onChange = ({
+  data, setData, name, value,
+}) => {
+  setData({
+    ...data,
+    [name]: value,
+  });
+};
+
 export function encodeData(data) {
   return Object.keys(data).map((key) => [key, data[key]].map(encodeURIComponent).join('=')).join('&');
 }

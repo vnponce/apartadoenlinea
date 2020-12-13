@@ -250,18 +250,32 @@ function Dashboard(props) {
 /*!**************************************!*\
   !*** ./resources/js/Shared/utils.js ***!
   \**************************************/
-/*! exports provided: getParameterByName, encodeData */
+/*! exports provided: getParameterByName, onChange, encodeData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onChange", function() { return onChange; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeData", function() { return encodeData; });
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 // eslint-disable-next-line import/prefer-default-export
 function getParameterByName(name) {
   var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
+var onChange = function onChange(_ref) {
+  var data = _ref.data,
+      setData = _ref.setData,
+      name = _ref.name,
+      value = _ref.value;
+  setData(_objectSpread({}, data, _defineProperty({}, name, value)));
+};
 function encodeData(data) {
   return Object.keys(data).map(function (key) {
     return [key, data[key]].map(encodeURIComponent).join('=');

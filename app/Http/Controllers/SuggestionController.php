@@ -101,6 +101,18 @@ class SuggestionController extends Controller
 
         $suggestion->status  = $data['status'];
         $suggestion->save();
+
+//        return back()->with()
+
+        $suggestions = Suggestion::query()
+            ->search(request('name'))
+            ->date(request('date'))
+            ->status(request('status'))
+//            ->currentStatus(request('status'))
+            ->solver(request('solver'))
+            ->paginate();
+//        dd($suggestions->toArray());
+        return Inertia::render('Admin/Suggestions', compact('suggestions'));
     }
 
     /**

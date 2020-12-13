@@ -86,7 +86,7 @@ describe('Suggestions page from Panel', () => {
       cy.findByLabelText(/comentario/i);
       cy.findByRole('button', { name: /agregar/i });
       cy.findByRole('button', { name: /cancelar/i });
-      cy.findByRole('button', { name: /se ha solucionado/i });
+      cy.findByRole('button', { name: /solucionar/i });
       // cy.findByLabelText(/Estatus/i);
     });
   });
@@ -108,7 +108,7 @@ describe('Suggestions page from Panel', () => {
       cy.contains('agregó comentario');
     });
   });
-  it.only('should show unsolved suggestion details', () => {
+  it('should show unsolved suggestion details', () => {
     createUnsolvedSuggestion();
     cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
     cy.get('#dash-content').within(() => {
@@ -124,4 +124,28 @@ describe('Suggestions page from Panel', () => {
       cy.findByRole('button', { name: /solucionar/i }).should('exist');
     });
   });
+
+  it('should add user comment', () => {
+    createSuggestion();
+    goToSuggestions();
+    cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
+
+    cy.findByLabelText(/comentario/i).type('Nuevo comentario sin resolver');
+    // cy.findByLabelText(/comentario/i);
+    cy.findByRole('button', { name: /agregar/i }).click();
+
+    // ver modal de actualizado o loading elemento
+    //   cy.get('.swal2-modal').contains('Su comentario ha sido registrado con éxito');
+      // ver que no esta el input y ver el comment
+
+      // cy.wait(500);
+      cy.findByLabelText(/comentario/i).should('not.exist');
+
+      // ver en la base de datos que se guardó
+
+  });
+
+  // agregar boton de solucionar
+
+    // al darle cancelar que se quite el seleccionado y que borre lo escrito
 });

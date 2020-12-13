@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Inertia } from '@inertiajs/inertia';
 import Admin from '../../Shared/Admin';
-import Details from '../../components/Admin/Suggestions/Details';
+import DetailsWrapper from '../../components/Admin/Suggestions/DetailsWrapper';
 // import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 // import 'sweetalert2/src/sweetalert2.scss';
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -12,6 +12,7 @@ import Content from '../../components/Admin/Content';
 function Suggestions(props) {
   const { suggestions: { data: suggestions, link }, flash: { success_message } } = props;
   const [dataSelected, setDataSelected] = useState(null);
+  const [index, setIndex] = useState(null);
 
   const columns = React.useMemo(
     () => [
@@ -48,12 +49,14 @@ function Suggestions(props) {
   );
 
   const openedAndShow = (index) => {
+    setIndex(index);
     const data = suggestions[index];
     setDataSelected(data);
   };
 
   useEffect(() => {
-    if (success_message) {
+    if (dataSelected) {
+        setDataSelected(suggestions[index]);
       // setDataSelected(false);
       // Swal.fire({
       //   position: 'top-end',
@@ -65,11 +68,11 @@ function Suggestions(props) {
       //   location.reload();
       // });
     }
-  }, [success_message]);
+  }, [suggestions]);
 
   return (
         <Admin title="Panel">
-            <Details data={dataSelected} />
+            <DetailsWrapper data={dataSelected} />
             <Content>
                 <h5 className="font-bold text-black inline-block">Sugerencias</h5>
                 <Table columns={columns} data={suggestions} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
