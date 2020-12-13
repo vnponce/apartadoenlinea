@@ -18,6 +18,7 @@ describe('Dashboard', () => {
 
     cy.get('.pagination');
   });
+
   it('should show go to page 2', () => {
     cy.create('App\\Suggestion', 16);
     goToSuggestions();
@@ -25,12 +26,12 @@ describe('Dashboard', () => {
     cy.get('.page-link:nth(2)').click();
     cy.url().should('eq', `${Cypress.config().baseUrl}/admin/suggestions?page=2`);
   });
+
   it('should filter by name ', () => {
     cy.create('App\\Suggestion', {
       name: 'Abel',
     }).then((order) => {
       cy.create('App\\Suggestion', 10);
-      cy.log('order =>', order);
       const { id, name } = order;
       goToSuggestions();
 
@@ -43,13 +44,13 @@ describe('Dashboard', () => {
       cy.findByLabelText(/nombre/i).should('have.value', `${name}`);
     });
   });
-  it.only('should filter by email', () => {
+
+  it('should filter by email', () => {
     cy.create('App\\Suggestion', {
       name: 'Abel Ponce',
       email: 'abel@ponce.com',
     }).then((suggestion) => {
       cy.create('App\\Suggestion', 10);
-      cy.log('order =>', suggestion);
       const { id, email } = suggestion;
       goToSuggestions();
 
@@ -62,25 +63,27 @@ describe('Dashboard', () => {
       cy.findByLabelText(/nombre/i).should('have.value', `${email}`);
     });
   });
-  it.skip('should filter by status', () => {
-    cy.create('App\\Order', {
-      name: 'Abel',
-      status: 'delivered',
-    }).then((order) => {
-      // cy.log('date =>', moment().add(1, 'd').format('Y-MM-DD H:mm:ss'));
-      cy.create('App\\Order', 10);
-      const { id } = order;
-      cy.login();
 
-      cy.visit('/admin');
-      cy.get(tableRowSelector).should('have.length', 10);
-      cy.selectStatus({ optionPosition: 2 });
+  it('should filter by status', () => {
+    cy.create('App\\Suggestion', {
+      name: 'Abel Ponce',
+      email: 'abel@ponce.com',
+      status: 'solved',
+    }).then((suggestion) => {
+      cy.create('App\\Suggestion', 10);
+      const { id } = suggestion;
+      goToSuggestions();
+
+      cy.get(tableRowSelector).should('have.length', 11);
+      // cy.findByLabelText(/correo/i).type(`${email}{enter}`);
+      cy.selectStatus({ optionPosition: 3, selectorNumber: 4 });
       cy.findByRole('button', { name: /buscar/i }).click();
       cy.get(tableRowSelector).should('have.length', 1);
-      cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
-      cy.get('.status-selector__value-container').contains('Entregados');
+      cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel Ponce');
+      cy.get('.status-selector__value-container').contains('Solucionado');
     });
   });
+
   it.skip('should filter by who resolved suggestion', () => {
     cy.create('App\\Order', {
       name: 'Abel',

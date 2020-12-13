@@ -5,7 +5,7 @@ import { Inertia } from '@inertiajs/inertia';
 import moment from 'moment';
 // import Stores from '../Select/SearchStores';
 import Input from '../../Input';
-// import SearchStatus from '../Select/SearchStatus';
+import SearchStatus from '../../Select/SearchStatus';
 import { getParameterByName } from '../../../Shared/utils';
 
 const DateWrapper = styled.div`
@@ -44,16 +44,16 @@ export default function SearchBar(props) {
           value: 'solved',
         });
         break;
-      case 'all':
-        setStatus({
-          label: 'Todos',
-          value: 'all',
-        });
-        break;
+      // case 'all':
+      //   setStatus({
+      //     label: 'Todos',
+      //     value: 'all',
+      //   });
+      //   break;
       default:
         setStatus({
-          label: 'No solucionados',
-          value: 'not-solved',
+          label: '',
+          value: '',
         });
         break;
     }
@@ -113,14 +113,14 @@ export default function SearchBar(props) {
     const searchName = name ? `name=${name}` : '';
     // const searchSolver = solverObject && solverObject.id ? `solver=${solverObject.id}` : '';
     // const searchDate = date ? `date=${date}` : '';
-    // const searchStatus = status ? `status=${status.value}` : '';
+    const searchStatus = status ? `status=${status.value}` : '';
 
     // const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
     // const sortQuery = getParameterByName('sort') === 'desc' ? 'sort=desc' : '';
 
     // console.log('url builder', urlBuilder(queriesWithValue))
     // const url = `/admin?${searchString}&${searchSolver}&${searchDate}&${searchStatus}`;
-    const url = `/admin/suggestions?${searchName}`;
+    const url = `/admin/suggestions?${searchName}&${searchStatus}`;
     // Inertia.visit(urlBuilder(queriesWithValue));
     Inertia.visit(url);
   };
@@ -173,17 +173,18 @@ export default function SearchBar(props) {
             {/*            </DateWrapper>*/}
             {/*        </div>*/}
             {/*    </div>*/}
-            {/*<div className="inline-block mx-2 w-1/5">*/}
-            {/*    <SearchStatus*/}
-            {/*        status={status}*/}
-            {/*        setStatus={setStatusObject}*/}
-            {/*        statuses={[*/}
-            {/*          { label: 'No solucionado', value: 'not-solved' },*/}
-            {/*          { label: 'Solucionado', value: 'solved' },*/}
-            {/*          { label: 'Todos', value: 'all' },*/}
-            {/*        ]}*/}
-            {/*    />*/}
-            {/*</div>*/}
+            <div className="inline-block mx-2 w-1/5">
+                <SearchStatus
+                    status={status}
+                    setStatus={setStatusObject}
+                    statuses={[
+                      { label: '', value: '' },
+                      { label: 'No solucionado', value: 'not-solved' },
+                      { label: 'Solucionado', value: 'solved' },
+                      // { label: 'Todos', value: 'all' },
+                    ]}
+                />
+            </div>
             <div className="flex items-end">
                 <button
                     className="h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"

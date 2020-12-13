@@ -608,7 +608,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Input */ "./resources/js/components/Input.jsx");
-/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Shared/utils */ "./resources/js/Shared/utils.js");
+/* harmony import */ var _Select_SearchStatus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Select/SearchStatus */ "./resources/js/components/Select/SearchStatus.jsx");
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Shared/utils */ "./resources/js/Shared/utils.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -635,7 +636,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
  // import Stores from '../Select/SearchStores';
 
- // import SearchStatus from '../Select/SearchStatus';
+
 
 
 var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
@@ -690,31 +691,30 @@ function SearchBar(props) {
           value: 'solved'
         });
         break;
-
-      case 'all':
-        setStatus({
-          label: 'Todos',
-          value: 'all'
-        });
-        break;
+      // case 'all':
+      //   setStatus({
+      //     label: 'Todos',
+      //     value: 'all',
+      //   });
+      //   break;
 
       default:
         setStatus({
-          label: 'No solucionados',
-          value: 'not-solved'
+          label: '',
+          value: ''
         });
         break;
     }
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    var queryName = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_5__["getParameterByName"])('name');
+    var queryName = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_6__["getParameterByName"])('name');
     setName(queryName || '');
-    var querySolver = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_5__["getParameterByName"])('solver');
+    var querySolver = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_6__["getParameterByName"])('solver');
     setSolver(querySolver || '');
-    var queryDate = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_5__["getParameterByName"])('date');
+    var queryDate = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_6__["getParameterByName"])('date');
     setDate(moment__WEBPACK_IMPORTED_MODULE_3___default()(queryDate));
-    var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_5__["getParameterByName"])('status');
+    var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_6__["getParameterByName"])('status');
     setStatusObject(queryStatus);
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -752,8 +752,8 @@ function SearchBar(props) {
     } // ??
 
 
-    if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_5__["getParameterByName"])('date')) {
-      if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_5__["getParameterByName"])('date') === 'historic') {
+    if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_6__["getParameterByName"])('date')) {
+      if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_6__["getParameterByName"])('date') === 'historic') {
         return 'date=historic';
       }
     }
@@ -764,13 +764,13 @@ function SearchBar(props) {
   var toSearch = function toSearch() {
     var searchName = name ? "name=".concat(name) : ''; // const searchSolver = solverObject && solverObject.id ? `solver=${solverObject.id}` : '';
     // const searchDate = date ? `date=${date}` : '';
-    // const searchStatus = status ? `status=${status.value}` : '';
-    // const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
+
+    var searchStatus = status ? "status=".concat(status.value) : ''; // const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
     // const sortQuery = getParameterByName('sort') === 'desc' ? 'sort=desc' : '';
     // console.log('url builder', urlBuilder(queriesWithValue))
     // const url = `/admin?${searchString}&${searchSolver}&${searchDate}&${searchStatus}`;
 
-    var url = "/admin/suggestions?".concat(searchName); // Inertia.visit(urlBuilder(queriesWithValue));
+    var url = "/admin/suggestions?".concat(searchName, "&").concat(searchStatus); // Inertia.visit(urlBuilder(queriesWithValue));
 
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].visit(url);
   };
@@ -787,6 +787,21 @@ function SearchBar(props) {
     error: [],
     onKeyDown: onChange,
     value: name
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block mx-2 w-1/5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    status: status,
+    setStatus: setStatusObject,
+    statuses: [{
+      label: '',
+      value: ''
+    }, {
+      label: 'No solucionado',
+      value: 'not-solved'
+    }, {
+      label: 'Solucionado',
+      value: 'solved'
+    }]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-end"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -966,6 +981,92 @@ function Pagination(_ref) {
       href: link.url
     }, link.label);
   })));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/Select/SearchStatus.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Select/SearchStatus.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchStatus; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+function SearchStatus(props) {
+  var status = props.status,
+      statuses = props.statuses,
+      setStatus = props.setStatus;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
+    className: "font-light text-gray-600 mt-4 lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "store",
+    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
+  }, "Estatus"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    options: statuses,
+    inputId: "status",
+    name: "status",
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    ,
+    classNamePrefix: "status-selector"
+    /*
+    getOptionValue={option =>
+        option.key
+    }
+    getOptionLabel={option =>
+        option.key
+    }
+    isClearable
+     */
+    // isClearable
+    ,
+    placeholder: "Elige estatus",
+    onChange: function onChange(selected) {
+      if (selected === null) {
+        setStatus(null);
+      } else {
+        setStatus(selected.value);
+      }
+    } // defaultValue={{label: storeSelected.name }}
+    ,
+    value: [{
+      label: status.label
+    }]
+    /*
+    onFocus={
+        this.onShopFocus
+    }
+    value={shopSelected}
+    invalid={
+        this.state
+            .errorsState.store
+    }
+     */
+
+  }));
 }
 ;
 
