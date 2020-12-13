@@ -33,8 +33,10 @@ class Suggestion extends Model
     // Prevent save logs items that have no changed attribute. Only when status change
     protected static $submitEmptyLogs = false;
 
+//    protected $with = ['comments', 'activities'];
     protected $with = ['comments'];
 
+    protected $appends = ['activity'];
 
     // scopes
     public function scopeGetAllSearched($query)
@@ -103,14 +105,17 @@ class Suggestion extends Model
         if($value) {
 //            dd($query->get()->toArray());
 //            dd($query->with('comments')->get()->toArray());
-            // este no funciona por el WHERE que lo cambie a WHEREHAS
-//            dd($query->with('comments')->where('comments', function($query) use($value){
-//                $query->where('commenter_id', $value);
-//            }));
+            // solo funcionó con ->whereHas, cuando era solo ->with('comments')->where('comments'...) NO funcionó
             $query->with('comments')->whereHas('comments', function($q) use($value){
                 $q->where('comments.commenter_id', $value);
             });
-//            dd($query->get()->toArray());
         }
+    }
+
+    // getters
+    public function getActivityAttribute()
+    {
+//        return $this->activities()->with('causer')->get()->last()->first();
+        return $this->activities()->with('causer')->get();
     }
 }

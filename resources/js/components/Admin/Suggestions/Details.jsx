@@ -1,24 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRememberedState } from '@inertiajs/inertia-react';
-import set from '@babel/runtime/helpers/esm/set';
 import { Inertia } from '@inertiajs/inertia';
 import Textarea from '../../Textarea';
 import Button from '../../Button';
 import Comment from '../../Comment';
-import { onChange } from '../../../Shared/utils';
 
 export default function Details(props) {
   const { data } = props;
-  console.log('Details data =>', data);
   const [textarea, setTextArea] = useRememberedState('');
-
-  // const handleOnChange = (e) => {
-  //   const { name, value } = e.target;
-  //   console.log('onChange =>', name, value);
-  //   onChange({
-  //     data: textarea, setData: setTextArea, name, value,
-  //   });
-  // };
 
   const handleOnChange = (e) => {
     setTextArea(e.target.value);
@@ -96,7 +85,8 @@ export default function Details(props) {
               )}
               {data.status === 'solved' && (
                   <div className="mt-8">
-                      Sugerencia solucionada por: ...
+                      Sugerencia solucionada por:
+                      {data.activity[data.activity.length - 1].causer.name}
                   </div>
               )}
           </div>

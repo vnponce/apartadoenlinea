@@ -132,6 +132,8 @@ class SuggestionController extends Controller
 
         $suggestions = Suggestion::getAllSearched();
 
+//        dd($suggestion->toArray());
+
         return Inertia::render('Admin/Suggestions', compact('suggestions'));
     }
 

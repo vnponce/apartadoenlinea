@@ -4,21 +4,22 @@ describe('Suggestions page from Panel', () => {
   beforeEach(() => {
     cy.refreshDatabase();
   });
-  const goToSuggestions = () => {
-    cy.login();
+  const goToSuggestions = ({ dynamicLogin = 'login', specialLoginData = {} } = {}) => {
+
+    cy.['login'](specialLoginData);
     cy.visit('/admin');
     cy.findByRole('link', { name: /sugerencia/i }).click();
   };
 
   const createSuggestion = ({ name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Que buen pan' } = {}) => {
-    cy.create('App\\Suggestion', {
+    return cy.create('App\\Suggestion', {
       name,
       email,
       suggestion,
     });
   };
   const createSolvedSuggestion = ({
-    name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Que buen pan', solved = true,
+    name = 'Abel Ponce', email = 'abel@ponce.com', suggestion = 'Que buen pan', solved = true, dynamicLogin = 'login', specialLoginData = {},
   } = {}) => {
     cy.create('App\\Suggestion', {
       name,
@@ -26,7 +27,7 @@ describe('Suggestions page from Panel', () => {
       suggestion,
     }).then((res) => {
       cy.log(res);
-      goToSuggestions();
+      goToSuggestions({ dynamicLogin, specialLoginData });
       cy.addCommentToSuggestion({
         suggestion: res.id,
         comment: 'Hola comentario',
@@ -144,12 +145,28 @@ describe('Suggestions page from Panel', () => {
     // ver en la base de datos que se guardó
   });
   // agregar boton de solucionar
-  it.only('should change to solved when user clicks on Solucionar button', () => {
-    createUnsolvedSuggestion();
+  it('should change to solved when user clicks on Solucionar button and save whos was click on the button', () => {
+    // createUnsolvedSuggestion();
+      cy.create('App\\User', {
+          name: 'Antonio Not Click Solver',
+      }).then(user => {
+          createSuggestion().then(res => {
+              cy.addCommentToSuggestion({
+                  suggestion: res.id,
+                  comment: 'Hola comentario',
+                  solved: false,
+                  user: user.id,
+              }).then((res) => {
+                  cy.log('res =>', res);
+              });
+
+          })
+      })
+      goToSuggestions({ dynamicLogin: true, specialLoginData:{ name: 'Abel Solver'}})
     cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
     cy.findByRole('button', { name: /solucionar/i }).click();
     cy.get('#dash-content').within(() => {
-      cy.findByText(/sugerencia solucionada por:/i);
+      cy.findByText(/sugerencia solucionada por: Abel Solver/i);
       // como saber que es el usuario que la soluciono?
     });
   });

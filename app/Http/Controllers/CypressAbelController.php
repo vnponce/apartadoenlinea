@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Suggestion;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 use Laracasts\Cypress\Controllers\CypressController;
@@ -36,10 +37,11 @@ class CypressAbelController extends CypressController
     {
 //        return $request['attributes'];
         $suggestion = Suggestion::find($request['attributes']['suggestion']);
+        $user = isset($request['attributes']['user']) ? User::find($request['attributes']['user']) : auth()->user();
 //        dd($suggestion->toArray());
 //        return $suggestion->name;
         $comment = new Comment;
-        $comment->commenter()->associate(auth()->user());
+        $comment->commenter()->associate($user);
         $comment->commentable()->associate($suggestion);
         $comment->comment = $request['attributes']['comment'];
         $comment->approved = true;

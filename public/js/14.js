@@ -396,44 +396,6 @@ function Suggestions(props) {
 
 /***/ }),
 
-/***/ "./resources/js/Shared/utils.js":
-/*!**************************************!*\
-  !*** ./resources/js/Shared/utils.js ***!
-  \**************************************/
-/*! exports provided: getParameterByName, onChange, encodeData */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onChange", function() { return onChange; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeData", function() { return encodeData; });
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-// eslint-disable-next-line import/prefer-default-export
-function getParameterByName(name) {
-  var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
-  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-}
-var onChange = function onChange(_ref) {
-  var data = _ref.data,
-      setData = _ref.setData,
-      name = _ref.name,
-      value = _ref.value;
-  setData(_objectSpread({}, data, _defineProperty({}, name, value)));
-};
-function encodeData(data) {
-  return Object.keys(data).map(function (key) {
-    return [key, data[key]].map(encodeURIComponent).join('=');
-  }).join('&');
-}
-
-/***/ }),
-
 /***/ "./resources/js/components/Admin/Suggestions/Details.jsx":
 /*!***************************************************************!*\
   !*** ./resources/js/components/Admin/Suggestions/Details.jsx ***!
@@ -448,13 +410,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/set */ "./node_modules/@babel/runtime/helpers/esm/set.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Textarea__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Textarea */ "./resources/js/components/Textarea.jsx");
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Button */ "./resources/js/components/Button.jsx");
-/* harmony import */ var _Comment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Comment */ "./resources/js/components/Comment/index.jsx");
-/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Shared/utils */ "./resources/js/Shared/utils.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Textarea__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Textarea */ "./resources/js/components/Textarea.jsx");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _Comment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Comment */ "./resources/js/components/Comment/index.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -469,23 +429,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
 function Details(props) {
   var data = props.data;
-  console.log('Details data =>', data);
 
   var _useRememberedState = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["useRememberedState"])(''),
       _useRememberedState2 = _slicedToArray(_useRememberedState, 2),
       textarea = _useRememberedState2[0],
-      setTextArea = _useRememberedState2[1]; // const handleOnChange = (e) => {
-  //   const { name, value } = e.target;
-  //   console.log('onChange =>', name, value);
-  //   onChange({
-  //     data: textarea, setData: setTextArea, name, value,
-  //   });
-  // };
-
+      setTextArea = _useRememberedState2[1];
 
   var handleOnChange = function handleOnChange(e) {
     setTextArea(e.target.value);
@@ -493,14 +443,14 @@ function Details(props) {
 
   var createComment = function createComment() {
     console.log('data =>', data);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("/admin/suggestions/".concat(data.id, "/update"), {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].put("/admin/suggestions/".concat(data.id, "/update"), {
       comment: textarea,
       status: 'viewed'
     });
   };
 
   var solveSuggestion = function solveSuggestion() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].put("/admin/suggestions/".concat(data.id, "/updateStatus"), {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].put("/admin/suggestions/".concat(data.id, "/updateStatus"), {
       status: 'solved'
     });
   };
@@ -521,7 +471,7 @@ function Details(props) {
     className: "inline fas fa-comment-alt text-brand-icons text-sm"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, ": ", data.suggestion)), data.comments.length === 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, ": ", data.suggestion)), data.comments.length === 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_3__["default"], {
     label: "Comentario de seguimiento",
     value: textarea,
     id: "comment",
@@ -535,22 +485,22 @@ function Details(props) {
     className: "mt-2 flex justify-end"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mr-2"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onClick: createComment,
     disabled: false
-  }, "Agregar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "Agregar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onClick: function onClick() {},
     disabled: false
-  }, "Cancelar")))), data.comments.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "Cancelar")))), data.comments.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_5__["default"], {
     comment: data.comments[0]
   })), data.status !== 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onClick: solveSuggestion,
     disabled: false
   }, "Solucionar")), data.status === 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-8"
-  }, "Sugerencia solucionada por: ...")));
+  }, "Sugerencia solucionada por:", data.activity[data.activity.length - 1].causer.name)));
 }
 
 /***/ }),
