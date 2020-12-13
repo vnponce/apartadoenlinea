@@ -85,10 +85,8 @@ describe('Suggestions page from Panel', () => {
       cy.contains('abel@ponce.com');
       cy.contains('Que buen pan');
       cy.findByLabelText(/comentario/i);
-      cy.findByRole('button', { name: /agregar/i });
+      cy.findByRole('button', { name: /solucionado/i });
       cy.findByRole('button', { name: /cancelar/i });
-      cy.findByRole('button', { name: /solucionar/i });
-      // cy.findByLabelText(/Estatus/i);
     });
   });
   it('should show solved suggestion details', () => {
@@ -100,16 +98,14 @@ describe('Suggestions page from Panel', () => {
       cy.contains('Que buen pan');
       cy.findByLabelText(/comentario/i).should('not.exist');
       // aqui revisar lo de comentario de seguimiento, el comentario, quien soluciono de usuario y la hora.
-      cy.findByRole('button', { name: /agregar/i }).should('not.exist');
+      cy.findByRole('button', { name: /solucionado/i }).should('not.exist');
       cy.findByRole('button', { name: /cancelar/i }).should('not.exist');
-      cy.findByRole('button', { name: /solucionar/i }).should('not.exist');
-      // cy.findByLabelText(/Estatus/i);
-      // cy.contains('Sugerencia solucionada por: ');
       cy.contains('Hola comentario');
       cy.contains('agregó comentario');
     });
   });
-  it('should show unsolved suggestion details', () => {
+  it.skip('should show unsolved suggestion details', () => {
+      // this test only is when user could add comment but no is status changed to solve when save this comment
     createUnsolvedSuggestion();
     cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
     cy.get('#dash-content').within(() => {
@@ -126,26 +122,24 @@ describe('Suggestions page from Panel', () => {
     });
   });
 
-  it('should add user comment', () => {
+  it('should add user comment and change status to solved', () => {
     createSuggestion();
-    goToSuggestions();
+    goToSuggestions({ dynamicLogin: true, specialLoginData:{ name: 'Antonio Solver'}})
     cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
 
-    cy.findByLabelText(/comentario/i).type('Nuevo comentario sin resolver');
-    // cy.findByLabelText(/comentario/i);
-    cy.findByRole('button', { name: /agregar/i }).click();
+    cy.findByLabelText(/comentario/i).type('Nuevo comentario que ha resuelto la sugerencia');
+    cy.findByRole('button', { name: /solucionado/i }).click();
 
-    // ver modal de actualizado o loading elemento
-    //   cy.get('.swal2-modal').contains('Su comentario ha sido registrado con éxito');
-    // ver que no esta el input y ver el comment
-
-    // cy.wait(500);
     cy.findByLabelText(/comentario/i).should('not.exist');
-
-    // ver en la base de datos que se guardó
+      cy.get('#dash-content').within(() => {
+          cy.contains(/Antonio Solver- agregó comentario/i);
+          cy.findByText(/Nuevo comentario que ha resuelto la sugerencia/i);
+          cy.contains(/sugerencia solucionada por: Antonio Solver/i);
+      });
   });
   // agregar boton de solucionar
-  it('should change to solved when user clicks on Solucionar button and save whos was click on the button', () => {
+  it.skip('should change to solved when user clicks on Solucionar button and save whos was click on the button', () => {
+      // no se usa porque esta es cuando el status se puede cambiar despues de agregar comentario
     // createUnsolvedSuggestion();
       cy.create('App\\User', {
           name: 'Antonio Not Click Solver',

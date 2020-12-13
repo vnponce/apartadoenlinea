@@ -445,15 +445,14 @@ function Details(props) {
     console.log('data =>', data);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].put("/admin/suggestions/".concat(data.id, "/update"), {
       comment: textarea,
-      status: 'viewed'
-    });
-  };
-
-  var solveSuggestion = function solveSuggestion() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].put("/admin/suggestions/".concat(data.id, "/updateStatus"), {
       status: 'solved'
     });
-  };
+  }; // const solveSuggestion = () => {
+  //   Inertia.put(`/admin/suggestions/${data.id}/updateStatus`, {
+  //     status: 'solved',
+  //   });
+  // };
+
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
@@ -488,19 +487,16 @@ function Details(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onClick: createComment,
     disabled: false
-  }, "Agregar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Solucionado")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onClick: function onClick() {},
     disabled: false
   }, "Cancelar")))), data.comments.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_5__["default"], {
     comment: data.comments[0]
-  })), data.status !== 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), data.status === 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    onClick: solveSuggestion,
-    disabled: false
-  }, "Solucionar")), data.status === 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-8"
-  }, "Sugerencia solucionada por:", data.activity[data.activity.length - 1].causer.name)));
+  }, "Sugerencia solucionada por: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-brand-green"
+  }, data.activity[data.activity.length - 1].causer.name))));
 }
 
 /***/ }),

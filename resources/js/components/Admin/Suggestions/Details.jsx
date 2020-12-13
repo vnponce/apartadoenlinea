@@ -17,15 +17,15 @@ export default function Details(props) {
     console.log('data =>', data);
     Inertia.put(`/admin/suggestions/${data.id}/update`, {
       comment: textarea,
-      status: 'viewed',
-    });
-  };
-
-  const solveSuggestion = () => {
-    Inertia.put(`/admin/suggestions/${data.id}/updateStatus`, {
       status: 'solved',
     });
   };
+
+  // const solveSuggestion = () => {
+  //   Inertia.put(`/admin/suggestions/${data.id}/updateStatus`, {
+  //     status: 'solved',
+  //   });
+  // };
 
   return (
       <div className="w-1/2 lg:w-full">
@@ -57,7 +57,7 @@ export default function Details(props) {
                       <div className="mt-2 flex justify-end">
                           <div className="mr-2">
                               <Button onClick={createComment} disabled={false}>
-                                  Agregar
+                                  Solucionado
                               </Button>
                           </div>
                           <div>
@@ -76,17 +76,16 @@ export default function Details(props) {
 
               {/* Solucionado */}
               {/* isSolved? a lo mejor un metodo de esto */}
-              {data.status !== 'solved' && (
-                  <div className="mt-8">
-                      <Button onClick={solveSuggestion} disabled={false}>
-                          Solucionar
-                      </Button>
-                  </div>
-              )}
+              {/*{data.status !== 'solved' && (*/}
+              {/*    <div className="mt-8">*/}
+              {/*        <Button onClick={solveSuggestion} disabled={false}>*/}
+              {/*            Solucionar*/}
+              {/*        </Button>*/}
+              {/*    </div>*/}
+              {/*)}*/}
               {data.status === 'solved' && (
                   <div className="mt-8">
-                      Sugerencia solucionada por:
-                      {data.activity[data.activity.length - 1].causer.name}
+                      Sugerencia solucionada por: <span className="text-brand-green">{data.activity[data.activity.length - 1].causer.name}</span>
                   </div>
               )}
           </div>
