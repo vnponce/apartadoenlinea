@@ -31,6 +31,21 @@ class SuggestionsTest extends TestCase
     }
 
     /** @test */
+    function it_send_users_to_use_in_search_bar()
+    {
+        factory(Suggestion::class)->create();
+        $user = factory(User::class)->create();
+        factory(User::class, 10)->create([
+            'role' => 'manager',
+        ]);
+
+        $response = $this->actingAs($user)->get("/admin/suggestions");
+        $response->assertStatus(200)
+            ->assertPropCount('users', 10);
+
+    }
+
+    /** @test */
     function logged_user_can_update_status_to_viewed()
     {
         $this->updateStatus(['status' => 'viewed']);

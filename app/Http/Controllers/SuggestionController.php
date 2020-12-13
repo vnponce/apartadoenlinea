@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Suggestion;
+use App\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Laravelista\Comments\Comment;
@@ -23,7 +24,9 @@ class SuggestionController extends Controller
 //            ->currentStatus(request('status'))
             ->solver(request('solver'))
             ->paginate();
-        return Inertia::render('Admin/Suggestions', compact('suggestions'));
+
+        $users = User::where('role', 'manager')->get();
+        return Inertia::render('Admin/Suggestions', compact('suggestions', 'users'));
     }
 
     /**

@@ -8,10 +8,11 @@ import DetailsWrapper from '../../components/Admin/Suggestions/DetailsWrapper';
 import Table from '../../components/Table';
 import Content from '../../components/Admin/Content';
 import Pagination from "../../components/Pagination";
+import SearchBar from "../../components/Admin/Suggestions/SearchBar";
 
 
 function Suggestions(props) {
-  const { suggestions: { data: suggestions, link }, flash: { success_message } } = props;
+  const { suggestions: { data: suggestions, link }, flash: { success_message }, users } = props;
   const { suggestions: suggestionsToPaginate } = props;
   const [dataSelected, setDataSelected] = useState(null);
   const [index, setIndex] = useState(null);
@@ -76,6 +77,7 @@ function Suggestions(props) {
         <Admin title="Panel">
             <DetailsWrapper data={dataSelected} />
             <Content>
+                <SearchBar solvers={users} />
                 <h5 className="font-bold text-black inline-block">Sugerencias</h5>
                 <Table
                     columns={columns}

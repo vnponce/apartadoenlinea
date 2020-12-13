@@ -25,7 +25,7 @@ describe('Dashboard', () => {
     cy.get('.page-link:nth(2)').click();
     cy.url().should('eq', `${Cypress.config().baseUrl}/admin/suggestions?page=2`);
   });
-  it.only('should filter by name', () => {
+  it.only('should filter by name ', () => {
     cy.create('App\\Suggestion', {
       name: 'Abel',
     }).then((order) => {
@@ -34,7 +34,9 @@ describe('Dashboard', () => {
       const { id, name } = order;
       goToSuggestions();
 
+      console.log(tableRowSelector);
       cy.get(tableRowSelector).should('have.length', 11);
+      // cy.get('#main-contents table tbody tr').should('have.length', 11);
       cy.findByLabelText(/nombre/i).type(`${name}{enter}`);
       cy.get(tableRowSelector).should('have.length', 1);
       cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');

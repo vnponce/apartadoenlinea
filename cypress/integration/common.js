@@ -1,4 +1,4 @@
-const tableRowSelector = '#main-contents table tbody tr';
+export const tableRowSelector = '#main-contents table tbody tr';
 
 export const goToSuggestions = ({ dynamicLogin = 'login', specialLoginData = {} } = {}) => {
 
@@ -57,5 +57,3 @@ export const createUnsolvedSuggestion = ({ name = 'Abel Ponce', email = 'abel@po
         name, email, suggestion, solved: false,
     });
 };
-
-export default { tableRowSelector };

@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"6038d37709e609ff2e42","1":"d763b3b19b1a73962aea","2":"82848471d055c0c564f5","3":"1b4f9a3dd9dd02122bb9","4":"ed351820e3b66ee63436","5":"66074c8066a274205891","6":"dd7ecaab36ff181dafbc","7":"c72bea2b36ad2a6c30a1","8":"f318c919ea8b5b37b7a4","9":"2325c5b594eaac3e69a2","10":"427b9df441d12685e7ae","11":"faa0d3759a6364e69237","12":"1ad34266e0826c13db54","13":"5dd2f11ab6b55e8dd279","14":"68a2e88676ea4cf99ff5","15":"4ce95dec36d4313f5657","16":"c2604687fb176b5a0803","17":"dfcaf645b7f1600d1f7a","18":"0df420082e42363f828f","19":"75d1b057beb70be58e12","20":"77dabd4df4fbcb8c4195","21":"df90c55e07a15fdadef5","22":"c12ffd6d8918674f2580","23":"a3b3ed4e7d7b1fccea90","24":"c9938dd8fda1cc44fced","25":"279a3b745f013764e736"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"6038d37709e609ff2e42","1":"d763b3b19b1a73962aea","2":"c4ddb6263838f59c9375","3":"5095a9405d68c22d01fa","5":"ffffbfa85466db3bd94a","6":"dd7ecaab36ff181dafbc","7":"cc069a2f69ad51f0f404","8":"9a209f9831abe2069584","9":"2325c5b594eaac3e69a2","10":"6513c78c09b08dc09af5","11":"faa0d3759a6364e69237","12":"9ac4c658b932c9cf46fb","13":"5dd2f11ab6b55e8dd279","15":"4ce95dec36d4313f5657","16":"c2604687fb176b5a0803","17":"dfcaf645b7f1600d1f7a","18":"0df420082e42363f828f","19":"75d1b057beb70be58e12","20":"77dabd4df4fbcb8c4195","21":"df90c55e07a15fdadef5","22":"c12ffd6d8918674f2580","23":"a3b3ed4e7d7b1fccea90","24":"c9938dd8fda1cc44fced","25":"279a3b745f013764e736","27":"a359764272f673d220a5","35":"6b2914fb3f76ac139829"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34563,8 +34563,8 @@ var map = {
 		1,
 		6,
 		9,
+		7,
 		2,
-		5,
 		11
 	],
 	"./Admin/Dashboard.jsx": [
@@ -34573,8 +34573,8 @@ var map = {
 		1,
 		6,
 		9,
+		7,
 		2,
-		5,
 		11
 	],
 	"./Admin/Products": [
@@ -34582,8 +34582,8 @@ var map = {
 		0,
 		1,
 		6,
-		7,
-		5,
+		8,
+		2,
 		13
 	],
 	"./Admin/Products.jsx": [
@@ -34591,8 +34591,8 @@ var map = {
 		0,
 		1,
 		6,
-		7,
-		5,
+		8,
+		2,
 		13
 	],
 	"./Admin/Stores": [
@@ -34600,8 +34600,8 @@ var map = {
 		0,
 		1,
 		6,
-		7,
-		5,
+		8,
+		2,
 		16
 	],
 	"./Admin/Stores.jsx": [
@@ -34609,31 +34609,31 @@ var map = {
 		0,
 		1,
 		6,
-		7,
-		5,
+		8,
+		2,
 		16
 	],
 	"./Admin/Suggestions": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
 		6,
-		5,
-		14
+		2,
+		3
 	],
 	"./Admin/Suggestions.jsx": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
 		6,
-		5,
-		14
+		2,
+		3
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		1,
 		6,
-		7,
-		5,
+		8,
+		2,
 		17
 	],
 	"./Admin/Users.jsx": [
@@ -34641,26 +34641,26 @@ var map = {
 		0,
 		1,
 		6,
-		7,
-		5,
+		8,
+		2,
 		17
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		20
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		20
 	],
 	"./Example": [
@@ -34675,154 +34675,154 @@ var map = {
 		"./resources/js/Pages/Home.js",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		18
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		18
 	],
 	"./Landing": [
 		"./resources/js/Pages/Landing.jsx",
 		0,
 		1,
-		4,
-		8,
-		2,
-		3,
+		27,
+		10,
+		7,
+		5,
 		15
 	],
 	"./Landing.jsx": [
 		"./resources/js/Pages/Landing.jsx",
 		0,
 		1,
-		4,
-		8,
-		2,
-		3,
+		27,
+		10,
+		7,
+		5,
 		15
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		23
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		23
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		4,
-		8,
+		27,
+		10,
 		9,
-		2,
-		3,
-		12
+		7,
+		5,
+		35
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		4,
-		8,
+		27,
+		10,
 		9,
-		2,
-		3,
-		12
+		7,
+		5,
+		35
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
 		1,
-		4,
-		10,
-		2,
-		3,
+		27,
+		12,
+		7,
+		5,
 		24
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
 		1,
-		4,
-		10,
-		2,
-		3,
+		27,
+		12,
+		7,
+		5,
 		24
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
-		4,
-		8,
-		2,
-		3,
+		27,
+		10,
+		7,
+		5,
 		19
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
-		4,
-		8,
-		2,
-		3,
+		27,
+		10,
+		7,
+		5,
 		19
 	],
 	"./Suggestion": [
 		"./resources/js/Pages/Suggestion.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		21
 	],
 	"./Suggestion.jsx": [
 		"./resources/js/Pages/Suggestion.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		21
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		25
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
+		27,
+		7,
+		5,
 		25
 	]
 };

@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[35],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[42],{
 
 /***/ "./resources/js/Pages/Order.jsx":
 /*!**************************************!*\
