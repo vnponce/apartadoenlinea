@@ -7,10 +7,12 @@ import DetailsWrapper from '../../components/Admin/Suggestions/DetailsWrapper';
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Table from '../../components/Table';
 import Content from '../../components/Admin/Content';
+import Pagination from "../../components/Pagination";
 
 
 function Suggestions(props) {
   const { suggestions: { data: suggestions, link }, flash: { success_message } } = props;
+  const { suggestions: suggestionsToPaginate } = props;
   const [dataSelected, setDataSelected] = useState(null);
   const [index, setIndex] = useState(null);
 
@@ -75,7 +77,13 @@ function Suggestions(props) {
             <DetailsWrapper data={dataSelected} />
             <Content>
                 <h5 className="font-bold text-black inline-block">Sugerencias</h5>
-                <Table columns={columns} data={suggestions} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
+                <Table
+                    columns={columns}
+                    data={suggestions}
+                    onClick={(row) => openedAndShow(row.index)}
+                    selected={dataSelected}
+                />
+                <Pagination items={suggestionsToPaginate} />
             </Content>
         </Admin>
   );
