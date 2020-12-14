@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Inertia } from '@inertiajs/inertia';
 import moment from 'moment';
-// import Stores from '../Select/SearchStores';
+import SearchUsers from '../../Select/SearchUsers';
 import Input from '../../Input';
 import SearchStatus from '../../Select/SearchStatus';
 import { getParameterByName } from '../../../Shared/utils';
@@ -72,18 +72,20 @@ export default function SearchBar(props) {
 
   useEffect(() => {
     if (solver && solvers) {
+      console.log('solver =>', solver);
       // convert string to number
       const solverSelected = solvers.find((current) => current.id === solver * 1);
+      console.log('solverSelected =>', solverSelected);
       setSolverObject({
-        id: solverSelected.id,
-        name: solverSelected.name,
+        value: solverSelected.id,
+        label: solverSelected.name,
       });
     }
     // if user clear store selector it must remove selected store
     if (solver === null) {
       setSolverObject({
-        id: '',
-        name: '',
+        value: '',
+        label: '',
       });
     }
   }, [solver]);
@@ -111,16 +113,16 @@ export default function SearchBar(props) {
 
   const toSearch = () => {
     const searchName = name ? `name=${name}` : '';
-    // const searchSolver = solverObject && solverObject.id ? `solver=${solverObject.id}` : '';
+    const searchSolver = solverObject && solverObject.value ? `solver=${solverObject.value}` : '';
     // const searchDate = date ? `date=${date}` : '';
-    const searchStatus = status ? `status=${status.value}` : '';
+    const searchStatus = status && status.value ? `status=${status.value}` : '';
 
     // const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
     // const sortQuery = getParameterByName('sort') === 'desc' ? 'sort=desc' : '';
 
     // console.log('url builder', urlBuilder(queriesWithValue))
     // const url = `/admin?${searchString}&${searchSolver}&${searchDate}&${searchStatus}`;
-    const url = `/admin/suggestions?${searchName}&${searchStatus}`;
+    const url = `/admin/suggestions?${searchName}&${searchStatus}&${searchSolver}`;
     // Inertia.visit(urlBuilder(queriesWithValue));
     Inertia.visit(url);
   };
@@ -138,10 +140,10 @@ export default function SearchBar(props) {
                     value={name}
                 />
             </div>
-            {/*<div className="inline-block mx-2 w-1/5">*/}
-            {/*    /!* <Stores setStore={setStore} stores={stores} storeSelected={store} /> *!/*/}
-            {/*    <Stores setStore={setSolver()} stores={solvers} storeSelected={solverObject}/>*/}
-            {/*</div>*/}
+            <div className="inline-block mx-2 w-1/5">
+                {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
+                <SearchUsers setUser={setSolver} users={solvers.map(u => ({ label: u.name, value: u.id }))} user={solverObject}/>
+            </div>
             {/*<div className="inline-block mx-2 w-1/5">*/}
             {/*        /!* Día *!/*/}
             {/*        /!* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> *!/*/}

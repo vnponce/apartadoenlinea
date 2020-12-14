@@ -76,7 +76,7 @@ describe('Dashboard', () => {
 
       cy.get(tableRowSelector).should('have.length', 11);
       // cy.findByLabelText(/correo/i).type(`${email}{enter}`);
-      cy.selectStatus({ optionPosition: 3, selectorNumber: 4 });
+      cy.selectStatus({ optionPosition: 3, selectorNumber: 5 });
       cy.findByRole('button', { name: /buscar/i }).click();
       cy.get(tableRowSelector).should('have.length', 1);
       cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel Ponce');
@@ -84,23 +84,52 @@ describe('Dashboard', () => {
     });
   });
 
-  it.skip('should filter by who resolved suggestion', () => {
-    cy.create('App\\Order', {
-      name: 'Abel',
-      status: 'delivered',
-    }).then((order) => {
-      // cy.log('date =>', moment().add(1, 'd').format('Y-MM-DD H:mm:ss'));
-      cy.create('App\\Order', 10);
-      const { id } = order;
-      cy.login();
+  it('should filter by who resolved suggestion', () => {
+    cy.create('App\\Suggestion', {
+      name: 'Abel Ponce',
+      email: 'abel@ponce.com',
+    }).then((suggestion) => {
+      const { id } = suggestion;
+      cy.create('App\\Suggestion', 10, {
+        status: 'solved',
+      });
+      cy.create('App\\User', 4);
+      cy.create('App\\User', {
+        name: 'Antonio Solver',
+        role: 'manager',
+      }).then((user) => {
+        cy.addCommentToSuggestion({
+          suggestion: id,
+          comment: 'Solucionado',
+          solved: true,
+          user: user.id,
+          // }).then((res) => {
+          //   cy.log('res =>', res);
+          //   cy.visit('/admin');
+          //   cy.visit('/admin/suggestions');
+        });
+        cy.addCommentToSuggestion({
+          suggestion: 3,
+          comment: 'Solucionado',
+          solved: true,
+          user: user.id,
+          // }).then((res) => {
+          //   cy.log('res =>', res);
+          //   cy.visit('/admin');
+          //   cy.visit('/admin/suggestions');
+        });
+      });
+      goToSuggestions();
 
-      cy.visit('/admin');
-      cy.get(tableRowSelector).should('have.length', 10);
-      cy.selectStatus({ optionPosition: 2 });
+      cy.get(tableRowSelector).should('have.length', 11);
+      // users selector
+        cy.get('.users-selector__value-container').click();
+        cy.get(`#react-select-4-option-0`).click();
+
       cy.findByRole('button', { name: /buscar/i }).click();
-      cy.get(tableRowSelector).should('have.length', 1);
-      cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel');
-      cy.get('.status-selector__value-container').contains('Entregados');
+      cy.get(tableRowSelector).should('have.length', 2);
+      // cy.get(`${tableRowSelector}[id=${id}]`).contains('Abel Ponce');
+      cy.get('.users-selector__value-container').contains('Antonio Solver');
     });
   });
   it.skip('should filter by mixed, name, status and who resolved', () => {
