@@ -22,7 +22,7 @@ describe('Suggestions page from Panel', () => {
     cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce');
     // cy.get(`${tableRowSelector}[id=1]`).contains('abel@ponce.com');
     cy.get(`${tableRowSelector}[id=1] td:nth(1)`).contains('Que buen pan');
-    cy.get(`${tableRowSelector}[id=1] td:nth(2)`).contains('created');
+    cy.get(`${tableRowSelector}[id=1] td:nth(2)`).contains('No solucionado');
   });
 
   it('should show suggestion details', () => {

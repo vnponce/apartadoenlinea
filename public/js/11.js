@@ -355,10 +355,11 @@ function Suggestions(props) {
 
     }, {
       Header: 'Estatus',
-      accessor: 'status'
-    }, {
-      Header: '-',
-      accessor: 'solver'
+      accessor: 'status',
+      Cell: function Cell(_ref) {
+        var row = _ref.cell.row;
+        return row.original.status_info.label;
+      }
     }];
   }, []);
 
@@ -540,7 +541,7 @@ function Details(props) {
     disabled: false
   }, "Cancelar")))), data.comments.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_5__["default"], {
     comment: data.comments[0]
-  })), data.status === 'solved' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), data.status_info.is_solved && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-8"
   }, "Sugerencia solucionada por: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-brand-green"

@@ -7,8 +7,8 @@ import DetailsWrapper from '../../components/Admin/Suggestions/DetailsWrapper';
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Table from '../../components/Table';
 import Content from '../../components/Admin/Content';
-import Pagination from "../../components/Pagination";
-import SearchBar from "../../components/Admin/Suggestions/SearchBar";
+import Pagination from '../../components/Pagination';
+import SearchBar from '../../components/Admin/Suggestions/SearchBar';
 
 
 function Suggestions(props) {
@@ -33,11 +33,14 @@ function Suggestions(props) {
       {
         Header: 'Estatus',
         accessor: 'status',
+        Cell: ({ cell: { row }}) => {
+            return row.original.status_info.label;
+        },
       },
-      {
-        Header: '-',
-        accessor: 'solver',
-      },
+      // {
+      //   Header: '-',
+      //   accessor: 'solver',
+      // },
       /*
             {
                 Header: 'password',
@@ -59,7 +62,7 @@ function Suggestions(props) {
 
   useEffect(() => {
     if (dataSelected) {
-        setDataSelected(suggestions[index]);
+      setDataSelected(suggestions[index]);
       // setDataSelected(false);
       // Swal.fire({
       //   position: 'top-end',

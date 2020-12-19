@@ -36,7 +36,24 @@ class Suggestion extends Model
 //    protected $with = ['comments', 'activities'];
     protected $with = ['comments'];
 
-    protected $appends = ['activity'];
+    protected $appends = ['activity', 'status_info'];
+
+    public function getStatusInfoAttribute()
+    {
+        $label = 'No solucionado';
+        switch ($this->status) {
+            case 'solved':
+                $label = 'Solucionado';
+                break;
+            default:
+                $label = 'No solucionado';
+                break;
+        }
+        return [
+            'is_solved' => $this->status === 'solved',
+            'label' => $label,
+        ];
+    }
 
     // scopes
     public function scopeGetAllSearched($query)

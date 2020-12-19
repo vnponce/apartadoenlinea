@@ -8,7 +8,7 @@ import {
   tableRowSelector,
 } from '../../common';
 
-describe('Dashboard', () => {
+describe('Suggestions - filters', () => {
   beforeEach(() => {
     cy.refreshDatabase();
   });
@@ -220,9 +220,9 @@ describe('Dashboard', () => {
     cy.findByRole('button', { name: /buscar/i }).click();
     cy.get(tableRowSelector).should('have.length', 1);
     cy.get(`${tableRowSelector}:first`).contains('Abel Pregunton');
-    cy.get(`${tableRowSelector}:first`).contains('solved');
+    cy.get(`${tableRowSelector}:first`).contains('Solucionado');
   });
-  it.only('should filter by mixed, email, status and who resolved', () => {
+  it('should filter by mixed, email, status and who resolved', () => {
     // sugerencia con nombre - Abel, status - resuelto y resolvio - antonio solver
     cy.create('App\\Suggestion', {
       name: 'Abel Pregunton',
@@ -309,6 +309,6 @@ describe('Dashboard', () => {
     cy.findByRole('button', { name: /buscar/i }).click();
     cy.get(tableRowSelector).should('have.length', 1);
     cy.get(`${tableRowSelector}:first`).contains('Abel Pregunton');
-    cy.get(`${tableRowSelector}:first`).contains('solved');
+    cy.get(`${tableRowSelector}:first`).contains('Solucionado');
   });
 });

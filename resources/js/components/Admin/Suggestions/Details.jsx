@@ -83,7 +83,7 @@ export default function Details(props) {
               {/*        </Button>*/}
               {/*    </div>*/}
               {/*)}*/}
-              {data.status === 'solved' && (
+              {data.status_info.is_solved && (
                   <div className="mt-8">
                       Sugerencia solucionada por: <span className="text-brand-green">{data.activity[data.activity.length - 1].causer.name}</span>
                   </div>
