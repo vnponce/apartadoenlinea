@@ -115,7 +115,8 @@ class SuggestionController extends Controller
             ->solver(request('solver'))
             ->paginate();
 //        dd($suggestions->toArray());
-        return Inertia::render('Admin/Suggestions', compact('suggestions'));
+        $users = User::where('role', 'manager')->get();
+        return Inertia::render('Admin/Suggestions', compact('suggestions', 'users', ));
     }
 
     /**

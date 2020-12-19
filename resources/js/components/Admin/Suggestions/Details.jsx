@@ -31,15 +31,15 @@ export default function Details(props) {
       <div className="w-1/2 lg:w-full">
           <div
               className="m-2 md:mx-6 md:my-6">
-              <span className="text-lg">{data.name}</span>
+              <span className="text-sm">{data.name}</span>
               <div>
                   <i
                       className="inline fa fa-at fa-fw text-brand-icons text-sm"/>
-                  <span className="inline">: {data.email}</span>
+                  <span className="inline text-sm">: {data.email}</span>
               </div>
               <div className="mt-8">
-                  <i className="inline fas fa-comment-alt text-brand-icons text-sm"></i>
-                  <span className="inline">: {data.suggestion}</span>
+                  <i className="inline fas fa-comment-alt text-base text-green-600 mr-2"></i>
+                  <span className="inline">{data.suggestion}</span>
               </div>
               {data.comments.length === 0 && (
                   <>

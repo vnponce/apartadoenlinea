@@ -507,18 +507,18 @@ function Details(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-lg"
+    className: "text-sm"
   }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "inline fa fa-at fa-fw text-brand-icons text-sm"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "inline"
+    className: "inline text-sm"
   }, ": ", data.email)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fas fa-comment-alt text-brand-icons text-sm"
+    className: "inline fas fa-comment-alt text-base text-green-600 mr-2"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
-  }, ": ", data.suggestion)), data.comments.length === 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, data.suggestion)), data.comments.length === 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_3__["default"], {
     label: "Comentario de seguimiento",
     value: textarea,
     id: "comment",
@@ -863,22 +863,37 @@ function Button(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    border-top: 1px solid;\n    border-color: rgba(50, 115, 220, 0.3);\n"]);
 
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var CommentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 
 var Comment = function Comment(_ref) {
   var comment = _ref.comment;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-col justify-center items-center text-sm"
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CommentWrapper, {
+    className: "flex flex-col justify-center items-center text-sm pt-2 mt-2"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row justify-center mr-2"
+    className: "flex flex-row justify-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     alt: "avatar",
     className: "rounded-full w-6 h-6 mr-2 shadow-lg mb-2",
-    src: comment.commenter.avatar
+    src: comment.commenter.avatar || 'https://cdn2.iconfinder.com/data/icons/office-and-business-19/65/61-512.png'
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-brand-green font-semibold text-sm mr-1"
   }, comment.commenter.name), "- agreg\xF3 comentario ", comment.created_at)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "w-4/5 text-gray-600 text-sm text-left"
+    className: "w-full ml-16 text-gray-600 text-sm text-left"
   }, comment.comment));
 };
 
@@ -1141,7 +1156,8 @@ function SearchUsers(props) {
     },
     value: [{
       label: user.label
-    }]
+    }],
+    isClearable: true
   }));
 }
 

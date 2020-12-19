@@ -35,6 +35,7 @@ export default function SearchUsers(props) {
                   }
                 }}
                 value={[{ label: user.label }]}
+                isClearable
             />
         </SelectWrapper>
   );
