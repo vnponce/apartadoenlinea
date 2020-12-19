@@ -7,11 +7,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use function Complex\theta;
+use Laravelista\Comments\Commentable;
+use Spatie\Activitylog\Traits\CausesActivity;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Commentable, CausesActivity;
 
     /**
      * The attributes that are mass assignable.

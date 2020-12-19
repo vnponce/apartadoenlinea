@@ -54,6 +54,33 @@ Cypress.Commands.add('specialLogin', (attributes = {}) => {
 });
 
 /**
+ * Special to add comment to suggestion.
+ *
+ * @param {Object} attributes
+ *
+ * @example cy.login();
+ *          cy.login({ name: 'JohnDoe' });
+ */
+Cypress.Commands.add('addCommentToSuggestion', (attributes = { suggestion, comment, } = {}) => {
+    return cy.csrfToken()
+        .then(token => {
+            return cy.request({
+                method: 'POST',
+                url: '/__cypress_abel__/addCommentToSuggestion',
+                body: { attributes, _token: token },
+                log: false
+            })
+        })
+        .then(({body}) => {
+            Cypress.log({
+                name: 'addCommentToSuggestion',
+                message: attributes,
+                // consoleProps: () => ({ user: body })
+            });
+        }).its('body', {log: false});
+});
+
+/**
  * Create an order with product.
  *
  * @param {Object} options
