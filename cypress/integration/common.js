@@ -3,6 +3,7 @@ export const tableRowSelector = '#main-contents table tbody tr';
 export const goToSuggestions = ({ dynamicLogin = 'login', specialLoginData = {} } = {}) => {
 
     cy.['login'](specialLoginData);
+    cy.wait(1000);
     cy.visit('/admin');
     cy.findByRole('link', { name: /sugerencia/i }).click();
 };
