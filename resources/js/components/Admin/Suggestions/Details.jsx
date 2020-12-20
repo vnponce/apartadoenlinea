@@ -6,11 +6,16 @@ import Button from '../../Button';
 import Comment from '../../Comment';
 
 export default function Details(props) {
-  const { data } = props;
+  const { data, hideDetails } = props;
   const [textarea, setTextArea] = useRememberedState('');
 
   const handleOnChange = (e) => {
     setTextArea(e.target.value);
+  };
+
+  const handleOnCancel = (e) => {
+    setTextArea('');
+    hideDetails();
   };
 
   const createComment = () => {
@@ -61,7 +66,7 @@ export default function Details(props) {
                               </Button>
                           </div>
                           <div>
-                              <Button onClick={() => {}} disabled={false}>
+                              <Button onClick={handleOnCancel} disabled={false}>
                                   Cancelar
                               </Button>
                           </div>
@@ -76,13 +81,13 @@ export default function Details(props) {
 
               {/* Solucionado */}
               {/* isSolved? a lo mejor un metodo de esto */}
-              {/*{data.status !== 'solved' && (*/}
-              {/*    <div className="mt-8">*/}
-              {/*        <Button onClick={solveSuggestion} disabled={false}>*/}
-              {/*            Solucionar*/}
-              {/*        </Button>*/}
-              {/*    </div>*/}
-              {/*)}*/}
+              {/* {data.status !== 'solved' && ( */}
+              {/*    <div className="mt-8"> */}
+              {/*        <Button onClick={solveSuggestion} disabled={false}> */}
+              {/*            Solucionar */}
+              {/*        </Button> */}
+              {/*    </div> */}
+              {/* )} */}
               {data.status_info.is_solved && (
                   <div className="mt-8">
                       Sugerencia solucionada por: <span className="text-brand-green">{data.activity[data.activity.length - 1].causer.name}</span>

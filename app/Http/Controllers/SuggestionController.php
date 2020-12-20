@@ -17,13 +17,7 @@ class SuggestionController extends Controller
      */
     public function index()
     {
-        $suggestions = Suggestion::query()
-            ->search(request('name'))
-            ->date(request('date'))
-            ->status(request('status'))
-//            ->currentStatus(request('status'))
-            ->solver(request('solver'))
-            ->paginate();
+        $suggestions = Suggestion::getAllSearched();
 
         $users = User::where('role', 'manager')->get();
         return Inertia::render('Admin/Suggestions', compact('suggestions', 'users'));
@@ -107,13 +101,7 @@ class SuggestionController extends Controller
 
 //        return back()->with()
 
-        $suggestions = Suggestion::query()
-            ->search(request('name'))
-            ->date(request('date'))
-            ->status(request('status'))
-//            ->currentStatus(request('status'))
-            ->solver(request('solver'))
-            ->paginate();
+        $suggestions = Suggestion::getAllSearched();
 //        dd($suggestions->toArray());
         $users = User::where('role', 'manager')->get();
         return Inertia::render('Admin/Suggestions', compact('suggestions', 'users', ));

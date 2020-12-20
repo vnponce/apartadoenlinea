@@ -369,6 +369,12 @@ function Suggestions(props) {
     setDataSelected(data);
   };
 
+  var hideDetails = function hideDetails() {
+    setIndex(null);
+    var data = suggestions[null];
+    setDataSelected(data);
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (dataSelected) {
       setDataSelected(suggestions[index]); // setDataSelected(false);
@@ -386,7 +392,8 @@ function Suggestions(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Panel"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Suggestions_DetailsWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    data: dataSelected
+    data: dataSelected,
+    hideDetails: hideDetails
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Suggestions_SearchBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
     solvers: users
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
@@ -479,7 +486,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Details(props) {
-  var data = props.data;
+  var data = props.data,
+      hideDetails = props.hideDetails;
 
   var _useRememberedState = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["useRememberedState"])(''),
       _useRememberedState2 = _slicedToArray(_useRememberedState, 2),
@@ -488,6 +496,11 @@ function Details(props) {
 
   var handleOnChange = function handleOnChange(e) {
     setTextArea(e.target.value);
+  };
+
+  var handleOnCancel = function handleOnCancel(e) {
+    setTextArea('');
+    hideDetails();
   };
 
   var createComment = function createComment() {
@@ -537,7 +550,7 @@ function Details(props) {
     onClick: createComment,
     disabled: false
   }, "Solucionado")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    onClick: function onClick() {},
+    onClick: handleOnCancel,
     disabled: false
   }, "Cancelar")))), data.comments.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_5__["default"], {
     comment: data.comments[0]
@@ -566,12 +579,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DetailsWrapper(props) {
-  var data = props.data;
+  var data = props.data,
+      hideDetails = props.hideDetails;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
   }, data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Details__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    data: data
+    data: data,
+    hideDetails: hideDetails
   }), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

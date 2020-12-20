@@ -33,9 +33,7 @@ function Suggestions(props) {
       {
         Header: 'Estatus',
         accessor: 'status',
-        Cell: ({ cell: { row }}) => {
-            return row.original.status_info.label;
-        },
+        Cell: ({ cell: { row } }) => row.original.status_info.label,
       },
       // {
       //   Header: '-',
@@ -60,6 +58,12 @@ function Suggestions(props) {
     setDataSelected(data);
   };
 
+  const hideDetails = () => {
+    setIndex(null);
+    const data = suggestions[null];
+    setDataSelected(data);
+  };
+
   useEffect(() => {
     if (dataSelected) {
       setDataSelected(suggestions[index]);
@@ -78,7 +82,7 @@ function Suggestions(props) {
 
   return (
         <Admin title="Panel">
-            <DetailsWrapper data={dataSelected} />
+            <DetailsWrapper data={dataSelected} hideDetails={hideDetails}/>
             <Content>
                 <SearchBar solvers={users} />
                 <h5 className="font-bold text-black inline-block">Sugerencias</h5>

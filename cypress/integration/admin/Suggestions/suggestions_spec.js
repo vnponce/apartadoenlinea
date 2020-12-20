@@ -86,6 +86,21 @@ describe('Suggestions page from Panel', () => {
       cy.contains(/sugerencia solucionada por: Antonio Solver/i);
     });
   });
+  // al darle cancelar que se quite el seleccionado y que borre lo escrito
+  it('should add user comment and change status to solved', () => {
+    createSuggestion();
+    goToSuggestions({ dynamicLogin: true, specialLoginData: { name: 'Antonio Solver' } });
+    cy.get(`${tableRowSelector}[id=1] td:first`).contains('Abel Ponce').click();
+
+    cy.findByLabelText(/comentario/i).type('Nuevo comentario que ha resuelto la sugerencia');
+    cy.findByRole('button', { name: /cancelar/i }).click();
+
+    cy.findByLabelText(/comentario/i).should('not.exist');
+    cy.get('#dash-content').within(() => {
+      cy.contains('No hay ninguna sugerencia');
+    });
+  });
+
   // agregar boton de solucionar
   it.skip('should change to solved when user clicks on Solucionar button and save whos was click on the button', () => {
     // no se usa porque esta es cuando el status se puede cambiar despues de agregar comentario
@@ -112,6 +127,4 @@ describe('Suggestions page from Panel', () => {
       // como saber que es el usuario que la soluciono?
     });
   });
-
-  // al darle cancelar que se quite el seleccionado y que borre lo escrito
 });
