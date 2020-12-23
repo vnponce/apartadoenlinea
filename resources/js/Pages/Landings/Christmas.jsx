@@ -92,7 +92,7 @@ function Landing(props) {
                 {/*</div>*/}
                 {/* pan */}
                 {/* -mt-20 */}
-                <img className="drop-shadow h-56 md:m-auto w-full sm:w-1/2icon 6.png object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 lg:h-full" src="/images/landings/christmas/feliz-fiesta.png" alt=""/>
+                <img className="drop-shadow h-56 md:m-auto w-full sm:w-1/2icon 6.png object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 lg:h-full" src="/images/landings/christmas/breads.jpeg" alt=""/>
                 <div className="text-white mt-8 font-bold italic text-lg  md:text-3xl">
                     Encuentra tu sucursal más cercana
                 </div>

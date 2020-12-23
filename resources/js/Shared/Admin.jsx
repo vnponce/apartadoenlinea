@@ -44,6 +44,12 @@ const Wrapper = styled.div`
     #sidebar:hover span {
         opacity: 1;
     }
+
+    // #dash-content {
+    //     height: calc( 100vh - 80px );
+    //     min-height: unset;
+    //     overflow: scroll;
+    // }
 `;
 
 export default function Layout({ title, children }) {

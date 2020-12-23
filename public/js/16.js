@@ -318,7 +318,7 @@ function Landing(props) {
     className: "text-orange-200 -mt-4 md:-mt-8"
   }, "Fiestas!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "drop-shadow h-56 md:m-auto w-full sm:w-1/2icon 6.png object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 lg:h-full",
-    src: "/images/landings/christmas/feliz-fiesta.png",
+    src: "/images/landings/christmas/breads.jpeg",
     alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-white mt-8 font-bold italic text-lg  md:text-3xl"

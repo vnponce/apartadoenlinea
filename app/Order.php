@@ -69,7 +69,7 @@ class Order extends Model
     {
         switch ($this->status) {
             case 'created':
-                return 'Creado';
+                return 'No visto';
             case 'opened':
                 return 'Visto';
             case 'journey':
