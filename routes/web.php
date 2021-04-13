@@ -54,12 +54,8 @@ Route::get('compra', function() {
 //    ]);
 //});
 
-Route::get('pan-de-muerto', function() {
-    return Inertia::render('Landing');
-});
-
-Route::get('felices-fiestas', function() {
-    return Inertia::render('Landings/Christmas');
+Route::get('/roscasgaribaldi-rellenas', function() {
+    return Inertia::render('Landings/RoscasGaribaldi');
 });
 
 Auth::routes(['register' => false]);

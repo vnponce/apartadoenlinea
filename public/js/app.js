@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","2":"82848471d055c0c564f5","3":"1b4f9a3dd9dd02122bb9","4":"ed351820e3b66ee63436","5":"abe2baeee5cef962e52f","6":"52861cbf9c693682f6c2","7":"0e02e5603d0e091346b6","8":"6c4da74f2440880fea43","9":"07457d5a44df1daf0b39","10":"427b9df441d12685e7ae","11":"cf9fd82ba98a4f9afa56","12":"8545ff225621ee91e6f3","13":"5dd2f11ab6b55e8dd279","14":"7b1a45b36e72d6730065","15":"4ce95dec36d4313f5657","16":"1592d888a1ddd5e4ba86","17":"b7d74ae6bf9d71bcc7fc","18":"32db876c0ad0c03d4c43","19":"989a58ecf112d00f4b28","20":"7903b5f2cbb404f7ba94","21":"45109b0638e20843a51a","22":"4f6d31dc016383f6a5ef","23":"480e2f41db9b50976540","24":"33416f3b445dd2d897fa","25":"9e784091a98b8254d174","26":"db6f8f1fe7fd0d6c16d4"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","2":"82848471d055c0c564f5","3":"1b4f9a3dd9dd02122bb9","4":"ed351820e3b66ee63436","5":"abe2baeee5cef962e52f","6":"8520bd2aa5a4a8ec41df","7":"a87907d1562108345875","8":"6c4da74f2440880fea43","9":"07457d5a44df1daf0b39","10":"427b9df441d12685e7ae","11":"cf9fd82ba98a4f9afa56","12":"8545ff225621ee91e6f3","13":"5dd2f11ab6b55e8dd279","14":"7b1a45b36e72d6730065","15":"4ce95dec36d4313f5657","16":"1592d888a1ddd5e4ba86","17":"d3fe6987feb75178a41e","18":"57b1323004b49d8e25ce","19":"e134ac5f357bdaf7c56b","20":"f1134591b08dafa7978b","21":"ee48386d611cb28ec770","22":"28ab1c1b425888cb2be9","23":"8b77b8d60cad130a6849","24":"d010853789c211b29082","25":"8d02f364ff0b2be4c59f","26":"68716ba406bc85901d60","27":"253a6067e83550db8562"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34561,7 +34561,7 @@ var map = {
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
 		1,
-		6,
+		7,
 		9,
 		2,
 		5,
@@ -34571,7 +34571,7 @@ var map = {
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
 		1,
-		6,
+		7,
 		9,
 		2,
 		5,
@@ -34581,7 +34581,7 @@ var map = {
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		1,
-		6,
+		7,
 		8,
 		5,
 		13
@@ -34590,7 +34590,7 @@ var map = {
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		1,
-		6,
+		7,
 		8,
 		5,
 		13
@@ -34599,31 +34599,31 @@ var map = {
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		1,
-		6,
+		7,
 		8,
 		5,
-		17
+		18
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		1,
-		6,
+		7,
 		8,
 		5,
-		17
+		18
 	],
 	"./Admin/Suggestions": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
-		6,
+		7,
 		5,
 		11
 	],
 	"./Admin/Suggestions.jsx": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
-		6,
+		7,
 		5,
 		11
 	],
@@ -34631,19 +34631,19 @@ var map = {
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		1,
-		6,
+		7,
 		8,
 		5,
-		18
+		19
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		1,
-		6,
+		7,
 		8,
 		5,
-		18
+		19
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
@@ -34652,7 +34652,7 @@ var map = {
 		4,
 		2,
 		3,
-		21
+		22
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
@@ -34661,15 +34661,15 @@ var map = {
 		4,
 		2,
 		3,
-		21
+		22
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
-		23
+		24
 	],
 	"./Example.js": [
 		"./resources/js/Pages/Example.js",
-		23
+		24
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.js",
@@ -34678,7 +34678,7 @@ var map = {
 		4,
 		2,
 		3,
-		19
+		20
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
@@ -34687,14 +34687,14 @@ var map = {
 		4,
 		2,
 		3,
-		19
+		20
 	],
 	"./Landing": [
 		"./resources/js/Pages/Landing.jsx",
 		0,
 		1,
 		4,
-		7,
+		6,
 		2,
 		3,
 		15
@@ -34704,7 +34704,7 @@ var map = {
 		0,
 		1,
 		4,
-		7,
+		6,
 		2,
 		3,
 		15
@@ -34714,7 +34714,7 @@ var map = {
 		0,
 		1,
 		4,
-		7,
+		6,
 		2,
 		3,
 		16
@@ -34724,10 +34724,30 @@ var map = {
 		0,
 		1,
 		4,
-		7,
+		6,
 		2,
 		3,
 		16
+	],
+	"./Landings/RoscasGaribaldi": [
+		"./resources/js/Pages/Landings/RoscasGaribaldi.js",
+		0,
+		1,
+		4,
+		6,
+		2,
+		3,
+		17
+	],
+	"./Landings/RoscasGaribaldi.js": [
+		"./resources/js/Pages/Landings/RoscasGaribaldi.js",
+		0,
+		1,
+		4,
+		6,
+		2,
+		3,
+		17
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
@@ -34736,7 +34756,7 @@ var map = {
 		4,
 		2,
 		3,
-		24
+		25
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
@@ -34745,14 +34765,14 @@ var map = {
 		4,
 		2,
 		3,
-		24
+		25
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
 		4,
-		7,
+		6,
 		9,
 		2,
 		3,
@@ -34763,7 +34783,7 @@ var map = {
 		0,
 		1,
 		4,
-		7,
+		6,
 		9,
 		2,
 		3,
@@ -34777,7 +34797,7 @@ var map = {
 		10,
 		2,
 		3,
-		25
+		26
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
@@ -34787,27 +34807,27 @@ var map = {
 		10,
 		2,
 		3,
-		25
+		26
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
 		4,
-		7,
+		6,
 		2,
 		3,
-		20
+		21
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
 		4,
-		7,
+		6,
 		2,
 		3,
-		20
+		21
 	],
 	"./Suggestion": [
 		"./resources/js/Pages/Suggestion.jsx",
@@ -34816,7 +34836,7 @@ var map = {
 		4,
 		2,
 		3,
-		22
+		23
 	],
 	"./Suggestion.jsx": [
 		"./resources/js/Pages/Suggestion.jsx",
@@ -34825,7 +34845,7 @@ var map = {
 		4,
 		2,
 		3,
-		22
+		23
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
@@ -34834,7 +34854,7 @@ var map = {
 		4,
 		2,
 		3,
-		26
+		27
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
@@ -34843,7 +34863,7 @@ var map = {
 		4,
 		2,
 		3,
-		26
+		27
 	]
 };
 function webpackAsyncContext(req) {
@@ -34917,8 +34937,8 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])(react__WEBPACK_IMPORTED
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/vnpone/projects/panaderialaespecial/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/vnpone/projects/panaderialaespecial/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/abel/projects/panaderialaespecial/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/abel/projects/panaderialaespecial/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
