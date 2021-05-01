@@ -19,6 +19,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Loading */ "./resources/js/components/Loading.jsx");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -35,11 +37,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Checkout(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__["usePage"])(),
       content = _usePage.cart.content,
       subtotal = _usePage.subtotal,
-      auth = _usePage.auth;
+      auth = _usePage.auth,
+      stores = _usePage.stores;
+
+  var orderDetailsId = Object.keys(content).filter(function (product) {
+    return content[product].id === 'orderDetailsId';
+  });
+  var orderDetails = content[orderDetailsId].options;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -50,6 +59,10 @@ function Checkout(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       loading = _useState4[0],
       setLoading = _useState4[1];
+
+  var store = stores.find(function (store) {
+    return store.id === orderDetails.store;
+  });
 
   var createOrder = function createOrder() {
     setLoading(true);
@@ -96,6 +109,26 @@ function Checkout(props) {
     className: "w-full text-center text-regularText text-2xl"
   }, "$", subtotal)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full mt-2 px-2 mb-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+    className: "w-100"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full flex flex-col information"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "block p-2 text-gray-500 text-base text-center max-w-xl m-auto"
+  }, "Informaci\xF3n de pedido"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-thin mr-1"
+  }, "Nombre:"), "".concat(orderDetails.name, " ").concat(orderDetails.lastname)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-thin mr-1"
+  }, "Sucursal:"), store.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-thin mr-1"
+  }, "D\xEDa:"), moment__WEBPACK_IMPORTED_MODULE_7___default()(orderDetails.date).format('D MMMM, YYYY')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-thin mr-1"
+  }, "Hora:"), orderDetails.hour, " hrs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-thin mr-1"
+  }, "Tel\xE9fono:"), orderDetails.phone), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-thin mr-1"
+  }, "Correo electr\xF3nico:"), orderDetails.email)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full mt-4 px-2 mb-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     className: "w-100"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

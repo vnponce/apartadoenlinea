@@ -5,11 +5,16 @@ import ProductListElement from "../components/ProductListElement";
 import { usePage } from "@inertiajs/inertia-react";
 import {Inertia} from "@inertiajs/inertia";
 import Loading from '../components/Loading';
+import moment from 'moment';
 
 function Checkout(props) {
-    const { cart: { content }, subtotal, auth } = usePage();
+    const { cart: { content }, subtotal, auth, stores } = usePage();
+    const orderDetailsId = Object.keys(content).filter((product) => content[product].id === 'orderDetailsId');
+    const orderDetails = content[orderDetailsId].options;
     const [agreeTerms, setAgreeTerms] = useState(false);
     const [loading, setLoading] = useState(false);
+    const store = stores.find((store) => store.id === orderDetails.store);
+
     const createOrder = () => {
         setLoading(true);
         Inertia.post('/pedido', )
@@ -44,6 +49,36 @@ function Checkout(props) {
                     </div>
                     {/* separator */}
                     <div className="w-full mt-2 px-2 mb-6">
+                        <hr className="w-100" />
+                    </div>
+                    <div className="w-full flex flex-col information">
+                        <span className="block p-2 text-gray-500 text-base text-center max-w-xl m-auto">Información de pedido</span>
+                        <p>
+                            <span className="font-thin mr-1">Nombre:</span>
+                            {`${orderDetails.name} ${orderDetails.lastname}`}
+                        </p>
+                        <p>
+                            <span className="font-thin mr-1">Sucursal:</span>
+                            {store.name}
+                        </p>
+                        <p>
+                            <span className="font-thin mr-1">Día:</span>
+                            {moment(orderDetails.date).format('D MMMM, YYYY')}
+                        </p>
+                        <p>
+                            <span className="font-thin mr-1">Hora:</span>
+                            {orderDetails.hour} hrs.
+                        </p>
+                        <p>
+                            <span className="font-thin mr-1">Teléfono:</span>
+                            {orderDetails.phone}
+                        </p>
+                        <p>
+                            <span className="font-thin mr-1">Correo electrónico:</span>
+                            {orderDetails.email}
+                        </p>
+                    </div>
+                    <div className="w-full mt-4 px-2 mb-6">
                         <hr className="w-100" />
                     </div>
                     {/* 'Proceder' Next step */}

@@ -511,7 +511,7 @@ function ProductListElement(props) {
   }, isEditable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     onClick: removeItem // className="w-1/12 cursor-pointer -ml-5 mr-2 stroke-current fill-current  text-gray-500"
     ,
-    className: "remove-all-item w-1/12 cursor-pointer mr-2 stroke-current fill-current  text-gray-500",
+    className: "remove-all-item w-5 md:w-4 cursor-pointer mr-2 stroke-current fill-current  text-gray-500",
     viewBox: "0 0 20 20",
     version: "1.1",
     xmlns: "http://www.w3.org/2000/svg"

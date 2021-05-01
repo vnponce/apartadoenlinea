@@ -18,6 +18,7 @@ function Order() {
   const [date, setDate] = useState(null);
   const [hour, setHour] = useState(null);
   const [employeeName, setEmployeeName] = useState('');
+  const [showMap, setShowMap] = useState(false);
 
   // customer info
   const [customer, setCustomer] = useState({});
@@ -117,11 +118,12 @@ function Order() {
                         {/* <Input label="Hora" id="hour" placeholder="9:30" value="9:30pm"/> */}
                         {/* Map */}
                         {/* Mapa */}
-                        <div className="hidden border h-56 mt-4 bg-brand-gray sm:block">
+                        <div className={`${showMap ? '' : 'hidden'} border h-56 mt-4 bg-brand-gray sm:block`}>
                             <Map store={store && stores.filter((s) => s.id === store)[0]} />
                         </div>
                         {/* Ver mapa */}
                         <button
+                            onClick={() => setShowMap(!showMap)}
                             className="flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white sm:hidden">
                             <span>Ver el mapa</span>
                             <svg version="1.1" className="stroke-current fill-current w-6" id="Location_pin"

@@ -11,7 +11,7 @@ function Home(props) {
     const { products, success_message, category = null, search } = props;
     const getData = data => Inertia.visit(`?page=${data.page}`);
     return (
-        <Layout title="Panadría La Especial">
+        <Layout title="Panadería La Especial">
             {category &&
                 <>
                     <HeaderDescription title={category.name} description=""/>

@@ -197,19 +197,24 @@ function Order() {
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState10 = _slicedToArray(_useState9, 2),
       employeeName = _useState10[0],
-      setEmployeeName = _useState10[1]; // customer info
+      setEmployeeName = _useState10[1];
 
-
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState12 = _slicedToArray(_useState11, 2),
-      customer = _useState12[0],
-      setCustomer = _useState12[1]; // invoice info
+      showMap = _useState12[0],
+      setShowMap = _useState12[1]; // customer info
 
 
   var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState14 = _slicedToArray(_useState13, 2),
-      invoice = _useState14[0],
-      setInvoice = _useState14[1];
+      customer = _useState14[0],
+      setCustomer = _useState14[1]; // invoice info
+
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState16 = _slicedToArray(_useState15, 2),
+      invoice = _useState16[0],
+      setInvoice = _useState16[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (Object.keys(content).length) {
@@ -317,12 +322,15 @@ function Order() {
   }), errors && errors.hour && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm text-red-500 error hour"
   }, errors.hour[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "hidden border h-56 mt-4 bg-brand-gray sm:block"
+    className: "".concat(showMap ? '' : 'hidden', " border h-56 mt-4 bg-brand-gray sm:block")
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
     store: store && stores.filter(function (s) {
       return s.id === store;
     })[0]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return setShowMap(!showMap);
+    },
     className: "flex cursor-pointer justify-center font-bold py-2 px-4 rounded w-1/2 m-auto mt-4 block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white sm:hidden"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Ver el mapa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     version: "1.1",

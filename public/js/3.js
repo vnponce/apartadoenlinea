@@ -217,7 +217,7 @@ function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
     className: "bg-brand-orange flex h-16 absolute bottom-0 w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "politicas",
+    href: "/politicas",
     className: "flex-1 m-auto text-center text-white text-xs"
   }, "Pol\xEDtica de Privacidad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "/Logo-Short.svg",
@@ -226,7 +226,7 @@ function Footer() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 m-auto flex align-content-center justify-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: "tyc",
+    href: "/tyc",
     className: "text-center text-white text-xs"
   }, "T\xE9rminos y condiciones"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://www.facebook.com/panaderialaespecial/",
