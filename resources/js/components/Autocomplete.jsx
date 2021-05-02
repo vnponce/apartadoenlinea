@@ -2,7 +2,7 @@ import React from 'react';
 // import AsyncSelect from 'react-select/async';
 import AsyncCreatableSelect from 'react-select/async-creatable';
 import {Inertia} from "@inertiajs/inertia";
-export default function Autocomplete() {
+export default function Autocomplete({ onBlur }) {
     const customStylesBK = {
         option: (provided, state) => ({
             ...provided,
@@ -84,7 +84,7 @@ export default function Autocomplete() {
     return (
         <AsyncCreatableSelect
             // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
-            className="mr-3 w-1/3 bg-brand-orange"
+            // className="mr-3 w-1/3 bg-brand-orange"
             options={options}
             // styles={customStyles}
             isSearchable
@@ -95,6 +95,7 @@ export default function Autocomplete() {
             autoFocus
             createOptionPosition="first"
             formatCreateLabel={userInput => `Buscar por ${userInput}`}
+            onBlur={onBlur}
             // components={{ DropdownIndicator, IndicatorSeparator: null }}
         />
     )

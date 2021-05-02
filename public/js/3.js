@@ -86,7 +86,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-function Autocomplete() {
+function Autocomplete(_ref) {
+  var onBlur = _ref.onBlur;
   var customStylesBK = {
     option: function option(provided, state) {
       return _objectSpread({}, provided, {
@@ -176,8 +177,8 @@ function Autocomplete() {
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select_async_creatable__WEBPACK_IMPORTED_MODULE_1__["default"] // className="mr-3 w-1/3 bg-brand-orange border-solid border-b-2 border-brand-gray text-white"
+  // className="mr-3 w-1/3 bg-brand-orange"
   , {
-    className: "mr-3 w-1/3 bg-brand-orange",
     options: options // styles={customStyles}
     ,
     isSearchable: true,
@@ -189,7 +190,8 @@ function Autocomplete() {
     createOptionPosition: "first",
     formatCreateLabel: function formatCreateLabel(userInput) {
       return "Buscar por ".concat(userInput);
-    } // components={{ DropdownIndicator, IndicatorSeparator: null }}
+    },
+    onBlur: onBlur // components={{ DropdownIndicator, IndicatorSeparator: null }}
 
   });
 }
@@ -258,6 +260,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
 /* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Autocomplete__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Autocomplete */ "./resources/js/components/Autocomplete.jsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -266,12 +269,26 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    background-color: rgba(0, 0, 0, 0.4);\n    z-index: 2;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
 
 
 
 
  // import 'sweetalert2/src/sweetalert2.scss'
 
+var OverlayStyled = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject());
 function Header(_ref) {
   var setShowPanel = _ref.setShowPanel,
       showPanel = _ref.showPanel;
@@ -383,7 +400,13 @@ function Header(_ref) {
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 flex justify-end lg:items-end"
-  }, showSearch && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Autocomplete__WEBPACK_IMPORTED_MODULE_4__["default"], null), !showSearch && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  }, showSearch && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "hidden lg:block mr-3 w-1/3 bg-brand-orange"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Autocomplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onBlur: function onBlur() {
+      return setShowSearch(false);
+    }
+  })), !showSearch && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     onClick: function onClick() {
       return setShowSearch(true);
     },
@@ -466,7 +489,15 @@ function Header(_ref) {
     alt: ""
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "header-lines"
-  }));
+  }), showSearch && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(OverlayStyled, {
+    className: "absolute top-0 right-0 h-full w-full lg:hidden"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-5 max-w-md mx-auto px-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Autocomplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onBlur: function onBlur() {
+      return setShowSearch(false);
+    }
+  }))));
 }
 
 /***/ }),

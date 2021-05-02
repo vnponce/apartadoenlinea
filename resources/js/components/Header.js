@@ -3,8 +3,13 @@ import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import { Inertia } from '@inertiajs/inertia';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Autocomplete from './Autocomplete';
+import styled from "styled-components";
 // import 'sweetalert2/src/sweetalert2.scss'
 
+const OverlayStyled = styled.div`
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+`;
 
 export default function Header({ setShowPanel, showPanel }) {
   const [showSearch, setShowSearch] = useState(false);
@@ -74,7 +79,15 @@ export default function Header({ setShowPanel, showPanel }) {
                       </InertiaLink>
                       <div className="flex-1 flex justify-end lg:items-end">
                           {showSearch
-                          && <Autocomplete/>
+                          && (
+                              <div
+                                  className="hidden lg:block mr-3 w-1/3 bg-brand-orange"
+                              >
+                                  <Autocomplete
+                                      onBlur={() => setShowSearch(false)}
+                                  />
+                              </div>
+                          )
                           }
                           {!showSearch
                           && <svg onClick={() => setShowSearch(true)}
@@ -161,5 +174,14 @@ export default function Header({ setShowPanel, showPanel }) {
           </div>
       )}
         <div id="header-lines"></div>
+      {showSearch
+      && (<OverlayStyled className="absolute top-0 right-0 h-full w-full lg:hidden">
+          <div className="mt-5 max-w-md mx-auto px-2">
+              <Autocomplete
+                  onBlur={() => setShowSearch(false)}
+              />
+          </div>
+      </OverlayStyled>)
+      }
     </header>;
 }

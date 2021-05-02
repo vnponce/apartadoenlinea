@@ -1,13 +1,443 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[37],{
 
-/***/ "./resources/js/Pages/Admin/Suggestions.jsx":
-/*!**************************************************!*\
-  !*** ./resources/js/Pages/Admin/Suggestions.jsx ***!
-  \**************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/esm/set.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/set.js ***!
+  \********************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/vnpone/projects/panaderialaespecial/resources/js/Pages/Admin/Suggestions.jsx: Unexpected token (81:16)\n\n\u001b[0m \u001b[90m 79 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mContent\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 80 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mSearchBar\u001b[39m solvers\u001b[33m=\u001b[39m{users}\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 81 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mh5\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"font-bold text-black inline-block\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mSugerencias\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh5\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 82 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mTable\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 83 | \u001b[39m                    columns\u001b[33m=\u001b[39m{columns}\u001b[0m\n\u001b[0m \u001b[90m 84 | \u001b[39m                    data\u001b[33m=\u001b[39m{suggestions}\u001b[0m\n    at Object.raise (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.unexpected (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:7642:16)\n    at Object.jsxParseIdentifier (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3379:12)\n    at Object.jsxParseNamespacedName (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3389:23)\n    at Object.jsxParseAttribute (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3469:22)\n    at Object.jsxParseOpeningElementAfterName (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3490:28)\n    at Object.jsxParseOpeningElementAt (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3483:17)\n    at Object.jsxParseElementAt (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3515:33)\n    at Object.jsxParseElementAt (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3531:32)\n    at Object.jsxParseElementAt (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3531:32)\n    at Object.jsxParseElement (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3589:17)\n    at Object.parseExprAtom (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3596:19)\n    at Object.parseExprSubscripts (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseParenAndDistinguishExpression (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8978:28)\n    at Object.parseExprAtom (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8762:21)\n    at Object.parseExprAtom (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseExpression (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:8135:23)\n    at Object.parseReturnStatement (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10198:28)\n    at Object.parseStatementContent (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9877:21)\n    at Object.parseStatement (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Object.parseBlockBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Object.parseBlock (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10376:10)\n    at Object.parseFunctionBody (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9424:24)\n    at Object.parseFunctionBodyAndFinish (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9394:10)\n    at /Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:10535:12\n    at Object.withTopicForbiddingContext (/Users/vnpone/projects/panaderialaespecial/node_modules/@babel/parser/lib/index.js:9702:14)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _set; });
+/* harmony import */ var _superPropBase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./superPropBase */ "./node_modules/@babel/runtime/helpers/esm/superPropBase.js");
+/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+
+
+function set(target, property, value, receiver) {
+  if (typeof Reflect !== "undefined" && Reflect.set) {
+    set = Reflect.set;
+  } else {
+    set = function set(target, property, value, receiver) {
+      var base = Object(_superPropBase__WEBPACK_IMPORTED_MODULE_0__["default"])(target, property);
+      var desc;
+
+      if (base) {
+        desc = Object.getOwnPropertyDescriptor(base, property);
+
+        if (desc.set) {
+          desc.set.call(receiver, value);
+          return true;
+        } else if (!desc.writable) {
+          return false;
+        }
+      }
+
+      desc = Object.getOwnPropertyDescriptor(receiver, property);
+
+      if (desc) {
+        if (!desc.writable) {
+          return false;
+        }
+
+        desc.value = value;
+        Object.defineProperty(receiver, property, desc);
+      } else {
+        Object(_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(receiver, property, value);
+      }
+
+      return true;
+    };
+  }
+
+  return set(target, property, value, receiver);
+}
+
+function _set(target, property, value, receiver, isStrict) {
+  var s = set(target, property, value, receiver || target);
+
+  if (!s && isStrict) {
+    throw new Error('failed to set property');
+  }
+
+  return value;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/superPropBase.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/superPropBase.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _superPropBase; });
+/* harmony import */ var _getPrototypeOf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+
+function _superPropBase(object, property) {
+  while (!Object.prototype.hasOwnProperty.call(object, property)) {
+    object = Object(_getPrototypeOf__WEBPACK_IMPORTED_MODULE_0__["default"])(object);
+    if (object === null) break;
+  }
+
+  return object;
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Landings/RoscasGaribaldi.js":
+/*!********************************************************!*\
+  !*** ./resources/js/Pages/Landings/RoscasGaribaldi.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Map */ "./resources/js/components/Map.jsx");
+/* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    margin-bottom: 2rem;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    // transform: rotate(180deg);\n    transform: scaleX(-1);\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    font-family: 'Helvetica', cursive;\n    & > div {\n        max-width: 1024px;\n    }\n    img {\n        max-width: 1024px;\n    }\n    label[for=\"store\"] {\n        color: #feebc8;\n\n    }\n    @keyframes do-levitation {\n      0% {\n        transform: translate(0, 0);\n      }\n      100% {\n        transform: translate(0px, 5px);\n      }\n    }\n    @keyframes do-levitation-reverted {\n      0% {\n        transform: translate(0px, 5px);\n      }\n      100% {\n        transform: translate(0px, 0px);\n      }\n    }\n\n    .levitate {\n      animation: do-levitation 3s alternate ease-in-out infinite;\n    }\n    .levitate-delayed {\n      animation: do-levitation-reverted 3.3s alternate ease-in-out infinite;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+var MainWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var RotateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
+
+function RoscasGaribaldi(props) {
+  console.log('usePage =>', Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])());
+
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      stores = _usePage.stores;
+
+  var _useRememberedState = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["useRememberedState"])(1),
+      _useRememberedState2 = _slicedToArray(_useRememberedState, 2),
+      store = _useRememberedState2[0],
+      setStore = _useRememberedState2[1];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(store && stores.filter(function (s) {
+    return s.id === store;
+  })[0]),
+      _useState2 = _slicedToArray(_useState, 2),
+      storeObject = _useState2[0],
+      setStoreObject = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setStoreObject(store && stores.filter(function (s) {
+      return s.id === store;
+    })[0]);
+  }, [store]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: "Panader\xEDa La Especial"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainWrapper, {
+    className: "h-full bg-brand-orange w-full flex items-center flex-col px-8"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pt-20 text-4xl text-center md:text-6xl"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-orange-200"
+  }, "\xA1Roscas de")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-orange-200 -mt-4 md:-mt-8"
+  }, "Garibaldi Rellenas!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "drop-shadow h-56 md:m-auto w-full sm:w-1/2icon 6.png object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 lg:h-full",
+    src: "/images/landings/rosca-rellena/rosca-rellena.jpeg",
+    alt: "Rosca de reyes"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-white mt-8 font-bold italic text-lg  md:text-3xl"
+  }, "Llama al 2299318285 y haz tu pedido a tu sucursal m\xE1s cercana"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full text-justify pb-20"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
+    className: "md:w-3/5 m-auto"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    setStore: setStore,
+    stores: stores,
+    storeSelected: store && stores.filter(function (s) {
+      return s.id === store;
+    })[0]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    store: storeObject
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
+    className: "flex justify-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "flex justify-center items-center mb-5 pb-3 inline-block w-full text-center float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0 sm:w-3/5",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    href: "https://maps.google.com/?q=".concat(storeObject.lat, ",").concat(storeObject.lon, "&z=8")
+  }, "Ir a mapa")))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (RoscasGaribaldi);
+
+/***/ }),
+
+/***/ "./resources/js/components/Map.jsx":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Map.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Map; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @react-google-maps/api */ "./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js");
+
+
+function Map(props) {
+  var _props$store = props.store,
+      _props$store$lat = _props$store.lat,
+      lat = _props$store$lat === void 0 ? "19.1707806" : _props$store$lat,
+      _props$store$lon = _props$store.lon,
+      lng = _props$store$lon === void 0 ? "-96.1270615" : _props$store$lon;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["LoadScript"], {
+    id: "script-loader",
+    googleMapsApiKey: "AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["GoogleMap"], {
+    id: "example-map",
+    mapContainerStyle: {
+      height: "225px" // width: "800px"
+
+    },
+    zoom: 15,
+    center: {
+      lat: parseFloat(lat),
+      lng: parseFloat(lng) // lat: 19.1707806,
+      // lng: -96.1270615,
+
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_react_google_maps_api__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
+    onLoad: function onLoad(marker) {
+      console.log('marker: ', marker);
+    },
+    position: {
+      lat: parseFloat(lat),
+      lng: parseFloat(lng)
+    } // draggable
+    // onDragEnd={ (a, b, c) => console.log('e onDrag =>', a.latLng.lat(), a.latLng.lng())}
+
+  })));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Select/Stores.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Select/Stores.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Stores; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/set */ "./node_modules/@babel/runtime/helpers/esm/set.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+
+var transformStoreList = function transformStoreList(stores) {
+  return stores.map(function (store) {
+    return {
+      value: store.id,
+      label: store.name,
+      friendlyAddress: store.friendly_address
+    };
+  });
+};
+
+var ShopOptionComponent = function ShopOptionComponent(props) {
+  var children = props.children,
+      friendlyAddress = props.data.friendlyAddress,
+      isSelected = props.isSelected;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "shop-option-name"
+  }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "shop-option-description".concat(isSelected ? ' selected' : '')
+  }, friendlyAddress));
+};
+
+function Stores(props) {
+  var setStore = props.setStore,
+      stores = props.stores,
+      _props$storeSelected = props.storeSelected,
+      storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
+  var storesToSelect = transformStoreList(stores);
+
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+
+  function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    var R = 6371; // Radius of the earth in km
+
+    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+
+    var dLon = deg2rad(lon2 - lon1);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+
+    return d;
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var _position$coords = position.coords,
+            latitude = _position$coords.latitude,
+            longitude = _position$coords.longitude;
+        var closestDistance = Number.MAX_VALUE;
+        var closestStoreId = storeSelected;
+        stores.forEach(function (_ref) {
+          var lat = _ref.lat,
+              lon = _ref.lon,
+              id = _ref.id;
+          var result = getDistanceFromLatLonInKm(latitude, longitude, lat, lon); // console.log('result =>', result);
+
+          if (result < closestDistance) {
+            // eslint-disable-next-line no-console
+            closestDistance = result;
+            closestStoreId = id;
+          }
+        }); // console.log('closestDistance =>', closestDistance);
+
+        setStore(closestStoreId);
+      });
+    } else {
+      console.log('Not Available');
+    }
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (storeSelected) {
+      setStore(storeSelected.id);
+    }
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
+    className: "font-light text-gray-600 mt-4 lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "store",
+    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
+  }, "Sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    options: storesToSelect,
+    inputId: "store",
+    name: "store",
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    ,
+    classNamePrefix: "stores-selector"
+    /*
+    getOptionValue={option =>
+        option.key
+    }
+    getOptionLabel={option =>
+        option.key
+    }
+    isClearable
+     */
+    ,
+    placeholder: "Elige una sucursal",
+    components: {
+      Option: ShopOptionComponent
+    },
+    onChange: function onChange(selected) {
+      setStore(selected.value);
+    },
+    defaultValue: {
+      label: storeSelected.name,
+      value: storeSelected.id
+    },
+    value: {
+      label: storeSelected.name,
+      value: storeSelected.id
+    } // defaultMenuIsOpen
+    // menuIsOpen
+    // inputValue={'Bernal'}  muestra bernal pero la unica opcin
+
+    /*
+    onFocus={
+        this.onShopFocus
+    }
+    value={shopSelected}
+    invalid={
+        this.state
+            .errorsState.store
+    }
+     */
+
+  }));
+}
 
 /***/ })
 
