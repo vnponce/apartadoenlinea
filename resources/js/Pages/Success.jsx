@@ -57,7 +57,7 @@ function Success(props) {
                         <span className="text-lg">r</span>esumen de compra:
                     </div>
                     {/* datos de compra */}
-                    <section className="flex w-full mt-4 flex-col items-center md:flex-row md:justify-around">
+                    <section className="flex w-full mt-4 flex-col items-left md:items-center md:flex-row md:justify-around">
                         {/* Container left */}
                         <div>
                             {/* Name */}
@@ -72,7 +72,7 @@ function Success(props) {
                             </div>
                         </div>
                         {/* Container right */}
-                        <div>
+                        <div className="whitespace-no-wrap">
                             {/* Devliver place */}
                             <div>
                                 <span className="text-sm font-thin">Recoger en:</span>
