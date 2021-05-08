@@ -101,9 +101,9 @@
                                             </td>
                                         </tr>
                                     </table>
-                                    <p>
-                                        <img src="https://media.giphy.com/media/10VRhZMAqZbOgw/giphy.gif" width="480" height="480" />
-                                    </p>
+{{--                                    <p>--}}
+{{--                                        <img src="https://media.giphy.com/media/10VRhZMAqZbOgw/giphy.gif" width="480" height="480" />--}}
+{{--                                    </p>--}}
                                     <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3d4852; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left; width: 50%; float: left">Muchas gracias,<br>
                                         Panadería la Especial</p>
                                     <img src={{ url('/') . "/svg/Logo-Full.svg" }} width="200px" alt="" style="float: right" >
