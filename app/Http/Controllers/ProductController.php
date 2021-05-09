@@ -130,7 +130,8 @@ class ProductController extends Controller
             $image = $request->file('file')->store('public/products');
             $available = ($request->available === 'true') ? true : false;
             $favorite = ($request->favorite === 'true') ? true : false;
-            $request->merge(['image' => $image, 'available' => $available, 'favorite' => $favorite]);
+            $customizable = ($request->customizable === 'true') ? true : false;
+            $request->merge(['image' => $image, 'available' => $available, 'favorite' => $favorite, 'customizable' => $customizable]);
             $only->push('image');
         }
 //        dd($request->toArray(), $only->toArray());
