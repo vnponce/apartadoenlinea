@@ -583,7 +583,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  .panel {\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    z-index: 100;\n    height: calc(var(--vh, 1vh) * 100);\n  }\n\n  ", ";\n  .overlay {\n    z-index: 10;\n    visibility: hidden;\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    ", ";\n  }\n\n  .list-wrapper {\n    // 100vh creates an issue in iOs\n    height: calc(96vh - 300px);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  .panel {\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    z-index: 100;\n    @supports (-webkit-touch-callout: none) {\n        .some-element {\n            height: -webkit-fill-available;\n        }\n    }\n  }\n\n  ", ";\n  .overlay {\n    z-index: 10;\n    visibility: hidden;\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    ", ";\n  }\n\n  .list-wrapper {\n    // 100vh creates an issue in iOs\n    height: calc(96vh - 300px);\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
