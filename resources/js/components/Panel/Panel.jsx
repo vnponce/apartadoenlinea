@@ -6,13 +6,16 @@ import ProductListElement from '../ProductListElement';
 import Header from './Header';
 
 const PanelWrapper = styled.aside`
+    @supports (-webkit-touch-callout: none) {
+        // .h-full {
+                height: -webkit-fill-available;
+        // }
+    }
+
   .panel {
     transition: transform 0.3s 0.3s;
     transform: translate3d(100%, 0, 0);
     z-index: 100;
-    @supports (-webkit-touch-callout: none) {
-        height: -webkit-fill-available;
-    }
   }
 
   ${(props) => props.show && css`
