@@ -16,6 +16,7 @@ const PanelWrapper = styled.aside`
     transition: transform 0.3s 0.3s;
     transform: translate3d(100%, 0, 0);
     z-index: 100;
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   ${(props) => props.show && css`
