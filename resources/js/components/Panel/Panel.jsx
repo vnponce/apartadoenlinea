@@ -11,9 +11,7 @@ const PanelWrapper = styled.aside`
     transform: translate3d(100%, 0, 0);
     z-index: 100;
     @supports (-webkit-touch-callout: none) {
-        .some-element {
-            height: -webkit-fill-available;
-        }
+        height: -webkit-fill-available;
     }
   }
 
