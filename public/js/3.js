@@ -583,7 +583,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    @supports (-webkit-touch-callout: none) {\n        // .h-full {\n                height: -webkit-fill-available;\n        // }\n    }\n\n  .panel {\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    z-index: 100;\n  }\n\n  ", ";\n  .overlay {\n    z-index: 10;\n    visibility: hidden;\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    ", ";\n  }\n\n  .list-wrapper {\n    // 100vh creates an issue in iOs\n    height: calc(96vh - 300px);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n    @supports (-webkit-touch-callout: none) {\n        .h-screen-ios {\n                height: -webkit-fill-available;\n        }\n    }\n\n  .panel {\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    z-index: 100;\n  }\n\n  ", ";\n  .overlay {\n    z-index: 10;\n    visibility: hidden;\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    ", ";\n  }\n\n  .list-wrapper {\n    // 100vh creates an issue in iOs\n    height: calc(96vh - 300px);\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -644,14 +644,14 @@ function Panel(props) {
     show: show,
     className: "product-side-panel"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "overlay top-0 bg-brand-orange h-full fixed overflow-x-hidden p-0 w-full opacity-25",
+    className: "overlay top-0 bg-brand-orange h-full h-screen-ios fixed overflow-x-hidden p-0 w-full opacity-25",
     onClick: function onClick() {
       return setShowPanel(false);
     }
   }, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "panel fixed h-full top-0 right-0 bg-white w-full md:w-4/5 lg:w-1/2 p-8"
+    className: "panel fixed h-full h-screen-ios top-0 right-0 bg-white w-full md:w-4/5 lg:w-1/2 p-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-col h-full content-between justify-between"
+    className: "flex flex-col h-full h-screen-ios content-between justify-between"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
     setShowPanel: setShowPanel
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

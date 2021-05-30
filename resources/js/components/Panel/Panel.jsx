@@ -7,9 +7,9 @@ import Header from './Header';
 
 const PanelWrapper = styled.aside`
     @supports (-webkit-touch-callout: none) {
-        // .h-full {
+        .h-screen-ios {
                 height: -webkit-fill-available;
-        // }
+        }
     }
 
   .panel {
@@ -75,9 +75,9 @@ export default function Panel(props) {
 
   return (
         <PanelWrapper show={show} className="product-side-panel">
-            <div className="overlay top-0 bg-brand-orange h-full fixed overflow-x-hidden p-0 w-full opacity-25" onClick={() => setShowPanel(false)}>.</div>
-            <div className="panel fixed h-full top-0 right-0 bg-white w-full md:w-4/5 lg:w-1/2 p-8">
-                <div className="flex flex-col h-full content-between justify-between">
+            <div className="overlay top-0 bg-brand-orange h-full h-screen-ios fixed overflow-x-hidden p-0 w-full opacity-25" onClick={() => setShowPanel(false)}>.</div>
+            <div className="panel fixed h-full h-screen-ios top-0 right-0 bg-white w-full md:w-4/5 lg:w-1/2 p-8">
+                <div className="flex flex-col h-full h-screen-ios content-between justify-between">
                     <div>
                         <Header setShowPanel={setShowPanel} />
                         <div id="header-lines"></div>
