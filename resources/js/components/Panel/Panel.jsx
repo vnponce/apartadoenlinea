@@ -10,6 +10,7 @@ const PanelWrapper = styled.aside`
     transition: transform 0.3s 0.3s;
     transform: translate3d(100%, 0, 0);
     z-index: 100;
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   ${(props) => props.show && css`
@@ -48,6 +49,15 @@ export default function Panel(props) {
   const { show, setShowPanel } = props;
   { /* <PanelWrapper show={showPanel}> */ }
   const cartIsEmpty = products && (products.length === 0 || Object.keys(products).filter(product => products[product].id !== 'orderDetailsId').length === 0);
+
+    useEffect(() => {
+        // We listen to the resize event
+        window.addEventListener('resize', () => {
+            // We execute the same script as before
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
+    }, [])
 
   useEffect(() => {
     // this is a hack, because we need to keep open panel when go to remove or update *ep* and return the page

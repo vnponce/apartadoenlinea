@@ -583,7 +583,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  .panel {\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    z-index: 100;\n  }\n\n  ", ";\n  .overlay {\n    z-index: 10;\n    visibility: hidden;\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    ", ";\n  }\n\n  .list-wrapper {\n    // 100vh creates an issue in iOs\n    height: calc(96vh - 300px);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  .panel {\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    z-index: 100;\n    height: calc(var(--vh, 1vh) * 100);\n  }\n\n  ", ";\n  .overlay {\n    z-index: 10;\n    visibility: hidden;\n    transition: transform 0.3s 0.3s;\n    transform: translate3d(100%, 0, 0);\n    ", ";\n  }\n\n  .list-wrapper {\n    // 100vh creates an issue in iOs\n    height: calc(96vh - 300px);\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -624,6 +624,14 @@ function Panel(props) {
   var cartIsEmpty = products && (products.length === 0 || Object.keys(products).filter(function (product) {
     return products[product].id !== 'orderDetailsId';
   }).length === 0);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // We listen to the resize event
+    window.addEventListener('resize', function () {
+      // We execute the same script as before
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+    });
+  }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     // this is a hack, because we need to keep open panel when go to remove or update *ep* and return the page
     // so when detects show_panel from flash backend message
