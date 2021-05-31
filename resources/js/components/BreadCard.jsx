@@ -9,7 +9,7 @@ export default function BreadCard(props) {
     return (
         <div className="container bread-card">
             <InertiaLink href={`/pan/${product.id}`} className="flex-1 flex cursor-pointer sm:bg-brand-gray">
-                <img className="m-auto w-full h-40 object-cover align-middle md:h-64" src={product.image_path} alt="Banderilla mini" />
+                <img className="m-auto w-full h-40 object-cover align-middle sm:h-auto md:h-auto" src={product.image_path} alt="Banderilla mini" />
             </InertiaLink>
             <InertiaLink href={`/pan/${product.id}`} className="flex-1 flex flex-col h-32 overflow-hidden cursor-pointer sm:mt-4 sm:h-24">
                 <div className="flex-1 sm:text-center text-gray-600 font-medium uppercase">

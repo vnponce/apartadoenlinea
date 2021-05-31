@@ -90,7 +90,7 @@ function BreadCard(props) {
     href: "/pan/".concat(product.id),
     className: "flex-1 flex cursor-pointer sm:bg-brand-gray"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "m-auto w-full h-40 object-cover align-middle md:h-64",
+    className: "m-auto w-full h-40 object-cover align-middle sm:h-auto md:h-auto",
     src: product.image_path,
     alt: "Banderilla mini"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
