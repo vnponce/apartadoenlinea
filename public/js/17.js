@@ -206,10 +206,10 @@ var index = Object(_chunk_b36baf1a_browser_esm_js__WEBPACK_IMPORTED_MODULE_23__[
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Landings/Christmas.jsx":
-/*!***************************************************!*\
-  !*** ./resources/js/Pages/Landings/Christmas.jsx ***!
-  \***************************************************/
+/***/ "./resources/js/Pages/Landing.jsx":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Landing.jsx ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -220,9 +220,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Map */ "./resources/js/components/Map.jsx");
-/* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Map */ "./resources/js/components/Map.jsx");
+/* harmony import */ var _components_Select_Stores__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Select/Stores */ "./resources/js/components/Select/Stores.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -252,7 +252,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    font-family: 'Press Start 2P', cursive;\n    & > div {\n        max-width: 1024px;\n    }\n    img {\n        max-width: 1024px;\n    }\n    label[for=\"store\"] {\n        color: #feebc8;\n\n    }\n    @keyframes do-levitation {\n      0% {\n        transform: translate(0, 0);\n      }\n      100% {\n        transform: translate(0px, 5px);\n      }\n    }\n    @keyframes do-levitation-reverted {\n      0% {\n        transform: translate(0px, 5px);\n      }\n      100% {\n        transform: translate(0px, 0px);\n      }\n    }\n\n    .levitate {\n      animation: do-levitation 3s alternate ease-in-out infinite;\n    }\n    .levitate-delayed {\n      animation: do-levitation-reverted 3.3s alternate ease-in-out infinite;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    & > div {\n        max-width: 1024px;\n    }\n    img {\n        max-width: 1024px;\n    }\n    label[for=\"store\"] {\n        color: #feebc8;\n\n    }\n    @keyframes do-levitation {\n      0% {\n        transform: translate(0, 0);\n      }\n      100% {\n        transform: translate(0px, 5px);\n      }\n    }\n    @keyframes do-levitation-reverted {\n      0% {\n        transform: translate(0px, 5px);\n      }\n      100% {\n        transform: translate(0px, 0px);\n      }\n    }\n\n    .levitate {\n      animation: do-levitation 3s alternate ease-in-out infinite;\n    }\n    .levitate-delayed {\n      animation: do-levitation-reverted 3.3s alternate ease-in-out infinite;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -299,29 +299,40 @@ function Landing(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: "Pan de muerto"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainWrapper, {
-    className: "h-full bg-brand-orange w-full flex items-center flex-col px-8"
+    className: "h-full bg-indigo-900 w-full flex items-center flex-col px-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "pt-20 text-4xl text-center md:text-6xl"
+    className: "pt-20 text-4xl text-center md:text-6xl",
+    style: {
+      fontFamily: 'Rye'
+    }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RotateWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "levitate h-10 md:h-16",
-    src: "/images/landings/christmas/christmas-tree.png",
+    src: "/images/decorator-pan-muerto.svg",
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-orange-200"
-  }, "\xA1Felices"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "PAN DE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "levitate-delayed h-10 md:h-16",
-    src: "/images/landings/christmas/rodolfo.png",
+    src: "/images/decorator-pan-muerto.svg",
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-orange-200 -mt-4 md:-mt-8"
-  }, "Fiestas!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "drop-shadow h-56 md:m-auto w-full sm:w-1/2icon 6.png object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 lg:h-full",
-    src: "/images/landings/christmas/rosca_reyes.jpeg",
-    alt: "Rosca de reyes"
+  }, "MUERTO")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-4/5 text-orange-200 text-center mt-6 flex justify-around md:text-3xl"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-brand-orange"
+  }, "Peque\xF1o"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$25.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-brand-orange"
+  }, "Mediano"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$45.00")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-brand-orange"
+  }, "Grande"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$75.00"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "drop-shadow h-56 -mt-20 md:m-auto w-full object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 md:-mt-32 lg:h-full",
+    src: "/images/pan-de-muerto.png",
+    alt: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-white mt-8 font-bold italic text-lg  md:text-3xl"
+    className: "text-brand-orange mt-8 font-bold italic text-lg  md:text-3xl"
   }, "Encuentra tu sucursal m\xE1s cercana"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-justify pb-20"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
@@ -337,15 +348,11 @@ function Landing(props) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     className: "flex justify-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "flex justify-center items-center mb-5 pb-3 inline-block w-full text-center float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0 sm:w-3/5",
+    className: "mb-5 pb-3 inline-block w-full text-center float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0 sm:w-3/5",
     target: "_blank",
     rel: "noopener noreferrer",
     href: "https://maps.google.com/?q=".concat(storeObject.lat, ",").concat(storeObject.lon, "&z=8")
-  }, "Ir a mapa ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "levitate h-8 ml-3",
-    src: "/images/landings/christmas/trinero.svg",
-    alt: ""
-  }))))));
+  }, "Ir a mapa")))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Landing);

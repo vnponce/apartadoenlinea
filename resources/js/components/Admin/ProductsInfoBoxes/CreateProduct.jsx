@@ -11,6 +11,7 @@ import set from '@babel/runtime/helpers/esm/set';
 import Stores from '../../Select/Stores';
 import Checkbox from '../../Checkbox';
 import Input from '../../Input';
+import Textarea from "../../Textarea";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -704,7 +705,7 @@ export default function CreateProduct(props) {
   };
   return (
         <>
-            <FilePond onupdatefiles={(fileItems) => {
+            <FilePond className="w-full m-auto sm:w-7/12 lg:w-full" onupdatefiles={(fileItems) => {
               // setAvatar(fileItems.map(fileItem => fileItem.file));
               setAvatar(fileItems[0].file);
             }}/>
@@ -716,7 +717,7 @@ export default function CreateProduct(props) {
                 placeholder="Nombre"
                 error={errors.name}
             />
-            <Input
+            <Textarea
                 onChange={onChange}
                 value={productData.description}
                 id="description"
@@ -740,7 +741,7 @@ export default function CreateProduct(props) {
                 placeholder="12.50"
                 error={errors.price}
             />
-            <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
+            <div className="w-full sm:w-7/12 lg:w-full m-auto font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
                 <label htmlFor="category_id" className="hover:border-grey-900 italic sm:block">Categoría</label>
                 <select
                     id="category_id"
@@ -755,9 +756,11 @@ export default function CreateProduct(props) {
             </div>
             {errors.category_id && <p className={'text-sm m-auto text-red-500 error category'}>{errors.category_id[0]}</p>}
 
-            <Checkbox label="Disponible" checked={productData.available} setChecked={() => setProductData({ ...productData, available: productData.available === 0 ? 1 : 0 })} error={errors.available} />
-            <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({ ...productData, favorite: productData.favorite === 0 ? 1 : 0 })} error={errors.favorite} />
-            <Checkbox label="Personalizable" checked={productData.customizable} setChecked={() => setProductData({ ...productData, customizable: productData.customizable === 0 ? 1 : 0 })} error={errors.customizable} />
+            <div className="w-full sm:w-7/12 lg:w-full m-auto">
+                <Checkbox label="Disponible" checked={productData.available} setChecked={() => setProductData({ ...productData, available: productData.available === 0 ? 1 : 0 })} error={errors.available} />
+                <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({ ...productData, favorite: productData.favorite === 0 ? 1 : 0 })} error={errors.favorite} />
+                <Checkbox label="Personalizable" checked={productData.customizable} setChecked={() => setProductData({ ...productData, customizable: productData.customizable === 0 ? 1 : 0 })} error={errors.customizable} />
+            </div>
             <hr className="my-6"/>
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"

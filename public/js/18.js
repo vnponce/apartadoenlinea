@@ -206,10 +206,10 @@ var index = Object(_chunk_b36baf1a_browser_esm_js__WEBPACK_IMPORTED_MODULE_23__[
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Landings/RoscasGaribaldi.js":
-/*!********************************************************!*\
-  !*** ./resources/js/Pages/Landings/RoscasGaribaldi.js ***!
-  \********************************************************/
+/***/ "./resources/js/Pages/Landings/Christmas.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Landings/Christmas.jsx ***!
+  \***************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -252,7 +252,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    font-family: 'Helvetica', cursive;\n    & > div {\n        max-width: 1024px;\n    }\n    img {\n        max-width: 1024px;\n    }\n    label[for=\"store\"] {\n        color: #feebc8;\n\n    }\n    @keyframes do-levitation {\n      0% {\n        transform: translate(0, 0);\n      }\n      100% {\n        transform: translate(0px, 5px);\n      }\n    }\n    @keyframes do-levitation-reverted {\n      0% {\n        transform: translate(0px, 5px);\n      }\n      100% {\n        transform: translate(0px, 0px);\n      }\n    }\n\n    .levitate {\n      animation: do-levitation 3s alternate ease-in-out infinite;\n    }\n    .levitate-delayed {\n      animation: do-levitation-reverted 3.3s alternate ease-in-out infinite;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-family: 'Press Start 2P', cursive;\n    & > div {\n        max-width: 1024px;\n    }\n    img {\n        max-width: 1024px;\n    }\n    label[for=\"store\"] {\n        color: #feebc8;\n\n    }\n    @keyframes do-levitation {\n      0% {\n        transform: translate(0, 0);\n      }\n      100% {\n        transform: translate(0px, 5px);\n      }\n    }\n    @keyframes do-levitation-reverted {\n      0% {\n        transform: translate(0px, 5px);\n      }\n      100% {\n        transform: translate(0px, 0px);\n      }\n    }\n\n    .levitate {\n      animation: do-levitation 3s alternate ease-in-out infinite;\n    }\n    .levitate-delayed {\n      animation: do-levitation-reverted 3.3s alternate ease-in-out infinite;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -263,19 +263,19 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+ // import ReactDOM from 'react-dom';
 
 
 
 
 
+ // import Geolocalated from "../components/Geolocalated";
 
 var MainWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
 var RotateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
 
-function RoscasGaribaldi(props) {
-  console.log('usePage =>', Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])());
-
+function Landing(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
       stores = _usePage.stores;
 
@@ -297,24 +297,32 @@ function RoscasGaribaldi(props) {
     })[0]);
   }, [store]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "Panader\xEDa La Especial"
+    title: "Pan de muerto"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainWrapper, {
     className: "h-full bg-brand-orange w-full flex items-center flex-col px-8"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pt-20 text-4xl text-center md:text-6xl"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flex"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RotateWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "levitate h-10 md:h-16",
+    src: "/images/landings/christmas/christmas-tree.png",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-orange-200"
-  }, "\xA1Roscas de")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "\xA1Felices"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "levitate-delayed h-10 md:h-16",
+    src: "/images/landings/christmas/rodolfo.png",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-orange-200 -mt-4 md:-mt-8"
-  }, "Garibaldi Rellenas!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "Fiestas!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "drop-shadow h-56 md:m-auto w-full sm:w-1/2icon 6.png object-scale-down align-middle sm:h-full sm:object-cover sm:h-64 lg:h-full",
-    src: "/images/landings/rosca-rellena/rosca-rellena.jpeg",
+    src: "/images/landings/christmas/rosca_reyes.jpeg",
     alt: "Rosca de reyes"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-white mt-8 font-bold italic text-lg  md:text-3xl"
-  }, "Llama al 2299318285 y haz tu pedido a tu sucursal m\xE1s cercana"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Encuentra tu sucursal m\xE1s cercana"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full text-justify pb-20"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     className: "md:w-3/5 m-auto"
@@ -333,10 +341,14 @@ function RoscasGaribaldi(props) {
     target: "_blank",
     rel: "noopener noreferrer",
     href: "https://maps.google.com/?q=".concat(storeObject.lat, ",").concat(storeObject.lon, "&z=8")
-  }, "Ir a mapa")))));
+  }, "Ir a mapa ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "levitate h-8 ml-3",
+    src: "/images/landings/christmas/trinero.svg",
+    alt: ""
+  }))))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (RoscasGaribaldi);
+/* harmony default export */ __webpack_exports__["default"] = (Landing);
 
 /***/ }),
 

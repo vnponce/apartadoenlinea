@@ -7,6 +7,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import Content from "../../components/Admin/Content";
 import Pagination from "../../components/Pagination";
 // import 'sweetalert2/src/sweetalert2.scss'
+import {breakpoints} from "../../Shared/utils";
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 
 function Products(props) {
@@ -14,6 +16,9 @@ function Products(props) {
     const [dataSelected, setDataSelected] = useState(null);
     const [createProduct, setCreateProduct] = useState(null);
     const [editing, setEditing] = useState(false);
+    const [mobileShowInfoBoxes, setMobileShowInfoBoxes] = useState(false);
+    const [isInfoBoxOpen, setIsInfoBoxOpen] = useState(false);
+    const { isLessThanLG } = useWindowSize();
 
     useEffect(() => {
         if(success_message) {
@@ -33,6 +38,10 @@ function Products(props) {
         setCreateProduct(true);
         setDataSelected(false);
         setEditing(false);
+        setIsInfoBoxOpen(true);
+        if(isLessThanLG) {
+            setMobileShowInfoBoxes(true);
+        }
     };
 
     const columns = React.useMemo(
@@ -78,27 +87,35 @@ function Products(props) {
         const data = products.data[index];
         setEditing(false);
         setDataSelected(data);
+        setIsInfoBoxOpen(true);
+        if(isLessThanLG) {
+            setMobileShowInfoBoxes(true);
+        }
     };
 
     const getData = data => Inertia.visit(`?page=${data.page}`);
 
     return (
         <Admin title="Panel">
-            <ProductsInfoBoxes data={dataSelected} setDataSelected={setDataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
+            { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
+                <ProductsInfoBoxes data={dataSelected} setDataSelected={setDataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
+            )}
             {/*Graph Content */}
-            <Content>
-                <h5 className="font-bold text-black inline-block">Productos</h5>
-                <button
-                    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
-                    onClick={showCreateProduct}>
-                    <i
-                        className="inline fa fa-bread-slice fa-fw"/>+
-                </button>
-                <Table columns={columns} data={products.data} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
-                <Pagination items={products} />
-            </Content>
+            {!mobileShowInfoBoxes && (
+                <Content>
+                    <h5 className="font-bold text-black inline-block">Productos</h5>
+                    <button
+                        className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                        onClick={showCreateProduct}>
+                        <i
+                            className="inline fa fa-bread-slice fa-fw"/>+
+                    </button>
+                    <Table columns={columns} data={products.data} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                    <Pagination items={products} />
+                </Content>
+            )}
         </Admin>
     );
-}
+};
 
 export default Products;

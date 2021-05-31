@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Input from "../Input";
 import CreateProduct from "./ProductsInfoBoxes/CreateProduct";
 import {create} from "filepond";
+import {Inertia} from "@inertiajs/inertia";
 
 export default function InfoBoxes(props) {
     const { data, createProduct = false, setCreateProduct, editing, setEditing, setDataSelected } = props;
@@ -12,11 +13,17 @@ export default function InfoBoxes(props) {
     //         setDataSelected(data);
     //     }
     // }, [data]);
+    const cancelProduct = () => {
+        const { hostname } = window.location;
+        const url = window.location.href;
+        const [port, path] = url.split(hostname);
+        Inertia.visit(path);
+    };
     return (
     <div id="dash-content"
-         className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
+         className="h-auto bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start">
         { (data || createProduct) && (
-            <div className="w-1/2 lg:w-full">
+            <div className="w-full">
                 <div
                     className="m-2 md:mx-6 md:my-3">
                     {createProduct && !data && <CreateProduct setDataSelected={setDataSelected} setCreateProduct={setCreateProduct}/>}
@@ -67,9 +74,14 @@ export default function InfoBoxes(props) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex flex-row">
+                            <div className="flex flex-row w-full justify-between">
                                 <button
-                                    className="inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                                    className="inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                                    onClick={cancelProduct}>
+                                    Cancelar
+                                </button>
+                                <button
+                                    className="inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
                                     onClick={() => setEditing(true)}>Editar</button>
                             </div>
                             </>
@@ -79,7 +91,7 @@ export default function InfoBoxes(props) {
             </div>
         )}
         { !(data || createProduct)  && (
-            <div className="w-1/2 lg:w-full">
+            <div className="w-full">
                 <div
                     className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-3">
                     <div className="flex flex-col items-center">
