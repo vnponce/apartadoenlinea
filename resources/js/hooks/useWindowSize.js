@@ -17,8 +17,8 @@ export function useWindowSize() {
             setWindowSize({
                 width: window.innerWidth,
                 height: window.innerHeight,
-                isLessThanMD: window.innerWidth <= breakpoints.md,
-                isLessThanLG: window.innerWidth <= breakpoints.lg,
+                isLessThanMD: window.innerWidth < breakpoints.md,
+                isLessThanLG: window.innerWidth < breakpoints.lg,
             });
         }
         // Add event listener

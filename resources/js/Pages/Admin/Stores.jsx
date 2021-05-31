@@ -7,11 +7,16 @@ import StoresInfoBoxes from "../../components/Admin/StoresInfoBoxes";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import Content from "../../components/Admin/Content";
 // import 'sweetalert2/src/sweetalert2.scss'
+import {breakpoints} from "../../Shared/utils";
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 
 function Stores(props) {
     const { stores, flash: { success_message } } = props;
     const [storeId, setStoreId] = useState(false);
+    const [mobileShowInfoBoxes, setMobileShowInfoBoxes] = useState(false);
+    const [isInfoBoxOpen, setIsInfoBoxOpen] = useState(false);
+    const { isLessThanLG } = useWindowSize();
     const columns = React.useMemo(
         () => [
             {
@@ -76,23 +81,31 @@ function Stores(props) {
         const data = stores[index];
         setStoreId(data.id);
         // setStoreId(data.id);
+        setIsInfoBoxOpen(true);
+        if(isLessThanLG) {
+            setMobileShowInfoBoxes(true);
+        }
     };
 
     return (
         <Admin title="Panel">
-            <StoresInfoBoxes id={storeId} createStore={false} setCreateStore={() => {}}/>
-            <Content>
-                <h5 className="font-bold text-black inline-block">Tiendas</h5>
-                {/*<button*/}
-                {/*    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"*/}
-                {/*    onClick={() => console.log('tienda')}>*/}
-                {/*    <i*/}
-                {/*        className="inline fa fa-store fa-fw"/>*/}
-                {/*</button>*/}
-                <Table columns={columns} data={stores} onClick={row => openedAndShow(row.index)} selected={false}/>
-            </Content>
+            { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
+                <StoresInfoBoxes id={storeId} createStore={false} setCreateStore={() => {}}/>
+            )}
+            {!mobileShowInfoBoxes && (
+                <Content>
+                    <h5 className="font-bold text-black inline-block">Tiendas</h5>
+                    {/*<button*/}
+                    {/*    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"*/}
+                    {/*    onClick={() => console.log('tienda')}>*/}
+                    {/*    <i*/}
+                    {/*        className="inline fa fa-store fa-fw"/>*/}
+                    {/*</button>*/}
+                    <Table columns={columns} data={stores} onClick={row => openedAndShow(row.index)} selected={false}/>
+                </Content>
+            )}
         </Admin>
     );
-}
+};
 
 export default Stores;

@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","2":"e0c691ce433a917959d8","3":"83dde37a8b09d1eab238","4":"ed351820e3b66ee63436","5":"df296c7ae37979498baf","6":"8520bd2aa5a4a8ec41df","7":"a87907d1562108345875","8":"6c4da74f2440880fea43","9":"07457d5a44df1daf0b39","10":"427b9df441d12685e7ae","11":"7f6c27d7fca08df6c38b","12":"98c645005c901b152cee","13":"2463ff9291b5e933e953","14":"a49857696bb2dd2f9702","15":"bd7d2e8747b4b8084c20","16":"2777e102c7bf27d7dcf8","17":"31e44605aab050f7c09a","18":"9ad643b60df30cd5deee","19":"aa1e02e3f72d3aa0e7d1","20":"7e145a7b922f1b3ea129","21":"5beeb193fa4c3e124e95","22":"27f2fbab76ef1e9bedf4","23":"8b77b8d60cad130a6849","24":"d010853789c211b29082","25":"8d02f364ff0b2be4c59f","26":"68716ba406bc85901d60","27":"253a6067e83550db8562"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","2":"e0c691ce433a917959d8","3":"83dde37a8b09d1eab238","4":"ed351820e3b66ee63436","5":"017581017e6614cf0061","6":"8520bd2aa5a4a8ec41df","7":"a87907d1562108345875","8":"6c4da74f2440880fea43","9":"07457d5a44df1daf0b39","10":"427b9df441d12685e7ae","11":"60df51e9b1ce4c22d272","12":"339b6d3afe8e4a7d4c89","13":"d6331b02d5f569a717ef","14":"a49857696bb2dd2f9702","15":"9a9a6d3443785f3f1a35","16":"2777e102c7bf27d7dcf8","17":"31e44605aab050f7c09a","18":"9ad643b60df30cd5deee","19":"e6aef30c97f951598ef4","20":"d027fe90b52e9a31a5e1","21":"5beeb193fa4c3e124e95","22":"27f2fbab76ef1e9bedf4","23":"8b77b8d60cad130a6849","24":"d010853789c211b29082","25":"8d02f364ff0b2be4c59f","26":"68716ba406bc85901d60","27":"253a6067e83550db8562"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34565,7 +34565,7 @@ var map = {
 		9,
 		2,
 		5,
-		11
+		12
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
@@ -34575,7 +34575,7 @@ var map = {
 		9,
 		2,
 		5,
-		11
+		12
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
@@ -34618,14 +34618,14 @@ var map = {
 		0,
 		7,
 		5,
-		12
+		11
 	],
 	"./Admin/Suggestions.jsx": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
 		7,
 		5,
-		12
+		11
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
@@ -34634,7 +34634,7 @@ var map = {
 		7,
 		8,
 		5,
-		15
+		20
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
@@ -34643,7 +34643,7 @@ var map = {
 		7,
 		8,
 		5,
-		15
+		20
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
@@ -34678,7 +34678,7 @@ var map = {
 		4,
 		2,
 		3,
-		20
+		15
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
@@ -34687,7 +34687,7 @@ var map = {
 		4,
 		2,
 		3,
-		20
+		15
 	],
 	"./Landing": [
 		"./resources/js/Pages/Landing.jsx",

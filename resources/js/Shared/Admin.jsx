@@ -139,6 +139,9 @@ export default function Layout({ title, children }) {
 
                             {/*Search*/}
                             <div className="relative w-full max-w-3xl px-6">
+                                <InertiaLink href="/" className="block lg:hidden max-w-sm flex-1 m-auto h-16">
+                                    <img src="/svg/Logo-Full.svg" className="my-auto h-full" alt=""/>
+                                </InertiaLink>
                                 {/*
                                 <div className="absolute h-10 mt-1 left-0 top-0 flex items-center pl-10">
                                     <svg className="h-4 w-4 fill-current text-gray-600"

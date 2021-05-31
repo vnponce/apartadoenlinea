@@ -5,9 +5,9 @@ export default function InfoBoxes(props) {
     const { id, editStore = false, createStore = false, setCreateStore } = props;
     return (
     <div id="dash-content"
-         className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
+         className="h-full lg:h-auto bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start">
         { id && (
-            <div className="w-1/2 lg:w-full">
+            <div className="w-full">
                 <div
                     className="m-2 md:mx-6 md:my-6">
                     {/* createUser && <CreateUser /> */}

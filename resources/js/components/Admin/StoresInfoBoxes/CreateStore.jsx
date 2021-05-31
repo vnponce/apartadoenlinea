@@ -8,6 +8,7 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 // import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import Stores from "../../Select/Stores";
+import Textarea from "../../Textarea";
 
 
 export default function CreateStore(props) {
@@ -59,7 +60,7 @@ export default function CreateStore(props) {
             {/*    error={errors.name}*/}
             {/*/>*/}
             {/*{!editing &&*/}
-            <Input
+            <Textarea
                 onChange={onChange}
                 value={storeData.address}
                 id="address"
@@ -68,7 +69,7 @@ export default function CreateStore(props) {
                 error={errors.address}
             />
             {/*}*/}
-            <Input
+            <Textarea
                 onChange={onChange}
                 value={storeData.friendly_address}
                 id="friendly_address"
