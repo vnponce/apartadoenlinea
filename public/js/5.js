@@ -120,12 +120,12 @@ function Layout(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "flex h-screen bg-gray-100 font-sans"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Admin_SiteBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "flex flex-row flex-wrap flex-1 flex-grow content-start pl-16"
+    className: "w-full flex flex-row flex-wrap flex-1 flex-grow content-start pl-16"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "h-40 lg:h-20 w-full flex flex-wrap"
+    className: "h-20 w-full flex flex-wrap"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
     id: "logo",
-    className: "bg-gray-200 w-full lg:max-w-sm flex items-center border-b-1 border-gray-300 order-2 lg:order-1"
+    className: "hidden lg:flex bg-gray-200 w-full lg:max-w-sm flex items-center border-b-1 border-gray-300 order-2 lg:order-1"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
     href: "/",
     className: "flex-2 m-auto h-16 hidden lg:block"

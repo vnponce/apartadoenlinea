@@ -1,9 +1,295 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12],{
 
-/***/ "./resources/js/Pages/Admin/Dashboard.jsx":
-/*!************************************************!*\
-  !*** ./resources/js/Pages/Admin/Dashboard.jsx ***!
-  \************************************************/
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-SG": "./node_modules/moment/locale/en-SG.js",
+	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Suggestions.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/Admin/Suggestions.jsx ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13,15 +299,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
-/* harmony import */ var _components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Admin/InfoBoxes */ "./resources/js/components/Admin/InfoBoxes.jsx");
-/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
-/* harmony import */ var _components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Admin/SearchBar */ "./resources/js/components/Admin/SearchBar.jsx");
-/* harmony import */ var _components_Admin_Content__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Admin/Content */ "./resources/js/components/Admin/Content.jsx");
-/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
-/* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Pagination */ "./resources/js/components/Pagination.jsx");
+/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
+/* harmony import */ var _components_Admin_Suggestions_DetailsWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Admin/Suggestions/DetailsWrapper */ "./resources/js/components/Admin/Suggestions/DetailsWrapper.jsx");
+/* harmony import */ var _components_Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Table */ "./resources/js/components/Table.jsx");
+/* harmony import */ var _components_Admin_Content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Admin/Content */ "./resources/js/components/Admin/Content.jsx");
+/* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Pagination */ "./resources/js/components/Pagination.jsx");
+/* harmony import */ var _components_Admin_Suggestions_SearchBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Admin/Suggestions/SearchBar */ "./resources/js/components/Admin/Suggestions/SearchBar.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -33,216 +316,101 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+ // import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
+// import 'sweetalert2/src/sweetalert2.scss';
+// import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 
 
 
 
-
-
-function Dashboard(props) {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
-      auth = _usePage.auth;
-
-  var orders = props.orders,
-      orderAll = props.orderAll,
-      success_message = props.success_message,
-      order = props.order,
-      stores = props.stores,
-      searchValues = props.searchValues;
+function Suggestions(props) {
+  var _props$suggestions = props.suggestions,
+      suggestions = _props$suggestions.data,
+      link = _props$suggestions.link,
+      success_message = props.flash.success_message,
+      users = props.users;
+  var suggestionsToPaginate = props.suggestions;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
       dataSelected = _useState2[0],
       setDataSelected = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState4 = _slicedToArray(_useState3, 2),
-      isPaginateActive = _useState4[0],
-      setIsPaginateActive = _useState4[1];
-
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      isHistoric = _useState6[0],
-      setIsHistoric = _useState6[1];
-
-  var updateStatus = function updateStatus(id) {
-    return function (evt) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].put("/pedido/".concat(id), {
-        status: evt.target.value
-      });
-    };
-  };
+      index = _useState4[0],
+      setIndex = _useState4[1];
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
-    return [// {
-    //     Header: '-',
-    //     accessor: 'uuid',
-    // },
-    {
-      Header: 'Cliente',
-      accessor: 'customer',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.value.name);
-      }
+    return [{
+      Header: 'Nombre',
+      accessor: 'name'
     }, {
-      Header: 'Sucrusal',
-      accessor: 'store',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.value.name);
-      }
-    }, {
-      Header: 'Fecha',
-      accessor: 'date',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.value.formatted);
-      }
+      Header: 'Sugerencia',
+      accessor: 'suggestion' // Cell: ({ cell }) => {
+      //     return cell.value === 'god' ? 'Gerencia' : cell.value;
+      // }
+
     }, {
       Header: 'Estatus',
       accessor: 'status',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.row.original.canceled ? 'Cancelado' : data.cell.value.step);
-      }
-    }, {
-      Header: 'Pagado',
-      accessor: 'payed',
-      Cell: function Cell(data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: ""
-        }, data.cell.value.label);
+      Cell: function Cell(_ref) {
+        var row = _ref.cell.row;
+        return row.original.status_info.label;
       }
     }];
   }, []);
-  {
-    /* <> */
-  }
-  {
-    /*    /!* start select *!/ */
-  }
-  {
-    /*    <div className="inline-block relative w-full"> */
-  }
-  {
-    /*        <select */
-  }
-  {
-    /*            className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" */
-  }
-  {
-    /*            onChange={updateStatus(data.cell.row.original.id)} */
-  }
-  {
-    /*        > */
-  }
-  {
-    /*            <option value="opened" selected={data.cell.value.original !== 'opened'}>Visto</option> */
-  }
-  {
-    /*            <option value="placed" selected={data.cell.value.original === 'placed'}>En ruta/sucursal</option> */
-  }
-  {
-    /*            <option value="delivered" selected={data.cell.value.original === 'delivered'}>Entregada</option> */
-  }
-  {
-    /*            <option value="-" selected={data.cell.value.original === '-'}>Pendiente</option> */
-  }
-  {
-    /*        </select> */
-  }
-  {
-    /*        <div */
-  }
-  {
-    /*            className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"> */
-  }
-  {
-    /*            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"> */
-  }
-  {
-    /*                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> */
-  }
-  {
-    /*            </svg> */
-  }
-  {
-    /*        </div> */
-  }
-  {
-    /*    </div> */
-  }
-  {
-    /*    /!* end select *!/ */
-  }
-  {
-    /* </> */
-  }
 
   var openedAndShow = function openedAndShow(index) {
-    var data = orders[index];
+    setIndex(index);
+    var data = suggestions[index];
     setDataSelected(data);
+  };
 
-    if (auth.user.isMatrix && data.status.original === 'created') {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].put("/admin/orders/".concat(data.id), {
-        status: 'opened'
-      });
-    } // if(data.status.original !== 'created') {
-    //     return false;
-    // }
-
+  var hideDetails = function hideDetails() {
+    setIndex(null);
+    var data = suggestions[null];
+    setDataSelected(data);
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    // console.log('orderAll =>', orderAll);
-    var requestGetPagiante = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_8__["getParameterByName"])('get') === 'paginate';
-    setIsPaginateActive(requestGetPagiante);
-    var requestHistorict = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_8__["getParameterByName"])('date') === 'historic';
-    setIsHistoric(requestHistorict);
-  }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    // openedAndShow(0);
-    if (orders && dataSelected) {
-      var orderUpdated = orders.find(function (order) {
-        return order.id === dataSelected.id;
-      });
-      setDataSelected(orderUpdated);
+    if (dataSelected) {
+      setDataSelected(suggestions[index]); // setDataSelected(false);
+      // Swal.fire({
+      //   position: 'top-end',
+      //   icon: 'success',
+      //   title: success_message,
+      //   showConfirmButton: false,
+      //   timer: 1500,
+      // }).then(() => {
+      //   location.reload();
+      // });
     }
-  }, [orders]);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, [suggestions]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_InfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    data: dataSelected
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_7__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_SearchBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    stores: stores,
-    searchValues: searchValues
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "font-bold text-black w-3/12"
-  }, isHistoric ? 'Pedidos anteriores' : 'Pedidos'), "|", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
-    href: isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate',
-    className: "ml-3"
-  }, isHistoric ? 'Pedidos' : 'Pedidos anteriores')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Suggestions_DetailsWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    data: dataSelected,
+    hideDetails: hideDetails
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Suggestions_SearchBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    solvers: users
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    className: "font-bold text-black inline-block"
+  }, "Sugerencias"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
     columns: columns,
-    data: orders,
+    data: suggestions,
     onClick: function onClick(row) {
       return openedAndShow(row.index);
     },
     selected: dataSelected
-  }), isPaginateActive && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    items: orderAll
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    items: suggestionsToPaginate
   })));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
+/* harmony default export */ __webpack_exports__["default"] = (Suggestions);
 
 /***/ }),
 
@@ -250,7 +418,7 @@ function Dashboard(props) {
 /*!**************************************!*\
   !*** ./resources/js/Shared/utils.js ***!
   \**************************************/
-/*! exports provided: getParameterByName, onChange, encodeData */
+/*! exports provided: getParameterByName, onChange, encodeData, breakpoints */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -258,6 +426,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onChange", function() { return onChange; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeData", function() { return encodeData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "breakpoints", function() { return breakpoints; });
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -265,6 +435,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // eslint-disable-next-line import/prefer-default-export
+
 function getParameterByName(name) {
   var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
@@ -281,31 +452,40 @@ function encodeData(data) {
     return [key, data[key]].map(encodeURIComponent).join('=');
   }).join('&');
 }
+var breakpoints = {
+  'sm': 640,
+  // => @media (min-width: 640px) { ... }
+  'md': 768,
+  // => @media (min-width: 768px) { ... }
+  'lg': 1024,
+  // => @media (min-width: 1024px) { ... }
+  'xl': 1280,
+  // => @media (min-width: 1280px) { ... }
+  '2xl': 1536 // => @media (min-width: 1536px) { ... }
+
+};
 
 /***/ }),
 
-/***/ "./resources/js/components/Admin/InfoBoxes.jsx":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Admin/InfoBoxes.jsx ***!
-  \*****************************************************/
+/***/ "./resources/js/components/Admin/Suggestions/Details.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Admin/Suggestions/Details.jsx ***!
+  \***************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return InfoBoxes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Details; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Shared_Admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/Admin */ "./resources/js/Shared/Admin.jsx");
-/* harmony import */ var _InfoBoxes_UserDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InfoBoxes/UserDetails */ "./resources/js/components/Admin/InfoBoxes/UserDetails.jsx");
-/* harmony import */ var _InfoBoxes_StoreDetails__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InfoBoxes/StoreDetails */ "./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx");
-/* harmony import */ var _InfoBoxes_ProductsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./InfoBoxes/ProductsList */ "./resources/js/components/Admin/InfoBoxes/ProductsList.jsx");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.js */ "./node_modules/sweetalert2/dist/sweetalert2.js");
-/* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Textarea__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Textarea */ "./resources/js/components/Textarea.jsx");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Button */ "./resources/js/components/Button.jsx");
+/* harmony import */ var _Comment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Comment */ "./resources/js/components/Comment/index.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -320,206 +500,109 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+function Details(props) {
+  var data = props.data,
+      hideDetails = props.hideDetails;
 
- // import 'sweetalert2/src/sweetalert2.scss'
+  var _useRememberedState = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["useRememberedState"])(''),
+      _useRememberedState2 = _slicedToArray(_useRememberedState, 2),
+      textarea = _useRememberedState2[0],
+      setTextArea = _useRememberedState2[1];
 
-function InfoBoxes(props) {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
-      user = _usePage.auth.user;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      nextStatus = _useState2[0],
-      setNextStatus = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      isCancel = _useState4[0],
-      setIsCancel = _useState4[1];
-
-  var data = props.data;
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (data) {
-      var status = data.status,
-          store = data.store,
-          canceled = data.canceled;
-      setIsCancel(canceled);
-
-      switch (status.original) {
-        case 'created':
-        case 'opened':
-          setNextStatus({
-            original: 'journey',
-            step: 'En ruta',
-            allowed: user.isAdmin
-          });
-          break;
-
-        case 'journey':
-          setNextStatus({
-            original: 'placed',
-            step: 'En sucursal',
-            allowed: user.role === 'manager' || user.isAdmin && store.isMatrix
-          });
-          break;
-
-        case 'placed':
-          setNextStatus({
-            original: 'delivered',
-            step: 'Entregado',
-            allowed: user.role === 'manager' || user.isAdmin && store.isMatrix
-          });
-          break;
-
-        case 'delivered':
-          setNextStatus({
-            original: 'alredyDelivered',
-            step: 'Ya entregado',
-            allowed: false
-          });
-          break;
-
-        default:
-          setNextStatus({
-            original: 'default',
-            step: 'Default',
-            allowed: false
-          });
-          break;
-      }
-    }
-  }, [data]);
-
-  var updateToNextStatus = function updateToNextStatus() {
-    if (nextStatus.allowed || user.isGod) {
-      sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
-        title: '¿Seguro?',
-        text: "Vamos a pasar la orden de ".concat(data.status.step, " a ").concat(nextStatus.step),
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Sí cambiar estatus',
-        cancelButtonText: 'No cambiar estatus'
-      }).then(function (result) {
-        if (result.value) {
-          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
-            status: nextStatus.original
-          }); //     Swal.fire(
-          //         'Deleted!',
-          //         'Your file has been deleted.',
-          //         'success'
-          //     )
-        }
-      });
-    }
+  var handleOnChange = function handleOnChange(e) {
+    setTextArea(e.target.value);
   };
 
-  var updateToPayed = function updateToPayed() {
-    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
-      title: '¿Seguro?',
-      text: "La orden se considerar\xE1 como pagada",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí ha sido pagada',
-      cancelButtonText: 'No ha sido pagada'
-    }).then(function (result) {
-      if (result.value) {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
-          payed: true
-        }); //     Swal.fire(
-        //         'Deleted!',
-        //         'Your file has been deleted.',
-        //         'success'
-        //     )
-      }
+  var handleOnCancel = function handleOnCancel(e) {
+    setTextArea('');
+    hideDetails();
+  };
+
+  var createComment = function createComment() {
+    console.log('data =>', data);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].put("/admin/suggestions/".concat(data.id, "/update"), {
+      comment: textarea,
+      status: 'solved'
     });
-  };
+  }; // const solveSuggestion = () => {
+  //   Inertia.put(`/admin/suggestions/${data.id}/updateStatus`, {
+  //     status: 'solved',
+  //   });
+  // };
 
-  var updateToCancel = function updateToCancel() {
-    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
-      title: '¿Seguro?',
-      text: "La orden se considerar\xE1 como cancelada",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí esta cancelada',
-      cancelButtonText: 'No, no esta cancelada'
-    }).then(function (result) {
-      if (result.value) {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put("/admin/orders/".concat(data.id), {
-          canceled: true
-        }); //     Swal.fire(
-        //         'Deleted!',
-        //         'Your file has been deleted.',
-        //         'success'
-        //     )
-      }
-    });
-  };
 
-  var allowedToModify = function allowedToModify() {
-    if (isCancel) return false;
-
-    if (user.isGod) {
-      return true;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-1/2 lg:w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-2 md:mx-6 md:my-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm"
+  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fa fa-at fa-fw text-brand-icons text-sm"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline text-sm"
+  }, ": ", data.email)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-8"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "inline fas fa-comment-alt text-base text-green-600 mr-2"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "inline"
+  }, data.suggestion)), data.comments.length === 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    label: "Comentario de seguimiento",
+    value: textarea,
+    id: "comment",
+    placeholder: "Se solucion\xF3 de la siguiente manera...",
+    onChange: handleOnChange // error={errors.suggestion}
+    ,
+    extraProps: {
+      disabled: false
     }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-2 flex justify-end"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mr-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: createComment,
+    disabled: false
+  }, "Solucionado")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleOnCancel,
+    disabled: false
+  }, "Cancelar")))), data.comments.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Comment__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    comment: data.comments[0]
+  })), data.status_info.is_solved && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-8"
+  }, "Sugerencia solucionada por: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-brand-green"
+  }, data.activity[data.activity.length - 1].causer.name))));
+}
 
-    return nextStatus.allowed;
-  };
+/***/ }),
 
-  var buttonClass = 'w-full inline-block text-white hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6';
+/***/ "./resources/js/components/Admin/Suggestions/DetailsWrapper.jsx":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Admin/Suggestions/DetailsWrapper.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DetailsWrapper; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Details__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Details */ "./resources/js/components/Admin/Suggestions/Details.jsx");
+
+
+function DetailsWrapper(props) {
+  var data = props.data,
+      hideDetails = props.hideDetails;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
     className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
-  }, data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-1/2 lg:w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "md:mx-6 md:my-3"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Pedido No: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, data.uuid)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-calendar-day fa-fw text-brand-icons text-sm mr-3"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, data.date.formatted))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_UserDetails__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    data: data.customer
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_StoreDetails__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    data: data.store
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InfoBoxes_ProductsList__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    data: data.products
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full text-center text-regularText text-normal"
-  }, "Total:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full text-center text-regularText text-2xl"
-  }, "$", data.total), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "m-2 md:mx-6 md:my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-lg"
-  }, data.employee.name), " levant\xF3 este pedido."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: allowedToModify() ? "".concat(buttonClass, " bg-orange-400 hover:bg-brand-orange") : "".concat(buttonClass, " bg-orange-400 cursor-not-allowed"),
-    onClick: function onClick() {
-      return updateToNextStatus(data.status);
-    },
-    disabled: !allowedToModify()
-  }, nextStatus.step)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: allowedToModify() ? "".concat(buttonClass, " bg-green-500 hover:bg-brand-green") : "".concat(buttonClass, " bg-green-500 cursor-not-allowed"),
-    onClick: function onClick() {
-      return updateToPayed(data.id);
-    },
-    disabled: !allowedToModify()
-  }, "Pagar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: allowedToModify() ? "".concat(buttonClass, " bg-red-500 hover:bg-red-600") : "".concat(buttonClass, " bg-red-500 cursor-not-allowed"),
-    onClick: function onClick() {
-      return updateToCancel(data.id);
-    },
-    disabled: !allowedToModify()
-  }, isCancel ? 'Cancelado' : 'Cancelar pedido'))), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Details__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    data: data,
+    hideDetails: hideDetails
+  }), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-1/2 lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"
@@ -533,140 +616,15 @@ function InfoBoxes(props) {
     className: "fa fa-hand-pointer fa-fw fa-inverse text-3xl"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex-1 mt-3"
-  }, "No hay ningun pedido seleccionado para mostrar informaci\xF3n."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "flex-1 mt-3 text-brand-orange"
-  }, "Hacer click sobre el pedido para ver los detalles.")))));
+  }, "No hay ninguna sugerencia seleccionada para visualizar.")))));
 }
-;
 
 /***/ }),
 
-/***/ "./resources/js/components/Admin/InfoBoxes/ProductsList.jsx":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/Admin/InfoBoxes/ProductsList.jsx ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProductsList; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ProductListElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ProductListElement */ "./resources/js/components/ProductListElement.jsx");
-
-
-function ProductsList(props) {
-  var data = props.data;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "m-2 md:mx-6 md:my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full flex flex-col"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex content-between"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-left"
-  }, "Producto"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-center"
-  }, "Cant."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flex-1 text-brand-orange font-thin text-right"
-  }, "Prec. Unit.")), data.map(function (product) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductListElement__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      product: product,
-      isEditable: false
-    });
-  })));
-}
-;
-
-/***/ }),
-
-/***/ "./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/Admin/InfoBoxes/StoreDetails.jsx ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return StoreDetails; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-function StoreDetails(props) {
-  var data = props.data;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "m-2 md:mx-6 md:my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-shrink pr-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rounded-full p-3 bg-gray-400"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-store fa-fw fa-inverse text-xl"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 flex-col"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-lg"
-  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-map-marker-alt fa-fw text-brand-icons text-sm"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "inline"
-  }, ": ", data.friendlyAddress)))));
-}
-;
-
-/***/ }),
-
-/***/ "./resources/js/components/Admin/InfoBoxes/UserDetails.jsx":
+/***/ "./resources/js/components/Admin/Suggestions/SearchBar.jsx":
 /*!*****************************************************************!*\
-  !*** ./resources/js/components/Admin/InfoBoxes/UserDetails.jsx ***!
+  !*** ./resources/js/components/Admin/Suggestions/SearchBar.jsx ***!
   \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserDetails; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-function UserDetails(props) {
-  var data = props.data;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "m-2 md:mx-6 md:my-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex-shrink pr-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rounded-full p-3 bg-gray-400"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fa fa-user fa-fw fa-inverse text-xl"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-1 flex-col"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text-lg"
-  }, data.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-mobile-alt fa-fw text-brand-icons text-sm"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "inline"
-  }, ": ", data.phone)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "inline fa fa-at fa-fw text-brand-icons text-sm"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "inline"
-  }, ": ", data.email)))));
-}
-;
-
-/***/ }),
-
-/***/ "./resources/js/components/Admin/SearchBar.jsx":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Admin/SearchBar.jsx ***!
-  \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -675,20 +633,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchBar; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dates */ "./node_modules/react-dates/index.js");
-/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dates__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_DateSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/DateSelector */ "./resources/js/components/DateSelector.jsx");
-/* harmony import */ var _Select_SearchStores__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Select/SearchStores */ "./resources/js/components/Select/SearchStores.jsx");
-/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Input */ "./resources/js/components/Input.jsx");
-/* harmony import */ var _Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Select/SearchStatus */ "./resources/js/components/Select/SearchStatus.jsx");
-/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Select_SearchUsers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Select/SearchUsers */ "./resources/js/components/Select/SearchUsers.jsx");
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Input */ "./resources/js/components/Input.jsx");
+/* harmony import */ var _Select_SearchStatus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Select/SearchStatus */ "./resources/js/components/Select/SearchStatus.jsx");
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Shared/utils */ "./resources/js/Shared/utils.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -709,38 +662,33 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+ // import { SingleDatePicker } from 'react-dates';
 
 
 
 
 
 
- // jajaja if I remove this line, i get white page jajajaja
 
 
-
-
-
-var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-function SearchBar() {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__["usePage"])(),
-      user = _usePage.auth.user,
-      stores = _usePage.stores;
+var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+function SearchBar(props) {
+  var solvers = props.solvers;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
-      id = _useState2[0],
-      setId = _useState2[1];
+      name = _useState2[0],
+      setName = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      store = _useState4[0],
-      setStore = _useState4[1];
+      solver = _useState4[0],
+      setSolver = _useState4[1];
 
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
       _useState6 = _slicedToArray(_useState5, 2),
-      storeObject = _useState6[0],
-      setStoreObject = _useState6[1];
+      solverObject = _useState6[0],
+      setSolverObject = _useState6[1];
 
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState8 = _slicedToArray(_useState7, 2),
@@ -748,9 +696,8 @@ function SearchBar() {
       setDate = _useState8[1];
 
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    label: 'No entregados',
-    value: 'not-delivered' // @todo: not-delivered
-
+    label: 'No solucionado',
+    value: 'not-solved'
   }),
       _useState10 = _slicedToArray(_useState9, 2),
       status = _useState10[0],
@@ -759,221 +706,146 @@ function SearchBar() {
   var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState12 = _slicedToArray(_useState11, 2),
       focus = _useState12[0],
-      setFocus = _useState12[1]; // function pressEnterToSearch(event) {
-  //     if (event.defaultPrevented) {
-  //         return; // Should do nothing if the default action has been cancelled
-  //     }
-  //
-  //     if (event.key === 'Enter') {
-  //         toSearch();
-  //     }
-  // }
-  // useEffect(() => {
-  //     document.addEventListener('keyup', pressEnterToSearch);
-  //     return () => document.removeEventListener('keyup', pressEnterToSearch);
-  // })
-  //
-
+      setFocus = _useState12[1];
 
   var setStatusObject = function setStatusObject(currentStatus) {
     switch (currentStatus) {
-      case 'not-delivered':
+      case 'not-solved':
         setStatus({
-          label: 'No entregados',
-          value: 'not-delivered'
+          label: 'No solucionado',
+          value: 'not-solved'
         });
         break;
 
-      case 'delivered':
+      case 'solved':
         setStatus({
-          label: 'Entregados',
-          value: 'delivered'
+          label: 'Solucionado',
+          value: 'solved'
         });
         break;
-
-      case 'all':
-        setStatus({
-          label: 'Todos',
-          value: 'all'
-        });
-        break;
+      // case 'all':
+      //   setStatus({
+      //     label: 'Todos',
+      //     value: 'all',
+      //   });
+      //   break;
 
       default:
         setStatus({
-          label: 'No entregados',
-          value: 'not-delivered'
+          label: '',
+          value: ''
         });
         break;
     }
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    var queryId = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('id');
-    setId(queryId || '');
-    var queryStore = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('store');
-    setStore(queryStore || '');
-    var queryDate = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date'); // @todo: think if we going to have more special status
-
-    setDate(queryDate && queryDate !== 'historic' ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
-    var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('status');
+    var queryName = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('name');
+    setName(queryName || '');
+    var querySolver = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('solver');
+    setSolver(querySolver || '');
+    var queryDate = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('date');
+    setDate(moment__WEBPACK_IMPORTED_MODULE_3___default()(queryDate));
+    var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('status');
     setStatusObject(queryStatus);
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (store && stores) {
-      // convert string to number
-      var storeSelected = stores.find(function (current) {
-        return current.id === store * 1;
+    if (solver && solvers) {
+      console.log('solver =>', solver); // convert string to number
+
+      var solverSelected = solvers.find(function (current) {
+        return current.id === solver * 1;
       });
-      setStoreObject({
-        id: storeSelected.id,
-        name: storeSelected.name,
-        friendlyAddress: storeSelected.friendly_address
+      console.log('solverSelected =>', solverSelected);
+      setSolverObject({
+        value: solverSelected.id,
+        label: solverSelected.name
       });
     } // if user clear store selector it must remove selected store
 
 
-    if (store === null) {
-      setStoreObject({
-        id: '',
-        name: '',
-        friendlyAddress: ''
+    if (solver === null) {
+      setSolverObject({
+        value: '',
+        label: ''
       });
     }
-  }, [store]);
+  }, [solver]);
 
   var onChange = function onChange(e) {
     if (e.key === 'Enter') {
       toSearch(); // return false;
     }
 
-    setId(e.target.value);
+    setName(e.target.value);
   };
 
   var setDateParam = function setDateParam() {
     if (date) {
       return "date=".concat(date);
-    }
+    } // ??
 
-    if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date')) {
-      if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('date') === 'historic') {
+
+    if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('date')) {
+      if (Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('date') === 'historic') {
         return 'date=historic';
       }
     }
 
     return '';
-  }; // const urlBuilder = queryParams => {
-  //     if(queryParams.length) {
-  //         let url;
-  //         queryParams.forEach((query, index) => {
-  //             console.log('query =>', query);
-  //             console.log('index =>', index);
-  //             if(index === 0){
-  //                 url = url + `?${Object.keys(query)[0]}=${Object.values(query)[0]}`;
-  //             } else {
-  //                 url = url + `&${Object.keys(query)[0]}=${Object.values(query)[0]}`;
-  //             }
-  //             console.log('url =>', url);
-  //             // url = url + '&'
-  //         });
-  //     }
-  //     return '';
-  // }
-
+  };
 
   var toSearch = function toSearch() {
-    // const queries = [
-    //   'id',
-    //   'store',
-    //   'date',
-    //   'status',
-    //   'get',
-    // ];
-    // const queriesWithValue = queries.filter(query => getParameterByName(query) && getParameterByName(query) !== '').map((query) => {
-    //   const value = getParameterByName(query);
-    //     console.log('[query] =>,', [query]);
-    //   return { [query]: value };
-    // });
-    // console.log('queriesWithValue', queriesWithValue);
-    // console.log(`Vamos a buscar id: ${id} , store: ${storeObject.id}, date: ${date}, status: ${status.value}`);
-    var searchId = id ? "id=".concat(id) : '';
-    var searchStore = storeObject && storeObject.id ? "store=".concat(storeObject.id) : '';
-    var searchDate = setDateParam(); // const searchDate = date ? `date=${date}` : '';
+    var searchName = name ? "name=".concat(name) : '';
+    var searchSolver = solverObject && solverObject.value ? "solver=".concat(solverObject.value) : ''; // const searchDate = date ? `date=${date}` : '';
 
-    var searchStatus = status ? "status=".concat(status.value) : '';
-    var paginateQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('get') === 'paginate' ? 'get=paginate' : '';
-    var sortQuery = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('sort') === 'desc' ? 'sort=desc' : ''; // console.log('url builder', urlBuilder(queriesWithValue))
+    var searchStatus = status && status.value ? "status=".concat(status.value) : ''; // const paginateQuery = getParameterByName('get') === 'paginate' ? 'get=paginate' : '';
+    // const sortQuery = getParameterByName('sort') === 'desc' ? 'sort=desc' : '';
+    // console.log('url builder', urlBuilder(queriesWithValue))
+    // const url = `/admin?${searchString}&${searchSolver}&${searchDate}&${searchStatus}`;
 
-    var url = "/admin?".concat(paginateQuery, "&").concat(searchId, "&").concat(searchStore, "&").concat(searchDate, "&").concat(searchStatus, "&").concat(sortQuery); // Inertia.visit(urlBuilder(queriesWithValue));
+    var url = "/admin/suggestions?".concat(searchName, "&").concat(searchStatus, "&").concat(searchSolver); // Inertia.visit(urlBuilder(queriesWithValue));
 
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__["Inertia"].visit(url);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].visit(url);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/5"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "id",
-    label: "Nombre o Id",
+    label: "Nombre o correo",
     onChange: onChange,
     placeholder: "ej. Juan",
     error: [],
     onKeyDown: onChange,
-    value: id
-  })), user.isAdmin && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "inline-block mx-2 w-1/5"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStores__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    setStore: setStore,
-    stores: stores,
-    storeSelected: storeObject
+    value: name
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/5"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "store",
-    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
-  }, "D\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DateWrapper, {
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_1__["SingleDatePicker"], {
-    id: "date",
-    name: "date",
-    date: date,
-    onDateChange: function onDateChange(date) {
-      return setDate(date);
-    },
-    focused: focus,
-    onFocusChange: function onFocusChange(props) {
-      return setFocus(props.focused);
-    } // disabled={!store}
-    ,
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full",
-    displayFormat: "D MMMM YYYY",
-    numberOfMonths: 1,
-    placeholder: "Elige una fecha",
-    isOutsideRange: function isOutsideRange() {
-      return false;
-    },
-    phrases: {
-      closeDatePicker: 'Cerrar',
-      clearDates: 'Limpiar'
-    },
-    showClearDate: true,
-    block: true
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchUsers__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    setUser: setSolver,
+    users: solvers.map(function (u) {
+      return {
+        label: u.name,
+        value: u.id
+      };
+    }),
+    user: solverObject
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inline-block mx-2 w-1/5"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_6__["default"], {
     status: status,
     setStatus: setStatusObject,
     statuses: [{
-      label: 'No entregados',
-      value: 'not-delivered'
+      label: '',
+      value: ''
     }, {
-      label: 'Entregados',
-      value: 'delivered'
+      label: 'No solucionado',
+      value: 'not-solved'
     }, {
-      label: 'Todos',
-      value: 'all'
+      label: 'Solucionado',
+      value: 'solved'
     }]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-end"
@@ -985,35 +857,46 @@ function SearchBar() {
 
 /***/ }),
 
-/***/ "./resources/js/components/DateSelector.jsx":
-/*!**************************************************!*\
-  !*** ./resources/js/components/DateSelector.jsx ***!
-  \**************************************************/
+/***/ "./resources/js/components/Button.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/components/Button.jsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DateSelector; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Button; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dates_initialize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dates/initialize */ "./node_modules/react-dates/initialize.js");
-/* harmony import */ var react_dates_initialize__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dates_initialize__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dates */ "./node_modules/react-dates/index.js");
-/* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dates__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function Button(_ref) {
+  var children = _ref.children,
+      onClick = _ref.onClick,
+      disabled = _ref.disabled;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    disabled: disabled,
+    onClick: onClick,
+    className: "flex w-full cursor-pointer justify-center font-bold py-2 px-4 rounded block bg-transparent border border-brand-orange text-brand-orange text-bold hover:bg-brand-orange hover:text-white hover:shadow hover:text-white disabled:opacity-75"
+  }, children);
+}
 
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+/***/ }),
 
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+/***/ "./resources/js/components/Comment/index.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Comment/index.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    .DateInput_input {\n        padding: 7px 7px 5px;\n    }\n    .SingleDatePickerInput__withBorder {\n        border-radius: 3px;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    border-top: 1px solid;\n    border-color: rgba(50, 115, 220, 0.3);\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1025,102 +908,80 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
- // import 'react-dates/lib/css/_datepicker.css';
+
+var CommentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+
+var Comment = function Comment(_ref) {
+  var comment = _ref.comment;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CommentWrapper, {
+    className: "flex flex-col justify-center items-center text-sm pt-2 mt-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-row justify-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: "avatar",
+    className: "rounded-full w-6 h-6 mr-2 shadow-lg mb-2",
+    src: comment.commenter.avatar || 'https://cdn2.iconfinder.com/data/icons/office-and-business-19/65/61-512.png'
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-brand-green font-semibold text-sm mr-1"
+  }, comment.commenter.name), "- agreg\xF3 comentario ", comment.created_at)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "w-full ml-16 text-gray-600 text-sm text-left"
+  }, comment.comment));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Comment);
+
+/***/ }),
+
+/***/ "./resources/js/components/Input.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Input.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Input; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
-
-
-var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject());
-function DateSelector(props) {
-  // moment.locale('es');
-  var today = moment__WEBPACK_IMPORTED_MODULE_4___default()();
-  var date = props.date,
-      setDate = props.setDate,
-      _props$store = props.store,
-      store = _props$store === void 0 ? false : _props$store;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
-
-  var pickUpAllowed = function pickUpAllowed(dayDate) {
-    // @todo: que si son despues de las 8:00pm no poder poner el siguiente día, se hiría hasta el 'pasado mañana'
-    var shopSelected = store; // if the sunday field means that the shop delivers on sundays, leave this, otherwise comment out
-
-    if (shopSelected.sunday !== 'Cierra') {
-      return false;
-    } // console.log({ isSame: dayDate.isSame('2020-11-01'), dayDate});
-    // if (dayDate.isSame('Sun Nov 01 2020 12:00:00 GMT-0600')) {
-    //     console.log('mismo dia =>', dayDate);
-    //     return false;
-    // }
-    // console.log({ dayDate });
-    // if sunday return true to block day
-
-
-    return dayDate.isoWeekday() === 7;
-    /*
-    const dayNumber = dayDate.day();
-    const today = new Date();
-    const todayDayNumber = today.getDate();
-     if (dayNumber <= todayDayNumber) return false;
-     return !shopSelected.deliver_days.includes(dayNumber);
-      */
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
+function Input(_ref) {
+  var id = _ref.id,
+      label = _ref.label,
+      inputType = _ref.type,
+      inputValue = _ref.value,
+      placeholder = _ref.placeholder,
+      onChange = _ref.onChange,
+      _ref$onKeyDown = _ref.onKeyDown,
+      onKeyDown = _ref$onKeyDown === void 0 ? function () {
+    return false;
+  } : _ref$onKeyDown,
+      _ref$error = _ref.error,
+      error = _ref$error === void 0 ? [] : _ref$error,
+      _ref$extraProps = _ref.extraProps,
+      extraProps = _ref$extraProps === void 0 ? {} : _ref$extraProps;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "store",
-    className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
-  }, "D\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DateWrapper, {
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_2__["SingleDatePicker"], {
-    id: "date",
-    name: "date",
-    date: date,
-    onDateChange: function onDateChange(date) {
-      return setDate(date);
+    htmlFor: id,
+    className: "hover:border-grey-900 italic sm:block"
+  }, label ? label : 'Label'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
+    id: id,
+    name: id,
+    type: inputType ? inputType : 'text',
+    placeholder: placeholder ? placeholder : '',
+    value: inputValue ? inputValue : '',
+    onChange: onChange,
+    style: {
+      height: '2.4rem'
     },
-    focused: focus,
-    onFocusChange: function onFocusChange(props) {
-      return setFocus(props.focused);
-    },
-    disabled: !store,
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // showDefaultInputIcon
-
-    /*
-    date={pickupDate}
-    focused={pickupFocused}
-    onDateChange={
-        this.onPickupDateChange
-    }
-    onFocusChange={
-        this.onPickupFocusChange
-    }
-    */
-    // Valida que no se pueda pedir el mismo día que se ingresa.
-    // Esto debe aplicar si es un usuario normal y no de panadería
-    ,
-    isOutsideRange: function isOutsideRange(day) {
-      return !Object(react_dates__WEBPACK_IMPORTED_MODULE_2__["isInclusivelyAfterDay"])(day, today) || false;
-    } // day.isSame(today, 'd')
-    ,
-    isDayBlocked: pickUpAllowed //-- orientation="vertical"
-    //-- verticalHeight={350}
-    ,
-    displayFormat: "D MMMM YYYY" // disabled={!shopSelected}
-    ,
-    numberOfMonths: 1,
-    placeholder: "Elige una fecha",
-    phrases: {
-      closeDatePicker: 'Cerrar',
-      clearDates: 'Limpiar'
-    },
-    showClearDate: true,
-    block: true
-  })));
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed",
+    onKeyDown: onKeyDown
+  }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm m-auto text-red-500 error error-".concat(id)
+  }, error[0]));
 }
 ;
 
@@ -1141,6 +1002,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -1156,16 +1018,53 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 /* To handle checked state this component requires a single of css */
 
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 function Pagination(_ref) {
   var items = _ref.items;
+
+  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_3__["useWindowSize"])(),
+      isLessThanMD = _useWindowSize.isLessThanMD;
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     className: "py-10 block w-full flex justify-center"
   }, items && items.data && items.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pagination mt-6 -mb-1 flex flex-wrap"
   }, items.links && items.links.map(function (link, key) {
+    if (isLessThanMD) {
+      // Prev + and dots disabled
+      if (link.url === null) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: key,
+          className: "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400 ".concat(link.label === 'Next' ? 'ml-auto' : '')
+        }, link.label);
+      } // prev active
+
+
+      if (key === 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+          key: key,
+          "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'border-brand-orange bg-orange-400 text-white hover:text-gray-600' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+          ,
+          href: link.url
+        }, link.label);
+      } // next
+
+
+      if (key + 1 === items.links.length) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+          key: key,
+          "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'border-brand-orange bg-orange-400 text-white hover:text-gray-600' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+          ,
+          href: link.url
+        }, link.label);
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+    }
+
     if (link.url === null) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: key,
@@ -1271,21 +1170,20 @@ function SearchStatus(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Select/SearchStores.jsx":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/Select/SearchStores.jsx ***!
-  \*********************************************************/
+/***/ "./resources/js/components/Select/SearchUsers.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Select/SearchUsers.jsx ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Stores; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchUsers; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/set */ "./node_modules/@babel/runtime/helpers/esm/set.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  .shop-option-description {\n    display: block;\n    font-size: 0.8rem;\n    color: #6f6f6f;\n\n    &.selected {\n      color: #fff !important;\n    }\n  }\n"]);
 
@@ -1301,106 +1199,150 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
 var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-
-var transformStoreList = function transformStoreList(stores) {
-  return stores.map(function (store) {
-    return {
-      value: store.id,
-      label: store.name,
-      friendlyAddress: store.friendly_address
-    };
-  });
-};
-
-var ShopOptionComponent = function ShopOptionComponent(props) {
-  var children = props.children,
-      friendlyAddress = props.data.friendlyAddress,
-      isSelected = props.isSelected; // console.log('ShopOptionComponent props =>', props);
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["components"].Option, props, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "shop-option-name"
-  }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "shop-option-description".concat(isSelected ? ' selected' : '')
-  }, friendlyAddress));
-};
-
-function Stores(props) {
-  var setStore = props.setStore,
-      stores = props.stores,
-      _props$storeSelected = props.storeSelected,
-      storeSelected = _props$storeSelected === void 0 ? false : _props$storeSelected;
-  var storesToSelect = transformStoreList(stores);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (storeSelected) {
-      setStore(storeSelected.id);
-    }
-  }, []);
+function SearchUsers(props) {
+  var user = props.user,
+      users = props.users,
+      setUser = props.setUser;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "store",
+    htmlFor: "user",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
-  }, "Sucursal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    options: storesToSelect,
-    inputId: "store",
-    name: "store",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
-    ,
-    classNamePrefix: "stores-selector"
-    /*
-    getOptionValue={option =>
-        option.key
-    }
-    getOptionLabel={option =>
-        option.key
-    }
-    isClearable
-     */
-    ,
-    isClearable: true,
-    placeholder: "Elige una sucursal",
-    components: {
-      Option: ShopOptionComponent
-    },
+  }, "Solucionado por:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    options: users,
+    inputId: "user",
+    name: "user",
+    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full",
+    classNamePrefix: "users-selector",
+    placeholder: "Elige estatus",
     onChange: function onChange(selected) {
       if (selected === null) {
-        setStore(null);
+        setUser(null);
       } else {
-        setStore(selected.value);
+        setUser(selected.value);
       }
-    } // defaultValue={{label: storeSelected.name }}
-    ,
+    },
     value: [{
-      label: storeSelected.name,
-      value: storeSelected.id
-    }]
-    /*
-    onFocus={
-        this.onShopFocus
-    }
-    value={shopSelected}
-    invalid={
-        this.state
-            .errorsState.store
-    }
-     */
-
+      label: user.label
+    }],
+    isClearable: true
   }));
 }
-;
 
 /***/ }),
 
-/***/ 1:
-/*!********************************!*\
-  !*** ./util.inspect (ignored) ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/components/Textarea.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Textarea.jsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* (ignored) */
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Textarea; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+function Textarea(_ref) {
+  var id = _ref.id,
+      label = _ref.label,
+      inputValue = _ref.value,
+      placeholder = _ref.placeholder,
+      onChange = _ref.onChange,
+      _ref$onKeyDown = _ref.onKeyDown,
+      onKeyDown = _ref$onKeyDown === void 0 ? function () {
+    return false;
+  } : _ref$onKeyDown,
+      _ref$error = _ref.error,
+      error = _ref$error === void 0 ? [] : _ref$error,
+      _ref$extraProps = _ref.extraProps,
+      extraProps = _ref$extraProps === void 0 ? {} : _ref$extraProps;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: id,
+    className: "hover:border-grey-900 italic sm:block"
+  }, label || 'Label'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", _extends({
+    id: id,
+    name: id,
+    placeholder: placeholder || '',
+    value: inputValue || '',
+    onChange: onChange,
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed",
+    onKeyDown: onKeyDown,
+    rows: "4"
+  }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm m-auto text-red-500 error error-".concat(id)
+  }, error[0]));
+}
+
+/***/ }),
+
+/***/ "./resources/js/hooks/useWindowSize.js":
+/*!*********************************************!*\
+  !*** ./resources/js/hooks/useWindowSize.js ***!
+  \*********************************************/
+/*! exports provided: useWindowSize */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useWindowSize", function() { return useWindowSize; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/utils */ "./resources/js/Shared/utils.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+ // Hook
+
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    width: undefined,
+    height: undefined,
+    isLessThanMD: undefined,
+    isLessThanLG: undefined
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      windowSize = _useState2[0],
+      setWindowSize = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        isLessThanMD: window.innerWidth <= _Shared_utils__WEBPACK_IMPORTED_MODULE_1__["breakpoints"].md,
+        isLessThanLG: window.innerWidth <= _Shared_utils__WEBPACK_IMPORTED_MODULE_1__["breakpoints"].lg
+      });
+    } // Add event listener
+
+
+    window.addEventListener("resize", handleResize); // Call handler right away so state gets updated with initial window size
+
+    handleResize(); // Remove event listener on cleanup
+
+    return function () {
+      return window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty array ensures that effect is only run on mount
+
+  return windowSize;
+}
 
 /***/ })
 

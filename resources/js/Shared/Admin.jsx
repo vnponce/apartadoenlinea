@@ -110,11 +110,11 @@ export default function Layout({ title, children }) {
             {/* Side bar*/}
             <SideBar />
 
-            <div className="flex flex-row flex-wrap flex-1 flex-grow content-start pl-16">
+            <div className="w-full flex flex-row flex-wrap flex-1 flex-grow content-start pl-16">
 
-                <div className="h-40 lg:h-20 w-full flex flex-wrap">
+                <div className="h-20 w-full flex flex-wrap">
                     <section id="logo"
-                         className="bg-gray-200 w-full lg:max-w-sm flex items-center border-b-1 border-gray-300 order-2 lg:order-1">
+                         className="hidden lg:flex bg-gray-200 w-full lg:max-w-sm flex items-center border-b-1 border-gray-300 order-2 lg:order-1">
                         <InertiaLink href="/" className="flex-2 m-auto h-16 hidden lg:block">
                             <img src="/svg/Logo-Full.svg" className="my-auto h-full" alt=""/>
                         </InertiaLink>

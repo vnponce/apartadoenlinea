@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","2":"e0c691ce433a917959d8","3":"83dde37a8b09d1eab238","4":"ed351820e3b66ee63436","5":"abe2baeee5cef962e52f","6":"8520bd2aa5a4a8ec41df","7":"a87907d1562108345875","8":"6c4da74f2440880fea43","9":"07457d5a44df1daf0b39","10":"427b9df441d12685e7ae","11":"cf9fd82ba98a4f9afa56","12":"8545ff225621ee91e6f3","13":"5dd2f11ab6b55e8dd279","14":"a49857696bb2dd2f9702","15":"4ce95dec36d4313f5657","16":"1592d888a1ddd5e4ba86","17":"d3fe6987feb75178a41e","18":"57b1323004b49d8e25ce","19":"e134ac5f357bdaf7c56b","20":"0d48ee190565103b4a21","21":"5beeb193fa4c3e124e95","22":"27f2fbab76ef1e9bedf4","23":"8b77b8d60cad130a6849","24":"d010853789c211b29082","25":"8d02f364ff0b2be4c59f","26":"68716ba406bc85901d60","27":"253a6067e83550db8562"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","2":"e0c691ce433a917959d8","3":"83dde37a8b09d1eab238","4":"ed351820e3b66ee63436","5":"df296c7ae37979498baf","6":"8520bd2aa5a4a8ec41df","7":"a87907d1562108345875","8":"6c4da74f2440880fea43","9":"07457d5a44df1daf0b39","10":"427b9df441d12685e7ae","11":"7f6c27d7fca08df6c38b","12":"98c645005c901b152cee","13":"2463ff9291b5e933e953","14":"a49857696bb2dd2f9702","15":"bd7d2e8747b4b8084c20","16":"2777e102c7bf27d7dcf8","17":"31e44605aab050f7c09a","18":"9ad643b60df30cd5deee","19":"aa1e02e3f72d3aa0e7d1","20":"7e145a7b922f1b3ea129","21":"5beeb193fa4c3e124e95","22":"27f2fbab76ef1e9bedf4","23":"8b77b8d60cad130a6849","24":"d010853789c211b29082","25":"8d02f364ff0b2be4c59f","26":"68716ba406bc85901d60","27":"253a6067e83550db8562"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34565,7 +34565,7 @@ var map = {
 		9,
 		2,
 		5,
-		12
+		11
 	],
 	"./Admin/Dashboard.jsx": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
@@ -34575,7 +34575,7 @@ var map = {
 		9,
 		2,
 		5,
-		12
+		11
 	],
 	"./Admin/Products": [
 		"./resources/js/Pages/Admin/Products.jsx",
@@ -34602,7 +34602,7 @@ var map = {
 		7,
 		8,
 		5,
-		18
+		19
 	],
 	"./Admin/Stores.jsx": [
 		"./resources/js/Pages/Admin/Stores.jsx",
@@ -34611,21 +34611,21 @@ var map = {
 		7,
 		8,
 		5,
-		18
+		19
 	],
 	"./Admin/Suggestions": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
 		7,
 		5,
-		11
+		12
 	],
 	"./Admin/Suggestions.jsx": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
 		7,
 		5,
-		11
+		12
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
@@ -34634,7 +34634,7 @@ var map = {
 		7,
 		8,
 		5,
-		19
+		15
 	],
 	"./Admin/Users.jsx": [
 		"./resources/js/Pages/Admin/Users.jsx",
@@ -34643,7 +34643,7 @@ var map = {
 		7,
 		8,
 		5,
-		19
+		15
 	],
 	"./Checkout": [
 		"./resources/js/Pages/Checkout.jsx",
@@ -34697,7 +34697,7 @@ var map = {
 		6,
 		2,
 		3,
-		15
+		16
 	],
 	"./Landing.jsx": [
 		"./resources/js/Pages/Landing.jsx",
@@ -34707,7 +34707,7 @@ var map = {
 		6,
 		2,
 		3,
-		15
+		16
 	],
 	"./Landings/Christmas": [
 		"./resources/js/Pages/Landings/Christmas.jsx",
@@ -34717,7 +34717,7 @@ var map = {
 		6,
 		2,
 		3,
-		16
+		17
 	],
 	"./Landings/Christmas.jsx": [
 		"./resources/js/Pages/Landings/Christmas.jsx",
@@ -34727,7 +34727,7 @@ var map = {
 		6,
 		2,
 		3,
-		16
+		17
 	],
 	"./Landings/RoscasGaribaldi": [
 		"./resources/js/Pages/Landings/RoscasGaribaldi.js",
@@ -34737,7 +34737,7 @@ var map = {
 		6,
 		2,
 		3,
-		17
+		18
 	],
 	"./Landings/RoscasGaribaldi.js": [
 		"./resources/js/Pages/Landings/RoscasGaribaldi.js",
@@ -34747,7 +34747,7 @@ var map = {
 		6,
 		2,
 		3,
-		17
+		18
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",

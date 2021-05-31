@@ -68,6 +68,7 @@ export default function CreateUser(props) {
             });
         }
     };
+    // @todo: a lo mejor a utils para todos los demás
     const cancel = () => {
         const hostname = window.location.hostname;
         const url = window.location.href;
@@ -110,7 +111,7 @@ export default function CreateUser(props) {
                 type="password"
                 error={errors.password}
             />
-            <div className="font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
+            <div className="w-full sm:w-7/12 m-auto lg:w-full font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
                 <label htmlFor="role" className="hover:border-grey-900 italic sm:block">Role</label>
                 <select
                     id="role"

@@ -6,12 +6,17 @@ import {Inertia} from "@inertiajs/inertia";
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Table from "../../components/Table";
 import Content from "../../components/Admin/Content";
+import {breakpoints} from "../../Shared/utils";
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 
 function Users(props) {
     const { users, flash: { success_message } } = props;
     const [dataSelected, setDataSelected] = useState(null);
     const [createUser, setCreateUser] = useState(null);
+    const [mobileShowInfoBoxes, setMobileShowInfoBoxes] = useState(false);
+    const [isInfoBoxOpen, setIsInfoBoxOpen] = useState(false);
+    const { isLessThanLG } = useWindowSize();
     const updateStatus = id => evt => {
         Inertia.put( `/users/${id}`, {
             status: evt.target.value,
@@ -63,11 +68,19 @@ function Users(props) {
         const data = users[index];
         setCreateUser(false);
         setDataSelected(data);
+        setIsInfoBoxOpen(true);
+        if(isLessThanLG) {
+            setMobileShowInfoBoxes(true);
+        }
     };
 
     const showCreateUser = () => {
         setCreateUser(true);
         setDataSelected(false);
+        setIsInfoBoxOpen(true);
+        if(isLessThanLG) {
+            setMobileShowInfoBoxes(true);
+        }
     };
 
     useEffect(() => {
@@ -88,17 +101,24 @@ function Users(props) {
 
     return (
         <Admin title="Panel">
-            <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
-            <Content>
-                <h5 className="font-bold text-black inline-block">Usuarios</h5>
-                <button
-                    className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
-                    onClick={showCreateUser}>
-                    <i
-                        className="inline fa fa-user-plus fa-fw"/>
-                </button>
-                <Table columns={columns} data={users} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
-            </Content>
+            { isLessThanLG && isInfoBoxOpen && (
+                <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
+            )}
+            { !isLessThanLG && (
+                <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
+            )}
+            {!mobileShowInfoBoxes && (
+                <Content>
+                    <h5 className="font-bold text-black inline-block">Usuarios</h5>
+                    <button
+                        className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                        onClick={showCreateUser}>
+                        <i
+                            className="inline fa fa-user-plus fa-fw"/>
+                    </button>
+                    <Table columns={columns} data={users} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                </Content>
+            )}
         </Admin>
     );
 }

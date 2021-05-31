@@ -62,6 +62,59 @@ function Home(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Shared/utils.js":
+/*!**************************************!*\
+  !*** ./resources/js/Shared/utils.js ***!
+  \**************************************/
+/*! exports provided: getParameterByName, onChange, encodeData, breakpoints */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onChange", function() { return onChange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeData", function() { return encodeData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "breakpoints", function() { return breakpoints; });
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// eslint-disable-next-line import/prefer-default-export
+
+function getParameterByName(name) {
+  var match = RegExp("[?&]".concat(name, "=([^&]*)")).exec(window.location.search);
+  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+var onChange = function onChange(_ref) {
+  var data = _ref.data,
+      setData = _ref.setData,
+      name = _ref.name,
+      value = _ref.value;
+  setData(_objectSpread({}, data, _defineProperty({}, name, value)));
+};
+function encodeData(data) {
+  return Object.keys(data).map(function (key) {
+    return [key, data[key]].map(encodeURIComponent).join('=');
+  }).join('&');
+}
+var breakpoints = {
+  'sm': 640,
+  // => @media (min-width: 640px) { ... }
+  'md': 768,
+  // => @media (min-width: 768px) { ... }
+  'lg': 1024,
+  // => @media (min-width: 1024px) { ... }
+  'xl': 1280,
+  // => @media (min-width: 1280px) { ... }
+  '2xl': 1536 // => @media (min-width: 1536px) { ... }
+
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/BreadCard.jsx":
 /*!***********************************************!*\
   !*** ./resources/js/components/BreadCard.jsx ***!
@@ -281,6 +334,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -296,16 +350,53 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 /* To handle checked state this component requires a single of css */
 
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 function Pagination(_ref) {
   var items = _ref.items;
+
+  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_3__["useWindowSize"])(),
+      isLessThanMD = _useWindowSize.isLessThanMD;
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     className: "py-10 block w-full flex justify-center"
   }, items && items.data && items.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pagination mt-6 -mb-1 flex flex-wrap"
   }, items.links && items.links.map(function (link, key) {
+    if (isLessThanMD) {
+      // Prev + and dots disabled
+      if (link.url === null) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: key,
+          className: "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400 ".concat(link.label === 'Next' ? 'ml-auto' : '')
+        }, link.label);
+      } // prev active
+
+
+      if (key === 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+          key: key,
+          "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'border-brand-orange bg-orange-400 text-white hover:text-gray-600' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+          ,
+          href: link.url
+        }, link.label);
+      } // next
+
+
+      if (key + 1 === items.links.length) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+          key: key,
+          "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'border-brand-orange bg-orange-400 text-white hover:text-gray-600' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+          ,
+          href: link.url
+        }, link.label);
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+    }
+
     if (link.url === null) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: key,
@@ -322,6 +413,70 @@ function Pagination(_ref) {
   })));
 }
 ;
+
+/***/ }),
+
+/***/ "./resources/js/hooks/useWindowSize.js":
+/*!*********************************************!*\
+  !*** ./resources/js/hooks/useWindowSize.js ***!
+  \*********************************************/
+/*! exports provided: useWindowSize */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useWindowSize", function() { return useWindowSize; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/utils */ "./resources/js/Shared/utils.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+ // Hook
+
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    width: undefined,
+    height: undefined,
+    isLessThanMD: undefined,
+    isLessThanLG: undefined
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      windowSize = _useState2[0],
+      setWindowSize = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        isLessThanMD: window.innerWidth <= _Shared_utils__WEBPACK_IMPORTED_MODULE_1__["breakpoints"].md,
+        isLessThanLG: window.innerWidth <= _Shared_utils__WEBPACK_IMPORTED_MODULE_1__["breakpoints"].lg
+      });
+    } // Add event listener
+
+
+    window.addEventListener("resize", handleResize); // Call handler right away so state gets updated with initial window size
+
+    handleResize(); // Remove event listener on cleanup
+
+    return function () {
+      return window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty array ensures that effect is only run on mount
+
+  return windowSize;
+}
 
 /***/ })
 
