@@ -119,7 +119,9 @@ function Order() {
                         {/* Map */}
                         {/* Mapa */}
                         <div className={`${showMap ? '' : 'hidden'} border h-56 mt-4 bg-brand-gray sm:block`}>
-                            <Map store={store && stores.filter((s) => s.id === store)[0]} />
+                            { !window.Cypress && (
+                                <Map store={store && stores.filter((s) => s.id === store)[0]} />
+                            )}
                         </div>
                         {/* Ver mapa */}
                         <button

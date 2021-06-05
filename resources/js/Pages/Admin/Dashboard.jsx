@@ -137,7 +137,9 @@ function Dashboard(props) {
                         {isHistoric ? 'Pedidos' : 'Pedidos anteriores'}
                     </InertiaLink>
                 </div>
-                <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
+                <div className="w-full overflow-y-hidden">
+                    <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
+                </div>
                 {isPaginateActive && (
                     <Pagination items={orderAll} />
                 )}

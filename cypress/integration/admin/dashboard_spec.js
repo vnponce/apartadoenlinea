@@ -24,7 +24,6 @@ describe('Dashboard', () => {
         App\\Order::first()
     `).then((order) => {
       cy.contains(order.name);
-      cy.contains('Creado');
       cy.contains('Pendiente');
     });
   });

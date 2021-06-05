@@ -6,10 +6,10 @@ describe('Create orders', () => {
     price: 2000,
   };
   const customer = {
-    name: 'Abel',
-    lastname: 'Ponce',
+    name: 'John',
+    lastname: 'Doe',
     phone: '2299001122',
-    email: 'abel@ponce.com',
+    email: 'john@doe.com',
   };
 
   beforeEach(() => {
@@ -199,7 +199,7 @@ describe('Create orders', () => {
     cy.visit('/').contains('Great Bocadillo')
       .click().contains('Great Bocadillo');
     cy.findByLabelText(/si no deseas alg.n ingrediente, especif.calo:/i).type('sin pan');
-    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias Nedy');
+    cy.findByLabelText(/deseas personalizar tu pastel\? de la forma lo env.es ser. escrito/i).type('Gracias John');
     cy.findByLabelText(/cantidad/i).type('{selectall}{backspace}6');
     cy.findByRole('button', { name: /poner en la charola/i }).click();
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
@@ -216,7 +216,7 @@ describe('Create orders', () => {
       cy.log('pivot =>', { comment, quantity, customMessage });
       expect(comment).to.have.string('sin pan');
       expect(quantity).to.be.eq(6);
-      expect(customMessage).to.have.string('Gracias Nedy');
+      expect(customMessage).to.have.string('Gracias John');
     });
   });
 });

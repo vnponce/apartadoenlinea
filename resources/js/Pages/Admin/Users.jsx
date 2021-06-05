@@ -116,7 +116,9 @@ function Users(props) {
                         <i
                             className="inline fa fa-user-plus fa-fw"/>
                     </button>
-                    <Table columns={columns} data={users} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                    <div className="w-full overflow-y-hidden">
+                        <Table columns={columns} data={users} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                    </div>
                 </Content>
             )}
         </Admin>

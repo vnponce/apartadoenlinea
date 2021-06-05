@@ -7,12 +7,14 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import Content from "../../components/Admin/Content";
 import Pagination from "../../components/Pagination";
 // import 'sweetalert2/src/sweetalert2.scss'
-import {breakpoints} from "../../Shared/utils";
+import {breakpoints, getParameterByName} from "../../Shared/utils";
 import { useWindowSize } from '../../hooks/useWindowSize';
+import Input from "../../components/Input";
 
 
 function Products(props) {
     const { products, flash: { success_message } } = props;
+    const [productToSearch, setProductToSearch] = useState('');
     const [dataSelected, setDataSelected] = useState(null);
     const [createProduct, setCreateProduct] = useState(null);
     const [editing, setEditing] = useState(false);
@@ -95,6 +97,21 @@ function Products(props) {
 
     const getData = data => Inertia.visit(`?page=${data.page}`);
 
+    const onChange = (e) => {
+        if (e.key === 'Enter') {
+            toSearch();
+            // return false;
+        }
+        setProductToSearch(e.target.value);
+    };
+
+    const toSearch = () => {
+        const searchProduct = productToSearch ? `q=${productToSearch}` : '';
+        const url = `/admin/products?${searchProduct}`;
+        // Inertia.visit(url);
+    };
+
+
     return (
         <Admin title="Panel">
             { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
@@ -103,6 +120,26 @@ function Products(props) {
             {/*Graph Content */}
             {!mobileShowInfoBoxes && (
                 <Content>
+                    <div className="w-full flex items-end mb-3">
+                        <div className="inline-block flex mr-3">
+                            <Input
+                                id="id"
+                                label="Nombre o Id"
+                                onChange={onChange}
+                                placeholder="ej. Juan"
+                                error={[]}
+                                onKeyDown={onChange}
+                                value={productToSearch}
+                            />
+                        </div>
+                        <div>
+                            <button
+                                className="h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"
+                                onClick={toSearch}
+                            >Buscar</button>
+                        </div>
+
+                    </div>
                     <h5 className="font-bold text-black inline-block">Productos</h5>
                     <button
                         className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
@@ -110,7 +147,9 @@ function Products(props) {
                         <i
                             className="inline fa fa-bread-slice fa-fw"/>+
                     </button>
-                    <Table columns={columns} data={products.data} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                    <div className="w-full overflow-y-hidden">
+                        <Table columns={columns} data={products.data} onClick={row => openedAndShow(row.index)} selected={dataSelected}/>
+                    </div>
                     <Pagination items={products} />
                 </Content>
             )}

@@ -308,6 +308,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Pagination */ "./resources/js/components/Pagination.jsx");
 /* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
 /* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/Input */ "./resources/js/components/Input.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -328,34 +329,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Products(props) {
   var products = props.products,
       success_message = props.flash.success_message;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
-      dataSelected = _useState2[0],
-      setDataSelected = _useState2[1];
+      productToSearch = _useState2[0],
+      setProductToSearch = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState4 = _slicedToArray(_useState3, 2),
-      createProduct = _useState4[0],
-      setCreateProduct = _useState4[1];
+      dataSelected = _useState4[0],
+      setDataSelected = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState6 = _slicedToArray(_useState5, 2),
-      editing = _useState6[0],
-      setEditing = _useState6[1];
+      createProduct = _useState6[0],
+      setCreateProduct = _useState6[1];
 
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState8 = _slicedToArray(_useState7, 2),
-      mobileShowInfoBoxes = _useState8[0],
-      setMobileShowInfoBoxes = _useState8[1];
+      editing = _useState8[0],
+      setEditing = _useState8[1];
 
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState10 = _slicedToArray(_useState9, 2),
-      isInfoBoxOpen = _useState10[0],
-      setIsInfoBoxOpen = _useState10[1];
+      mobileShowInfoBoxes = _useState10[0],
+      setMobileShowInfoBoxes = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      isInfoBoxOpen = _useState12[0],
+      setIsInfoBoxOpen = _useState12[1];
 
   var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_9__["useWindowSize"])(),
       isLessThanLG = _useWindowSize.isLessThanLG;
@@ -437,6 +444,19 @@ function Products(props) {
     return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].visit("?page=".concat(data.page));
   };
 
+  var onChange = function onChange(e) {
+    if (e.key === 'Enter') {
+      toSearch(); // return false;
+    }
+
+    setProductToSearch(e.target.value);
+  };
+
+  var toSearch = function toSearch() {
+    var searchProduct = productToSearch ? "q=".concat(productToSearch) : '';
+    var url = "/admin/products?".concat(searchProduct); // Inertia.visit(url);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
   }, (isLessThanLG && isInfoBoxOpen || !isLessThanLG) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -446,21 +466,38 @@ function Products(props) {
     setCreateProduct: setCreateProduct,
     editing: editing,
     setEditing: setEditing
-  }), !mobileShowInfoBoxes && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_6__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+  }), !mobileShowInfoBoxes && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_6__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full flex items-end mb-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block flex mr-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    id: "id",
+    label: "Nombre o Id",
+    onChange: onChange,
+    placeholder: "ej. Juan",
+    error: [],
+    onKeyDown: onChange,
+    value: productToSearch
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
+    onClick: toSearch
+  }, "Buscar"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black inline-block"
   }, "Productos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: showCreateProduct
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "inline fa fa-bread-slice fa-fw"
-  }), "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full overflow-y-hidden"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
     columns: columns,
     data: products.data,
     onClick: function onClick(row) {
       return openedAndShow(row.index);
     },
     selected: dataSelected
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
     items: products
   })));
 }
@@ -848,7 +885,6 @@ function CreateProduct(props) {
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_filepond__WEBPACK_IMPORTED_MODULE_3__["FilePond"], {
-    className: "w-full m-auto sm:w-7/12 lg:w-full",
     onupdatefiles: function onupdatefiles(fileItems) {
       // setAvatar(fileItems.map(fileItem => fileItem.file));
       setAvatar(fileItems[0].file);
@@ -882,7 +918,7 @@ function CreateProduct(props) {
     placeholder: "12.50",
     error: errors.price
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full sm:w-7/12 lg:w-full m-auto font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
+    className: "w-full font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "category_id",
     className: "hover:border-grey-900 italic sm:block"
@@ -898,9 +934,7 @@ function CreateProduct(props) {
     }, category.name);
   }))), errors.category_id && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: 'text-sm m-auto text-red-500 error category'
-  }, errors.category_id[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full sm:w-7/12 lg:w-full m-auto"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, errors.category_id[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_9__["default"], {
     label: "Disponible",
     checked: productData.available,
     setChecked: function setChecked() {
@@ -927,7 +961,7 @@ function CreateProduct(props) {
       }));
     },
     error: errors.customizable
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     className: "my-6"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
@@ -1060,7 +1094,8 @@ function Input(_ref) {
     style: {
       height: '2.4rem'
     },
-    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed",
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed" // className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed"
+    ,
     onKeyDown: onKeyDown
   }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error error-".concat(id)
@@ -1372,8 +1407,9 @@ function Textarea(_ref) {
     name: id,
     placeholder: placeholder || '',
     value: inputValue || '',
-    onChange: onChange,
-    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed",
+    onChange: onChange // className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed"
+    ,
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed",
     onKeyDown: onKeyDown,
     rows: "4"
   }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {

@@ -86,12 +86,14 @@ function Suggestions(props) {
             <Content>
                 <SearchBar solvers={users} />
                 <h5 className="font-bold text-black inline-block">Sugerencias</h5>
-                <Table
-                    columns={columns}
-                    data={suggestions}
-                    onClick={(row) => openedAndShow(row.index)}
-                    selected={dataSelected}
-                />
+                <div className="w-full overflow-y-hidden">
+                    <Table
+                        columns={columns}
+                        data={suggestions}
+                        onClick={(row) => openedAndShow(row.index)}
+                        selected={dataSelected}
+                    />
+                </div>
                 <Pagination items={suggestionsToPaginate} />
             </Content>
         </Admin>

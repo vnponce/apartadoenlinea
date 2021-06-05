@@ -705,7 +705,7 @@ export default function CreateProduct(props) {
   };
   return (
         <>
-            <FilePond className="w-full m-auto sm:w-7/12 lg:w-full" onupdatefiles={(fileItems) => {
+            <FilePond onupdatefiles={(fileItems) => {
               // setAvatar(fileItems.map(fileItem => fileItem.file));
               setAvatar(fileItems[0].file);
             }}/>
@@ -741,7 +741,7 @@ export default function CreateProduct(props) {
                 placeholder="12.50"
                 error={errors.price}
             />
-            <div className="w-full sm:w-7/12 lg:w-full m-auto font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
+            <div className="w-full font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify">
                 <label htmlFor="category_id" className="hover:border-grey-900 italic sm:block">Categoría</label>
                 <select
                     id="category_id"
@@ -756,11 +756,12 @@ export default function CreateProduct(props) {
             </div>
             {errors.category_id && <p className={'text-sm m-auto text-red-500 error category'}>{errors.category_id[0]}</p>}
 
-            <div className="w-full sm:w-7/12 lg:w-full m-auto">
+            {/*<div className="w-full sm:w-7/12 lg:w-full m-auto">*/}
+            {/*<div className="w-full sm:w-7/12 lg:w-full m-auto">*/}
                 <Checkbox label="Disponible" checked={productData.available} setChecked={() => setProductData({ ...productData, available: productData.available === 0 ? 1 : 0 })} error={errors.available} />
                 <Checkbox label="Favorito" checked={productData.favorite} setChecked={() => setProductData({ ...productData, favorite: productData.favorite === 0 ? 1 : 0 })} error={errors.favorite} />
                 <Checkbox label="Personalizable" checked={productData.customizable} setChecked={() => setProductData({ ...productData, customizable: productData.customizable === 0 ? 1 : 0 })} error={errors.customizable} />
-            </div>
+            {/*</div>*/}
             <hr className="my-6"/>
             <button
                 className="inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"

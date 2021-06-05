@@ -323,7 +323,7 @@ function Order() {
     className: "text-sm text-red-500 error hour"
   }, errors.hour[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "".concat(showMap ? '' : 'hidden', " border h-56 mt-4 bg-brand-gray sm:block")
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, !window.Cypress && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
     store: store && stores.filter(function (s) {
       return s.id === store;
     })[0]

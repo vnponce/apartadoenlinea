@@ -101,7 +101,9 @@ function Stores(props) {
                     {/*    <i*/}
                     {/*        className="inline fa fa-store fa-fw"/>*/}
                     {/*</button>*/}
-                    <Table columns={columns} data={stores} onClick={row => openedAndShow(row.index)} selected={false}/>
+                    <div className="w-full overflow-y-hidden">
+                        <Table columns={columns} data={stores} onClick={row => openedAndShow(row.index)} selected={false}/>
+                    </div>
                 </Content>
             )}
         </Admin>
