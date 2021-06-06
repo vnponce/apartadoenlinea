@@ -18,13 +18,13 @@ export default function SearchStatus(props) {
     const { status, statuses, setStatus } = props;
 
     return (
-        <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
+        <SelectWrapper className="font-light text-gray-600 lg:text-justify">
             <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Estatus</label>
             <Select
                 options={statuses}
                 inputId="status"
                 name="status"
-                className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+                className="w-full"
                 // defaultMenuIsOpen
                 classNamePrefix="status-selector"
                 /*

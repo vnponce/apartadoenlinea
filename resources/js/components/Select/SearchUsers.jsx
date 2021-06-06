@@ -18,13 +18,13 @@ export default function SearchUsers(props) {
   const { user, users, setUser } = props;
 
   return (
-        <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">
+        <SelectWrapper className="font-light text-gray-600 lg:text-justify">
             <label htmlFor="user" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Solucionado por:</label>
             <Select
                 options={users}
                 inputId="user"
                 name="user"
-                className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+                className="w-full"
                 classNamePrefix="users-selector"
                 placeholder="Elige estatus"
                 onChange={(selected) => {

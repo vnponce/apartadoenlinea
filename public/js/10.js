@@ -669,7 +669,7 @@ function Details(props) {
   }, "Sugerencia solucionada por: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-brand-green"
   }, data.activity[data.activity.length - 1].causer.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
+    className: "w-full inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: handleOnCancel
   }, "Cerrar"))));
 }
@@ -926,9 +926,9 @@ function SearchBar(props) {
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-col sm:flex-row"
+    className: "flex flex-col sm:flex-row sm:items-end"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full sm:inline-block sm:mx-2 sm:w-1/5"
+    className: "w-full sm:mx-2"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "id",
     label: "Nombre o correo",
@@ -938,7 +938,7 @@ function SearchBar(props) {
     onKeyDown: onChange,
     value: name
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full sm:inline-block sm:mx-2 sm:w-1/5"
+    className: "w-full sm:mx-2"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchUsers__WEBPACK_IMPORTED_MODULE_4__["default"], {
     setUser: setSolver,
     users: solvers.map(function (u) {
@@ -949,7 +949,7 @@ function SearchBar(props) {
     }),
     user: solverObject
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full sm:inline-block sm:mx-2 sm:w-1/5"
+    className: "w-full sm:mx-2"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_6__["default"], {
     status: status,
     setStatus: setStatusObject,
@@ -1265,7 +1265,7 @@ function SearchStatus(props) {
       statuses = props.statuses,
       setStatus = props.setStatus;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
+    className: "font-light text-gray-600 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "store",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
@@ -1273,7 +1273,7 @@ function SearchStatus(props) {
     options: statuses,
     inputId: "status",
     name: "status",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    className: "w-full" // defaultMenuIsOpen
     ,
     classNamePrefix: "status-selector"
     /*
@@ -1351,7 +1351,7 @@ function SearchUsers(props) {
       users = props.users,
       setUser = props.setUser;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
+    className: "font-light text-gray-600 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "user",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
@@ -1359,7 +1359,7 @@ function SearchUsers(props) {
     options: users,
     inputId: "user",
     name: "user",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full",
+    className: "w-full",
     classNamePrefix: "users-selector",
     placeholder: "Elige estatus",
     onChange: function onChange(selected) {

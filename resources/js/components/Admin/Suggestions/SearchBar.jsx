@@ -147,8 +147,8 @@ export default function SearchBar(props) {
   };
 
   return (
-        <div className="flex flex-col sm:flex-row">
-            <div className="w-full sm:inline-block sm:mx-2 sm:w-1/5">
+        <div className="flex flex-col sm:flex-row sm:items-end">
+            <div className="w-full sm:mx-2">
                 <Input
                     id="id"
                     label="Nombre o correo"
@@ -159,7 +159,7 @@ export default function SearchBar(props) {
                     value={name}
                 />
             </div>
-            <div className="w-full sm:inline-block sm:mx-2 sm:w-1/5">
+            <div className="w-full sm:mx-2">
                 {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
                 <SearchUsers setUser={setSolver} users={solvers.map(u => ({ label: u.name, value: u.id }))} user={solverObject}/>
             </div>
@@ -194,7 +194,7 @@ export default function SearchBar(props) {
             {/*            </DateWrapper>*/}
             {/*        </div>*/}
             {/*    </div>*/}
-            <div className="w-full sm:inline-block sm:mx-2 sm:w-1/5">
+            <div className="w-full sm:mx-2">
                 <SearchStatus
                     status={status}
                     setStatus={setStatusObject}

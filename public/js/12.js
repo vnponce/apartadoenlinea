@@ -1222,7 +1222,7 @@ function SearchStatus(props) {
       statuses = props.statuses,
       setStatus = props.setStatus;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
-    className: "font-light text-gray-600 mt-4 lg:text-justify"
+    className: "font-light text-gray-600 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "store",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
@@ -1230,7 +1230,7 @@ function SearchStatus(props) {
     options: statuses,
     inputId: "status",
     name: "status",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    className: "w-full" // defaultMenuIsOpen
     ,
     classNamePrefix: "status-selector"
     /*
