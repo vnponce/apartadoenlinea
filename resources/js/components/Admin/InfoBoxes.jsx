@@ -6,6 +6,7 @@ import StoreDetails from "./InfoBoxes/StoreDetails";
 import ProductsList from "./InfoBoxes/ProductsList";
 import {Inertia} from "@inertiajs/inertia";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
+import {useWindowSize} from "../../hooks/useWindowSize";
 // import 'sweetalert2/src/sweetalert2.scss'
 
 
@@ -15,6 +16,14 @@ export default function InfoBoxes(props) {
     const [nextStatus, setNextStatus] = useState(false);
     const [isCancel, setIsCancel] = useState(false);
     const { data } = props;
+    const { isLessThanLG } = useWindowSize();
+
+    const onCancelHandle = () => {
+        const { hostname } = window.location;
+        const url = window.location.href;
+        const [port, path] = url.split(hostname);
+        Inertia.visit(path);
+    };
 
     useEffect(() => {
         if(data) {
@@ -145,11 +154,24 @@ export default function InfoBoxes(props) {
 
     return (
     <div id="dash-content"
-         className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
+         className="relative lg:h-auto bg-gray-200 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
+        { isLessThanLG && (
+            <div className="w-full sticky top-0 right-0 flex flex-col items-end pr-3 pt-3">
+            <span
+                onClick={onCancelHandle}
+                className="w-16 h-12 cursor-pointer rounded-full bg-white flex items-center justify-center hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
+                </svg>
+            </span>
+            </div>
+        ) }
         { data && (
-            <div className="w-1/2 lg:w-full">
+            <div className="w-full">
                 <div
-                    className="md:mx-6 md:my-3">
+                    className="m-2 md:mx-6 md:my-3">
                     <div>
                         Pedido No: <strong>{data.uuid}</strong>
                     </div>
@@ -205,7 +227,7 @@ export default function InfoBoxes(props) {
             </div>
         )}
         { !data && (
-            <div className="w-1/2 lg:w-full">
+            <div className="w-full">
                 <div
                     className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
                     <div className="flex flex-col items-center">

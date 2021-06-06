@@ -176,8 +176,8 @@ export default function SearchBar() {
   };
 
   return (
-        <div className="flex">
-            <div className="inline-block mx-2 w-1/5">
+        <div className="flex flex-col sm:flex-row sm:items-end">
+            <div className="inline-block mx-2 flex-1">
                 <Input
                     id="id"
                     label="Nombre o Id"
@@ -189,18 +189,18 @@ export default function SearchBar() {
                 />
             </div>
             { user.isAdmin && (
-                <div className="inline-block mx-2 w-1/5">
+                <div className="inline-block mx-2 flex-1">
                     {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
                     <Stores setStore={setStore} stores={stores} storeSelected={storeObject}/>
                 </div>
             )}
-            <div className="inline-block mx-2 w-1/5">
+            <div className="inline-block mx-2 flex-1">
                     {/* Día */}
                     {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
                     <div className="font-light text-gray-600 mt-4 lg:text-justify">
                         <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Día</label>
 
-                        <DateWrapper className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full">
+                        <DateWrapper className="w-full">
                             <SingleDatePicker
                                 id="date"
                                 name="date"
@@ -209,7 +209,7 @@ export default function SearchBar() {
                                 focused={focus}
                                 onFocusChange={(props) => setFocus(props.focused)}
                                 // disabled={!store}
-                                className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+                                className="w-full"
                                 displayFormat="D MMMM YYYY"
                                 numberOfMonths={1}
                                 placeholder="Elige una fecha"
@@ -225,7 +225,7 @@ export default function SearchBar() {
                         </DateWrapper>
                     </div>
                 </div>
-            <div className="inline-block mx-2 w-1/5">
+            <div className="inline-block mx-2 flex-1">
                 <SearchStatus
                     status={status}
                     setStatus={setStatusObject}
