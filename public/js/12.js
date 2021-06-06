@@ -193,10 +193,11 @@ function Dashboard(props) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "font-bold text-black w-3/12"
-  }, isHistoric ? 'Pedidos anteriores' : 'Pedidos'), "|", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
-    href: isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate',
-    className: "ml-3"
+    className: "font-bold text-black"
+  }, isHistoric ? 'Pedidos anteriores' : 'Pedidos'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "mx-3"
+  }, "|"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+    href: isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate'
   }, isHistoric ? 'Pedidos' : 'Pedidos anteriores')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full overflow-y-hidden"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -763,6 +764,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Input */ "./resources/js/components/Input.jsx");
 /* harmony import */ var _Select_SearchStatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Select/SearchStatus */ "./resources/js/components/Select/SearchStatus.jsx");
 /* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
+/* harmony import */ var _ListItemValue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../ListItemValue */ "./resources/js/components/ListItemValue.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -795,8 +797,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-function SearchBar() {
+function SearchBar(_ref) {
+  var setAccordionText = _ref.setAccordionText;
+
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__["usePage"])(),
       user = _usePage.auth.user,
       stores = _usePage.stores;
@@ -881,6 +886,20 @@ function SearchBar() {
     }
   };
 
+  var statusObjectBluePrint = {
+    'not-delivered': {
+      label: 'No entregados',
+      value: 'not-delivered'
+    },
+    'delivered': {
+      label: 'Entregados',
+      value: 'delivered'
+    },
+    'all': {
+      label: 'Todos',
+      value: 'all'
+    }
+  };
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var queryId = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('id');
     setId(queryId || '');
@@ -890,7 +909,25 @@ function SearchBar() {
 
     setDate(queryDate && queryDate !== 'historic' ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate) : null);
     var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_10__["getParameterByName"])('status');
-    setStatusObject(queryStatus);
+    setStatusObject(queryStatus); // creando el texto
+
+    setAccordionText(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListItemValue__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      items: [{
+        filter: 'nombre o id:',
+        value: queryId
+      }, {
+        filter: 'Sucursal:',
+        value: queryStore ? stores.find(function (current) {
+          return current.id === queryStore * 1;
+        }).name : null
+      }, {
+        filter: 'fecha:',
+        value: queryDate && queryDate !== 'historic' ? moment__WEBPACK_IMPORTED_MODULE_5___default()(queryDate).format('D MMMM, YYYY') : null
+      }, {
+        filter: 'Estatus:',
+        value: queryStatus ? statusObjectBluePrint[queryStatus].label : null
+      }]
+    }));
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (store && stores) {
@@ -1050,9 +1087,9 @@ function SearchBar() {
       value: 'all'
     }]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-end"
+    className: "w-auto mx-2 sm:w-auto mt-2 sm:mt-0 flex items-end"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
+    className: "w-full h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
     onClick: toSearch
   }, "Buscar")));
 }
@@ -1195,6 +1232,35 @@ function DateSelector(props) {
     showClearDate: true,
     block: true
   })));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/ListItemValue.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/ListItemValue.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ListItemValue; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ListItemValue(_ref) {
+  var items = _ref.items;
+  return items.filter(function (item) {
+    return item.value;
+  }).map(function (_ref2) {
+    var filter = _ref2.filter,
+        value = _ref2.value;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, filter, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "ml-2 font-bold"
+    }, value));
+  });
 }
 ;
 

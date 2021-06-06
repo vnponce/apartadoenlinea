@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","2":"1922b02fd6ab80fdd0fb","3":"83dde37a8b09d1eab238","4":"ed351820e3b66ee63436","5":"f8a0484bf7ac7ef9a464","6":"8520bd2aa5a4a8ec41df","7":"a87907d1562108345875","8":"6c4da74f2440880fea43","9":"07457d5a44df1daf0b39","10":"e3442fbe933a8728e0db","11":"cec5053badfd09e20d3d","12":"56c02e1b87ebad18dfb3","13":"ee03d6ce5902d79bfb63","14":"afad0634ddeb328fb173","15":"90994a7eab975b8e87c0","16":"d12c9a4a27629cf66d1e","17":"72e4d63a11d198ee7094","18":"fadfe02de763d2c095eb","19":"0262d622595479930a39","20":"c5d73568c0f4337c9909","21":"5beeb193fa4c3e124e95","22":"27f2fbab76ef1e9bedf4","23":"f40950128244ffaff65a","24":"d010853789c211b29082","25":"8d02f364ff0b2be4c59f","26":"68716ba406bc85901d60","27":"253a6067e83550db8562"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"d4c0a6e5c5e5670d45fa","1":"0855788a40598c00c4b8","3":"ffe9da50649e48742b5b","4":"a7ea294ebf973e16dcd4","5":"f8a0484bf7ac7ef9a464","6":"20ad22048afbd5c32d7f","7":"6bdfa6dd68554a84c708","8":"364ff99807fba45f784c","9":"c20a1f9b338848177070","10":"9983a96a578c55dbb3ee","11":"8c826c798972fbad8b75","12":"f36c8cd57f0bc49b8916","13":"f08a28f5c786176b99c9","14":"10578a66be7e42583586","15":"90994a7eab975b8e87c0","16":"d12c9a4a27629cf66d1e","17":"72e4d63a11d198ee7094","18":"fadfe02de763d2c095eb","19":"0262d622595479930a39","20":"c5d73568c0f4337c9909","21":"5beeb193fa4c3e124e95","22":"7c08164a218797b12fee","23":"c842ad6ae8c08f2e84f7","24":"d010853789c211b29082","25":"18143ef335ccfdb91805","26":"c73550d0774b892cec27","27":"56f555516eed6ebe9331","45":"bc993b6e79f4e0be723a"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -34561,9 +34561,9 @@ var map = {
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
 		1,
-		7,
+		4,
+		3,
 		9,
-		2,
 		5,
 		12
 	],
@@ -34571,9 +34571,9 @@ var map = {
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		0,
 		1,
-		7,
+		4,
+		3,
 		9,
-		2,
 		5,
 		12
 	],
@@ -34581,26 +34581,26 @@ var map = {
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		1,
+		4,
 		7,
-		8,
 		5,
-		13
+		14
 	],
 	"./Admin/Products.jsx": [
 		"./resources/js/Pages/Admin/Products.jsx",
 		0,
 		1,
+		4,
 		7,
-		8,
 		5,
-		13
+		14
 	],
 	"./Admin/Stores": [
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		1,
+		4,
 		7,
-		8,
 		5,
 		15
 	],
@@ -34608,31 +34608,31 @@ var map = {
 		"./resources/js/Pages/Admin/Stores.jsx",
 		0,
 		1,
+		4,
 		7,
-		8,
 		5,
 		15
 	],
 	"./Admin/Suggestions": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
-		7,
+		4,
 		5,
-		10
+		13
 	],
 	"./Admin/Suggestions.jsx": [
 		"./resources/js/Pages/Admin/Suggestions.jsx",
 		0,
-		7,
+		4,
 		5,
-		10
+		13
 	],
 	"./Admin/Users": [
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		1,
+		4,
 		7,
-		8,
 		5,
 		20
 	],
@@ -34640,8 +34640,8 @@ var map = {
 		"./resources/js/Pages/Admin/Users.jsx",
 		0,
 		1,
+		4,
 		7,
-		8,
 		5,
 		20
 	],
@@ -34649,19 +34649,19 @@ var map = {
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		22
+		10,
+		9,
+		8,
+		23
 	],
 	"./Checkout.jsx": [
 		"./resources/js/Pages/Checkout.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		22
+		10,
+		9,
+		8,
+		23
 	],
 	"./Example": [
 		"./resources/js/Pages/Example.js",
@@ -34675,195 +34675,195 @@ var map = {
 		"./resources/js/Pages/Home.js",
 		0,
 		1,
-		4,
-		2,
-		3,
+		10,
+		9,
+		8,
 		16
 	],
 	"./Home.js": [
 		"./resources/js/Pages/Home.js",
 		0,
 		1,
-		4,
-		2,
-		3,
+		10,
+		9,
+		8,
 		16
 	],
 	"./Landing": [
 		"./resources/js/Pages/Landing.jsx",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		17
 	],
 	"./Landing.jsx": [
 		"./resources/js/Pages/Landing.jsx",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		17
 	],
 	"./Landings/Christmas": [
 		"./resources/js/Pages/Landings/Christmas.jsx",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		18
 	],
 	"./Landings/Christmas.jsx": [
 		"./resources/js/Pages/Landings/Christmas.jsx",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		18
 	],
 	"./Landings/RoscasGaribaldi": [
 		"./resources/js/Pages/Landings/RoscasGaribaldi.js",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		19
 	],
 	"./Landings/RoscasGaribaldi.js": [
 		"./resources/js/Pages/Landings/RoscasGaribaldi.js",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		19
 	],
 	"./Login": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		25
+		10,
+		9,
+		8,
+		26
 	],
 	"./Login.jsx": [
 		"./resources/js/Pages/Login.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		25
+		10,
+		9,
+		8,
+		26
 	],
 	"./Order": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		4,
-		6,
-		9,
-		2,
+		10,
+		11,
 		3,
-		14
+		9,
+		8,
+		22
 	],
 	"./Order.jsx": [
 		"./resources/js/Pages/Order.jsx",
 		0,
 		1,
-		4,
-		6,
-		9,
-		2,
+		10,
+		11,
 		3,
-		14
+		9,
+		8,
+		22
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
 		0,
 		1,
-		4,
-		11,
-		2,
-		3,
-		26
+		10,
+		6,
+		9,
+		8,
+		27
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
 		0,
 		1,
-		4,
-		11,
-		2,
-		3,
-		26
+		10,
+		6,
+		9,
+		8,
+		27
 	],
 	"./Success": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		21
 	],
 	"./Success.jsx": [
 		"./resources/js/Pages/Success.jsx",
 		0,
 		1,
-		4,
-		6,
-		2,
-		3,
+		10,
+		11,
+		9,
+		8,
 		21
 	],
 	"./Suggestion": [
 		"./resources/js/Pages/Suggestion.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		23
+		10,
+		9,
+		8,
+		25
 	],
 	"./Suggestion.jsx": [
 		"./resources/js/Pages/Suggestion.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		23
+		10,
+		9,
+		8,
+		25
 	],
 	"./TermsConditions": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		27
+		10,
+		9,
+		8,
+		45
 	],
 	"./TermsConditions.jsx": [
 		"./resources/js/Pages/TermsConditions.jsx",
 		0,
 		1,
-		4,
-		2,
-		3,
-		27
+		10,
+		9,
+		8,
+		45
 	]
 };
 function webpackAsyncContext(req) {

@@ -9,6 +9,7 @@ import Stores from '../Select/SearchStores';
 import Input from '../Input';
 import SearchStatus from '../Select/SearchStatus';
 import { getParameterByName } from '../../Shared/utils';
+import ListItemValue from "../ListItemValue";
 
 const DateWrapper = styled.div`
     .DateInput_input {
@@ -19,7 +20,7 @@ const DateWrapper = styled.div`
     }
 `;
 
-export default function SearchBar() {
+export default function SearchBar({ setAccordionText }) {
   const { auth: { user }, stores } = usePage();
   const [id, setId] = useState('');
   const [store, setStore] = useState('');
@@ -78,6 +79,21 @@ export default function SearchBar() {
     }
   };
 
+  const statusObjectBluePrint = {
+      'not-delivered': {
+          label: 'No entregados',
+          value: 'not-delivered',
+      },
+      'delivered': {
+          label: 'Entregados',
+          value: 'delivered',
+      },
+      'all': {
+          label: 'Todos',
+          value: 'all',
+      },
+  }
+
   useEffect(() => {
     const queryId = getParameterByName('id');
     setId(queryId || '');
@@ -88,6 +104,28 @@ export default function SearchBar() {
     setDate((queryDate && queryDate !== 'historic') ? moment(queryDate) : null);
     const queryStatus = getParameterByName('status');
     setStatusObject(queryStatus);
+
+    // creando el texto
+    setAccordionText(<ListItemValue
+      items={[
+          {
+              filter: 'nombre o id:',
+              value: queryId,
+          },
+          {
+              filter: 'Sucursal:',
+              value: queryStore ? stores.find(current => current.id === queryStore * 1).name : null,
+          },
+          {
+              filter: 'fecha:',
+              value: (queryDate && queryDate !== 'historic') ? moment(queryDate).format('D MMMM, YYYY') : null,
+          },
+          {
+              filter: 'Estatus:',
+              value: queryStatus ? statusObjectBluePrint[queryStatus].label : null,
+          }
+      ]}
+    />);
   }, []);
 
   useEffect(() => {
@@ -236,9 +274,9 @@ export default function SearchBar() {
                     ]}
                 />
             </div>
-            <div className="flex items-end">
+            <div className="w-auto mx-2 sm:w-auto mt-2 sm:mt-0 flex items-end">
                 <button
-                    className="h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"
+                    className="w-full h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"
                     onClick={toSearch}
                 >Buscar</button>
             </div>

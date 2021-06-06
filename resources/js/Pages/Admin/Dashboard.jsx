@@ -125,11 +125,11 @@ function Dashboard(props) {
                         <SearchBar stores={stores} searchValues={searchValues} setAccordionText={setAccordionText}/>
                     </Accordion>
                     <div className="flex">
-                        <h5 className="font-bold text-black w-3/12">{isHistoric ? 'Pedidos anteriores' : 'Pedidos'}</h5>
-                        |
+                        <h5 className="font-bold text-black">{isHistoric ? 'Pedidos anteriores' : 'Pedidos'}</h5>
+                        <span className="mx-3">|</span>
                         <InertiaLink
                             href={isHistoric ? '/admin' : '/admin?date=historic&status=all&sort=desc&get=paginate' }
-                            className="ml-3">
+                            >
                             {isHistoric ? 'Pedidos' : 'Pedidos anteriores'}
                         </InertiaLink>
                     </div>
