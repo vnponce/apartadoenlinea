@@ -47,7 +47,7 @@ class OrderTest extends TestCase
         ]);
 
         $response = $this->get('/admin')->assertSee('Nombre');
-        $this->assertDatabaseHas('orders', $order->toArray());
+        $this->assertDatabaseHas('orders', $order->makeHidden('uuid')->toArray());
         // dd($response->getOriginalContent()->getData());
         // dd($response->getOriginalContent()->getData()['page']['props']);
         $this->get('/admin')

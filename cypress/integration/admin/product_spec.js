@@ -15,7 +15,7 @@ describe('Dashboard/Products', () => {
   });
   it('should create products', () => {
     cy.findByRole('button', { name: '+' }).click();
-    cy.findByLabelText(/nombre/i).type('nuevo pan');
+    cy.findByLabelText(/nombre de producto/i).type('nuevo pan');
     cy.findByLabelText(/descripci.n/i).type('descripcion del pan');
     cy.findByLabelText(/ingredientes/i).type('azucar, dulces, colores');
     cy.findByLabelText(/precio/i).type('8');
