@@ -179,7 +179,8 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $order->update($request->toArray());
-        return redirect('/admin')->with('order', $order);
+//        return redirect('/admin')->with('order', $order);
+        return back()->with('order', $order);
     }
 
     /**

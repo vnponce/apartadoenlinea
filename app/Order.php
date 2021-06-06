@@ -77,12 +77,18 @@ class Order extends Model
             case 'placed':
                 return 'En sucursal';
 //            case 'payed':
-//                return 'Pagado';
+//              eturn 'Pagado';
             case 'delivered':
                 return 'Entregado';
             default:
                 return 'N/A';
         }
+    }
+
+    public function getUuidAttribute($value)
+    {
+        [$shortValue] = explode('-', $value);
+        return $shortValue;
     }
 
     // scopes

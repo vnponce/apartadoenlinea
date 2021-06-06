@@ -104,7 +104,8 @@ class SuggestionController extends Controller
         $suggestions = Suggestion::getAllSearched();
 //        dd($suggestions->toArray());
         $users = User::where('role', 'manager')->get();
-        return Inertia::render('Admin/Suggestions', compact('suggestions', 'users', ));
+//        return Inertia::render('Admin/Suggestions', compact('suggestions', 'users', ));
+        return back();
     }
 
     /**
@@ -124,9 +125,8 @@ class SuggestionController extends Controller
 
         $suggestions = Suggestion::getAllSearched();
 
-//        dd($suggestion->toArray());
-
-        return Inertia::render('Admin/Suggestions', compact('suggestions'));
+        //        return Inertia::render('Admin/Suggestions', compact('suggestions'));
+        return back();
     }
 
     /**
