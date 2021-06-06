@@ -9,13 +9,15 @@ export default function Details(props) {
   const { data, hideDetails } = props;
   const [textarea, setTextArea] = useRememberedState('');
 
-  const handleOnChange = (e) => {
-    setTextArea(e.target.value);
+  const handleOnCancel = () => {
+    const { hostname } = window.location;
+    const url = window.location.href;
+    const [port, path] = url.split(hostname);
+    Inertia.visit(path);
   };
 
-  const handleOnCancel = (e) => {
-    setTextArea('');
-    hideDetails();
+  const handleOnChange = (e) => {
+    setTextArea(e.target.value);
   };
 
   const createComment = () => {
@@ -33,7 +35,7 @@ export default function Details(props) {
   // };
 
   return (
-      <div className="w-1/2 lg:w-full">
+      <div className="w-full">
           <div
               className="m-2 md:mx-6 md:my-6">
               <span className="text-sm">{data.name}</span>
@@ -89,9 +91,16 @@ export default function Details(props) {
               {/*    </div> */}
               {/* )} */}
               {data.status_info.is_solved && (
-                  <div className="mt-8">
-                      Sugerencia solucionada por: <span className="text-brand-green">{data.activity[data.activity.length - 1].causer.name}</span>
-                  </div>
+                  <>
+                      <div className="mt-8">
+                          Sugerencia solucionada por: <span className="text-brand-green">{data.activity[data.activity.length - 1].causer.name}</span>
+                      </div>
+                      <button
+                          className="inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0"
+                          onClick={handleOnCancel}>
+                          Cerrar
+                      </button>
+                  </>
               )}
           </div>
       </div>

@@ -26,17 +26,17 @@ export default function SearchBar(props) {
   const [date, setDate] = useState(null);
   const [status, setStatus] = useState({
     label: 'No solucionado',
-    value: 'not-solved',
+    value: 'created',
   });
 
   const [focus, setFocus] = useState(false);
 
   const setStatusObject = (currentStatus) => {
     switch (currentStatus) {
-      case 'not-solved':
+      case 'created':
         setStatus({
           label: 'No solucionado',
-          value: 'not-solved',
+          value: 'created',
         });
         break;
       case 'solved':
@@ -200,7 +200,7 @@ export default function SearchBar(props) {
                     setStatus={setStatusObject}
                     statuses={[
                       { label: '', value: '' },
-                      { label: 'No solucionado', value: 'not-solved' },
+                      { label: 'No solucionado', value: 'created' },
                       { label: 'Solucionado', value: 'solved' },
                       // { label: 'Todos', value: 'all' },
                     ]}

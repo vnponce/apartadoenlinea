@@ -10,6 +10,7 @@ import Content from '../../components/Admin/Content';
 import Pagination from '../../components/Pagination';
 import SearchBar from '../../components/Admin/Suggestions/SearchBar';
 import Accordion from "../../components/Accordion";
+import {useWindowSize} from "../../hooks/useWindowSize";
 
 
 function Suggestions(props) {
@@ -18,6 +19,9 @@ function Suggestions(props) {
   const [dataSelected, setDataSelected] = useState(null);
   const [index, setIndex] = useState(null);
   const [accordionText, setAccordionText] = useState('');
+  const [mobileShowInfoBoxes, setMobileShowInfoBoxes] = useState(false);
+  const [isInfoBoxOpen, setIsInfoBoxOpen] = useState(false);
+  const { isLessThanLG } = useWindowSize();
 
   const columns = React.useMemo(
     () => [
@@ -58,6 +62,10 @@ function Suggestions(props) {
     setIndex(index);
     const data = suggestions[index];
     setDataSelected(data);
+    setIsInfoBoxOpen(true);
+    if(isLessThanLG) {
+      setMobileShowInfoBoxes(true);
+    }
   };
 
   const hideDetails = () => {
@@ -84,8 +92,11 @@ function Suggestions(props) {
 
   return (
         <Admin title="Panel">
-            <DetailsWrapper data={dataSelected} hideDetails={hideDetails}/>
-            <Content>
+            { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
+              <DetailsWrapper data={dataSelected} hideDetails={hideDetails}/>
+            )}
+            {!mobileShowInfoBoxes && (
+                <Content>
                 <Accordion text={accordionText}>
                     <SearchBar solvers={users} setAccordionText={setAccordionText}/>
                 </Accordion>
@@ -100,6 +111,7 @@ function Suggestions(props) {
                 </div>
                 <Pagination items={suggestionsToPaginate} />
             </Content>
+            )}
         </Admin>
   );
 }

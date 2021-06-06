@@ -5,7 +5,7 @@ export default function DetailsWrapper(props) {
   const { data, hideDetails } = props;
   return (
         <div id="dash-content"
-             className="bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
+             className="h-full lg:h-auto bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
             { data && (
                 <Details data={data} hideDetails={hideDetails}/>
             )}
