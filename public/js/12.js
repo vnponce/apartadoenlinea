@@ -1039,7 +1039,7 @@ function DateSelector(props) {
     htmlFor: "store",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
   }, "D\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DateWrapper, {
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+    className: "w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_2__["SingleDatePicker"], {
     id: "date",
     name: "date",
@@ -1348,7 +1348,7 @@ function Stores(props) {
     options: storesToSelect,
     inputId: "store",
     name: "store",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    className: "w-full" // defaultMenuIsOpen
     ,
     classNamePrefix: "stores-selector"
     /*

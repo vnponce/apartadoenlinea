@@ -296,6 +296,8 @@ function Order() {
     className: "px-4 lg:w-1/2 lg:float-left lg:content-end"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lg:w-3/4 lg:float-right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sm:w-7/12 sm:m-auto lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_7__["default"], {
     setStore: setStore,
     stores: stores,
@@ -321,7 +323,7 @@ function Order() {
     date: date
   }), errors && errors.hour && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-sm text-red-500 error hour"
-  }, errors.hour[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, errors.hour[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "".concat(showMap ? '' : 'hidden', " border h-56 mt-4 bg-brand-gray sm:block")
   }, !window.Cypress && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
     store: store && stores.filter(function (s) {
@@ -347,7 +349,7 @@ function Order() {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 lg:w-1/2 lg:float-left"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "lg:w-3/4"
+    className: "sm:w-7/12 sm:m-auto lg:w-3/4 lg:m-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_6__["default"], {
     label: "Nombre",
     id: "name",
@@ -492,7 +494,7 @@ function DateSelector(props) {
     htmlFor: "store",
     className: "sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block"
   }, "D\xEDa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DateWrapper, {
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+    className: "w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_dates__WEBPACK_IMPORTED_MODULE_2__["SingleDatePicker"], {
     id: "date",
     name: "date",
@@ -721,7 +723,7 @@ function Hour(props) {
     inputId: "hour",
     name: "hour",
     placeholder: "Elige una hora",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full",
+    className: "w-full",
     classNamePrefix: "hour-selector",
     onChange: function onChange(hour) {
       return setHour(hour.value);
@@ -861,7 +863,7 @@ function Stores(props) {
     options: storesToSelect,
     inputId: "store",
     name: "store",
-    className: "w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full" // defaultMenuIsOpen
+    className: "w-full" // defaultMenuIsOpen
     ,
     classNamePrefix: "stores-selector"
     /*

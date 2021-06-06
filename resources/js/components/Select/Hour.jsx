@@ -55,7 +55,7 @@ export default function Hour(props) {
                 inputId="hour"
                 name="hour"
                 placeholder="Elige una hora"
-                className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+                className="w-full"
                 classNamePrefix="hour-selector"
                 onChange={
                     hour => setHour(hour.value)

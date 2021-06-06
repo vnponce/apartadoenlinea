@@ -52,7 +52,7 @@ export default function DateSelector(props) {
         <div className="font-light text-gray-600 mt-4 lg:text-justify">
             <label htmlFor="store" className="sm:text-center lg:text-justify text-sm hover:border-grey-900 italic sm:block">Día</label>
 
-            <DateWrapper className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full">
+            <DateWrapper className="w-full">
                 <SingleDatePicker
                     id="date"
                     name="date"

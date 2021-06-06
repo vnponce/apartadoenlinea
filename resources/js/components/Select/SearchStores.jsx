@@ -56,7 +56,7 @@ export default function Stores(props) {
                 options={storesToSelect}
                 inputId="store"
                 name="store"
-                className="w-fullbg-white sm:w-7/12 sm:m-auto lg:w-full"
+                className="w-full"
                 // defaultMenuIsOpen
                 classNamePrefix="stores-selector"
                 /*

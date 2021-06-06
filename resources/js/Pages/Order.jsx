@@ -103,19 +103,18 @@ function Order() {
                     {/* Order and map aux */}
                     <div className="lg:w-3/4 lg:float-right">
                         {/* Order place and hour data */}
-                        {/* Sucursal */}
-                        {/* <Input label="Sucursal" id="store" placeholder="Bravo" value="Bravo"/> */}
-                        <Stores setStore={setStore} stores={stores} storeSelected={store && stores.filter((s) => s.id === store)[0]}/>
-                        {errors && errors.store && <span className="text-sm text-red-500 error store">{errors.store[0]}</span>}
-                        {/* Día */}
-                        {/* <Input label="Día" id="date" placeholder="Día" value="12 de octubre"/> */}
-                        <DateSelector date={date} setDate={setDate} store={store && stores.filter((s) => s.id === store)[0]} />
-                        {errors && errors.date && <span className="text-sm text-red-500 error date">{errors.date[0]}</span>}
+                        <div className="sm:w-7/12 sm:m-auto lg:w-full">
+                            {/* Sucursal */}
+                            <Stores setStore={setStore} stores={stores} storeSelected={store && stores.filter((s) => s.id === store)[0]}/>
+                            {errors && errors.store && <span className="text-sm text-red-500 error store">{errors.store[0]}</span>}
+                            {/* Día */}
+                            <DateSelector date={date} setDate={setDate} store={store && stores.filter((s) => s.id === store)[0]} />
+                            {errors && errors.date && <span className="text-sm text-red-500 error date">{errors.date[0]}</span>}
 
-                        {/* Hora */}
-                        <Hour hour={hour} setHour={setHour} store={store && stores.filter((s) => s.id === store)[0]} date={date} />
-                        {errors && errors.hour && <span className="text-sm text-red-500 error hour">{errors.hour[0]}</span>}
-                        {/* <Input label="Hora" id="hour" placeholder="9:30" value="9:30pm"/> */}
+                            {/* Hora */}
+                            <Hour hour={hour} setHour={setHour} store={store && stores.filter((s) => s.id === store)[0]} date={date} />
+                            {errors && errors.hour && <span className="text-sm text-red-500 error hour">{errors.hour[0]}</span>}
+                        </div>
                         {/* Map */}
                         {/* Mapa */}
                         <div className={`${showMap ? '' : 'hidden'} border h-56 mt-4 bg-brand-gray sm:block`}>
@@ -143,7 +142,7 @@ function Order() {
                 </div>
                 <div className="px-4 lg:w-1/2 lg:float-left">
                     {/* Order user data */}
-                    <div className="lg:w-3/4">
+                    <div className="sm:w-7/12 sm:m-auto lg:w-3/4 lg:m-0">
                         {/* Name */}
                         <Input label="Nombre" id="name" placeholder="Ej. Juan" value={customer.name} onChange={customerInfoOnChange}/>
                         {errors && errors.name && <span className="text-sm text-red-500 error name">{errors.name[0]}</span>}
