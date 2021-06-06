@@ -1,5098 +1,5317 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
 
-/***/ "./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/@react-google-maps/api/dist/reactgooglemapsapi.esm.js ***!
-  \****************************************************************************/
-/*! exports provided: Autocomplete, BicyclingLayer, Circle, Data, DirectionsRenderer, DirectionsService, DistanceMatrixService, DrawingManager, GoogleMap, GroundOverlay, HeatmapLayer, InfoBox, InfoWindow, KmlLayer, LoadScript, LoadScriptNext, Marker, MarkerClusterer, OverlayView, Polygon, Polyline, Rectangle, StandaloneSearchBox, StreetViewPanorama, StreetViewService, TrafficLayer, TransitLayer, useGoogleMap, useLoadScript */
+/***/ "./node_modules/@popmotion/easing/dist/easing.es.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@popmotion/easing/dist/easing.es.js ***!
+  \**********************************************************/
+/*! exports provided: reversed, mirrored, createReversedEasing, createMirroredEasing, createExpoIn, createBackIn, createAnticipateEasing, linear, easeIn, easeOut, easeInOut, circIn, circOut, circInOut, backIn, backOut, backInOut, anticipate, bounceOut, bounceIn, bounceInOut, cubicBezier */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Autocomplete", function() { return Autocomplete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BicyclingLayer", function() { return BicyclingLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Circle", function() { return Circle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Data", function() { return Data; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectionsRenderer", function() { return DirectionsRenderer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectionsService", function() { return DirectionsService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DistanceMatrixService", function() { return DistanceMatrixService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawingManager", function() { return DrawingManager; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleMap", function() { return GoogleMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroundOverlay", function() { return GroundOverlay; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeatmapLayer", function() { return HeatmapLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoBox", function() { return InfoBoxComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoWindow", function() { return InfoWindow; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KmlLayer", function() { return KmlLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadScript", function() { return LoadScript; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadScriptNext", function() { return LoadScriptNext$1; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Marker", function() { return Marker; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarkerClusterer", function() { return ClustererComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OverlayView", function() { return OverlayView; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Polygon", function() { return Polygon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Polyline", function() { return Polyline; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rectangle", function() { return Rectangle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StandaloneSearchBox", function() { return StandaloneSearchBox; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreetViewPanorama", function() { return StreetViewPanorama; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreetViewService", function() { return StreetViewService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrafficLayer", function() { return TrafficLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransitLayer", function() { return TransitLayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGoogleMap", function() { return useGoogleMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLoadScript", function() { return useLoadScript; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
-/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _react_google_maps_marker_clusterer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @react-google-maps/marker-clusterer */ "./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _react_google_maps_infobox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @react-google-maps/infobox */ "./node_modules/@react-google-maps/infobox/dist/infobox.esm.js");
-
-
-
-
-
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-var MapContext =
-/*#__PURE__*/
-Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(null);
-function useGoogleMap() {
-  !!!react__WEBPACK_IMPORTED_MODULE_0__["useContext"] ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useGoogleMap is React hook and requires React version 16.8+") : undefined : void 0;
-  var map = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(MapContext);
-  !!!map ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useGoogleMap needs a GoogleMap available up in the tree") : undefined : void 0;
-  return map;
-}
-
-var reduce = function reduce(obj, fn, acc) {
-  return Object.keys(obj).reduce(function reducer(newAcc, key) {
-    return fn(newAcc, obj[key], key);
-  }, acc);
-};
-
-function forEach(obj, fn) {
-  Object.keys(obj).forEach(function iterator(key) {
-    return fn(obj[key], key);
-  });
-}
-
-/* eslint-disable filenames/match-regex */
-var applyUpdaterToNextProps = function applyUpdaterToNextProps(updaterMap, prevProps, nextProps, instance) {
-  var map = {};
-
-  var iter = function iter(fn, key) {
-    var nextValue = nextProps[key];
-
-    if (nextValue !== prevProps[key]) {
-      map[key] = nextValue;
-      fn(instance, nextValue);
-    }
-  };
-
-  forEach(updaterMap, iter);
-  return map;
-};
-function registerEvents(props, instance, eventMap) {
-  var registeredList = reduce(eventMap, function reducer(acc, googleEventName, onEventName) {
-    if (typeof props[onEventName] === 'function') {
-      acc.push(google.maps.event.addListener(instance, googleEventName, props[onEventName]));
-    }
-
-    return acc;
-  }, []);
-  return registeredList;
-}
-
-function unregisterEvent(registered) {
-  google.maps.event.removeListener(registered);
-}
-
-function unregisterEvents(events) {
-  if (events === void 0) {
-    events = [];
-  }
-
-  events.map(unregisterEvent);
-}
-function applyUpdatersToPropsAndRegisterEvents(_ref) {
-  var updaterMap = _ref.updaterMap,
-      eventMap = _ref.eventMap,
-      prevProps = _ref.prevProps,
-      nextProps = _ref.nextProps,
-      instance = _ref.instance;
-  var registeredEvents = registerEvents(nextProps, instance, eventMap);
-  applyUpdaterToNextProps(updaterMap, prevProps, nextProps, instance);
-  return registeredEvents;
-}
-
-var eventMap = {
-  onDblClick: "dblclick",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMapTypeIdChanged: "maptypeid_changed",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseDown: "mousedown",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick",
-  onTilesLoaded: "tilesloaded",
-  onBoundsChanged: "bounds_changed",
-  onCenterChanged: "center_changed",
-  onClick: "click",
-  onDrag: "drag",
-  onHeadingChanged: "heading_changed",
-  onIdle: "idle",
-  onProjectionChanged: "projection_changed",
-  onResize: "resize",
-  onTiltChanged: "tilt_changed",
-  onZoomChanged: "zoom_changed"
-};
-var updaterMap = {
-  extraMapTypes: function extraMapTypes(map, extra) {
-    extra.forEach(function forEachExtra(it, i) {
-      map.mapTypes.set(String(i), it);
-    });
-  },
-  center: function center(map, _center) {
-    map.setCenter(_center);
-  },
-  clickableIcons: function clickableIcons(map, clickable) {
-    map.setClickableIcons(clickable);
-  },
-  heading: function heading(map, _heading) {
-    map.setHeading(_heading);
-  },
-  mapTypeId: function mapTypeId(map, _mapTypeId) {
-    map.setMapTypeId(_mapTypeId);
-  },
-  options: function options(map, _options) {
-    map.setOptions(_options);
-  },
-  streetView: function streetView(map, _streetView) {
-    map.setStreetView(_streetView);
-  },
-  tilt: function tilt(map, _tilt) {
-    map.setTilt(_tilt);
-  },
-  zoom: function zoom(map, _zoom) {
-    map.setZoom(_zoom);
-  }
-};
-var GoogleMap =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(GoogleMap, _React$PureComponent);
-
-  function GoogleMap() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      map: null
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reversed", function() { return reversed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mirrored", function() { return mirrored; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReversedEasing", function() { return createReversedEasing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createMirroredEasing", function() { return createMirroredEasing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createExpoIn", function() { return createExpoIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createBackIn", function() { return createBackIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAnticipateEasing", function() { return createAnticipateEasing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "linear", function() { return linear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "easeIn", function() { return easeIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "easeOut", function() { return easeOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "easeInOut", function() { return easeInOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "circIn", function() { return circIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "circOut", function() { return circOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "circInOut", function() { return circInOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "backIn", function() { return backIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "backOut", function() { return backOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "backInOut", function() { return backInOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "anticipate", function() { return anticipate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bounceOut", function() { return bounceOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bounceIn", function() { return bounceIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bounceInOut", function() { return bounceInOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cubicBezier", function() { return cubicBezier; });
+var DEFAULT_OVERSHOOT_STRENGTH = 1.525;
+var reversed = function (easing) {
+    return function (p) {
+        return 1 - easing(1 - p);
     };
-    _this.registeredEvents = [];
-    _this.mapRef = null; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.getInstance = function () {
-      return new google.maps.Map(_this.mapRef, _this.props.options);
+};
+var mirrored = function (easing) {
+    return function (p) {
+        return p <= 0.5 ? easing(2 * p) / 2 : (2 - easing(2 * (1 - p))) / 2;
     };
-
-    _this.panTo = function (latLng) {
-      var map = _this.getInstance();
-
-      if (map) {
-        map.panTo(latLng);
-      }
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.setMapCallback = function () {
-      if (_this.state.map !== null) {
-        if (_this.props.onLoad) {
-          _this.props.onLoad(_this.state.map);
-        }
-      }
+};
+var createReversedEasing = reversed;
+var createMirroredEasing = mirrored;
+var createExpoIn = function (power) {
+    return function (p) {
+        return Math.pow(p, power);
     };
-    /* eslint-disable @getify/proper-arrows/name */
-
-    /* eslint-disable @getify/proper-arrows/this */
-
-
-    _this.getRef = function (ref) {
-      _this.mapRef = ref;
+};
+var createBackIn = function (power) {
+    return function (p) {
+        return p * p * ((power + 1) * p - power);
     };
-
-    return _this;
-  }
-
-  var _proto = GoogleMap.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var map = this.getInstance();
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap,
-      eventMap: eventMap,
-      prevProps: {},
-      nextProps: this.props,
-      instance: map
-    });
-
-    function setMap() {
-      return {
-        map: map
-      };
-    }
-
-    this.setState(setMap, this.setMapCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.map !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap,
-        eventMap: eventMap,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.map
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.map !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.map);
-      }
-
-      unregisterEvents(this.registeredEvents);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      id: this.props.id,
-      ref: this.getRef,
-      style: this.props.mapContainerStyle,
-      className: this.props.mapContainerClassName
-    }, Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MapContext.Provider, {
-      value: this.state.map
-    }, this.state.map !== null ? this.props.children : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null)));
-  };
-
-  return GoogleMap;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-var isBrowser = typeof document !== 'undefined';
-
-var injectScript = function injectScript(_ref) {
-  var url = _ref.url,
-      id = _ref.id;
-
-  if (!isBrowser) {
-    return Promise.reject(new Error('document is undefined'));
-  }
-
-  return new Promise(function injectScriptCallback(resolve, reject) {
-    var existingScript = document.getElementById(id);
-    var windowWithGoogleMap = window;
-
-    if (existingScript) {
-      // Same script id/url: keep same script
-      if (existingScript.src === url) {
-        if (existingScript.getAttribute('data-state') === 'ready') {
-          return resolve(id);
-        } else {
-          var originalInitMap = windowWithGoogleMap.initMap;
-
-          windowWithGoogleMap.initMap = function initMap() {
-            if (originalInitMap) {
-              originalInitMap();
+};
+var createAnticipateEasing = function (power) {
+    var backEasing = createBackIn(power);
+    return function (p) {
+        return (p *= 2) < 1 ? 0.5 * backEasing(p) : 0.5 * (2 - Math.pow(2, -10 * (p - 1)));
+    };
+};
+var linear = function (p) {
+    return p;
+};
+var easeIn = /*#__PURE__*/createExpoIn(2);
+var easeOut = /*#__PURE__*/reversed(easeIn);
+var easeInOut = /*#__PURE__*/mirrored(easeIn);
+var circIn = function (p) {
+    return 1 - Math.sin(Math.acos(p));
+};
+var circOut = /*#__PURE__*/reversed(circIn);
+var circInOut = /*#__PURE__*/mirrored(circOut);
+var backIn = /*#__PURE__*/createBackIn(DEFAULT_OVERSHOOT_STRENGTH);
+var backOut = /*#__PURE__*/reversed(backIn);
+var backInOut = /*#__PURE__*/mirrored(backIn);
+var anticipate = /*#__PURE__*/createAnticipateEasing(DEFAULT_OVERSHOOT_STRENGTH);
+var BOUNCE_FIRST_THRESHOLD = 4.0 / 11.0;
+var BOUNCE_SECOND_THRESHOLD = 8.0 / 11.0;
+var BOUNCE_THIRD_THRESHOLD = 9.0 / 10.0;
+var ca = 4356.0 / 361.0;
+var cb = 35442.0 / 1805.0;
+var cc = 16061.0 / 1805.0;
+var bounceOut = function (p) {
+    var p2 = p * p;
+    return p < BOUNCE_FIRST_THRESHOLD ? 7.5625 * p2 : p < BOUNCE_SECOND_THRESHOLD ? 9.075 * p2 - 9.9 * p + 3.4 : p < BOUNCE_THIRD_THRESHOLD ? ca * p2 - cb * p + cc : 10.8 * p * p - 20.52 * p + 10.72;
+};
+var bounceIn = function (p) {
+    return 1.0 - bounceOut(1.0 - p);
+};
+var bounceInOut = function (p) {
+    return p < 0.5 ? 0.5 * (1.0 - bounceOut(1.0 - p * 2.0)) : 0.5 * bounceOut(p * 2.0 - 1.0) + 0.5;
+};
+var NEWTON_ITERATIONS = 8;
+var NEWTON_MIN_SLOPE = 0.001;
+var SUBDIVISION_PRECISION = 0.0000001;
+var SUBDIVISION_MAX_ITERATIONS = 10;
+var K_SPLINE_TABLE_SIZE = 11;
+var K_SAMPLE_STEP_SIZE = 1.0 / (K_SPLINE_TABLE_SIZE - 1.0);
+var FLOAT_32_SUPPORTED = typeof Float32Array !== 'undefined';
+var a = function (a1, a2) {
+    return 1.0 - 3.0 * a2 + 3.0 * a1;
+};
+var b = function (a1, a2) {
+    return 3.0 * a2 - 6.0 * a1;
+};
+var c = function (a1) {
+    return 3.0 * a1;
+};
+var getSlope = function (t, a1, a2) {
+    return 3.0 * a(a1, a2) * t * t + 2.0 * b(a1, a2) * t + c(a1);
+};
+var calcBezier = function (t, a1, a2) {
+    return ((a(a1, a2) * t + b(a1, a2)) * t + c(a1)) * t;
+};
+function cubicBezier(mX1, mY1, mX2, mY2) {
+    var sampleValues = FLOAT_32_SUPPORTED ? new Float32Array(K_SPLINE_TABLE_SIZE) : new Array(K_SPLINE_TABLE_SIZE);
+    var binarySubdivide = function (aX, aA, aB) {
+        var i = 0;
+        var currentX;
+        var currentT;
+        do {
+            currentT = aA + (aB - aA) / 2.0;
+            currentX = calcBezier(currentT, mX1, mX2) - aX;
+            if (currentX > 0.0) {
+                aB = currentT;
+            } else {
+                aA = currentT;
             }
-
-            resolve(id);
-          };
-
-          return;
-        }
-      } // Same script id but url changed: recreate the script
-      else {
-          existingScript.remove();
-        }
-    }
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-    script.id = id;
-    script.async = true;
-    script.onerror = reject;
-
-    windowWithGoogleMap.initMap = function onload() {
-      script.setAttribute('data-state', 'ready');
-      resolve(id);
+        } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS);
+        return currentT;
     };
-
-    document.head.appendChild(script);
-  })["catch"](function (err) {
-    console.error('injectScript error: ', err);
-  });
-};
-
-var isRobotoStyle = function isRobotoStyle(element) {
-  // roboto font download
-  if (element.href && element.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
-    return true;
-  } // roboto style elements
-
-
-  if (element.tagName.toLowerCase() === 'style' && // @ts-ignore
-  element.styleSheet && // @ts-ignore
-  element.styleSheet.cssText && // @ts-ignore
-  element.styleSheet.cssText.replace('\r\n', '').indexOf('.gm-style') === 0) {
-    // @ts-ignore
-    element.styleSheet.cssText = '';
-    return true;
-  } // roboto style elements for other browsers
-
-
-  if (element.tagName.toLowerCase() === 'style' && element.innerHTML && element.innerHTML.replace('\r\n', '').indexOf('.gm-style') === 0) {
-    element.innerHTML = '';
-    return true;
-  } // when google tries to add empty style
-
-
-  if (element.tagName.toLowerCase() === 'style' && // @ts-ignore
-  !element.styleSheet && !element.innerHTML) {
-    return true;
-  }
-
-  return false;
-}; // Preventing the Google Maps libary from downloading an extra font
-
-
-var preventGoogleFonts = function preventGoogleFonts() {
-  // we override these methods only for one particular head element
-  // default methods for other elements are not affected
-  var head = document.getElementsByTagName('head')[0];
-  var trueInsertBefore = head.insertBefore.bind(head); // TODO: adding return before reflect solves the TS issue
-  //@ts-ignore
-
-  head.insertBefore = function insertBefore(newElement, referenceElement) {
-    if (!isRobotoStyle(newElement)) {
-      Reflect.apply(trueInsertBefore, head, [newElement, referenceElement]);
-    }
-  };
-
-  var trueAppend = head.appendChild.bind(head); // TODO: adding return before reflect solves the TS issue
-  //@ts-ignore
-
-  head.appendChild = function appendChild(textNode) {
-    if (!isRobotoStyle(textNode)) {
-      Reflect.apply(trueAppend, head, [textNode]);
-    }
-  };
-};
-
-function makeLoadScriptUrl(_ref) {
-  var googleMapsApiKey = _ref.googleMapsApiKey,
-      googleMapsClientId = _ref.googleMapsClientId,
-      _ref$version = _ref.version,
-      version = _ref$version === void 0 ? 'weekly' : _ref$version,
-      language = _ref.language,
-      region = _ref.region,
-      libraries = _ref.libraries,
-      channel = _ref.channel;
-  var params = [];
-  !(googleMapsApiKey && googleMapsClientId || !(googleMapsApiKey && googleMapsClientId)) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to specify either googleMapsApiKey or googleMapsClientId for @react-google-maps/api load script to work. You cannot use both at the same time.') : undefined : void 0;
-
-  if (googleMapsApiKey) {
-    params.push("key=" + googleMapsApiKey);
-  } else if (googleMapsClientId) {
-    params.push("client=" + googleMapsClientId);
-  }
-
-  if (version) {
-    params.push("v=" + version);
-  }
-
-  if (language) {
-    params.push("language=" + language);
-  }
-
-  if (region) {
-    params.push("region=" + region);
-  }
-
-  if (libraries && libraries.length) {
-    params.push("libraries=" + libraries.sort().join(','));
-  }
-
-  if (channel) {
-    params.push("channel=" + channel);
-  }
-
-  params.push('callback=initMap');
-  return "https://maps.googleapis.com/maps/api/js?" + params.join('&');
+    var newtonRaphsonIterate = function (aX, aGuessT) {
+        var i = 0;
+        var currentSlope = 0;
+        var currentX;
+        for (; i < NEWTON_ITERATIONS; ++i) {
+            currentSlope = getSlope(aGuessT, mX1, mX2);
+            if (currentSlope === 0.0) {
+                return aGuessT;
+            }
+            currentX = calcBezier(aGuessT, mX1, mX2) - aX;
+            aGuessT -= currentX / currentSlope;
+        }
+        return aGuessT;
+    };
+    var calcSampleValues = function () {
+        for (var i = 0; i < K_SPLINE_TABLE_SIZE; ++i) {
+            sampleValues[i] = calcBezier(i * K_SAMPLE_STEP_SIZE, mX1, mX2);
+        }
+    };
+    var getTForX = function (aX) {
+        var intervalStart = 0.0;
+        var currentSample = 1;
+        var lastSample = K_SPLINE_TABLE_SIZE - 1;
+        var dist = 0.0;
+        var guessForT = 0.0;
+        var initialSlope = 0.0;
+        for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {
+            intervalStart += K_SAMPLE_STEP_SIZE;
+        }
+        --currentSample;
+        dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);
+        guessForT = intervalStart + dist * K_SAMPLE_STEP_SIZE;
+        initialSlope = getSlope(guessForT, mX1, mX2);
+        if (initialSlope >= NEWTON_MIN_SLOPE) {
+            return newtonRaphsonIterate(aX, guessForT);
+        } else if (initialSlope === 0.0) {
+            return guessForT;
+        } else {
+            return binarySubdivide(aX, intervalStart, intervalStart + K_SAMPLE_STEP_SIZE);
+        }
+    };
+    calcSampleValues();
+    var resolver = function (aX) {
+        var returnValue;
+        if (mX1 === mY1 && mX2 === mY2) {
+            returnValue = aX;
+        } else if (aX === 0) {
+            returnValue = 0;
+        } else if (aX === 1) {
+            returnValue = 1;
+        } else {
+            returnValue = calcBezier(getTForX(aX), mY1, mY2);
+        }
+        return returnValue;
+    };
+    return resolver;
 }
 
-var cleaningUp = false;
-function DefaultLoadingElement() {
-  return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Loading...");
-}
-var defaultLoadScriptProps = {
-  id: 'script-loader',
-  version: 'weekly'
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@popmotion/popcorn/dist/popcorn.es.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@popmotion/popcorn/dist/popcorn.es.js ***!
+  \************************************************************/
+/*! exports provided: createAnticipateEasing, createBackIn, createExpoIn, cubicBezier, linear, easeIn, easeOut, easeInOut, circIn, circOut, circInOut, backIn, backOut, backInOut, anticipate, reversed, mirrored, angle, applyOffset, clamp, conditional, degreesToRadians, distance, interpolate, isPoint, isPoint3D, mix, mixArray, mixColor, mixComplex, mixObject, pipe, pointFromVector, progress, radiansToDegrees, smooth, smoothFrame, snap, springForce, springForceExpo, springForceLinear, steps, toDecimal, velocityPerFrame, velocityPerSecond, wrap */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "angle", function() { return angle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyOffset", function() { return applyOffset; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clamp", function() { return clamp$1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "conditional", function() { return conditional; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degreesToRadians", function() { return degreesToRadians; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "distance", function() { return distance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interpolate", function() { return interpolate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPoint", function() { return isPoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPoint3D", function() { return isPoint3D; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mix", function() { return mix; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixArray", function() { return mixArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixColor", function() { return mixColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixComplex", function() { return mixComplex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixObject", function() { return mixObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pipe", function() { return pipe; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pointFromVector", function() { return pointFromVector; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "progress", function() { return progress; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radiansToDegrees", function() { return radiansToDegrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "smooth", function() { return smooth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "smoothFrame", function() { return smoothFrame; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "snap", function() { return snap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "springForce", function() { return springForce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "springForceExpo", function() { return springForceExpo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "springForceLinear", function() { return springForceLinear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "steps", function() { return steps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toDecimal", function() { return toDecimal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "velocityPerFrame", function() { return velocityPerFrame; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "velocityPerSecond", function() { return velocityPerSecond; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrap", function() { return wrap$1; });
+/* harmony import */ var style_value_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! style-value-types */ "./node_modules/style-value-types/dist/style-value-types.es.js");
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
+/* harmony import */ var framesync__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framesync */ "./node_modules/framesync/dist/framesync.es.js");
+/* harmony import */ var _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @popmotion/easing */ "./node_modules/@popmotion/easing/dist/easing.es.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createAnticipateEasing", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["createAnticipateEasing"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createBackIn", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["createBackIn"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createExpoIn", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["createExpoIn"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cubicBezier", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["cubicBezier"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "linear", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["linear"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "easeIn", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["easeIn"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "easeOut", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["easeOut"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "easeInOut", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["easeInOut"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "circIn", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["circIn"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "circOut", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["circOut"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "circInOut", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["circInOut"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "backIn", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["backIn"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "backOut", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["backOut"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "backInOut", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["backInOut"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "anticipate", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["anticipate"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "reversed", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["reversed"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mirrored", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_3__["mirrored"]; });
+
+
+
+
+
+
+
+var zeroPoint = {
+    x: 0,
+    y: 0,
+    z: 0
+};
+var isNum = function (v) { return typeof v === 'number'; };
+
+var radiansToDegrees = (function (radians) { return (radians * 180) / Math.PI; });
+
+var angle = (function (a, b) {
+    if (b === void 0) { b = zeroPoint; }
+    return radiansToDegrees(Math.atan2(b.y - a.y, b.x - a.x));
+});
+
+var applyOffset = (function (from, to) {
+    var hasReceivedFrom = true;
+    if (to === undefined) {
+        to = from;
+        hasReceivedFrom = false;
+    }
+    return function (v) {
+        if (hasReceivedFrom) {
+            return v - from + to;
+        }
+        else {
+            from = v;
+            hasReceivedFrom = true;
+            return to;
+        }
+    };
+});
+
+var curryRange = (function (func) { return function (min, max, v) { return (v !== undefined ? func(min, max, v) : function (cv) { return func(min, max, cv); }); }; });
+
+var clamp = function (min, max, v) {
+    return Math.min(Math.max(v, min), max);
+};
+var clamp$1 = curryRange(clamp);
+
+var conditional = (function (check, apply) { return function (v) {
+    return check(v) ? apply(v) : v;
+}; });
+
+var degreesToRadians = (function (degrees) { return (degrees * Math.PI) / 180; });
+
+var isPoint = (function (point) {
+    return point.hasOwnProperty('x') && point.hasOwnProperty('y');
+});
+
+var isPoint3D = (function (point) {
+    return isPoint(point) && point.hasOwnProperty('z');
+});
+
+var distance1D = function (a, b) { return Math.abs(a - b); };
+var distance = (function (a, b) {
+    if (b === void 0) { b = zeroPoint; }
+    if (isNum(a) && isNum(b)) {
+        return distance1D(a, b);
+    }
+    else if (isPoint(a) && isPoint(b)) {
+        var xDelta = distance1D(a.x, b.x);
+        var yDelta = distance1D(a.y, b.y);
+        var zDelta = isPoint3D(a) && isPoint3D(b) ? distance1D(a.z, b.z) : 0;
+        return Math.sqrt(Math.pow(xDelta, 2) + Math.pow(yDelta, 2) + Math.pow(zDelta, 2));
+    }
+    return 0;
+});
+
+var progress = (function (from, to, value) {
+    var toFromDifference = to - from;
+    return toFromDifference === 0 ? 1 : (value - from) / toFromDifference;
+});
+
+var mix = (function (from, to, progress) {
+    return -progress * from + progress * to + from;
+});
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
 
-var LoadScript =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(LoadScript, _React$PureComponent);
+var mixLinearColor = function (from, to, v) {
+    var fromExpo = from * from;
+    var toExpo = to * to;
+    return Math.sqrt(Math.max(0, v * (toExpo - fromExpo) + fromExpo));
+};
+var colorTypes = [style_value_types__WEBPACK_IMPORTED_MODULE_0__["hex"], style_value_types__WEBPACK_IMPORTED_MODULE_0__["rgba"], style_value_types__WEBPACK_IMPORTED_MODULE_0__["hsla"]];
+var getColorType = function (v) {
+    return colorTypes.find(function (type) { return type.test(v); });
+};
+var notAnimatable = function (color$$1) {
+    return "'" + color$$1 + "' is not an animatable color. Use the equivalent color code instead.";
+};
+var mixColor = (function (from, to) {
+    var fromColorType = getColorType(from);
+    var toColorType = getColorType(to);
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(!!fromColorType, notAnimatable(from));
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(!!toColorType, notAnimatable(to));
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(fromColorType.transform === toColorType.transform, 'Both colors must be hex/RGBA, OR both must be HSLA.');
+    var fromColor = fromColorType.parse(from);
+    var toColor = toColorType.parse(to);
+    var blended = __assign({}, fromColor);
+    var mixFunc = fromColorType === style_value_types__WEBPACK_IMPORTED_MODULE_0__["hsla"] ? mix : mixLinearColor;
+    return function (v) {
+        for (var key in blended) {
+            if (key !== 'alpha') {
+                blended[key] = mixFunc(fromColor[key], toColor[key], v);
+            }
+        }
+        blended.alpha = mix(fromColor.alpha, toColor.alpha, v);
+        return fromColorType.transform(blended);
+    };
+});
 
-  function LoadScript() {
-    var _this;
+var combineFunctions = function (a, b) { return function (v) { return b(a(v)); }; };
+var pipe = (function () {
+    var transformers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        transformers[_i] = arguments[_i];
+    }
+    return transformers.reduce(combineFunctions);
+});
 
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.check = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
-    _this.state = {
-      loaded: false
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
+function getMixer(origin, target) {
+    if (isNum(origin)) {
+        return function (v) { return mix(origin, target, v); };
+    }
+    else if (style_value_types__WEBPACK_IMPORTED_MODULE_0__["color"].test(origin)) {
+        return mixColor(origin, target);
+    }
+    else {
+        return mixComplex(origin, target);
+    }
+}
+var mixArray = function (from, to) {
+    var output = from.slice();
+    var numValues = output.length;
+    var blendValue = from.map(function (fromThis, i) { return getMixer(fromThis, to[i]); });
+    return function (v) {
+        for (var i = 0; i < numValues; i++) {
+            output[i] = blendValue[i](v);
+        }
+        return output;
+    };
+};
+var mixObject = function (origin, target) {
+    var output = __assign({}, origin, target);
+    var blendValue = {};
+    for (var key in output) {
+        if (origin[key] !== undefined && target[key] !== undefined) {
+            blendValue[key] = getMixer(origin[key], target[key]);
+        }
+    }
+    return function (v) {
+        for (var key in blendValue) {
+            output[key] = blendValue[key](v);
+        }
+        return output;
+    };
+};
+function analyse(value) {
+    var parsed = style_value_types__WEBPACK_IMPORTED_MODULE_0__["complex"].parse(value);
+    var numValues = parsed.length;
+    var numNumbers = 0;
+    var numRGB = 0;
+    var numHSL = 0;
+    for (var i = 0; i < numValues; i++) {
+        if (numNumbers || typeof parsed[i] === 'number') {
+            numNumbers++;
+        }
+        else {
+            if (parsed[i].hue !== undefined) {
+                numHSL++;
+            }
+            else {
+                numRGB++;
+            }
+        }
+    }
+    return { parsed: parsed, numNumbers: numNumbers, numRGB: numRGB, numHSL: numHSL };
+}
+var mixComplex = function (origin, target) {
+    var template = style_value_types__WEBPACK_IMPORTED_MODULE_0__["complex"].createTransformer(target);
+    var originStats = analyse(origin);
+    var targetStats = analyse(target);
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(originStats.numHSL === targetStats.numHSL &&
+        originStats.numRGB === targetStats.numRGB &&
+        originStats.numNumbers >= targetStats.numNumbers, "Complex values '" + origin + "' and '" + target + "' too different to mix. Ensure all colors are of the same type.");
+    return pipe(mixArray(originStats.parsed, targetStats.parsed), template);
+};
 
-    _this.cleanupCallback = function () {
-      //@ts-ignore
-      delete window.google;
-
-      _this.injectScript();
-    }; // eslint-disable-next-line @getify/proper-arrows/name
-
-
-    _this.isCleaningUp = function () {
-      try {
-        var promiseCallback = function promiseCallback(resolve) {
-          if (!cleaningUp) {
-            resolve();
-          } else {
-            if (isBrowser) {
-              var timer = window.setInterval(function interval() {
-                if (!cleaningUp) {
-                  window.clearInterval(timer);
-                  resolve();
+var mixNumber = function (from, to) { return function (p) { return mix(from, to, p); }; };
+function detectMixerFactory(v) {
+    if (typeof v === 'number') {
+        return mixNumber;
+    }
+    else if (typeof v === 'string') {
+        if (style_value_types__WEBPACK_IMPORTED_MODULE_0__["color"].test(v)) {
+            return mixColor;
+        }
+        else {
+            return mixComplex;
+        }
+    }
+    else if (Array.isArray(v)) {
+        return mixArray;
+    }
+    else if (typeof v === 'object') {
+        return mixObject;
+    }
+}
+function createMixers(output, ease, customMixer) {
+    var mixers = [];
+    var mixerFactory = customMixer || detectMixerFactory(output[0]);
+    var numMixers = output.length - 1;
+    for (var i = 0; i < numMixers; i++) {
+        var mixer = mixerFactory(output[i], output[i + 1]);
+        if (ease) {
+            var easingFunction = Array.isArray(ease) ? ease[i] : ease;
+            mixer = pipe(easingFunction, mixer);
+        }
+        mixers.push(mixer);
+    }
+    return mixers;
+}
+function fastInterpolate(_a, _b) {
+    var from = _a[0], to = _a[1];
+    var mixer = _b[0];
+    return function (v) { return mixer(progress(from, to, v)); };
+}
+function slowInterpolate(input, mixers) {
+    var inputLength = input.length;
+    var lastInputIndex = inputLength - 1;
+    return function (v) {
+        var mixerIndex = 0;
+        var foundMixerIndex = false;
+        if (v <= input[0]) {
+            foundMixerIndex = true;
+        }
+        else if (v >= input[lastInputIndex]) {
+            mixerIndex = lastInputIndex - 1;
+            foundMixerIndex = true;
+        }
+        if (!foundMixerIndex) {
+            var i = 1;
+            for (; i < inputLength; i++) {
+                if (input[i] > v || i === lastInputIndex) {
+                    break;
                 }
-              }, 1);
             }
-          }
-        };
-
-        return Promise.resolve(new Promise(promiseCallback));
-      } catch (e) {
-        return Promise.reject(e);
-      }
+            mixerIndex = i - 1;
+        }
+        var progressInRange = progress(input[mixerIndex], input[mixerIndex + 1], v);
+        return mixers[mixerIndex](progressInRange);
     };
-
-    _this.cleanup = function () {
-      cleaningUp = true;
-      var script = document.getElementById(_this.props.id);
-
-      if (script && script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-
-      Array.prototype.slice.call(document.getElementsByTagName("script")).filter(function filter(script) {
-        return script.src.includes("maps.googleapis");
-      }).forEach(function forEach(script) {
-        if (script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
-      });
-      Array.prototype.slice.call(document.getElementsByTagName("link")).filter(function filter(link) {
-        return link.href === "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans";
-      }).forEach(function forEach(link) {
-        if (link.parentNode) {
-          link.parentNode.removeChild(link);
-        }
-      });
-      Array.prototype.slice.call(document.getElementsByTagName("style")).filter(function filter(style) {
-        return style.innerText !== undefined && style.innerText.length > 0 && style.innerText.includes(".gm-");
-      }).forEach(function forEach(style) {
-        if (style.parentNode) {
-          style.parentNode.removeChild(style);
-        }
-      });
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.injectScript = function () {
-      if (_this.props.preventGoogleFontsLoading) {
-        preventGoogleFonts();
-      }
-
-      !!!_this.props.id ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'LoadScript requires "id" prop to be a string: %s', _this.props.id) : undefined : void 0;
-      var injectScriptOptions = {
-        id: _this.props.id,
-        url: makeLoadScriptUrl(_this.props)
-      };
-      injectScript(injectScriptOptions) // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-      .then(function () {
-        if (_this.props.onLoad) {
-          _this.props.onLoad();
-        }
-
-        _this.setState(function setLoaded() {
-          return {
-            loaded: true
-          };
-        });
-      }) // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-      ["catch"](function (err) {
-        if (_this.props.onError) {
-          _this.props.onError(err);
-        }
-
-        console.error("\n          There has been an Error with loading Google Maps API script, please check that you provided correct google API key (" + (_this.props.googleMapsApiKey || '-') + ") or Client ID (" + (_this.props.googleMapsClientId || '-') + ") to <LoadScript />\n          Otherwise it is a Network issue.\n        ");
-      });
-    };
-
-    return _this;
-  }
-
-  var _proto = LoadScript.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (isBrowser) {
-      // @ts-ignore
-      if (window.google && !cleaningUp) {
-        console.error("google api is already presented");
-        return;
-      }
-
-      this.isCleaningUp().then(this.injectScript)["catch"](function err(err) {
-        console.error("Error at injecting script after cleaning up: ", err);
-      });
+}
+function interpolate(input, output, _a) {
+    var _b = _a === void 0 ? {} : _a, _c = _b.clamp, clamp = _c === void 0 ? true : _c, ease = _b.ease, mixer = _b.mixer;
+    var inputLength = input.length;
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(inputLength === output.length, 'Both input and output ranges must be the same length');
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(!ease || !Array.isArray(ease) || ease.length === inputLength - 1, 'Array of easing functions must be of length `input.length - 1`, as it applies to the transitions **between** the defined values.');
+    if (input[0] > input[inputLength - 1]) {
+        input = [].concat(input);
+        output = [].concat(output);
+        input.reverse();
+        output.reverse();
     }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.props.libraries !== prevProps.libraries) {
-      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable ounside of component, or somwhere in config files or ENV variables');
-    }
-
-    if (isBrowser && prevProps.language !== this.props.language) {
-      this.cleanup(); // TODO: refactor to use gDSFP maybe... wait for hooks refactoring.
-      // eslint-disable-next-line react/no-did-update-set-state
-
-      this.setState(function setLoaded() {
-        return {
-          loaded: false
-        };
-      }, this.cleanupCallback);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    var _this2 = this;
-
-    if (isBrowser) {
-      this.cleanup(); // eslint-disable-next-line @getify/proper-arrows/this
-
-      var timeoutCallback = function timeoutCallback() {
-        if (!_this2.check.current) {
-          //@ts-ignore
-          delete window.google;
-          cleaningUp = false;
-        }
-      };
-
-      window.setTimeout(timeoutCallback, 1);
-
-      if (this.props.onUnmount) {
-        this.props.onUnmount();
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      ref: this.check
-    }), this.state.loaded ? this.props.children : this.props.loadingElement || Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DefaultLoadingElement, null));
-  };
-
-  return LoadScript;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-LoadScript.defaultProps = defaultLoadScriptProps;
-
-/* eslint-disable filenames/match-regex */
-var previouslyLoadedUrl;
-function useLoadScript(_ref) {
-  var _ref$id = _ref.id,
-      id = _ref$id === void 0 ? defaultLoadScriptProps.id : _ref$id,
-      _ref$version = _ref.version,
-      version = _ref$version === void 0 ? defaultLoadScriptProps.version : _ref$version,
-      googleMapsApiKey = _ref.googleMapsApiKey,
-      googleMapsClientId = _ref.googleMapsClientId,
-      language = _ref.language,
-      region = _ref.region,
-      libraries = _ref.libraries,
-      preventGoogleFontsLoading = _ref.preventGoogleFontsLoading,
-      channel = _ref.channel;
-  var isMounted = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
-
-  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      isLoaded = _React$useState[0],
-      setLoaded = _React$useState[1];
-
-  var _React$useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(undefined),
-      loadError = _React$useState2[0],
-      setLoadError = _React$useState2[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function trackMountedState() {
-    isMounted.current = true;
-    return function () {
-      isMounted.current = false;
-    };
-  }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function applyPreventGoogleFonts() {
-    if (isBrowser && preventGoogleFontsLoading) {
-      preventGoogleFonts();
-    }
-  }, [preventGoogleFontsLoading]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function validateLoadedState() {
-    if (isLoaded) {
-      ! // @ts-ignore
-      !!window.google ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "useLoadScript was marked as loaded, but window.google is not present. Something went wrong.") : undefined : void 0;
-    }
-  }, [isLoaded]);
-  var url = makeLoadScriptUrl({
-    version: version,
-    googleMapsApiKey: googleMapsApiKey,
-    googleMapsClientId: googleMapsClientId,
-    language: language,
-    region: region,
-    libraries: libraries,
-    channel: channel
-  });
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function loadScriptAndModifyLoadedState() {
-    if (!isBrowser) {
-      return;
-    }
-
-    function setLoadedIfMounted() {
-      if (isMounted.current) {
-        setLoaded(true);
-        previouslyLoadedUrl = url;
-      }
-    }
-
-    if (window.google && previouslyLoadedUrl === url) {
-      setLoadedIfMounted();
-      return;
-    }
-
-    injectScript({
-      id: id,
-      url: url
-    }).then(setLoadedIfMounted)["catch"](function handleInjectError(err) {
-      if (isMounted.current) {
-        setLoadError(err);
-      }
-
-      console.warn("\n        There has been an Error with loading Google Maps API script, please check that you provided correct google API key (" + (googleMapsApiKey || '-') + ") or Client ID (" + (googleMapsClientId || '-') + ")\n        Otherwise it is a Network issue.\n      ");
-      console.error(err);
-    });
-  }, [id, url]);
-  var prevLibraries = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function checkPerformance() {
-    if (prevLibraries.current && libraries !== prevLibraries.current) {
-      console.warn('Performance warning! Loadscript has been reloaded unintentionally! You should not pass `libraries` prop as new array. Please keep an array of libraries as static class property for Components and PureComponents, or just a const variable outside of component, or somewhere in config files or ENV variables');
-    }
-
-    prevLibraries.current = libraries;
-  }, [libraries]);
-  return {
-    isLoaded: isLoaded,
-    loadError: loadError,
-    url: url
-  };
+    var mixers = createMixers(output, ease, mixer);
+    var interpolator = inputLength === 2
+        ? fastInterpolate(input, mixers)
+        : slowInterpolate(input, mixers);
+    return clamp
+        ? pipe(clamp$1(input[0], input[inputLength - 1]), interpolator)
+        : interpolator;
 }
 
-var defaultLoadingElement =
-/*#__PURE__*/
-Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DefaultLoadingElement, null);
-
-function LoadScriptNext(_ref) {
-  var loadingElement = _ref.loadingElement,
-      onLoad = _ref.onLoad,
-      onError = _ref.onError,
-      onUnmount = _ref.onUnmount,
-      children = _ref.children,
-      hookOptions = _objectWithoutPropertiesLoose(_ref, ["loadingElement", "onLoad", "onError", "onUnmount", "children"]);
-
-  var _useLoadScript = useLoadScript(hookOptions),
-      isLoaded = _useLoadScript.isLoaded,
-      loadError = _useLoadScript.loadError;
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnLoad() {
-    if (isLoaded && typeof onLoad === "function") {
-      onLoad();
-    }
-  }, [isLoaded, onLoad]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnError() {
-    if (loadError && typeof onError === "function") {
-      onError(loadError);
-    }
-  }, [loadError, onError]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function handleOnUnmount() {
-    return function () {
-      if (onUnmount) {
-        onUnmount();
-      }
-    };
-  }, [onUnmount]);
-  return isLoaded ? children : loadingElement || defaultLoadingElement;
-}
-
-var LoadScriptNext$1 = /*#__PURE__*/
-Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(LoadScriptNext);
-
-var eventMap$1 = {};
-var updaterMap$1 = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  }
-};
-var TrafficLayer =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inheritsLoose(TrafficLayer, _PureComponent);
-
-  function TrafficLayer() {
-    var _this;
-
-    _this = _PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      trafficLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setTrafficLayerCallback = function () {
-      if (_this.state.trafficLayer !== null) {
-        if (_this.props.onLoad) {
-          // @ts-ignore
-          _this.props.onLoad(_this.state.trafficLayer);
-        }
-      }
-    };
-
-    _this.registeredEvents = [];
-    return _this;
-  }
-
-  var _proto = TrafficLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var trafficLayer = new google.maps.TrafficLayer(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$1,
-      eventMap: eventMap$1,
-      prevProps: {},
-      nextProps: this.props,
-      instance: trafficLayer
-    });
-
-    function setTrafficlayer() {
-      return {
-        trafficLayer: trafficLayer
-      };
-    }
-
-    this.setState(setTrafficlayer, this.setTrafficLayerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.trafficLayer !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$1,
-        eventMap: eventMap$1,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.trafficLayer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.trafficLayer !== null) {
-      if (this.props.onUnmount) {
-        // @ts-ignore
-        this.props.onUnmount(this.state.trafficLayer);
-      }
-
-      unregisterEvents(this.registeredEvents); // @ts-ignore
-
-      this.state.trafficLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return TrafficLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-TrafficLayer.contextType = MapContext;
-
-var BicyclingLayer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(BicyclingLayer, _React$PureComponent);
-
-  function BicyclingLayer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      bicyclingLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setBicyclingLayerCallback = function () {
-      if (_this.state.bicyclingLayer !== null) {
-        // TODO: how is this possibly null if we're doing a null check
-        // @ts-ignore
-        _this.state.bicyclingLayer.setMap(_this.context);
-
-        if (_this.props.onLoad) {
-          //@ts-ignore
-          _this.props.onLoad(_this.state.bicyclingLayer);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = BicyclingLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var bicyclingLayer = new google.maps.BicyclingLayer();
-
-    function setBicyclingLayer() {
-      return {
-        bicyclingLayer: bicyclingLayer
-      };
-    }
-
-    this.setState(setBicyclingLayer, this.setBicyclingLayerCallback);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.bicyclingLayer !== null) {
-      if (this.props.onUnmount) {
-        // @ts-ignore
-        this.props.onUnmount(this.state.bicyclingLayer);
-      } // @ts-ignore
-
-
-      this.state.bicyclingLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return BicyclingLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-BicyclingLayer.contextType = MapContext;
-
-var TransitLayer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(TransitLayer, _React$PureComponent);
-
-  function TransitLayer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      transitLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setTransitLayerCallback = function () {
-      if (_this.state.transitLayer !== null) {
-        // TODO: how is this possibly null if we're doing a null check
-        // @ts-ignore
-        _this.state.transitLayer.setMap(_this.context);
-
-        if (_this.props.onLoad) {
-          //@ts-ignore
-          _this.props.onLoad(_this.state.transitLayer);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = TransitLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var transitLayer = new google.maps.TransitLayer();
-
-    function setTransitLayer() {
-      return {
-        transitLayer: transitLayer
-      };
-    }
-
-    this.setState(setTransitLayer, this.setTransitLayerCallback);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.transitLayer !== null) {
-      if (this.props.onUnmount) {
-        // @ts-ignore
-        this.props.onUnmount(this.state.transitLayer);
-      } // @ts-ignore
-
-
-      this.state.transitLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return TransitLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-TransitLayer.contextType = MapContext;
-
-var eventMap$2 = {
-  onCircleComplete: "circlecomplete",
-  onMarkerComplete: "markercomplete",
-  onOverlayComplete: "overlaycomplete",
-  onPolygonComplete: "polygoncomplete",
-  onPolylineComplete: "polylinecomplete",
-  onRectangleComplete: "rectanglecomplete"
-};
-var updaterMap$2 = {
-  drawingMode: function drawingMode(instance, _drawingMode) {
-    instance.setDrawingMode(_drawingMode);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  }
-};
-var DrawingManager =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DrawingManager, _React$PureComponent);
-
-  function DrawingManager(props) {
-    var _this;
-
-    _this = _React$PureComponent.call(this, props) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      drawingManager: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDrawingManagerCallback = function () {
-      if (_this.state.drawingManager !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.drawingManager);
-      }
-    };
-
-    !!!google.maps.drawing ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "Did you include prop libraries={['drawing']} in the URL? %s", google.maps.drawing) : undefined : void 0;
-    return _this;
-  }
-
-  var _proto = DrawingManager.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var drawingManager = new google.maps.drawing.DrawingManager(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$2,
-      eventMap: eventMap$2,
-      prevProps: {},
-      nextProps: this.props,
-      instance: drawingManager
-    });
-
-    function setDrawingManager() {
-      return {
-        drawingManager: drawingManager
-      };
-    }
-
-    this.setState(setDrawingManager, this.setDrawingManagerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.drawingManager !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$2,
-        eventMap: eventMap$2,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.drawingManager
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.drawingManager !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.drawingManager);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.drawingManager.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DrawingManager;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-DrawingManager.contextType = MapContext;
-
-var eventMap$3 = {
-  onAnimationChanged: "animation_changed",
-  onClick: "click",
-  onClickableChanged: "clickable_changed",
-  onCursorChanged: "cursor_changed",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDraggableChanged: "draggable_changed",
-  onDragStart: "dragstart",
-  onFlatChanged: "flat_changed",
-  onIconChanged: "icon_changed",
-  onMouseDown: "mousedown",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onPositionChanged: "position_changed",
-  onRightClick: "rightclick",
-  onShapeChanged: "shape_changed",
-  onTitleChanged: "title_changed",
-  onVisibleChanged: "visible_changed",
-  onZindexChanged: "zindex_changed"
-};
-var updaterMap$3 = {
-  animation: function animation(instance, _animation) {
-    instance.setAnimation(_animation);
-  },
-  clickable: function clickable(instance, _clickable) {
-    instance.setClickable(_clickable);
-  },
-  cursor: function cursor(instance, _cursor) {
-    instance.setCursor(_cursor);
-  },
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  icon: function icon(instance, _icon) {
-    instance.setIcon(_icon);
-  },
-  label: function label(instance, _label) {
-    instance.setLabel(_label);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  opacity: function opacity(instance, _opacity) {
-    instance.setOpacity(_opacity);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  position: function position(instance, _position) {
-    instance.setPosition(_position);
-  },
-  shape: function shape(instance, _shape) {
-    instance.setShape(_shape);
-  },
-  title: function title(instance, _title) {
-    instance.setTitle(_title);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var Marker =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Marker, _React$PureComponent);
-
-  function Marker() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      marker: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setMarkerCallback = function () {
-      if (_this.state.marker !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.marker);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Marker.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var markerOptions = _extends({}, this.props.options || {}, {}, this.props.clusterer ? {} : {
-      map: this.context
-    }, {
-      position: this.props.position
-    });
-
-    var marker = new google.maps.Marker(markerOptions);
-
-    if (this.props.clusterer) {
-      this.props.clusterer.addMarker( // @ts-ignore
-      marker, !!this.props.noClustererRedraw);
-    } else {
-      marker.setMap(this.context);
-    }
-
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$3,
-      eventMap: eventMap$3,
-      prevProps: {},
-      nextProps: this.props,
-      instance: marker
-    });
-
-    function setMarker() {
-      return {
-        marker: marker
-      };
-    }
-
-    this.setState(setMarker, this.setMarkerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.marker !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$3,
-        eventMap: eventMap$3,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.marker
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.marker !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.marker);
-      }
-
-      unregisterEvents(this.registeredEvents);
-
-      if (this.props.clusterer) {
-        this.props.clusterer.removeMarker( // @ts-ignore
-        this.state.marker, !!this.props.noClustererRedraw);
-      } else {
-        this.state.marker && this.state.marker.setMap(null);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return this.props.children || null;
-  };
-
-  return Marker;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Marker.contextType = MapContext;
-
-var eventMap$4 = {
-  onClick: "click",
-  onClusteringBegin: "clusteringbegin",
-  onClusteringEnd: "clusteringend",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover"
-};
-var updaterMap$4 = {
-  averageCenter: function averageCenter(instance, _averageCenter) {
-    instance.setAverageCenter(_averageCenter);
-  },
-  batchSizeIE: function batchSizeIE(instance, _batchSizeIE) {
-    instance.setBatchSizeIE(_batchSizeIE);
-  },
-  calculator: function calculator(instance, _calculator) {
-    instance.setCalculator(_calculator);
-  },
-  clusterClass: function clusterClass(instance, _clusterClass) {
-    instance.setClusterClass(_clusterClass);
-  },
-  enableRetinaIcons: function enableRetinaIcons(instance, _enableRetinaIcons) {
-    instance.setEnableRetinaIcons(_enableRetinaIcons);
-  },
-  gridSize: function gridSize(instance, _gridSize) {
-    instance.setGridSize(_gridSize);
-  },
-  ignoreHidden: function ignoreHidden(instance, _ignoreHidden) {
-    instance.setIgnoreHidden(_ignoreHidden);
-  },
-  imageExtension: function imageExtension(instance, _imageExtension) {
-    instance.setImageExtension(_imageExtension);
-  },
-  imagePath: function imagePath(instance, _imagePath) {
-    instance.setImagePath(_imagePath);
-  },
-  imageSizes: function imageSizes(instance, _imageSizes) {
-    instance.setImageSizes(_imageSizes);
-  },
-  maxZoom: function maxZoom(instance, _maxZoom) {
-    instance.setMaxZoom(_maxZoom);
-  },
-  minimumClusterSize: function minimumClusterSize(instance, _minimumClusterSize) {
-    instance.setMinimumClusterSize(_minimumClusterSize);
-  },
-  styles: function styles(instance, _styles) {
-    instance.setStyles(_styles);
-  },
-  title: function title(instance, _title) {
-    instance.setTitle(_title);
-  },
-  zoomOnClick: function zoomOnClick(instance, _zoomOnClick) {
-    instance.setZoomOnClick(_zoomOnClick);
-  }
-};
-var ClustererComponent =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(ClustererComponent, _React$PureComponent);
-
-  function ClustererComponent() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      markerClusterer: null
-    };
-
-    _this.setClustererCallback = function () {
-      if (_this.state.markerClusterer !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.markerClusterer);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = ClustererComponent.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (this.context) {
-      var markerClusterer = new _react_google_maps_marker_clusterer__WEBPACK_IMPORTED_MODULE_2__["Clusterer"](this.context, [], this.props.options);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$4,
-        eventMap: eventMap$4,
-        prevProps: {},
-        nextProps: this.props,
-        instance: markerClusterer
-      });
-      this.setState(function setClusterer() {
-        return {
-          markerClusterer: markerClusterer
-        };
-      }, this.setClustererCallback);
-    }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.markerClusterer) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$4,
-        eventMap: eventMap$4,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.markerClusterer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.markerClusterer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.markerClusterer);
-      }
-
-      unregisterEvents(this.registeredEvents); //@ts-ignore
-
-      this.state.markerClusterer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return this.state.markerClusterer !== null ? this.props.children(this.state.markerClusterer) : null;
-  };
-
-  return ClustererComponent;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-ClustererComponent.contextType = MapContext;
-
-var eventMap$5 = {
-  onCloseClick: "closeclick",
-  onContentChanged: "content_changed",
-  onDomReady: "domready",
-  onPositionChanged: "position_changed",
-  onZindexChanged: "zindex_changed"
-};
-var updaterMap$5 = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  position: function position(instance, _position) {
-    if (_position instanceof google.maps.LatLng) {
-      instance.setPosition(_position);
-    } else {
-      instance.setPosition(new google.maps.LatLng(_position.lat, _position.lng));
-    }
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var InfoBoxComponent =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(InfoBoxComponent, _React$PureComponent);
-
-  function InfoBoxComponent() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = null;
-    _this.state = {
-      infoBox: null
-    };
-
-    _this.open = function (infoBox, anchor) {
-      if (anchor) {
-        infoBox.open(_this.context, anchor);
-      } else if (infoBox.getPosition()) {
-        infoBox.open(_this.context);
-      } else {
-          true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "You must provide either an anchor or a position prop for <InfoBox>.") : undefined ;
-      }
-    };
-
-    _this.setInfoBoxCallback = function () {
-      var _this$props = _this.props,
-          anchor = _this$props.anchor,
-          onLoad = _this$props.onLoad;
-      var infoBox = _this.state.infoBox;
-
-      if (infoBox !== null && _this.containerElement !== null) {
-        infoBox.setContent(_this.containerElement);
-
-        _this.open(infoBox, anchor);
-
-        if (onLoad) {
-          onLoad(infoBox);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = InfoBoxComponent.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var options = this.props.options;
-
-    var _ref = options || {},
-        position = _ref.position,
-        infoBoxOptions = _objectWithoutPropertiesLoose(_ref, ["position"]);
-
-    var positionLatLng;
-
-    if (position && !(position instanceof google.maps.LatLng)) {
-      positionLatLng = new google.maps.LatLng(position.lat, position.lng);
-    }
-
-    var infoBox = new _react_google_maps_infobox__WEBPACK_IMPORTED_MODULE_4__["InfoBox"](_extends({}, infoBoxOptions, {}, positionLatLng ? {
-      position: positionLatLng
-    } : {}));
-    this.containerElement = document.createElement('div');
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$5,
-      eventMap: eventMap$5,
-      prevProps: {},
-      nextProps: this.props,
-      instance: infoBox
-    });
-    this.setState({
-      infoBox: infoBox
-    }, this.setInfoBoxCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    var infoBox = this.state.infoBox;
-
-    if (infoBox !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$5,
-        eventMap: eventMap$5,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: infoBox
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    var onUnmount = this.props.onUnmount;
-    var infoBox = this.state.infoBox;
-
-    if (infoBox !== null) {
-      if (onUnmount) {
-        onUnmount(infoBox);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      infoBox.close();
-    }
-  };
-
-  _proto.render = function render() {
-    if (!this.containerElement) {
-      return null;
-    }
-
-    return Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children), this.containerElement);
-  };
-
-  return InfoBoxComponent;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-InfoBoxComponent.contextType = MapContext;
-
-var eventMap$6 = {
-  onCloseClick: "closeclick",
-  onContentChanged: "content_changed",
-  onDomReady: "domready",
-  onPositionChanged: "position_changed",
-  onZindexChanged: "zindex_changed"
-};
-var updaterMap$6 = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  position: function position(instance, _position) {
-    instance.setPosition(_position);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var InfoWindow =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(InfoWindow, _React$PureComponent);
-
-  function InfoWindow() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = null;
-    _this.state = {
-      infoWindow: null
-    };
-
-    _this.open = function (infoWindow, anchor) {
-      if (anchor) {
-        infoWindow.open(_this.context, anchor);
-      } else if (infoWindow.getPosition()) {
-        infoWindow.open(_this.context);
-      } else {
-          true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "You must provide either an anchor (typically render it inside a <Marker>) or a position props for <InfoWindow>.") : undefined ;
-      }
-    };
-
-    _this.setInfowindowCallback = function () {
-      if (_this.state.infoWindow !== null && _this.containerElement !== null) {
-        _this.state.infoWindow.setContent(_this.containerElement);
-
-        _this.open(_this.state.infoWindow, _this.props.anchor);
-
-        if (_this.props.onLoad) {
-          _this.props.onLoad(_this.state.infoWindow);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = InfoWindow.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var infoWindow = new google.maps.InfoWindow(_extends({}, this.props.options || {}));
-    this.containerElement = document.createElement("div");
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$6,
-      eventMap: eventMap$6,
-      prevProps: {},
-      nextProps: this.props,
-      instance: infoWindow
-    });
-
-    function setInfoWindow() {
-      return {
-        infoWindow: infoWindow
-      };
-    }
-
-    this.setState(setInfoWindow, this.setInfowindowCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.infoWindow !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$6,
-        eventMap: eventMap$6,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.infoWindow
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.infoWindow !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.state.infoWindow.close();
-    }
-  };
-
-  _proto.render = function render() {
-    return this.containerElement ? Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children), this.containerElement) : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return InfoWindow;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-InfoWindow.contextType = MapContext;
-
-var eventMap$7 = {
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick"
-};
-var updaterMap$7 = {
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  path: function path(instance, _path) {
-    instance.setPath(_path);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Polyline =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Polyline, _React$PureComponent);
-
-  function Polyline() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      polyline: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setPolylineCallback = function () {
-      if (_this.state.polyline !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.polyline);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Polyline.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var polyline = new google.maps.Polyline(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$7,
-      eventMap: eventMap$7,
-      prevProps: {},
-      nextProps: this.props,
-      instance: polyline
-    });
-
-    function setPolyline() {
-      return {
-        polyline: polyline
-      };
-    }
-
-    this.setState(setPolyline, this.setPolylineCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.polyline !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$7,
-        eventMap: eventMap$7,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.polyline
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.polyline !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.polyline);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.polyline.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return Polyline;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Polyline.contextType = MapContext;
-
-var eventMap$8 = {
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick"
-};
-var updaterMap$8 = {
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  path: function path(instance, _path) {
-    instance.setPath(_path);
-  },
-  paths: function paths(instance, _paths) {
-    instance.setPaths(_paths);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Polygon =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Polygon, _React$PureComponent);
-
-  function Polygon() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      polygon: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setPolygonCallback = function () {
-      if (_this.state.polygon !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.polygon);
-      }
-    };
-
-    _this.render = function () {
-      return null;
-    };
-
-    return _this;
-  }
-
-  var _proto = Polygon.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var polygon = new google.maps.Polygon(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$8,
-      eventMap: eventMap$8,
-      prevProps: {},
-      nextProps: this.props,
-      instance: polygon
-    });
-
-    function setPolygon() {
-      return {
-        polygon: polygon
-      };
-    }
-
-    this.setState(setPolygon, this.setPolygonCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.polygon !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$8,
-        eventMap: eventMap$8,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.polygon
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.polygon !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.polygon);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.polygon && this.state.polygon.setMap(null);
-    }
-  };
-
-  return Polygon;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Polygon.contextType = MapContext;
-
-var eventMap$9 = {
-  onBoundsChanged: "bounds_changed",
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRightClick: "rightclick"
-};
-var updaterMap$9 = {
-  bounds: function bounds(instance, _bounds) {
-    instance.setBounds(_bounds);
-  },
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Rectangle =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Rectangle, _React$PureComponent);
-
-  function Rectangle() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      rectangle: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setRectangleCallback = function () {
-      if (_this.state.rectangle !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.rectangle);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Rectangle.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var rectangle = new google.maps.Rectangle(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$9,
-      eventMap: eventMap$9,
-      prevProps: {},
-      nextProps: this.props,
-      instance: rectangle
-    });
-
-    function setRectangle() {
-      return {
-        rectangle: rectangle
-      };
-    }
-
-    this.setState(setRectangle, this.setRectangleCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.rectangle !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$9,
-        eventMap: eventMap$9,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.rectangle
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.rectangle !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.rectangle);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.rectangle.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return Rectangle;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Rectangle.contextType = MapContext;
-
-var eventMap$a = {
-  onCenterChanged: "center_changed",
-  onClick: "click",
-  onDblClick: "dblclick",
-  onDrag: "drag",
-  onDragEnd: "dragend",
-  onDragStart: "dragstart",
-  onMouseDown: "mousedown",
-  onMouseMove: "mousemove",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRadiusChanged: "radius_changed",
-  onRightClick: "rightclick"
-};
-var updaterMap$a = {
-  center: function center(instance, _center) {
-    instance.setCenter(_center);
-  },
-  draggable: function draggable(instance, _draggable) {
-    instance.setDraggable(_draggable);
-  },
-  editable: function editable(instance, _editable) {
-    instance.setEditable(_editable);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  radius: function radius(instance, _radius) {
-    instance.setRadius(_radius);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  }
-};
-var Circle =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Circle, _React$PureComponent);
-
-  function Circle() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      circle: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setCircleCallback = function () {
-      if (_this.state.circle !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.circle);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Circle.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var circle = new google.maps.Circle(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$a,
-      eventMap: eventMap$a,
-      prevProps: {},
-      nextProps: this.props,
-      instance: circle
-    });
-
-    function setCircle() {
-      return {
-        circle: circle
-      };
-    }
-
-    this.setState(setCircle, this.setCircleCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.circle !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$a,
-        eventMap: eventMap$a,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.circle
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.circle !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.circle);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.circle && this.state.circle.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return Circle;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Circle.contextType = MapContext;
-
-var eventMap$b = {
-  onAddFeature: "addfeature",
-  onClick: "click",
-  onDblClick: "dblclick",
-  onMouseDown: "mousedown",
-  onMouseOut: "mouseout",
-  onMouseOver: "mouseover",
-  onMouseUp: "mouseup",
-  onRemoveFeature: "removefeature",
-  onRemoveProperty: "removeproperty",
-  onRightClick: "rightclick",
-  onSetGeometry: "setgeometry",
-  onSetProperty: "setproperty"
-};
-var updaterMap$b = {
-  add: function add(instance, features) {
-    instance.add(features);
-  },
-  addgeojson: function addgeojson(instance, geojson, options) {
-    instance.addGeoJson(geojson, options);
-  },
-  contains: function contains(instance, feature) {
-    instance.contains(feature);
-  },
-  foreach: function foreach(instance, callback) {
-    instance.forEach(callback);
-  },
-  loadgeojson: function loadgeojson(instance, url, options, callback) {
-    instance.loadGeoJson(url, options, callback);
-  },
-  overridestyle: function overridestyle(instance, feature, style) {
-    instance.overrideStyle(feature, style);
-  },
-  remove: function remove(instance, feature) {
-    instance.remove(feature);
-  },
-  revertstyle: function revertstyle(instance, feature) {
-    instance.revertStyle(feature);
-  },
-  controlposition: function controlposition(instance, controlPosition // TODO: ???
-  ) {
-    instance.setControlPosition(controlPosition);
-  },
-  controls: function controls(instance, _controls) {
-    instance.setControls(_controls);
-  },
-  drawingmode: function drawingmode(instance, mode) {
-    instance.setDrawingMode(mode);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  style: function style(instance, _style) {
-    instance.setStyle(_style);
-  },
-  togeojson: function togeojson(instance, callback) {
-    instance.toGeoJson(callback);
-  }
-};
-var Data =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Data, _React$PureComponent);
-
-  function Data() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      data: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDataCallback = function () {
-      if (_this.state.data !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.data);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Data.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var data = new google.maps.Data(_extends({}, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$b,
-      eventMap: eventMap$b,
-      prevProps: {},
-      nextProps: this.props,
-      instance: data
-    });
-
-    function setData() {
-      return {
-        data: data
-      };
-    }
-
-    this.setState(setData, this.setDataCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.data !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$b,
-        eventMap: eventMap$b,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.data
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.data !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.data);
-      }
-
-      unregisterEvents(this.registeredEvents);
-
-      if (this.state.data) {
-        this.state.data.setMap(null);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return Data;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Data.contextType = MapContext;
-
-var eventMap$c = {
-  onClick: "click",
-  onDefaultViewportChanged: "defaultviewport_changed",
-  onStatusChanged: "status_changed"
-};
-var updaterMap$c = {
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  url: function url(instance, _url) {
-    instance.setUrl(_url);
-  },
-  zIndex: function zIndex(instance, _zIndex) {
-    instance.setZIndex(_zIndex);
-  }
-};
-var KmlLayer =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inheritsLoose(KmlLayer, _PureComponent);
-
-  function KmlLayer() {
-    var _this;
-
-    _this = _PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      kmlLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setKmlLayerCallback = function () {
-      if (_this.state.kmlLayer !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.kmlLayer);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = KmlLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var kmlLayer = new google.maps.KmlLayer(_extends({}, this.props.options, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$c,
-      eventMap: eventMap$c,
-      prevProps: {},
-      nextProps: this.props,
-      instance: kmlLayer
-    });
-
-    function setLmlLayer() {
-      return {
-        kmlLayer: kmlLayer
-      };
-    }
-
-    this.setState(setLmlLayer, this.setKmlLayerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.kmlLayer !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$c,
-        eventMap: eventMap$c,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.kmlLayer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.kmlLayer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.kmlLayer);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.kmlLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return KmlLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-KmlLayer.contextType = MapContext;
-
-/* eslint-disable filenames/match-regex */
-function getOffsetOverride(containerElement, getPixelPositionOffset) {
-  return typeof getPixelPositionOffset === "function" ? getPixelPositionOffset(containerElement.offsetWidth, containerElement.offsetHeight) : {};
-}
-
-var createLatLng = function createLatLng(inst, Type) {
-  return new Type(inst.lat, inst.lng);
-};
-
-var createLatLngBounds = function createLatLngBounds(inst, Type) {
-  return new Type(new google.maps.LatLng(inst.ne.lat, inst.ne.lng), new google.maps.LatLng(inst.sw.lat, inst.sw.lng));
-};
-
-var ensureOfType = function ensureOfType(inst, type, factory) {
-  return inst instanceof type ? inst : factory(inst, type);
-};
-
-var getLayoutStylesByBounds = function getLayoutStylesByBounds(mapCanvasProjection, offset, bounds) {
-  var ne = mapCanvasProjection.fromLatLngToDivPixel(bounds.getNorthEast());
-  var sw = mapCanvasProjection.fromLatLngToDivPixel(bounds.getSouthWest());
-
-  if (ne && sw) {
+var pointFromVector = (function (origin, angle, distance) {
+    angle = degreesToRadians(angle);
     return {
-      left: sw.x + offset.x + "px",
-      top: ne.y + offset.y + "px",
-      width: ne.x - sw.x - offset.x + "px",
-      height: sw.y - ne.y - offset.y + "px"
+        x: distance * Math.cos(angle) + origin.x,
+        y: distance * Math.sin(angle) + origin.y
     };
-  }
+});
 
-  return {
-    left: "-9999px",
-    top: "-9999px"
-  };
-};
+var toDecimal = (function (num, precision) {
+    if (precision === void 0) { precision = 2; }
+    precision = Math.pow(10, precision);
+    return Math.round(num * precision) / precision;
+});
 
-var getLayoutStylesByPosition = function getLayoutStylesByPosition(mapCanvasProjection, offset, position) {
-  var point = mapCanvasProjection.fromLatLngToDivPixel(position);
+var smoothFrame = (function (prevValue, nextValue, duration, smoothing) {
+    if (smoothing === void 0) { smoothing = 0; }
+    return toDecimal(prevValue +
+        (duration * (nextValue - prevValue)) / Math.max(smoothing, duration));
+});
 
-  if (point) {
-    var x = point.x,
-        y = point.y;
-    return {
-      left: x + offset.x + "px",
-      top: y + offset.y + "px"
+var smooth = (function (strength) {
+    if (strength === void 0) { strength = 50; }
+    var previousValue = 0;
+    var lastUpdated = 0;
+    return function (v) {
+        var currentFramestamp = Object(framesync__WEBPACK_IMPORTED_MODULE_2__["getFrameData"])().timestamp;
+        var timeDelta = currentFramestamp !== lastUpdated ? currentFramestamp - lastUpdated : 0;
+        var newValue = timeDelta
+            ? smoothFrame(previousValue, v, timeDelta, strength)
+            : previousValue;
+        lastUpdated = currentFramestamp;
+        previousValue = newValue;
+        return newValue;
     };
-  }
+});
 
-  return {
-    left: "-9999px",
-    top: "-9999px"
-  };
-};
-
-var getLayoutStyles = function getLayoutStyles(mapCanvasProjection, offset, bounds, // eslint-disable-next-line @getify/proper-arrows/params
-position) {
-  return bounds !== undefined ? getLayoutStylesByBounds(mapCanvasProjection, offset, ensureOfType(bounds, google.maps.LatLngBounds, createLatLngBounds)) : getLayoutStylesByPosition(mapCanvasProjection, offset, ensureOfType(position, google.maps.LatLng, createLatLng));
-};
-
-var ContentMountHandler =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(ContentMountHandler, _React$Component);
-
-  function ContentMountHandler() {
-    return _React$Component.apply(this, arguments) || this;
-  }
-
-  var _proto = ContentMountHandler.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (this.props.onLoad) this.props.onLoad();
-  };
-
-  _proto.render = function render() {
-    return this.props.children;
-  };
-
-  return ContentMountHandler;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-var OverlayView =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(OverlayView, _React$PureComponent);
-
-  function OverlayView() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      overlayView: null
-    };
-    _this.containerElement = null; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setOverlayViewCallback = function () {
-      if (_this.state.overlayView !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.overlayView);
-      }
-
-      _this.onPositionElement();
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.onAdd = function () {
-      _this.containerElement = document.createElement("div");
-      _this.containerElement.style.position = "absolute";
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.onPositionElement = function () {
-      if (_this.state.overlayView !== null && _this.containerElement !== null) {
-        var mapCanvasProjection = _this.state.overlayView.getProjection();
-
-        var offset = _extends({
-          x: 0,
-          y: 0
-        }, getOffsetOverride(_this.containerElement, _this.props.getPixelPositionOffset));
-
-        var layoutStyles = getLayoutStyles(mapCanvasProjection, offset, _this.props.bounds, _this.props.position);
-        Object.assign(_this.containerElement.style, layoutStyles);
-      }
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.draw = function () {
-      !!!_this.props.mapPaneName ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "OverlayView requires props.mapPaneName but got %s", _this.props.mapPaneName) : undefined : void 0;
-      var overlayView = _this.state.overlayView;
-
-      if (overlayView === null) {
-        return;
-      } // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapPanes
-
-
-      var mapPanes = overlayView.getPanes();
-
-      if (!mapPanes) {
-        return;
-      }
-
-      if (_this.containerElement) {
-        mapPanes[_this.props.mapPaneName].appendChild(_this.containerElement);
-      }
-
-      _this.onPositionElement();
-
-      _this.forceUpdate();
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-
-    _this.onRemove = function () {
-      if (_this.containerElement !== null && _this.containerElement.parentNode) {
-        _this.containerElement.parentNode.removeChild(_this.containerElement);
-
-        delete _this.containerElement;
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto2 = OverlayView.prototype;
-
-  _proto2.componentDidMount = function componentDidMount() {
-    var overlayView = new google.maps.OverlayView(); // You must implement three methods: onAdd(), draw(), and onRemove().
-
-    overlayView.onAdd = this.onAdd;
-    overlayView.draw = this.draw;
-    overlayView.onRemove = this.onRemove;
-    overlayView.setMap(this.context); // You must call setMap() with a valid Map object to trigger the call to
-    // the onAdd() method and setMap(null) in order to trigger the onRemove() method.
-
-    function setOverlayView() {
-      return {
-        overlayView: overlayView
-      };
+var snap = (function (points) {
+    if (typeof points === 'number') {
+        return function (v) { return Math.round(v / points) * points; };
     }
-
-    this.setState(setOverlayView);
-  };
-
-  _proto2.componentDidUpdate = function componentDidUpdate(prevProps) {
-    var _this2 = this;
-
-    if (prevProps.position !== this.props.position || prevProps.bounds !== this.props.bounds) {
-      setTimeout(function () {
-        _this2.state.overlayView !== null && _this2.state.overlayView.draw();
-      }, 0);
-    }
-  };
-
-  _proto2.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.overlayView !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.overlayView);
-      }
-
-      this.state.overlayView.setMap(null);
-    }
-  };
-
-  _proto2.render = function render() {
-    return this.containerElement !== null ? Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["createPortal"])(Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ContentMountHandler, {
-      onLoad: this.setOverlayViewCallback
-    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children)), this.containerElement) : Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return OverlayView;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-OverlayView.FLOAT_PANE = "floatPane";
-OverlayView.MAP_PANE = "mapPane";
-OverlayView.MARKER_LAYER = "markerLayer";
-OverlayView.OVERLAY_LAYER = "overlayLayer";
-OverlayView.OVERLAY_MOUSE_TARGET = "overlayMouseTarget";
-OverlayView.contextType = MapContext;
-
-var eventMap$d = {
-  onDblClick: "dblclick",
-  onClick: "click"
-};
-var updaterMap$d = {
-  opacity: function opacity(instance, _opacity) {
-    instance.setOpacity(_opacity);
-  }
-};
-var GroundOverlay =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(GroundOverlay, _React$PureComponent);
-
-  function GroundOverlay() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      groundOverlay: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setGroundOverlayCallback = function () {
-      if (_this.state.groundOverlay !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.groundOverlay);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = GroundOverlay.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !(!!this.props.url || !!this.props.bounds) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "For GroundOveray, url and bounds are passed in to constructor and are immutable after instantiated. This is the behavior of Google Maps JavaScript API v3 ( See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay) Hence, use the corresponding two props provided by `react-google-maps-api`, url and bounds. In some cases, you'll need the GroundOverlay component to reflect the changes of url and bounds. You can leverage the React's key property to remount the component. Typically, just `key={url}` would serve your need. See https://github.com/tomchentw/react-google-maps/issues/655") : undefined : void 0;
-    var groundOverlay = new google.maps.GroundOverlay(this.props.url, this.props.bounds, _extends({}, this.props.options, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$d,
-      eventMap: eventMap$d,
-      prevProps: {},
-      nextProps: this.props,
-      instance: groundOverlay
-    });
-
-    function setGroundOverlay() {
-      return {
-        groundOverlay: groundOverlay
-      };
-    }
-
-    this.setState(setGroundOverlay, this.setGroundOverlayCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.groundOverlay !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$d,
-        eventMap: eventMap$d,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.groundOverlay
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.groundOverlay) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.groundOverlay);
-      }
-
-      this.state.groundOverlay.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return GroundOverlay;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-GroundOverlay.defaultProps = {
-  onLoad: function onLoad() {}
-};
-GroundOverlay.contextType = MapContext;
-
-var eventMap$e = {};
-var updaterMap$e = {
-  data: function data(instance, _data) {
-    instance.setData(_data);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  }
-};
-var HeatmapLayer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(HeatmapLayer, _React$PureComponent);
-
-  function HeatmapLayer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      heatmapLayer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setHeatmapLayerCallback = function () {
-      if (_this.state.heatmapLayer !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.heatmapLayer);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = HeatmapLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!google.maps.visualization ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'Did you include prop libraries={["visualization"]} to <LoadScript />? %s', google.maps.visualization) : undefined : void 0;
-    !!!this.props.data ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "data property is required in HeatmapLayer %s", this.props.data) : undefined : void 0;
-    var heatmapLayer = new google.maps.visualization.HeatmapLayer(_extends({
-      data: this.props.data
-    }, this.props.options || {}, {
-      map: this.context
-    }));
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$e,
-      eventMap: eventMap$e,
-      prevProps: {},
-      nextProps: this.props,
-      instance: heatmapLayer
-    });
-
-    function setHeatmapLayer() {
-      return {
-        heatmapLayer: heatmapLayer
-      };
-    }
-
-    this.setState(setHeatmapLayer, this.setHeatmapLayerCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    unregisterEvents(this.registeredEvents);
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$e,
-      eventMap: eventMap$e,
-      prevProps: prevProps,
-      nextProps: this.props,
-      instance: this.state.heatmapLayer
-    });
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.heatmapLayer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.heatmapLayer);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.heatmapLayer.setMap(null);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return HeatmapLayer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-HeatmapLayer.contextType = MapContext;
-
-var eventMap$f = {
-  onCloseClick: "closeclick",
-  onPanoChanged: "pano_changed",
-  onPositionChanged: "position_changed",
-  onPovChanged: "pov_changed",
-  onResize: "resize",
-  onStatusChanged: "status_changed",
-  onVisibleChanged: "visible_changed",
-  onZoomChanged: "zoom_changed"
-};
-var updaterMap$f = {
-  register: function register(instance, provider, options) {
-    instance.registerPanoProvider(provider, options);
-  },
-  links: function links(instance, _links) {
-    instance.setLinks(_links);
-  },
-  motionTracking: function motionTracking(instance, _motionTracking) {
-    instance.setMotionTracking(_motionTracking);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  pano: function pano(instance, _pano) {
-    instance.setPano(_pano);
-  },
-  position: function position(instance, _position) {
-    instance.setPosition(_position);
-  },
-  pov: function pov(instance, _pov) {
-    instance.setPov(_pov);
-  },
-  visible: function visible(instance, _visible) {
-    instance.setVisible(_visible);
-  },
-  zoom: function zoom(instance, _zoom) {
-    instance.setZoom(_zoom);
-  }
-};
-var StreetViewPanorama =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(StreetViewPanorama, _React$PureComponent);
-
-  function StreetViewPanorama() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      streetViewPanorama: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setStreetViewPanoramaCallback = function () {
-      if (_this.state.streetViewPanorama !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.streetViewPanorama);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = StreetViewPanorama.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var streetViewPanorama = this.context.getStreetView();
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$f,
-      eventMap: eventMap$f,
-      prevProps: {},
-      nextProps: this.props,
-      instance: streetViewPanorama
-    });
-
-    function setStreetViewPanorama() {
-      return {
-        streetViewPanorama: streetViewPanorama
-      };
-    }
-
-    this.setState(setStreetViewPanorama, this.setStreetViewPanoramaCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.streetViewPanorama !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$f,
-        eventMap: eventMap$f,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.streetViewPanorama
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.streetViewPanorama !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.streetViewPanorama);
-      }
-
-      unregisterEvents(this.registeredEvents);
-      this.state.streetViewPanorama.setVisible(false);
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return StreetViewPanorama;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-StreetViewPanorama.contextType = MapContext;
-
-var StreetViewService =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(StreetViewService, _React$PureComponent);
-
-  function StreetViewService() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      streetViewService: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setStreetViewServiceCallback = function () {
-      if (_this.state.streetViewService !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.streetViewService);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = StreetViewService.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var streetViewService = new google.maps.StreetViewService();
-
-    function setStreetViewService() {
-      return {
-        streetViewService: streetViewService
-      };
-    }
-
-    this.setState(setStreetViewService);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.streetViewService !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.streetViewService);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return StreetViewService;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-StreetViewService.contextType = MapContext;
-
-var DirectionsService =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DirectionsService, _React$PureComponent);
-
-  function DirectionsService() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      directionsService: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDirectionsServiceCallback = function () {
-      if (_this.state.directionsService !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.directionsService);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = DirectionsService.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!this.props.options ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "DirectionsService expected options object as parameter, but got %s", this.props.options) : undefined : void 0;
-    var directionsService = new google.maps.DirectionsService();
-
-    function setDirectionsService() {
-      return {
-        directionsService: directionsService
-      };
-    }
-
-    this.setState(setDirectionsService, this.setDirectionsServiceCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate() {
-    if (this.state.directionsService !== null) {
-      this.state.directionsService.route(this.props.options, this.props.callback);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.directionsService !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.directionsService);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DirectionsService;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-var eventMap$g = {
-  onDirectionsChanged: "directions_changed"
-};
-var updaterMap$g = {
-  directions: function directions(instance, _directions) {
-    instance.setDirections(_directions);
-  },
-  map: function map(instance, _map) {
-    instance.setMap(_map);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  panel: function panel(instance, _panel) {
-    instance.setPanel(_panel);
-  },
-  routeIndex: function routeIndex(instance, _routeIndex) {
-    instance.setRouteIndex(_routeIndex);
-  }
-};
-var DirectionsRenderer =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DirectionsRenderer, _React$PureComponent);
-
-  function DirectionsRenderer() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.state = {
-      directionsRenderer: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setDirectionsRendererCallback = function () {
-      if (_this.state.directionsRenderer !== null) {
-        _this.state.directionsRenderer.setMap(_this.context);
-
-        if (_this.props.onLoad) {
-          _this.props.onLoad(_this.state.directionsRenderer);
-        }
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = DirectionsRenderer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var directionsRenderer = new google.maps.DirectionsRenderer(this.props.options);
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$g,
-      eventMap: eventMap$g,
-      prevProps: {},
-      nextProps: this.props,
-      instance: directionsRenderer
-    });
-    this.setState(function setDirectionsRenderer() {
-      return {
-        directionsRenderer: directionsRenderer
-      };
-    }, this.setDirectionsRendererCallback);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.directionsRenderer !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$g,
-        eventMap: eventMap$g,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.directionsRenderer
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.directionsRenderer !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.directionsRenderer);
-      }
-
-      unregisterEvents(this.registeredEvents);
-
-      if (this.state.directionsRenderer) {
-        this.state.directionsRenderer.setMap(null);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DirectionsRenderer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-DirectionsRenderer.contextType = MapContext;
-
-var DistanceMatrixService =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(DistanceMatrixService, _React$PureComponent);
-
-  function DistanceMatrixService() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.state = {
-      distanceMatrixService: null
-    };
-
-    _this.setDistanceMatrixServiceCallbak = function () {
-      if (_this.state.distanceMatrixService !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.distanceMatrixService);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = DistanceMatrixService.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!this.props.options ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'DistanceMatrixService expected options object as parameter, but go %s', this.props.options) : undefined : void 0;
-    var distanceMatrixService = new google.maps.DistanceMatrixService();
-
-    function setDistanceMatrixService() {
-      return {
-        distanceMatrixService: distanceMatrixService
-      };
-    }
-
-    this.setState(setDistanceMatrixService, this.setDistanceMatrixServiceCallbak);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate() {
-    if (this.state.distanceMatrixService !== null) {
-      this.state.distanceMatrixService.getDistanceMatrix(this.props.options, this.props.callback);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.distanceMatrixService !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.distanceMatrixService);
-      }
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
-  };
-
-  return DistanceMatrixService;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-var eventMap$h = {
-  onPlacesChanged: "places_changed"
-};
-var updaterMap$h = {
-  bounds: function bounds(instance, _bounds) {
-    instance.setBounds(_bounds);
-  }
-};
-
-var StandaloneSearchBox =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(StandaloneSearchBox, _React$PureComponent);
-
-  function StandaloneSearchBox() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
-    _this.state = {
-      searchBox: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setSearchBoxCallback = function () {
-      if (_this.state.searchBox !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.searchBox);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = StandaloneSearchBox.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!google.maps.places ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places) : undefined : void 0;
-
-    if (this.containerElement !== null && this.containerElement.current !== null) {
-      var input = this.containerElement.current.querySelector("input");
-
-      if (input) {
-        var searchBox = new google.maps.places.SearchBox( // @ts-ignore
-        input, this.props.options);
-        this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-          updaterMap: updaterMap$h,
-          eventMap: eventMap$h,
-          prevProps: {},
-          nextProps: this.props,
-          instance: searchBox
-        });
-        this.setState(function setSearchBox() {
-          return {
-            searchBox: searchBox
-          };
-        }, this.setSearchBoxCallback);
-      }
-    }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.state.searchBox !== null) {
-      unregisterEvents(this.registeredEvents);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$h,
-        eventMap: eventMap$h,
-        prevProps: prevProps,
-        nextProps: this.props,
-        instance: this.state.searchBox
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.searchBox !== null) {
-      if (this.props.onUnmount) {
-        this.props.onUnmount(this.state.searchBox);
-      }
-
-      unregisterEvents(this.registeredEvents);
-    }
-  };
-
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      ref: this.containerElement
-    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children));
-  };
-
-  return StandaloneSearchBox;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-StandaloneSearchBox.contextType = MapContext;
-
-var eventMap$i = {
-  onPlaceChanged: "place_changed"
-};
-var updaterMap$i = {
-  bounds: function bounds(instance, _bounds) {
-    instance.setBounds(_bounds);
-  },
-  restrictions: function restrictions(instance, _restrictions) {
-    instance.setComponentRestrictions(_restrictions);
-  },
-  fields: function fields(instance, _fields) {
-    instance.setFields(_fields);
-  },
-  options: function options(instance, _options) {
-    instance.setOptions(_options);
-  },
-  types: function types(instance, _types) {
-    instance.setTypes(_types);
-  }
-};
-var Autocomplete =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Autocomplete, _React$PureComponent);
-
-  function Autocomplete() {
-    var _this;
-
-    _this = _React$PureComponent.apply(this, arguments) || this;
-    _this.registeredEvents = [];
-    _this.containerElement = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
-    _this.state = {
-      autocomplete: null
-    }; // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    _this.setAutocompleteCallback = function () {
-      if (_this.state.autocomplete !== null && _this.props.onLoad) {
-        _this.props.onLoad(_this.state.autocomplete);
-      }
-    };
-
-    return _this;
-  }
-
-  var _proto = Autocomplete.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    !!!google.maps.places ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, 'You need to provide libraries={["places"]} prop to <LoadScript /> component %s', google.maps.places) : undefined : void 0; // TODO: why is this possibly null
-    // @ts-ignore
-
-    var input = this.containerElement.current.querySelector("input");
-
-    if (input) {
-      var autocomplete = new google.maps.places.Autocomplete(input, this.props.options);
-      this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-        updaterMap: updaterMap$i,
-        eventMap: eventMap$i,
-        prevProps: {},
-        nextProps: this.props,
-        instance: autocomplete
-      });
-      this.setState(function setAutocomplete() {
-        return {
-          autocomplete: autocomplete
+    else {
+        var i_1 = 0;
+        var numPoints_1 = points.length;
+        return function (v) {
+            var lastDistance = Math.abs(points[0] - v);
+            for (i_1 = 1; i_1 < numPoints_1; i_1++) {
+                var point = points[i_1];
+                var distance = Math.abs(point - v);
+                if (distance === 0)
+                    return point;
+                if (distance > lastDistance)
+                    return points[i_1 - 1];
+                if (i_1 === numPoints_1 - 1)
+                    return point;
+                lastDistance = distance;
+            }
         };
-      }, this.setAutocompleteCallback);
     }
-  };
+});
 
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    unregisterEvents(this.registeredEvents);
-    this.registeredEvents = applyUpdatersToPropsAndRegisterEvents({
-      updaterMap: updaterMap$i,
-      eventMap: eventMap$i,
-      prevProps: prevProps,
-      nextProps: this.props,
-      instance: this.state.autocomplete
+var identity = function (v) { return v; };
+var springForce = function (alterDisplacement) {
+    if (alterDisplacement === void 0) { alterDisplacement = identity; }
+    return curryRange(function (constant, origin, v) {
+        var displacement = origin - v;
+        var springModifiedDisplacement = -(0 - constant + 1) * (0 - alterDisplacement(Math.abs(displacement)));
+        return displacement <= 0
+            ? origin + springModifiedDisplacement
+            : origin - springModifiedDisplacement;
     });
-  };
+};
+var springForceLinear = springForce();
+var springForceExpo = springForce(Math.sqrt);
 
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.state.autocomplete !== null) {
-      unregisterEvents(this.registeredEvents);
-    }
-  };
+var velocityPerFrame = (function (xps, frameDuration) {
+    return isNum(xps) ? xps / (1000 / frameDuration) : 0;
+});
 
-  _proto.render = function render() {
-    return Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      ref: this.containerElement
-    }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].only(this.props.children));
-  };
+var velocityPerSecond = (function (velocity, frameDuration) {
+    return frameDuration ? velocity * (1000 / frameDuration) : 0;
+});
 
-  return Autocomplete;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-Autocomplete.contextType = MapContext;
+var wrap = function (min, max, v) {
+    var rangeSize = max - min;
+    return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
+var wrap$1 = curryRange(wrap);
+
+var clampProgress = clamp$1(0, 1);
+var steps = (function (steps, direction) {
+    if (direction === void 0) { direction = 'end'; }
+    return function (progress) {
+        progress =
+            direction === 'end' ? Math.min(progress, 0.999) : Math.max(progress, 0.001);
+        var expanded = progress * steps;
+        var rounded = direction === 'end' ? Math.floor(expanded) : Math.ceil(expanded);
+        return clampProgress(rounded / steps);
+    };
+});
 
 
-//# sourceMappingURL=reactgooglemapsapi.esm.js.map
 
 
 /***/ }),
 
-/***/ "./node_modules/@react-google-maps/infobox/dist/infobox.esm.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@react-google-maps/infobox/dist/infobox.esm.js ***!
-  \*********************************************************************/
-/*! exports provided: InfoBox */
+/***/ "./node_modules/framesync/dist/framesync.es.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/framesync/dist/framesync.es.js ***!
+  \*****************************************************/
+/*! exports provided: default, cancelSync, getFrameData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoBox", function() { return InfoBox; });
-var InfoBox =
-/*#__PURE__*/
-function () {
-  function InfoBox(options) {
-    if (options === void 0) {
-      options = {};
-    }
-
-    this.extend(InfoBox, google.maps.OverlayView); // Standard options (in common with google.maps.InfoWindow):
-
-    this.content = options.content || '';
-    this.disableAutoPan = options.disableAutoPan || false;
-    this.maxWidth = options.maxWidth || 0;
-    this.pixelOffset = options.pixelOffset || new google.maps.Size(0, 0);
-    this.position = options.position || new google.maps.LatLng(0, 0);
-    this.zIndex = options.zIndex || null; // Additional options (unique to InfoBox):
-
-    this.boxClass = options.boxClass || 'infoBox';
-    this.boxStyle = options.boxStyle || {};
-    this.closeBoxMargin = options.closeBoxMargin || '2px';
-    this.closeBoxURL = options.closeBoxURL || 'http://www.google.com/intl/en_us/mapfiles/close.gif';
-
-    if (options.closeBoxURL === '') {
-      this.closeBoxURL = '';
-    }
-
-    this.infoBoxClearance = options.infoBoxClearance || new google.maps.Size(1, 1);
-
-    if (typeof options.visible === 'undefined') {
-      if (typeof options.isHidden === 'undefined') {
-        options.visible = true;
-      } else {
-        options.visible = !options.isHidden;
-      }
-    }
-
-    this.isHidden = !options.visible;
-    this.alignBottom = options.alignBottom || false;
-    this.pane = options.pane || 'floatPane';
-    this.enableEventPropagation = options.enableEventPropagation || false;
-    this.div = null;
-    this.closeListener = null;
-    this.moveListener = null;
-    this.mapListener = null;
-    this.contextListener = null;
-    this.eventListeners = null;
-    this.fixedWidthSet = null;
-  }
-
-  var _proto = InfoBox.prototype;
-
-  _proto.createInfoBoxDiv = function createInfoBoxDiv() {
-    var _this = this;
-
-    // This handler prevents an event in the InfoBox from being passed on to the map.
-    function cancelHandler(event) {
-      event.cancelBubble = true;
-
-      if (event.stopPropagation) {
-        event.stopPropagation();
-      }
-    } // This handler ignores the current event in the InfoBox and conditionally prevents
-    // the event from being passed on to the map. It is used for the contextmenu event.
-    // eslint-disable-next-line  @getify/proper-arrows/this
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelSync", function() { return cancelSync; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFrameData", function() { return getFrameData; });
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
 
 
-    var ignoreHandler = function ignoreHandler(event) {
-      event.returnValue = false;
-
-      if (event.preventDefault) {
-        event.preventDefault();
-      }
-
-      if (!_this.enableEventPropagation) {
-        cancelHandler(event);
-      }
+var prevTime = 0;
+var onNextFrame = typeof window !== 'undefined' && window.requestAnimationFrame !== undefined
+    ? function (callback) { return window.requestAnimationFrame(callback); }
+    : function (callback) {
+        var timestamp = Date.now();
+        var timeToCall = Math.max(0, 16.7 - (timestamp - prevTime));
+        prevTime = timestamp + timeToCall;
+        setTimeout(function () { return callback(prevTime); }, timeToCall);
     };
 
-    if (!this.div) {
-      this.div = document.createElement('div');
-      this.setBoxStyle();
-
-      if (typeof this.content === 'string') {
-        this.div.innerHTML = this.getCloseBoxImg() + this.content;
-      } else {
-        this.div.innerHTML = this.getCloseBoxImg();
-        this.div.appendChild(this.content);
-      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-
-
-      var panes = this.getPanes();
-      panes[this.pane].appendChild(this.div); // Add the InfoBox div to the DOM
-
-      this.addClickHandler();
-
-      if (this.div.style.width) {
-        this.fixedWidthSet = true;
-      } else {
-        if (this.maxWidth !== 0 && this.div.offsetWidth > this.maxWidth) {
-          this.div.style.width = this.maxWidth + 'px';
-          this.fixedWidthSet = true;
-        } else {
-          // The following code is needed to overcome problems with MSIE
-          var bw = this.getBoxWidths();
-          this.div.style.width = this.div.offsetWidth - bw.left - bw.right + 'px';
-          this.fixedWidthSet = false;
+var createStep = (function (setRunNextFrame) {
+    var processToRun = [];
+    var processToRunNextFrame = [];
+    var numThisFrame = 0;
+    var isProcessing = false;
+    var i = 0;
+    var cancelled = new WeakSet();
+    var toKeepAlive = new WeakSet();
+    var renderStep = {
+        cancel: function (process) {
+            var indexOfCallback = processToRunNextFrame.indexOf(process);
+            cancelled.add(process);
+            if (indexOfCallback !== -1) {
+                processToRunNextFrame.splice(indexOfCallback, 1);
+            }
+        },
+        process: function (frame) {
+            var _a;
+            isProcessing = true;
+            _a = [
+                processToRunNextFrame,
+                processToRun
+            ], processToRun = _a[0], processToRunNextFrame = _a[1];
+            processToRunNextFrame.length = 0;
+            numThisFrame = processToRun.length;
+            if (numThisFrame) {
+                var process_1;
+                for (i = 0; i < numThisFrame; i++) {
+                    process_1 = processToRun[i];
+                    process_1(frame);
+                    if (toKeepAlive.has(process_1) === true && !cancelled.has(process_1)) {
+                        renderStep.schedule(process_1);
+                        setRunNextFrame(true);
+                    }
+                }
+            }
+            isProcessing = false;
+        },
+        schedule: function (process, keepAlive, immediate) {
+            if (keepAlive === void 0) { keepAlive = false; }
+            if (immediate === void 0) { immediate = false; }
+            Object(hey_listen__WEBPACK_IMPORTED_MODULE_0__["invariant"])(typeof process === 'function', 'Argument must be a function');
+            var addToCurrentBuffer = immediate && isProcessing;
+            var buffer = addToCurrentBuffer ? processToRun : processToRunNextFrame;
+            cancelled.delete(process);
+            if (keepAlive)
+                toKeepAlive.add(process);
+            if (buffer.indexOf(process) === -1) {
+                buffer.push(process);
+                if (addToCurrentBuffer)
+                    numThisFrame = processToRun.length;
+            }
         }
-      }
+    };
+    return renderStep;
+});
 
-      this.panBox(this.disableAutoPan);
+var StepId;
+(function (StepId) {
+    StepId["Read"] = "read";
+    StepId["Update"] = "update";
+    StepId["Render"] = "render";
+    StepId["PostRender"] = "postRender";
+    StepId["FixedUpdate"] = "fixedUpdate";
+})(StepId || (StepId = {}));
 
-      if (!this.enableEventPropagation) {
-        this.eventListeners = []; // Cancel event propagation.
-        // Note: mousemove not included (to resolve Issue 152)
+var maxElapsed = 40;
+var defaultElapsed = (1 / 60) * 1000;
+var useDefaultElapsed = true;
+var willRunNextFrame = false;
+var isProcessing = false;
+var frame = {
+    delta: 0,
+    timestamp: 0
+};
+var stepsOrder = [
+    StepId.Read,
+    StepId.Update,
+    StepId.Render,
+    StepId.PostRender
+];
+var setWillRunNextFrame = function (willRun) { return (willRunNextFrame = willRun); };
+var _a = stepsOrder.reduce(function (acc, key) {
+    var step = createStep(setWillRunNextFrame);
+    acc.sync[key] = function (process, keepAlive, immediate) {
+        if (keepAlive === void 0) { keepAlive = false; }
+        if (immediate === void 0) { immediate = false; }
+        if (!willRunNextFrame)
+            startLoop();
+        step.schedule(process, keepAlive, immediate);
+        return process;
+    };
+    acc.cancelSync[key] = function (process) { return step.cancel(process); };
+    acc.steps[key] = step;
+    return acc;
+}, {
+    steps: {},
+    sync: {},
+    cancelSync: {}
+}), steps = _a.steps, sync = _a.sync, cancelSync = _a.cancelSync;
+var processStep = function (stepId) { return steps[stepId].process(frame); };
+var processFrame = function (timestamp) {
+    willRunNextFrame = false;
+    frame.delta = useDefaultElapsed
+        ? defaultElapsed
+        : Math.max(Math.min(timestamp - frame.timestamp, maxElapsed), 1);
+    if (!useDefaultElapsed)
+        defaultElapsed = frame.delta;
+    frame.timestamp = timestamp;
+    isProcessing = true;
+    stepsOrder.forEach(processStep);
+    isProcessing = false;
+    if (willRunNextFrame) {
+        useDefaultElapsed = false;
+        onNextFrame(processFrame);
+    }
+};
+var startLoop = function () {
+    willRunNextFrame = true;
+    useDefaultElapsed = true;
+    if (!isProcessing)
+        onNextFrame(processFrame);
+};
+var getFrameData = function () { return frame; };
 
-        var events = ['mousedown', 'mouseover', 'mouseout', 'mouseup', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'];
-
-        for (var i = 0; i < events.length; i++) {
-          this.eventListeners.push(google.maps.event.addDomListener(this.div, events[i], cancelHandler));
-        } // Workaround for Google bug that causes the cursor to change to a pointer
-        // when the mouse moves over a marker underneath InfoBox.
+/* harmony default export */ __webpack_exports__["default"] = (sync);
 
 
-        this.eventListeners.push(google.maps.event.addDomListener(this.div, 'mouseover', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-        function () {
-          if (_this.div) {
-            _this.div.style.cursor = 'default';
-          }
+
+/***/ }),
+
+/***/ "./node_modules/hey-listen/dist/hey-listen.es.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/hey-listen/dist/hey-listen.es.js ***!
+  \*******************************************************/
+/*! exports provided: invariant, warning */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "invariant", function() { return invariant; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "warning", function() { return warning; });
+var warning = function () { };
+var invariant = function () { };
+if (true) {
+    warning = function (check, message) {
+        if (!check && typeof console !== 'undefined') {
+            console.warn(message);
+        }
+    };
+    invariant = function (check, message) {
+        if (!check) {
+            throw new Error(message);
+        }
+    };
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/popmotion-pose/dist/popmotion-pose.es.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/popmotion-pose/dist/popmotion-pose.es.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var popmotion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! popmotion */ "./node_modules/popmotion/dist/popmotion.es.js");
+/* harmony import */ var _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @popmotion/easing */ "./node_modules/@popmotion/easing/dist/easing.es.js");
+/* harmony import */ var style_value_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! style-value-types */ "./node_modules/style-value-types/dist/style-value-types.es.js");
+/* harmony import */ var pose_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! pose-core */ "./node_modules/pose-core/dist/pose-core.es.js");
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
+
+
+
+
+
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+var __assign = function () {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0) t[p[i]] = s[p[i]];
+    return t;
+}
+
+var BoundingBoxDimension;
+(function (BoundingBoxDimension) {
+    BoundingBoxDimension["width"] = "width";
+    BoundingBoxDimension["height"] = "height";
+    BoundingBoxDimension["left"] = "left";
+    BoundingBoxDimension["right"] = "right";
+    BoundingBoxDimension["top"] = "top";
+    BoundingBoxDimension["bottom"] = "bottom";
+})(BoundingBoxDimension || (BoundingBoxDimension = {}));
+
+var measureWithoutTransform = function (element) {
+    var transform$$1 = element.style.transform;
+    element.style.transform = '';
+    var bbox = element.getBoundingClientRect();
+    element.style.transform = transform$$1;
+    return bbox;
+};
+var resolveProp = function (target, props) {
+    return typeof target === 'function' ? target(props) : target;
+};
+
+var interpolate = popmotion__WEBPACK_IMPORTED_MODULE_0__["transform"].interpolate;
+var singleAxisPointer = function (axis) {
+    return function (from) {
+        var _a;
+        return Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["pointer"])((_a = {}, _a[axis] = typeof from === 'string' ? parseFloat(from) : from, _a)).pipe(function (v) {
+            return v[axis];
+        });
+    };
+};
+var pointerX = /*#__PURE__*/singleAxisPointer('x');
+var pointerY = /*#__PURE__*/singleAxisPointer('y');
+var createPointer = function (axisPointerCreator, min, max, measurement) {
+    return function (transitionProps) {
+        var from = transitionProps.from,
+            type = transitionProps.type,
+            dimensions = transitionProps.dimensions,
+            dragBounds = transitionProps.dragBounds;
+        var axisPointer = axisPointerCreator(dimensions.measurementAsPixels(measurement, from, type));
+        var transformQueue = [];
+        if (dragBounds) {
+            var resolvedDragBounds_1 = resolveProp(dragBounds, transitionProps);
+            if (resolvedDragBounds_1[min] !== undefined) {
+                transformQueue.push(function (v) {
+                    return Math.max(v, dimensions.measurementAsPixels(measurement, resolvedDragBounds_1[min], type));
+                });
+            }
+            if (resolvedDragBounds_1[max] !== undefined) {
+                transformQueue.push(function (v) {
+                    return Math.min(v, dimensions.measurementAsPixels(measurement, resolvedDragBounds_1[max], type));
+                });
+            }
+        }
+        if (type === style_value_types__WEBPACK_IMPORTED_MODULE_2__["percent"]) {
+            transformQueue.push(interpolate([0, dimensions.get(measurement)], [0, 100], { clamp: false }), function (v) {
+                return v + '%';
+            });
+        }
+        return transformQueue.length ? axisPointer.pipe.apply(axisPointer, transformQueue) : axisPointer;
+    };
+};
+var just = function (from) {
+    return Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["action"])(function (_a) {
+        var update = _a.update,
+            complete = _a.complete;
+        update(from);
+        complete();
+    });
+};
+var underDampedSpring = function (_a) {
+    var from = _a.from,
+        velocity = _a.velocity,
+        to = _a.to;
+    return Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["spring"])({
+        from: from,
+        to: to,
+        velocity: velocity,
+        stiffness: 500,
+        damping: 25,
+        restDelta: 0.5,
+        restSpeed: 10
+    });
+};
+var overDampedSpring = function (_a) {
+    var from = _a.from,
+        velocity = _a.velocity,
+        to = _a.to;
+    return Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["spring"])({ from: from, to: to, velocity: velocity, stiffness: 700, damping: to === 0 ? 100 : 35 });
+};
+var linearTween = function (_a) {
+    var from = _a.from,
+        to = _a.to;
+    return Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["tween"])({ from: from, to: to, ease: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["linear"] });
+};
+var intelligentTransition = {
+    x: underDampedSpring,
+    y: underDampedSpring,
+    z: underDampedSpring,
+    rotate: underDampedSpring,
+    rotateX: underDampedSpring,
+    rotateY: underDampedSpring,
+    rotateZ: underDampedSpring,
+    scaleX: overDampedSpring,
+    scaleY: overDampedSpring,
+    scale: overDampedSpring,
+    opacity: linearTween,
+    default: popmotion__WEBPACK_IMPORTED_MODULE_0__["tween"]
+};
+var dragAction = /*#__PURE__*/__assign({}, intelligentTransition, { x: /*#__PURE__*/createPointer(pointerX, 'left', 'right', BoundingBoxDimension.width), y: /*#__PURE__*/createPointer(pointerY, 'top', 'bottom', BoundingBoxDimension.height) });
+var justAxis = function (_a) {
+    var from = _a.from;
+    return just(from);
+};
+var intelligentDragEnd = /*#__PURE__*/__assign({}, intelligentTransition, { x: justAxis, y: justAxis });
+var defaultTransitions = /*#__PURE__*/new Map([['default', intelligentTransition], ['drag', dragAction], ['dragEnd', intelligentDragEnd]]);
+
+var animationLookup = {
+    tween: popmotion__WEBPACK_IMPORTED_MODULE_0__["tween"],
+    spring: popmotion__WEBPACK_IMPORTED_MODULE_0__["spring"],
+    decay: popmotion__WEBPACK_IMPORTED_MODULE_0__["decay"],
+    keyframes: popmotion__WEBPACK_IMPORTED_MODULE_0__["keyframes"],
+    physics: popmotion__WEBPACK_IMPORTED_MODULE_0__["physics"]
+};
+var easingLookup = {
+    linear: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["linear"],
+    easeIn: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["easeIn"],
+    easeOut: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["easeOut"],
+    easeInOut: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["easeInOut"],
+    circIn: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["circIn"],
+    circOut: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["circOut"],
+    circInOut: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["circInOut"],
+    backIn: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["backIn"],
+    backOut: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["backOut"],
+    backInOut: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["backInOut"],
+    anticipate: _popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["anticipate"]
+};
+
+var auto = {
+    test: function (v) {
+        return v === 'auto';
+    },
+    parse: function (v) {
+        return v;
+    }
+};
+var valueTypeTests = [style_value_types__WEBPACK_IMPORTED_MODULE_2__["number"], style_value_types__WEBPACK_IMPORTED_MODULE_2__["degrees"], style_value_types__WEBPACK_IMPORTED_MODULE_2__["percent"], style_value_types__WEBPACK_IMPORTED_MODULE_2__["px"], style_value_types__WEBPACK_IMPORTED_MODULE_2__["vw"], style_value_types__WEBPACK_IMPORTED_MODULE_2__["vh"], auto];
+var testValueType = function (v) {
+    return function (type) {
+        return type.test(v);
+    };
+};
+var getValueType = function (v) {
+    return valueTypeTests.find(testValueType(v));
+};
+
+var createPassiveValue = function (init, parent, transform$$1) {
+    var raw = Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["value"])(transform$$1(init));
+    parent.raw.subscribe(function (v) {
+        return raw.update(transform$$1(v));
+    });
+    return { raw: raw };
+};
+var createValue = function (init) {
+    var type = getValueType(init);
+    var raw = Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["value"])(init);
+    return { raw: raw, type: type };
+};
+var addActionDelay = function (delay$$1, transition) {
+    if (delay$$1 === void 0) {
+        delay$$1 = 0;
+    }
+    return Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["chain"])(Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["delay"])(delay$$1), transition);
+};
+var isCubicBezierArgs = function (args) {
+    return typeof args[0] === 'number';
+};
+var getAction = function (v, _a, _b) {
+    var from = _b.from,
+        to = _b.to,
+        velocity = _b.velocity;
+    var _c = _a.type,
+        type = _c === void 0 ? 'tween' : _c,
+        definedEase = _a.ease,
+        def = __rest(_a, ["type", "ease"]);
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["invariant"])(animationLookup[type] !== undefined, "Invalid transition type '" + type + "'. Valid transition types are: tween, spring, decay, physics and keyframes.");
+    var ease;
+    if (type === 'tween') {
+        if (typeof definedEase !== 'function') {
+            if (typeof definedEase === 'string') {
+                Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["invariant"])(easingLookup[definedEase] !== undefined, "Invalid easing type '" + definedEase + "'. popmotion.io/pose/api/config");
+                ease = easingLookup[definedEase];
+            } else if (Array.isArray(definedEase) && isCubicBezierArgs(definedEase)) {
+                Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["invariant"])(definedEase.length === 4, "Cubic bezier arrays must contain four numerical values.");
+                var x1 = definedEase[0],
+                    y1 = definedEase[1],
+                    x2 = definedEase[2],
+                    y2 = definedEase[3];
+                ease = Object(_popmotion_easing__WEBPACK_IMPORTED_MODULE_1__["cubicBezier"])(x1, y1, x2, y2);
+            }
+        }
+    }
+    ease = ease || definedEase;
+    var baseProps = type !== 'keyframes' ? {
+        from: from,
+        to: to,
+        velocity: velocity,
+        ease: ease
+    } : { ease: ease };
+    return animationLookup[type](__assign({}, baseProps, def));
+};
+var isAction = function (action$$1) {
+    return typeof action$$1.start !== 'undefined';
+};
+var pose = function (_a) {
+    var transformPose = _a.transformPose,
+        addListenerToValue = _a.addListenerToValue,
+        extendAPI = _a.extendAPI,
+        readValueFromSource = _a.readValueFromSource,
+        posePriority = _a.posePriority,
+        setValueNative = _a.setValueNative;
+    return Object(pose_core__WEBPACK_IMPORTED_MODULE_3__["default"])({
+        bindOnChange: function (values, onChange) {
+            return function (key) {
+                if (!values.has(key)) return;
+                var raw = values.get(key).raw;
+                raw.subscribe(onChange[key]);
+            };
+        },
+        readValue: function (_a) {
+            var raw = _a.raw;
+            return raw.get();
+        },
+        setValue: function (_a, to) {
+            var raw = _a.raw;
+            return raw.update(to);
+        },
+        createValue: function (init, key, _a, _b) {
+            var elementStyler = _a.elementStyler;
+            var _c = _b === void 0 ? {} : _b,
+                passiveParent = _c.passiveParent,
+                passiveProps = _c.passiveProps;
+            var val = passiveParent ? createPassiveValue(init, passiveParent, passiveProps) : createValue(init);
+            val.raw.subscribe(addListenerToValue(key, elementStyler));
+            return val;
+        },
+        convertValue: function (raw, key, _a) {
+            var elementStyler = _a.elementStyler;
+            raw.subscribe(addListenerToValue(key, elementStyler));
+            return {
+                raw: raw,
+                type: getValueType(raw.get())
+            };
+        },
+        getTransitionProps: function (_a, to) {
+            var raw = _a.raw,
+                type = _a.type;
+            return {
+                from: raw.get(),
+                velocity: raw.getVelocity(),
+                to: to,
+                type: type
+            };
+        },
+        resolveTarget: function (_, to) {
+            return to;
+        },
+        selectValueToRead: function (_a) {
+            var raw = _a.raw;
+            return raw;
+        },
+        startAction: function (_a, action$$1, complete) {
+            var raw = _a.raw;
+            var reaction = {
+                update: function (v) {
+                    return raw.update(v);
+                },
+                complete: complete
+            };
+            return action$$1.start(reaction);
+        },
+        stopAction: function (action$$1) {
+            return action$$1.stop();
+        },
+        getInstantTransition: function (_, _a) {
+            var to = _a.to;
+            return just(to);
+        },
+        convertTransitionDefinition: function (val, def, props) {
+            if (isAction(def)) return def;
+            var delay$$1 = def.delay,
+                min = def.min,
+                max = def.max,
+                round = def.round,
+                remainingDef = __rest(def, ["delay", "min", "max", "round"]);
+            var action$$1 = getAction(val, remainingDef, props);
+            var outputPipe = [];
+            if (delay$$1) action$$1 = addActionDelay(delay$$1, action$$1);
+            if (min !== undefined) outputPipe.push(function (v) {
+                return Math.max(v, min);
+            });
+            if (max !== undefined) outputPipe.push(function (v) {
+                return Math.min(v, max);
+            });
+            if (round) outputPipe.push(Math.round);
+            return outputPipe.length ? action$$1.pipe.apply(action$$1, outputPipe) : action$$1;
+        },
+        setValueNative: setValueNative,
+        addActionDelay: addActionDelay,
+        defaultTransitions: defaultTransitions,
+        transformPose: transformPose,
+        readValueFromSource: readValueFromSource,
+        posePriority: posePriority,
+        extendAPI: extendAPI
+    });
+};
+
+var createDimensions = function (element) {
+    var hasMeasured = false;
+    var current = {
+        width: 0,
+        height: 0,
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0
+    };
+    return {
+        get: function (measurement) {
+            return measurement ? current[measurement] : current;
+        },
+        measure: function () {
+            current = element.getBoundingClientRect();
+            hasMeasured = true;
+            return current;
+        },
+        measurementAsPixels: function (measurement, value$$1, type) {
+            return type === style_value_types__WEBPACK_IMPORTED_MODULE_2__["percent"] ? (typeof value$$1 === 'string' ? parseFloat(value$$1) : value$$1) / 100 * current[measurement] : value$$1;
+        },
+        has: function () {
+            return hasMeasured;
+        }
+    };
+};
+
+var makeUIEventApplicator = function (_a) {
+    var startEvents = _a.startEvents,
+        endEvents = _a.endEvents,
+        startPose = _a.startPose,
+        endPose = _a.endPose,
+        startCallback = _a.startCallback,
+        endCallback = _a.endCallback,
+        useDocumentToEnd = _a.useDocumentToEnd,
+        preventScroll = _a.preventScroll;
+    return function (element, activeActions, poser, config) {
+        var startListener = startPose + 'Start';
+        var endListener = startPose + 'End';
+        var moveListener = startPose + 'Move';
+        if (preventScroll) {
+            var touchMoveListener = Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["listen"])(element, 'touchmove', {
+                passive: false
+            }).start(function (e) {
+                e.preventDefault();
+            });
+            activeActions.set(moveListener, touchMoveListener);
+        }
+        var eventStartListener = Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["listen"])(element, startEvents).start(function (startEvent) {
+            poser.unset(endPose);
+            poser.set(startPose);
+            if (startCallback && config[startCallback]) config[startCallback](startEvent);
+            var eventEndListener = Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["listen"])(useDocumentToEnd ? document.documentElement : element, endEvents + (useDocumentToEnd ? ' mouseenter' : '')).start(function (endEvent) {
+                if (useDocumentToEnd && endEvent.type === 'mouseenter' && endEvent.buttons === 1) {
+                    return;
+                }
+                activeActions.get(endListener).stop();
+                poser.unset(startPose);
+                poser.set(endPose);
+                if (endCallback && config[endCallback]) config[endCallback](endEvent);
+            });
+            activeActions.set(endListener, eventEndListener);
+        });
+        activeActions.set(startListener, eventStartListener);
+    };
+};
+var events = {
+    draggable: /*#__PURE__*/makeUIEventApplicator({
+        startEvents: 'mousedown touchstart',
+        endEvents: 'mouseup touchend',
+        startPose: 'drag',
+        endPose: 'dragEnd',
+        startCallback: 'onDragStart',
+        endCallback: 'onDragEnd',
+        useDocumentToEnd: true,
+        preventScroll: true
+    }),
+    hoverable: /*#__PURE__*/makeUIEventApplicator({
+        startEvents: 'mouseenter',
+        endEvents: 'mouseleave',
+        startPose: 'hover',
+        endPose: 'hoverEnd'
+    }),
+    focusable: /*#__PURE__*/makeUIEventApplicator({
+        startEvents: 'focus',
+        endEvents: 'blur',
+        startPose: 'focus',
+        endPose: 'blur'
+    }),
+    pressable: /*#__PURE__*/makeUIEventApplicator({
+        startEvents: 'mousedown touchstart',
+        endEvents: 'mouseup touchend',
+        startPose: 'press',
+        endPose: 'pressEnd',
+        startCallback: 'onPressStart',
+        endCallback: 'onPressEnd',
+        useDocumentToEnd: true
+    })
+};
+var eventKeys = /*#__PURE__*/Object.keys(events);
+var appendEventListeners = function (element, activeActions, poser, _a) {
+    var props = _a.props;
+    return eventKeys.forEach(function (key) {
+        if (props[key]) events[key](element, activeActions, poser, props);
+    });
+};
+
+var ORIGIN_START = 0;
+var ORIGIN_CENTER = '50%';
+var ORIGIN_END = '100%';
+var findCenter = function (_a) {
+    var top = _a.top,
+        right = _a.right,
+        bottom = _a.bottom,
+        left = _a.left;
+    return {
+        x: (left + right) / 2,
+        y: (top + bottom) / 2
+    };
+};
+var positionalProps = ['width', 'height', 'top', 'left', 'bottom', 'right'];
+var positionalPropsDict = /*#__PURE__*/new Set(positionalProps);
+var checkPositionalProp = function (key) {
+    return positionalPropsDict.has(key);
+};
+var hasPositionalProps = function (pose) {
+    return Object.keys(pose).some(checkPositionalProp);
+};
+var isFlipPose = function (flip, key, state) {
+    return state.props.element instanceof HTMLElement && (flip === true || key === 'flip');
+};
+var setValue = function (_a, key, to) {
+    var values = _a.values,
+        props = _a.props;
+    if (values.has(key)) {
+        var raw = values.get(key).raw;
+        raw.update(to);
+        raw.update(to);
+    } else {
+        values.set(key, {
+            raw: Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["value"])(to, function (v) {
+                return props.elementStyler.set(key, v);
+            })
+        });
+    }
+};
+var explicitlyFlipPose = function (state, nextPose) {
+    var _a = state.props,
+        dimensions = _a.dimensions,
+        elementStyler = _a.elementStyler;
+    dimensions.measure();
+    var width = nextPose.width,
+        height = nextPose.height,
+        top = nextPose.top,
+        left = nextPose.left,
+        bottom = nextPose.bottom,
+        right = nextPose.right,
+        position = nextPose.position,
+        remainingPose = __rest(nextPose, ["width", "height", "top", "left", "bottom", "right", "position"]);
+    var propsToSet = positionalProps.concat('position').reduce(function (acc, key) {
+        if (nextPose[key] !== undefined) {
+            acc[key] = resolveProp(nextPose[key], state.props);
+        }
+        return acc;
+    }, {});
+    elementStyler.set(propsToSet).render();
+    return implicitlyFlipPose(state, remainingPose);
+};
+var implicitlyFlipPose = function (state, nextPose) {
+    var _a = state.props,
+        dimensions = _a.dimensions,
+        element = _a.element,
+        elementStyler = _a.elementStyler;
+    if (!dimensions.has()) return {};
+    var prev = dimensions.get();
+    var next = measureWithoutTransform(element);
+    var originX = prev.left === next.left ? ORIGIN_START : prev.right === next.right ? ORIGIN_END : ORIGIN_CENTER;
+    var originY = prev.top === next.top ? ORIGIN_START : prev.bottom === next.bottom ? ORIGIN_END : ORIGIN_CENTER;
+    elementStyler.set({ originX: originX, originY: originY });
+    if (prev.width !== next.width) {
+        setValue(state, 'scaleX', prev.width / next.width);
+        nextPose.scaleX = 1;
+    }
+    if (prev.height !== next.height) {
+        setValue(state, 'scaleY', prev.height / next.height);
+        nextPose.scaleY = 1;
+    }
+    var prevCenter = findCenter(prev);
+    var nextCenter = findCenter(next);
+    if (originX === ORIGIN_CENTER) {
+        setValue(state, 'x', prevCenter.x - nextCenter.x);
+        nextPose.x = 0;
+    }
+    if (originY === ORIGIN_CENTER) {
+        setValue(state, 'y', prevCenter.y - nextCenter.y);
+        nextPose.y = 0;
+    }
+    elementStyler.render();
+    return nextPose;
+};
+var flipPose = function (props, nextPose) {
+    return hasPositionalProps(nextPose) ? explicitlyFlipPose(props, nextPose) : implicitlyFlipPose(props, nextPose);
+};
+
+var getPosFromMatrix = function (matrix, pos) {
+    return parseFloat(matrix.split(', ')[pos]);
+};
+var getTranslateFromMatrix = function (pos2, pos3) {
+    return function (element, bbox, _a) {
+        var transform$$1 = _a.transform;
+        if (transform$$1 === 'none') return 0;
+        var matrix3d = transform$$1.match(/^matrix3d\((.+)\)$/);
+        if (matrix3d) return getPosFromMatrix(matrix3d[1], pos3);
+        return getPosFromMatrix(transform$$1.match(/^matrix\((.+)\)$/)[1], pos2);
+    };
+};
+var positionalValues = {
+    width: function (element, _a) {
+        var width = _a.width;
+        return width;
+    },
+    height: function (element, _a) {
+        var height = _a.height;
+        return height;
+    },
+    top: function (element, bbox, _a) {
+        var top = _a.top;
+        return parseFloat(top);
+    },
+    left: function (element, bbox, _a) {
+        var left = _a.left;
+        return parseFloat(left);
+    },
+    bottom: function (element, _a, _b) {
+        var height = _a.height;
+        var top = _b.top;
+        return parseFloat(top) + height;
+    },
+    right: function (element, _a, _b) {
+        var width = _a.width;
+        var left = _b.left;
+        return parseFloat(left) + width;
+    },
+    x: /*#__PURE__*/getTranslateFromMatrix(4, 13),
+    y: /*#__PURE__*/getTranslateFromMatrix(5, 14)
+};
+var isPositionalKey = function (v) {
+    return positionalValues[v] !== undefined;
+};
+var isPositional = function (pose) {
+    return Object.keys(pose).some(isPositionalKey);
+};
+var convertPositionalUnits = function (state, nextPose) {
+    var values = state.values,
+        props = state.props;
+    var element = props.element,
+        elementStyler = props.elementStyler;
+    var positionalPoseKeys = Object.keys(nextPose).filter(isPositionalKey);
+    var changedPositionalKeys = [];
+    var elementComputedStyle = getComputedStyle(element);
+    var applyAtEndHasBeenCopied = false;
+    positionalPoseKeys.forEach(function (key) {
+        var value$$1 = values.get(key);
+        var fromValueType = getValueType(value$$1.raw.get());
+        var to = resolveProp(nextPose[key], props);
+        var toValueType = getValueType(to);
+        if (fromValueType !== toValueType) {
+            changedPositionalKeys.push(key);
+            if (!applyAtEndHasBeenCopied) {
+                applyAtEndHasBeenCopied = true;
+                nextPose.applyAtEnd = nextPose.applyAtEnd ? __assign({}, nextPose.applyAtEnd) : {};
+            }
+            nextPose.applyAtEnd[key] = nextPose.applyAtEnd[key] || nextPose[key];
+            setValue(state, key, to);
+        }
+    });
+    if (!changedPositionalKeys.length) return nextPose;
+    var originBbox = element.getBoundingClientRect();
+    var top = elementComputedStyle.top,
+        left = elementComputedStyle.left,
+        bottom = elementComputedStyle.bottom,
+        right = elementComputedStyle.right,
+        transform$$1 = elementComputedStyle.transform;
+    var originComputedStyle = { top: top, left: left, bottom: bottom, right: right, transform: transform$$1 };
+    elementStyler.render();
+    var targetBbox = element.getBoundingClientRect();
+    changedPositionalKeys.forEach(function (key) {
+        setValue(state, key, positionalValues[key](element, originBbox, originComputedStyle));
+        nextPose[key] = positionalValues[key](element, targetBbox, elementComputedStyle);
+    });
+    elementStyler.render();
+    return nextPose;
+};
+
+var getCurrent = function (prop) {
+    return function (_a) {
+        var elementStyler = _a.elementStyler;
+        return elementStyler.get(prop);
+    };
+};
+var dragPoses = function (draggable) {
+    var drag = {
+        preTransition: function (_a) {
+            var dimensions = _a.dimensions;
+            return dimensions.measure();
+        }
+    };
+    var dragEnd = {};
+    if (draggable === true || draggable === 'x') {
+        drag.x = dragEnd.x = getCurrent('x');
+    }
+    if (draggable === true || draggable === 'y') {
+        drag.y = dragEnd.y = getCurrent('y');
+    }
+    return { drag: drag, dragEnd: dragEnd };
+};
+var createPoseConfig = function (element, _a) {
+    var onDragStart = _a.onDragStart,
+        onDragEnd = _a.onDragEnd,
+        onPressStart = _a.onPressStart,
+        onPressEnd = _a.onPressEnd,
+        draggable = _a.draggable,
+        hoverable = _a.hoverable,
+        focusable = _a.focusable,
+        pressable = _a.pressable,
+        dragBounds = _a.dragBounds,
+        config = __rest(_a, ["onDragStart", "onDragEnd", "onPressStart", "onPressEnd", "draggable", "hoverable", "focusable", "pressable", "dragBounds"]);
+    var poseConfig = __assign({ flip: {} }, config, { props: __assign({}, config.props, { onDragStart: onDragStart,
+            onDragEnd: onDragEnd,
+            onPressStart: onPressStart,
+            onPressEnd: onPressEnd,
+            dragBounds: dragBounds,
+            draggable: draggable,
+            hoverable: hoverable,
+            focusable: focusable,
+            pressable: pressable,
+            element: element, elementStyler: Object(popmotion__WEBPACK_IMPORTED_MODULE_0__["styler"])(element, { preparseOutput: false }), dimensions: createDimensions(element) }) });
+    if (draggable) {
+        var _b = dragPoses(draggable),
+            drag = _b.drag,
+            dragEnd = _b.dragEnd;
+        poseConfig.drag = __assign({}, drag, poseConfig.drag);
+        poseConfig.dragEnd = __assign({}, dragEnd, poseConfig.dragEnd);
+    }
+    return poseConfig;
+};
+var domPose = /*#__PURE__*/pose({
+    posePriority: ['drag', 'press', 'focus', 'hover'],
+    transformPose: function (_a, name, state) {
+        var flip = _a.flip,
+            pose$$1 = __rest(_a, ["flip"]);
+        if (isFlipPose(flip, name, state)) {
+            return flipPose(state, pose$$1);
+        } else if (isPositional(pose$$1)) {
+            return convertPositionalUnits(state, pose$$1);
+        }
+        return pose$$1;
+    },
+    forceRender: function (_a) {
+        var elementStyler = _a.elementStyler;
+        elementStyler.render();
+    },
+    addListenerToValue: function (key, elementStyler) {
+        return function (v) {
+            return elementStyler.set(key, v);
+        };
+    },
+    readValueFromSource: function (key, _a) {
+        var elementStyler = _a.elementStyler,
+            dragBounds = _a.dragBounds;
+        var value$$1 = elementStyler.get(key);
+        if (dragBounds && (key === 'x' || key === 'y')) {
+            var bound = key === 'x' ? dragBounds.left || dragBounds.right : dragBounds.top || dragBounds.bottom;
+            if (bound) {
+                var boundType = getValueType(bound);
+                value$$1 = boundType.transform(value$$1);
+            }
+        }
+        return isNaN(value$$1) ? value$$1 : parseFloat(value$$1);
+    },
+    setValueNative: function (key, to, _a) {
+        var elementStyler = _a.elementStyler;
+        return elementStyler.set(key, to);
+    },
+    extendAPI: function (api, _a, config) {
+        var props = _a.props,
+            activeActions = _a.activeActions;
+        var measure = props.dimensions.measure;
+        var poserApi = __assign({}, api, { addChild: function (element, childConfig) {
+                return api._addChild(createPoseConfig(element, childConfig), domPose);
+            }, measure: measure, flip: function (op) {
+                if (op) {
+                    measure();
+                    op();
+                }
+                return api.set('flip');
+            } });
+        props.elementStyler.render();
+        appendEventListeners(props.element, activeActions, poserApi, config);
+        return poserApi;
+    }
+});
+var domPose$1 = function (element, config) {
+    return domPose(createPoseConfig(element, config));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (domPose$1);
+
+
+/***/ }),
+
+/***/ "./node_modules/popmotion/dist/popmotion.es.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/popmotion/dist/popmotion.es.js ***!
+  \*****************************************************/
+/*! exports provided: valueTypes, easing, styler, action, multicast, value, decay, inertia, keyframes, everyFrame, physics, spring, timeline, tween, listen, pointer, mouse, multitouch, chain, composite, crossfade, delay, merge, parallel, schedule, stagger, calc, transform, css, svg, Action, ValueReaction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "action", function() { return action; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "value", function() { return value; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decay", function() { return vectorDecay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inertia", function() { return index; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyframes", function() { return keyframes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "everyFrame", function() { return frame; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "physics", function() { return vectorPhysics; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "spring", function() { return vectorSpring; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timeline", function() { return timeline; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tween", function() { return tween; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "listen", function() { return listen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pointer", function() { return index$1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mouse", function() { return mouse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multitouch", function() { return multitouch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "chain", function() { return chain; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "composite", function() { return composite; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "crossfade", function() { return crossfade; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return delay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "merge", function() { return merge; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parallel", function() { return parallel$1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "schedule", function() { return schedule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stagger", function() { return stagger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calc", function() { return calc; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transform", function() { return transformers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "css", function() { return css; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "svg", function() { return svg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Action", function() { return Action; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ValueReaction", function() { return ValueReaction; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @popmotion/popcorn */ "./node_modules/@popmotion/popcorn/dist/popcorn.es.js");
+/* harmony import */ var framesync__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framesync */ "./node_modules/framesync/dist/framesync.es.js");
+/* harmony import */ var style_value_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! style-value-types */ "./node_modules/style-value-types/dist/style-value-types.es.js");
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "valueTypes", function() { return style_value_types__WEBPACK_IMPORTED_MODULE_3__; });
+/* harmony import */ var _popmotion_easing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @popmotion/easing */ "./node_modules/@popmotion/easing/dist/easing.es.js");
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "easing", function() { return _popmotion_easing__WEBPACK_IMPORTED_MODULE_4__; });
+/* harmony import */ var stylefire__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! stylefire */ "./node_modules/stylefire/dist/stylefire.es.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "styler", function() { return stylefire__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Chainable = /*#__PURE__*/function () {
+    function Chainable(props) {
+        if (props === void 0) {
+            props = {};
+        }
+        this.props = props;
+    }
+    Chainable.prototype.applyMiddleware = function (middleware) {
+        return this.create(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.props, { middleware: this.props.middleware ? [middleware].concat(this.props.middleware) : [middleware] }));
+    };
+    Chainable.prototype.pipe = function () {
+        var funcs = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            funcs[_i] = arguments[_i];
+        }
+        var pipedUpdate = funcs.length === 1 ? funcs[0] : _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["pipe"].apply(void 0, funcs);
+        return this.applyMiddleware(function (update) {
+            return function (v) {
+                return update(pipedUpdate(v));
+            };
+        });
+    };
+    Chainable.prototype.while = function (predicate) {
+        return this.applyMiddleware(function (update, complete) {
+            return function (v) {
+                return predicate(v) ? update(v) : complete();
+            };
+        });
+    };
+    Chainable.prototype.filter = function (predicate) {
+        return this.applyMiddleware(function (update) {
+            return function (v) {
+                return predicate(v) && update(v);
+            };
+        });
+    };
+    return Chainable;
+}();
+
+var Observer = /*#__PURE__*/function () {
+    function Observer(_a, observer) {
+        var middleware = _a.middleware,
+            onComplete = _a.onComplete;
+        var _this = this;
+        this.isActive = true;
+        this.update = function (v) {
+            if (_this.observer.update) _this.updateObserver(v);
+        };
+        this.complete = function () {
+            if (_this.observer.complete && _this.isActive) _this.observer.complete();
+            if (_this.onComplete) _this.onComplete();
+            _this.isActive = false;
+        };
+        this.error = function (err) {
+            if (_this.observer.error && _this.isActive) _this.observer.error(err);
+            _this.isActive = false;
+        };
+        this.observer = observer;
+        this.updateObserver = function (v) {
+            return observer.update(v);
+        };
+        this.onComplete = onComplete;
+        if (observer.update && middleware && middleware.length) {
+            middleware.forEach(function (m) {
+                return _this.updateObserver = m(_this.updateObserver, _this.complete);
+            });
+        }
+    }
+    return Observer;
+}();
+var createObserver = function (observerCandidate, _a, onComplete) {
+    var middleware = _a.middleware;
+    if (typeof observerCandidate === 'function') {
+        return new Observer({ middleware: middleware, onComplete: onComplete }, { update: observerCandidate });
+    } else {
+        return new Observer({ middleware: middleware, onComplete: onComplete }, observerCandidate);
+    }
+};
+
+var Action = /*#__PURE__*/function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(Action, _super);
+    function Action() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Action.prototype.create = function (props) {
+        return new Action(props);
+    };
+    Action.prototype.start = function (observerCandidate) {
+        if (observerCandidate === void 0) {
+            observerCandidate = {};
+        }
+        var isComplete = false;
+        var subscription = {
+            stop: function () {
+                return undefined;
+            }
+        };
+        var _a = this.props,
+            init = _a.init,
+            observerProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["init"]);
+        var observer = createObserver(observerCandidate, observerProps, function () {
+            isComplete = true;
+            subscription.stop();
+        });
+        var api = init(observer);
+        subscription = api ? Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, subscription, api) : subscription;
+        if (observerCandidate.registerParent) {
+            observerCandidate.registerParent(subscription);
+        }
+        if (isComplete) subscription.stop();
+        return subscription;
+    };
+    return Action;
+}(Chainable);
+var action = function (init) {
+    return new Action({ init: init });
+};
+
+var BaseMulticast = /*#__PURE__*/function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(BaseMulticast, _super);
+    function BaseMulticast() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.subscribers = [];
+        return _this;
+    }
+    BaseMulticast.prototype.complete = function () {
+        this.subscribers.forEach(function (subscriber) {
+            return subscriber.complete();
+        });
+    };
+    BaseMulticast.prototype.error = function (err) {
+        this.subscribers.forEach(function (subscriber) {
+            return subscriber.error(err);
+        });
+    };
+    BaseMulticast.prototype.update = function (v) {
+        for (var i = 0; i < this.subscribers.length; i++) {
+            this.subscribers[i].update(v);
+        }
+    };
+    BaseMulticast.prototype.subscribe = function (observerCandidate) {
+        var _this = this;
+        var observer = createObserver(observerCandidate, this.props);
+        this.subscribers.push(observer);
+        var subscription = {
+            unsubscribe: function () {
+                var index = _this.subscribers.indexOf(observer);
+                if (index !== -1) _this.subscribers.splice(index, 1);
+            }
+        };
+        return subscription;
+    };
+    BaseMulticast.prototype.stop = function () {
+        if (this.parent) this.parent.stop();
+    };
+    BaseMulticast.prototype.registerParent = function (subscription) {
+        this.stop();
+        this.parent = subscription;
+    };
+    return BaseMulticast;
+}(Chainable);
+
+var Multicast = /*#__PURE__*/function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(Multicast, _super);
+    function Multicast() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Multicast.prototype.create = function (props) {
+        return new Multicast(props);
+    };
+    return Multicast;
+}(BaseMulticast);
+var multicast = function () {
+    return new Multicast();
+};
+
+var stepProgress = function (steps, progress$$1) {
+    var segment = 1 / (steps - 1);
+    var subsegment = 1 / (2 * (steps - 1));
+    var percentProgressOfTarget = Math.min(progress$$1, 1);
+    var subsegmentProgressOfTarget = percentProgressOfTarget / subsegment;
+    var segmentProgressOfTarget = Math.floor((subsegmentProgressOfTarget + 1) / 2);
+    return segmentProgressOfTarget * segment;
+};
+
+var calc = /*#__PURE__*/Object.freeze({
+    angle: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["angle"],
+    degreesToRadians: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["degreesToRadians"],
+    distance: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["distance"],
+    isPoint3D: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["isPoint3D"],
+    isPoint: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["isPoint"],
+    dilate: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mix"],
+    getValueFromProgress: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mix"],
+    pointFromAngleAndDistance: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["pointFromVector"],
+    getProgressFromValue: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["progress"],
+    radiansToDegrees: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["radiansToDegrees"],
+    smooth: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["smoothFrame"],
+    speedPerFrame: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerFrame"],
+    speedPerSecond: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerSecond"],
+    stepProgress: stepProgress
+});
+
+var isValueList = function (v) {
+    return Array.isArray(v);
+};
+var isSingleValue = function (v) {
+    var typeOfV = typeof v;
+    return typeOfV === 'string' || typeOfV === 'number';
+};
+var ValueReaction = /*#__PURE__*/function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(ValueReaction, _super);
+    function ValueReaction(props) {
+        var _this = _super.call(this, props) || this;
+        _this.scheduleVelocityCheck = function () {
+            return framesync__WEBPACK_IMPORTED_MODULE_2__["default"].postRender(_this.velocityCheck);
+        };
+        _this.velocityCheck = function (_a) {
+            var timestamp = _a.timestamp;
+            if (timestamp !== _this.lastUpdated) {
+                _this.prev = _this.current;
+            }
+        };
+        _this.prev = _this.current = props.value || 0;
+        if (isSingleValue(_this.current)) {
+            _this.updateCurrent = function (v) {
+                return _this.current = v;
+            };
+            _this.getVelocityOfCurrent = function () {
+                return _this.getSingleVelocity(_this.current, _this.prev);
+            };
+        } else if (isValueList(_this.current)) {
+            _this.updateCurrent = function (v) {
+                return _this.current = v.slice();
+            };
+            _this.getVelocityOfCurrent = function () {
+                return _this.getListVelocity();
+            };
+        } else {
+            _this.updateCurrent = function (v) {
+                _this.current = {};
+                for (var key in v) {
+                    if (v.hasOwnProperty(key)) {
+                        _this.current[key] = v[key];
+                    }
+                }
+            };
+            _this.getVelocityOfCurrent = function () {
+                return _this.getMapVelocity();
+            };
+        }
+        if (props.initialSubscription) _this.subscribe(props.initialSubscription);
+        return _this;
+    }
+    ValueReaction.prototype.create = function (props) {
+        return new ValueReaction(props);
+    };
+    ValueReaction.prototype.get = function () {
+        return this.current;
+    };
+    ValueReaction.prototype.getVelocity = function () {
+        return this.getVelocityOfCurrent();
+    };
+    ValueReaction.prototype.update = function (v) {
+        _super.prototype.update.call(this, v);
+        this.prev = this.current;
+        this.updateCurrent(v);
+        var _a = Object(framesync__WEBPACK_IMPORTED_MODULE_2__["getFrameData"])(),
+            delta = _a.delta,
+            timestamp = _a.timestamp;
+        this.timeDelta = delta;
+        this.lastUpdated = timestamp;
+        framesync__WEBPACK_IMPORTED_MODULE_2__["default"].postRender(this.scheduleVelocityCheck);
+    };
+    ValueReaction.prototype.subscribe = function (observerCandidate) {
+        var sub = _super.prototype.subscribe.call(this, observerCandidate);
+        this.subscribers[this.subscribers.length - 1].update(this.current);
+        return sub;
+    };
+    ValueReaction.prototype.getSingleVelocity = function (current, prev) {
+        return typeof current === 'number' && typeof prev === 'number' ? Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerSecond"])(current - prev, this.timeDelta) : Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerSecond"])(parseFloat(current) - parseFloat(prev), this.timeDelta) || 0;
+    };
+    ValueReaction.prototype.getListVelocity = function () {
+        var _this = this;
+        return this.current.map(function (c, i) {
+            return _this.getSingleVelocity(c, _this.prev[i]);
+        });
+    };
+    ValueReaction.prototype.getMapVelocity = function () {
+        var velocity = {};
+        for (var key in this.current) {
+            if (this.current.hasOwnProperty(key)) {
+                velocity[key] = this.getSingleVelocity(this.current[key], this.prev[key]);
+            }
+        }
+        return velocity;
+    };
+    return ValueReaction;
+}(BaseMulticast);
+var value = function (value, initialSubscription) {
+    return new ValueReaction({ value: value, initialSubscription: initialSubscription });
+};
+
+var multi = function (_a) {
+    var getCount = _a.getCount,
+        getFirst = _a.getFirst,
+        getOutput = _a.getOutput,
+        mapApi = _a.mapApi,
+        setProp = _a.setProp,
+        startActions = _a.startActions;
+    return function (actions) {
+        return action(function (_a) {
+            var update = _a.update,
+                complete = _a.complete,
+                error = _a.error;
+            var numActions = getCount(actions);
+            var output = getOutput();
+            var updateOutput = function () {
+                return update(output);
+            };
+            var numCompletedActions = 0;
+            var subs = startActions(actions, function (a, name) {
+                var hasCompleted = false;
+                return a.start({
+                    complete: function () {
+                        if (!hasCompleted) {
+                            hasCompleted = true;
+                            numCompletedActions++;
+                            if (numCompletedActions === numActions) framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(complete);
+                        }
+                    },
+                    error: error,
+                    update: function (v) {
+                        setProp(output, name, v);
+                        framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(updateOutput, false, true);
+                    }
+                });
+            });
+            return Object.keys(getFirst(subs)).reduce(function (api, methodName) {
+                api[methodName] = mapApi(subs, methodName);
+                return api;
+            }, {});
+        });
+    };
+};
+
+var composite = /*#__PURE__*/multi({
+    getOutput: function () {
+        return {};
+    },
+    getCount: function (subs) {
+        return Object.keys(subs).length;
+    },
+    getFirst: function (subs) {
+        return subs[Object.keys(subs)[0]];
+    },
+    mapApi: function (subs, methodName) {
+        return function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            return Object.keys(subs).reduce(function (output, propKey) {
+                var _a;
+                if (subs[propKey][methodName]) {
+                    args[0] && args[0][propKey] !== undefined ? output[propKey] = subs[propKey][methodName](args[0][propKey]) : output[propKey] = (_a = subs[propKey])[methodName].apply(_a, args);
+                }
+                return output;
+            }, {});
+        };
+    },
+    setProp: function (output, name, v) {
+        return output[name] = v;
+    },
+    startActions: function (actions, starter) {
+        return Object.keys(actions).reduce(function (subs, key) {
+            subs[key] = starter(actions[key], key);
+            return subs;
+        }, {});
+    }
+});
+
+var parallel = /*#__PURE__*/multi({
+    getOutput: function () {
+        return [];
+    },
+    getCount: function (subs) {
+        return subs.length;
+    },
+    getFirst: function (subs) {
+        return subs[0];
+    },
+    mapApi: function (subs, methodName) {
+        return function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            return subs.map(function (sub, i) {
+                if (sub[methodName]) {
+                    return Array.isArray(args[0]) ? sub[methodName](args[0][i]) : sub[methodName].apply(sub, args);
+                }
+            });
+        };
+    },
+    setProp: function (output, name, v) {
+        return output[name] = v;
+    },
+    startActions: function (actions, starter) {
+        return actions.map(function (action, i) {
+            return starter(action, i);
+        });
+    }
+});
+var parallel$1 = function () {
+    var actions = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        actions[_i] = arguments[_i];
+    }
+    return parallel(actions);
+};
+
+var createVectorTests = function (typeTests) {
+    var testNames = Object.keys(typeTests);
+    var isVectorProp = function (prop, key) {
+        return prop !== undefined && !typeTests[key](prop);
+    };
+    var getVectorKeys = function (props) {
+        return testNames.reduce(function (vectorKeys, key) {
+            if (isVectorProp(props[key], key)) vectorKeys.push(key);
+            return vectorKeys;
+        }, []);
+    };
+    var testVectorProps = function (props) {
+        return props && testNames.some(function (key) {
+            return isVectorProp(props[key], key);
+        });
+    };
+    return { getVectorKeys: getVectorKeys, testVectorProps: testVectorProps };
+};
+var unitTypes = [style_value_types__WEBPACK_IMPORTED_MODULE_3__["px"], style_value_types__WEBPACK_IMPORTED_MODULE_3__["percent"], style_value_types__WEBPACK_IMPORTED_MODULE_3__["degrees"], style_value_types__WEBPACK_IMPORTED_MODULE_3__["vh"], style_value_types__WEBPACK_IMPORTED_MODULE_3__["vw"]];
+var findUnitType = function (prop) {
+    return unitTypes.find(function (type) {
+        return type.test(prop);
+    });
+};
+var isUnitProp = function (prop) {
+    return Boolean(findUnitType(prop));
+};
+var createAction = function (action, props) {
+    return action(props);
+};
+var reduceArrayValue = function (i) {
+    return function (props, key) {
+        props[key] = props[key][i];
+        return props;
+    };
+};
+var createArrayAction = function (action, props, vectorKeys) {
+    var firstVectorKey = vectorKeys[0];
+    var actionList = props[firstVectorKey].map(function (v, i) {
+        var childActionProps = vectorKeys.reduce(reduceArrayValue(i), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props));
+        return getActionCreator(v)(action, childActionProps);
+    });
+    return parallel$1.apply(void 0, actionList);
+};
+var reduceObjectValue = function (key) {
+    return function (props, propKey) {
+        props[propKey] = props[propKey][key];
+        return props;
+    };
+};
+var createObjectAction = function (action, props, vectorKeys) {
+    var firstVectorKey = vectorKeys[0];
+    var actionMap = Object.keys(props[firstVectorKey]).reduce(function (map, key) {
+        var childActionProps = vectorKeys.reduce(reduceObjectValue(key), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props));
+        map[key] = getActionCreator(props[firstVectorKey][key])(action, childActionProps);
+        return map;
+    }, {});
+    return composite(actionMap);
+};
+var createUnitAction = function (action, _a) {
+    var from = _a.from,
+        to = _a.to,
+        props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["from", "to"]);
+    var unitType = findUnitType(from) || findUnitType(to);
+    var transform = unitType.transform,
+        parse = unitType.parse;
+    return action(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props, { from: typeof from === 'string' ? parse(from) : from, to: typeof to === 'string' ? parse(to) : to })).pipe(transform);
+};
+var createMixerAction = function (mixer) {
+    return function (action, _a) {
+        var from = _a.from,
+            to = _a.to,
+            props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["from", "to"]);
+        return action(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props, { from: 0, to: 1 })).pipe(mixer(from, to));
+    };
+};
+var createColorAction = /*#__PURE__*/createMixerAction(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mixColor"]);
+var createComplexAction = /*#__PURE__*/createMixerAction(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mixComplex"]);
+var createVectorAction = function (action, typeTests) {
+    var _a = createVectorTests(typeTests),
+        testVectorProps = _a.testVectorProps,
+        getVectorKeys = _a.getVectorKeys;
+    var vectorAction = function (props) {
+        var isVector = testVectorProps(props);
+        if (!isVector) return action(props);
+        var vectorKeys = getVectorKeys(props);
+        var testKey = vectorKeys[0];
+        var testProp = props[testKey];
+        return getActionCreator(testProp)(action, props, vectorKeys);
+    };
+    return vectorAction;
+};
+var getActionCreator = function (prop) {
+    if (typeof prop === 'number') {
+        return createAction;
+    } else if (Array.isArray(prop)) {
+        return createArrayAction;
+    } else if (isUnitProp(prop)) {
+        return createUnitAction;
+    } else if (style_value_types__WEBPACK_IMPORTED_MODULE_3__["color"].test(prop)) {
+        return createColorAction;
+    } else if (style_value_types__WEBPACK_IMPORTED_MODULE_3__["complex"].test(prop)) {
+        return createComplexAction;
+    } else if (typeof prop === 'object') {
+        return createObjectAction;
+    } else {
+        return createAction;
+    }
+};
+
+var decay = function (props) {
+    if (props === void 0) {
+        props = {};
+    }
+    return action(function (_a) {
+        var complete = _a.complete,
+            update = _a.update;
+        var _b = props.velocity,
+            velocity = _b === void 0 ? 0 : _b,
+            _c = props.from,
+            from = _c === void 0 ? 0 : _c,
+            _d = props.power,
+            power = _d === void 0 ? 0.8 : _d,
+            _e = props.timeConstant,
+            timeConstant = _e === void 0 ? 350 : _e,
+            _f = props.restDelta,
+            restDelta = _f === void 0 ? 0.5 : _f,
+            modifyTarget = props.modifyTarget;
+        var elapsed = 0;
+        var amplitude = power * velocity;
+        var idealTarget = Math.round(from + amplitude);
+        var target = typeof modifyTarget === 'undefined' ? idealTarget : modifyTarget(idealTarget);
+        var process = framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(function (_a) {
+            var frameDelta = _a.delta;
+            elapsed += frameDelta;
+            var delta = -amplitude * Math.exp(-elapsed / timeConstant);
+            var isMoving = delta > restDelta || delta < -restDelta;
+            var current = isMoving ? target + delta : target;
+            update(current);
+            if (!isMoving) {
+                framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+                complete();
+            }
+        }, true);
+        return {
+            stop: function () {
+                return framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+            }
+        };
+    });
+};
+var vectorDecay = /*#__PURE__*/createVectorAction(decay, {
+    from: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    modifyTarget: function (func) {
+        return typeof func === 'function';
+    },
+    velocity: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test
+});
+
+var spring = function (props) {
+    if (props === void 0) {
+        props = {};
+    }
+    return action(function (_a) {
+        var update = _a.update,
+            complete = _a.complete;
+        var _b = props.velocity,
+            velocity = _b === void 0 ? 0.0 : _b;
+        var _c = props.from,
+            from = _c === void 0 ? 0.0 : _c,
+            _d = props.to,
+            to = _d === void 0 ? 0.0 : _d,
+            _e = props.stiffness,
+            stiffness = _e === void 0 ? 100 : _e,
+            _f = props.damping,
+            damping = _f === void 0 ? 10 : _f,
+            _g = props.mass,
+            mass = _g === void 0 ? 1.0 : _g,
+            _h = props.restSpeed,
+            restSpeed = _h === void 0 ? 0.01 : _h,
+            _j = props.restDelta,
+            restDelta = _j === void 0 ? 0.01 : _j;
+        var initialVelocity = velocity ? -(velocity / 1000) : 0.0;
+        var t = 0;
+        var delta = to - from;
+        var position = from;
+        var prevPosition = position;
+        var process = framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(function (_a) {
+            var timeDelta = _a.delta;
+            t += timeDelta;
+            var dampingRatio = damping / (2 * Math.sqrt(stiffness * mass));
+            var angularFreq = Math.sqrt(stiffness / mass) / 1000;
+            prevPosition = position;
+            if (dampingRatio < 1) {
+                var envelope = Math.exp(-dampingRatio * angularFreq * t);
+                var expoDecay = angularFreq * Math.sqrt(1.0 - dampingRatio * dampingRatio);
+                position = to - envelope * ((initialVelocity + dampingRatio * angularFreq * delta) / expoDecay * Math.sin(expoDecay * t) + delta * Math.cos(expoDecay * t));
+            } else {
+                var envelope = Math.exp(-angularFreq * t);
+                position = to - envelope * (delta + (initialVelocity + angularFreq * delta) * t);
+            }
+            velocity = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerSecond"])(position - prevPosition, timeDelta);
+            var isBelowVelocityThreshold = Math.abs(velocity) <= restSpeed;
+            var isBelowDisplacementThreshold = Math.abs(to - position) <= restDelta;
+            if (isBelowVelocityThreshold && isBelowDisplacementThreshold) {
+                position = to;
+                update(position);
+                framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+                complete();
+            } else {
+                update(position);
+            }
+        }, true);
+        return {
+            stop: function () {
+                return framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+            }
+        };
+    });
+};
+var vectorSpring = /*#__PURE__*/createVectorAction(spring, {
+    from: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    to: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    stiffness: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    damping: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    mass: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    velocity: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test
+});
+
+var inertia = function (_a) {
+    var _b = _a.from,
+        from = _b === void 0 ? 0 : _b,
+        _c = _a.velocity,
+        velocity = _c === void 0 ? 0 : _c,
+        min = _a.min,
+        max = _a.max,
+        _d = _a.power,
+        power = _d === void 0 ? 0.8 : _d,
+        _e = _a.timeConstant,
+        timeConstant = _e === void 0 ? 700 : _e,
+        _f = _a.bounceStiffness,
+        bounceStiffness = _f === void 0 ? 500 : _f,
+        _g = _a.bounceDamping,
+        bounceDamping = _g === void 0 ? 10 : _g,
+        _h = _a.restDelta,
+        restDelta = _h === void 0 ? 1 : _h,
+        modifyTarget = _a.modifyTarget;
+    return action(function (_a) {
+        var update = _a.update,
+            complete = _a.complete;
+        var current = value(from);
+        var activeAnimation;
+        var isSpring = false;
+        var isLessThanMin = function (v) {
+            return min !== undefined && v <= min;
+        };
+        var isMoreThanMax = function (v) {
+            return max !== undefined && v >= max;
+        };
+        var isOutOfBounds = function (v) {
+            return isLessThanMin(v) || isMoreThanMax(v);
+        };
+        var isTravellingAwayFromBounds = function (v, currentVelocity) {
+            return isLessThanMin(v) && currentVelocity < 0 || isMoreThanMax(v) && currentVelocity > 0;
+        };
+        var startAnimation = function (animation, next) {
+            activeAnimation && activeAnimation.stop();
+            activeAnimation = animation.start({
+                update: function (v) {
+                    return current.update(v);
+                },
+                complete: function () {
+                    if (next) {
+                        next();
+                        return;
+                    }
+                    complete();
+                }
+            });
+        };
+        var startSpring = function (props) {
+            isSpring = true;
+            startAnimation(vectorSpring(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props, { to: isLessThanMin(props.from) ? min : max, stiffness: bounceStiffness, damping: bounceDamping, restDelta: restDelta })));
+        };
+        current.subscribe(function (v) {
+            update(v);
+            var currentVelocity = current.getVelocity();
+            if (activeAnimation && !isSpring && isTravellingAwayFromBounds(v, currentVelocity)) {
+                startSpring({ from: v, velocity: currentVelocity });
+            }
+        });
+        if (isOutOfBounds(from)) {
+            startSpring({ from: from, velocity: velocity });
+        } else if (velocity !== 0) {
+            var animation = vectorDecay({
+                from: from,
+                velocity: velocity,
+                timeConstant: timeConstant,
+                power: power,
+                restDelta: isOutOfBounds(from) ? 20 : restDelta,
+                modifyTarget: modifyTarget
+            });
+            startAnimation(animation, function () {
+                var v = current.get();
+                if (isOutOfBounds(v)) {
+                    startSpring({ from: v, velocity: current.getVelocity() });
+                } else {
+                    complete();
+                }
+            });
+        } else {
+            complete();
+        }
+        return {
+            stop: function () {
+                return activeAnimation && activeAnimation.stop();
+            }
+        };
+    });
+};
+var index = /*#__PURE__*/createVectorAction(inertia, {
+    from: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    velocity: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    min: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    max: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    damping: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    stiffness: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    modifyTarget: function (func) {
+        return typeof func === 'function';
+    }
+});
+
+var frame = function () {
+    return action(function (_a) {
+        var update = _a.update;
+        var initialTime = 0;
+        var process = framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(function (_a) {
+            var timestamp = _a.timestamp;
+            if (!initialTime) initialTime = timestamp;
+            update(timestamp - initialTime);
+        }, true, true);
+        return {
+            stop: function () {
+                return framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+            }
+        };
+    });
+};
+
+var scrubber = function (_a) {
+    var _b = _a.from,
+        from = _b === void 0 ? 0 : _b,
+        _c = _a.to,
+        to = _c === void 0 ? 1 : _c,
+        _d = _a.ease,
+        ease = _d === void 0 ? _popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["linear"] : _d,
+        _e = _a.reverseEase,
+        reverseEase = _e === void 0 ? false : _e;
+    if (reverseEase) {
+        ease = Object(_popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["createReversedEasing"])(ease);
+    }
+    return action(function (_a) {
+        var update = _a.update;
+        return {
+            seek: function (progress$$1) {
+                return update(progress$$1);
+            }
+        };
+    }).pipe(ease, function (v) {
+        return Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mix"])(from, to, v);
+    });
+};
+var vectorScrubber = /*#__PURE__*/createVectorAction(scrubber, {
+    ease: function (func) {
+        return typeof func === 'function';
+    },
+    from: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    to: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test
+});
+
+var clampProgress = /*#__PURE__*/Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["clamp"])(0, 1);
+var tween = function (props) {
+    if (props === void 0) {
+        props = {};
+    }
+    return action(function (_a) {
+        var update = _a.update,
+            complete = _a.complete;
+        var _b = props.duration,
+            duration = _b === void 0 ? 300 : _b,
+            _c = props.ease,
+            ease = _c === void 0 ? _popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["easeOut"] : _c,
+            _d = props.flip,
+            flip = _d === void 0 ? 0 : _d,
+            _e = props.loop,
+            loop = _e === void 0 ? 0 : _e,
+            _f = props.yoyo,
+            yoyo = _f === void 0 ? 0 : _f,
+            _g = props.repeatDelay,
+            repeatDelay = _g === void 0 ? 0 : _g;
+        var _h = props.from,
+            from = _h === void 0 ? 0 : _h,
+            _j = props.to,
+            to = _j === void 0 ? 1 : _j,
+            _k = props.elapsed,
+            elapsed = _k === void 0 ? 0 : _k,
+            _l = props.flipCount,
+            flipCount = _l === void 0 ? 0 : _l,
+            _m = props.yoyoCount,
+            yoyoCount = _m === void 0 ? 0 : _m,
+            _o = props.loopCount,
+            loopCount = _o === void 0 ? 0 : _o;
+        var playhead = vectorScrubber({ from: from, to: to, ease: ease }).start(update);
+        var currentProgress = 0;
+        var process;
+        var isActive = false;
+        var reverseAnimation = function (reverseEase) {
+            if (reverseEase === void 0) {
+                reverseEase = false;
+            }
+            var _a;
+            _a = [to, from], from = _a[0], to = _a[1];
+            playhead = vectorScrubber({ from: from, to: to, ease: ease, reverseEase: reverseEase }).start(update);
+        };
+        var isTweenComplete = function () {
+            var isComplete = isActive && elapsed > duration + repeatDelay;
+            if (!isComplete) return false;
+            if (isComplete && !loop && !flip && !yoyo) return true;
+            elapsed = duration - (elapsed - repeatDelay);
+            if (loop && loopCount < loop) {
+                loopCount++;
+                return false;
+            } else if (flip && flipCount < flip) {
+                flipCount++;
+                reverseAnimation();
+                return false;
+            } else if (yoyo && yoyoCount < yoyo) {
+                yoyoCount++;
+                reverseAnimation(yoyoCount % 2 !== 0);
+                return false;
+            }
+            return true;
+        };
+        var updateTween = function () {
+            currentProgress = clampProgress(Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["progress"])(0, duration, elapsed));
+            playhead.seek(currentProgress);
+        };
+        var startTimer = function () {
+            isActive = true;
+            process = framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(function (_a) {
+                var delta = _a.delta;
+                elapsed += delta;
+                updateTween();
+                if (isTweenComplete()) {
+                    framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+                    complete && framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(complete, false, true);
+                }
+            }, true);
+        };
+        var stopTimer = function () {
+            isActive = false;
+            if (process) framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+        };
+        startTimer();
+        return {
+            isActive: function () {
+                return isActive;
+            },
+            getElapsed: function () {
+                return Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["clamp"])(0, duration, elapsed);
+            },
+            getProgress: function () {
+                return currentProgress;
+            },
+            stop: function () {
+                stopTimer();
+            },
+            pause: function () {
+                stopTimer();
+                return this;
+            },
+            resume: function () {
+                if (!isActive) startTimer();
+                return this;
+            },
+            seek: function (newProgress) {
+                elapsed = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mix"])(0, duration, newProgress);
+                framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(updateTween, false, true);
+                return this;
+            },
+            reverse: function () {
+                reverseAnimation();
+                return this;
+            }
+        };
+    });
+};
+
+var clampProgress$1 = /*#__PURE__*/Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["clamp"])(0, 1);
+var defaultEasings = function (values, easing$$1) {
+    return values.map(function () {
+        return easing$$1 || _popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["easeOut"];
+    }).splice(0, values.length - 1);
+};
+var defaultTimings = function (values) {
+    var numValues = values.length;
+    return values.map(function (value, i) {
+        return i !== 0 ? i / (numValues - 1) : 0;
+    });
+};
+var interpolateScrubbers = function (input, scrubbers, update) {
+    var rangeLength = input.length;
+    var finalInputIndex = rangeLength - 1;
+    var finalScrubberIndex = finalInputIndex - 1;
+    var subs = scrubbers.map(function (scrub) {
+        return scrub.start(update);
+    });
+    return function (v) {
+        if (v <= input[0]) {
+            subs[0].seek(0);
+        }
+        if (v >= input[finalInputIndex]) {
+            subs[finalScrubberIndex].seek(1);
+        }
+        var i = 1;
+        for (; i < rangeLength; i++) {
+            if (input[i] > v || i === finalInputIndex) break;
+        }
+        var progressInRange = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["progress"])(input[i - 1], input[i], v);
+        subs[i - 1].seek(clampProgress$1(progressInRange));
+    };
+};
+var keyframes = function (_a) {
+    var easings = _a.easings,
+        _b = _a.ease,
+        ease = _b === void 0 ? _popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["linear"] : _b,
+        times = _a.times,
+        values = _a.values,
+        tweenProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["easings", "ease", "times", "values"]);
+    easings = Array.isArray(easings) ? easings : defaultEasings(values, easings);
+    times = times || defaultTimings(values);
+    var scrubbers = easings.map(function (easing$$1, i) {
+        return vectorScrubber({
+            from: values[i],
+            to: values[i + 1],
+            ease: easing$$1
+        });
+    });
+    return tween(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, tweenProps, { ease: ease })).applyMiddleware(function (update) {
+        return interpolateScrubbers(times, scrubbers, update);
+    });
+};
+
+var physics = function (props) {
+    if (props === void 0) {
+        props = {};
+    }
+    return action(function (_a) {
+        var complete = _a.complete,
+            update = _a.update;
+        var _b = props.acceleration,
+            acceleration = _b === void 0 ? 0 : _b,
+            _c = props.friction,
+            friction = _c === void 0 ? 0 : _c,
+            _d = props.velocity,
+            velocity = _d === void 0 ? 0 : _d,
+            springStrength = props.springStrength,
+            to = props.to;
+        var _e = props.restSpeed,
+            restSpeed = _e === void 0 ? 0.001 : _e,
+            _f = props.from,
+            from = _f === void 0 ? 0 : _f;
+        var current = from;
+        var process = framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(function (_a) {
+            var delta = _a.delta;
+            var elapsed = Math.max(delta, 16);
+            if (acceleration) velocity += Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerFrame"])(acceleration, elapsed);
+            if (friction) velocity *= Math.pow(1 - friction, elapsed / 100);
+            if (springStrength !== undefined && to !== undefined) {
+                var distanceToTarget = to - current;
+                velocity += distanceToTarget * Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerFrame"])(springStrength, elapsed);
+            }
+            current += Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["velocityPerFrame"])(velocity, elapsed);
+            update(current);
+            var isComplete = restSpeed !== false && (!velocity || Math.abs(velocity) <= restSpeed);
+            if (isComplete) {
+                framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+                complete();
+            }
+        }, true);
+        return {
+            set: function (v) {
+                current = v;
+                return this;
+            },
+            setAcceleration: function (v) {
+                acceleration = v;
+                return this;
+            },
+            setFriction: function (v) {
+                friction = v;
+                return this;
+            },
+            setSpringStrength: function (v) {
+                springStrength = v;
+                return this;
+            },
+            setSpringTarget: function (v) {
+                to = v;
+                return this;
+            },
+            setVelocity: function (v) {
+                velocity = v;
+                return this;
+            },
+            stop: function () {
+                return framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(process);
+            }
+        };
+    });
+};
+var vectorPhysics = /*#__PURE__*/createVectorAction(physics, {
+    acceleration: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    friction: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    velocity: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    from: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    to: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test,
+    springStrength: style_value_types__WEBPACK_IMPORTED_MODULE_3__["number"].test
+});
+
+var DEFAULT_DURATION = 300;
+var flattenTimings = function (instructions) {
+    var flatInstructions = [];
+    var lastArg = instructions[instructions.length - 1];
+    var isStaggered = typeof lastArg === 'number';
+    var staggerDelay = isStaggered ? lastArg : 0;
+    var segments = isStaggered ? instructions.slice(0, -1) : instructions;
+    var numSegments = segments.length;
+    var offset = 0;
+    segments.forEach(function (item, i) {
+        flatInstructions.push(item);
+        if (i !== numSegments - 1) {
+            var duration = item.duration || DEFAULT_DURATION;
+            offset += staggerDelay;
+            flatInstructions.push("-" + (duration - offset));
+        }
+    });
+    return flatInstructions;
+};
+var flattenArrayInstructions = function (instructions, instruction) {
+    Array.isArray(instruction) ? instructions.push.apply(instructions, flattenTimings(instruction)) : instructions.push(instruction);
+    return instructions;
+};
+var convertDefToProps = function (props, def, i) {
+    var duration = props.duration,
+        easings = props.easings,
+        times = props.times,
+        values = props.values;
+    var numValues = values.length;
+    var prevTimeTo = times[numValues - 1];
+    var timeFrom = def.at === 0 ? 0 : def.at / duration;
+    var timeTo = (def.at + def.duration) / duration;
+    if (i === 0) {
+        values.push(def.from);
+        times.push(timeFrom);
+    } else {
+        if (prevTimeTo !== timeFrom) {
+            if (def.from !== undefined) {
+                values.push(values[numValues - 1]);
+                times.push(timeFrom);
+                easings.push(_popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["linear"]);
+            }
+            var from = def.from !== undefined ? def.from : values[numValues - 1];
+            values.push(from);
+            times.push(timeFrom);
+            easings.push(_popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["linear"]);
+        } else if (def.from !== undefined) {
+            values.push(def.from);
+            times.push(timeFrom);
+            easings.push(_popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["linear"]);
+        }
+    }
+    values.push(def.to);
+    times.push(timeTo);
+    easings.push(def.ease || _popmotion_easing__WEBPACK_IMPORTED_MODULE_4__["easeInOut"]);
+    return props;
+};
+var timeline = function (instructions, _a) {
+    var _b = _a === void 0 ? {} : _a,
+        duration = _b.duration,
+        elapsed = _b.elapsed,
+        ease = _b.ease,
+        loop = _b.loop,
+        flip = _b.flip,
+        yoyo = _b.yoyo;
+    var playhead = 0;
+    var calculatedDuration = 0;
+    var flatInstructions = instructions.reduce(flattenArrayInstructions, []);
+    var animationDefs = [];
+    flatInstructions.forEach(function (instruction) {
+        if (typeof instruction === 'string') {
+            playhead += parseFloat(instruction);
+        } else if (typeof instruction === 'number') {
+            playhead = instruction;
+        } else {
+            var def = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, instruction, { at: playhead });
+            def.duration = def.duration === undefined ? DEFAULT_DURATION : def.duration;
+            animationDefs.push(def);
+            playhead += def.duration;
+            calculatedDuration = Math.max(calculatedDuration, def.at + def.duration);
+        }
+    });
+    var tracks = {};
+    var numDefs = animationDefs.length;
+    for (var i = 0; i < numDefs; i++) {
+        var def = animationDefs[i];
+        var track = def.track;
+        if (track === undefined) {
+            throw new Error('No track defined');
+        }
+        if (!tracks.hasOwnProperty(track)) tracks[track] = [];
+        tracks[track].push(def);
+    }
+    var trackKeyframes = {};
+    for (var key in tracks) {
+        if (tracks.hasOwnProperty(key)) {
+            var keyframeProps = tracks[key].reduce(convertDefToProps, {
+                duration: calculatedDuration,
+                easings: [],
+                times: [],
+                values: []
+            });
+            trackKeyframes[key] = keyframes(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, keyframeProps, { duration: duration || calculatedDuration, ease: ease,
+                elapsed: elapsed,
+                loop: loop,
+                yoyo: yoyo,
+                flip: flip }));
+        }
+    }
+    return composite(trackKeyframes);
+};
+
+var listen = function (element, events, options) {
+    return action(function (_a) {
+        var update = _a.update;
+        var eventNames = events.split(' ').map(function (eventName) {
+            element.addEventListener(eventName, update, options);
+            return eventName;
+        });
+        return {
+            stop: function () {
+                return eventNames.forEach(function (eventName) {
+                    return element.removeEventListener(eventName, update, options);
+                });
+            }
+        };
+    });
+};
+
+var defaultPointerPos = function () {
+    return {
+        clientX: 0,
+        clientY: 0,
+        pageX: 0,
+        pageY: 0,
+        x: 0,
+        y: 0
+    };
+};
+var eventToPoint = function (e, point) {
+    if (point === void 0) {
+        point = defaultPointerPos();
+    }
+    point.clientX = point.x = e.clientX;
+    point.clientY = point.y = e.clientY;
+    point.pageX = e.pageX;
+    point.pageY = e.pageY;
+    return point;
+};
+
+var points = [/*#__PURE__*/defaultPointerPos()];
+var isTouchDevice = false;
+if (typeof document !== 'undefined') {
+    var updatePointsLocation = function (_a) {
+        var touches = _a.touches;
+        isTouchDevice = true;
+        var numTouches = touches.length;
+        points.length = 0;
+        for (var i = 0; i < numTouches; i++) {
+            var thisTouch = touches[i];
+            points.push(eventToPoint(thisTouch));
+        }
+    };
+    listen(document, 'touchstart touchmove', {
+        passive: true,
+        capture: true
+    }).start(updatePointsLocation);
+}
+var multitouch = function (_a) {
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.preventDefault,
+        preventDefault = _c === void 0 ? true : _c,
+        _d = _b.scale,
+        scale = _d === void 0 ? 1.0 : _d,
+        _e = _b.rotate,
+        rotate = _e === void 0 ? 0.0 : _e;
+    return action(function (_a) {
+        var update = _a.update;
+        var output = {
+            touches: points,
+            scale: scale,
+            rotate: rotate
+        };
+        var initialDistance = 0.0;
+        var initialRotation = 0.0;
+        var isGesture = points.length > 1;
+        if (isGesture) {
+            var firstTouch = points[0],
+                secondTouch = points[1];
+            initialDistance = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["distance"])(firstTouch, secondTouch);
+            initialRotation = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["angle"])(firstTouch, secondTouch);
+        }
+        var updatePoint = function () {
+            if (isGesture) {
+                var firstTouch = points[0],
+                    secondTouch = points[1];
+                var newDistance = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["distance"])(firstTouch, secondTouch);
+                var newRotation = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["angle"])(firstTouch, secondTouch);
+                output.scale = scale * (newDistance / initialDistance);
+                output.rotate = rotate + (newRotation - initialRotation);
+            }
+            update(output);
+        };
+        var onMove = function (e) {
+            if (preventDefault || e.touches.length > 1) e.preventDefault();
+            framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(updatePoint);
+        };
+        var updateOnMove = listen(document, 'touchmove', {
+            passive: !preventDefault
+        }).start(onMove);
+        if (isTouchDevice) framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(updatePoint);
+        return {
+            stop: function () {
+                framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(updatePoint);
+                updateOnMove.stop();
+            }
+        };
+    });
+};
+var getIsTouchDevice = function () {
+    return isTouchDevice;
+};
+
+var point = /*#__PURE__*/defaultPointerPos();
+var isMouseDevice = false;
+if (typeof document !== 'undefined') {
+    var updatePointLocation = function (e) {
+        isMouseDevice = true;
+        eventToPoint(e, point);
+    };
+    listen(document, 'mousedown mousemove', true).start(updatePointLocation);
+}
+var mouse = function (_a) {
+    var _b = (_a === void 0 ? {} : _a).preventDefault,
+        preventDefault = _b === void 0 ? true : _b;
+    return action(function (_a) {
+        var update = _a.update;
+        var updatePoint = function () {
+            return update(point);
+        };
+        var onMove = function (e) {
+            if (preventDefault) e.preventDefault();
+            framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(updatePoint);
+        };
+        var updateOnMove = listen(document, 'mousemove').start(onMove);
+        if (isMouseDevice) framesync__WEBPACK_IMPORTED_MODULE_2__["default"].update(updatePoint);
+        return {
+            stop: function () {
+                framesync__WEBPACK_IMPORTED_MODULE_2__["cancelSync"].update(updatePoint);
+                updateOnMove.stop();
+            }
+        };
+    });
+};
+
+var getFirstTouch = function (_a) {
+    var firstTouch = _a[0];
+    return firstTouch;
+};
+var pointer = function (props) {
+    if (props === void 0) {
+        props = {};
+    }
+    return getIsTouchDevice() ? multitouch(props).pipe(function (_a) {
+        var touches = _a.touches;
+        return touches;
+    }, getFirstTouch) : mouse(props);
+};
+var index$1 = function (_a) {
+    if (_a === void 0) {
+        _a = {};
+    }
+    var x = _a.x,
+        y = _a.y,
+        props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["x", "y"]);
+    if (x !== undefined || y !== undefined) {
+        var applyXOffset_1 = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["applyOffset"])(x || 0);
+        var applyYOffset_1 = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["applyOffset"])(y || 0);
+        var delta_1 = { x: 0, y: 0 };
+        return pointer(props).pipe(function (point) {
+            delta_1.x = applyXOffset_1(point.x);
+            delta_1.y = applyYOffset_1(point.y);
+            return delta_1;
+        });
+    } else {
+        return pointer(props);
+    }
+};
+
+var chain = function () {
+    var actions = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        actions[_i] = arguments[_i];
+    }
+    return action(function (_a) {
+        var update = _a.update,
+            complete = _a.complete;
+        var i = 0;
+        var current;
+        var playCurrent = function () {
+            current = actions[i].start({
+                complete: function () {
+                    i++;
+                    i >= actions.length ? complete() : playCurrent();
+                },
+                update: update
+            });
+        };
+        playCurrent();
+        return {
+            stop: function () {
+                return current && current.stop();
+            }
+        };
+    });
+};
+
+var crossfade = function (a, b) {
+    return action(function (observer) {
+        var balance = 0;
+        var fadable = parallel$1(a, b).start(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, observer, { update: function (_a) {
+                var va = _a[0],
+                    vb = _a[1];
+                observer.update(Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mix"])(va, vb, balance));
+            } }));
+        return {
+            setBalance: function (v) {
+                return balance = v;
+            },
+            stop: function () {
+                return fadable.stop();
+            }
+        };
+    });
+};
+
+var delay = function (timeToDelay) {
+    return action(function (_a) {
+        var complete = _a.complete;
+        var timeout = setTimeout(complete, timeToDelay);
+        return {
+            stop: function () {
+                return clearTimeout(timeout);
+            }
+        };
+    });
+};
+
+var merge = function () {
+    var actions = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        actions[_i] = arguments[_i];
+    }
+    return action(function (observer) {
+        var subs = actions.map(function (thisAction) {
+            return thisAction.start(observer);
+        });
+        return {
+            stop: function () {
+                return subs.forEach(function (sub) {
+                    return sub.stop();
+                });
+            }
+        };
+    });
+};
+
+var schedule = function (scheduler, schedulee) {
+    return action(function (_a) {
+        var update = _a.update,
+            complete = _a.complete;
+        var latest;
+        var schedulerSub = scheduler.start({
+            update: function () {
+                return latest !== undefined && update(latest);
+            },
+            complete: complete
+        });
+        var scheduleeSub = schedulee.start({
+            update: function (v) {
+                return latest = v;
+            },
+            complete: complete
+        });
+        return {
+            stop: function () {
+                schedulerSub.stop();
+                scheduleeSub.stop();
+            }
+        };
+    });
+};
+
+var stagger = function (actions, interval) {
+    var intervalIsNumber = typeof interval === 'number';
+    var actionsWithDelay = actions.map(function (a, i) {
+        var timeToDelay = intervalIsNumber ? interval * i : interval(i);
+        return chain(delay(timeToDelay), a);
+    });
+    return parallel$1.apply(void 0, actionsWithDelay);
+};
+
+var appendUnit = function (unit) {
+    return function (v) {
+        return "" + v + unit;
+    };
+};
+var steps = function (st, min, max) {
+    if (min === void 0) {
+        min = 0;
+    }
+    if (max === void 0) {
+        max = 1;
+    }
+    return function (v) {
+        var current = Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["progress"])(min, max, v);
+        return Object(_popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mix"])(min, max, stepProgress(st, current));
+    };
+};
+var transformMap = function (childTransformers) {
+    return function (v) {
+        var output = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, v);
+        for (var key in childTransformers) {
+            if (childTransformers.hasOwnProperty(key)) {
+                var childTransformer = childTransformers[key];
+                output[key] = childTransformer(v[key]);
+            }
+        }
+        return output;
+    };
+};
+
+var transformers = /*#__PURE__*/Object.freeze({
+    applyOffset: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["applyOffset"],
+    clamp: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["clamp"],
+    conditional: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["conditional"],
+    interpolate: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["interpolate"],
+    blendArray: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mixArray"],
+    blendColor: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["mixColor"],
+    pipe: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["pipe"],
+    smooth: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["smooth"],
+    snap: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["snap"],
+    generateStaticSpring: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["springForce"],
+    nonlinearSpring: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["springForceExpo"],
+    linearSpring: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["springForceLinear"],
+    wrap: _popmotion_popcorn__WEBPACK_IMPORTED_MODULE_1__["wrap"],
+    appendUnit: appendUnit,
+    steps: steps,
+    transformMap: transformMap
+});
+
+var css = function (element, props) {
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_6__["warning"])(false, 'css() is deprecated, use styler instead');
+    return Object(stylefire__WEBPACK_IMPORTED_MODULE_5__["default"])(element, props);
+};
+var svg = function (element, props) {
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_6__["warning"])(false, 'svg() is deprecated, use styler instead');
+    return Object(stylefire__WEBPACK_IMPORTED_MODULE_5__["default"])(element, props);
+};
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/pose-core/dist/pose-core.es.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/pose-core/dist/pose-core.es.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
+
+
+
+var getPoseValues = function (_a) {
+    var transition = _a.transition,
+        flip = _a.flip,
+        delay = _a.delay,
+        delayChildren = _a.delayChildren,
+        staggerChildren = _a.staggerChildren,
+        staggerDirection = _a.staggerDirection,
+        afterChildren = _a.afterChildren,
+        beforeChildren = _a.beforeChildren,
+        preTransition = _a.preTransition,
+        applyAtStart = _a.applyAtStart,
+        applyAtEnd = _a.applyAtEnd,
+        props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["transition", "flip", "delay", "delayChildren", "staggerChildren", "staggerDirection", "afterChildren", "beforeChildren", "preTransition", "applyAtStart", "applyAtEnd"]);
+    return props;
+};
+var selectPoses = function (_a) {
+    var label = _a.label,
+        props = _a.props,
+        values = _a.values,
+        parentValues = _a.parentValues,
+        ancestorValues = _a.ancestorValues,
+        onChange = _a.onChange,
+        passive = _a.passive,
+        initialPose = _a.initialPose,
+        poses = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["label", "props", "values", "parentValues", "ancestorValues", "onChange", "passive", "initialPose"]);
+    return poses;
+};
+var selectAllValues = function (values, selectValue) {
+    var allValues = {};
+    values.forEach(function (value, key) {
+        return allValues[key] = selectValue(value);
+    });
+    return allValues;
+};
+
+var resolveProp = function (target, props) {
+    return typeof target === 'function' ? target(props) : target;
+};
+var poseDefault = function (pose, prop, defaultValue, resolveProps) {
+    return pose && pose[prop] !== undefined ? resolveProp(pose[prop], resolveProps) : defaultValue;
+};
+var startChildAnimations = function (children, next, pose, props) {
+    var animations = [];
+    var delay = poseDefault(pose, 'delayChildren', 0, props);
+    var stagger = poseDefault(pose, 'staggerChildren', 0, props);
+    var staggerDirection = poseDefault(pose, 'staggerDirection', 1, props);
+    var maxStaggerDuration = (children.size - 1) * stagger;
+    var generateStaggerDuration = staggerDirection === 1 ? function (i) {
+        return i * stagger;
+    } : function (i) {
+        return maxStaggerDuration - i * stagger;
+    };
+    Array.from(children).forEach(function (child, i) {
+        animations.push(child.set(next, {
+            delay: delay + generateStaggerDuration(i)
         }));
-      }
-
-      this.contextListener = google.maps.event.addDomListener(this.div, 'contextmenu', ignoreHandler);
-      /**
-       * This event is fired when the DIV containing the InfoBox's content is attached to the DOM.
-       * @name InfoBox#domready
-       * @event
-       */
-
-      google.maps.event.trigger(this, 'domready');
-    }
-  };
-
-  _proto.getCloseBoxImg = function getCloseBoxImg() {
-    var img = '';
-
-    if (this.closeBoxURL !== '') {
-      img = '<img';
-      img += " src='" + this.closeBoxURL + "'";
-      img += ' align=right'; // Do this because Opera chokes on style='float: right;'
-
-      img += " style='";
-      img += ' position: relative;'; // Required by MSIE
-
-      img += ' cursor: pointer;';
-      img += ' margin: ' + this.closeBoxMargin + ';';
-      img += "'>";
-    }
-
-    return img;
-  };
-
-  _proto.addClickHandler = function addClickHandler() {
-    if (this.div && this.div.firstChild && this.closeBoxURL !== '') {
-      var closeBox = this.div.firstChild;
-      this.closeListener = google.maps.event.addDomListener(closeBox, 'click', this.getCloseClickHandler());
-    } else {
-      this.closeListener = null;
-    }
-  };
-
-  _proto.getCloseClickHandler = function getCloseClickHandler() {
-    var _this2 = this;
-
-    // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    return function (event) {
-      // 1.0.3 fix: Always prevent propagation of a close box click to the map:
-      event.cancelBubble = true;
-
-      if (event.stopPropagation) {
-        event.stopPropagation();
-      }
-      /**
-       * This event is fired when the InfoBox's close box is clicked.
-       * @name InfoBox#closeclick
-       * @event
-       */
-
-
-      google.maps.event.trigger(_this2, 'closeclick');
-
-      _this2.close();
-    };
-  };
-
-  _proto.panBox = function panBox(disablePan) {
-    if (this.div && !disablePan) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      var map = this.getMap(); // Only pan if attached to map, not panorama
-
-      if (map instanceof google.maps.Map) {
-        var xOffset = 0;
-        var yOffset = 0;
-        var bounds = map.getBounds();
-
-        if (bounds && !bounds.contains(this.position)) {
-          // Marker not in visible area of map, so set center
-          // of map to the marker position first.
-          map.setCenter(this.position);
-        }
-
-        var mapDiv = map.getDiv(); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        var mapWidth = mapDiv.offsetWidth; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        var mapHeight = mapDiv.offsetHeight;
-        var iwOffsetX = this.pixelOffset.width;
-        var iwOffsetY = this.pixelOffset.height;
-        var iwWidth = this.div.offsetWidth;
-        var iwHeight = this.div.offsetHeight;
-        var padX = this.infoBoxClearance.width;
-        var padY = this.infoBoxClearance.height; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        var projection = this.getProjection();
-        var pixPosition = projection.fromLatLngToContainerPixel(this.position);
-
-        if (pixPosition.x < -iwOffsetX + padX) {
-          xOffset = pixPosition.x + iwOffsetX - padX;
-        } else if (pixPosition.x + iwWidth + iwOffsetX + padX > mapWidth) {
-          xOffset = pixPosition.x + iwWidth + iwOffsetX + padX - mapWidth;
-        }
-
-        if (this.alignBottom) {
-          if (pixPosition.y < -iwOffsetY + padY + iwHeight) {
-            yOffset = pixPosition.y + iwOffsetY - padY - iwHeight;
-          } else if (pixPosition.y + iwOffsetY + padY > mapHeight) {
-            yOffset = pixPosition.y + iwOffsetY + padY - mapHeight;
-          }
+    });
+    return animations;
+};
+var resolveTransition = function (transition, key, value, props, convertTransitionDefinition, getInstantTransition) {
+    var resolvedTransition;
+    if (typeof transition === 'function') {
+        var resolvedTransitionMap = transition(props);
+        resolvedTransition = resolveTransition(resolvedTransitionMap, key, value, props, convertTransitionDefinition, getInstantTransition);
+    } else if (transition[key] || transition.default) {
+        var keyTransition = transition[key] || transition.default;
+        if (typeof keyTransition === 'function') {
+            resolvedTransition = keyTransition(props);
         } else {
-          if (pixPosition.y < -iwOffsetY + padY) {
-            yOffset = pixPosition.y + iwOffsetY - padY;
-          } else if (pixPosition.y + iwHeight + iwOffsetY + padY > mapHeight) {
-            yOffset = pixPosition.y + iwHeight + iwOffsetY + padY - mapHeight;
-          }
+            resolvedTransition = keyTransition;
         }
-
-        if (!(xOffset === 0 && yOffset === 0)) {
-          // Move the map to the shifted center.
-          map.panBy(xOffset, yOffset);
-        }
-      }
-    }
-  };
-
-  _proto.setBoxStyle = function setBoxStyle() {
-    if (this.div) {
-      // Apply style values from the style sheet defined in the boxClass parameter:
-      this.div.className = this.boxClass; // Clear existing inline style values:
-
-      this.div.style.cssText = ''; // Apply style values defined in the boxStyle parameter:
-
-      var boxStyle = this.boxStyle;
-
-      for (var i in boxStyle) {
-        if (boxStyle.hasOwnProperty(i)) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-          // @ts-ignore
-          this.div.style[i] = boxStyle[i];
-        }
-      } // Fix for iOS disappearing InfoBox problem
-      // See http://stackoverflow.com/questions/9229535/google-maps-markers-disappear-at-certain-zoom-level-only-on-iphone-ipad
-
-
-      this.div.style.webkitTransform = 'translateZ(0)'; // Fix up opacity style for benefit of MSIE
-
-      if (typeof this.div.style.opacity !== 'undefined' && this.div.style.opacity !== '') {
-        // See http://www.quirksmode.org/css/opacity.html
-        var opacity = parseFloat(this.div.style.opacity || ''); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-
-        this.div.style.msFilter = '"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"';
-        this.div.style.filter = 'alpha(opacity=' + opacity * 100 + ')';
-      } // Apply required styles
-
-
-      this.div.style.position = 'absolute';
-      this.div.style.visibility = 'hidden';
-
-      if (this.zIndex !== null) {
-        this.div.style.zIndex = this.zIndex + '';
-      }
-
-      if (!this.div.style.overflow) {
-        this.div.style.overflow = 'auto';
-      }
-    }
-  };
-
-  _proto.getBoxWidths = function getBoxWidths() {
-    var bw = {
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
-    };
-
-    if (!this.div) {
-      return bw;
-    }
-
-    if (document.defaultView && document.defaultView.getComputedStyle) {
-      var ownerDocument = this.div.ownerDocument;
-      var computedStyle = ownerDocument && ownerDocument.defaultView ? ownerDocument.defaultView.getComputedStyle(this.div, '') : null;
-
-      if (computedStyle) {
-        // The computed styles are always in pixel units (good!)
-        bw.top = parseInt(computedStyle.borderTopWidth || '', 10) || 0;
-        bw.bottom = parseInt(computedStyle.borderBottomWidth || '', 10) || 0;
-        bw.left = parseInt(computedStyle.borderLeftWidth || '', 10) || 0;
-        bw.right = parseInt(computedStyle.borderRightWidth || '', 10) || 0;
-      }
-    } else if ( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    document.documentElement.currentStyle // MSIE
-    ) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        var currentStyle = this.div.currentStyle;
-
-        if (currentStyle) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-          // The current styles may not be in pixel units, but assume they are (bad!)
-          bw.top = parseInt(currentStyle.borderTopWidth || '', 10) || 0;
-          bw.bottom = parseInt(currentStyle.borderBottomWidth || '', 10) || 0;
-          bw.left = parseInt(currentStyle.borderLeftWidth || '', 10) || 0;
-          bw.right = parseInt(currentStyle.borderRightWidth || '', 10) || 0;
-        }
-      }
-
-    return bw;
-  };
-
-  _proto.onRemove = function onRemove() {
-    if (this.div && this.div.parentNode) {
-      this.div.parentNode.removeChild(this.div);
-      this.div = null;
-    }
-  };
-
-  _proto.draw = function draw() {
-    this.createInfoBoxDiv();
-
-    if (this.div) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      var projection = this.getProjection();
-      var pixPosition = projection.fromLatLngToDivPixel(this.position);
-      this.div.style.left = pixPosition.x + this.pixelOffset.width + 'px';
-
-      if (this.alignBottom) {
-        this.div.style.bottom = -(pixPosition.y + this.pixelOffset.height) + 'px';
-      } else {
-        this.div.style.top = pixPosition.y + this.pixelOffset.height + 'px';
-      }
-
-      if (this.isHidden) {
-        this.div.style.visibility = 'hidden';
-      } else {
-        this.div.style.visibility = 'visible';
-      }
-    }
-  };
-
-  _proto.setOptions = function setOptions(options) {
-    if (options === void 0) {
-      options = {};
-    }
-
-    if (typeof options.boxClass !== 'undefined') {
-      // Must be first
-      this.boxClass = options.boxClass;
-      this.setBoxStyle();
-    }
-
-    if (typeof options.boxStyle !== 'undefined') {
-      // Must be second
-      this.boxStyle = options.boxStyle;
-      this.setBoxStyle();
-    }
-
-    if (typeof options.content !== 'undefined') {
-      this.setContent(options.content);
-    }
-
-    if (typeof options.disableAutoPan !== 'undefined') {
-      this.disableAutoPan = options.disableAutoPan;
-    }
-
-    if (typeof options.maxWidth !== 'undefined') {
-      this.maxWidth = options.maxWidth;
-    }
-
-    if (typeof options.pixelOffset !== 'undefined') {
-      this.pixelOffset = options.pixelOffset;
-    }
-
-    if (typeof options.alignBottom !== 'undefined') {
-      this.alignBottom = options.alignBottom;
-    }
-
-    if (typeof options.position !== 'undefined') {
-      this.setPosition(options.position);
-    }
-
-    if (typeof options.zIndex !== 'undefined') {
-      this.setZIndex(options.zIndex);
-    }
-
-    if (typeof options.closeBoxMargin !== 'undefined') {
-      this.closeBoxMargin = options.closeBoxMargin;
-    }
-
-    if (typeof options.closeBoxURL !== 'undefined') {
-      this.closeBoxURL = options.closeBoxURL;
-    }
-
-    if (typeof options.infoBoxClearance !== 'undefined') {
-      this.infoBoxClearance = options.infoBoxClearance;
-    }
-
-    if (typeof options.isHidden !== 'undefined') {
-      this.isHidden = options.isHidden;
-    }
-
-    if (typeof options.visible !== 'undefined') {
-      this.isHidden = !options.visible;
-    }
-
-    if (typeof options.enableEventPropagation !== 'undefined') {
-      this.enableEventPropagation = options.enableEventPropagation;
-    }
-
-    if (this.div) {
-      this.draw();
-    }
-  };
-
-  _proto.setContent = function setContent(content) {
-    this.content = content;
-
-    if (this.div) {
-      if (this.closeListener) {
-        google.maps.event.removeListener(this.closeListener);
-        this.closeListener = null;
-      } // Odd code required to make things work with MSIE.
-
-
-      if (!this.fixedWidthSet) {
-        this.div.style.width = '';
-      }
-
-      if (typeof content === 'string') {
-        this.div.innerHTML = this.getCloseBoxImg() + content;
-      } else {
-        this.div.innerHTML = this.getCloseBoxImg();
-        this.div.appendChild(content);
-      } // Perverse code required to make things work with MSIE.
-      // (Ensures the close box does, in fact, float to the right.)
-
-
-      if (!this.fixedWidthSet) {
-        this.div.style.width = this.div.offsetWidth + 'px';
-
-        if (typeof content === 'string') {
-          this.div.innerHTML = this.getCloseBoxImg() + content;
-        } else {
-          this.div.innerHTML = this.getCloseBoxImg();
-          this.div.appendChild(content);
-        }
-      }
-
-      this.addClickHandler();
-    }
-    /**
-     * This event is fired when the content of the InfoBox changes.
-     * @name InfoBox#content_changed
-     * @event
-     */
-
-
-    google.maps.event.trigger(this, 'content_changed');
-  };
-
-  _proto.setPosition = function setPosition(latLng) {
-    this.position = latLng;
-
-    if (this.div) {
-      this.draw();
-    }
-    /**
-     * This event is fired when the position of the InfoBox changes.
-     * @name InfoBox#position_changed
-     * @event
-     */
-
-
-    google.maps.event.trigger(this, 'position_changed');
-  };
-
-  _proto.setVisible = function setVisible(isVisible) {
-    this.isHidden = !isVisible;
-
-    if (this.div) {
-      this.div.style.visibility = this.isHidden ? 'hidden' : 'visible';
-    }
-  };
-
-  _proto.setZIndex = function setZIndex(index) {
-    this.zIndex = index;
-
-    if (this.div) {
-      this.div.style.zIndex = index + '';
-    }
-    /**
-     * This event is fired when the zIndex of the InfoBox changes.
-     * @name InfoBox#zindex_changed
-     * @event
-     */
-
-
-    google.maps.event.trigger(this, 'zindex_changed');
-  };
-
-  _proto.getContent = function getContent() {
-    return this.content;
-  };
-
-  _proto.getPosition = function getPosition() {
-    return this.position;
-  };
-
-  _proto.getZIndex = function getZIndex() {
-    return this.zIndex;
-  };
-
-  _proto.getVisible = function getVisible() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    var map = this.getMap();
-    var isVisible;
-
-    if (typeof map === 'undefined' || map === null) {
-      isVisible = false;
     } else {
-      isVisible = !this.isHidden;
+        resolvedTransition = transition;
     }
-
-    return isVisible;
-  };
-
-  _proto.show = function show() {
-    this.isHidden = false;
-
-    if (this.div) {
-      this.div.style.visibility = 'visible';
+    return resolvedTransition === false ? getInstantTransition(value, props) : convertTransitionDefinition(value, resolvedTransition, props);
+};
+var findInsertionIndex = function (poseList, priorityList, priorityIndex) {
+    var insertionIndex = 0;
+    for (var i = priorityIndex - 1; i >= 0; i--) {
+        var nextHighestPriorityIndex = poseList.indexOf(priorityList[i]);
+        if (nextHighestPriorityIndex !== -1) {
+            insertionIndex = nextHighestPriorityIndex + 1;
+            break;
+        }
     }
-  };
+    return insertionIndex;
+};
+var applyValues = function (toApply, values, props, setValue, setValueNative) {
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(typeof toApply === 'object', 'applyAtStart and applyAtEnd must be of type object');
+    return Object.keys(toApply).forEach(function (key) {
+        var valueToSet = resolveProp(toApply[key], props);
+        values.has(key) ? setValue(values.get(key), valueToSet) : setValueNative(key, valueToSet, props);
+    });
+};
+var createPoseSetter = function (setterProps) {
+    var state = setterProps.state,
+        poses = setterProps.poses,
+        startAction = setterProps.startAction,
+        stopAction = setterProps.stopAction,
+        getInstantTransition = setterProps.getInstantTransition,
+        addActionDelay = setterProps.addActionDelay,
+        getTransitionProps = setterProps.getTransitionProps,
+        resolveTarget = setterProps.resolveTarget,
+        transformPose = setterProps.transformPose,
+        posePriority = setterProps.posePriority,
+        convertTransitionDefinition = setterProps.convertTransitionDefinition,
+        setValue = setterProps.setValue,
+        setValueNative = setterProps.setValueNative,
+        forceRender = setterProps.forceRender;
+    return function (next, nextProps, propagate) {
+        if (nextProps === void 0) {
+            nextProps = {};
+        }
+        if (propagate === void 0) {
+            propagate = true;
+        }
+        var children = state.children,
+            values = state.values,
+            props = state.props,
+            activeActions = state.activeActions,
+            activePoses = state.activePoses;
+        var _a = nextProps.delay,
+            delay = _a === void 0 ? 0 : _a;
+        var hasChildren = children.size;
+        var baseTransitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props, nextProps);
+        var nextPose = poses[next];
+        var getChildAnimations = function () {
+            return hasChildren && propagate ? startChildAnimations(children, next, nextPose, baseTransitionProps) : [];
+        };
+        var getParentAnimations = function () {
+            if (!nextPose) return [];
+            var applyAtStart = nextPose.applyAtStart;
+            if (applyAtStart) {
+                applyValues(applyAtStart, values, baseTransitionProps, setValue, setValueNative);
+                if (forceRender) forceRender(baseTransitionProps);
+            }
+            if (transformPose) nextPose = transformPose(nextPose, next, state);
+            var preTransition = nextPose.preTransition,
+                getTransition = nextPose.transition,
+                applyAtEnd = nextPose.applyAtEnd;
+            if (preTransition) preTransition(baseTransitionProps);
+            var animations = Object.keys(getPoseValues(nextPose)).map(function (key) {
+                var valuePoses = activePoses.has(key) ? activePoses.get(key) : (activePoses.set(key, []), activePoses.get(key));
+                var existingIndex = valuePoses.indexOf(next);
+                if (existingIndex !== -1) valuePoses.splice(existingIndex, 1);
+                var priority = posePriority ? posePriority.indexOf(next) : 0;
+                var insertionIndex = priority <= 0 ? 0 : findInsertionIndex(valuePoses, posePriority, priority);
+                valuePoses.splice(insertionIndex, 0, next);
+                return insertionIndex === 0 ? new Promise(function (complete) {
+                    var value = values.get(key);
+                    var transitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, baseTransitionProps, { key: key,
+                        value: value });
+                    var target = resolveTarget(value, resolveProp(nextPose[key], transitionProps));
+                    if (activeActions.has(key)) stopAction(activeActions.get(key));
+                    var resolveTransitionProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ to: target }, transitionProps, getTransitionProps(value, target, transitionProps));
+                    var transition = resolveTransition(getTransition, key, value, resolveTransitionProps, convertTransitionDefinition, getInstantTransition);
+                    var poseDelay = delay || resolveProp(nextPose.delay, transitionProps);
+                    if (poseDelay) {
+                        transition = addActionDelay(poseDelay, transition);
+                    }
+                    activeActions.set(key, startAction(value, transition, complete));
+                }) : Promise.resolve();
+            });
+            return applyAtEnd ? [Promise.all(animations).then(function () {
+                applyValues(applyAtEnd, values, baseTransitionProps, setValue, setValueNative);
+            })] : animations;
+        };
+        if (nextPose && hasChildren) {
+            if (resolveProp(nextPose.beforeChildren, baseTransitionProps)) {
+                return Promise.all(getParentAnimations()).then(function () {
+                    return Promise.all(getChildAnimations());
+                });
+            } else if (resolveProp(nextPose.afterChildren, baseTransitionProps)) {
+                return Promise.all(getChildAnimations()).then(function () {
+                    return Promise.all(getParentAnimations());
+                });
+            }
+        }
+        return Promise.all(getParentAnimations().concat(getChildAnimations()));
+    };
+};
 
-  _proto.hide = function hide() {
-    this.isHidden = true;
-
-    if (this.div) {
-      this.div.style.visibility = 'hidden';
+var DEFAULT_INITIAL_POSE = 'init';
+var isScale = function (key) {
+    return key.includes('scale');
+};
+var defaultReadValueFromSource = function (key) {
+    return isScale(key) ? 1 : 0;
+};
+var readValueFromPose = function (pose, key, props) {
+    var valueToResolve = pose.applyAtEnd && pose.applyAtEnd[key] !== undefined ? pose.applyAtEnd[key] : pose[key] !== undefined ? pose[key] : pose.applyAtStart && pose.applyAtStart[key] !== undefined ? pose.applyAtStart[key] : 0;
+    return resolveProp(valueToResolve, props);
+};
+var getPosesToSearch = function (pose) {
+    var posesToSearch = Array.isArray(pose) ? pose : [pose];
+    posesToSearch.push(DEFAULT_INITIAL_POSE);
+    return posesToSearch;
+};
+var getInitialValue = function (poses, key, initialPose, props, readValueFromSource, activePoses) {
+    if (readValueFromSource === void 0) {
+        readValueFromSource = defaultReadValueFromSource;
     }
-  };
-
-  _proto.open = function open(map, anchor) {
-    var _this3 = this;
-
-    if (anchor) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      this.position = anchor.getPosition();
-      this.moveListener = google.maps.event.addListener(anchor, 'position_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-      function () {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        var position = anchor.getPosition();
-
-        _this3.setPosition(position);
-      });
-      this.mapListener = google.maps.event.addListener(anchor, 'map_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-      function () {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        _this3.setMap(anchor.map);
-      });
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-
-    this.setMap(map);
-
-    if (this.div) {
-      this.panBox();
+    var posesToSearch = getPosesToSearch(initialPose);
+    var pose = posesToSearch.filter(Boolean).find(function (name) {
+        var thisPose = poses[name];
+        return thisPose && (thisPose[key] !== undefined || thisPose.applyAtStart && thisPose.applyAtStart[key] !== undefined || thisPose.applyAtEnd && thisPose.applyAtEnd[key] !== undefined);
+    });
+    activePoses.set(key, [pose || DEFAULT_INITIAL_POSE]);
+    return pose ? readValueFromPose(poses[pose], key, props) : readValueFromSource(key, props);
+};
+var createValues = function (values, _a) {
+    var userSetValues = _a.userSetValues,
+        createValue = _a.createValue,
+        convertValue = _a.convertValue,
+        readValueFromSource = _a.readValueFromSource,
+        initialPose = _a.initialPose,
+        poses = _a.poses,
+        activePoses = _a.activePoses,
+        props = _a.props;
+    return function (key) {
+        if (values.has(key)) return;
+        var value;
+        if (userSetValues && userSetValues[key] !== undefined) {
+            value = convertValue(userSetValues[key], key, props);
+        } else {
+            var initValue = getInitialValue(poses, key, initialPose, props, readValueFromSource, activePoses);
+            value = createValue(initValue, key, props);
+        }
+        values.set(key, value);
+    };
+};
+var scrapeValuesFromPose = function (values, props) {
+    return function (key) {
+        var pose = props.poses[key];
+        Object.keys(getPoseValues(pose)).forEach(createValues(values, props));
+    };
+};
+var getAncestorValue = function (key, fromParent, ancestors) {
+    if (fromParent === true) {
+        return ancestors[0] && ancestors[0].values.get(key);
+    } else {
+        var foundAncestor = ancestors.find(function (_a) {
+            var label = _a.label;
+            return label === fromParent;
+        });
+        return foundAncestor && foundAncestor.values.get(key);
     }
-  };
+};
+var bindPassiveValues = function (values, _a) {
+    var passive = _a.passive,
+        ancestorValues = _a.ancestorValues,
+        createValue = _a.createValue,
+        readValue = _a.readValue,
+        props = _a.props;
+    return function (key) {
+        var _a = passive[key],
+            valueKey = _a[0],
+            passiveProps = _a[1],
+            fromParent = _a[2];
+        var valueToBind = fromParent && ancestorValues.length ? getAncestorValue(valueKey, fromParent, ancestorValues) : values.has(valueKey) ? values.get(valueKey) : false;
+        if (!valueToBind) return;
+        var newValue = createValue(readValue(valueToBind), key, props, {
+            passiveParentKey: valueKey,
+            passiveParent: valueToBind,
+            passiveProps: passiveProps
+        });
+        values.set(key, newValue);
+    };
+};
+var setNativeValues = function (_a) {
+    var setValueNative = _a.setValueNative,
+        initialPose = _a.initialPose,
+        props = _a.props,
+        poses = _a.poses;
+    var valuesHaveSet = new Set();
+    var setValues = function (pose, propKey) {
+        if (pose[propKey]) {
+            for (var key in pose[propKey]) {
+                if (!valuesHaveSet.has(key)) {
+                    valuesHaveSet.add(key);
+                    setValueNative(key, resolveProp(pose[propKey][key], props), props);
+                }
+            }
+        }
+    };
+    getPosesToSearch(initialPose).forEach(function (poseKey) {
+        var pose = poses[poseKey];
+        if (pose) {
+            setValues(pose, 'applyAtEnd');
+            setValues(pose, 'applyAtStart');
+        }
+    });
+};
+var createValueMap = function (props) {
+    var poses = props.poses,
+        passive = props.passive;
+    var values = new Map();
+    Object.keys(poses).forEach(scrapeValuesFromPose(values, props));
+    setNativeValues(props);
+    if (passive) Object.keys(passive).forEach(bindPassiveValues(values, props));
+    return values;
+};
 
-  _proto.close = function close() {
-    if (this.closeListener) {
-      google.maps.event.removeListener(this.closeListener);
-      this.closeListener = null;
-    }
+var applyDefaultTransition = function (pose, key, defaultTransitions) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, pose, { transition: defaultTransitions.has(key) ? defaultTransitions.get(key) : defaultTransitions.get('default') });
+};
+var generateTransitions = function (poses, defaultTransitions) {
+    Object.keys(poses).forEach(function (key) {
+        var pose = poses[key];
+        Object(hey_listen__WEBPACK_IMPORTED_MODULE_1__["invariant"])(typeof pose === 'object', "Pose '" + key + "' is of invalid type. All poses should be objects.");
+        poses[key] = pose.transition !== undefined ? pose : applyDefaultTransition(pose, key, defaultTransitions);
+    });
+    return poses;
+};
 
-    if (this.eventListeners) {
-      for (var i = 0; i < this.eventListeners.length; i++) {
-        google.maps.event.removeListener(this.eventListeners[i]);
-      }
+var sortByReversePriority = function (priorityOrder) {
+    return function (a, b) {
+        var aP = priorityOrder.indexOf(a);
+        var bP = priorityOrder.indexOf(b);
+        if (aP === -1 && bP !== -1) return -1;
+        if (aP !== -1 && bP === -1) return 1;
+        return aP - bP;
+    };
+};
 
-      this.eventListeners = null;
-    }
+var poseFactory = function (_a) {
+    var getDefaultProps = _a.getDefaultProps,
+        defaultTransitions = _a.defaultTransitions,
+        bindOnChange = _a.bindOnChange,
+        startAction = _a.startAction,
+        stopAction = _a.stopAction,
+        readValue = _a.readValue,
+        readValueFromSource = _a.readValueFromSource,
+        resolveTarget = _a.resolveTarget,
+        setValue = _a.setValue,
+        setValueNative = _a.setValueNative,
+        createValue = _a.createValue,
+        convertValue = _a.convertValue,
+        getInstantTransition = _a.getInstantTransition,
+        getTransitionProps = _a.getTransitionProps,
+        addActionDelay = _a.addActionDelay,
+        selectValueToRead = _a.selectValueToRead,
+        convertTransitionDefinition = _a.convertTransitionDefinition,
+        transformPose = _a.transformPose,
+        posePriority = _a.posePriority,
+        forceRender = _a.forceRender,
+        extendAPI = _a.extendAPI;
+    return function (config) {
+        var parentValues = config.parentValues,
+            _a = config.ancestorValues,
+            ancestorValues = _a === void 0 ? [] : _a;
+        if (parentValues) ancestorValues.unshift({ values: parentValues });
+        var activeActions = new Map();
+        var activePoses = new Map();
+        var children = new Set();
+        var poses = generateTransitions(selectPoses(config), defaultTransitions);
+        var _b = config.props,
+            props = _b === void 0 ? {} : _b;
+        if (getDefaultProps) props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, getDefaultProps(config), props);
+        var passive = config.passive,
+            userSetValues = config.values,
+            _c = config.initialPose,
+            initialPose = _c === void 0 ? DEFAULT_INITIAL_POSE : _c;
+        var values = createValueMap({
+            poses: poses,
+            passive: passive,
+            ancestorValues: ancestorValues,
+            readValue: readValue,
+            setValueNative: setValueNative,
+            createValue: createValue,
+            convertValue: convertValue,
+            readValueFromSource: readValueFromSource,
+            userSetValues: userSetValues,
+            initialPose: initialPose,
+            activePoses: activePoses,
+            props: props
+        });
+        var state = {
+            activeActions: activeActions,
+            activePoses: activePoses,
+            children: children,
+            props: props,
+            values: values
+        };
+        var onChange = config.onChange;
+        if (onChange) Object.keys(onChange).forEach(bindOnChange(values, onChange));
+        var set = createPoseSetter({
+            state: state,
+            poses: poses,
+            getInstantTransition: getInstantTransition,
+            getTransitionProps: getTransitionProps,
+            convertTransitionDefinition: convertTransitionDefinition,
+            setValue: setValue,
+            setValueNative: setValueNative,
+            startAction: startAction,
+            stopAction: stopAction,
+            resolveTarget: resolveTarget,
+            addActionDelay: addActionDelay,
+            transformPose: transformPose,
+            posePriority: posePriority,
+            forceRender: forceRender
+        });
+        var has = function (poseName) {
+            return !!poses[poseName];
+        };
+        var api = {
+            set: set,
+            unset: function (poseName, poseProps) {
+                var posesToSet = [];
+                activePoses.forEach(function (valuePoses) {
+                    var poseIndex = valuePoses.indexOf(poseName);
+                    if (poseIndex === -1) return;
+                    var currentPose = valuePoses[0];
+                    valuePoses.splice(poseIndex, 1);
+                    var nextPose = valuePoses[0];
+                    if (nextPose === currentPose) return;
+                    if (posesToSet.indexOf(nextPose) === -1) {
+                        posesToSet.push(nextPose);
+                    }
+                });
+                var animationsToResolve = posesToSet.sort(sortByReversePriority(posePriority)).map(function (poseToSet) {
+                    return set(poseToSet, poseProps, false);
+                });
+                children.forEach(function (child) {
+                    return animationsToResolve.push(child.unset(poseName));
+                });
+                return Promise.all(animationsToResolve);
+            },
+            get: function (valueName) {
+                return valueName ? selectValueToRead(values.get(valueName)) : selectAllValues(values, selectValueToRead);
+            },
+            has: has,
+            setProps: function (newProps) {
+                return state.props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, state.props, newProps);
+            },
+            _addChild: function (childConfig, factory) {
+                var child = factory(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ initialPose: initialPose }, childConfig, { ancestorValues: [{ label: config.label, values: values }].concat(ancestorValues) }));
+                children.add(child);
+                return child;
+            },
+            removeChild: function (child) {
+                return children.delete(child);
+            },
+            clearChildren: function () {
+                children.forEach(function (child) {
+                    return child.destroy();
+                });
+                children.clear();
+            },
+            destroy: function () {
+                activeActions.forEach(stopAction);
+                children.forEach(function (child) {
+                    return child.destroy();
+                });
+            }
+        };
+        return extendAPI(api, state, config);
+    };
+};
 
-    if (this.moveListener) {
-      google.maps.event.removeListener(this.moveListener);
-      this.moveListener = null;
-    }
-
-    if (this.mapListener) {
-      google.maps.event.removeListener(this.mapListener);
-      this.mapListener = null;
-    }
-
-    if (this.contextListener) {
-      google.maps.event.removeListener(this.contextListener);
-      this.contextListener = null;
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-
-    this.setMap(null);
-  };
-
-  _proto.extend = function extend(obj1, obj2) {
-    return function applyExtend(object) {
-      // eslint-disable-next-line guard-for-in
-      for (var property in object.prototype) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        this.prototype[property] = object.prototype[property];
-      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-
-
-      return this;
-    }.apply(obj1, [obj2]);
-  };
-
-  return InfoBox;
-}();
-
-
-//# sourceMappingURL=infobox.esm.js.map
+/* harmony default export */ __webpack_exports__["default"] = (poseFactory);
 
 
 /***/ }),
 
-/***/ "./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@react-google-maps/marker-clusterer/dist/markerclusterer.esm.js ***!
-  \**************************************************************************************/
-/*! exports provided: Cluster, ClusterIcon, Clusterer */
+/***/ "./node_modules/react-pose/dist/react-pose.es.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-pose/dist/react-pose.es.js ***!
+  \*******************************************************/
+/*! exports provided: default, Transition, PoseGroup */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cluster", function() { return Cluster; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClusterIcon", function() { return ClusterIcon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Clusterer", function() { return Clusterer; });
-var ClusterIcon =
-/*#__PURE__*/
-function () {
-  function ClusterIcon(cluster, styles) {
-    cluster.getClusterer().extend(ClusterIcon, google.maps.OverlayView);
-    this.cluster = cluster;
-    this.className = this.cluster.getClusterer().getClusterClass();
-    this.styles = styles;
-    this.center = undefined;
-    this.div = null;
-    this.sums = null;
-    this.visible = false;
-    this.boundsChangedListener = null;
-    this.url = '';
-    this.height = 0;
-    this.width = 0;
-    this.anchorText = [0, 0];
-    this.anchorIcon = [0, 0];
-    this.textColor = 'black';
-    this.textSize = 11;
-    this.textDecoration = 'none';
-    this.fontWeight = 'bold';
-    this.fontStyle = 'normal';
-    this.fontFamily = 'Arial,sans-serif';
-    this.backgroundPosition = '0 0'; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-    this.setMap(cluster.getMap()); // Note: this causes onAdd to be called
-  }
-
-  var _proto = ClusterIcon.prototype;
-
-  _proto.onAdd = function onAdd() {
-    var _this = this;
-
-    var cMouseDownInCluster;
-    var cDraggingMapByCluster;
-    this.div = document.createElement('div');
-    this.div.className = this.className;
-
-    if (this.visible) {
-      this.show();
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Transition", function() { return Transition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PoseGroup", function() { return PoseGroup; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var popmotion_pose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! popmotion-pose */ "./node_modules/popmotion-pose/dist/popmotion-pose.es.js");
+/* harmony import */ var _emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/is-prop-valid */ "./node_modules/react-pose/node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js");
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
 
 
-    this.getPanes().overlayMouseTarget.appendChild(this.div); // Fix for Issue 157
-
-    this.boundsChangedListener = google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap(), 'boundschanged', function boundsChabged() {
-      cDraggingMapByCluster = cMouseDownInCluster;
-    });
-    google.maps.event.addDomListener(this.div, 'mousedown', function onMouseDown() {
-      cMouseDownInCluster = true;
-      cDraggingMapByCluster = false;
-    }); // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    google.maps.event.addDomListener(this.div, 'click', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function (event) {
-      cMouseDownInCluster = false;
-
-      if (!cDraggingMapByCluster) {
-        var markerClusterer = _this.cluster.getClusterer();
-        /**
-         * This event is fired when a cluster marker is clicked.
-         * @name MarkerClusterer#click
-         * @param {Cluster} c The cluster that was clicked.
-         * @event
-         */
 
 
-        google.maps.event.trigger(markerClusterer, 'click', _this.cluster);
-        google.maps.event.trigger(markerClusterer, 'clusterclick', _this.cluster); // deprecated name
-        // The default click handler follows. Disable it by setting
-        // the zoomOnClick property to false.
-
-        if (markerClusterer.getZoomOnClick()) {
-          // Zoom into the cluster.
-          var maxZoom = markerClusterer.getMaxZoom();
-
-          var bounds = _this.cluster.getBounds(); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-          // @ts-ignore
 
 
-          markerClusterer.getMap().fitBounds(bounds); // There is a fix for Issue 170 here:
-
-          setTimeout(function timeout() {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-            // @ts-ignore
-            markerClusterer.getMap().fitBounds(bounds); // Don't zoom beyond the max zoom level
-            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-            // @ts-ignore
-
-            if (maxZoom !== null && markerClusterer.getMap().getZoom() > maxZoom) {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-              // @ts-ignore
-              markerClusterer.getMap().setZoom(maxZoom + 1);
-            }
-          }, 100);
-        } // Prevent event propagation to the map:
-
-
-        event.cancelBubble = true;
-
-        if (event.stopPropagation) {
-          event.stopPropagation();
+var hasChanged = function (prev, next) {
+    if (prev === next)
+        return false;
+    var prevIsArray = Array.isArray(prev);
+    var nextIsArray = Array.isArray(next);
+    if (prevIsArray !== nextIsArray || (!prevIsArray && !nextIsArray)) {
+        return true;
+    }
+    else if (prevIsArray && nextIsArray) {
+        var numPrev = prev.length;
+        var numNext = next.length;
+        if (numPrev !== numNext)
+            return true;
+        for (var i = 0; i < numPrev; i++) {
+            if (prev[i] !== next[i])
+                return true;
         }
-      }
-    });
-    google.maps.event.addDomListener(this.div, 'mouseover', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      /**
-       * This event is fired when the mouse moves over a cluster marker.
-       * @name MarkerClusterer#mouseover
-       * @param {Cluster} c The cluster that the mouse moved over.
-       * @event
-       */
-      google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseover', _this.cluster);
-    }); // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-
-    google.maps.event.addDomListener(this.div, 'mouseout', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      /**
-       * This event is fired when the mouse moves out of a cluster marker.
-       * @name MarkerClusterer#mouseout
-       * @param {Cluster} c The cluster that the mouse moved out of.
-       * @event
-       */
-      google.maps.event.trigger(_this.cluster.getClusterer(), 'mouseout', _this.cluster);
-    });
-  };
-
-  _proto.onRemove = function onRemove() {
-    if (this.div && this.div.parentNode) {
-      this.hide();
-
-      if (this.boundsChangedListener !== null) {
-        google.maps.event.removeListener(this.boundsChangedListener);
-      }
-
-      google.maps.event.clearInstanceListeners(this.div);
-      this.div.parentNode.removeChild(this.div);
-      this.div = null;
     }
-  };
-
-  _proto.draw = function draw() {
-    if (this.visible && this.div !== null && this.center) {
-      var _this$getPosFromLatLn = this.getPosFromLatLng(this.center),
-          x = _this$getPosFromLatLn.x,
-          y = _this$getPosFromLatLn.y;
-
-      this.div.style.top = y + 'px';
-      this.div.style.left = x + 'px';
-    }
-  };
-
-  _proto.hide = function hide() {
-    if (this.div) {
-      this.div.style.display = 'none';
-    }
-
-    this.visible = false;
-  };
-
-  _proto.show = function show() {
-    if (this.div && this.center) {
-      var img = '',
-          divTitle = ''; // NOTE: values must be specified in px units
-
-      var bp = this.backgroundPosition.split(' ');
-      var spriteH = parseInt(bp[0].replace(/^\s+|\s+$/g, ''), 10);
-      var spriteV = parseInt(bp[1].replace(/^\s+|\s+$/g, ''), 10);
-      var pos = this.getPosFromLatLng(this.center);
-
-      if (this.sums === null || typeof this.sums.title === 'undefined' || this.sums.title === '') {
-        divTitle = this.cluster.getClusterer().getTitle();
-      } else {
-        divTitle = this.sums.title;
-      }
-
-      this.div.style.cssText = this.createCss(pos);
-      img = "<img alt='" + divTitle + "' src='" + this.url + "' style='position: absolute; top: " + spriteV + 'px; left: ' + spriteH + 'px; '; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      //@ts-ignore
-
-      if (!this.cluster.getClusterer().enableRetinaIcons) {
-        img += 'clip: rect(' + -1 * spriteV + 'px, ' + (-1 * spriteH + this.width) + 'px, ' + (-1 * spriteV + this.height) + 'px, ' + -1 * spriteH + 'px);';
-      }
-
-      img += "'>";
-      this.div.innerHTML = img + "<div style='" + 'position: absolute;' + 'top: ' + this.anchorText[0] + 'px;' + 'left: ' + this.anchorText[1] + 'px;' + 'color: ' + this.textColor + ';' + 'font-size: ' + this.textSize + 'px;' + 'font-family: ' + this.fontFamily + ';' + 'font-weight: ' + this.fontWeight + ';' + 'font-style: ' + this.fontStyle + ';' + 'text-decoration: ' + this.textDecoration + ';' + 'text-align: center;' + 'width: ' + this.width + 'px;' + 'line-height:' + this.height + 'px;' + "'>" + // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      this.sums.text + '</div>';
-      this.div.title = divTitle;
-      this.div.style.display = '';
-    }
-
-    this.visible = true;
-  };
-
-  _proto.useStyle = function useStyle(sums) {
-    this.sums = sums;
-    var style = this.styles[Math.min(this.styles.length - 1, Math.max(0, sums.index - 1))];
-    this.url = style.url;
-    this.height = style.height;
-    this.width = style.width;
-    this.anchorText = style.anchorText || [0, 0];
-    this.anchorIcon = style.anchorIcon || [this.height / 2, this.width / 2];
-    this.textColor = style.textColor || 'black';
-    this.textSize = style.textSize || 11;
-    this.textDecoration = style.textDecoration || 'none';
-    this.fontWeight = style.fontWeight || 'bold';
-    this.fontStyle = style.fontStyle || 'normal';
-    this.fontFamily = style.fontFamily || 'Arial,sans-serif';
-    this.backgroundPosition = style.backgroundPosition || '0 0';
-  };
-
-  _proto.setCenter = function setCenter(center) {
-    this.center = center;
-  };
-
-  _proto.createCss = function createCss(pos) {
-    var style = [];
-    style.push('cursor: pointer;');
-    style.push('position: absolute; top: ' + pos.y + 'px; left: ' + pos.x + 'px;');
-    style.push('width: ' + this.width + 'px; height: ' + this.height + 'px;');
-    return style.join('');
-  };
-
-  _proto.getPosFromLatLng = function getPosFromLatLng(latlng) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    var pos = this.getProjection().fromLatLngToDivPixel(latlng);
-    pos.x -= this.anchorIcon[1];
-    pos.y -= this.anchorIcon[0];
-    pos.x = pos.x;
-    pos.y = pos.y;
-    return pos;
-  };
-
-  return ClusterIcon;
-}();
-
-var Cluster =
-/*#__PURE__*/
-function () {
-  function Cluster(markerClusterer) {
-    this.markerClusterer = markerClusterer; // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-    this.map = this.markerClusterer.getMap();
-    this.gridSize = this.markerClusterer.getGridSize();
-    this.minClusterSize = this.markerClusterer.getMinimumClusterSize();
-    this.averageCenter = this.markerClusterer.getAverageCenter();
-    this.markers = [];
-    this.center = undefined;
-    this.bounds = null;
-    this.clusterIcon = new ClusterIcon(this, this.markerClusterer.getStyles());
-  }
-
-  var _proto = Cluster.prototype;
-
-  _proto.getSize = function getSize() {
-    return this.markers.length;
-  };
-
-  _proto.getMarkers = function getMarkers() {
-    return this.markers;
-  };
-
-  _proto.getCenter = function getCenter() {
-    return this.center;
-  };
-
-  _proto.getMap = function getMap() {
-    return this.map;
-  };
-
-  _proto.getClusterer = function getClusterer() {
-    return this.markerClusterer;
-  };
-
-  _proto.getBounds = function getBounds() {
-    var bounds = new google.maps.LatLngBounds(this.center, this.center);
-    var markers = this.getMarkers();
-
-    for (var i = 0; i < markers.length; i++) {
-      var position = markers[i].getPosition();
-
-      if (position) {
-        bounds.extend(position);
-      }
-    }
-
-    return bounds;
-  };
-
-  _proto.remove = function remove() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.clusterIcon.setMap(null);
-    this.markers = [];
-    delete this.markers;
-  };
-
-  _proto.addMarker = function addMarker(marker) {
-    if (this.isMarkerAlreadyAdded(marker)) {
-      return false;
-    }
-
-    if (!this.center) {
-      var position = marker.getPosition();
-
-      if (position) {
-        this.center = position;
-        this.calculateBounds();
-      }
-    } else {
-      if (this.averageCenter) {
-        var _position = marker.getPosition();
-
-        if (_position) {
-          var length = this.markers.length + 1;
-          this.center = new google.maps.LatLng((this.center.lat() * (length - 1) + _position.lat()) / length, (this.center.lng() * (length - 1) + _position.lng()) / length);
-          this.calculateBounds();
-        }
-      }
-    }
-
-    marker.isAdded = true;
-    this.markers.push(marker);
-    var mCount = this.markers.length;
-    var maxZoom = this.markerClusterer.getMaxZoom();
-
-    if (maxZoom !== null && this.map.getZoom() > maxZoom) {
-      // Zoomed in past max zoom, so show the marker.
-      if (marker.getMap() !== this.map) {
-        marker.setMap(this.map);
-      }
-    } else if (mCount < this.minClusterSize) {
-      // Min cluster size not reached so show the marker.
-      if (marker.getMap() !== this.map) {
-        marker.setMap(this.map);
-      }
-    } else if (mCount === this.minClusterSize) {
-      // Hide the markers that were showing.
-      for (var i = 0; i < mCount; i++) {
-        this.markers[i].setMap(null);
-      }
-    } else {
-      marker.setMap(null);
-    }
-
-    this.updateIcon();
-    return true;
-  };
-
-  _proto.isMarkerInClusterBounds = function isMarkerInClusterBounds(marker) {
-    if (this.bounds !== null) {
-      var position = marker.getPosition();
-
-      if (position) {
-        return this.bounds.contains(position);
-      }
-    }
-
     return false;
-  };
-
-  _proto.calculateBounds = function calculateBounds() {
-    this.bounds = this.markerClusterer.getExtendedBounds(new google.maps.LatLngBounds(this.center, this.center));
-  };
-
-  _proto.updateIcon = function updateIcon() {
-    var mCount = this.markers.length;
-    var maxZoom = this.markerClusterer.getMaxZoom();
-
-    if (maxZoom !== null && this.map.getZoom() > maxZoom) {
-      this.clusterIcon.hide();
-      return;
-    }
-
-    if (mCount < this.minClusterSize) {
-      // Min cluster size not yet reached.
-      this.clusterIcon.hide();
-      return;
-    }
-
-    if (this.center) {
-      this.clusterIcon.setCenter(this.center);
-    }
-
-    this.clusterIcon.useStyle(this.markerClusterer.getCalculator()(this.markers, this.markerClusterer.getStyles().length));
-    this.clusterIcon.show();
-  };
-
-  _proto.isMarkerAlreadyAdded = function isMarkerAlreadyAdded(marker) {
-    if (this.markers.indexOf) {
-      return this.markers.includes(marker);
-    } else {
-      for (var i = 0; i < this.markers.length; i++) {
-        if (marker === this.markers[i]) {
-          return true;
-        }
-      }
-    }
-
-    return false;
-  };
-
-  return Cluster;
-}();
-
-/* eslint-disable filenames/match-regex */
-
-var CALCULATOR = function CALCULATOR(markers, numStyles) {
-  var index = 0;
-  var title = '';
-  var count = markers.length.toString();
-  var dv = count;
-
-  while (dv !== 0) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    dv = parseInt(dv, 10) / 10;
-    index++;
-  }
-
-  index = Math.min(index, numStyles);
-  return {
-    text: count,
-    index: index,
-    title: title
-  };
 };
 
-var BATCH_SIZE = 2000;
-var BATCH_SIZE_IE = 500;
-var IMAGE_PATH = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
-var IMAGE_EXTENSION = 'png';
-var IMAGE_SIZES = [53, 56, 66, 78, 90];
-var CLUSTERER_CLASS = 'cluster';
-var Clusterer =
-/*#__PURE__*/
-function () {
-  function Clusterer(map, optMarkers, optOptions) {
-    if (optMarkers === void 0) {
-      optMarkers = [];
-    }
-
-    if (optOptions === void 0) {
-      optOptions = {};
-    }
-
-    this.extend(Clusterer, google.maps.OverlayView);
-    this.markers = [];
-    this.clusters = [];
-    this.listeners = [];
-    this.activeMap = null;
-    this.ready = false;
-    this.gridSize = optOptions.gridSize || 60;
-    this.minClusterSize = optOptions.minimumClusterSize || 2;
-    this.maxZoom = optOptions.maxZoom || null;
-    this.styles = optOptions.styles || [];
-    this.title = optOptions.title || '';
-    this.zoomOnClick = true;
-
-    if (optOptions.zoomOnClick !== undefined) {
-      this.zoomOnClick = optOptions.zoomOnClick;
-    }
-
-    this.averageCenter = false;
-
-    if (optOptions.averageCenter !== undefined) {
-      this.averageCenter = optOptions.averageCenter;
-    }
-
-    this.ignoreHidden = false;
-
-    if (optOptions.ignoreHidden !== undefined) {
-      this.ignoreHidden = optOptions.ignoreHidden;
-    }
-
-    this.enableRetinaIcons = false;
-
-    if (optOptions.enableRetinaIcons !== undefined) {
-      this.enableRetinaIcons = optOptions.enableRetinaIcons;
-    }
-
-    this.imagePath = optOptions.imagePath || IMAGE_PATH;
-    this.imageExtension = optOptions.imageExtension || IMAGE_EXTENSION;
-    this.imageSizes = optOptions.imageSizes || IMAGE_SIZES;
-    this.calculator = optOptions.calculator || CALCULATOR;
-    this.batchSize = optOptions.batchSize || BATCH_SIZE;
-    this.batchSizeIE = optOptions.batchSizeIE || BATCH_SIZE_IE;
-    this.clusterClass = optOptions.clusterClass || CLUSTERER_CLASS;
-
-    if (navigator.userAgent.toLowerCase().indexOf('msie') !== -1) {
-      // Try to avoid IE timeout when processing a huge number of markers:
-      this.batchSize = this.batchSizeIE;
-    }
-
-    this.timerRefStatic = null;
-    this.setupStyles();
-    this.addMarkers(optMarkers, true); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-    this.setMap(map); // Note: this causes onAdd to be called
-  }
-
-  var _proto = Clusterer.prototype;
-
-  _proto.onAdd = function onAdd() {
-    var _this = this;
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.activeMap = this.getMap();
-    this.ready = true;
-    this.repaint(); // Add the map event listeners
-
-    this.listeners = [google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap(), 'zoom_changed', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      _this.resetViewport(false); // Workaround for this Google bug: when map is at level 0 and "-" of
-      // zoom slider is clicked, a "zoom_changed" event is fired even though
-      // the map doesn't zoom out any further. In this situation, no "idle"
-      // event is triggered so the cluster markers that have been removed
-      // do not get redrawn. Same goes for a zoom in at maxZoom.
-
-
-      if ( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      _this.getMap().getZoom() === (_this.get('minZoom') || 0) || // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      _this.getMap().getZoom() === _this.get('maxZoom')) {
-        google.maps.event.trigger(_this, 'idle');
-      }
-    }), google.maps.event.addListener( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap(), 'idle', // eslint-disable-next-line  @getify/proper-arrows/this, @getify/proper-arrows/name
-    function () {
-      _this.redraw();
-    })];
-  } // eslint-disable-next-line @getify/proper-arrows/this
-  ;
-
-  _proto.onRemove = function onRemove() {
-    // Put all the managed markers back on the map:
-    for (var i = 0; i < this.markers.length; i++) {
-      if (this.markers[i].getMap() !== this.activeMap) {
-        this.markers[i].setMap(this.activeMap);
-      }
-    } // Remove all clusters:
-
-
-    for (var _i = 0; _i < this.clusters.length; _i++) {
-      this.clusters[_i].remove();
-    }
-
-    this.clusters = []; // Remove map event listeners:
-
-    for (var _i2 = 0; _i2 < this.listeners.length; _i2++) {
-      google.maps.event.removeListener(this.listeners[_i2]);
-    }
-
-    this.listeners = [];
-    this.activeMap = null;
-    this.ready = false;
-  } // eslint-disable-next-line @typescript-eslint/no-empty-function
-  ;
-
-  _proto.draw = function draw() {};
-
-  _proto.setupStyles = function setupStyles() {
-    if (this.styles.length > 0) {
-      return;
-    }
-
-    for (var i = 0; i < this.imageSizes.length; i++) {
-      this.styles.push({
-        url: this.imagePath + (i + 1) + '.' + this.imageExtension,
-        height: this.imageSizes[i],
-        width: this.imageSizes[i]
-      });
-    }
-  };
-
-  _proto.fitMapToMarkers = function fitMapToMarkers() {
-    var markers = this.getMarkers();
-    var bounds = new google.maps.LatLngBounds();
-
-    for (var i = 0; i < markers.length; i++) {
-      var position = markers[i].getPosition();
-
-      if (position) {
-        bounds.extend(position);
-      }
-    } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-
-
-    this.getMap().fitBounds(bounds);
-  };
-
-  _proto.getGridSize = function getGridSize() {
-    return this.gridSize;
-  };
-
-  _proto.setGridSize = function setGridSize(gridSize) {
-    this.gridSize = gridSize;
-  };
-
-  _proto.getMinimumClusterSize = function getMinimumClusterSize() {
-    return this.minClusterSize;
-  };
-
-  _proto.setMinimumClusterSize = function setMinimumClusterSize(minimumClusterSize) {
-    this.minClusterSize = minimumClusterSize;
-  };
-
-  _proto.getMaxZoom = function getMaxZoom() {
-    return this.maxZoom;
-  };
-
-  _proto.setMaxZoom = function setMaxZoom(maxZoom) {
-    this.maxZoom = maxZoom;
-  };
-
-  _proto.getStyles = function getStyles() {
-    return this.styles;
-  };
-
-  _proto.setStyles = function setStyles(styles) {
-    this.styles = styles;
-  };
-
-  _proto.getTitle = function getTitle() {
-    return this.title;
-  };
-
-  _proto.setTitle = function setTitle(title) {
-    this.title = title;
-  };
-
-  _proto.getZoomOnClick = function getZoomOnClick() {
-    return this.zoomOnClick;
-  };
-
-  _proto.setZoomOnClick = function setZoomOnClick(zoomOnClick) {
-    this.zoomOnClick = zoomOnClick;
-  };
-
-  _proto.getAverageCenter = function getAverageCenter() {
-    return this.averageCenter;
-  };
-
-  _proto.setAverageCenter = function setAverageCenter(averageCenter) {
-    this.averageCenter = averageCenter;
-  };
-
-  _proto.getIgnoreHidden = function getIgnoreHidden() {
-    return this.ignoreHidden;
-  };
-
-  _proto.setIgnoreHidden = function setIgnoreHidden(ignoreHidden) {
-    this.ignoreHidden = ignoreHidden;
-  };
-
-  _proto.getEnableRetinaIcons = function getEnableRetinaIcons() {
-    return this.enableRetinaIcons;
-  };
-
-  _proto.setEnableRetinaIcons = function setEnableRetinaIcons(enableRetinaIcons) {
-    this.enableRetinaIcons = enableRetinaIcons;
-  };
-
-  _proto.getImageExtension = function getImageExtension() {
-    return this.imageExtension;
-  };
-
-  _proto.setImageExtension = function setImageExtension(imageExtension) {
-    this.imageExtension = imageExtension;
-  };
-
-  _proto.getImagePath = function getImagePath() {
-    return this.imagePath;
-  };
-
-  _proto.setImagePath = function setImagePath(imagePath) {
-    this.imagePath = imagePath;
-  };
-
-  _proto.getImageSizes = function getImageSizes() {
-    return this.imageSizes;
-  };
-
-  _proto.setImageSizes = function setImageSizes(imageSizes) {
-    this.imageSizes = imageSizes;
-  };
-
-  _proto.getCalculator = function getCalculator() {
-    return this.calculator;
-  };
-
-  _proto.setCalculator = function setCalculator(calculator) {
-    this.calculator = calculator;
-  };
-
-  _proto.getBatchSizeIE = function getBatchSizeIE() {
-    return this.batchSizeIE;
-  };
-
-  _proto.setBatchSizeIE = function setBatchSizeIE(batchSizeIE) {
-    this.batchSizeIE = batchSizeIE;
-  };
-
-  _proto.getClusterClass = function getClusterClass() {
-    return this.clusterClass;
-  };
-
-  _proto.setClusterClass = function setClusterClass(clusterClass) {
-    this.clusterClass = clusterClass;
-  };
-
-  _proto.getMarkers = function getMarkers() {
-    return this.markers;
-  };
-
-  _proto.getTotalMarkers = function getTotalMarkers() {
-    return this.markers.length;
-  };
-
-  _proto.getClusters = function getClusters() {
-    return this.clusters;
-  };
-
-  _proto.getTotalClusters = function getTotalClusters() {
-    return this.clusters.length;
-  };
-
-  _proto.addMarker = function addMarker(marker, optNoDraw) {
-    this.pushMarkerTo(marker);
-
-    if (!optNoDraw) {
-      this.redraw();
-    }
-  };
-
-  _proto.addMarkers = function addMarkers(markers, optNoDraw) {
-    for (var key in markers) {
-      if (markers.hasOwnProperty(key)) {
-        this.pushMarkerTo(markers[key]);
-      }
-    }
-
-    if (!optNoDraw) {
-      this.redraw();
-    }
-  };
-
-  _proto.pushMarkerTo = function pushMarkerTo(marker) {
-    var _this2 = this;
-
-    // If the marker is draggable add a listener so we can update the clusters on the dragend:
-    if (marker.getDraggable()) {
-      // eslint-disable-next-line @getify/proper-arrows/name, @getify/proper-arrows/this
-      google.maps.event.addListener(marker, 'dragend', function () {
-        if (_this2.ready) {
-          marker.isAdded = false;
-
-          _this2.repaint();
+var pickAssign = function (shouldPick, sources) {
+    return sources.reduce(function (picked, source) {
+        for (var key in source) {
+            if (shouldPick(key)) {
+                picked[key] = source[key];
+            }
         }
-      });
+        return picked;
+    }, {});
+};
+
+var _a = Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])({}), PoseParentConsumer = _a.Consumer, PoseParentProvider = _a.Provider;
+var calcPopFromFlowStyle = function (el) {
+    var offsetTop = el.offsetTop, offsetLeft = el.offsetLeft, offsetWidth = el.offsetWidth, offsetHeight = el.offsetHeight;
+    return {
+        position: 'absolute',
+        top: offsetTop,
+        left: offsetLeft,
+        width: offsetWidth,
+        height: offsetHeight
+    };
+};
+var hasPose = function (pose, key) {
+    return Array.isArray(pose) ? pose.indexOf(key) !== -1 : pose === key;
+};
+var objectToMap = function (obj) {
+    return Object.keys(obj).reduce(function (map, key) {
+        map.set(key, { raw: obj[key] });
+        return map;
+    }, new Map());
+};
+var testAlwaysTrue = function () { return true; };
+var filterProps = function (_a) {
+    var elementType = _a.elementType, poseConfig = _a.poseConfig, onValueChange = _a.onValueChange, innerRef = _a.innerRef, _pose = _a._pose, pose = _a.pose, initialPose = _a.initialPose, poseKey = _a.poseKey, onPoseComplete = _a.onPoseComplete, getParentPoseConfig = _a.getParentPoseConfig, registerChild = _a.registerChild, onUnmount = _a.onUnmount, getInitialPoseFromParent = _a.getInitialPoseFromParent, popFromFlow = _a.popFromFlow, values = _a.values, parentValues = _a.parentValues, onDragStart = _a.onDragStart, onDragEnd = _a.onDragEnd, onPressStart = _a.onPressStart, onPressEnd = _a.onPressEnd, props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["elementType", "poseConfig", "onValueChange", "innerRef", "_pose", "pose", "initialPose", "poseKey", "onPoseComplete", "getParentPoseConfig", "registerChild", "onUnmount", "getInitialPoseFromParent", "popFromFlow", "values", "parentValues", "onDragStart", "onDragEnd", "onPressStart", "onPressEnd"]);
+    return props;
+};
+var PoseElement = (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(PoseElement, _super);
+    function PoseElement(props) {
+        var _this = _super.call(this, props) || this;
+        _this.children = new Set();
+        _this.childrenHandlers = {
+            registerChild: function (props) {
+                _this.children.add(props);
+                if (_this.poser)
+                    _this.flushChildren();
+            },
+            onUnmount: function (child) { return _this.poser.removeChild(child); },
+            getParentPoseConfig: function () { return _this.poseConfig; },
+            getInitialPoseFromParent: function () { return _this.getInitialPose(); }
+        };
+        _this.setRef = function (ref) {
+            Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["warning"])(ref === null || (ref instanceof Element && _this.ref === undefined), 'ref must be provided to the same DOM component for the entire lifecycle of a posed component.');
+            _this.ref = ref;
+            var innerRef = _this.props.innerRef;
+            if (!innerRef)
+                return;
+            if (typeof innerRef === 'function') {
+                innerRef(ref);
+            }
+            else {
+                innerRef.current = ref;
+            }
+        };
+        _this.shouldForwardProp =
+            typeof _this.props.elementType === 'string' ? _emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_3__["default"] : testAlwaysTrue;
+        var poseConfig = _this.props.poseConfig;
+        _this.poseConfig =
+            typeof poseConfig === 'function'
+                ? poseConfig(filterProps(props))
+                : poseConfig;
+        return _this;
     }
-
-    marker.isAdded = false;
-    this.markers.push(marker);
-  };
-
-  _proto.removeMarker_ = function removeMarker_(marker) {
-    var index = -1;
-
-    if (this.markers.indexOf) {
-      index = this.markers.indexOf(marker);
-    } else {
-      for (var i = 0; i < this.markers.length; i++) {
-        if (marker === this.markers[i]) {
-          index = i;
-          break;
+    PoseElement.prototype.getInitialPose = function () {
+        var _a = this.props, getInitialPoseFromParent = _a.getInitialPoseFromParent, pose = _a.pose, _pose = _a._pose, initialPose = _a.initialPose;
+        if (initialPose) {
+            return initialPose;
         }
-      }
-    }
-
-    if (index === -1) {
-      // Marker is not in our list of markers, so do nothing:
-      return false;
-    }
-
-    marker.setMap(null);
-    this.markers.splice(index, 1); // Remove the marker from the list of managed markers
-
-    return true;
-  };
-
-  _proto.removeMarker = function removeMarker(marker, optNoDraw) {
-    var removed = this.removeMarker_(marker);
-
-    if (!optNoDraw && removed) {
-      this.repaint();
-    }
-
-    return removed;
-  };
-
-  _proto.removeMarkers = function removeMarkers(markers, optNoDraw) {
-    var removed = false;
-
-    for (var i = 0; i < markers.length; i++) {
-      removed = removed || this.removeMarker_(markers[i]);
-    }
-
-    if (!optNoDraw && removed) {
-      this.repaint();
-    }
-
-    return removed;
-  };
-
-  _proto.clearMarkers = function clearMarkers() {
-    this.resetViewport(true);
-    this.markers = [];
-  };
-
-  _proto.repaint = function repaint() {
-    var oldClusters = this.clusters.slice();
-    this.clusters = [];
-    this.resetViewport(false);
-    this.redraw(); // Remove the old clusters.
-    // Do it in a timeout to prevent blinking effect.
-
-    setTimeout(function timeout() {
-      for (var i = 0; i < oldClusters.length; i++) {
-        oldClusters[i].remove();
-      }
-    }, 0);
-  };
-
-  _proto.getExtendedBounds = function getExtendedBounds(bounds) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    var projection = this.getProjection(); // Convert the points to pixels and the extend out by the grid size.
-
-    var trPix = projection.fromLatLngToDivPixel( // Turn the bounds into latlng.
-    new google.maps.LatLng(bounds.getNorthEast().lat(), bounds.getNorthEast().lng()));
-    trPix.x += this.gridSize;
-    trPix.y -= this.gridSize;
-    var blPix = projection.fromLatLngToDivPixel( // Turn the bounds into latlng.
-    new google.maps.LatLng(bounds.getSouthWest().lat(), bounds.getSouthWest().lng()));
-    blPix.x -= this.gridSize;
-    blPix.y += this.gridSize; // Extend the bounds to contain the new bounds.
-
-    bounds.extend( // Convert the pixel points back to LatLng nw
-    projection.fromDivPixelToLatLng(trPix));
-    bounds.extend( // Convert the pixel points back to LatLng sw
-    projection.fromDivPixelToLatLng(blPix));
-    return bounds;
-  };
-
-  _proto.redraw = function redraw() {
-    // Redraws all the clusters.
-    this.createClusters(0);
-  };
-
-  _proto.resetViewport = function resetViewport(optHide) {
-    // Remove all the clusters
-    for (var i = 0; i < this.clusters.length; i++) {
-      this.clusters[i].remove();
-    }
-
-    this.clusters = []; // Reset the markers to not be added and to be removed from the map.
-
-    for (var _i3 = 0; _i3 < this.markers.length; _i3++) {
-      var marker = this.markers[_i3];
-      marker.isAdded = false;
-
-      if (optHide) {
-        marker.setMap(null);
-      }
-    }
-  };
-
-  _proto.distanceBetweenPoints = function distanceBetweenPoints(p1, p2) {
-    var R = 6371; // Radius of the Earth in km
-
-    var dLat = (p2.lat() - p1.lat()) * Math.PI / 180;
-    var dLon = (p2.lng() - p1.lng()) * Math.PI / 180;
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(p1.lat() * Math.PI / 180) * Math.cos(p2.lat() * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
-  };
-
-  _proto.isMarkerInBounds = function isMarkerInBounds(marker, bounds) {
-    var position = marker.getPosition();
-
-    if (position) {
-      return bounds.contains(position);
-    }
-
-    return false;
-  };
-
-  _proto.addToClosestCluster = function addToClosestCluster(marker) {
-    var cluster;
-    var distance = 40000; // Some large number
-
-    var clusterToAddTo = null;
-
-    for (var i = 0; i < this.clusters.length; i++) {
-      cluster = this.clusters[i];
-      var center = cluster.getCenter();
-      var position = marker.getPosition();
-
-      if (center && position) {
-        var d = this.distanceBetweenPoints(center, position);
-
-        if (d < distance) {
-          distance = d;
-          clusterToAddTo = cluster;
+        else {
+            var parentPose = getInitialPoseFromParent && getInitialPoseFromParent();
+            var initialPoses = (Array.isArray(parentPose)
+                ? parentPose
+                : [parentPose])
+                .concat(pose, _pose)
+                .filter(Boolean);
+            return initialPoses.length > 0 ? initialPoses : undefined;
         }
-      }
-    }
-
-    if (clusterToAddTo && clusterToAddTo.isMarkerInClusterBounds(marker)) {
-      clusterToAddTo.addMarker(marker);
-    } else {
-      cluster = new Cluster(this);
-      cluster.addMarker(marker);
-      this.clusters.push(cluster);
-    }
-  };
-
-  _proto.createClusters = function createClusters(iFirst) {
-    var _this3 = this;
-
-    if (!this.ready) {
-      return;
-    } // Cancel previous batch processing if we're working on the first batch:
-
-
-    if (iFirst === 0) {
-      /**
-       * This event is fired when the <code>Clusterer</code> begins
-       *  clustering markers.
-       * @name Clusterer#clusteringbegin
-       * @param {Clusterer} mc The Clusterer whose markers are being clustered.
-       * @event
-       */
-      google.maps.event.trigger(this, 'clusteringbegin', this);
-
-      if (this.timerRefStatic !== null) {
-        window.clearTimeout(this.timerRefStatic);
-        delete this.timerRefStatic;
-      }
-    } // Get our current map view bounds.
-    // Create a new bounds object so we don't affect the map.
-    //
-    // See Comments 9 & 11 on Issue 3651 relating to this workaround for a Google Maps bug:
-
-
-    var mapBounds = // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap().getZoom() > 3 ? new google.maps.LatLngBounds( // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap().getBounds().getSouthWest(), // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    this.getMap().getBounds().getNorthEast()) : new google.maps.LatLngBounds(new google.maps.LatLng(85.02070771743472, -178.48388434375), new google.maps.LatLng(-85.08136444384544, 178.00048865625));
-    var bounds = this.getExtendedBounds(mapBounds);
-    var iLast = Math.min(iFirst + this.batchSize, this.markers.length);
-
-    for (var i = iFirst; i < iLast; i++) {
-      var marker = this.markers[i];
-
-      if (!marker.isAdded && this.isMarkerInBounds(marker, bounds)) {
-        if (!this.ignoreHidden || this.ignoreHidden && marker.getVisible()) {
-          this.addToClosestCluster(marker);
+    };
+    PoseElement.prototype.getFirstPose = function () {
+        var _a = this.props, initialPose = _a.initialPose, pose = _a.pose, _pose = _a._pose;
+        if (!initialPose)
+            return;
+        var firstPose = (Array.isArray(pose) ? pose : [pose])
+            .concat(_pose)
+            .filter(Boolean);
+        return firstPose.length === 1 ? firstPose[0] : firstPose;
+    };
+    PoseElement.prototype.getSetProps = function () {
+        var props = filterProps(this.props);
+        if (this.props.popFromFlow && this.ref && this.ref instanceof HTMLElement) {
+            if (!this.popStyle) {
+                props.style = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props.style, calcPopFromFlowStyle(this.ref));
+                this.popStyle = props.style;
+            }
+            else {
+                props.style = this.popStyle;
+            }
         }
-      }
+        else {
+            this.popStyle = null;
+        }
+        return props;
+    };
+    PoseElement.prototype.componentDidMount = function () {
+        var _this = this;
+        Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["invariant"])(this.ref instanceof Element, "No valid DOM ref found. If you're converting an existing component via posed(Component), you must ensure you're passing the ref to the host DOM node via the React.forwardRef function.");
+        var _a = this.props, onValueChange = _a.onValueChange, registerChild = _a.registerChild, values = _a.values, parentValues = _a.parentValues, onDragStart = _a.onDragStart, onDragEnd = _a.onDragEnd, onPressStart = _a.onPressStart, onPressEnd = _a.onPressEnd;
+        var config = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.poseConfig, { initialPose: this.getInitialPose(), values: values || this.poseConfig.values, parentValues: parentValues ? objectToMap(parentValues) : undefined, props: this.getSetProps(), onDragStart: onDragStart,
+            onDragEnd: onDragEnd,
+            onPressStart: onPressStart,
+            onPressEnd: onPressEnd, onChange: onValueChange });
+        if (!registerChild) {
+            this.initPoser(Object(popmotion_pose__WEBPACK_IMPORTED_MODULE_2__["default"])(this.ref, config));
+        }
+        else {
+            registerChild({
+                element: this.ref,
+                poseConfig: config,
+                onRegistered: function (poser) { return _this.initPoser(poser); }
+            });
+        }
+    };
+    PoseElement.prototype.getSnapshotBeforeUpdate = function () {
+        var _a = this.props, pose = _a.pose, _pose = _a._pose;
+        if (hasPose(pose, 'flip') || hasPose(_pose, 'flip'))
+            this.poser.measure();
+        return null;
+    };
+    PoseElement.prototype.componentDidUpdate = function (prevProps) {
+        var _a = this.props, pose = _a.pose, _pose = _a._pose, poseKey = _a.poseKey;
+        this.poser.setProps(this.getSetProps());
+        if (poseKey !== prevProps.poseKey ||
+            hasChanged(prevProps.pose, pose) ||
+            pose === 'flip') {
+            this.setPose(pose);
+        }
+        if (_pose !== prevProps._pose || _pose === 'flip')
+            this.setPose(_pose);
+    };
+    PoseElement.prototype.componentWillUnmount = function () {
+        if (!this.poser)
+            return;
+        var onUnmount = this.props.onUnmount;
+        if (onUnmount)
+            onUnmount(this.poser);
+        this.poser.destroy();
+    };
+    PoseElement.prototype.initPoser = function (poser) {
+        this.poser = poser;
+        this.flushChildren();
+        var firstPose = this.getFirstPose();
+        if (firstPose)
+            this.setPose(firstPose);
+    };
+    PoseElement.prototype.setPose = function (pose) {
+        var _this = this;
+        var onPoseComplete = this.props.onPoseComplete;
+        var poseList = Array.isArray(pose) ? pose : [pose];
+        Promise.all(poseList.map(function (key) { return key && _this.poser.set(key); })).then(function () { return onPoseComplete && onPoseComplete(pose); });
+    };
+    PoseElement.prototype.flushChildren = function () {
+        var _this = this;
+        this.children.forEach(function (_a) {
+            var element = _a.element, poseConfig = _a.poseConfig, onRegistered = _a.onRegistered;
+            return onRegistered(_this.poser.addChild(element, poseConfig));
+        });
+        this.children.clear();
+    };
+    PoseElement.prototype.render = function () {
+        var elementType = this.props.elementType;
+        return (react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PoseParentProvider, { value: this.childrenHandlers }, Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(elementType, pickAssign(this.shouldForwardProp, [
+            this.getSetProps(),
+            { ref: this.setRef }
+        ]))));
+    };
+    return PoseElement;
+}(react__WEBPACK_IMPORTED_MODULE_1__["PureComponent"]));
+
+var supportedElements = [
+    'a',
+    'article',
+    'aside',
+    'audio',
+    'b',
+    'blockquote',
+    'body',
+    'br',
+    'button',
+    'canvas',
+    'caption',
+    'cite',
+    'code',
+    'col',
+    'colgroup',
+    'data',
+    'datalist',
+    'dialog',
+    'div',
+    'em',
+    'embed',
+    'fieldset',
+    'figcaption',
+    'figure',
+    'footer',
+    'form',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'head',
+    'header',
+    'hgroup',
+    'hr',
+    'i',
+    'iframe',
+    'img',
+    'input',
+    'label',
+    'legend',
+    'li',
+    'nav',
+    'object',
+    'ol',
+    'option',
+    'p',
+    'param',
+    'picture',
+    'pre',
+    'progress',
+    'q',
+    'section',
+    'select',
+    'span',
+    'strong',
+    'table',
+    'tbody',
+    'td',
+    'textarea',
+    'tfoot',
+    'th',
+    'thead',
+    'time',
+    'title',
+    'tr',
+    'ul',
+    'video',
+    'circle',
+    'clipPath',
+    'defs',
+    'ellipse',
+    'g',
+    'image',
+    'line',
+    'linearGradient',
+    'mask',
+    'path',
+    'pattern',
+    'polygon',
+    'polyline',
+    'radialGradient',
+    'rect',
+    'stop',
+    'svg',
+    'text',
+    'tspan'
+];
+
+var componentCache = new Map();
+var createComponentFactory = function (key) {
+    var componentFactory = function (poseConfig) {
+        if (poseConfig === void 0) { poseConfig = {}; }
+        return Object(react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(function (_a, ref) {
+            var _b = _a.withParent, withParent = _b === void 0 ? true : _b, props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["withParent"]);
+            Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["warning"])(props.innerRef === undefined, 'innerRef is deprecated. Please use ref instead.');
+            return !withParent || props.parentValues ? (react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PoseElement, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ poseConfig: poseConfig, innerRef: ref, elementType: key }, props))) : (react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PoseParentConsumer, null, function (parentCtx) { return (react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PoseElement, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ poseConfig: poseConfig, elementType: key, innerRef: ref }, props, parentCtx))); }));
+        });
+    };
+    componentCache.set(key, componentFactory);
+    return componentFactory;
+};
+var getComponentFactory = function (key) {
+    return componentCache.has(key)
+        ? componentCache.get(key)
+        : createComponentFactory(key);
+};
+var posed = (function (component) {
+    return getComponentFactory(component);
+});
+supportedElements.reduce(function (acc, key) {
+    acc[key] = createComponentFactory(key);
+    return acc;
+}, posed);
+
+var getKey = function (child) {
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["invariant"])(child && child.key !== null, 'Every child of Transition must be given a unique key');
+    var childKey = typeof child.key === 'number' ? child.key.toString() : child.key;
+    return childKey.replace('.$', '');
+};
+var prependProps = function (element, props) {
+    return Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(element.type, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ key: element.key, ref: element.ref }, props, element.props));
+};
+var handleTransition = function (_a, _b) {
+    var displayedChildren = _b.displayedChildren, finishedLeaving = _b.finishedLeaving, hasInitialized = _b.hasInitialized, indexedChildren = _b.indexedChildren, scheduleChildRemoval = _b.scheduleChildRemoval;
+    var incomingChildren = _a.children, preEnterPose = _a.preEnterPose, enterPose = _a.enterPose, exitPose = _a.exitPose, animateOnMount = _a.animateOnMount, enterAfterExit = _a.enterAfterExit, flipMove = _a.flipMove, onRest = _a.onRest, propsForChildren = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["children", "preEnterPose", "enterPose", "exitPose", "animateOnMount", "enterAfterExit", "flipMove", "onRest"]);
+    var targetChildren = makeChildList(incomingChildren);
+    var nextState = {
+        displayedChildren: []
+    };
+    if (true) {
+        Object(hey_listen__WEBPACK_IMPORTED_MODULE_4__["warning"])(!propsForChildren.onPoseComplete, "<Transition/> (or <PoseGroup/>) doesn't accept onPoseComplete prop.");
     }
+    var prevKeys = displayedChildren.map(getKey);
+    var nextKeys = targetChildren.map(getKey);
+    var hasPropsForChildren = Object.keys(propsForChildren).length !== 0;
+    var entering = new Set(nextKeys.filter(function (key) { return finishedLeaving.hasOwnProperty(key) || prevKeys.indexOf(key) === -1; }));
+    entering.forEach(function (key) { return delete finishedLeaving[key]; });
+    var leaving = [];
+    var newlyLeaving = {};
+    prevKeys.forEach(function (key) {
+        if (entering.has(key)) {
+            return;
+        }
+        var isLeaving = finishedLeaving.hasOwnProperty(key);
+        if (!isLeaving && nextKeys.indexOf(key) !== -1) {
+            return;
+        }
+        leaving.push(key);
+        if (!isLeaving) {
+            finishedLeaving[key] = false;
+            newlyLeaving[key] = true;
+        }
+    });
+    var moving = new Set(prevKeys.filter(function (key, i) {
+        return !entering.has(key) || leaving.indexOf(key) === -1;
+    }));
+    targetChildren.forEach(function (child) {
+        var newChildProps = {};
+        if (entering.has(child.key)) {
+            if (hasInitialized || animateOnMount) {
+                newChildProps.initialPose = preEnterPose;
+            }
+            newChildProps._pose = enterPose;
+        }
+        else if (moving.has(child.key) && flipMove) {
+            newChildProps._pose = [enterPose, 'flip'];
+        }
+        else {
+            newChildProps._pose = enterPose;
+        }
+        var newChild = Object(react__WEBPACK_IMPORTED_MODULE_1__["cloneElement"])(child, newChildProps);
+        indexedChildren[child.key] = newChild;
+        nextState.displayedChildren.push(hasPropsForChildren ? prependProps(newChild, propsForChildren) : newChild);
+    });
+    leaving.forEach(function (key) {
+        var child = indexedChildren[key];
+        var newChild = newlyLeaving[key]
+            ? Object(react__WEBPACK_IMPORTED_MODULE_1__["cloneElement"])(child, {
+                _pose: exitPose,
+                onPoseComplete: function (pose) {
+                    if (pose === exitPose)
+                        scheduleChildRemoval(key);
+                    var onPoseComplete = child.props.onPoseComplete;
+                    if (onPoseComplete)
+                        onPoseComplete(pose);
+                },
+                popFromFlow: flipMove
+            })
+            : child;
+        var insertionIndex = prevKeys.indexOf(key);
+        indexedChildren[child.key] = newChild;
+        nextState.displayedChildren.splice(insertionIndex, 0, hasPropsForChildren ? prependProps(newChild, propsForChildren) : newChild);
+    });
+    return nextState;
+};
+var handleChildrenTransitions = (function (props, state) {
+    var newState = handleTransition(props, state);
+    newState.hasInitialized = true;
+    return newState;
+});
+var makeChildList = function (children) {
+    var list = [];
+    react__WEBPACK_IMPORTED_MODULE_1__["Children"].forEach(children, function (child) { return child && list.push(child); });
+    return list;
+};
 
-    if (iLast < this.markers.length) {
-      this.timerRefStatic = window.setTimeout( // eslint-disable-next-line @getify/proper-arrows/this, @getify/proper-arrows/name
-      function () {
-        _this3.createClusters(iLast);
-      }, 0);
-    } else {
-      this.timerRefStatic = null;
-      /**
-       * This event is fired when the <code>Clusterer</code> stops
-       *  clustering markers.
-       * @name Clusterer#clusteringend
-       * @param {Clusterer} mc The Clusterer whose markers are being clustered.
-       * @event
-       */
-
-      google.maps.event.trigger(this, 'clusteringend', this);
+var Transition = (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(Transition, _super);
+    function Transition() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            displayedChildren: [],
+            finishedLeaving: {},
+            hasInitialized: false,
+            indexedChildren: {},
+            scheduleChildRemoval: function (key) { return _this.removeChild(key); }
+        };
+        return _this;
     }
-  };
+    Transition.prototype.removeChild = function (key) {
+        var _a = this.state, displayedChildren = _a.displayedChildren, finishedLeaving = _a.finishedLeaving;
+        var _b = this.props, enterAfterExit = _b.enterAfterExit, onRest = _b.onRest;
+        if (!finishedLeaving.hasOwnProperty(key))
+            return;
+        finishedLeaving[key] = true;
+        if (!Object.keys(finishedLeaving).every(function (leavingKey) { return finishedLeaving[leavingKey]; })) {
+            return;
+        }
+        var targetChildren = displayedChildren.filter(function (child) { return !finishedLeaving.hasOwnProperty(child.key); });
+        var newState = enterAfterExit
+            ? Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ finishedLeaving: {} }, handleChildrenTransitions(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.props, { enterAfterExit: false }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.state, { displayedChildren: targetChildren }))) : {
+            finishedLeaving: {},
+            displayedChildren: targetChildren
+        };
+        this.setState(newState, onRest);
+    };
+    Transition.prototype.shouldComponentUpdate = function (nextProps, nextState) {
+        return this.state !== nextState;
+    };
+    Transition.prototype.render = function () {
+        return this.state.displayedChildren;
+    };
+    Transition.defaultProps = {
+        flipMove: false,
+        enterAfterExit: false,
+        preEnterPose: 'exit',
+        enterPose: 'enter',
+        exitPose: 'exit'
+    };
+    Transition.getDerivedStateFromProps = handleChildrenTransitions;
+    return Transition;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]));
 
-  _proto.extend = function extend(obj1, obj2) {
-    return function applyExtend(object) {
-      // eslint-disable-next-line guard-for-in
-      for (var property in object.prototype) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        this.prototype[property] = object.prototype[property];
-      } // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
+var PoseGroup = (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(PoseGroup, _super);
+    function PoseGroup() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    PoseGroup.prototype.render = function () {
+        return Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Transition, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, this.props));
+    };
+    PoseGroup.defaultProps = {
+        flipMove: true
+    };
+    return PoseGroup;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]));
 
+/* harmony default export */ __webpack_exports__["default"] = (posed);
 
-      return this;
-    }.apply(obj1, [obj2]);
-  };
-
-  return Clusterer;
-}();
-
-
-//# sourceMappingURL=markerclusterer.esm.js.map
 
 
 /***/ }),
 
-/***/ "./node_modules/invariant/browser.js":
-/*!*******************************************!*\
-  !*** ./node_modules/invariant/browser.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/react-pose/node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/react-pose/node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/memoize */ "./node_modules/react-pose/node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
 
 
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|default|defer|dir|disabled|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|itemProp|itemScope|itemType|itemID|itemRef|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
+var index = Object(_emotion_memoize__WEBPACK_IMPORTED_MODULE_0__["default"])(function (prop) {
+  return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111
+  /* o */
+  && prop.charCodeAt(1) === 110
+  /* n */
+  && prop.charCodeAt(2) < 91;
+}
+/* Z+1 */
+);
 
-var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (true) {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  }
+/* harmony default export */ __webpack_exports__["default"] = (index);
 
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
-      error.name = 'Invariant Violation';
-    }
 
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
+/***/ }),
+
+/***/ "./node_modules/react-pose/node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/react-pose/node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function memoize(fn) {
+  var cache = {};
+  return function (arg) {
+    if (cache[arg] === undefined) cache[arg] = fn(arg);
+    return cache[arg];
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (memoize);
+
+
+/***/ }),
+
+/***/ "./node_modules/style-value-types/dist/style-value-types.es.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-value-types/dist/style-value-types.es.js ***!
+  \*********************************************************************/
+/*! exports provided: number, scale, alpha, degrees, percent, progressPercentage, px, vw, vh, rgba, rgbUnit, hsla, hex, color, complex */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "number", function() { return number; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scale", function() { return scale; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alpha", function() { return alpha; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "degrees", function() { return degrees; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "percent", function() { return percent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "progressPercentage", function() { return progressPercentage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "px", function() { return px; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vw", function() { return vw; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vh", function() { return vh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgba", function() { return rgba; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbUnit", function() { return rgbUnit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hsla", function() { return hsla; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hex", function() { return hex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "color", function() { return color; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "complex", function() { return complex; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
 
-module.exports = invariant;
+var clamp = function (min, max) { return function (v) {
+    return Math.max(Math.min(v, max), min);
+}; };
+var sanitize = function (v) { return (v % 1 ? Number(v.toFixed(5)) : v); };
+var floatRegex = /(-)?(\d[\d\.]*)/g;
+var colorRegex = /(#[0-9a-f]{6}|#[0-9a-f]{3}|#(?:[0-9a-f]{2}){2,4}|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d\.]+%?\))/gi;
+var singleColorRegex = /^(#[0-9a-f]{3}|#(?:[0-9a-f]{2}){2,4}|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d\.]+%?\))$/i;
+
+var number = {
+    test: function (v) { return typeof v === 'number'; },
+    parse: parseFloat,
+    transform: function (v) { return v; }
+};
+var alpha = __assign({}, number, { transform: clamp(0, 1) });
+var scale = __assign({}, number, { default: 1 });
+
+var createUnitType = function (unit) { return ({
+    test: function (v) {
+        return typeof v === 'string' && v.endsWith(unit) && v.split(' ').length === 1;
+    },
+    parse: parseFloat,
+    transform: function (v) { return "" + v + unit; }
+}); };
+var degrees = createUnitType('deg');
+var percent = createUnitType('%');
+var px = createUnitType('px');
+var vh = createUnitType('vh');
+var vw = createUnitType('vw');
+var progressPercentage = __assign({}, percent, { parse: function (v) { return percent.parse(v) / 100; }, transform: function (v) { return percent.transform(v * 100); } });
+
+var getValueFromFunctionString = function (value) {
+    return value.substring(value.indexOf('(') + 1, value.lastIndexOf(')'));
+};
+var clampRgbUnit = clamp(0, 255);
+var isRgba = function (v) { return v.red !== undefined; };
+var isHsla = function (v) { return v.hue !== undefined; };
+var splitColorValues = function (terms) {
+    return function (v) {
+        if (typeof v !== 'string')
+            return v;
+        var values = {};
+        var valuesArray = getValueFromFunctionString(v).split(/,\s*/);
+        for (var i = 0; i < 4; i++) {
+            values[terms[i]] =
+                valuesArray[i] !== undefined ? parseFloat(valuesArray[i]) : 1;
+        }
+        return values;
+    };
+};
+var rgbaTemplate = function (_a) {
+    var red = _a.red, green = _a.green, blue = _a.blue, _b = _a.alpha, alpha$$1 = _b === void 0 ? 1 : _b;
+    return "rgba(" + red + ", " + green + ", " + blue + ", " + alpha$$1 + ")";
+};
+var hslaTemplate = function (_a) {
+    var hue = _a.hue, saturation = _a.saturation, lightness = _a.lightness, _b = _a.alpha, alpha$$1 = _b === void 0 ? 1 : _b;
+    return "hsla(" + hue + ", " + saturation + ", " + lightness + ", " + alpha$$1 + ")";
+};
+var rgbUnit = __assign({}, number, { transform: function (v) { return Math.round(clampRgbUnit(v)); } });
+function isColorString(color, colorType) {
+    return color.startsWith(colorType) && singleColorRegex.test(color);
+}
+var rgba = {
+    test: function (v) { return (typeof v === 'string' ? isColorString(v, 'rgb') : isRgba(v)); },
+    parse: splitColorValues(['red', 'green', 'blue', 'alpha']),
+    transform: function (_a) {
+        var red = _a.red, green = _a.green, blue = _a.blue, _b = _a.alpha, alpha$$1 = _b === void 0 ? 1 : _b;
+        return rgbaTemplate({
+            red: rgbUnit.transform(red),
+            green: rgbUnit.transform(green),
+            blue: rgbUnit.transform(blue),
+            alpha: sanitize(alpha.transform(alpha$$1))
+        });
+    }
+};
+var hsla = {
+    test: function (v) { return (typeof v === 'string' ? isColorString(v, 'hsl') : isHsla(v)); },
+    parse: splitColorValues(['hue', 'saturation', 'lightness', 'alpha']),
+    transform: function (_a) {
+        var hue = _a.hue, saturation = _a.saturation, lightness = _a.lightness, _b = _a.alpha, alpha$$1 = _b === void 0 ? 1 : _b;
+        return hslaTemplate({
+            hue: Math.round(hue),
+            saturation: percent.transform(sanitize(saturation)),
+            lightness: percent.transform(sanitize(lightness)),
+            alpha: sanitize(alpha.transform(alpha$$1))
+        });
+    }
+};
+var hex = __assign({}, rgba, { test: function (v) { return typeof v === 'string' && isColorString(v, '#'); }, parse: function (v) {
+        var r = '';
+        var g = '';
+        var b = '';
+        if (v.length > 4) {
+            r = v.substr(1, 2);
+            g = v.substr(3, 2);
+            b = v.substr(5, 2);
+        }
+        else {
+            r = v.substr(1, 1);
+            g = v.substr(2, 1);
+            b = v.substr(3, 1);
+            r += r;
+            g += g;
+            b += b;
+        }
+        return {
+            red: parseInt(r, 16),
+            green: parseInt(g, 16),
+            blue: parseInt(b, 16),
+            alpha: 1
+        };
+    } });
+var color = {
+    test: function (v) {
+        return (typeof v === 'string' && singleColorRegex.test(v)) ||
+            isRgba(v) ||
+            isHsla(v);
+    },
+    parse: function (v) {
+        if (rgba.test(v)) {
+            return rgba.parse(v);
+        }
+        else if (hsla.test(v)) {
+            return hsla.parse(v);
+        }
+        else if (hex.test(v)) {
+            return hex.parse(v);
+        }
+        return v;
+    },
+    transform: function (v) {
+        if (isRgba(v)) {
+            return rgba.transform(v);
+        }
+        else if (isHsla(v)) {
+            return hsla.transform(v);
+        }
+        return v;
+    }
+};
+
+var COLOR_TOKEN = '${c}';
+var NUMBER_TOKEN = '${n}';
+var convertNumbersToZero = function (v) {
+    return typeof v === 'number' ? 0 : v;
+};
+var complex = {
+    test: function (v) {
+        if (typeof v !== 'string' || !isNaN(v))
+            return false;
+        var numValues = 0;
+        var foundNumbers = v.match(floatRegex);
+        var foundColors = v.match(colorRegex);
+        if (foundNumbers)
+            numValues += foundNumbers.length;
+        if (foundColors)
+            numValues += foundColors.length;
+        return numValues > 0;
+    },
+    parse: function (v) {
+        var input = v;
+        var parsed = [];
+        var foundColors = input.match(colorRegex);
+        if (foundColors) {
+            input = input.replace(colorRegex, COLOR_TOKEN);
+            parsed.push.apply(parsed, foundColors.map(color.parse));
+        }
+        var foundNumbers = input.match(floatRegex);
+        if (foundNumbers) {
+            parsed.push.apply(parsed, foundNumbers.map(number.parse));
+        }
+        return parsed;
+    },
+    createTransformer: function (prop) {
+        var template = prop;
+        var token = 0;
+        var foundColors = prop.match(colorRegex);
+        var numColors = foundColors ? foundColors.length : 0;
+        if (foundColors) {
+            for (var i = 0; i < numColors; i++) {
+                template = template.replace(foundColors[i], COLOR_TOKEN);
+                token++;
+            }
+        }
+        var foundNumbers = template.match(floatRegex);
+        var numNumbers = foundNumbers ? foundNumbers.length : 0;
+        if (foundNumbers) {
+            for (var i = 0; i < numNumbers; i++) {
+                template = template.replace(foundNumbers[i], NUMBER_TOKEN);
+                token++;
+            }
+        }
+        return function (v) {
+            var output = template;
+            for (var i = 0; i < token; i++) {
+                output = output.replace(i < numColors ? COLOR_TOKEN : NUMBER_TOKEN, i < numColors ? color.transform(v[i]) : sanitize(v[i]));
+            }
+            return output;
+        };
+    },
+    getAnimatableNone: function (target) {
+        var parsedTarget = complex.parse(target);
+        var targetTransformer = complex.createTransformer(target);
+        return targetTransformer(parsedTarget.map(convertNumbersToZero));
+    }
+};
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/stylefire/dist/stylefire.es.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/stylefire/dist/stylefire.es.js ***!
+  \*****************************************************/
+/*! exports provided: default, createStylerFactory, buildStyleProperty, isTransformProp */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStylerFactory", function() { return createStyler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildStyleProperty", function() { return buildStyleProperty; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isTransformProp", function() { return isTransformProp; });
+/* harmony import */ var framesync__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! framesync */ "./node_modules/framesync/dist/framesync.es.js");
+/* harmony import */ var style_value_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! style-value-types */ "./node_modules/style-value-types/dist/style-value-types.es.js");
+/* harmony import */ var hey_listen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hey-listen */ "./node_modules/hey-listen/dist/hey-listen.es.js");
+
+
+
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+var __assign = function () {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0) t[p[i]] = s[p[i]];
+    return t;
+}
+
+var createStyler = function (_a) {
+    var onRead = _a.onRead,
+        onRender = _a.onRender,
+        _b = _a.uncachedValues,
+        uncachedValues = _b === void 0 ? new Set() : _b,
+        _c = _a.useCache,
+        useCache = _c === void 0 ? true : _c;
+    return function (_a) {
+        if (_a === void 0) {
+            _a = {};
+        }
+        var props = __rest(_a, []);
+        var state = {};
+        var changedValues = [];
+        var hasChanged = false;
+        function setValue(key, value) {
+            if (key.startsWith('--')) {
+                props.hasCSSVariable = true;
+            }
+            var currentValue = state[key];
+            state[key] = value;
+            if (state[key] === currentValue) return;
+            if (changedValues.indexOf(key) === -1) {
+                changedValues.push(key);
+            }
+            if (!hasChanged) {
+                hasChanged = true;
+                framesync__WEBPACK_IMPORTED_MODULE_0__["default"].render(styler.render);
+            }
+        }
+        var styler = {
+            get: function (key, forceRead) {
+                if (forceRead === void 0) {
+                    forceRead = false;
+                }
+                var useCached = !forceRead && useCache && !uncachedValues.has(key) && state[key] !== undefined;
+                return useCached ? state[key] : onRead(key, props);
+            },
+            set: function (values, value) {
+                if (typeof values === 'string') {
+                    setValue(values, value);
+                } else {
+                    for (var key in values) {
+                        setValue(key, values[key]);
+                    }
+                }
+                return this;
+            },
+            render: function (forceRender) {
+                if (forceRender === void 0) {
+                    forceRender = false;
+                }
+                if (hasChanged || forceRender === true) {
+                    onRender(state, props, changedValues);
+                    hasChanged = false;
+                    changedValues.length = 0;
+                }
+                return this;
+            }
+        };
+        return styler;
+    };
+};
+
+var CAMEL_CASE_PATTERN = /([a-z])([A-Z])/g;
+var REPLACE_TEMPLATE = '$1-$2';
+var camelToDash = function (str) {
+    return str.replace(CAMEL_CASE_PATTERN, REPLACE_TEMPLATE).toLowerCase();
+};
+var setDomAttrs = function (element, attrs) {
+    for (var key in attrs) {
+        if (attrs.hasOwnProperty(key)) {
+            element.setAttribute(key, attrs[key]);
+        }
+    }
+};
+
+var camelCache = /*#__PURE__*/new Map();
+var dashCache = /*#__PURE__*/new Map();
+var prefixes = ['Webkit', 'Moz', 'O', 'ms', ''];
+var numPrefixes = prefixes.length;
+var isBrowser = typeof document !== 'undefined';
+var testElement;
+var setDashPrefix = function (key, prefixed) {
+    return dashCache.set(key, camelToDash(prefixed));
+};
+var testPrefix = function (key) {
+    testElement = testElement || document.createElement('div');
+    for (var i = 0; i < numPrefixes; i++) {
+        var prefix = prefixes[i];
+        var noPrefix = prefix === '';
+        var prefixedPropertyName = noPrefix ? key : prefix + key.charAt(0).toUpperCase() + key.slice(1);
+        if (prefixedPropertyName in testElement.style || noPrefix) {
+            camelCache.set(key, prefixedPropertyName);
+            setDashPrefix(key, "" + (noPrefix ? '' : '-') + camelToDash(prefixedPropertyName));
+        }
+    }
+};
+var setServerProperty = function (key) {
+    return setDashPrefix(key, key);
+};
+var prefixer = function (key, asDashCase) {
+    if (asDashCase === void 0) {
+        asDashCase = false;
+    }
+    var cache = asDashCase ? dashCache : camelCache;
+    if (!cache.has(key)) isBrowser ? testPrefix(key) : setServerProperty(key);
+    return cache.get(key) || key;
+};
+
+var axes = ['', 'X', 'Y', 'Z'];
+var order = ['scale', 'rotate', 'skew', 'transformPerspective'];
+var transformProps = /*#__PURE__*/order.reduce(function (acc, key) {
+    return axes.reduce(function (axesAcc, axesKey) {
+        axesAcc.push(key + axesKey);
+        return axesAcc;
+    }, acc);
+}, ['x', 'y', 'z']);
+var transformPropDictionary = /*#__PURE__*/transformProps.reduce(function (dict, key) {
+    dict[key] = true;
+    return dict;
+}, {});
+function isTransformProp(key) {
+    return transformPropDictionary[key] === true;
+}
+function sortTransformProps(a, b) {
+    return transformProps.indexOf(a) - transformProps.indexOf(b);
+}
+var transformOriginProps = /*#__PURE__*/new Set(['originX', 'originY', 'originZ']);
+function isTransformOriginProp(key) {
+    return transformOriginProps.has(key);
+}
+
+var rounded = /*#__PURE__*/__assign({}, style_value_types__WEBPACK_IMPORTED_MODULE_1__["number"], { transform: Math.round });
+var valueTypes = {
+    color: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    backgroundColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    outlineColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    fill: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    stroke: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    borderColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    borderTopColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    borderRightColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    borderBottomColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    borderLeftColor: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    borderWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderTopWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderRightWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderBottomWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderLeftWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    radius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderTopLeftRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderTopRightRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderBottomRightRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    borderBottomLeftRadius: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    width: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    maxWidth: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    height: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    maxHeight: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    size: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    top: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    right: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    bottom: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    left: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    padding: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    paddingTop: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    paddingRight: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    paddingBottom: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    paddingLeft: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    margin: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    marginTop: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    marginRight: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    marginBottom: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    marginLeft: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    rotate: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
+    rotateX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
+    rotateY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
+    rotateZ: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
+    scale: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
+    scaleX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
+    scaleY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
+    scaleZ: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
+    skew: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
+    skewX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
+    skewY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["degrees"],
+    distance: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    x: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    y: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    z: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    perspective: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    opacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
+    originX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["progressPercentage"],
+    originY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["progressPercentage"],
+    originZ: style_value_types__WEBPACK_IMPORTED_MODULE_1__["px"],
+    zIndex: rounded
+};
+var getValueType = function (key) {
+    return valueTypes[key];
+};
+var getValueAsType = function (value, type) {
+    return type && typeof value === 'number' ? type.transform(value) : value;
+};
+
+var SCROLL_LEFT = 'scrollLeft';
+var SCROLL_TOP = 'scrollTop';
+var scrollKeys = /*#__PURE__*/new Set([SCROLL_LEFT, SCROLL_TOP]);
+
+var blacklist = /*#__PURE__*/new Set([SCROLL_LEFT, SCROLL_TOP, 'transform']);
+var translateAlias = {
+    x: 'translateX',
+    y: 'translateY',
+    z: 'translateZ'
+};
+function isCustomTemplate(v) {
+    return typeof v === 'function';
+}
+function buildTransform(state, transform, transformKeys, transformIsDefault, enableHardwareAcceleration) {
+    var transformString = '';
+    var transformHasZ = false;
+    transformKeys.sort(sortTransformProps);
+    var numTransformKeys = transformKeys.length;
+    for (var i = 0; i < numTransformKeys; i++) {
+        var key = transformKeys[i];
+        transformString += (translateAlias[key] || key) + "(" + transform[key] + ") ";
+        transformHasZ = key === 'z' ? true : transformHasZ;
+    }
+    if (!transformHasZ && enableHardwareAcceleration) {
+        transformString += 'translateZ(0)';
+    } else {
+        transformString = transformString.trim();
+    }
+    if (isCustomTemplate(state.transform)) {
+        transformString = state.transform(transform, transformString);
+    } else if (transformIsDefault) {
+        transformString = 'none';
+    }
+    return transformString;
+}
+function buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, isDashCase) {
+    if (enableHardwareAcceleration === void 0) {
+        enableHardwareAcceleration = true;
+    }
+    if (styles === void 0) {
+        styles = {};
+    }
+    if (transform === void 0) {
+        transform = {};
+    }
+    if (transformOrigin === void 0) {
+        transformOrigin = {};
+    }
+    if (transformKeys === void 0) {
+        transformKeys = [];
+    }
+    if (isDashCase === void 0) {
+        isDashCase = false;
+    }
+    var transformIsDefault = true;
+    var hasTransform = false;
+    var hasTransformOrigin = false;
+    for (var key in state) {
+        var value = state[key];
+        var valueType = getValueType(key);
+        var valueAsType = getValueAsType(value, valueType);
+        if (isTransformProp(key)) {
+            hasTransform = true;
+            transform[key] = valueAsType;
+            transformKeys.push(key);
+            if (transformIsDefault) {
+                if (valueType.default && value !== valueType.default || !valueType.default && value !== 0) {
+                    transformIsDefault = false;
+                }
+            }
+        } else if (isTransformOriginProp(key)) {
+            transformOrigin[key] = valueAsType;
+            hasTransformOrigin = true;
+        } else if (!blacklist.has(key) || !isCustomTemplate(valueAsType)) {
+            styles[prefixer(key, isDashCase)] = valueAsType;
+        }
+    }
+    if (hasTransform || typeof state.transform === 'function') {
+        styles.transform = buildTransform(state, transform, transformKeys, transformIsDefault, enableHardwareAcceleration);
+    }
+    if (hasTransformOrigin) {
+        styles.transformOrigin = (transformOrigin.originX || 0) + " " + (transformOrigin.originY || 0) + " " + (transformOrigin.originZ || 0);
+    }
+    return styles;
+}
+function createStyleBuilder(enableHardwareAcceleration) {
+    if (enableHardwareAcceleration === void 0) {
+        enableHardwareAcceleration = true;
+    }
+    var styles = {};
+    var transform = {};
+    var transformOrigin = {};
+    var transformKeys = [];
+    return function (state) {
+        transformKeys.length = 0;
+        buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, true);
+        return styles;
+    };
+}
+
+function onRead(key, options) {
+    var element = options.element,
+        preparseOutput = options.preparseOutput;
+    var defaultValueType = getValueType(key);
+    if (isTransformProp(key)) {
+        return defaultValueType ? defaultValueType.default || 0 : 0;
+    } else if (scrollKeys.has(key)) {
+        return element[key];
+    } else {
+        var domValue = window.getComputedStyle(element, null).getPropertyValue(prefixer(key, true)) || 0;
+        return preparseOutput && defaultValueType && defaultValueType.test(domValue) && defaultValueType.parse ? defaultValueType.parse(domValue) : domValue;
+    }
+}
+function onRender(state, _a, changedValues) {
+    var element = _a.element,
+        buildStyles = _a.buildStyles,
+        hasCSSVariable = _a.hasCSSVariable;
+    Object.assign(element.style, buildStyles(state));
+    if (hasCSSVariable) {
+        var numChangedValues = changedValues.length;
+        for (var i = 0; i < numChangedValues; i++) {
+            var key = changedValues[i];
+            if (key.startsWith('--')) {
+                element.style.setProperty(key, state[key]);
+            }
+        }
+    }
+    if (changedValues.indexOf(SCROLL_LEFT) !== -1) {
+        element[SCROLL_LEFT] = state[SCROLL_LEFT];
+    }
+    if (changedValues.indexOf(SCROLL_TOP) !== -1) {
+        element[SCROLL_TOP] = state[SCROLL_TOP];
+    }
+}
+var cssStyler = /*#__PURE__*/createStyler({
+    onRead: onRead,
+    onRender: onRender,
+    uncachedValues: scrollKeys
+});
+function createCssStyler(element, _a) {
+    if (_a === void 0) {
+        _a = {};
+    }
+    var enableHardwareAcceleration = _a.enableHardwareAcceleration,
+        props = __rest(_a, ["enableHardwareAcceleration"]);
+    return cssStyler(__assign({ element: element, buildStyles: createStyleBuilder(enableHardwareAcceleration), preparseOutput: true }, props));
+}
+
+var camelCaseAttributes = /*#__PURE__*/new Set(['baseFrequency', 'diffuseConstant', 'kernelMatrix', 'kernelUnitLength', 'keySplines', 'keyTimes', 'limitingConeAngle', 'markerHeight', 'markerWidth', 'numOctaves', 'targetX', 'targetY', 'surfaceScale', 'specularConstant', 'specularExponent', 'stdDeviation', 'tableValues']);
+
+var ZERO_NOT_ZERO = 0.0000001;
+var progressToPixels = function (progress, length) {
+    return progress * length + 'px';
+};
+var build = function (state, dimensions, isPath, pathLength) {
+    var hasTransform = false;
+    var hasDashArray = false;
+    var props = {};
+    var dashArrayStyles = isPath ? {
+        pathLength: '0',
+        pathSpacing: "" + pathLength
+    } : undefined;
+    var scale$$1 = state.scale !== undefined ? state.scale || ZERO_NOT_ZERO : state.scaleX || 1;
+    var scaleY = state.scaleY !== undefined ? state.scaleY || ZERO_NOT_ZERO : scale$$1 || 1;
+    var transformOriginX = dimensions.width * (state.originX || 50) + dimensions.x;
+    var transformOriginY = dimensions.height * (state.originY || 50) + dimensions.y;
+    var scaleTransformX = -transformOriginX * (scale$$1 * 1);
+    var scaleTransformY = -transformOriginY * (scaleY * 1);
+    var scaleReplaceX = transformOriginX / scale$$1;
+    var scaleReplaceY = transformOriginY / scaleY;
+    var transform = {
+        translate: "translate(" + state.x + ", " + state.y + ") ",
+        scale: "translate(" + scaleTransformX + ", " + scaleTransformY + ") scale(" + scale$$1 + ", " + scaleY + ") translate(" + scaleReplaceX + ", " + scaleReplaceY + ") ",
+        rotate: "rotate(" + state.rotate + ", " + transformOriginX + ", " + transformOriginY + ") ",
+        skewX: "skewX(" + state.skewX + ") ",
+        skewY: "skewY(" + state.skewY + ") "
+    };
+    for (var key in state) {
+        if (state.hasOwnProperty(key)) {
+            var value = state[key];
+            if (isTransformProp(key)) {
+                hasTransform = true;
+            } else if (isPath && (key === 'pathLength' || key === 'pathSpacing') && typeof value === 'number') {
+                hasDashArray = true;
+                dashArrayStyles[key] = progressToPixels(value, pathLength);
+            } else if (isPath && key === 'pathOffset') {
+                props['stroke-dashoffset'] = progressToPixels(-value, pathLength);
+            } else {
+                var attrKey = !camelCaseAttributes.has(key) ? camelToDash(key) : key;
+                props[attrKey] = value;
+            }
+        }
+    }
+    if (hasDashArray) {
+        props['stroke-dasharray'] = dashArrayStyles.pathLength + ' ' + dashArrayStyles.pathSpacing;
+    }
+    if (hasTransform) {
+        props.transform = '';
+        for (var key in transform) {
+            if (transform.hasOwnProperty(key)) {
+                var defaultValue = key === 'scale' ? '1' : '0';
+                props.transform += transform[key].replace(/undefined/g, defaultValue);
+            }
+        }
+    }
+    return props;
+};
+
+var int = /*#__PURE__*/__assign({}, style_value_types__WEBPACK_IMPORTED_MODULE_1__["number"], { transform: Math.round });
+var valueTypes$1 = {
+    fill: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    stroke: style_value_types__WEBPACK_IMPORTED_MODULE_1__["color"],
+    scale: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
+    scaleX: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
+    scaleY: style_value_types__WEBPACK_IMPORTED_MODULE_1__["scale"],
+    opacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
+    fillOpacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
+    strokeOpacity: style_value_types__WEBPACK_IMPORTED_MODULE_1__["alpha"],
+    numOctaves: int
+};
+var getValueType$1 = function (key) {
+    return valueTypes$1[key];
+};
+
+var getDimensions = function (element) {
+    return typeof element.getBBox === 'function' ? element.getBBox() : element.getBoundingClientRect();
+};
+var getSVGElementDimensions = function (element) {
+    try {
+        return getDimensions(element);
+    } catch (e) {
+        return { x: 0, y: 0, width: 0, height: 0 };
+    }
+};
+
+var svgStyler = /*#__PURE__*/createStyler({
+    onRead: function (key, _a) {
+        var element = _a.element;
+        if (!isTransformProp(key)) {
+            return element.getAttribute(key);
+        } else {
+            var valueType = getValueType$1(key);
+            return valueType ? valueType.default : 0;
+        }
+    },
+    onRender: function (state, _a) {
+        var dimensions = _a.dimensions,
+            element = _a.element,
+            isPath = _a.isPath,
+            pathLength = _a.pathLength;
+        setDomAttrs(element, build(state, dimensions, isPath, pathLength));
+    }
+});
+var svg = function (element) {
+    var dimensions = getSVGElementDimensions(element);
+    var props = {
+        element: element,
+        dimensions: dimensions,
+        isPath: false
+    };
+    if (element.tagName === 'path') {
+        props.isPath = true;
+        props.pathLength = element.getTotalLength();
+    }
+    return svgStyler(props);
+};
+
+var viewport = /*#__PURE__*/createStyler({
+    useCache: false,
+    onRead: function (key) {
+        return key === 'scrollTop' ? window.pageYOffset : window.pageXOffset;
+    },
+    onRender: function (_a) {
+        var _b = _a.scrollTop,
+            scrollTop = _b === void 0 ? 0 : _b,
+            _c = _a.scrollLeft,
+            scrollLeft = _c === void 0 ? 0 : _c;
+        return window.scrollTo(scrollLeft, scrollTop);
+    }
+});
+
+var cache = /*#__PURE__*/new WeakMap();
+var createDOMStyler = function (node, props) {
+    var styler;
+    if (node instanceof HTMLElement) {
+        styler = createCssStyler(node, props);
+    } else if (node instanceof SVGElement) {
+        styler = svg(node);
+    } else if (node === window) {
+        styler = viewport(node);
+    }
+    Object(hey_listen__WEBPACK_IMPORTED_MODULE_2__["invariant"])(styler !== undefined, 'No valid node provided. Node must be HTMLElement, SVGElement or window.');
+    cache.set(node, styler);
+    return styler;
+};
+var getStyler = function (node, props) {
+    return cache.has(node) ? cache.get(node) : createDOMStyler(node, props);
+};
+function index(nodeOrSelector, props) {
+    var node = typeof nodeOrSelector === 'string' ? document.querySelector(nodeOrSelector) : nodeOrSelector;
+    return getStyler(node, props);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/tslib/tslib.es6.js":
+/*!*****************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.js ***!
+  \*****************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
 
 
 /***/ })

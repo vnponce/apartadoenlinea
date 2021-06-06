@@ -446,6 +446,7 @@ function useWindowSize() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     width: undefined,
     height: undefined,
+    isLessThanSM: undefined,
     isLessThanMD: undefined,
     isLessThanLG: undefined
   }),
@@ -460,6 +461,7 @@ function useWindowSize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
+        isLessThanSM: window.innerWidth < _Shared_utils__WEBPACK_IMPORTED_MODULE_1__["breakpoints"].sm,
         isLessThanMD: window.innerWidth < _Shared_utils__WEBPACK_IMPORTED_MODULE_1__["breakpoints"].md,
         isLessThanLG: window.innerWidth < _Shared_utils__WEBPACK_IMPORTED_MODULE_1__["breakpoints"].lg
       });

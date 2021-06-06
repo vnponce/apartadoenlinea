@@ -306,6 +306,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_Admin_Content__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Admin/Content */ "./resources/js/components/Admin/Content.jsx");
 /* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Pagination */ "./resources/js/components/Pagination.jsx");
+/* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Shared/utils */ "./resources/js/Shared/utils.js");
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/Input */ "./resources/js/components/Input.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -323,24 +326,46 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
  // import 'sweetalert2/src/sweetalert2.scss'
 
+
+
+
+
 function Products(props) {
   var products = props.products,
       success_message = props.flash.success_message;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
-      dataSelected = _useState2[0],
-      setDataSelected = _useState2[1];
+      productToSearch = _useState2[0],
+      setProductToSearch = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState4 = _slicedToArray(_useState3, 2),
-      createProduct = _useState4[0],
-      setCreateProduct = _useState4[1];
+      dataSelected = _useState4[0],
+      setDataSelected = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState6 = _slicedToArray(_useState5, 2),
-      editing = _useState6[0],
-      setEditing = _useState6[1];
+      createProduct = _useState6[0],
+      setCreateProduct = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      editing = _useState8[0],
+      setEditing = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      mobileShowInfoBoxes = _useState10[0],
+      setMobileShowInfoBoxes = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      isInfoBoxOpen = _useState12[0],
+      setIsInfoBoxOpen = _useState12[1];
+
+  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_9__["useWindowSize"])(),
+      isLessThanLG = _useWindowSize.isLessThanLG;
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (success_message) {
@@ -360,6 +385,11 @@ function Products(props) {
     setCreateProduct(true);
     setDataSelected(false);
     setEditing(false);
+    setIsInfoBoxOpen(true);
+
+    if (isLessThanLG) {
+      setMobileShowInfoBoxes(true);
+    }
   };
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
@@ -403,40 +433,76 @@ function Products(props) {
     var data = products.data[index];
     setEditing(false);
     setDataSelected(data);
+    setIsInfoBoxOpen(true);
+
+    if (isLessThanLG) {
+      setMobileShowInfoBoxes(true);
+    }
   };
 
   var getData = function getData(data) {
     return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].visit("?page=".concat(data.page));
   };
 
+  var onChange = function onChange(e) {
+    if (e.key === 'Enter') {
+      toSearch(); // return false;
+    }
+
+    setProductToSearch(e.target.value);
+  };
+
+  var toSearch = function toSearch() {
+    var searchProduct = productToSearch ? "q=".concat(productToSearch) : '';
+    var url = "/admin/products?".concat(searchProduct); // Inertia.visit(url);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Admin__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Panel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, (isLessThanLG && isInfoBoxOpen || !isLessThanLG) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_ProductsInfoBoxes__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: dataSelected,
     setDataSelected: setDataSelected,
     createProduct: createProduct,
     setCreateProduct: setCreateProduct,
     editing: editing,
     setEditing: setEditing
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_6__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+  }), !mobileShowInfoBoxes && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_6__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full flex items-end mb-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block flex mr-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    id: "id",
+    label: "Nombre o Id",
+    onChange: onChange,
+    placeholder: "ej. Juan",
+    error: [],
+    onKeyDown: onChange,
+    value: productToSearch
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
+    onClick: toSearch
+  }, "Buscar"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black inline-block"
   }, "Productos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "inline-block float-right text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: showCreateProduct
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "inline fa fa-bread-slice fa-fw"
-  }), "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full overflow-y-hidden"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
     columns: columns,
     data: products.data,
     onClick: function onClick(row) {
       return openedAndShow(row.index);
     },
     selected: dataSelected
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
     items: products
   })));
 }
 
+;
 /* harmony default export */ __webpack_exports__["default"] = (Products);
 
 /***/ }),
@@ -457,6 +523,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductsInfoBoxes/CreateProduct */ "./resources/js/components/Admin/ProductsInfoBoxes/CreateProduct.jsx");
 /* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! filepond */ "./node_modules/filepond/dist/filepond.js");
 /* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(filepond__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -476,11 +553,23 @@ function InfoBoxes(props) {
   //     }
   // }, [data]);
 
+  var cancelProduct = function cancelProduct() {
+    var hostname = window.location.hostname;
+    var url = window.location.href;
+
+    var _url$split = url.split(hostname),
+        _url$split2 = _slicedToArray(_url$split, 2),
+        port = _url$split2[0],
+        path = _url$split2[1];
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__["Inertia"].visit(path);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
-    className: "bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start"
+    className: "h-auto bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start"
   }, (data || createProduct) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-1/2 lg:w-full"
+    className: "w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-3"
   }, createProduct && !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProductsInfoBoxes_CreateProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -549,14 +638,17 @@ function InfoBoxes(props) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "inline"
   }, data.customizable ? 'Personalizable' : 'No es personalizable')))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex flex-row"
+    className: "flex flex-row w-full justify-between"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "inline-block float-left text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
+    className: "inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
+    onClick: cancelProduct
+  }, "Cancelar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded sm:m-auto lg:m-0",
     onClick: function onClick() {
       return setEditing(true);
     }
   }, "Editar"))))), !(data || createProduct) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-1/2 lg:w-full"
+    className: "w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -606,6 +698,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Select_Stores__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Select/Stores */ "./resources/js/components/Select/Stores.jsx");
 /* harmony import */ var _Checkbox__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Checkbox */ "./resources/js/components/Checkbox.jsx");
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Input */ "./resources/js/components/Input.jsx");
+/* harmony import */ var _Textarea__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Textarea */ "./resources/js/components/Textarea.jsx");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -627,6 +720,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
  // import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+
 
 
 
@@ -802,7 +896,7 @@ function CreateProduct(props) {
     label: "Nombre de producto",
     placeholder: "Nombre",
     error: errors.name
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Textarea__WEBPACK_IMPORTED_MODULE_11__["default"], {
     onChange: onChange,
     value: productData.description,
     id: "description",
@@ -824,7 +918,7 @@ function CreateProduct(props) {
     placeholder: "12.50",
     error: errors.price
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
+    className: "w-full font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "category_id",
     className: "hover:border-grey-900 italic sm:block"
@@ -1000,7 +1094,8 @@ function Input(_ref) {
     style: {
       height: '2.4rem'
     },
-    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed",
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed" // className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed"
+    ,
     onKeyDown: onKeyDown
   }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error error-".concat(id)
@@ -1025,6 +1120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -1040,16 +1136,53 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 /* To handle checked state this component requires a single of css */
 
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 function Pagination(_ref) {
   var items = _ref.items;
+
+  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_3__["useWindowSize"])(),
+      isLessThanMD = _useWindowSize.isLessThanMD;
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     className: "py-10 block w-full flex justify-center"
   }, items && items.data && items.data.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pagination mt-6 -mb-1 flex flex-wrap"
   }, items.links && items.links.map(function (link, key) {
+    if (isLessThanMD) {
+      // Prev + and dots disabled
+      if (link.url === null) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: key,
+          className: "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400 ".concat(link.label === 'Next' ? 'ml-auto' : '')
+        }, link.label);
+      } // prev active
+
+
+      if (key === 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+          key: key,
+          "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'border-brand-orange bg-orange-400 text-white hover:text-gray-600' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+          ,
+          href: link.url
+        }, link.label);
+      } // next
+
+
+      if (key + 1 === items.links.length) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+          key: key,
+          "class": "page-link mr-1 mb-1 px-4 py-3 text-sm border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500 ".concat(link.active ? 'border-brand-orange bg-orange-400 text-white hover:text-gray-600' : '', " ").concat(link.label === 'Next' ? 'ml-auto' : '') // :class="{ 'bg-white': link.active, 'ml-auto': link.label === 'Next' }"
+          ,
+          href: link.url
+        }, link.label);
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+    }
+
     if (link.url === null) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: key,
@@ -1231,6 +1364,57 @@ function Stores(props) {
      */
 
   }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Textarea.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Textarea.jsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Textarea; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+function Textarea(_ref) {
+  var id = _ref.id,
+      label = _ref.label,
+      inputValue = _ref.value,
+      placeholder = _ref.placeholder,
+      onChange = _ref.onChange,
+      _ref$onKeyDown = _ref.onKeyDown,
+      onKeyDown = _ref$onKeyDown === void 0 ? function () {
+    return false;
+  } : _ref$onKeyDown,
+      _ref$error = _ref.error,
+      error = _ref$error === void 0 ? [] : _ref$error,
+      _ref$extraProps = _ref.extraProps,
+      extraProps = _ref$extraProps === void 0 ? {} : _ref$extraProps;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-light text-sm text-gray-600 mt-4 sm:text-center lg:text-justify"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: id,
+    className: "hover:border-grey-900 italic sm:block"
+  }, label || 'Label'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", _extends({
+    id: id,
+    name: id,
+    placeholder: placeholder || '',
+    value: inputValue || '',
+    onChange: onChange // className="border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 sm:w-7/12 sm:m-auto lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed"
+    ,
+    className: "border border-transparent rounded w-full mt-1 bg-white border-gray-400 hover:border-orange-400 hover:shadow-xl focus:border-orange-400 focus:outline-none px-3 py-1 lg:w-full disabled:bg-brand-grayOpt disabled:cursor-not-allowed",
+    onKeyDown: onKeyDown,
+    rows: "4"
+  }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-sm m-auto text-red-500 error error-".concat(id)
+  }, error[0]));
 }
 
 /***/ })

@@ -305,6 +305,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Admin_Content__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Admin/Content */ "./resources/js/components/Admin/Content.jsx");
 /* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Pagination */ "./resources/js/components/Pagination.jsx");
 /* harmony import */ var _components_Admin_Suggestions_SearchBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Admin/Suggestions/SearchBar */ "./resources/js/components/Admin/Suggestions/SearchBar.jsx");
+/* harmony import */ var _components_Accordion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Accordion */ "./resources/js/components/Accordion.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -319,6 +320,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  // import UsersInfoBoxes from "../../components/Admin/UsersInfoBoxes";
 // import 'sweetalert2/src/sweetalert2.scss';
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 
 
 
@@ -342,6 +344,11 @@ function Suggestions(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       index = _useState4[0],
       setIndex = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      accordionText = _useState6[0],
+      setAccordionText = _useState6[1];
 
   var columns = react__WEBPACK_IMPORTED_MODULE_0___default.a.useMemo(function () {
     return [{
@@ -394,9 +401,12 @@ function Suggestions(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Suggestions_DetailsWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: dataSelected,
     hideDetails: hideDetails
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Suggestions_SearchBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    solvers: users
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Content__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Accordion__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    text: accordionText
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Admin_Suggestions_SearchBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    solvers: users,
+    setAccordionText: setAccordionText
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "font-bold text-black inline-block"
   }, "Sugerencias"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full overflow-y-hidden"
@@ -413,6 +423,115 @@ function Suggestions(props) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Suggestions);
+
+/***/ }),
+
+/***/ "./resources/js/components/Accordion.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Accordion.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Accordion; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./resources/js/hooks/useWindowSize.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  .item {\n    transition: ", ";\n    overflow: hidden;\n    // transform: scaleX(0);\n    transform: translateX(-400px);\n    height: 0;\n    &.active {\n      overflow: unset;\n      transform: none;\n      height: auto;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var ElementStyled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject(), function (_ref) {
+  var isLessThanSM = _ref.isLessThanSM;
+  return isLessThanSM ? 'ease-out all .2s' : '';
+});
+function Accordion(_ref2) {
+  var children = _ref2.children,
+      text = _ref2.text;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isOpen = _useState2[0],
+      setIsOpen = _useState2[1];
+
+  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_2__["useWindowSize"])(),
+      isLessThanSM = _useWindowSize.isLessThanSM;
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setIsOpen(true);
+
+    if (isLessThanSM) {
+      setIsOpen(false);
+    }
+  }, [isLessThanSM]);
+
+  var toggle = function toggle() {
+    return setIsOpen(!isOpen);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ElementStyled, {
+    id: "accordion",
+    isLessThanSM: isLessThanSM,
+    className: "w-full"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "accordion-close",
+    className: "item flex flex-col ".concat(!isOpen ? 'active' : '')
+  }, text, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "cursor-pointer pb-2 text-center hover:bg-gray-200 mt-2 border-t-2",
+    onClick: toggle
+  }, "Filtros", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "m-auto h-6 w-6",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
+    d: "M13 5l7 7-7 7M5 5l7 7-7 7"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "accordion-open",
+    className: "item flex flex-col ".concat(isOpen ? 'active' : '')
+  }, children, isLessThanSM && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "cursor-pointer pb-2 text-center hover:bg-gray-200 mt-2 border-t-2",
+    onClick: toggle
+  }, "Ocultar filtros", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "m-auto h-6 w-6",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    stroke: "currentColor"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
+    d: "M11 19l-7-7 7-7m8 14l-7-7 7-7"
+  })))));
+}
+;
 
 /***/ }),
 
@@ -591,6 +710,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Input */ "./resources/js/components/Input.jsx");
 /* harmony import */ var _Select_SearchStatus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Select/SearchStatus */ "./resources/js/components/Select/SearchStatus.jsx");
 /* harmony import */ var _Shared_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Shared/utils */ "./resources/js/Shared/utils.js");
+/* harmony import */ var _ListItemValue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../ListItemValue */ "./resources/js/components/ListItemValue.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -620,9 +740,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var DateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 function SearchBar(props) {
-  var solvers = props.solvers;
+  var solvers = props.solvers,
+      setAccordionText = props.setAccordionText;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
@@ -696,7 +818,22 @@ function SearchBar(props) {
     var queryDate = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('date');
     setDate(moment__WEBPACK_IMPORTED_MODULE_3___default()(queryDate));
     var queryStatus = Object(_Shared_utils__WEBPACK_IMPORTED_MODULE_7__["getParameterByName"])('status');
-    setStatusObject(queryStatus);
+    setStatusObject(queryStatus); // creando el texto
+
+    setAccordionText(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListItemValue__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      items: [{
+        filter: 'nombre:',
+        value: queryName
+      }, {
+        filter: 'solucionado:',
+        value: querySolver ? solvers.find(function (current) {
+          return current.id === querySolver * 1;
+        }).name : null
+      }, {
+        filter: 'status',
+        value: queryStatus
+      }]
+    }));
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (solver && solvers) {
@@ -759,9 +896,9 @@ function SearchBar(props) {
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
+    className: "flex flex-col sm:flex-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "inline-block mx-2 w-1/5"
+    className: "w-full sm:inline-block sm:mx-2 sm:w-1/5"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "id",
     label: "Nombre o correo",
@@ -771,7 +908,7 @@ function SearchBar(props) {
     onKeyDown: onChange,
     value: name
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "inline-block mx-2 w-1/5"
+    className: "w-full sm:inline-block sm:mx-2 sm:w-1/5"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchUsers__WEBPACK_IMPORTED_MODULE_4__["default"], {
     setUser: setSolver,
     users: solvers.map(function (u) {
@@ -782,7 +919,7 @@ function SearchBar(props) {
     }),
     user: solverObject
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "inline-block mx-2 w-1/5"
+    className: "w-full sm:inline-block sm:mx-2 sm:w-1/5"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_SearchStatus__WEBPACK_IMPORTED_MODULE_6__["default"], {
     status: status,
     setStatus: setStatusObject,
@@ -797,9 +934,9 @@ function SearchBar(props) {
       value: 'solved'
     }]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-end"
+    className: "w-full sm:w-auto mt-2 sm:mt-0 flex items-end"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
+    className: "w-full h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded",
     onClick: toSearch
   }, "Buscar")));
 }
@@ -932,6 +1069,35 @@ function Input(_ref) {
   }, extraProps))), error && error[0] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-sm m-auto text-red-500 error error-".concat(id)
   }, error[0]));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/ListItemValue.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/ListItemValue.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ListItemValue; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ListItemValue(_ref) {
+  var items = _ref.items;
+  return items.filter(function (item) {
+    return item.value;
+  }).map(function (_ref2) {
+    var filter = _ref2.filter,
+        value = _ref2.value;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, filter, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "ml-2 font-bold"
+    }, value));
+  });
 }
 ;
 

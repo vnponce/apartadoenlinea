@@ -7,6 +7,7 @@ export function useWindowSize() {
     const [windowSize, setWindowSize] = useState({
         width: undefined,
         height: undefined,
+        isLessThanSM: undefined,
         isLessThanMD: undefined,
         isLessThanLG: undefined,
     });
@@ -17,6 +18,7 @@ export function useWindowSize() {
             setWindowSize({
                 width: window.innerWidth,
                 height: window.innerHeight,
+                isLessThanSM: window.innerWidth < breakpoints.sm,
                 isLessThanMD: window.innerWidth < breakpoints.md,
                 isLessThanLG: window.innerWidth < breakpoints.lg,
             });

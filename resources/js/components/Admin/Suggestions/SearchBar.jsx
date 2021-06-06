@@ -7,6 +7,7 @@ import SearchUsers from '../../Select/SearchUsers';
 import Input from '../../Input';
 import SearchStatus from '../../Select/SearchStatus';
 import { getParameterByName } from '../../../Shared/utils';
+import ListItemValue from "../../ListItemValue";
 
 const DateWrapper = styled.div`
     .DateInput_input {
@@ -18,7 +19,7 @@ const DateWrapper = styled.div`
 `;
 
 export default function SearchBar(props) {
-  const { solvers } = props;
+  const { solvers, setAccordionText } = props;
   const [name, setName] = useState('');
   const [solver, setSolver] = useState('');
   const [solverObject, setSolverObject] = useState({});
@@ -68,6 +69,24 @@ export default function SearchBar(props) {
     setDate(moment(queryDate));
     const queryStatus = getParameterByName('status');
     setStatusObject(queryStatus);
+
+    // creando el texto
+    setAccordionText(<ListItemValue
+        items={[
+        {
+            filter: 'nombre:',
+            value: queryName,
+        },
+        {
+            filter: 'solucionado:',
+            value: querySolver ? solvers.find(current => current.id === querySolver * 1).name : null,
+        },
+        {
+            filter: 'status',
+            value: queryStatus,
+        }
+        ]}
+    />);
   }, []);
 
   useEffect(() => {
@@ -128,8 +147,8 @@ export default function SearchBar(props) {
   };
 
   return (
-        <div className="flex">
-            <div className="inline-block mx-2 w-1/5">
+        <div className="flex flex-col sm:flex-row">
+            <div className="w-full sm:inline-block sm:mx-2 sm:w-1/5">
                 <Input
                     id="id"
                     label="Nombre o correo"
@@ -140,7 +159,7 @@ export default function SearchBar(props) {
                     value={name}
                 />
             </div>
-            <div className="inline-block mx-2 w-1/5">
+            <div className="w-full sm:inline-block sm:mx-2 sm:w-1/5">
                 {/* <Stores setStore={setStore} stores={stores} storeSelected={store} /> */}
                 <SearchUsers setUser={setSolver} users={solvers.map(u => ({ label: u.name, value: u.id }))} user={solverObject}/>
             </div>
@@ -175,7 +194,7 @@ export default function SearchBar(props) {
             {/*            </DateWrapper>*/}
             {/*        </div>*/}
             {/*    </div>*/}
-            <div className="inline-block mx-2 w-1/5">
+            <div className="w-full sm:inline-block sm:mx-2 sm:w-1/5">
                 <SearchStatus
                     status={status}
                     setStatus={setStatusObject}
@@ -187,9 +206,9 @@ export default function SearchBar(props) {
                     ]}
                 />
             </div>
-            <div className="flex items-end">
+            <div className="w-full sm:w-auto mt-2 sm:mt-0 flex items-end">
                 <button
-                    className="h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"
+                    className="w-full h-10 inline-block text-white bg-orange-400 hover:bg-brand-orange hover:text-white focus:outline-none focus:shadow-outline font-bold px-4 rounded"
                     onClick={toSearch}
                 >Buscar</button>
             </div>

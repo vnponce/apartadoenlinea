@@ -9,6 +9,7 @@ import Table from '../../components/Table';
 import Content from '../../components/Admin/Content';
 import Pagination from '../../components/Pagination';
 import SearchBar from '../../components/Admin/Suggestions/SearchBar';
+import Accordion from "../../components/Accordion";
 
 
 function Suggestions(props) {
@@ -16,6 +17,7 @@ function Suggestions(props) {
   const { suggestions: suggestionsToPaginate } = props;
   const [dataSelected, setDataSelected] = useState(null);
   const [index, setIndex] = useState(null);
+  const [accordionText, setAccordionText] = useState('');
 
   const columns = React.useMemo(
     () => [
@@ -84,7 +86,9 @@ function Suggestions(props) {
         <Admin title="Panel">
             <DetailsWrapper data={dataSelected} hideDetails={hideDetails}/>
             <Content>
-                <SearchBar solvers={users} />
+                <Accordion text={accordionText}>
+                    <SearchBar solvers={users} setAccordionText={setAccordionText}/>
+                </Accordion>
                 <h5 className="font-bold text-black inline-block">Sugerencias</h5>
                 <div className="w-full overflow-y-hidden">
                     <Table
