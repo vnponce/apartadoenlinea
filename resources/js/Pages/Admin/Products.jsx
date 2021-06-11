@@ -23,6 +23,11 @@ function Products(props) {
     const { isLessThanLG } = useWindowSize();
 
     useEffect(() => {
+        const queryName = getParameterByName('name');
+        setProductToSearch(queryName || '');
+    }, [])
+
+    useEffect(() => {
         if(success_message) {
             Swal.fire({
                 position: 'top-end',
@@ -98,6 +103,7 @@ function Products(props) {
     const getData = data => Inertia.visit(`?page=${data.page}`);
 
     const onChange = (e) => {
+        console.log('onchange =>', e.key, e.target.value)
         if (e.key === 'Enter') {
             toSearch();
             // return false;
@@ -106,9 +112,9 @@ function Products(props) {
     };
 
     const toSearch = () => {
-        const searchProduct = productToSearch ? `q=${productToSearch}` : '';
+        const searchProduct = productToSearch ? `name=${productToSearch}` : '';
         const url = `/admin/products?${searchProduct}`;
-        // Inertia.visit(url);
+        Inertia.visit(url);
     };
 
 
@@ -124,9 +130,9 @@ function Products(props) {
                         <div className="inline-block flex mr-3">
                             <Input
                                 id="id"
-                                label="Nombre o Id"
+                                label="Nombre"
                                 onChange={onChange}
-                                placeholder="ej. Juan"
+                                placeholder="ej. dona"
                                 error={[]}
                                 onKeyDown={onChange}
                                 value={productToSearch}

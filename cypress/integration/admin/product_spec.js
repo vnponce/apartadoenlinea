@@ -1,3 +1,4 @@
+const {tableRowSelector} = require("../common");
 describe('Dashboard/Products', () => {
   beforeEach(() => {
     cy.refreshDatabase();
@@ -61,5 +62,23 @@ describe('Dashboard/Products', () => {
     }) => {
       expect(customizable).to.be.eq(false);
     });
+  });
+
+  it.only('should filter by uuid', () => {
+      cy.create('App\\Product', {
+          name: 'rico pan',
+      }).then((product) => {
+          cy.create('App\\Product', 10);
+          cy.log('product =>', product);
+          const {id, name} = product;
+          cy.login();
+
+          cy.visit('/admin/products');
+          cy.get(tableRowSelector).should('have.length', 10);
+          cy.findByLabelText(/nombre/i).type(`${name}{enter}`);
+          cy.get(tableRowSelector).should('have.length', 1);
+          cy.get(`${tableRowSelector}[id=${id}]`).contains('rico pan');
+          cy.findByLabelText(/nombre/i).should('have.value', `${name}`);
+      });
   });
 });

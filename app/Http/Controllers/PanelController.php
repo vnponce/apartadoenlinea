@@ -77,7 +77,12 @@ class PanelController extends Controller
 
     public function products()
     {
-        $products = Product::orderBy('name')->paginate(10);
+        $products = Product::query()
+            ->search(request('name'))
+            ->orderBy('name')
+            ->paginate(10);
+
+//        $products = Product::orderBy('name')->paginate(10);
         return Inertia::render('Admin/Products', compact('products'));
     }
 }

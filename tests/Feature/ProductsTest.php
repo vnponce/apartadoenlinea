@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Product;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -53,4 +54,26 @@ class ProductsTest extends TestCase
             "favorite" => 1,
         ]);
     }
+
+    /** @test */
+    function it_search_by_name()
+    {
+        $isPaginated = true;
+
+        $expectedById = factory(Product::class)->create([
+            'name' => 'rico pan',
+        ]);
+        $notExpectedById = factory(Product::class)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get("/admin/products?name={$expectedById->name}");
+        $response->assertStatus(200)
+            ->assertPropCount('products', 1, $isPaginated)
+            ->assertPropValue('products', function($products) use ($expectedById){
+                $filteredOrder = collect($products)->first();
+                $this->assertEquals('rico pan', collect($filteredOrder)->get('name'));
+                $this->assertEquals($expectedById->id, collect($filteredOrder)->get('id'));
+            }, $isPaginated);
+    }
+
 }

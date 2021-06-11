@@ -104,4 +104,13 @@ class Product extends Model implements Buyable
     public function getBuyablePrice($options = null){
         return $this->price / 100;
     }
+
+    // queries
+    // scopes
+    public function scopeSearch($query, $value)
+    {
+        if($value) {
+            $query->where('name', 'LIKE', "%{$value}%");
+        }
+    }
 }
