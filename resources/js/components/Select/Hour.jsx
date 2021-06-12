@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Select from "react-select";
 import styled from "styled-components";
+import moment from 'moment';
 
 const SelectWrapper = styled.div`
   .shop-option-description {
@@ -13,6 +14,19 @@ const SelectWrapper = styled.div`
     }
   }
 `;
+
+const isToday = date => date.isSame(moment(), 'day');
+
+const isAvailableHour = date => {
+    // -> ver la hora en el equipo
+    const now = moment().add(0, 'minutes');
+    // -> ver que la hora en el equipo sea mayor a la hora en cuestión
+    return date.diff(now) < 0;
+}
+
+const isDisabled = (date, hour) => {
+    return isToday(date) && isAvailableHour(hour);
+}
 
 const getTimeFromString = (date, time) => {
     const clone = date.clone().subtract(12, 'h');
@@ -38,6 +52,7 @@ const getHoursFromStore = (store, date, gapTimeInMinutes) => {
         hours.push({
             value: time,
             label: time,
+            isDisabled: isDisabled(date, open),
         });
     }
     return hours;
@@ -46,6 +61,16 @@ const getHoursFromStore = (store, date, gapTimeInMinutes) => {
 export default function Hour(props) {
     const { hour, setHour, store, date } = props;
     const gapTimeInMinutes = 30;
+
+    // validar al cambiar el date
+    useEffect(() => {
+        // si la hora ya no es posible borrar el value
+        console.log('date =>', date);
+        console.log('hour =>', hour);
+        // Si es today
+        // -> si es hora no posible
+        //    -> poner hour null
+    }, [date]);
 
     return (
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">

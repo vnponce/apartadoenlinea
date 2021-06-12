@@ -639,6 +639,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -662,7 +664,23 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var SelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+
+var isToday = function isToday(date) {
+  return date.isSame(moment__WEBPACK_IMPORTED_MODULE_3___default()(), 'day');
+};
+
+var isAvailableHour = function isAvailableHour(date) {
+  // -> ver la hora en el equipo
+  var now = moment__WEBPACK_IMPORTED_MODULE_3___default()().add(0, 'minutes'); // -> ver que la hora en el equipo sea mayor a la hora en cuestión
+
+  return date.diff(now) < 0;
+};
+
+var isDisabled = function isDisabled(date, hour) {
+  return isToday(date) && isAvailableHour(hour);
+};
 
 var getTimeFromString = function getTimeFromString(date, time) {
   var clone = date.clone().subtract(12, 'h');
@@ -700,7 +718,8 @@ var getHoursFromStore = function getHoursFromStore(store, date, gapTimeInMinutes
     var time = open.format('H:mm');
     hours.push({
       value: time,
-      label: time
+      label: time,
+      isDisabled: isDisabled(date, open)
     });
   }
 
@@ -712,7 +731,15 @@ function Hour(props) {
       setHour = props.setHour,
       store = props.store,
       date = props.date;
-  var gapTimeInMinutes = 30;
+  var gapTimeInMinutes = 30; // validar al cambiar el date
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // si la hora ya no es posible borrar el value
+    console.log('date =>', date);
+    console.log('hour =>', hour); // Si es today
+    // -> si es hora no posible
+    //    -> poner hour null
+  }, [date]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
