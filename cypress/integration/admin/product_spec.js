@@ -64,7 +64,7 @@ describe('Dashboard/Products', () => {
     });
   });
 
-  it.only('should filter by uuid', () => {
+  it('should filter by name', () => {
       cy.create('App\\Product', {
           name: 'rico pan',
       }).then((product) => {

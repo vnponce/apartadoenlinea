@@ -285,6 +285,17 @@ function Order() {
     });
   };
 
+  var selectStore = function selectStore(store) {
+    setStore(store);
+    setHour(null);
+    setDate(null);
+  };
+
+  var selectDate = function selectDate(date) {
+    setDate(date);
+    setHour(null);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     title: "Producto seleccionado"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderDescription__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -299,7 +310,7 @@ function Order() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sm:w-7/12 sm:m-auto lg:w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Select_Stores__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    setStore: setStore,
+    setStore: selectStore,
     stores: stores,
     storeSelected: store && stores.filter(function (s) {
       return s.id === store;
@@ -308,7 +319,7 @@ function Order() {
     className: "text-sm text-red-500 error store"
   }, errors.store[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DateSelector__WEBPACK_IMPORTED_MODULE_8__["default"], {
     date: date,
-    setDate: setDate,
+    setDate: selectDate,
     store: store && stores.filter(function (s) {
       return s.id === store;
     })[0]
@@ -719,7 +730,7 @@ var getHoursFromStore = function getHoursFromStore(store, date, gapTimeInMinutes
     hours.push({
       value: time,
       label: time,
-      isDisabled: isDisabled(date, open)
+      isDisabled:  true && window.Cypress ? false : isDisabled(date, open)
     });
   }
 
@@ -731,15 +742,7 @@ function Hour(props) {
       setHour = props.setHour,
       store = props.store,
       date = props.date;
-  var gapTimeInMinutes = 30; // validar al cambiar el date
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    // si la hora ya no es posible borrar el value
-    console.log('date =>', date);
-    console.log('hour =>', hour); // Si es today
-    // -> si es hora no posible
-    //    -> poner hour null
-  }, [date]);
+  var gapTimeInMinutes = 30;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectWrapper, {
     className: "font-light text-gray-600 mt-4 lg:text-justify"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {

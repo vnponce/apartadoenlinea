@@ -52,7 +52,7 @@ const getHoursFromStore = (store, date, gapTimeInMinutes) => {
         hours.push({
             value: time,
             label: time,
-            isDisabled: isDisabled(date, open),
+            isDisabled: (process.env.NODE_ENV !== 'production' && window.Cypress) ? false : isDisabled(date, open),
         });
     }
     return hours;
@@ -61,16 +61,6 @@ const getHoursFromStore = (store, date, gapTimeInMinutes) => {
 export default function Hour(props) {
     const { hour, setHour, store, date } = props;
     const gapTimeInMinutes = 30;
-
-    // validar al cambiar el date
-    useEffect(() => {
-        // si la hora ya no es posible borrar el value
-        console.log('date =>', date);
-        console.log('hour =>', hour);
-        // Si es today
-        // -> si es hora no posible
-        //    -> poner hour null
-    }, [date]);
 
     return (
         <SelectWrapper className="font-light text-gray-600 mt-4 lg:text-justify">

@@ -92,6 +92,16 @@ function Order() {
     });
   };
 
+  const selectStore = store => {
+      setStore(store);
+      setHour(null);
+      setDate(null);
+  }
+
+  const selectDate = date => {
+      setDate(date);
+      setHour(null);
+  }
 
   return (
         <Layout title="Producto seleccionado">
@@ -105,10 +115,10 @@ function Order() {
                         {/* Order place and hour data */}
                         <div className="sm:w-7/12 sm:m-auto lg:w-full">
                             {/* Sucursal */}
-                            <Stores setStore={setStore} stores={stores} storeSelected={store && stores.filter((s) => s.id === store)[0]}/>
+                            <Stores setStore={selectStore} stores={stores} storeSelected={store && stores.filter((s) => s.id === store)[0]}/>
                             {errors && errors.store && <span className="text-sm text-red-500 error store">{errors.store[0]}</span>}
                             {/* Día */}
-                            <DateSelector date={date} setDate={setDate} store={store && stores.filter((s) => s.id === store)[0]} />
+                            <DateSelector date={date} setDate={selectDate} store={store && stores.filter((s) => s.id === store)[0]} />
                             {errors && errors.date && <span className="text-sm text-red-500 error date">{errors.date[0]}</span>}
 
                             {/* Hora */}
