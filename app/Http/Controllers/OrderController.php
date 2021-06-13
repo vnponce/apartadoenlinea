@@ -39,64 +39,17 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-//         dd('store request =>', $request);
-//         dd('Cart::subtotal() =>', Cart::subtotal(2, '', ''));
-        // if paypayl pasa  o es usuario de panadería no va a paypal- Crear orden
-        // 1.- Obtener los detalles de la order
-//        $total = Cart::subtotal() * 100;
-        $total = Cart::subtotal(2, '', '') * 1; // Casting to int
-        $cart = Cart::content();
-//        dd($total);
-        // Avoid set order with no products
-        if($cart->isEmpty()) {
+        if($this->notHasAnyProduct() || $this->isOrderDetailsDataMissing()) {
             return redirect('/');
         }
 
-        $detailsRowId = $cart->search(function ( $cartItem, $rowId) {
-            return $cartItem->id ===  'orderDetailsId';
-        });
-//         dd($detailsRowId);
-        $detailsData = $cart->get($detailsRowId)->options;
-        // -- Cart::remove($detailsRowId);
-//         dd($detailsData);
-        $date = substr($detailsData->date, 0, strpos($detailsData->date, "T"));
-//        dd($date);
-        [$year, $month, $day] = explode('-', $date);
-//        dd('day =>', $day, 'month =>', $month, 'year =>', $year);
-        [$hour, $minute] = explode(':', $detailsData->hour);
-        $date = Carbon::now('America/Mexico_City')->year($year)->day($day)->month($month)->hour($hour)->minute($minute)->second('0');
-//         dd($date);
-        $order = Order::create([
-            'store_id' => $detailsData->store,
-            'date' => $date,
-            'hour' => $detailsData->hour,
-            'name' => $detailsData->name,
-            'lastname' => $detailsData->lastname,
-            'phone' => $detailsData->phone,
-            'email' => $detailsData->email,
-            'employeeName' => $detailsData->employeeName,
-            'total' => $total,
-            // @todo: hacer status
-            'status' => 'created',
+        $order = Order::createFromCart([
+            'payment_type' => '',
+            'payed' => false,
         ]);
-        // dd($order);
-//        dd($cart);
-        $cart->filter(function($item) use ($detailsRowId) {
-            return $item->rowId !== $detailsRowId;
-        })->map(function ($item) use ($order) {
-            // dd($item);
-           $order->products()->attach($item->id, [
-               'price' => $item->price * 100,
-               'quantity' => $item->qty,
-               'comment' => $item->options->comment ?? '',
-               'custom_message' => $item->options->custom_message ?? '',
-           ]);
-        });
 
-        // @todo: Send email
-        \Mail::to($detailsData->email)->send(new OrderDetails($order));
+        \Mail::to($order->email)->send(new OrderDetails($order));
 
-        Cart::remove($detailsRowId);
         $successCart = Cart::content();
         $successTotalCart = Cart::subtotal();
         Cart::destroy();
@@ -112,7 +65,10 @@ class OrderController extends Controller
      */
     public function setDetails(Request $request)
     {
-//         dd('set details', $request->toArray());
+        if($this->notHasAnyProduct()) {
+            return redirect('/');
+        };
+
         $request->validate([
             'store' => 'required',
             'date' => 'required',
@@ -192,5 +148,27 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    public function notHasAnyProduct(): bool
+    {
+        $cart = Cart::content();
+
+        $products = $cart->filter(function ( $cartItem, $rowId) {
+            return $cartItem->id !==  'orderDetailsId';
+        });
+
+        return $products->count() === 0;
+    }
+
+    public function isOrderDetailsDataMissing(): bool
+    {
+        $cart = Cart::content();
+
+        $details = $cart->filter(function ( $cartItem, $rowId) {
+            return $cartItem->id ===  'orderDetailsId';
+        });
+
+        return $details->count() === 0;
     }
 }

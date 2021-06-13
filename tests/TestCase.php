@@ -2,6 +2,9 @@
 
 namespace Tests;
 
+use App\Product;
+use App\Store;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Arr;
 use PHPUnit\Framework\Assert;
 use Illuminate\Foundation\Testing\TestResponse;
@@ -54,6 +57,35 @@ abstract class TestCase extends BaseTestCase
 
             return $this;
         });
+    }
+
+    public function createCart()
+    {
+        Cart::destroy();
+
+        // Create Cart
+        $this->addItemToCart();
+        $this->addOrderDetails();
+    }
+
+    public function addItemToCart($product = false)
+    {
+        $currentProduct = $product ? $product : factory(Product::class)->create();
+        Cart::add($currentProduct, 1, ['comment' => 'test'])->associate(Product::class);
+    }
+
+    public function addOrderDetails($store = false)
+    {
+        Cart::add('orderDetailsId', 'OrderDetails', 1, 0, [
+            'store' => $store ? $store->id : factory(Store::class)->create()->id ,
+            'date' => '2019-11-23T18:00:00.000Z',
+            'hour' => '1:00',
+            'name' => 'Abel',
+            'lastname' => 'Ponce',
+            'phone' => '2299017147',
+            'email' => 'vnpoce8@gmail.com',
+            'employeeName' => 'employeeNameName',
+        ]);
     }
 
 }

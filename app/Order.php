@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Jenssegers\Date\Date;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class Order extends Model
 {
@@ -154,5 +155,53 @@ class Order extends Model
             default:
                 return $query->get();
         }
+    }
+
+    // Custom create
+    static function createFromCart($info) {
+        ['payment_type' => $payment_type, 'payed' => $payed] = $info;
+
+        $total = Cart::subtotal(2, '', '') * 1; // Casting to int
+        $cart = Cart::content();
+
+
+        $detailsRowId = $cart->search(function ( $cartItem, $rowId) {
+            return $cartItem->id ===  'orderDetailsId';
+        });
+        $detailsData = $cart->get($detailsRowId)->options;
+        $date = substr($detailsData->date, 0, strpos($detailsData->date, "T"));
+        [$year, $month, $day] = explode('-', $date);
+        [$hour, $minute] = explode(':', $detailsData->hour);
+        $date = Carbon::now('America/Mexico_City')->year($year)->day($day)->month($month)->hour($hour)->minute($minute)->second('0');
+
+        $order = Order::create([
+            'store_id' => $detailsData->store,
+            'date' => $date,
+            'hour' => $detailsData->hour,
+            'name' => $detailsData->name,
+            'lastname' => $detailsData->lastname,
+            'phone' => $detailsData->phone,
+            'email' => $detailsData->email,
+            'employeeName' => $detailsData->employeeName,
+            'total' => $total,
+            'status' => 'created',
+            'invoice_requested' => $detailsData->invoice_requested,
+            'payed' => $payed,
+            'payment_type' => $payment_type ?? '',
+        ]);
+
+        $cart->filter(function($item) use ($detailsRowId) {
+            return $item->rowId !== $detailsRowId;
+        })->map(function ($item) use ($order) {
+            $order->products()->attach($item->id, [
+                'price' => $item->price * 100,
+                'quantity' => $item->qty,
+                'comment' => $item->options->comment ?? '',
+                'custom_message' => $item->options->custom_message ?? '',
+            ]);
+        });
+
+        Cart::remove($detailsRowId);
+        return $order;
     }
 }
