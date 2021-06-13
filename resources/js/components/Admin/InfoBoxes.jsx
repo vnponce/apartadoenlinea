@@ -54,7 +54,7 @@ export default function InfoBoxes(props) {
                     break;
                 case 'delivered':
                     setNextStatus({
-                        original: 'alredyDelivered',
+                        original: 'delivered',
                         step: 'Ya entregado',
                         allowed: false,
                     });

@@ -432,7 +432,7 @@ function InfoBoxes(props) {
 
         case 'delivered':
           setNextStatus({
-            original: 'alredyDelivered',
+            original: 'delivered',
             step: 'Ya entregado',
             allowed: false
           });
