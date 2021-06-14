@@ -56,8 +56,7 @@ function Login(props) {
       setData = _useState2[1];
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__["usePage"])(),
-      _usePage$errors = _usePage.errors,
-      errors = _usePage$errors === void 0 ? {} : _usePage$errors;
+      errors = _usePage.errors;
 
   var login = function login(e) {
     e.preventDefault();

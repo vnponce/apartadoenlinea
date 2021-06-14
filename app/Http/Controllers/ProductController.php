@@ -86,8 +86,10 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        // @todo: redirect if product is not available
-        return Inertia::render('Product', compact('product'));
+        if($product->available) {
+            return Inertia::render('Product', compact('product'));
+        }
+        return redirect('/');
     }
 
     /**

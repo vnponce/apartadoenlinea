@@ -592,7 +592,6 @@ function Details(props) {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
       errors = _usePage.errors;
 
-  console.log('details errors =>', errors);
   var data = props.data,
       hideDetails = props.hideDetails;
 
