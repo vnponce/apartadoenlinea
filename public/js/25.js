@@ -56,7 +56,8 @@ function Login(props) {
       setData = _useState2[1];
 
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__["usePage"])(),
-      errors = _usePage.errors;
+      _usePage$errors = _usePage.errors,
+      errors = _usePage$errors === void 0 ? {} : _usePage$errors;
 
   var login = function login(e) {
     e.preventDefault();
@@ -123,26 +124,22 @@ function Login(props) {
     id: "username",
     type: "text",
     placeholder: "bernal",
-    className: "mb-4" // errors="$page.errors.email"
-    ,
+    className: "mb-4",
+    error: errors.username,
     onChange: handleInput,
     autofocus: true,
     onKeyDown: LOGIN_MOCK_DEV_ONLY
-  }), errors.email && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "text-sm m-auto text-red-500 error hour"
-  }, errors.email[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
     label: "Password",
     value: data.password,
     id: "password",
     placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022",
-    type: "password" // errors="$page.errors.email"
-    ,
+    type: "password",
+    error: errors.password,
     className: "mb-6",
     onChange: handleInput,
     onKeyDown: LOGIN_MOCK_DEV_ONLY
-  }), errors.password && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "text-sm m-auto text-red-500 error hour"
-  }, errors.password[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex justify-end pt-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",

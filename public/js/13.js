@@ -574,7 +574,7 @@ function InfoBoxes(props) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "dash-content",
-    className: "h-full bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start"
+    className: "h-auto bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start"
   }, (data || createProduct) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

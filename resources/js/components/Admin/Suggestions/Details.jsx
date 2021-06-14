@@ -1,11 +1,12 @@
 import React from 'react';
-import { useRememberedState } from '@inertiajs/inertia-react';
+import {usePage, useRememberedState} from '@inertiajs/inertia-react';
 import { Inertia } from '@inertiajs/inertia';
 import Textarea from '../../Textarea';
 import Button from '../../Button';
 import Comment from '../../Comment';
 
 export default function Details(props) {
+  const { errors } = usePage();
   const { data, hideDetails } = props;
   const [textarea, setTextArea] = useRememberedState('');
 
@@ -56,7 +57,7 @@ export default function Details(props) {
                           id="comment"
                           placeholder="Se solucionó de la siguiente manera..."
                           onChange={handleOnChange}
-                          // error={errors.suggestion}
+                          error={errors.comment}
                           extraProps={{
                             disabled: false,
                           }}

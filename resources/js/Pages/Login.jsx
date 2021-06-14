@@ -94,24 +94,22 @@ function Login(props) {
                             type="text"
                             placeholder="bernal"
                             className="mb-4"
-                            // errors="$page.errors.email"
+                            error={errors.username}
                             onChange={handleInput}
                             autofocus
                             onKeyDown={LOGIN_MOCK_DEV_ONLY}
                         />
-                        {errors.email && <p className="text-sm m-auto text-red-500 error hour">{errors.email[0]}</p>}
                         <Input
                             label="Password"
                             value={data.password}
                             id="password"
                             placeholder="••••••"
                             type="password"
-                            // errors="$page.errors.email"
+                            error={errors.password}
                             className="mb-6"
                             onChange={handleInput}
                             onKeyDown={LOGIN_MOCK_DEV_ONLY}
                         />
-                        {errors.password && <p className="text-sm m-auto text-red-500 error hour">{errors.password[0]}</p>}
                         {/* <label className="mt-6 select-none flex items-center" htmlFor="remember">
                             <input id="remember" className="mr-1" type="checkbox" />
                             <span className="text-sm">Remember Me</span>

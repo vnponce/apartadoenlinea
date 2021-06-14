@@ -21,7 +21,7 @@ export default function InfoBoxes(props) {
     };
     return (
     <div id="dash-content"
-         className="h-full bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start">
+         className="h-auto bg-gray-200 py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start">
         { (data || createProduct) && (
             <div className="w-full">
                 <div
