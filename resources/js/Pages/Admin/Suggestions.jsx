@@ -11,6 +11,7 @@ import Pagination from '../../components/Pagination';
 import SearchBar from '../../components/Admin/Suggestions/SearchBar';
 import Accordion from "../../components/Accordion";
 import {useWindowSize} from "../../hooks/useWindowSize";
+import InfoBoxesDetailsWrapper from "../../components/Admin/InfoBoxes/InfoBoxesDetailsWrapper";
 
 
 function Suggestions(props) {
@@ -93,7 +94,9 @@ function Suggestions(props) {
   return (
         <Admin title="Panel">
             { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
-              <DetailsWrapper data={dataSelected} hideDetails={hideDetails}/>
+                <InfoBoxesDetailsWrapper>
+                    <DetailsWrapper data={dataSelected} hideDetails={hideDetails}/>
+                </InfoBoxesDetailsWrapper>
             )}
             {!mobileShowInfoBoxes && (
                 <Content>

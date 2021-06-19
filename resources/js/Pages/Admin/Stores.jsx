@@ -9,6 +9,7 @@ import Content from "../../components/Admin/Content";
 // import 'sweetalert2/src/sweetalert2.scss'
 import {breakpoints} from "../../Shared/utils";
 import { useWindowSize } from '../../hooks/useWindowSize';
+import InfoBoxesDetailsWrapper from "../../components/Admin/InfoBoxes/InfoBoxesDetailsWrapper";
 
 
 function Stores(props) {
@@ -90,7 +91,9 @@ function Stores(props) {
     return (
         <Admin title="Panel">
             { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
-                <StoresInfoBoxes id={storeId} createStore={false} setCreateStore={() => {}}/>
+                <InfoBoxesDetailsWrapper>
+                    <StoresInfoBoxes id={storeId} createStore={false} setCreateStore={() => {}}/>
+                </InfoBoxesDetailsWrapper>
             )}
             {!mobileShowInfoBoxes && (
                 <Content>

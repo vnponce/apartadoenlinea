@@ -153,9 +153,7 @@ export default function InfoBoxes(props) {
     const buttonClass = 'w-full inline-block text-white hover:text-white focus:outline-none focus:shadow-outline font-bold py-2 px-4 rounded m-6';
 
     return (
-    <div id="dash-content"
-         className="relative lg:h-auto bg-gray-200 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
-        <div className="h-32 h-full sticky top-0 bg-white">
+        <>
             { isLessThanLG && (
                 <div className="w-full right-0 flex flex-col items-end pr-3 pt-3">
             <span
@@ -246,7 +244,6 @@ export default function InfoBoxes(props) {
                     </div>
                 </div>
             )}
-        </div>
-    </div>
+        </>
     )
 };

@@ -81,4 +81,33 @@ describe('Dashboard/Products', () => {
           cy.findByLabelText(/nombre/i).should('have.value', `${name}`);
       });
   });
+
+  it('should show edit form when user recently create a product', function () {
+    // Create product
+    cy.findByRole('button', { name: '+' }).click();
+    cy.findByLabelText(/nombre de producto/i).type('nuevo pan');
+    cy.findByLabelText(/descripci.n/i).type('descripcion del pan');
+    cy.findByLabelText(/ingredientes/i).type('azucar, dulces, colores');
+    cy.findByLabelText(/precio/i).type('8');
+    cy.findByLabelText(/disponible/i).click({ force: true });
+    cy.findByLabelText(/favorito/i).click({ force: true });
+    cy.findByLabelText(/personalizable/i).click({ force: true });
+
+    cy.findByRole('button', { name: /crear/i }).click();
+
+    cy.wait(3000); // modal
+
+    // Select any product
+    cy.contains('nuevo pan').click();
+
+    // Click edit button
+    cy.get('#dash-content').within(() => {
+        cy.findByRole('button', { name: /editar/i }).click();
+    });
+
+    // Should show edit form
+    cy.get('#dash-content').within(() => {
+        cy.findByLabelText(/nombre/i).click({ force: true });
+    });
+  });
 });

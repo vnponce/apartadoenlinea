@@ -10,6 +10,7 @@ import Pagination from "../../components/Pagination";
 import {breakpoints, getParameterByName} from "../../Shared/utils";
 import { useWindowSize } from '../../hooks/useWindowSize';
 import Input from "../../components/Input";
+import InfoBoxesDetailsWrapper from "../../components/Admin/InfoBoxes/InfoBoxesDetailsWrapper";
 
 
 function Products(props) {
@@ -121,7 +122,9 @@ function Products(props) {
     return (
         <Admin title="Panel">
             { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
-                <ProductsInfoBoxes data={dataSelected} setDataSelected={setDataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
+                <InfoBoxesDetailsWrapper>
+                    <ProductsInfoBoxes data={dataSelected} setDataSelected={setDataSelected} createProduct={createProduct} setCreateProduct={setCreateProduct} editing={editing} setEditing={setEditing}/>
+                </InfoBoxesDetailsWrapper>
             )}
             {/*Graph Content */}
             {!mobileShowInfoBoxes && (

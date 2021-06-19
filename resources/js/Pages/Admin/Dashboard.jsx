@@ -10,6 +10,7 @@ import { getParameterByName } from '../../Shared/utils';
 import Pagination from "../../components/Pagination";
 import {useWindowSize} from "../../hooks/useWindowSize";
 import Accordion from "../../components/Accordion";
+import InfoBoxesDetailsWrapper from "../../components/Admin/InfoBoxes/InfoBoxesDetailsWrapper";
 
 
 function Dashboard(props) {
@@ -116,7 +117,9 @@ function Dashboard(props) {
   return (
         <Admin title="Panel">
             { ( (isLessThanLG && isInfoBoxOpen) || !isLessThanLG ) && (
-                <InfoBoxes data={dataSelected}/>
+                <InfoBoxesDetailsWrapper>
+                    <InfoBoxes data={dataSelected}/>
+                </InfoBoxesDetailsWrapper>
             )}
             {/* Graph Content */}
             {!mobileShowInfoBoxes && (
@@ -134,18 +137,6 @@ function Dashboard(props) {
                         </InertiaLink>
                     </div>
                     <div className="w-full overflow-y-hidden">
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
-                        <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
                         <Table columns={columns} data={orders} onClick={(row) => openedAndShow(row.index)} selected={dataSelected}/>
                     </div>
                     {isPaginateActive && (

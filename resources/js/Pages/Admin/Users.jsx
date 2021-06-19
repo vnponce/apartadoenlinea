@@ -8,6 +8,7 @@ import Table from "../../components/Table";
 import Content from "../../components/Admin/Content";
 import {breakpoints} from "../../Shared/utils";
 import { useWindowSize } from '../../hooks/useWindowSize';
+import InfoBoxesDetailsWrapper from "../../components/Admin/InfoBoxes/InfoBoxesDetailsWrapper";
 
 
 function Users(props) {
@@ -102,10 +103,14 @@ function Users(props) {
     return (
         <Admin title="Panel">
             { isLessThanLG && isInfoBoxOpen && (
-                <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
+                <InfoBoxesDetailsWrapper>
+                    <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
+                </InfoBoxesDetailsWrapper>
             )}
             { !isLessThanLG && (
-                <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
+                <InfoBoxesDetailsWrapper>
+                    <UsersInfoBoxes data={dataSelected} createUser={createUser} setCreateUser={setCreateUser}/>
+                </InfoBoxesDetailsWrapper>
             )}
             {!mobileShowInfoBoxes && (
                 <Content>

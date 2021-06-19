@@ -4,13 +4,12 @@ import Details from "./Details";
 export default function DetailsWrapper(props) {
   const { data, hideDetails } = props;
   return (
-        <div id="dash-content"
-             className="h-full lg:h-auto bg-gray-200 py-6 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
+        <>
             { data && (
                 <Details data={data} hideDetails={hideDetails}/>
             )}
             { !data && (
-                <div className="w-full sticky top-0">
+                <div className="w-full">
                     <div
                         className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
                         <div className="flex flex-col items-center">
@@ -25,6 +24,6 @@ export default function DetailsWrapper(props) {
                     </div>
                 </div>
             )}
-        </div>
+        </>
   );
 }
