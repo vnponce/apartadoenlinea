@@ -155,8 +155,9 @@ export default function InfoBoxes(props) {
     return (
     <div id="dash-content"
          className="relative lg:h-auto bg-gray-200 lg:py-0 w-full lg:min-h-screen lg:max-w-sm flex flex-wrap content-start">
-        { isLessThanLG && (
-            <div className="w-full sticky top-0 right-0 flex flex-col items-end pr-3 pt-3">
+        <div className="h-32 h-full sticky top-0 bg-white">
+            { isLessThanLG && (
+                <div className="w-full right-0 flex flex-col items-end pr-3 pt-3">
             <span
                 onClick={onCancelHandle}
                 className="w-16 h-12 cursor-pointer rounded-full bg-white flex items-center justify-center hover:bg-gray-100">
@@ -166,85 +167,86 @@ export default function InfoBoxes(props) {
                           d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
                 </svg>
             </span>
-            </div>
-        ) }
-        { data && (
-            <div className="w-full">
-                <div
-                    className="m-2 md:mx-6 md:my-3">
-                    <div>
-                        Pedido No: <strong>{data.uuid}</strong>
-                    </div>
-                    <div>
-                        <i
-                        className="inline fa fa-calendar-day fa-fw text-brand-icons text-sm mr-3"/>
-                        <strong>{data.date.formatted}</strong>
-                    </div>
                 </div>
-                <UserDetails data={data.customer} />
-                <StoreDetails data={data.store} />
-                <ProductsList data={data.products} />
-                <div className="w-full text-center text-regularText text-normal">Total:</div>
-                <div className="w-full text-center text-regularText text-2xl">${data.total}</div>
-                <div
-                    className="m-2 md:mx-6 md:my-6">
-                    <span className="text-lg">{data.employee.name}</span> levantó este pedido.
-                </div>
-                <div className="flex flex-row">
-                    <button
-                        className={allowedToModify() ?
-                            `${buttonClass} bg-orange-400 hover:bg-brand-orange` :
-                            `${buttonClass} bg-orange-400 cursor-not-allowed`
-                        }
-                        onClick={() => updateToNextStatus(data.status)}
-                        disabled={!allowedToModify()}
-                    >{nextStatus.step}</button>
-                </div>
-                <div className="flex">
-                    <button
-                        className={allowedToModify() ?
-                            `${buttonClass} bg-green-500 hover:bg-brand-green` :
-                            `${buttonClass} bg-green-500 cursor-not-allowed`
-                        }
-                        onClick={() => updateToPayed(data.id)}
-                        disabled={!allowedToModify()}
-                    >
-                        Pagar
-                    </button>
-                </div>
-                <div className="flex">
-                    <button
-                        className={allowedToModify() ?
-                            `${buttonClass} bg-red-500 hover:bg-red-600` :
-                            `${buttonClass} bg-red-500 cursor-not-allowed`
-                        }
-                        onClick={() => updateToCancel(data.id)}
-                        disabled={!allowedToModify()}
-                    >
-                        { isCancel ? 'Cancelado' : 'Cancelar pedido' }
-                    </button>
-                </div>
-            </div>
-        )}
-        { !data && (
-            <div className="w-full">
-                <div
-                    className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
-                    <div className="flex flex-col items-center">
-                        <div className="flex-shrink pr-4">
-                            <div className="rounded-full p-3 bg-gray-400"><i
-                                className="fa fa-hand-pointer fa-fw fa-inverse text-3xl"/></div>
+            ) }
+            { data && (
+                <div className="w-full">
+                    <div
+                        className="m-2 md:mx-6 md:my-3">
+                        <div>
+                            Pedido No: <strong>{data.uuid}</strong>
                         </div>
-                        <div className="flex-1 mt-3">
-                            No hay ningun pedido seleccionado para mostrar información.
+                        <div>
+                            <i
+                                className="inline fa fa-calendar-day fa-fw text-brand-icons text-sm mr-3"/>
+                            <strong>{data.date.formatted}</strong>
                         </div>
-                        <small className="flex-1 mt-3 text-brand-orange">
-                            Hacer click sobre el pedido para ver los detalles.
-                        </small>
+                    </div>
+                    <UserDetails data={data.customer} />
+                    <StoreDetails data={data.store} />
+                    <ProductsList data={data.products} />
+                    <div className="w-full text-center text-regularText text-normal">Total:</div>
+                    <div className="w-full text-center text-regularText text-2xl">${data.total}</div>
+                    <div
+                        className="m-2 md:mx-6 md:my-6">
+                        <span className="text-lg">{data.employee.name}</span> levantó este pedido.
+                    </div>
+                    <div className="flex flex-row">
+                        <button
+                            className={allowedToModify() ?
+                                `${buttonClass} bg-orange-400 hover:bg-brand-orange` :
+                                `${buttonClass} bg-orange-400 cursor-not-allowed`
+                            }
+                            onClick={() => updateToNextStatus(data.status)}
+                            disabled={!allowedToModify()}
+                        >{nextStatus.step}</button>
+                    </div>
+                    <div className="flex">
+                        <button
+                            className={allowedToModify() ?
+                                `${buttonClass} bg-green-500 hover:bg-brand-green` :
+                                `${buttonClass} bg-green-500 cursor-not-allowed`
+                            }
+                            onClick={() => updateToPayed(data.id)}
+                            disabled={!allowedToModify()}
+                        >
+                            Pagar
+                        </button>
+                    </div>
+                    <div className="flex">
+                        <button
+                            className={allowedToModify() ?
+                                `${buttonClass} bg-red-500 hover:bg-red-600` :
+                                `${buttonClass} bg-red-500 cursor-not-allowed`
+                            }
+                            onClick={() => updateToCancel(data.id)}
+                            disabled={!allowedToModify()}
+                        >
+                            { isCancel ? 'Cancelado' : 'Cancelar pedido' }
+                        </button>
                     </div>
                 </div>
-            </div>
-        )}
+            )}
+            { !data && (
+                <div className="w-full">
+                    <div
+                        className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
+                        <div className="flex flex-col items-center">
+                            <div className="flex-shrink pr-4">
+                                <div className="rounded-full p-3 bg-gray-400"><i
+                                    className="fa fa-hand-pointer fa-fw fa-inverse text-3xl"/></div>
+                            </div>
+                            <div className="flex-1 mt-3">
+                                No hay ningun pedido seleccionado para mostrar información.
+                            </div>
+                            <small className="flex-1 mt-3 text-brand-orange">
+                                Hacer click sobre el pedido para ver los detalles.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
     </div>
     )
 };

@@ -630,7 +630,7 @@ function Details(props) {
 
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full"
+    className: "w-full sticky top-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "m-2 md:mx-6 md:my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -704,7 +704,7 @@ function DetailsWrapper(props) {
     data: data,
     hideDetails: hideDetails
   }), !data && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-1/2 lg:w-full"
+    className: "w-full sticky top-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

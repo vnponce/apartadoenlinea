@@ -10,7 +10,7 @@ export default function DetailsWrapper(props) {
                 <Details data={data} hideDetails={hideDetails}/>
             )}
             { !data && (
-                <div className="w-1/2 lg:w-full">
+                <div className="w-full sticky top-0">
                     <div
                         className="border-2 border-gray-400 border-dashed hover:border-transparent hover:bg-white hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6">
                         <div className="flex flex-col items-center">

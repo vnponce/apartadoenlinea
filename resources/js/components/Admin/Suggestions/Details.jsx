@@ -36,7 +36,7 @@ export default function Details(props) {
   // };
 
   return (
-      <div className="w-full">
+      <div className="w-full sticky top-0">
           <div
               className="m-2 md:mx-6 md:my-6">
               <span className="text-sm">{data.name}</span>
