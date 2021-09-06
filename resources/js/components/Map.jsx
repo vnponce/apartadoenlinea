@@ -6,7 +6,7 @@ export default function Map(props) {
     return (
         <LoadScript
             id="script-loader"
-            googleMapsApiKey="AIzaSyBP_-J4zi-joMx0Jb3sGVjf5SGze8_bdGs"
+            googleMapsApiKey="[MAPSAPI]"
         >
             <GoogleMap
                 id='example-map'
